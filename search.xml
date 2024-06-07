@@ -5,10 +5,29 @@
     
     <entry>
       <title>hello world</title>
+      <link href="/2024/06/07/1.xu-lun/"/>
+      <url>/2024/06/07/1.xu-lun/</url>
+      
+        <content type="html"><![CDATA[<h2 id="1-绪论"><a href="#1-绪论" class="headerlink" title="1. 绪论"></a>1. 绪论</h2><h3 id="1-电力电子是干啥的"><a href="#1-电力电子是干啥的" class="headerlink" title="1. 电力电子是干啥的"></a>1. 电力电子是干啥的</h3><p>![image-20240311162400570](1. 绪论.assets&#x2F;image-20240311162400570.png)</p><p>控制器比如用的单片机， 输出5v,3.3v 被控对象要用几百v的电压，电力电子：我会出手</p><h3 id="2-什么是电力电子技术"><a href="#2-什么是电力电子技术" class="headerlink" title="2. 什么是电力电子技术"></a>2. 什么是电力电子技术</h3><p>![image-20240311162704621](1. 绪论.assets&#x2F;image-20240311162704621.png)</p><h3 id="3-电力电子变换器的分类"><a href="#3-电力电子变换器的分类" class="headerlink" title="3. 电力电子变换器的分类"></a>3. 电力电子变换器的分类</h3><p>tip：</p><ul><li>变换器Converter 包含功率半导体开关器件， 及储能元件（电感电容）</li><li>为避免攻略损耗和效率降低， 变换器主回路一般无电阻元件</li><li>控制器通过检测输入输出信号， 对开关器件导通关断进行控制</li></ul><p><strong>分类：</strong></p><ul><li>AC&#x2F;DC变换器。 整流器 <ul><li>将交流输入变换成直流输出，</li></ul></li><li>DC&#x2F;AC变换器， 逆变器 <ul><li>将直流输入变换到交流输出</li></ul></li><li>DC&#x2F;DC变换器<ul><li>适用于负荷需求特定（或可调）的直流电压或电流， 而源石不同的活不可调的直流电压或电流</li></ul></li><li>AC&#x2F;AC变换器<ul><li>用于变换交流电的等级和频率</li></ul></li></ul><h3 id="4-电力电子的概念"><a href="#4-电力电子的概念" class="headerlink" title="4. 电力电子的概念"></a>4. 电力电子的概念</h3><p>![image-20240311170409638](1. 绪论.assets&#x2F;image-20240311170409638.png)</p><p>![image-20240311170542168](1. 绪论.assets&#x2F;image-20240311170542168.png)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 西瓜粥 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>hello world</title>
       <link href="/2024/06/06/hu-hu-hu/"/>
       <url>/2024/06/06/hu-hu-hu/</url>
       
-        <content type="html"><![CDATA[<h2 id="测试测试"><a href="#测试测试" class="headerlink" title="测试测试"></a>测试测试</h2><h2 id="彭金海是傻逼"><a href="#彭金海是傻逼" class="headerlink" title="彭金海是傻逼"></a>彭金海是傻逼</h2>]]></content>
+        <content type="html"><![CDATA[<h2 id="彭金海是傻逼"><a href="#彭金海是傻逼" class="headerlink" title="彭金海是傻逼"></a>彭金海是傻逼</h2>]]></content>
       
       
       
