@@ -4,6 +4,90 @@
   
     
     <entry>
+      <title>01.晶体管的由来及内置电阻晶体管</title>
+      <link href="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/"/>
+      <url>/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="01-晶体管的由来及内置电阻晶体管"><a href="#01-晶体管的由来及内置电阻晶体管" class="headerlink" title="01 晶体管的由来及内置电阻晶体管"></a>01 晶体管的由来及内置电阻晶体管</h2><h4 id="材料"><a href="#材料" class="headerlink" title="材料"></a>材料</h4><p>​从锗（80℃左右发生损害）到硅（180℃）</p><h4 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h4><p>​<strong>增幅</strong>和<strong>开关</strong></p><p>​增幅：不改变输入信号的波形，只<strong>放大</strong>电压或电流，指模拟信号</p><p>​开关：在数字信号中，晶体管起着切换0和1的开关作用</p><h4 id="集电阻和晶体管于一体"><a href="#集电阻和晶体管于一体" class="headerlink" title="集电阻和晶体管于一体"></a>集电阻和晶体管于一体</h4><p>​数字晶体管即内置了电阻的晶体管</p><img src="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611204750395.png" class title="image-20240611204750395"><p><strong>优点：</strong></p><ul><li>安装面积减少</li><li>安装时间减少</li><li>部件数量减少</li></ul><h4 id="基极是自来的阀门，发射极是配管，集电极是水龙头"><a href="#基极是自来的阀门，发射极是配管，集电极是水龙头" class="headerlink" title="基极是自来的阀门，发射极是配管，集电极是水龙头"></a>基极是自来的阀门，发射极是配管，集电极是水龙头</h4><p>​通过微小之力（基极的输入信号）来控制自来水的阀门，从而调节水龙头喷出巨大的水流（集电极电流）</p><img src="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611205055893.png" class title="image-20240611205055893"><p>​<strong>放大+电流型器件</strong></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 文天祥，晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>02.晶体管截止频率定义和反向漏电流</title>
+      <link href="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/"/>
+      <url>/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="02-晶体管截止频率定义和反向漏电流"><a href="#02-晶体管截止频率定义和反向漏电流" class="headerlink" title="02.晶体管截止频率定义和反向漏电流"></a>02.晶体管截止频率定义和反向漏电流</h2><h4 id="关于晶体管ON时的逆向电流（E—-C）"><a href="#关于晶体管ON时的逆向电流（E—-C）" class="headerlink" title="关于晶体管ON时的逆向电流（E—&gt;C）"></a>关于晶体管ON时的逆向电流（E—&gt;C）</h4><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" class title="image-20240611212018881"><p>​基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p><p><strong>逆向晶体管的特点：</strong></p><ul><li>放大倍数低h（正向10%一下）</li><li>耐压低（7..8V与Vebo的导通电压一样低）</li><li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li></ul><h4 id="关于封装攻略容许功耗"><a href="#关于封装攻略容许功耗" class="headerlink" title="关于封装攻略容许功耗"></a>关于封装攻略容许功耗</h4><p><strong>定义：</strong> 由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj&#x3D;150℃）时的功率</p><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" class title="image-20240611212524409"><h4 id="晶体管的速度"><a href="#晶体管的速度" class="headerlink" title="晶体管的速度"></a>晶体管的速度</h4><p><strong>fT：增益带宽积、截止频率、开关速度</strong></p><p>​<strong>增益带宽积</strong> 指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p><p>提高基极输入频率，则hfe放大倍数变低</p><p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p><p>但是实际使用时能够动作的只有fT的1&#x2F;5to1&#x2F;10</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>03.晶体管分类概述</title>
+      <link href="/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/"/>
+      <url>/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="03-晶体管分类概述"><a href="#03-晶体管分类概述" class="headerlink" title="03.晶体管分类概述"></a>03.晶体管分类概述</h2><h4 id="晶体管的代表形状-TO-SMT"><a href="#晶体管的代表形状-TO-SMT" class="headerlink" title="晶体管的代表形状 TO&#x2F;SMT"></a>晶体管的代表形状 TO&#x2F;SMT</h4><p>![image-20240611213213155](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611213213155.png)</p><h4 id="根据工作原理，分为双极晶体管和单极晶体管"><a href="#根据工作原理，分为双极晶体管和单极晶体管" class="headerlink" title="根据工作原理，分为双极晶体管和单极晶体管"></a>根据工作原理，分为双极晶体管和单极晶体管</h4><p>![image-20240611213250901](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611213250901.png)</p><p><strong>双极晶体管</strong></p><p>​即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p><p><strong>FET</strong></p><p>​指场效应晶体管，有接合型FET和MOS型，GaAs型</p><p>​接合型多用于音频设备的模拟电路</p><p>​MOS型主要用于微控制器等数字IC</p><p>​GaAs用于卫星广播信号接收等的微波增幅</p><h3 id="按功率分类"><a href="#按功率分类" class="headerlink" title="按功率分类"></a>按功率分类</h3><p>​以最大额定值的集电极功率Pc进行区分</p><p>![image-20240611213714517](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611213714517.png)</p><p><strong>小信号晶体管</strong></p><p>​最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p><p><strong>功率晶体管</strong></p><p>​Pc&gt;1W，</p><h3 id="按集成度分类"><a href="#按集成度分类" class="headerlink" title="按集成度分类"></a>按集成度分类</h3><p>![image-20240611214034489](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611214034489.png)</p><h3 id="按形状分类"><a href="#按形状分类" class="headerlink" title="按形状分类"></a>按形状分类</h3><p>![image-20240611214203911](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611214203911.png)</p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>04.数字晶体管的原理</title>
+      <link href="/2024/06/11/04.shu-zi-jing-ti-guan-de-yuan-li/"/>
+      <url>/2024/06/11/04.shu-zi-jing-ti-guan-de-yuan-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="04-数字晶体管的原理"><a href="#04-数字晶体管的原理" class="headerlink" title="04.数字晶体管的原理"></a>04.数字晶体管的原理</h2>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+            <tag> 数字晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>01绪论</title>
       <link href="/2024/06/07/1.xu-lun/"/>
       <url>/2024/06/07/1.xu-lun/</url>
