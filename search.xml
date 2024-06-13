@@ -4,19 +4,19 @@
   
     
     <entry>
-      <title>02.晶体管截止频率定义和反向漏电流</title>
-      <link href="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/"/>
-      <url>/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
+      <title>【LLC设计】01.谐振腔分类，等效负载和串联谐振</title>
+      <link href="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/"/>
+      <url>/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/</url>
       
-        <content type="html"><![CDATA[<h2 id="02-晶体管截止频率定义和反向漏电流"><a href="#02-晶体管截止频率定义和反向漏电流" class="headerlink" title="02.晶体管截止频率定义和反向漏电流"></a>02.晶体管截止频率定义和反向漏电流</h2><h4 id="关于晶体管ON时的逆向电流（E—-C）"><a href="#关于晶体管ON时的逆向电流（E—-C）" class="headerlink" title="关于晶体管ON时的逆向电流（E—&gt;C）"></a>关于晶体管ON时的逆向电流（E—&gt;C）</h4><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" class title="image-20240611212018881"><p>​基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p><p><strong>逆向晶体管的特点：</strong></p><ul><li>放大倍数低h（正向10%一下）</li><li>耐压低（7..8V与Vebo的导通电压一样低）</li><li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li></ul><h4 id="关于封装攻略容许功耗"><a href="#关于封装攻略容许功耗" class="headerlink" title="关于封装攻略容许功耗"></a>关于封装攻略容许功耗</h4><p><strong>定义：</strong> 由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj&#x3D;150℃）时的功率</p><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" class title="image-20240611212524409"><h4 id="晶体管的速度"><a href="#晶体管的速度" class="headerlink" title="晶体管的速度"></a>晶体管的速度</h4><p><strong>fT：增益带宽积、截止频率、开关速度</strong></p><p>​<strong>增益带宽积</strong> 指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p><p>提高基极输入频率，则hfe放大倍数变低</p><p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p><p>但是实际使用时能够动作的只有fT的1&#x2F;5to1&#x2F;10</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="【LLC设计】01-谐振腔分类，等效负载和串联谐振"><a href="#【LLC设计】01-谐振腔分类，等效负载和串联谐振" class="headerlink" title="【LLC设计】01.谐振腔分类，等效负载和串联谐振"></a>【LLC设计】01.谐振腔分类，等效负载和串联谐振</h2><h4 id="1-谐振腔分类"><a href="#1-谐振腔分类" class="headerlink" title="1.谐振腔分类"></a>1.谐振腔分类</h4><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100012343.png" class title="image-20240613100012343"><p>​串联并联（不是那种L与C并到一块的）LCCLLC</p><h4 id="2-等效负载计算"><a href="#2-等效负载计算" class="headerlink" title="2.等效负载计算"></a>2.等效负载计算</h4><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100817623.png" class title="image-20240613100817623"><p>​副边，谐振腔等效为电流源，电流波形为Ip正弦，整流桥的电压波形为Eo，电流经过全波整流之后变成馒头波Ip，滤波之后的平均值为Io<br>$$<br>i_{0}&#x3D;\frac{2}{\pi}i_{p}&#x3D;\frac{2\sqrt{2}}{\pi}i_{\mathrm{ac}}(rms)<br>$$<br>把这个倒过来就可以得到 Iac（rms）<br>$$<br>I_{ac}(rms)\quad&#x3D;\quad\frac{\pi}{2\sqrt{2}}\quad<br>$$<br>​Eo为方波信号的最大值，那么对于峰值电压Eac_p。对于一个方波电压，其等效正弦波的峰值电压是方波最大值Eo 的倍数。这倍数由傅里叶级数的第一项决定，即方波的基波成分。基波成分的峰值是方波峰值的4&#x2F;π倍<br>$$<br>E_{ac_p}&#x3D;\frac4\pi E_o<br>$$<br>等效正弦波的有效值是其峰值的1&#x2F;根号2 倍：<br>$$<br>E_{ac}(rms)\quad&#x3D;\quad\frac{2\sqrt{2}}\pi E_o<br>$$<br>等效电阻Rac<br>$$<br>R_{ac}&#x3D;\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad&#x3D;\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}&#x3D;\frac{8}{\pi^{2}}R_{L}<br>$$<br><strong>在并联的情况下，比如电容并到变压器的两段，LCC。视为电压驱动，</strong></p><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613103623395.png" class title="image-20240613103623395"><h4 id="3-串联谐振"><a href="#3-串联谐振" class="headerlink" title="3.串联谐振"></a>3.串联谐振</h4><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613143610199.png" class title="image-20240613143610199"><ul><li>在串联谐振里， DCgain&#x3D;ACgain，在谐振点处为1</li><li>在谐振点的时候，输入进来就输出出去了</li></ul>]]></content>
       
       
       
         <tags>
             
-            <tag> 文天祥 </tag>
+            <tag> 硬核博士老J </tag>
             
-            <tag> 晶体管 </tag>
+            <tag> LLC </tag>
             
         </tags>
       
@@ -25,11 +25,11 @@
     
     
     <entry>
-      <title>03.晶体管分类概述</title>
-      <link href="/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/"/>
-      <url>/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/</url>
+      <title>02.晶体管截止频率定义和反向漏电流</title>
+      <link href="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/"/>
+      <url>/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
       
-        <content type="html"><![CDATA[<h2 id="03-晶体管分类概述"><a href="#03-晶体管分类概述" class="headerlink" title="03.晶体管分类概述"></a>03.晶体管分类概述</h2><h4 id="晶体管的代表形状-TO-SMT"><a href="#晶体管的代表形状-TO-SMT" class="headerlink" title="晶体管的代表形状 TO&#x2F;SMT"></a>晶体管的代表形状 TO&#x2F;SMT</h4><p>![image-20240611213213155](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611213213155.png)</p><h4 id="根据工作原理，分为双极晶体管和单极晶体管"><a href="#根据工作原理，分为双极晶体管和单极晶体管" class="headerlink" title="根据工作原理，分为双极晶体管和单极晶体管"></a>根据工作原理，分为双极晶体管和单极晶体管</h4><p>![image-20240611213250901](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611213250901.png)</p><p><strong>双极晶体管</strong></p><p>​即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p><p><strong>FET</strong></p><p>​指场效应晶体管，有接合型FET和MOS型，GaAs型</p><p>​接合型多用于音频设备的模拟电路</p><p>​MOS型主要用于微控制器等数字IC</p><p>​GaAs用于卫星广播信号接收等的微波增幅</p><h3 id="按功率分类"><a href="#按功率分类" class="headerlink" title="按功率分类"></a>按功率分类</h3><p>​以最大额定值的集电极功率Pc进行区分</p><p>![image-20240611213714517](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611213714517.png)</p><p><strong>小信号晶体管</strong></p><p>​最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p><p><strong>功率晶体管</strong></p><p>​Pc&gt;1W，</p><h3 id="按集成度分类"><a href="#按集成度分类" class="headerlink" title="按集成度分类"></a>按集成度分类</h3><p>![image-20240611214034489](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611214034489.png)</p><h3 id="按形状分类"><a href="#按形状分类" class="headerlink" title="按形状分类"></a>按形状分类</h3><p>![image-20240611214203911](D:\My Blog\source_posts\03.晶体管分类概述\image-20240611214203911.png)</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="02-晶体管截止频率定义和反向漏电流"><a href="#02-晶体管截止频率定义和反向漏电流" class="headerlink" title="02.晶体管截止频率定义和反向漏电流"></a>02.晶体管截止频率定义和反向漏电流</h2><h4 id="关于晶体管ON时的逆向电流（E—-C）"><a href="#关于晶体管ON时的逆向电流（E—-C）" class="headerlink" title="关于晶体管ON时的逆向电流（E—&gt;C）"></a>关于晶体管ON时的逆向电流（E—&gt;C）</h4><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" class title="image-20240611212018881"><p>​基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p><p><strong>逆向晶体管的特点：</strong></p><ul><li>放大倍数低h（正向10%一下）</li><li>耐压低（7..8V与Vebo的导通电压一样低）</li><li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li></ul><h4 id="关于封装攻略容许功耗"><a href="#关于封装攻略容许功耗" class="headerlink" title="关于封装攻略容许功耗"></a>关于封装攻略容许功耗</h4><p><strong>定义：</strong> 由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj&#x3D;150℃）时的功率</p><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" class title="image-20240611212524409"><h4 id="晶体管的速度"><a href="#晶体管的速度" class="headerlink" title="晶体管的速度"></a>晶体管的速度</h4><p><strong>fT：增益带宽积、截止频率、开关速度</strong></p><p>​<strong>增益带宽积</strong> 指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p><p>提高基极输入频率，则hfe放大倍数变低</p><p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p><p>但是实际使用时能够动作的只有fT的1&#x2F;5to1&#x2F;10</p>]]></content>
       
       
       
@@ -61,6 +61,27 @@
             <tag> 晶体管 </tag>
             
             <tag> 数字晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>03.晶体管分类概述</title>
+      <link href="/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/"/>
+      <url>/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="03-晶体管分类概述"><a href="#03-晶体管分类概述" class="headerlink" title="03.晶体管分类概述"></a>03.晶体管分类概述</h2><h4 id="晶体管的代表形状-TO-SMT"><a href="#晶体管的代表形状-TO-SMT" class="headerlink" title="晶体管的代表形状 TO&#x2F;SMT"></a>晶体管的代表形状 TO&#x2F;SMT</h4><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920664.png" alt="image-20240611213213155"></p><h4 id="根据工作原理，分为双极晶体管和单极晶体管"><a href="#根据工作原理，分为双极晶体管和单极晶体管" class="headerlink" title="根据工作原理，分为双极晶体管和单极晶体管"></a>根据工作原理，分为双极晶体管和单极晶体管</h4><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920665.png" alt="image-20240611213250901"></p><p><strong>双极晶体管</strong></p><p>​即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p><p><strong>FET</strong></p><p>​指场效应晶体管，有接合型FET和MOS型，GaAs型</p><p>​接合型多用于音频设备的模拟电路</p><p>​MOS型主要用于微控制器等数字IC</p><p>​GaAs用于卫星广播信号接收等的微波增幅</p><h3 id="按功率分类"><a href="#按功率分类" class="headerlink" title="按功率分类"></a>按功率分类</h3><p>​以最大额定值的集电极功率Pc进行区分</p><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920666.png" alt="image-20240611213714517"></p><p><strong>小信号晶体管</strong></p><p>​最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p><p><strong>功率晶体管</strong></p><p>​Pc&gt;1W，</p><h3 id="按集成度分类"><a href="#按集成度分类" class="headerlink" title="按集成度分类"></a>按集成度分类</h3><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920667.png" alt="image-20240611214034489"></p><h3 id="按形状分类"><a href="#按形状分类" class="headerlink" title="按形状分类"></a>按形状分类</h3><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920668.png" alt="image-20240611214203911"></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
             
         </tags>
       
