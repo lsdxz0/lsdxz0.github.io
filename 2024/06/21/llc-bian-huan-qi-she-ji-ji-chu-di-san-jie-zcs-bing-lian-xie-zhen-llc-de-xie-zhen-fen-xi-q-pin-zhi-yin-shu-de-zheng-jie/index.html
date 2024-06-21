@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="【LLC设计】01.谐振腔分类，等效负载和串联谐振, LSDXZ">
+    <meta name="keywords" content="【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>【LLC设计】01.谐振腔分类，等效负载和串联谐振 | LSDXZ</title>
+    <title>【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解 | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/20.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/13.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">【LLC设计】01.谐振腔分类，等效负载和串联谐振</h1>
+                    <h1 class="description center-align post-title">【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解</h1>
                 </div>
             </div>
         </div>
@@ -435,14 +435,27 @@
                                 <span class="chip bg-color">硬核博士老J</span>
                             </a>
                         
-                            <a href="/tags/LLC/">
-                                <span class="chip bg-color">LLC</span>
+                            <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">LLC基础</span>
+                            </a>
+                        
+                            <a href="/tags/ZCS/">
+                                <span class="chip bg-color">ZCS</span>
                             </a>
                         
                     </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%80%81J%E7%9A%84LLC%E5%9F%BA%E7%A1%80/" class="post-category">
+                                老J的LLC基础
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -451,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-13
+                    2024-06-21
                 </div>
                 
 
@@ -472,26 +485,19 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="【LLC设计】01-谐振腔分类，等效负载和串联谐振"><a href="#【LLC设计】01-谐振腔分类，等效负载和串联谐振" class="headerlink" title="【LLC设计】01.谐振腔分类，等效负载和串联谐振"></a>【LLC设计】01.谐振腔分类，等效负载和串联谐振</h2><h4 id="1-谐振腔分类"><a href="#1-谐振腔分类" class="headerlink" title="1.谐振腔分类"></a>1.谐振腔分类</h4><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100012343.png" class title="image-20240613100012343">
-<p>​    串联                并联（不是那种L与C并到一块的）        LCC                LLC</p>
-<h4 id="2-等效负载计算"><a href="#2-等效负载计算" class="headerlink" title="2.等效负载计算"></a>2.等效负载计算</h4><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100817623.png" class title="image-20240613100817623">
-<p>​    副边，谐振腔等效为电流源，电流波形为Ip正弦，整流桥的电压波形为Eo，电流经过全波整流之后变成馒头波Ip，滤波之后的平均值为Io</p>
-<script type="math/tex; mode=display">
-i_{0}=\frac{2}{\pi}i_{p}=\frac{2\sqrt{2}}{\pi}i_{\mathrm{ac}}(rms)</script><p>把这个倒过来就可以得到 Iac（rms）</p>
-<script type="math/tex; mode=display">
-I_{ac}(rms)\quad=\quad\frac{\pi}{2\sqrt{2}}\quad</script><p>​    Eo为方波信号的最大值，那么对于峰值电压Eac_p。对于一个方波电压，其等效正弦波的峰值电压是方波最大值Eo 的倍数。这倍数由傅里叶级数的第一项决定，即方波的基波成分。基波成分的峰值是方波峰值的4/π倍</p>
-<script type="math/tex; mode=display">
-E_{ac_p}=\frac4\pi E_o</script><p>等效正弦波的有效值是其峰值的1/根号2 倍：</p>
-<script type="math/tex; mode=display">
-E_{ac}(rms)\quad=\quad\frac{2\sqrt{2}}\pi E_o</script><p>等效电阻Rac</p>
-<script type="math/tex; mode=display">
-R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}=\frac{8}{\pi^{2}}R_{L}</script><p><strong>在并联的情况下，比如电容并到变压器的两段，LCC。视为电压驱动，</strong></p>
-<img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613103623395.png" class title="image-20240613103623395">
-<h4 id="3-串联谐振"><a href="#3-串联谐振" class="headerlink" title="3.串联谐振"></a>3.串联谐振</h4><img src="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613143610199.png" class title="image-20240613143610199">
-<ul>
-<li>在串联谐振里， DCgain=ACgain，在谐振点处为1</li>
-<li>在谐振点的时候，输入进来就输出出去了</li>
-</ul>
+                <h1 id="llc变换器设计基础第三节-zcs并联谐振llc的谐振分析q品质因数的正解">【LLC变换器设计基础】第三节
+ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1>
+<h4 id="zcs的理解">1.ZCS的理解</h4>
+<p>​
+对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现象，所以有较大的关断损耗</p>
+<img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215559332.png" class title="image-20240621215559332">
+<p>​
+电容模式，电流超前电压，再这个位置<img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215644838.png" class title="image-20240621215644838">之前，都是Q1在导通，然后电流反向了，Q1关断，实现ZCSOFF。这时候下面的IGBT还没导通，但是电流反向了呀，所以只能通过D1（上管的反向二极管)，直到下管导通的时候，电流走下管了，那么把下管关断，就会从下管的D2续流，实现ZCSOFF</p>
+<p><strong>开通挑战</strong>：容性模式下实现零电流开通较为困难，因为电流超前电压，开关器件开通时电流可能不为零，导致开通损耗增加</p>
+<p>这里出现出入，实现ZCS应该也是在感性状态下的</p>
+<h4 id="并联谐振">2. 并联谐振</h4>
+<img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621220449704.png" class title="image-20240621220449704">
+<p>​ <strong>是说跟这个负载的并联，不是L跟C并联</strong></p>
 
                 
             </div>
@@ -518,7 +524,7 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lsdxz0.github.io/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/">https://lsdxz0.github.io/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/</a>
+                    <a href="https://lsdxz0.github.io/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/">https://lsdxz0.github.io/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -560,8 +566,12 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
                                     <span class="chip bg-color">硬核博士老J</span>
                                 </a>
                             
-                                <a href="/tags/LLC/">
-                                    <span class="chip bg-color">LLC</span>
+                                <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">LLC基础</span>
+                                </a>
+                            
+                                <a href="/tags/ZCS/">
+                                    <span class="chip bg-color">ZCS</span>
                                 </a>
                             
                         </div>
@@ -731,68 +741,17 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
-            <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
-            <div class="card">
-                <a href="/2024/06/13/llc-she-ji-01.xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="【LLC设计】01.谐振腔分类，等效负载和串联谐振">
-                        
-                        <span class="card-title">【LLC设计】01.谐振腔分类，等效负载和串联谐振</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-13
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-user fa-fw"></i>
-                            LS
-                            
-                        </span>
-                    </div>
-                </div>
-
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E7%A1%AC%E6%A0%B8%E5%8D%9A%E5%A3%AB%E8%80%81J/">
-                        <span class="chip bg-color">硬核博士老J</span>
-                    </a>
-                    
-                    <a href="/tags/LLC/">
-                        <span class="chip bg-color">LLC</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
         <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
+            <div class="article-badge left-badge text-color">
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/">
+                <a href="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="01.晶体管的由来及内置电阻晶体管">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="04.数字晶体管的原理">
                         
-                        <span class="card-title">01.晶体管的由来及内置电阻晶体管</span>
+                        <span class="card-title">04.数字晶体管的原理</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -802,9 +761,9 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-11
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-21
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -826,6 +785,63 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
                     
                     <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
                         <span class="chip bg-color">晶体管</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%95%B0%E5%AD%97%E6%99%B6%E4%BD%93%E7%AE%A1/">
+                        <span class="chip bg-color">数字晶体管</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="【LLC变换器设计基础】第二节 谐振变换器ZVS原理">
+                        
+                        <span class="card-title">【LLC变换器设计基础】第二节 谐振变换器ZVS原理</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E8%80%81J%E7%9A%84LLC%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    老J的LLC基础
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E7%A1%AC%E6%A0%B8%E5%8D%9A%E5%A3%AB%E8%80%81J/">
+                        <span class="chip bg-color">硬核博士老J</span>
+                    </a>
+                    
+                    <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">LLC基础</span>
                     </a>
                     
                 </div>

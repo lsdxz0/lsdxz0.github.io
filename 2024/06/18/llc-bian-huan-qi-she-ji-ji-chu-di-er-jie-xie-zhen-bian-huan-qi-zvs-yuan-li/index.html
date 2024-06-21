@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="02.晶体管截止频率定义和反向漏电流, LSDXZ">
+    <meta name="keywords" content="【LLC变换器设计基础】第二节 谐振变换器ZVS原理, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>02.晶体管截止频率定义和反向漏电流 | LSDXZ</title>
+    <title>【LLC变换器设计基础】第二节 谐振变换器ZVS原理 | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/18.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">02.晶体管截止频率定义和反向漏电流</h1>
+                    <h1 class="description center-align post-title">【LLC变换器设计基础】第二节 谐振变换器ZVS原理</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
-                                <span class="chip bg-color">文天祥</span>
+                            <a href="/tags/%E7%A1%AC%E6%A0%B8%E5%8D%9A%E5%A3%AB%E8%80%81J/">
+                                <span class="chip bg-color">硬核博士老J</span>
                             </a>
                         
-                            <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                                <span class="chip bg-color">晶体管</span>
+                            <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                                <span class="chip bg-color">LLC基础</span>
                             </a>
                         
                     </div>
@@ -447,8 +447,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%96%87%E5%A4%A9%E7%A5%A5%E4%BA%94%E5%88%86%E9%92%9F%E8%AF%BE%E5%A0%82/" class="post-category">
-                                文天祥五分钟课堂
+                            <a href="/categories/%E8%80%81J%E7%9A%84LLC%E5%9F%BA%E7%A1%80/" class="post-category">
+                                老J的LLC基础
                             </a>
                         
                     </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-11
+                    2024-06-18
                 </div>
                 
 
@@ -481,28 +481,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="晶体管截止频率定义和反向漏电流">02.晶体管截止频率定义和反向漏电流</h2>
-<h4 id="关于晶体管on时的逆向电流e---c">关于晶体管ON时的逆向电流（E---&gt;C）</h4>
-<img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" class title="image-20240611212018881">
+                <h1 id="llc变换器设计基础第二节-谐振变换器zvs原理">【LLC变换器设计基础】第二节
+谐振变换器ZVS原理</h1>
+<h3 id="电感电容模式">1. 电感电容模式</h3>
+<p>​ 搞谐振电路的目的就是为了实现 ZVS ZCS</p>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204118539.png" class title="image-20240618204118539">
+<p>​ 负载越重，gain越陡，越窄，Re越小，Q越大，越窄</p>
 <p>​
-基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p>
-<p><strong>逆向晶体管的特点：</strong></p>
+找谐振峰值，小于谐振峰值的时候，电容占据主导地位，呈容性，当大于谐振峰值的时候，电感占据主导地位，呈感性。</p>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204414646.png" class title="image-20240618204414646">
+<p><strong>谐振峰值</strong></p>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204642891.png" class title="image-20240618204642891">
+<p>​ 所以在这个DCgain里面，fo左侧为电容模式，右侧为电感模式</p>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204520521.png" class title="image-20240618204520521">
+<p><strong>1. 容性</strong></p>
+<p>​
+此时，如果输入电压是个正弦的话，电流应该超前于电压，实现ZCS，这里纯容性的话，会超前90°，所以这里最大为90°</p>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205000111.png" class title="image-20240618205000111">
+<p><strong>2. 感性</strong></p>
+<p>​ 电流滞后于电压，纯感性的话，电压比电流超前90°，</p>
+<p>​ <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205113313.png" class title="image-20240618205113313"></p>
+<h3 id="zvs原理这里默认占空比50只调频">2.ZVS原理（这里默认占空比50，只调频）</h3>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621211918013.png" class title="image-20240621211918013">
+<p>​ 电容隔离作用，设工作在感性状态下，绿色的iL，滞后于电压，</p>
+<p>​ 应该是先把Q2关断，再打开Q1，来控制死区</p>
+<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621213135314.png" class title="image-20240621213135314">
+<p>​
+电感放电，电流方向如那个绿色的颜色很重的那个~经过不了Q2，但是Q1因为有电容的存在，电流也过不去，Q1两端的电压如Vds所示，当他降到0的时候，电容g了，如果还有电流存在，就通过Q1的二极管，所以最后会出现一个零点几的反向电压，然后Q1接受到PWM的导通信号，Q1导通</p>
+<p>tip：</p>
 <ul>
-<li>放大倍数低h（正向10%一下）</li>
-<li>耐压低（7..8V与Vebo的导通电压一样低）</li>
-<li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li>
+<li>要有负电流，（相对于导通的方向）</li>
+<li>适当的死区</li>
 </ul>
-<h4 id="关于封装攻略容许功耗">关于封装攻略容许功耗</h4>
-<p><strong>定义：</strong>
-由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj=150℃）时的功率</p>
-<img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" class title="image-20240611212524409">
-<h4 id="晶体管的速度">晶体管的速度</h4>
-<p><strong>fT：增益带宽积、截止频率、开关速度</strong></p>
-<p>​ <strong>增益带宽积</strong>
-指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p>
-<p>提高基极输入频率，则hfe放大倍数变低</p>
-<p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p>
-<p>但是实际使用时能够动作的只有fT的1/5to1/10</p>
+<p>如何去实现负电流：</p>
+<p>​
+使整个谐振腔呈现感性，电流才滞后于电压，电压上升的时候，电流还是负的，利用这个电流来充放电结电容，实现对当前开通管子的ZVS</p>
 
                 
             </div>
@@ -529,7 +542,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lsdxz0.github.io/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/">https://lsdxz0.github.io/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</a>
+                    <a href="https://lsdxz0.github.io/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/">https://lsdxz0.github.io/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -567,12 +580,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
-                                    <span class="chip bg-color">文天祥</span>
+                                <a href="/tags/%E7%A1%AC%E6%A0%B8%E5%8D%9A%E5%A3%AB%E8%80%81J/">
+                                    <span class="chip bg-color">硬核博士老J</span>
                                 </a>
                             
-                                <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                                    <span class="chip bg-color">晶体管</span>
+                                <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                                    <span class="chip bg-color">LLC基础</span>
                                 </a>
                             
                         </div>
@@ -746,13 +759,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/">
+                <a href="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="【LLC变换器设计基础】第一节 谐振腔分类 等效负载和串联谐振">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解">
                         
-                        <span class="card-title">【LLC变换器设计基础】第一节 谐振腔分类 等效负载和串联谐振</span>
+                        <span class="card-title">【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -763,7 +776,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-13
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-21
                         </span>
                         <span class="publish-author">
                             
@@ -788,6 +801,10 @@
                         <span class="chip bg-color">LLC基础</span>
                     </a>
                     
+                    <a href="/tags/ZCS/">
+                        <span class="chip bg-color">ZCS</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -799,13 +816,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/">
+                <a href="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="01.晶体管的由来及内置电阻晶体管">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="【LLC变换器设计基础】第一节 谐振腔分类 等效负载和串联谐振">
                         
-                        <span class="card-title">01.晶体管的由来及内置电阻晶体管</span>
+                        <span class="card-title">【LLC变换器设计基础】第一节 谐振腔分类 等效负载和串联谐振</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -816,14 +833,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-13
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E5%A4%A9%E7%A5%A5%E4%BA%94%E5%88%86%E9%92%9F%E8%AF%BE%E5%A0%82/" class="post-category">
-                                    文天祥五分钟课堂
+                            <a href="/categories/%E8%80%81J%E7%9A%84LLC%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    老J的LLC基础
                                 </a>
                             
                             
@@ -833,12 +850,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
-                        <span class="chip bg-color">文天祥</span>
+                    <a href="/tags/%E7%A1%AC%E6%A0%B8%E5%8D%9A%E5%A3%AB%E8%80%81J/">
+                        <span class="chip bg-color">硬核博士老J</span>
                     </a>
                     
-                    <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                        <span class="chip bg-color">晶体管</span>
+                    <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">LLC基础</span>
                     </a>
                     
                 </div>
@@ -969,6 +986,13 @@
 
 </main>
 
+
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
 
 
 
