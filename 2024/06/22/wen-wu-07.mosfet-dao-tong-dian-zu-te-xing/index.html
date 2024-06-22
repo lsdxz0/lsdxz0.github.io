@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="01.晶体管的由来及内置电阻晶体管, LSDXZ">
+    <meta name="keywords" content="07. MOSFET导通电阻特性, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>01.晶体管的由来及内置电阻晶体管 | LSDXZ</title>
+    <title>07. MOSFET导通电阻特性 | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/23.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">01.晶体管的由来及内置电阻晶体管</h1>
+                    <h1 class="description center-align post-title">07. MOSFET导通电阻特性</h1>
                 </div>
             </div>
         </div>
@@ -439,6 +439,10 @@
                                 <span class="chip bg-color">晶体管</span>
                             </a>
                         
+                            <a href="/tags/MOSFET/">
+                                <span class="chip bg-color">MOSFET</span>
+                            </a>
+                        
                     </div>
                     
                 </div>
@@ -460,7 +464,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-06-11
+                    2024-06-22
                 </div>
                 
 
@@ -481,29 +485,30 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="晶体管的由来及内置电阻晶体管">01
-晶体管的由来及内置电阻晶体管</h2>
-<h4 id="材料">材料</h4>
-<p>​ 从锗（80℃左右发生损害）到硅（180℃）</p>
-<h4 id="作用">作用</h4>
-<p>​ <strong>增幅</strong>和<strong>开关</strong></p>
+                <h2 id="mosfet导通电阻特性">0.7 MOSFET导通电阻特性</h2>
+<h4 id="啥是导通电阻">啥是导通电阻</h4>
+<p>​ MOS管工作时，漏极跟源极之间的阻值称为导通电阻（RDS(ON))</p>
+<p>​ 数值<strong>越小</strong>，工作时损耗（功率损耗）越小。</p>
+<p><strong>关于导通电阻的电气特性</strong></p>
 <p>​
-增幅：不改变输入信号的波形，只<strong>放大</strong>电压或电流，指模拟信号</p>
-<p>​ 开关：在数字信号中，晶体管起着切换0和1的开关作用</p>
-<h4 id="集电阻和晶体管于一体">集电阻和晶体管于一体</h4>
-<p>​ 数字晶体管即内置了电阻的晶体管</p>
-<img src="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611204750395.png" class title="image-20240611204750395">
-<p><strong>优点：</strong></p>
+晶体管的消耗功率用集电极饱和电压（Vce（sat））乘以集电极电流（Ic）表示</p>
+<p>​ （集电极损耗Pc）=（集电极饱和电压Vce（sat））* （集电极电流Ic）</p>
+<p>​ MOSFET的消耗功率是用导通电阻（Rds（on））计算的</p>
+<p>​ （功率PD） = （导通电阻Rds（on）） * （漏极电流Id）平方</p>
+<p>此功率将热量散发出去，MOS管的导通电阻一般在Ω级以下，与一般的晶体管相比，消耗功率小，即发热小，散热策略简单</p>
+<figure>
+<img src="/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/image-20240622225318983.png" alt="image-20240622225318983">
+<figcaption aria-hidden="true">image-20240622225318983</figcaption>
+</figure>
 <ul>
-<li>安装面积减少</li>
-<li>安装时间减少</li>
-<li>部件数量减少</li>
+<li>栅极源极之间的电压Vgs越高，导通电阻越小</li>
+<li>栅极源极间电压相同的条件下，导通电阻因电流不同而不同</li>
+<li>计算功率损耗时，需要考虑栅极源极间电压和漏极电流，选择合适的导通电阻</li>
+<li>导通电阻因温度变化而变化，是个正温度系数，但是有个潜在的好处--&gt;多个mos管的并联时实现自动均流，</li>
 </ul>
-<h4 id="基极是自来的阀门发射极是配管集电极是水龙头">基极是自来的阀门，发射极是配管，集电极是水龙头</h4>
-<p>​
-通过微小之力（基极的输入信号）来控制自来水的阀门，从而调节水龙头喷出巨大的水流（集电极电流）</p>
-<img src="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611205055893.png" class title="image-20240611205055893">
-<p>​ <strong>放大+电流型器件</strong></p>
+<p><strong>导通电阻比较</strong></p>
+<p>​ 一般MOS的芯片尺寸（表面面积）越大，导通电阻越小。</p>
+<p>​ 选择更大尺寸的封装，导通电阻会更小</p>
 
                 
             </div>
@@ -530,7 +535,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lsdxz0.github.io/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/">https://lsdxz0.github.io/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/</a>
+                    <a href="https://lsdxz0.github.io/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/">https://lsdxz0.github.io/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -574,6 +579,10 @@
                             
                                 <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
                                     <span class="chip bg-color">晶体管</span>
+                                </a>
+                            
+                                <a href="/tags/MOSFET/">
+                                    <span class="chip bg-color">MOSFET</span>
                                 </a>
                             
                         </div>
@@ -747,13 +756,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/">
+                <a href="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="02.晶体管截止频率定义和反向漏电流">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="06. MOSFET特性简单版，强调温度特性">
                         
-                        <span class="card-title">02.晶体管截止频率定义和反向漏电流</span>
+                        <span class="card-title">06. MOSFET特性简单版，强调温度特性</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -764,7 +773,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-22
                         </span>
                         <span class="publish-author">
                             
@@ -787,6 +796,10 @@
                     
                     <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
                         <span class="chip bg-color">晶体管</span>
+                    </a>
+                    
+                    <a href="/tags/MOSFET/">
+                        <span class="chip bg-color">MOSFET</span>
                     </a>
                     
                 </div>
@@ -800,13 +813,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/">
+                <a href="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="03.晶体管分类概述">
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解">
                         
-                        <span class="card-title">03.晶体管分类概述</span>
+                        <span class="card-title">【LLC变换器设计基础】第三节 ZCS并联谐振LLC的谐振分析Q品质因数的正解</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -817,14 +830,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-11
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-21
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%96%87%E5%A4%A9%E7%A5%A5%E4%BA%94%E5%88%86%E9%92%9F%E8%AF%BE%E5%A0%82/" class="post-category">
-                                    文天祥五分钟课堂
+                            <a href="/categories/%E8%80%81J%E7%9A%84LLC%E5%9F%BA%E7%A1%80/" class="post-category">
+                                    老J的LLC基础
                                 </a>
                             
                             
@@ -834,12 +847,16 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
-                        <span class="chip bg-color">文天祥</span>
+                    <a href="/tags/%E7%A1%AC%E6%A0%B8%E5%8D%9A%E5%A3%AB%E8%80%81J/">
+                        <span class="chip bg-color">硬核博士老J</span>
                     </a>
                     
-                    <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                        <span class="chip bg-color">晶体管</span>
+                    <a href="/tags/LLC%E5%9F%BA%E7%A1%80/">
+                        <span class="chip bg-color">LLC基础</span>
+                    </a>
+                    
+                    <a href="/tags/ZCS/">
+                        <span class="chip bg-color">ZCS</span>
                     </a>
                     
                 </div>

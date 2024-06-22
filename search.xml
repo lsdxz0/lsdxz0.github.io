@@ -4,11 +4,11 @@
   
     
     <entry>
-      <title>04.数字晶体管的原理</title>
-      <link href="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/"/>
-      <url>/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/</url>
+      <title>06. MOSFET特性简单版，强调温度特性</title>
+      <link href="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/"/>
+      <url>/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/</url>
       
-        <content type="html"><![CDATA[<h2 id="数字晶体管的原理">04+05.数字晶体管的原理</h2><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621222247268.png" class title="image-20240621222247268"><p>这就是数字晶体管，里面加了俩内置电阻，（TR指的是晶体管，中间是集电极B，下面是发射极E，上面是集电极C）</p><ul><li><p>饱和条件</p><ul><li><p>要使晶体管达到饱和状态，集电极电流 IC与基极电流 IB的比率设为20:1。这意味着：</p></li><li><p><span class="math display">\[\frac{I_C}{I_B}=20\]</span></p></li></ul></li><li><p>输入电阻</p><ul><li><p>R1 是基极电阻，允许有 ±30% 的容差（30%E-B间的电阻）</p></li><li><p>R2 是电阻分压器的一部分， <span class="math display">\[{R}_2/{R}_1=\pm20\%\]</span></p></li></ul></li><li><p>VBE=0.55-0.75V</p></li></ul><p><strong>数字晶体管直流电流增益率关系式</strong> <span class="math display">\[G_1=\frac{\mathrm{Ic}}{(\mathrm{Ic/h_{FE}})+(\mathrm{V_{BE}/R_2})}\]</span></p><p><span class="math display">\[\begin{aligned}&amp;\mathrm{G_{1}=I_{0}/lin}\\&amp;\mathrm{h_{FE}=I_{C}/I_{B}}\\&amp;\mathrm{I_{O}=I_{C},~lin=I_{B}+I_{R2},~I_{B}=I_{C}/h_{FE}~,~I_{R2}=V_{BE}/R_{2}}\end{aligned}\]</span></p><p>电压关系式： <span class="math display">\[\mathrm{V_{IN}=V_{R1}+V_{BE}}\]</span> <strong>集电极电流关系式</strong> <span class="math display">\[I_{C}=h_{FE}\times((Vin-V_{BE})/R_{1})-(V_{BE}/R_{2}))\cdot\cdot\cdot\odot1\]</span></p><p><span class="math display">\[\mathrm{I_{C}=20\times((Vin-V_{BE})/R_{1})-(V_{BE}/R_{2}))\cdot\cdot\cdot2}\]</span></p><p>​由上面的比率为20，将第一个式子的hFE换为20/1，得到2.再考虑上偏差，最后根据下面的式子<strong>选择数字晶体管的电阻R1，R2</strong>，使数字晶体管的Ic比使用设备上的最大输出电流Iomax大<span class="math display">\[\mathrm{lomax\leq20((Vin-0.75)/(1.3\times R_1)-0.75/(1.04\times R_2))}\]</span></p><h4 id="io跟ic的区别">Io跟Ic的区别</h4><ul><li>Ic： 能够通过晶体管的电流的最大理论值</li><li>Io： 能够作为数字晶体管使用的电流最大值</li></ul><h4 id="gi跟hfe的区别">GI跟hFE的区别</h4><ul><li>hFE： 作为晶体管的直流电流增幅率</li><li>GI： 作为数字晶体管的直流电流增幅率</li></ul><p>​ 都表示发射极接地<strong>直流电流放大率</strong>，数字晶体管有两个电阻器，但是一般的只有一个R1，根据R1的类型，放大率表示为hFE，在E-B之间附加电阻R2，输入电流则分为流过个别晶体管的电流，和流过E-B间电阻R2的电流，因此放大率比单体下降，称为GI</p><h4 id="vion与vioff的区别">Vi（on）与Vi（off）的区别</h4><ul><li>Vi（on）: 数字晶体管为保持ON状态的最低电压，定义Vi（on）为min</li></ul><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621224933812.png" class title="image-20240621224933812"><h4 id="关于数字晶体管的温度特性">关于数字晶体管的温度特性</h4><p>根据环境温度，VBF, hFE， R1，R2，都会变化，</p><p>hFE的温度变化率为0.5%℃</p><p>VBE的温度系数约为 -2mv/℃（-1.8 to -2.4mv/℃的范围有偏差）</p><h4 id="关于输出电压-输出电流特性的低小电流区域输出特性不好">关于输出电压-输出电流特性的低/小电流区域，输出特性不好</h4><p>低电流区域输出电压(Vo)/Vce(sat)上升（输出的饱和电压上升）</p><p>因此<strong>在低电流区域不能测定Vo</strong></p><h4 id="关于数字晶体管的开关动作">关于数字晶体管的开关动作</h4><ul><li><p><strong>晶体管的动作</strong></p><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621225818880.png" class title="image-20240621225818880"></li></ul><p>​在基极（B）-发射极（E）之间输入正向电压，注入基极电流，也就是B里面注入空穴，那么E的载流子会被吸引至基极B，但是B领域非常薄，因此加入集电极电压，载流子可以穿过B，流向C，电流实现从C到E的移动</p><ul><li>开关动作</li></ul><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230204443.png" class title="image-20240621230204443"><p>晶体管的动作有增幅/放大作用和开关作用</p><p>​ 在放大作用中，通过注入基极电流IB，能够通过增幅hFE倍的集电极Ic</p><p>​ 在放大区域中，通过输入信号持续控制集电极电流，可以得到输出电流</p><p>​在开关作用中，在ON时，电气性饱和状态（降低集电极-发射极间的饱和电压）下使用</p><h4 id="关于数字晶体管的用语">关于数字晶体管的用语</h4><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230518214.png" class title="image-20240621230518214"><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230509704.png" class title="image-20240621230509704"><img src="/2024/06/21/04.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230546375.png" class title="image-20240621230546375">]]></content>
+        <content type="html"><![CDATA[<h2 id="mosfet特性简单版强调温度特性">06.MOSFET特性简单版，强调温度特性</h2><h4 id="mosfet特性">MOSFET特性</h4><p><strong>MOSFET寄生电容模型图</strong></p><figure><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222006942.png" alt="image-20240622222006942"><figcaption aria-hidden="true">image-20240622222006942</figcaption></figure><table><thead><tr class="header"><th>符号</th><th>算式</th><th>含义</th></tr></thead><tbody><tr class="odd"><td>Ciss</td><td>Cgs+Cgd</td><td>输入容量</td></tr><tr class="even"><td>Coss</td><td>Cds（main）+Cgd</td><td>输出容量</td></tr><tr class="odd"><td>Crss</td><td>Cgd</td><td>反馈容量</td></tr></tbody></table><p>Cgd是反馈电容，Crss称为反向传输电容</p><figure><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222338939.png" alt="image-20240622222338939"><figcaption aria-hidden="true">image-20240622222338939</figcaption></figure><p>Ciss在面对Vds的变化时，反应不是很明显，但是Coss跟Crss会有较大影响</p><h4 id="温度特性">温度特性</h4><p>​ 上面这三个玩意，在面对温度发生改变的时候，基本不受影响</p><figure><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222601604.png" alt="image-20240622222601604"><figcaption aria-hidden="true">image-20240622222601604</figcaption></figure><h4 id="关于mosfet的开关及其温度特性">关于MOSFET的开关及其温度特性</h4><p><strong>开关时间</strong></p><p>​栅极电压ON/OFF之后，MOSFET才ON/OFF，这个延迟时间为<strong>开关时间</strong>，一般在规格书上记为下面的</p><figure><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222836701.png" alt="image-20240622222836701"><figcaption aria-hidden="true">image-20240622222836701</figcaption></figure><p>​ （在算一些损耗，阶跃谐振会用到）</p><p><strong>温度特性</strong></p><p>​温度上升的同时开关时间略微增加，但是100℃上升时增加10%成左右，几乎没有开关特性的温度依存性</p><h4 id="关于mosfet的vgsth界限值">关于MOSFET的Vgs（th）（界限值）</h4><p>​ MOS管开启时，GS（栅极，源极）间的电压称为Vgs（th）</p><p>​ 即，输入界限值以上的电压时，MOSFET为开启状态。</p><figure><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622223938184.png" alt="image-20240622223938184"><figcaption aria-hidden="true">image-20240622223938184</figcaption></figure><p>输入Vds=V时，使1mA电流通过Id所需的栅极界限值电压Id（th）为1.0V to2.5V</p><p><strong>Id--Vgs特性和温度特性</strong></p><p>​ 温度越高，所需导通的阈值电压越低，不太行这玩意</p><figure><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622224136003.png" alt="image-20240622224136003"><figcaption aria-hidden="true">image-20240622224136003</figcaption></figure><p>​ 可能会误导通</p>]]></content>
       
       
       <categories>
@@ -24,7 +24,36 @@
             
             <tag> 晶体管 </tag>
             
-            <tag> 数字晶体管 </tag>
+            <tag> MOSFET </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>07. MOSFET导通电阻特性</title>
+      <link href="/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/"/>
+      <url>/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mosfet导通电阻特性">0.7 MOSFET导通电阻特性</h2><h4 id="啥是导通电阻">啥是导通电阻</h4><p>​ MOS管工作时，漏极跟源极之间的阻值称为导通电阻（RDS(ON))</p><p>​ 数值<strong>越小</strong>，工作时损耗（功率损耗）越小。</p><p><strong>关于导通电阻的电气特性</strong></p><p>​晶体管的消耗功率用集电极饱和电压（Vce（sat））乘以集电极电流（Ic）表示</p><p>​ （集电极损耗Pc）=（集电极饱和电压Vce（sat））* （集电极电流Ic）</p><p>​ MOSFET的消耗功率是用导通电阻（Rds（on））计算的</p><p>​ （功率PD） = （导通电阻Rds（on）） * （漏极电流Id）平方</p><p>此功率将热量散发出去，MOS管的导通电阻一般在Ω级以下，与一般的晶体管相比，消耗功率小，即发热小，散热策略简单</p><figure><img src="/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/image-20240622225318983.png" alt="image-20240622225318983"><figcaption aria-hidden="true">image-20240622225318983</figcaption></figure><ul><li>栅极源极之间的电压Vgs越高，导通电阻越小</li><li>栅极源极间电压相同的条件下，导通电阻因电流不同而不同</li><li>计算功率损耗时，需要考虑栅极源极间电压和漏极电流，选择合适的导通电阻</li><li>导通电阻因温度变化而变化，是个正温度系数，但是有个潜在的好处--&gt;多个mos管的并联时实现自动均流，</li></ul><p><strong>导通电阻比较</strong></p><p>​ 一般MOS的芯片尺寸（表面面积）越大，导通电阻越小。</p><p>​ 选择更大尺寸的封装，导通电阻会更小</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文天祥五分钟课堂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+            <tag> MOSFET </tag>
             
         </tags>
       
@@ -54,6 +83,35 @@
             <tag> LLC基础 </tag>
             
             <tag> ZCS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>04.数字晶体管的原理</title>
+      <link href="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/"/>
+      <url>/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/</url>
+      
+        <content type="html"><![CDATA[<h2 id="数字晶体管的原理">04+05.数字晶体管的原理</h2><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621222247268.png" alt="image-20240621222247268"><figcaption aria-hidden="true">image-20240621222247268</figcaption></figure><p>这就是数字晶体管，里面加了俩内置电阻，（TR指的是晶体管，中间是集电极B，下面是发射极E，上面是集电极C）</p><ul><li><p>饱和条件</p><ul><li><p>要使晶体管达到饱和状态，集电极电流 IC与基极电流 IB的比率设为20:1。这意味着：</p></li><li><p><span class="math display">\[\frac{I_C}{I_B}=20\]</span></p></li></ul></li><li><p>输入电阻</p><ul><li><p>R1 是基极电阻，允许有 ±30% 的容差（30%E-B间的电阻）</p></li><li><p>R2 是电阻分压器的一部分， <span class="math display">\[{R}_2/{R}_1=\pm20\%\]</span></p></li></ul></li><li><p>VBE=0.55-0.75V</p></li></ul><p><strong>数字晶体管直流电流增益率关系式</strong> <span class="math display">\[G_1=\frac{\mathrm{Ic}}{(\mathrm{Ic/h_{FE}})+(\mathrm{V_{BE}/R_2})}\]</span></p><p><span class="math display">\[\begin{aligned}&amp;\mathrm{G_{1}=I_{0}/lin}\\&amp;\mathrm{h_{FE}=I_{C}/I_{B}}\\&amp;\mathrm{I_{O}=I_{C},~lin=I_{B}+I_{R2},~I_{B}=I_{C}/h_{FE}~,~I_{R2}=V_{BE}/R_{2}}\end{aligned}\]</span></p><p>电压关系式： <span class="math display">\[\mathrm{V_{IN}=V_{R1}+V_{BE}}\]</span> <strong>集电极电流关系式</strong> <span class="math display">\[I_{C}=h_{FE}\times((Vin-V_{BE})/R_{1})-(V_{BE}/R_{2}))\cdot\cdot\cdot\odot1\]</span></p><p><span class="math display">\[\mathrm{I_{C}=20\times((Vin-V_{BE})/R_{1})-(V_{BE}/R_{2}))\cdot\cdot\cdot2}\]</span></p><p>​由上面的比率为20，将第一个式子的hFE换为20/1，得到2.再考虑上偏差，最后根据下面的式子<strong>选择数字晶体管的电阻R1，R2</strong>，使数字晶体管的Ic比使用设备上的最大输出电流Iomax大<span class="math display">\[\mathrm{lomax\leq20((Vin-0.75)/(1.3\times R_1)-0.75/(1.04\times R_2))}\]</span></p><h4 id="io跟ic的区别">Io跟Ic的区别</h4><ul><li>Ic： 能够通过晶体管的电流的最大理论值</li><li>Io： 能够作为数字晶体管使用的电流最大值</li></ul><h4 id="gi跟hfe的区别">GI跟hFE的区别</h4><ul><li>hFE： 作为晶体管的直流电流增幅率</li><li>GI： 作为数字晶体管的直流电流增幅率</li></ul><p>​ 都表示发射极接地<strong>直流电流放大率</strong>，数字晶体管有两个电阻器，但是一般的只有一个R1，根据R1的类型，放大率表示为hFE，在E-B之间附加电阻R2，输入电流则分为流过个别晶体管的电流，和流过E-B间电阻R2的电流，因此放大率比单体下降，称为GI</p><h4 id="vion与vioff的区别">Vi（on）与Vi（off）的区别</h4><ul><li>Vi（on）: 数字晶体管为保持ON状态的最低电压，定义Vi（on）为min</li></ul><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621224933812.png" alt="image-20240621224933812"><figcaption aria-hidden="true">image-20240621224933812</figcaption></figure><h4 id="关于数字晶体管的温度特性">关于数字晶体管的温度特性</h4><p>根据环境温度，VBF, hFE， R1，R2，都会变化，</p><p>hFE的温度变化率为0.5%℃</p><p>VBE的温度系数约为 -2mv/℃（-1.8 to -2.4mv/℃的范围有偏差）</p><h4 id="关于输出电压-输出电流特性的低小电流区域输出特性不好">关于输出电压-输出电流特性的低/小电流区域，输出特性不好</h4><p>低电流区域输出电压(Vo)/Vce(sat)上升（输出的饱和电压上升）</p><p>因此<strong>在低电流区域不能测定Vo</strong></p><h4 id="关于数字晶体管的开关动作">关于数字晶体管的开关动作</h4><ul><li><p><strong>晶体管的动作</strong></p><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621225818880.png" alt="image-20240621225818880"><figcaption aria-hidden="true">image-20240621225818880</figcaption></figure></li></ul><p>​在基极（B）-发射极（E）之间输入正向电压，注入基极电流，也就是B里面注入空穴，那么E的载流子会被吸引至基极B，但是B领域非常薄，因此加入集电极电压，载流子可以穿过B，流向C，电流实现从C到E的移动</p><ul><li>开关动作</li></ul><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230204443.png" alt="image-20240621230204443"><figcaption aria-hidden="true">image-20240621230204443</figcaption></figure><p>晶体管的动作有增幅/放大作用和开关作用</p><p>​ 在放大作用中，通过注入基极电流IB，能够通过增幅hFE倍的集电极Ic</p><p>​ 在放大区域中，通过输入信号持续控制集电极电流，可以得到输出电流</p><p>​在开关作用中，在ON时，电气性饱和状态（降低集电极-发射极间的饱和电压）下使用</p><h4 id="关于数字晶体管的用语">关于数字晶体管的用语</h4><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230518214.png" alt="image-20240621230518214"><figcaption aria-hidden="true">image-20240621230518214</figcaption></figure><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230509704.png" alt="image-20240621230509704"><figcaption aria-hidden="true">image-20240621230509704</figcaption></figure><figure><img src="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/image-20240621230546375.png" alt="image-20240621230546375"><figcaption aria-hidden="true">image-20240621230546375</figcaption></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文天祥五分钟课堂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+            <tag> 数字晶体管 </tag>
             
         </tags>
       
@@ -116,11 +174,11 @@
     
     
     <entry>
-      <title>02.晶体管截止频率定义和反向漏电流</title>
-      <link href="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/"/>
-      <url>/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
+      <title>03.晶体管分类概述</title>
+      <link href="/2024/06/11/wen-wu-03.jing-ti-guan-fen-lei-gai-shu/"/>
+      <url>/2024/06/11/wen-wu-03.jing-ti-guan-fen-lei-gai-shu/</url>
       
-        <content type="html"><![CDATA[<h2 id="晶体管截止频率定义和反向漏电流">02.晶体管截止频率定义和反向漏电流</h2><h4 id="关于晶体管on时的逆向电流e---c">关于晶体管ON时的逆向电流（E---&gt;C）</h4><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" class title="image-20240611212018881"><p>​基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p><p><strong>逆向晶体管的特点：</strong></p><ul><li>放大倍数低h（正向10%一下）</li><li>耐压低（7..8V与Vebo的导通电压一样低）</li><li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li></ul><h4 id="关于封装攻略容许功耗">关于封装攻略容许功耗</h4><p><strong>定义：</strong>由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj=150℃）时的功率</p><img src="/2024/06/11/02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" class title="image-20240611212524409"><h4 id="晶体管的速度">晶体管的速度</h4><p><strong>fT：增益带宽积、截止频率、开关速度</strong></p><p>​ <strong>增益带宽积</strong>指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p><p>提高基极输入频率，则hfe放大倍数变低</p><p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p><p>但是实际使用时能够动作的只有fT的1/5to1/10</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="晶体管分类概述">03.晶体管分类概述</h2><h4 id="晶体管的代表形状-tosmt">晶体管的代表形状 TO/SMT</h4><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920664.png" alt="image-20240611213213155"><figcaption aria-hidden="true">image-20240611213213155</figcaption></figure><h4 id="根据工作原理分为双极晶体管和单极晶体管">根据工作原理，分为双极晶体管和单极晶体管</h4><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920665.png" alt="image-20240611213250901"><figcaption aria-hidden="true">image-20240611213250901</figcaption></figure><p><strong>双极晶体管</strong></p><p>​即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p><p><strong>FET</strong></p><p>​ 指场效应晶体管，有接合型FET和MOS型，GaAs型</p><p>​ 接合型多用于音频设备的模拟电路</p><p>​ MOS型主要用于微控制器等数字IC</p><p>​ GaAs用于卫星广播信号接收等的微波增幅</p><h3 id="按功率分类">按功率分类</h3><p>​ 以最大额定值的集电极功率Pc进行区分</p><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920666.png" alt="image-20240611213714517"><figcaption aria-hidden="true">image-20240611213714517</figcaption></figure><p><strong>小信号晶体管</strong></p><p>​最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p><p><strong>功率晶体管</strong></p><p>​ Pc&gt;1W，</p><h3 id="按集成度分类">按集成度分类</h3><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920667.png" alt="image-20240611214034489"><figcaption aria-hidden="true">image-20240611214034489</figcaption></figure><h3 id="按形状分类">按形状分类</h3><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920668.png" alt="image-20240611214203911"><figcaption aria-hidden="true">image-20240611214203911</figcaption></figure>]]></content>
       
       
       <categories>
@@ -144,10 +202,10 @@
     
     <entry>
       <title>01.晶体管的由来及内置电阻晶体管</title>
-      <link href="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/"/>
-      <url>/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/</url>
+      <link href="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/"/>
+      <url>/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/</url>
       
-        <content type="html"><![CDATA[<h2 id="晶体管的由来及内置电阻晶体管">01晶体管的由来及内置电阻晶体管</h2><h4 id="材料">材料</h4><p>​ 从锗（80℃左右发生损害）到硅（180℃）</p><h4 id="作用">作用</h4><p>​ <strong>增幅</strong>和<strong>开关</strong></p><p>​增幅：不改变输入信号的波形，只<strong>放大</strong>电压或电流，指模拟信号</p><p>​ 开关：在数字信号中，晶体管起着切换0和1的开关作用</p><h4 id="集电阻和晶体管于一体">集电阻和晶体管于一体</h4><p>​ 数字晶体管即内置了电阻的晶体管</p><img src="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611204750395.png" class title="image-20240611204750395"><p><strong>优点：</strong></p><ul><li>安装面积减少</li><li>安装时间减少</li><li>部件数量减少</li></ul><h4 id="基极是自来的阀门发射极是配管集电极是水龙头">基极是自来的阀门，发射极是配管，集电极是水龙头</h4><p>​通过微小之力（基极的输入信号）来控制自来水的阀门，从而调节水龙头喷出巨大的水流（集电极电流）</p><img src="/2024/06/11/01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611205055893.png" class title="image-20240611205055893"><p>​ <strong>放大+电流型器件</strong></p>]]></content>
+        <content type="html"><![CDATA[<h2 id="晶体管的由来及内置电阻晶体管">01晶体管的由来及内置电阻晶体管</h2><h4 id="材料">材料</h4><p>​ 从锗（80℃左右发生损害）到硅（180℃）</p><h4 id="作用">作用</h4><p>​ <strong>增幅</strong>和<strong>开关</strong></p><p>​增幅：不改变输入信号的波形，只<strong>放大</strong>电压或电流，指模拟信号</p><p>​ 开关：在数字信号中，晶体管起着切换0和1的开关作用</p><h4 id="集电阻和晶体管于一体">集电阻和晶体管于一体</h4><p>​ 数字晶体管即内置了电阻的晶体管</p><figure><img src="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611204750395.png" alt="image-20240611204750395"><figcaption aria-hidden="true">image-20240611204750395</figcaption></figure><p><strong>优点：</strong></p><ul><li>安装面积减少</li><li>安装时间减少</li><li>部件数量减少</li></ul><h4 id="基极是自来的阀门发射极是配管集电极是水龙头">基极是自来的阀门，发射极是配管，集电极是水龙头</h4><p>​通过微小之力（基极的输入信号）来控制自来水的阀门，从而调节水龙头喷出巨大的水流（集电极电流）</p><figure><img src="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611205055893.png" alt="image-20240611205055893"><figcaption aria-hidden="true">image-20240611205055893</figcaption></figure><p>​ <strong>放大+电流型器件</strong></p>]]></content>
       
       
       <categories>
@@ -170,11 +228,11 @@
     
     
     <entry>
-      <title>03.晶体管分类概述</title>
-      <link href="/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/"/>
-      <url>/2024/06/11/03.jing-ti-guan-fen-lei-gai-shu/</url>
+      <title>02.晶体管截止频率定义和反向漏电流</title>
+      <link href="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/"/>
+      <url>/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
       
-        <content type="html"><![CDATA[<h2 id="晶体管分类概述">03.晶体管分类概述</h2><h4 id="晶体管的代表形状-tosmt">晶体管的代表形状 TO/SMT</h4><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920664.png" alt="image-20240611213213155"><figcaption aria-hidden="true">image-20240611213213155</figcaption></figure><h4 id="根据工作原理分为双极晶体管和单极晶体管">根据工作原理，分为双极晶体管和单极晶体管</h4><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920665.png" alt="image-20240611213250901"><figcaption aria-hidden="true">image-20240611213250901</figcaption></figure><p><strong>双极晶体管</strong></p><p>​即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p><p><strong>FET</strong></p><p>​ 指场效应晶体管，有接合型FET和MOS型，GaAs型</p><p>​ 接合型多用于音频设备的模拟电路</p><p>​ MOS型主要用于微控制器等数字IC</p><p>​ GaAs用于卫星广播信号接收等的微波增幅</p><h3 id="按功率分类">按功率分类</h3><p>​ 以最大额定值的集电极功率Pc进行区分</p><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920666.png" alt="image-20240611213714517"><figcaption aria-hidden="true">image-20240611213714517</figcaption></figure><p><strong>小信号晶体管</strong></p><p>​最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p><p><strong>功率晶体管</strong></p><p>​ Pc&gt;1W，</p><h3 id="按集成度分类">按集成度分类</h3><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920667.png" alt="image-20240611214034489"><figcaption aria-hidden="true">image-20240611214034489</figcaption></figure><h3 id="按形状分类">按形状分类</h3><figure><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920668.png" alt="image-20240611214203911"><figcaption aria-hidden="true">image-20240611214203911</figcaption></figure>]]></content>
+        <content type="html"><![CDATA[<h2 id="晶体管截止频率定义和反向漏电流">02.晶体管截止频率定义和反向漏电流</h2><h4 id="关于晶体管on时的逆向电流e---c">关于晶体管ON时的逆向电流（E---&gt;C）</h4><p>这个对于<strong>NPN型</strong>的来说，E-C是逆向的，</p><figure><img src="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" alt="image-20240611212018881"><figcaption aria-hidden="true">image-20240611212018881</figcaption></figure><p>​基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p><p><strong>逆向晶体管的特点：</strong></p><ul><li>放大倍数低h（正向10%一下）</li><li>耐压低（7..8V与Vebo的导通电压一样低）</li><li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li></ul><h4 id="关于封装攻略容许功耗">关于封装攻略容许功耗</h4><p><strong>定义：</strong>由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj=150℃）时的功率</p><figure><img src="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" alt="image-20240611212524409"><figcaption aria-hidden="true">image-20240611212524409</figcaption></figure><h4 id="晶体管的速度">晶体管的速度</h4><p><strong>fT：增益带宽积、截止频率、开关速度</strong></p><p>​ <strong>增益带宽积</strong>指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p><p>提高基极输入频率，则hfe放大倍数变低</p><p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p><p>但是实际使用时能够动作的只有fT的1/5to1/10</p>]]></content>
       
       
       <categories>
