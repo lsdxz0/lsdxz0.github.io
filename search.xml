@@ -4,6 +4,332 @@
   
     
     <entry>
+      <title>06. 占空比D在0到0.5之间的工作波形分析</title>
+      <link href="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/"/>
+      <url>/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="占空比d在0到0.5之间的工作波形分析">06.占空比D在0到0.5之间的工作波形分析</h2><img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153716110.png" class title="image-20240715153716110"><img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153725566.png" class title="image-20240715153725566"><ul><li>一样的分析。<strong>t<sub>1</sub>=DT<sub>s</sub></strong>。<strong>t<sub>2</sub>= (1-D)T<sub>s</sub></strong></li><li>0&lt;U<sub>2</sub>&lt;U<sub>1</sub>/2;dU<sub>1</sub>=U<sub>1</sub>/2-U<sub>2</sub>&gt;0;此时电感电流上升。dU<sub>2</sub>=-U<sub>2</sub>&lt;0，下降</li><li>**电感电流纹波：（选取t<sub>1</sub>-t<sub>2</sub>）<ul><li><img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715154250607.png" class title="三电平电感电流纹波"></li><li><img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715154446961.png" class title="一般buck的电感电流纹波"></li><li>又多减去了U1/2L*DT<sub>s</sub></li><li>带入数据可得，相比于之前，电感电流波动总共减少了5.2A,之前总共约7.8A，还剩2.6A</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>05. 占空比D在0.5到1之间的工作波形分析</title>
+      <link href="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/"/>
+      <url>/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="占空比d在0.5到1之间的工作波形分析">05.占空比D在0.5到1之间的工作波形分析</h2><p><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715150501849.png" class title="开关状态"></p><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715150523767.png" class title="D&gt;0.5的工作波形"><p><strong>开关管S<sub>1,2</sub></strong></p><ul><li>横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，所以调制信号视为D 。</li><li>调制信号与载波进行比较，中间这个时间就是**t<sub>1</sub>=D*T<sub>s</sub>**，大于载波就是高电平，小于载波为低电平，这个时间就是图一中的t<sub>1</sub>。</li><li>所以S<sub>1</sub>就是010，S<sub>2</sub>为其互补。为101</li></ul><p><strong>开关管S<sub>3,4</sub></strong></p><ul><li>同样的比较方式，S<sub>4</sub>为101，S<sub>3</sub>互补</li><li>所以对应中间的这段时间即为t<sub>2</sub>。可得<strong>t<sub>2</sub>=（1-D）T<sub>s</sub></strong>。</li></ul><p><strong>电感波形 i<sub>L</sub></strong></p><ul><li><p>电感电流先看电感电压，电压大于0，电感电流上升，电压小于0.电感电流下降，（通过i=L*du/dt）</p></li><li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715151636879.png" class></li><li><p>由图可以看出，电感上的电压就是U<sub>ab</sub>减去U<sub>2</sub></p></li><li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715151824042.png" class></li><li><p>那么对于dU<sub>1</sub> &lt;0，对应的时间段i<sub>L</sub>呈现下降趋势，dU<sub>2</sub>时间上升，+伏秒平衡，上升的值等于下降的值</p></li><li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152036951.png" class title="电感电流波形"><p><strong>输入输出对应的关系跟普通的一样</strong></p><p>U<sub>ab</sub><em>所对应的时间等于U<sub>2</sub></em>Ts，根据上图的电压值与时间的对应关系可得：</p><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152510327.png" class></li></ul><p><strong>电感电流纹波的变化</strong></p><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152752499.png" class><ul><li>直接计算红色部分的电感电流纹波，因为这段变化的时间是已知的，就是t<sub>2</sub></li><li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153131058.png" class title="三电平的电感电流纹波"></li><li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153230930.png" class title="一般buck的电感电流纹波"></li><li>三电平的多减了一个u1/2，所以其电感电流纹波减少，且倍频了，相同标准时电感体积可以更小</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>08. 计算输入侧分压电容</title>
+      <link href="/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/"/>
+      <url>/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="计算输入侧分压电容">08. 计算输入侧分压电容</h2><p>0&lt;D&lt;0.5,C-D-B-D-C</p><img src="/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/image-20240715212810924.png" class><p>​为了保持电荷平衡，b的时间跟c的时间是一样的，工作状态在bd之间与cd之间切换，二者具有对称性，只分析一个即可。</p><p>​在b状态。C<sub>1</sub>放电给负载，由<strong>能量守恒</strong>，在这个状态时间内，负载需要P*t<sub>1</sub>能量，所以电容必须提供这么大的能量：</p><img src="/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/image-20240715213302974.png" class title="image-20240715213302974"><ul><li>这里U<sub>1</sub>是指在t<sub>0</sub>初始时刻电容两端的电压值，U<sub>2</sub>指经过时间t，电容两端的电压</li><li>U<sub>1</sub>+U<sub>2</sub>可以近似为直流侧的电压即电源电压U<sub>dc</sub>，基本不变</li><li>P为额定功率，t<sub>1</sub>表示b状态作用的时间，t<sub>1</sub>=DTs，都是保持不变</li><li><img src="/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/image-20240715213650071.png" class><ul><li>△U<sub>cmax</sub>=2%*Udc=8V，可取C<sub>1</sub>=C<sub>2</sub>=22uf</li></ul></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>11. 晶体管元件温度计算方法</title>
+      <link href="/2024/07/15/wen-wu-11.jing-ti-guan-yuan-jian-wen-du-ji-suan-fang-fa/"/>
+      <url>/2024/07/15/wen-wu-11.jing-ti-guan-yuan-jian-wen-du-ji-suan-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="晶体管元件温度计算方法">11. 晶体管元件温度计算方法</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文天祥五分钟课堂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>04.1 交错锯齿波调制</title>
+      <link href="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/"/>
+      <url>/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="交错锯齿波调制">4.1 交错锯齿波调制</h2><p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712104549073.png"></p><ul><li>用锯齿波那么就不用考虑对称了，对于c不用对半分了</li></ul><p><strong>S<sub>1，2</sub></strong></p><ul><li>这两个开关管互补导通，所以只看S<sub>1</sub>就行，S<sub>2</sub>进行取反</li><li>调制如右图所示，蓝色的直角三角形为载波信号，被绿色的调制信号所截，设调制信号大于载波为高电平，小于载波为低电平，可得10即开关管S<sub>1</sub>的状态，设1为t<sub>1</sub>，0为t<sub>2</sub>，根据三角形的相似可得调制信号（的高度）为t<sub>1</sub>/T<sub>s</sub>，即为占空比</li></ul><p><strong>S<sub>3,4</sub></strong></p><ul><li>对于这俩开关状态，因为是0100，都交叉着，所以可以多写两个周期，如右侧表所示</li><li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105126369.png"><ul><li>S<sub>1,2</sub>对应的开关状态往左平移半个周期即为S<sub>3,4</sub>的开关状态</li><li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105313733.png"></li><li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105355675.png"></li></ul></li></ul><p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105645917.png"></p><p>计数器的实现如图红色所示：当他到达周期时间后，重新开始计数</p><p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105727973.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>07. 重新计算输出侧电感值和电容值</title>
+      <link href="/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/"/>
+      <url>/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="重新计算输出侧电感值和电容值">07.重新计算输出侧电感值和电容值</h2><p>​首先根据设计要求，计算出占空比，选择对应的开关控制策略，及其相应的纹波计算公式</p><img src="/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/image-20240715155045802.png" class title="设计要求"><h4 id="输出侧电感值">输出侧电感值</h4><p><strong>根据新的纹波公式重新计算电感参数：</strong></p><img src="/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/image-20240715155225523.png" class><p><strong>关于这个电感电流纹波值8</strong></p><img src="/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/image-20240715155458910.png" class><p>设计要求里面的4A是指上下，而计算中的为总的纹波，应该是4+4=8</p><img src="/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/image-20240715155322015.png" class><h4 id="输出侧电容值">输出侧电容值</h4><img src="/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/image-20240715155800696.png" class title="image-20240715155800696">]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>03. 确定最终的两个调制状态</title>
+      <link href="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/"/>
+      <url>/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/</url>
+      
+        <content type="html"><![CDATA[<h2 id="确定最终的两个调制状态">03. 确定最终的两个调制状态</h2><img src="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/image-20240711160439391.png" class title="image-20240711160439391"><p><strong>常用的载波形状：</strong></p><img src="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/image-20240711162116289.png" class><img src="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/image-20240711162201850.png" class title="image-20240711162201850"><p>红色的横线为调制信号，大于则为高电平，小于为低电平</p><p><strong>第一种情况</strong></p><img src="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/image-20240711162406841.png" class><p>观察开关状态可知，aba为中心对称，那么将C的一半时间移到最左边，构成cabac呈现对称性，选用三角波</p><p><strong>第二种情况</strong></p><img src="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/image-20240711162704946.png" class><p>分析同上</p><p><strong>第三种+第四种情况</strong></p><img src="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/image-20240711162744813.png" class><p>dcdc的电平越多，分析越复杂，但是三电平整流跟逆变不一样，电平越多，输出交流谐波越好S<sub>1,2</sub>是1.0选用非对称载波，S<sub>3,4</sub>不是严格的对称载波，可以把C放到a左边，可用锯齿波</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>02. 工作状态分析</title>
+      <link href="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/"/>
+      <url>/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="工作状态分析">02. 工作状态分析</h2><p><strong>有且仅有四种开关状态</strong></p><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711154237712.png" class><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711154247126.png" class><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711153850499.png" class><p>​电感上的电流是不可以突变的，所以当S<sub>1,4</sub>关断后，电流通过二极管续流，而不是经过开关管</p><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711154038224.png" class><p>​这里电流到了B为啥不往上经过二极管，因为：电流更容易往低电位流，上面那电位比下面的电位高</p><p><strong>切换开关</strong></p><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711155235421.png" class><ul><li>为保证换流时开关损耗尽可能少，避免（a)和（d）之间切换，(b)和(c)之间切换<ul><li>b-&gt;a，开关管的状态只有S<sub>3,4</sub>发生了变化，但是b-&gt;c，S<sub>1,2</sub>与S<sub>3，4</sub>都发生了变化损耗更大</li><li>a，d同理</li></ul></li><li>不能只有a,d 不能只有b.c</li></ul><p><strong>有且仅有下面六种</strong></p><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711155834457.png" class><ul><li>最后两种只用到了b或者c，那么会造成C<sub>1</sub>或C<sub>2</sub>的电位偏移非常严重，使电容不平衡增加，所以舍去最后一行的两种切换模式</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>04. 载波调制过程详细分析</title>
+      <link href="/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/"/>
+      <url>/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="载波调制过程详细分析">04. 载波调制过程详细分析</h2><img src="/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/image-20240712101818471.png" class title="image-20240712101818471"><p>​设C为t<sub>2</sub>将其分成两份，为使两电容电位平衡，可得b的时间也为t<sub>2</sub>，由S<sub>1</sub>01110可得载波为等腰三角波，被调制信号所截，为010 。</p><p>得到<strong>调制的两种思路</strong></p><p><img src="/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/image-20240712102035604.png" class></p><p>​ 用相同的调制信号与相位相差180°的载波进行比较</p><ul><li>S<sub>1</sub>用上面的</li><li>S<sub>3</sub>用下面的，比较方式变了，当小于载波的时候对应S<sub>3</sub>是高电平，大于的时候为低电平，为010，</li><li>t<sub>1</sub>+t<sub>2</sub>=T<sub>s</sub></li></ul><img src="/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/image-20240712102139539.png" class><p>​ 用同一个载波，用互补的两个调制信号进行比较</p><img src="/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/image-20240712103835307.png" class><p>也是可以用上述两种调制方式</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>01. 三电平DCDC拓扑结构介绍</title>
+      <link href="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/"/>
+      <url>/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/</url>
+      
+        <content type="html"><![CDATA[<h2 id="三电平dcdc拓扑结构介绍">01. 三电平DCDC拓扑结构介绍</h2><p><strong>单相三电平DCDC变换器-Buck-主电路结构</strong></p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102410864.png" class><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102432328.png" class><p>U<sub>1</sub>为输入电压，U<sub>2</sub>为输出电压，C<sub>12</sub>为分压电容，每个电容的电压为1/2；四个开关管，（都用的双向的，所以可以实现能量的双向流动）；下面的图把电感分为两个是为了对称，为上图的一半；</p><ul><li><strong>三个电平</strong>： **U<sub>ab</sub>：0（右侧电路通过S<sub>23</sub>的二极管续流，ab两侧电位差为0，电压为0）</li></ul><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709103928483.png" class title="image-20240709103928483"><p><strong>U<sub>1</sub>/2</strong>：U<sub>ab</sub>为电容C<sub>1</sub>两端的电压</p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104134177.png" class><p><strong>-U<sub>1</sub>/2</strong>：U<sub>ab</sub>为电容C<sub>2</sub>两端的电压</p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104236304.png" class><p>​S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub>,它的耐压基准应该根据U<sub>1</sub>/2来选择，S<sub>4</sub>同理(根据前面一个图来选)</p><p><strong>U<sub>1</sub></strong>:</p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104457821.png" class><p>这里S<sub>2,3</sub>分别与C<sub>1,2</sub>并联了，其耐压也是以U<sub>1</sub>/2</p><ul><li>S<sub>1,2</sub>互补导通，S<sub>3,4</sub>互补导通，否则上下直流侧会短路从而烧毁管子，则有且仅有四种开关状态</li><li><h2 id="两对不同工作状态的管子则最简要么他们的调制信号相同载波不同通常是相位不同或者相反">两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反</h2></li></ul><p><strong>补充：关于调制信号与载波</strong></p><p>​ <strong>调制信号</strong>：通常是个低频信号</p><p>​ <strong>载波信号</strong>：通常是高频锯齿波或三角波信号</p><p><strong>工作过程</strong></p><ol type="1"><li><strong>调制信号与载波信号的比较：</strong><ul><li>将调制信号与载波信号输入到比较器。</li><li>比较器实时比较两者的瞬时值。</li></ul></li><li><strong>产生PWM信号：</strong><ul><li>当调制信号大于载波信号时，比较器输出高电平。</li><li>当调制信号小于载波信号时，比较器输出低电平。</li><li>通过这种比较，产生一个脉宽调制（PWM）信号，其脉冲宽度与调制信号的幅度成比例。</li></ul></li><li><strong>控制开关管导通：</strong><ul><li>PWM信号用来驱动开关管（如晶体管或MOSFET）。</li><li>当PWM信号为高电平时，开关管导通；当PWM信号为低电平时，开关管关闭。</li><li>通过控制PWM信号的占空比，可以精确控制开关管的导通时间，从而实现对负载（如电机、电源）的控制。</li></ul></li></ol><ul><li><p>C<sub>1,2</sub>的平衡：考虑电位偏移，电位波动</p></li><li><p>换流时最好是0-U<sub>1</sub>/2-U<sub>1</sub>，否则开关损耗增加，电压变化太过剧烈</p></li><li><p>输出侧电路和原Buck一致，参数计算方法不变</p></li><li><p>其余优点通过理论分析来获得：电感电流纹波减小，纹波频率提高一倍，因此电感体积可以减少</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>08. MOSFET总栅极电荷Qg</title>
+      <link href="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/"/>
+      <url>/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/</url>
+      
+        <content type="html"><![CDATA[<h2 id="mosfet总栅极电荷qg">08. MOSFET总栅极电荷Qg</h2><p>#### 啥是总栅极电荷（Qg）</p><p>​ Qg是指：为导通MOS而注入到栅极电极的电荷量。也称为栅极总电荷，单位为库仑(C)</p><p>​总栅极电荷值较大，则导通MOS所需的电容充电时间变<strong>长</strong>，开关损耗增加，数值越小，开关损耗（切换损耗）越小，从而可实现高速开关。</p><h4 id="总栅极电荷和导通电阻">总栅极电荷和导通电阻</h4><p>​<strong>总栅极电荷</strong>越小，开关损耗越小。而且，<strong>导通电阻值越</strong>小，工作时的功耗越小。</p><p>​但需要注意的是，这俩的特性处于<strong>权衡</strong>关系，MOS的芯片尺寸（表面积）越小，总电荷量越小，但导通电阻值会变大，换句话说：<strong>开关损耗与工作时的功耗之间存在权衡关系</strong></p><img src="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/image-20240628205520776.png" class title="image-20240628205520776"><img src="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/image-20240628205527283.png" class title="image-20240628205527283"><p>比较复杂，暂时只要知道这个总栅极电荷与损耗，开关速度有关就行</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文天祥五分钟课堂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+            <tag> MOSFET </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>09+10. SOA安全使用晶体管的选定方法</title>
+      <link href="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/"/>
+      <url>/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/</url>
+      
+        <content type="html"><![CDATA[<h2 id="soa安全使用晶体管的选定方法">09+10.SOA安全使用晶体管的选定方法</h2><h4 id="判断流程">判断流程</h4><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628210018165.png"></p><h4 id="测定实际的电流电压波形">1. 测定实际的电流、电压波形</h4><p>​用示波器确定晶体管上的电压电流，需要全部满足规格书上记载的额定值，特别应该确认下列项目</p><table><thead><tr class="header"><th>晶体管的种类</th><th>电压</th><th>电流</th></tr></thead><tbody><tr class="odd"><td>双极晶体管</td><td>集电极发射极间电压：V<sub>CE</sub></td><td>集电极电流：I<sub>C</sub></td></tr><tr class="even"><td>数字晶体管</td><td>输出电压：Vo（GND-OUT间电压)</td><td>输出电流：I<sub>O</sub></td></tr><tr class="odd"><td>MOSFET</td><td>漏极源极间电压：V<sub>DS</sub></td><td>漏极电流：I<sub>D</sub></td></tr></tbody></table><hr><h4 id="是否一直满足绝对最大额定值">2. 是否一直满足绝对最大额定值</h4><p>确认‘’<a href="####1.%20测定实际的电流、电压波形">1.测定实际的电流电压</a>‘’中确定的电压，电流是否超过了规格书记载的绝对最大额定值</p><p>​如例1中，未确认的项目全部都需要在绝对最大额定值以下。即是浪涌电流和浪涌电压只在一瞬间超过了绝对最大额定值也不可使用。如果超过绝对最大额定值，有可能会造成破坏和劣化</p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628211129056.png"></p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628212658785.png"></p><h4 id="是否在soa范围内">3. 是否在SOA范围内</h4><p>​ 确认安全工作区域（SOA）</p><p>​ <strong>安全工作区域（SOA）</strong> 表示晶体管可安全工作的区域</p><p>​不过，SOA只是关于1脉冲的数据，在脉冲反复混入时，需要所有脉冲都进入SOA范围内，并且通过 ‘’<a href="####4.%20在使用环境温度下是否在下降的SOA范围内">4.确认安全工作区域（SOA）2</a>‘’计算的平均施加功率在额定功率以下</p><p>​ SOA安全工作区域的简称，有时也称ASO</p><p><strong>SOA确认方法</strong></p><p>​ 确认‘’<a href="####1.%20测定实际的电流、电压波形">1.确认电流、电压</a>‘’中确认的波形是否在SOA范围内，即使浪涌电压电流只在一瞬间超出也不行，另外注意，即使在‘’<a href="####2.%20是否一直满足绝对最大额定值">2.确认绝对最大额定值</a>‘’中确认的绝对最大额定值的范围内，有时也会超出SOA范围</p><h4 id="在使用环境温度下是否在下降的soa范围内">4.在使用环境温度下是否在下降的SOA范围内</h4><p>​ （按照使用环境温度或因晶体管发热温度上升时的元件温度来考虑）</p><p>由于通常的SOA是在常温（25℃）下的数据，所以周围温度在25℃以上时，或者因晶体管自身发热元件温度上升时，需要降低SOA的温度</p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214037069.png"></p><p><strong>SOA的温度降低方法</strong>:（降低的温度基本上元件的温度）</p><p><strong>SOA的温度降额方法</strong></p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214241639.png"></p><p>具体的方法就是：将SOA线平行移向低电流方向。如图所示，下降率根据区域不同而不同</p><ul><li><strong>1-1 热限制区</strong><ul><li>在该区域，SOA线具有45°的倾斜度（功率固定线）</li><li>下降率为0.8%/℃</li></ul></li><li><strong>1-2 2次下降区域</strong><ul><li>晶体管存在热失控引起的2次下降区域</li><li>SOA线具有45°以上的倾斜度</li><li>下降率为0.5%/℃</li></ul></li></ul><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214804538.png"></p><p>​ 因此，该区域SOA线向低电流方向平移37.5%</p><h4 id="连续脉冲单脉冲">5. 连续脉冲？单脉冲？</h4><p><strong>单脉冲</strong></p><p>​如同上电和掉电的浪涌电流一样，只发生一次脉冲的情形（无反复脉冲时）称为单脉冲，此时：</p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215039456.png"></p><p><strong>连续脉冲</strong></p><p>​ 将脉冲反复发生的情形称为连续脉冲，此时：</p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215150524.png"></p><h4 id="平均功耗是否在周围温度的额定功率以下">6.平均功耗是否在周围温度的额定功率以下？</h4><p>​ 周围温度的额定功率以下 = 元件温度在绝对最大额定值150℃以下</p><p>使元件温度升到150℃的功率定位额定功率，</p><p><strong>功率计算方法</strong></p><p>​基本上，平均功率是以时间对电流和电压的积进行积分的值除以时间所得的值</p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215507777.png"></p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215532059.png"></p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215549696.png"></p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215606408.png"></p><p><strong>功率计算的积分公式</strong>---<u>通用，不仅于半导体</u></p><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215811609.png"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文天祥五分钟课堂 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 文天祥 </tag>
+            
+            <tag> 晶体管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>06. MOSFET特性简单版，强调温度特性</title>
       <link href="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/"/>
       <url>/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/</url>
@@ -66,7 +392,7 @@
       <link href="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/"/>
       <url>/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/</url>
       
-        <content type="html"><![CDATA[<h1 id="llc变换器设计基础第三节-zcs并联谐振llc的谐振分析q品质因数的正解">【LLC变换器设计基础】第三节ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1><h4 id="zcs的理解">1.ZCS的理解</h4><p>​对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现象，所以有较大的关断损耗</p><img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215559332.png" class title="image-20240621215559332"><p>​电容模式，电流超前电压，再这个位置<img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215644838.png" class title="image-20240621215644838">之前，都是Q1在导通，然后电流反向了，Q1关断，实现ZCSOFF。这时候下面的IGBT还没导通，但是电流反向了呀，所以只能通过D1（上管的反向二极管)，直到下管导通的时候，电流走下管了，那么把下管关断，就会从下管的D2续流，实现ZCSOFF</p><p><strong>开通挑战</strong>：容性模式下实现零电流开通较为困难，因为电流超前电压，开关器件开通时电流可能不为零，导致开通损耗增加</p><p>这里出现出入，实现ZCS应该也是在感性状态下的</p><h4 id="并联谐振">2. 并联谐振</h4><img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621220449704.png" class title="image-20240621220449704"><p>​ <strong>是说跟这个负载的并联，不是L跟C并联</strong></p>]]></content>
+        <content type="html"><![CDATA[<h1 id="llc变换器设计基础第三节-zcs并联谐振llc的谐振分析q品质因数的正解">【LLC变换器设计基础】第三节ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1><h4 id="zcs的理解">1.ZCS的理解</h4><p>​对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现象，所以有较大的关断损耗</p><img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215559332.png" class><p>​电容模式，电流超前电压，再这个位置<img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215644838.png" class title="image-20240621215644838">之前，都是Q1在导通，然后电流反向了，Q1关断，实现ZCSOFF。这时候下面的IGBT还没导通，但是电流反向了呀，所以只能通过D1（上管的反向二极管)，直到下管导通的时候，电流走下管了，那么把下管关断，就会从下管的D2续流，实现ZCSOFF</p><p><strong>开通挑战</strong>：容性模式下实现零电流开通较为困难，因为电流超前电压，开关器件开通时电流可能不为零，导致开通损耗增加</p><p>这里出现出入，实现ZCS应该也是在感性状态下的</p><h4 id="并联谐振">2. 并联谐振</h4><img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621220449704.png" class title="并联谐振"><p>​ <strong>是说跟这个负载的并联，不是L跟C并联</strong></p>]]></content>
       
       
       <categories>
