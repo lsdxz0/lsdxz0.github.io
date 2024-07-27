@@ -4,6 +4,110 @@
   
     
     <entry>
+      <title>01. STM32+软件安装</title>
+      <link href="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/"/>
+      <url>/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/</url>
+      
+        <content type="html"><![CDATA[<h2 id="stm32软件安装">01. STM32+软件安装</h2><h4 id="硬件介绍">1. 硬件介绍</h4><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720213900952.png" alt="image-20240720213900952">面板板</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720213913143.png" alt="image-20240720213913143">面包板的跳线，较短，可以贴在面包板上，适合长时间的接线</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214004609.png" alt="image-20240720214004609">上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214108007.png" alt="image-20240720214108007">STM32最小系统板，上面这黑色的就是stm32，</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214138860.png" alt="image-20240720214138860">0.96寸的OLED显示屏模块，4引脚的</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214213483.png" alt="image-20240720214213483">电位器，主要用来进行AD转换实验</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214232595.png" alt="image-20240720214232595">按键，选用两引脚正好可以跨接在面包板的引脚插孔和电源插孔之间，<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214319164.png" alt="image-20240720214319164"></p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214332567.png" alt="image-20240720214332567">led灯</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214344197.png" alt="image-20240720214344197">STLINK，用来下载程序和供电的</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214404156.png" alt="image-20240720214404156">USB转串口模块，使用这个模块就可以实现STM32和电脑进行串口通信了</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214515832.png" alt="image-20240720214515832">有源蜂鸣器模块，内置振荡源，接电就响</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214610516.png" alt="image-20240720214610516">一些传感器模块分别是:光敏电阻模块，下面的四个引脚有两个是用来供电，还有两个是光敏电阻信号的模拟输出和数字输出，可以用来进行IO口读取实验或者AD实验，第二个是热敏电阻模块，也是有模拟输出和数字输出的；第三个是对射式红外模块，配合遮光片可以用来计次，或者配合编码盘用来测速；第四个是反射式红外模块，在小车寻迹里，向地面发射红外光，再用红外接收管接收地面反射的红外光，通过判断接收光的强度，就可以大致识别出地面的颜色变化</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215011924.png" alt="image-20240720215011924">W25Q64Flash存储模块，可以存储数据，并且是用SPI总线进行通信的</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215105486.png" alt="image-20240720215105486">MPU6050陀螺仪和加速度计；可以测量芯片自身的姿态，I2C总线通信</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215145944.png" alt="image-20240720215145944">旋转编码器，可以输出两路正交的方波信号，用于指示旋转的方向和速度，</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215258620.png" alt="image-20240720215258620">直流电机和TB6612电机驱动模块，可以用来进行直流电机的PWM调速实验</p><p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215339362.png" alt="image-20240720215339362">SG90舵机；用PWM控制，输出端可以像船舵一样，根据给定PWM信号的占空比固定在某个角度上</p><h4 id="stm32简介">2. STM32简介</h4><p>​ 32位微处理器，st是公司，m是微控制器；51是8位的，采用ARMCortex-M内核</p><p><strong>ARM</strong></p><ul><li>指ARM公司，也指ARM处理器内核</li></ul><p><strong>STM32F103C8T6</strong></p><ul><li>系列： 主流系列STM32F1</li><li>内核： ARM Cortex-M3</li><li>主频： 72MHz</li><li>RAM： 20K(SRAM)</li><li>ROM: 64K(Flash)</li><li>供电： 2.0~3.6V（标准3.3v）</li><li>封装： LQFP48</li></ul><p><strong>片上资源/外设</strong></p><figure><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720220154004.png" alt="image-20240720220154004"><figcaption aria-hidden="true">image-20240720220154004</figcaption></figure><h4 id="section"></h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> STM32 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 江科大 </tag>
+            
+            <tag> STM32 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>09. 开环仿真验证</title>
+      <link href="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/"/>
+      <url>/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/</url>
+      
+        <content type="html"><![CDATA[<h2 id="开环仿真验证">09. 开环仿真验证</h2><h4 id="模型初始化参数">模型初始化参数</h4><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716095949318.png" class><p>模型属性</p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716100026671.png" class><h4 id="分压电容">分压电容</h4><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716101041055.png" class><ul><li>在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响</li><li>设置初始电压为Udc/2</li></ul><h4 id="模块旋转">模块旋转</h4><p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p><h4 id="信号调制">信号调制</h4><p><strong>总体介绍</strong></p><ul><li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152008403.png" class title="image-20240716152008403"></li></ul><p><strong>模块介绍</strong></p><ul><li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152027015.png" class title="image-20240716152027015">表示占空比</li><li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152049383.png" class title="image-20240716152049383">这个就是载波；参数设计为：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152111011.png" class title="image-20240716152111011"></li><li>因为载波为0-1，所以加一个限幅：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152146101.png" class title="image-20240716152146101">设置为0-0.98</li><li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152201990.png" class title="image-20240716152201990">比较模块；<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152217557.png" class title="image-20240716152217557"></li><li>调制信号大于载波，则开关管1输出高电平，否则输出低电平，开关管2与之相反</li><li>对于<strong>S<sub>3,4</sub></strong>其载波有：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152345436.png" class title="image-20240716152345436">波形相差180°</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 三电平 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 木修于淋 </tag>
+            
+            <tag> 三电平DCDC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>simulink使用中遇到的问题</title>
+      <link href="/2024/07/16/simulink-shi-yong-zhong-yu-dao-de-wen-ti/"/>
+      <url>/2024/07/16/simulink-shi-yong-zhong-yu-dao-de-wen-ti/</url>
+      
+        <content type="html"><![CDATA[<h2 id="simulink使用中遇到的问题">simulink使用中遇到的问题</h2><h4 id="旋转">1. 旋转</h4><p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p><h4 id="scope显示的波形带圆圈">2. SCOPE显示的波形带圆圈</h4><p>打开示波器-视图-样式-标记（maker）-修改为无（none）</p><img src="/2024/07/16/simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240716153355953.png" class>]]></content>
+      
+      
+      <categories>
+          
+          <category> 软件使用细则 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> simulink </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>温湿度仪原理图</title>
+      <link href="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/"/>
+      <url>/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="温湿度仪原理图">温湿度仪原理图</h2><h4 id="主控电路">1. 主控电路</h4><p><strong>查找芯片</strong></p><p>主控电路选用stm32g030k6t6</p><p>放置--器件--搜索--stm,,,,,,--放置</p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716164616562.png" class><p><strong>PB9</strong>，PB8</p><p>​ 点击芯片，找到数据手册，搜索PB9，可以得到</p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716164712804.png" class><p>​ 该表格介绍引脚分配和描述，</p><p>在I2C总线通信中，I2C1_SDA和I2C1_SCL分别是两条主要的信号线。</p><ul><li>I2C1_SDA用于发送和接收数据，PB9引脚作为I2C1_SDA引脚时，用于传输I2C总线上的数据。</li><li>I2C1_SCL用于同步时钟信号。PB8引脚作为I2C1_SCL引脚时，用于传输I2C总线上的时钟信号。</li></ul><p>在与温度传感器通信时：</p><ul><li><p><strong>I2C1_SCL（PB8）</strong>：连接到温度传感器的时钟输入端。</p></li><li><p><strong>I2C1_SDA（PB9）</strong>：连接到温度传感器的数据输入/输出端。</p></li></ul><p>在Description中找到他的电压能够承受多少V<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716165329781.png" class title="image-20240716165329781"></p><p>if给芯片5V的电压就坏事了，本设计使用两节电池，1.5V+1.5V=3V符合条件</p><p><strong>修改网络标识</strong></p><p>放置--网络标签--tap键修改名称--然后alt+w引出导线连接加号与引脚</p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716170036992.png" class title="image-20240716170036992"><p>这里还得微调一下，移动网络标识直至加号完全消失<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716172600029.png" class title="image-20240716172600029"></p><p><strong>网络标识</strong></p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716171216260.png" class title="image-20240716171216260"><p>4.5引脚为网络标识；，放置-网络标识</p><p>右侧的方式需要左右翻转，快捷键X</p><p><strong>非连接标识</strong></p><p>​用于提示不用连接引脚，防止报错，在放置--非连接标识，必须放在黑色圆圈处才有作用<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716172954723.png" class title="image-20240716172954723"></p><p><strong>复位引脚</strong></p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716173319896.png" class title="image-20240716173319896"><p><strong>10kΩ的电阻</strong></p><p>​ 放置-器件，搜索10k，加入限定0805+stn基础库--应用筛选</p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716173508920.png" class title="image-20240716173508920"><p><strong>100nf的电容同理</strong></p><p>​ 这里也可以shift+F 直接进入器件的搜索</p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716173656116.png" class title="image-20240716173656116"><p>可以点击两个元器件，在右侧显示出其封装</p><p>上面那玩意呢不知道是啥，但是L1不是电感，叫磁珠</p><h4 id="晶振模块">2. 晶振模块</h4><style>.ihmktqdvslup{zoom:67%;}</style><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717150942554.png" class="ihmktqdvslup" alt="image-20240717150942554"><p>使用32.768K来为他进行RTC的计时</p><h4 id="sht40温湿度传感器模块">3. SHT40温湿度传感器模块</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717153610150.png" class title="image-20240717153610150"><h4 id="三态输出8位移位寄存器">4. 三态输出8位移位寄存器</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717160922061.png" class title="image-20240717160922061"><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717154713251.png" class title="image-20240717154713251"><p>后面的U<sub>5,6</sub>与其高度相似，区别在于LED1，，还是LED2</p><p>右键芯片，选择扇出网络标签，批量修改</p><h4 id="唤醒按键">5. 唤醒按键</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717162327499.png" class title="image-20240717162327499"><p>中间这玩意是个按键</p><h4 id="测试led">6. 测试led</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717162407592.png" class title="image-20240717162407592"><h4 id="共阴极三位数码管">7. 共阴极三位数码管</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717164050812.png" class title="image-20240717164050812"><h4 id="两节5号电池盒防反接">8. 两节5号电池盒+防反接</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717171003758.png" class title="image-20240717171003758"><h4 id="swd下载调试接口">9. SWD下载调试接口</h4><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717172115713.png" class title="image-20240717172115713">]]></content>
+      
+      
+      <categories>
+          
+          <category> 开源项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 温湿度仪 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>06. 占空比D在0到0.5之间的工作波形分析</title>
       <link href="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/"/>
       <url>/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/</url>
