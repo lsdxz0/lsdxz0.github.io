@@ -364,21 +364,21 @@
                     <div class="post-statis col l4 hide-on-med-and-down" data-aos="zoom-in-right">
                         
 <div class="statis">
-    <span class="count"><a href="/">27</a></span>
+    <span class="count"><a href="/">30</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">6</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">14</a></span>
+    <span class="count"><a href="/tags">16</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -394,21 +394,21 @@
                                 <div class="post-statis hide-on-large-only" data-aos="zoom-in-right">
                                     
 <div class="statis">
-    <span class="count"><a href="/">27</a></span>
+    <span class="count"><a href="/">30</a></span>
     <span class="name">文章</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/categories">6</a></span>
+    <span class="count"><a href="/categories">8</a></span>
     <span class="name">分类</span>
 </div>
 
 
 
 <div class="statis">
-    <span class="count"><a href="/tags">14</a></span>
+    <span class="count"><a href="/tags">16</a></span>
     <span class="name">标签</span>
 </div>
 
@@ -552,7 +552,7 @@
                 name: '文章篇数',
                 type: 'line',
                 color: ['#6772e5'],
-                data: [0,0,0,0,0,0,0,0,0,0,0,13,14],
+                data: [0,0,0,0,0,0,0,0,0,0,0,13,17],
                 markPoint: {
                     symbolSize: 45,
                     color: ['#fa755a','#3ecf8e','#82d3f4'],
@@ -594,7 +594,7 @@
                 type: 'pie',
                 radius: '50%',
                 color: ['#6772e5', '#ff9e0f', '#fa755a', '#3ecf8e', '#82d3f4', '#ab47bc', '#525f7f', '#f51c47', '#26A69A'],
-                data: [{"name":"文天祥五分钟课堂","value":9},{"name":"老J的LLC基础","value":3},{"name":"三电平","value":10},{"name":"STM32","value":1},{"name":"软件使用细则","value":1},{"name":"开源项目","value":1}],
+                data: [{"name":"软件使用细则","value":1},{"name":"老J的LLC基础","value":3},{"name":"基础知识","value":1},{"name":"STM32","value":1},{"name":"三电平","value":10},{"name":"控制器","value":2},{"name":"开源项目","value":1},{"name":"文天祥五分钟课堂","value":9}],
                 itemStyle: {
                     emphasis: {
                         shadowBlur: 10,
@@ -618,7 +618,7 @@
         xAxis: [
             {
                 type: 'category',
-                data: ["木修于淋","三电平DCDC","文天祥","晶体管","硬核博士老J","LLC基础","MOSFET","西瓜粥","数字晶体管","ZCS"]
+                data: ["木修于淋","三电平DCDC","文天祥","晶体管","硬核博士老J","LLC基础","MOSFET","西瓜粥","PID","simulink"]
             }
         ],
         yAxis: [
@@ -631,7 +631,7 @@
                 type: 'bar',
                 color: ['#82d3f4'],
                 barWidth : 18,
-                data: [10,10,9,9,3,3,3,2,1,1],
+                data: [10,10,9,9,3,3,3,2,2,1],
                 markPoint: {
                     symbolSize: 45,
                     data: [{
@@ -801,26 +801,14 @@
         <div class="tag-chips center-align">
             
             
-            <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
-                <span class="chip center-align waves-effect waves-light chip-default">文天祥</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                <span class="chip center-align waves-effect waves-light chip-default">晶体管</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%95%B0%E5%AD%97%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                <span class="chip center-align waves-effect waves-light chip-default">数字晶体管</span>
-            </a>
-            
-            
-            
             <a href="/tags/%E8%A5%BF%E7%93%9C%E7%B2%A5/">
                 <span class="chip center-align waves-effect waves-light chip-default">西瓜粥</span>
+            </a>
+            
+            
+            
+            <a href="/tags/simulink/">
+                <span class="chip center-align waves-effect waves-light chip-default">simulink</span>
             </a>
             
             
@@ -843,20 +831,8 @@
             
             
             
-            <a href="/tags/MOSFET/">
-                <span class="chip center-align waves-effect waves-light chip-default">MOSFET</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E6%9C%A8%E4%BF%AE%E4%BA%8E%E6%B7%8B/">
-                <span class="chip center-align waves-effect waves-light chip-default">木修于淋</span>
-            </a>
-            
-            
-            
-            <a href="/tags/%E4%B8%89%E7%94%B5%E5%B9%B3DCDC/">
-                <span class="chip center-align waves-effect waves-light chip-default">三电平DCDC</span>
+            <a href="/tags/PID/">
+                <span class="chip center-align waves-effect waves-light chip-default">PID</span>
             </a>
             
             
@@ -873,14 +849,50 @@
             
             
             
-            <a href="/tags/simulink/">
-                <span class="chip center-align waves-effect waves-light chip-default">simulink</span>
+            <a href="/tags/%E6%9C%A8%E4%BF%AE%E4%BA%8E%E6%B7%8B/">
+                <span class="chip center-align waves-effect waves-light chip-default">木修于淋</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E4%B8%89%E7%94%B5%E5%B9%B3DCDC/">
+                <span class="chip center-align waves-effect waves-light chip-default">三电平DCDC</span>
             </a>
             
             
             
             <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BB%AA/">
                 <span class="chip center-align waves-effect waves-light chip-default">温湿度仪</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%BB%91%E6%A8%A1/">
+                <span class="chip center-align waves-effect waves-light chip-default">滑模</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
+                <span class="chip center-align waves-effect waves-light chip-default">文天祥</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
+                <span class="chip center-align waves-effect waves-light chip-default">晶体管</span>
+            </a>
+            
+            
+            
+            <a href="/tags/MOSFET/">
+                <span class="chip center-align waves-effect waves-light chip-default">MOSFET</span>
+            </a>
+            
+            
+            
+            <a href="/tags/%E6%95%B0%E5%AD%97%E6%99%B6%E4%BD%93%E7%AE%A1/">
+                <span class="chip center-align waves-effect waves-light chip-default">数字晶体管</span>
             </a>
             
             
