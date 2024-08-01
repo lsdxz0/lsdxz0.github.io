@@ -481,85 +481,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="09-10-SOA安全使用晶体管的选定方法"><a href="#09-10-SOA安全使用晶体管的选定方法" class="headerlink" title="09+10. SOA安全使用晶体管的选定方法"></a>09+10. SOA安全使用晶体管的选定方法</h2><h4 id="判断流程"><a href="#判断流程" class="headerlink" title="判断流程"></a>判断流程</h4><p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628210018165.png" alt></p>
-<h4 id="1-测定实际的电流、电压波形"><a href="#1-测定实际的电流、电压波形" class="headerlink" title="1. 测定实际的电流、电压波形"></a>1. 测定实际的电流、电压波形</h4><p>​    用示波器确定晶体管上的电压电流，需要全部满足规格书上记载的额定值，特别应该确认下列项目</p>
-<div class="table-container">
+                <h2 id="soa安全使用晶体管的选定方法">09+10.
+SOA安全使用晶体管的选定方法</h2>
+<h4 id="判断流程">判断流程</h4>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628210018165.png"></p>
+<h4 id="测定实际的电流电压波形">1. 测定实际的电流、电压波形</h4>
+<p>​
+用示波器确定晶体管上的电压电流，需要全部满足规格书上记载的额定值，特别应该确认下列项目</p>
 <table>
 <thead>
-<tr>
+<tr class="header">
 <th>晶体管的种类</th>
 <th>电压</th>
 <th>电流</th>
 </tr>
 </thead>
 <tbody>
-<tr>
+<tr class="odd">
 <td>双极晶体管</td>
-<td>集电极发射极间电压：V~CE~</td>
-<td>集电极电流：I~C~</td>
+<td>集电极发射极间电压：V<sub>CE</sub></td>
+<td>集电极电流：I<sub>C</sub></td>
 </tr>
-<tr>
+<tr class="even">
 <td>数字晶体管</td>
 <td>输出电压：Vo（GND-OUT间电压)</td>
-<td>输出电流：I~O~</td>
+<td>输出电流：I<sub>O</sub></td>
 </tr>
-<tr>
+<tr class="odd">
 <td>MOSFET</td>
-<td>漏极源极间电压：V~DS~</td>
-<td>漏极电流：I~D~</td>
+<td>漏极源极间电压：V<sub>DS</sub></td>
+<td>漏极电流：I<sub>D</sub></td>
 </tr>
 </tbody>
 </table>
-</div>
 <hr>
-<h4 id="2-是否一直满足绝对最大额定值"><a href="#2-是否一直满足绝对最大额定值" class="headerlink" title="2. 是否一直满足绝对最大额定值"></a>2. 是否一直满足绝对最大额定值</h4><p>确认‘’<a href="####1. 测定实际的电流、电压波形">1.测定实际的电流电压</a>‘’中确定的电压，电流是否超过了规格书记载的绝对最大额定值</p>
-<p>​    如例1中，未确认的项目全部都需要在绝对最大额定值以下。即是浪涌电流和浪涌电压只在一瞬间超过了绝对最大额定值也不可使用。如果超过绝对最大额定值，有可能会造成破坏和劣化</p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628211129056.png" alt></p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628212658785.png" alt></p>
-<h4 id="3-是否在SOA范围内"><a href="#3-是否在SOA范围内" class="headerlink" title="3. 是否在SOA范围内"></a>3. 是否在SOA范围内</h4><p>​    确认安全工作区域（SOA）</p>
-<p>​    <strong>安全工作区域（SOA）</strong> 表示晶体管可安全工作的区域</p>
-<p>​    不过，SOA只是关于1脉冲的数据，在脉冲反复混入时，需要所有脉冲都进入SOA范围内， 并且通过 ‘’<a href="####4. 在使用环境温度下是否在下降的SOA范围内">4.确认安全工作区域（SOA）2</a>‘’计算的平均施加功率在额定功率以下</p>
-<p>​    SOA安全工作区域的简称，有时也称ASO</p>
+<h4 id="是否一直满足绝对最大额定值">2. 是否一直满足绝对最大额定值</h4>
+<p>确认‘’<a href="####1.%20测定实际的电流、电压波形">1.测定实际的电流电压</a>‘’中确定的电压，电流是否超过了规格书记载的绝对最大额定值</p>
+<p>​
+如例1中，未确认的项目全部都需要在绝对最大额定值以下。即是浪涌电流和浪涌电压只在一瞬间超过了绝对最大额定值也不可使用。如果超过绝对最大额定值，有可能会造成破坏和劣化</p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628211129056.png"></p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628212658785.png"></p>
+<h4 id="是否在soa范围内">3. 是否在SOA范围内</h4>
+<p>​ 确认安全工作区域（SOA）</p>
+<p>​ <strong>安全工作区域（SOA）</strong> 表示晶体管可安全工作的区域</p>
+<p>​
+不过，SOA只是关于1脉冲的数据，在脉冲反复混入时，需要所有脉冲都进入SOA范围内，
+并且通过 ‘’<a href="####4.%20在使用环境温度下是否在下降的SOA范围内">4.确认安全工作区域（SOA）2</a>‘’计算的平均施加功率在额定功率以下</p>
+<p>​ SOA安全工作区域的简称，有时也称ASO</p>
 <p><strong>SOA确认方法</strong></p>
-<p>​    确认‘’<a href="####1. 测定实际的电流、电压波形">1.确认电流、电压</a>‘’中确认的波形是否在SOA范围内，即使浪涌电压电流只在一瞬间超出也不行，另外注意，即使在‘’<a href="####2. 是否一直满足绝对最大额定值">2.确认绝对最大额定值</a>‘’中确认的绝对最大额定值的范围内，有时也会超出SOA范围</p>
-<h4 id="4-在使用环境温度下是否在下降的SOA范围内"><a href="#4-在使用环境温度下是否在下降的SOA范围内" class="headerlink" title="4. 在使用环境温度下是否在下降的SOA范围内"></a>4. 在使用环境温度下是否在下降的SOA范围内</h4><p>​    （按照使用环境温度或因晶体管发热温度上升时的元件温度来考虑）</p>
+<p>​ 确认‘’<a href="####1.%20测定实际的电流、电压波形">1.确认电流、电压</a>‘’中确认的波形是否在SOA范围内，即使浪涌电压电流只在一瞬间超出也不行，另外注意，即使在‘’<a href="####2.%20是否一直满足绝对最大额定值">2.确认绝对最大额定值</a>‘’中确认的绝对最大额定值的范围内，有时也会超出SOA范围</p>
+<h4 id="在使用环境温度下是否在下降的soa范围内">4.
+在使用环境温度下是否在下降的SOA范围内</h4>
+<p>​ （按照使用环境温度或因晶体管发热温度上升时的元件温度来考虑）</p>
 <p>由于通常的SOA是在常温（25℃）下的数据，所以周围温度在25℃以上时，或者因晶体管自身发热元件温度上升时，需要降低SOA的温度</p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214037069.png" alt></p>
-<p><strong>SOA的温度降低方法</strong>: （降低的温度基本上元件的温度）</p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214037069.png"></p>
+<p><strong>SOA的温度降低方法</strong>:
+（降低的温度基本上元件的温度）</p>
 <p><strong>SOA的温度降额方法</strong></p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214241639.png" alt></p>
-<p>具体的方法就是： 将SOA线平行移向低电流方向。如图所示，下降率根据区域不同而不同</p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214241639.png"></p>
+<p>具体的方法就是：
+将SOA线平行移向低电流方向。如图所示，下降率根据区域不同而不同</p>
 <ul>
-<li><strong>1-1 热限制区</strong><ul>
+<li><strong>1-1 热限制区</strong>
+<ul>
 <li>在该区域，SOA线具有45°的倾斜度（功率固定线）</li>
 <li>下降率为0.8%/℃</li>
-</ul>
-</li>
-<li><strong>1-2 2次下降区域</strong><ul>
+</ul></li>
+<li><strong>1-2 2次下降区域</strong>
+<ul>
 <li>晶体管存在热失控引起的2次下降区域</li>
 <li>SOA线具有45°以上的倾斜度</li>
 <li>下降率为0.5%/℃</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214804538.png" alt></p>
-<p>​    因此，该区域SOA线向低电流方向平移37.5%</p>
-<h4 id="5-连续脉冲？单脉冲？"><a href="#5-连续脉冲？单脉冲？" class="headerlink" title="5. 连续脉冲？单脉冲？"></a>5. 连续脉冲？单脉冲？</h4><p><strong>单脉冲</strong></p>
-<p>​    如同上电和掉电的浪涌电流一样，只发生一次脉冲的情形（无反复脉冲时）称为单脉冲，此时：</p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215039456.png" alt></p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628214804538.png"></p>
+<p>​ 因此，该区域SOA线向低电流方向平移37.5%</p>
+<h4 id="连续脉冲单脉冲">5. 连续脉冲？单脉冲？</h4>
+<p><strong>单脉冲</strong></p>
+<p>​
+如同上电和掉电的浪涌电流一样，只发生一次脉冲的情形（无反复脉冲时）称为单脉冲，此时：</p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215039456.png"></p>
 <p><strong>连续脉冲</strong></p>
-<p>​    将脉冲反复发生的情形称为连续脉冲，此时：</p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215150524.png" alt></p>
-<h4 id="6-平均功耗是否在周围温度的额定功率以下？"><a href="#6-平均功耗是否在周围温度的额定功率以下？" class="headerlink" title="6.平均功耗是否在周围温度的额定功率以下？"></a>6.平均功耗是否在周围温度的额定功率以下？</h4><p>​    周围温度的额定功率以下 = 元件温度在绝对最大额定值150℃以下</p>
+<p>​ 将脉冲反复发生的情形称为连续脉冲，此时：</p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215150524.png"></p>
+<h4 id="平均功耗是否在周围温度的额定功率以下">6.平均功耗是否在周围温度的额定功率以下？</h4>
+<p>​ 周围温度的额定功率以下 = 元件温度在绝对最大额定值150℃以下</p>
 <p>使元件温度升到150℃的功率定位额定功率，</p>
 <p><strong>功率计算方法</strong></p>
-<p>​    基本上，平均功率是以时间对电流和电压的积进行积分的值除以时间所得的值</p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215507777.png" alt></p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215532059.png" alt></p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215549696.png" alt></p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215606408.png" alt></p>
-<p><strong>功率计算的积分公式</strong>—-<u>通用，不仅于半导体</u></p>
-<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215811609.png" alt></p>
+<p>​
+基本上，平均功率是以时间对电流和电压的积进行积分的值除以时间所得的值</p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215507777.png"></p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215532059.png"></p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215549696.png"></p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215606408.png"></p>
+<p><strong>功率计算的积分公式</strong>---<u>通用，不仅于半导体</u></p>
+<p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215811609.png"></p>
 
                 
             </div>
@@ -803,59 +819,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/19.jpg" class="responsive-img" alt="01. 三电平DCDC拓扑结构介绍">
-                        
-                        <span class="card-title">01. 三电平DCDC拓扑结构介绍</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-09
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E4%B8%89%E7%94%B5%E5%B9%B3/" class="post-category">
-                                    三电平
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E6%9C%A8%E4%BF%AE%E4%BA%8E%E6%B7%8B/">
-                        <span class="chip bg-color">木修于淋</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%89%E7%94%B5%E5%B9%B3DCDC/">
-                        <span class="chip bg-color">三电平DCDC</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/">
                     <div class="card-image">
                         
@@ -872,8 +835,65 @@
                         
                     </div>
                     <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-06-28
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%96%87%E5%A4%A9%E7%A5%A5%E4%BA%94%E5%88%86%E9%92%9F%E8%AF%BE%E5%A0%82/" class="post-category">
+                                    文天祥五分钟课堂
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
+                        <span class="chip bg-color">文天祥</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
+                        <span class="chip bg-color">晶体管</span>
+                    </a>
+                    
+                    <a href="/tags/MOSFET/">
+                        <span class="chip bg-color">MOSFET</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="06. MOSFET特性简单版，强调温度特性">
+                        
+                        <span class="card-title">06. MOSFET特性简单版，强调温度特性</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-28
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-22
                             </span>
                         <span class="publish-author">
                             
