@@ -523,7 +523,77 @@ Cortex-M内核</p>
 <img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720220154004.png" alt="image-20240720220154004">
 <figcaption aria-hidden="true">image-20240720220154004</figcaption>
 </figure>
-<h4 id="section"></h4>
+<ul>
+<li><strong>NVIC：</strong>位于Cortex-M3内核里的外设；用于管理中断的设备，比如配置中断优先级</li>
+<li><strong>SysTick：</strong>位于Cortex-M3内核里的外设，剩下的都是内核外的外设；内核里面的定时器，用于给操作系统提供定时服务</li>
+<li><strong>RCC：</strong>对系统的时钟进行配置,使能各模块的时钟，（不给时钟的情况下，操作外设是无效的）</li>
+<li><strong>GPIO:</strong> 点灯，读取按键等</li>
+<li><strong>AFIO:</strong> 复用功能端口的重定义，还有中断端口的配置</li>
+<li><strong>EXTI:</strong>
+配置好外部中断之后，当引脚有电平变化时，就可以触发中断，让CPU来处理任务</li>
+<li><strong>TIM:</strong>
+分为高级，通用，基本定时器三种类型，不仅可以完成定时中断任务，还可以完成测频率，生成PWM波形，配置成专用的编码器接口等功能</li>
+<li><strong>ADC：</strong>
+内置了12位的AD转换器，可以直接读取IO口的模拟电压值，无需外部连接AD芯片，使用非常方便</li>
+<li><strong>DMA: </strong> 帮助CPU完成搬运大量数据的繁琐任务</li>
+<li><strong>USART:</strong> 实际还是用异步串口多</li>
+<li><strong>I2C:</strong> 通信协议</li>
+<li><strong>SPI:</strong> 通信协议</li>
+<li><strong>CAN:</strong> 通信协议，一般用于汽车领域</li>
+<li><strong>USB:</strong> 通信协议</li>
+<li><strong>RTC:</strong> 实时时钟</li>
+<li><strong>CRC: </strong> 数据校验方式，用于判断数据的正确性</li>
+<li><strong>PWR:</strong>
+可以让芯片进入睡眠模式等状态，达到省电的目的</li>
+<li><strong>BKP: </strong> 系统掉电时，仍可用备用电池保持数据</li>
+<li><strong>IWDG:</strong> 看门狗，</li>
+<li><strong>WWDG:</strong> 看门狗，及时复位芯片，保持系统稳定</li>
+<li><strong>DAC:</strong> 在IO口直接输出模拟电压</li>
+<li><strong>SDIO:</strong> 用于读取SD卡</li>
+<li><strong>FSMC:</strong> 可以用于扩展内存，或者配置成其他总线协议</li>
+<li><strong>USB OTG: </strong>
+可以让stm32作为USB主机去读取其他usb设备</li>
+</ul>
+<h4 id="芯片命名规则">芯片命名规则</h4>
+<figure>
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809151119400.png" alt="芯片命名规则">
+<figcaption aria-hidden="true">芯片命名规则</figcaption>
+</figure>
+<h4 id="芯片系统结构">芯片系统结构</h4>
+<figure>
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809151207671.png" alt="系统结构">
+<figcaption aria-hidden="true">系统结构</figcaption>
+</figure>
+<ul>
+<li>左上角是Cortex-M3的内核，引出三条总线，分别是ICode指令总线，DCode数据总线，System系统总线，前两种总线主要是用于连接Flash闪存的，Flash里面存储的是我们编写的程序，ICode指令总线是用来加载程序指令的，DCode数据总线是用来加载数据的，比如常量和调试参数这些；System系统总线连接了些其他东西，比如SRAM，用于存储程序运行时的变量数据，还有FMSC，AHB系统总线，用于挂载基本或高性能外设，比如复位和时钟控制这些基本电路，还有SDIO也是挂载上AHB上的，再后来就是两个桥接，接到了APB2和APB1两个外设总线上，APB是指先进外设总线，用于连接一般的外设</li>
+<li>（待重学）</li>
+</ul>
+<h4 id="引脚配置">引脚配置</h4>
+<h4 id="启动配置">启动配置</h4>
+<figure>
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809152619484.png" alt="启动配置">
+<figcaption aria-hidden="true">启动配置</figcaption>
+</figure>
+<p>​
+用于指定程序开始运行的位置，一般情况下，程序都是从Flash程序存储器开始运行，</p>
+<h2 id="软件安装">软件安装</h2>
+<h4 id="安装器件支持包">安装器件支持包</h4>
+<p><strong>why</strong></p>
+<figure>
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809153210049.png" alt="image-20240809153210049">
+<figcaption aria-hidden="true">image-20240809153210049</figcaption>
+</figure>
+<p><strong>how</strong></p>
+<p>在线安装</p>
+<figure>
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809153302214.png" alt="image-20240809153302214">
+<figcaption aria-hidden="true">image-20240809153302214</figcaption>
+</figure>
+<p>点击绿色按钮</p>
+<figure>
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809153420780.png" alt="image-20240809153420780">
+<figcaption aria-hidden="true">image-20240809153420780</figcaption>
+</figure>
 
                 
             </div>

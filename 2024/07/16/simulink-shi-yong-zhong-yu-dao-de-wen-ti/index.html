@@ -483,6 +483,21 @@
 <h4 id="scope显示的波形带圆圈">2. SCOPE显示的波形带圆圈</h4>
 <p>打开示波器-视图-样式-标记（maker）-修改为无（none）</p>
 <img src="/2024/07/16/simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240716153355953.png" class>
+<h4 id="谐振器中的变压器">3. 谐振器中的变压器</h4>
+<p><strong>器件名称：</strong>linear transformer</p>
+<img src="/2024/07/16/simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095309933.png" class>
+<p>​ 取消框选，变为单相变压器，这样就只有两个铁芯了</p>
+<p><strong>参数设计：</strong></p>
+<ul>
+<li><p>units那里有两个选项，默认是pu，你学过电机或者电力系统应该就知道这是<strong>标幺制</strong>，所以我就不解释啥是标幺制了。另一个选项是SI，也就是国际单位制。</p></li>
+<li><p>如果选的是国际单位制，那么units下面的nominal power and
+frequency就不用管了。这个是用来设置变压器的额定容量和额定频率的，只在标幺制的时候才用的到，</p></li>
+<li><p>Winding 1 就是一次侧绕组，Winding 2 就是二次侧绕组。</p></li>
+<li><p>V1
+V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就是电压的有效值。</p></li>
+<li><p>R1，R2，L1，L2是一二次侧的电阻和电感。就是那个变压器的等效电路，图里X1，X2就是电感的电抗值，对应的就是L1和L2，不想解释了过于简单。</p></li>
+</ul>
+<img src="/2024/07/16/simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095553742.png" class title="变压器等效电路">
 
                 
             </div>
