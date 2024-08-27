@@ -4,11 +4,36 @@
   
     
     <entry>
-      <title>推挽电路</title>
-      <link href="/2024/08/22/ji-ben-dian-lu-tui-wan-dian-lu/"/>
-      <url>/2024/08/22/ji-ben-dian-lu-tui-wan-dian-lu/</url>
+      <title>变压器</title>
+      <link href="/2024/08/27/qi-jian-bian-ya-qi/"/>
+      <url>/2024/08/27/qi-jian-bian-ya-qi/</url>
       
-        <content type="html"><![CDATA[<h2 id="推挽电路">推挽电路</h2><h3 id="三极管推挽电路">三极管推挽电路</h3>]]></content>
+        <content type="html"><![CDATA[<h2 id="变压器"><a href="#变压器" class="headerlink" title="变压器"></a>变压器</h2><h3 id="变压器模型"><a href="#变压器模型" class="headerlink" title="变压器模型"></a>变压器模型</h3><p><style>.gkblqfxhgmij{zoom:200%;}</style><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827085023143.png" class="gkblqfxhgmij"></p><p><strong>作用：</strong></p><ul><li>电气隔离</li><li>提高降低电压或电流</li></ul><script type="math/tex; mode=display">\frac{\nu_1}{\nu_2}=\frac{N_1}{N_2}\quad\frac{i_1}{i_2}=\frac{N_2}{N_1}</script><p><strong>两绕组上的点用于指示其相对极性</strong></p><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827085207175.png" class><p>对于这种在一起的同边的<strong>同名端</strong></p><ul><li>电压<ul><li>左边上正下负，则右边上正下负</li></ul></li><li>电流<ul><li>左边流入，右边流出</li></ul></li></ul><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827085344393.png" class><p>如果不在一起</p><ul><li>电压<ul><li>左边上正下负，右边上负下正</li></ul></li><li>电流<ul><li>左边流入，右边从那个圆点流出</li></ul></li></ul><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827085553811.png" class><p>​    所以说，在做仿真时，变压器出现的漏感，导线电阻等通通可以不管，只需要考虑Lm跟匝数比</p><p><strong>当变压器电路周期电压电流工作时，各开关周期起止时刻磁链必须相同，否则将导致磁饱和</strong></p><p>+++</p><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827102231723.png" class><ul><li><p>绕组有电阻，电源电压有一部分会降落在绕组电阻上</p></li><li><p>大部分磁通沿着铁心形成闭环，大部分磁通是这样的，称为主磁通</p></li><li><p>还有一部分，在气隙中形成回路，这部分称为漏磁通</p></li><li><p>两个磁通都会在一次绕组中感应出电动势</p></li><li><p>忽略绕组电阻与漏磁通</p></li><li><p>近似认为一次侧的电压和感应电动势相等</p></li><li><script type="math/tex; mode=display">\dot{U}_1\approx-\dot{E}_1</script><h3 id="为啥电源方向与感应电动势方向是反的"><a href="#为啥电源方向与感应电动势方向是反的" class="headerlink" title="为啥电源方向与感应电动势方向是反的"></a><strong>为啥电源方向与感应电动势方向是反的</strong></h3></li></ul><p><strong>基于理想变压器的分析</strong></p><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827103055851.png" class><ul><li>一次侧的线圈相当于纯感性的负载，所以一次侧的电流会滞后于一次侧电压90°</li><li>一次侧的电流全部用来建立主磁通，磁化电流与主磁通成正比，且没有相位差，也就是说，主磁通的方向是与一次侧电流相位相同，且同样呈正弦规律变化</li><li>变化的磁通又在一次侧产生感应电动势，感应电动势正比于磁通变化率，且呈阻碍原磁通作用：$e=-N\frac{d\phi}{dt}$</li><li>所以对于正弦变化的磁通，先取导数再取负号，就相当于一次感应电动势比磁通又滞后了90°</li></ul><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827103912216.png" class><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827104019769.png" class title="image-20240827104019769"><ul><li>电源电流分为两部分<ul><li>一个作用于绕组电阻，</li><li>流过线圈会产生磁动势，这是建立磁通的原因<ul><li>一部分生成的是漏磁通<ul><li>它将在一次绕组中感应出漏电势，可以用一次绕组的漏电抗来表示</li></ul></li><li>另一部分磁通经过变压器铁心形成闭合回路，称为主磁通<ul><li>在一次绕组上产生一次感应电动势</li><li>在二次绕组上产生二次感应电动势</li></ul></li></ul></li></ul></li></ul><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827104628705.png" class title="image-20240827104628705"><img src="/2024/08/27/qi-jian-bian-ya-qi/image-20240827104724317.png" class><ul><li>对于一次侧电流，其实与空载相似，只不过加负载之后吗，一次侧电流要增加</li><li>那么对于二次侧电流，会产生主磁通与一次侧电流共同作用<ul><li>此外也会产生漏磁通，也会作用于二次绕组电阻</li></ul></li></ul><h5 id="如何理解漏感"><a href="#如何理解漏感" class="headerlink" title="如何理解漏感"></a>如何理解漏感</h5><p>现实变压器不是理想的，像98折的充值活动一样，原边绕组（原边线圈）充了100块钱，但是到副边只剩98块钱了，中介吞了2块钱。这中介便是漏感，漏感通俗的定义是<strong>无法耦合到副边的感量</strong>。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电子器件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 变压器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>尖峰吸收电路</title>
+      <link href="/2024/08/27/ji-chu-dian-lu-xi-shou-dian-lu/"/>
+      <url>/2024/08/27/ji-chu-dian-lu-xi-shou-dian-lu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="吸收电路"><a href="#吸收电路" class="headerlink" title="吸收电路"></a>吸收电路</h2><h3 id="为啥要用吸收电路"><a href="#为啥要用吸收电路" class="headerlink" title="为啥要用吸收电路"></a>为啥要用吸收电路</h3><p>场景：</p><ul><li>电感反向电动势</li><li>变压器</li></ul><h4 id="反激电路里为啥要用吸收电路"><a href="#反激电路里为啥要用吸收电路" class="headerlink" title="反激电路里为啥要用吸收电路"></a>反激电路里为啥要用吸收电路</h4><p>​    反激常用RCD，这里就用RCD电路来概述</p><p>​    <strong>RCD的出现是为了解决原边MOS关闭时，漏感能量造成原边MOS应力过高的问题</strong></p><ul><li>现实变压器不是理想的，像98折的充值活动一样，原边绕组（原边线圈）充了100块钱，但是到副边只剩98块钱了，中介吞了2块钱。这<strong>中介便是漏感</strong>，漏感通俗的定义是<strong>无法耦合到副边的感量</strong>。</li><li>顾名思义，<strong>测量</strong>也非常简单，通过短路输入绕组，再测量原边的感量，由于输入绕组短路，磁芯磁路被短路，耦合到副边的能量都被短路了，还能测量出来的便是漏感。如下图表示：<img src="/2024/08/27/ji-chu-dian-lu-xi-shou-dian-lu/image-20240827135659087.png" class></li><li><strong>漏感的存在会造成什么问题</strong><ul><li>感和原边的电感是串联关系，假定给原边的电感充入100块的电流，原边电感也只能得到98，漏感还得有两块钱，且由漏感的定义为<strong>无法耦合到副边的感量</strong>+电感电流不能突变</li><li>假设MOS关断的时候，漏感上的电流为1A，MOS关断，阻抗视为无穷大，可假定他为10MΩ，此时MOS上的电压为I*R=10MV，“pong“炸了</li></ul></li></ul><h5 id="还要注意一个问题"><a href="#还要注意一个问题" class="headerlink" title="还要注意一个问题"></a>还要注意一个问题</h5><p>​    尖峰吸收电路所需吸收的能量是变压器漏感产生的尖峰电压，而不是开关管关断后主线圈中产生的反向电动势</p><p>​    初级线圈的反向电动势是向二次供电线圈和次级线圈传递能量的，绝对不能让尖峰吸收电路吸收它产生的能量，否则的话次级线圈回路和二次供电回路就没有电压产生。</p><h3 id="RCD吸收电路"><a href="#RCD吸收电路" class="headerlink" title="RCD吸收电路"></a>RCD吸收电路</h3><img src="/2024/08/27/ji-chu-dian-lu-xi-shou-dian-lu/image-20240827153206094.png" class><ul><li>当MOS关断的时候，漏感的能量通过二极管，到电容C里存储能量</li><li>当漏感能量耗尽，电容C放电，通过电阻消耗能量</li></ul><p><strong>RCD吸收一般不适合对二极管反压尖峰的吸收，因为RCD吸收动作有可能加剧二极管反向恢复电流</strong></p>]]></content>
       
       
       <categories>
@@ -20,7 +45,136 @@
       
         <tags>
             
-            <tag> 推挽 </tag>
+            <tag> 尖峰吸收电路 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>电感反向电动势</title>
+      <link href="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/"/>
+      <url>/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="电感反向电动势"><a href="#电感反向电动势" class="headerlink" title="电感反向电动势"></a>电感反向电动势</h2><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110154574.png" class><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110228615.png" class><p>电阻上面没有压降，所以施加在MOS管漏极上的电压就有6V</p><p>那么将电阻换成电感会发生什么</p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110337793.png" class title="image-20240827110337793"><p>当mos管截止的时候，MOS管的漏极电压峰值高达40V</p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110426582.png" class><p><strong>电感电流不能突变</strong></p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110459446.png" class><p>MOS关断了，但是电流还需要一段时间才能停止流动，但是电流没地儿去了，不断积累直到所有存储的感应能量都转化回电能，所以MOS管的漏极上会得到巨大的电压尖峰</p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110702516.png" class><p><strong>解决办法</strong></p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110805149.png" class><h5 id="为啥说是反向的"><a href="#为啥说是反向的" class="headerlink" title="为啥说是反向的"></a>为啥说是反向的</h5><p>​    首先理解<strong>反向</strong>，反向的意思就是说，你想减少，我不乐意，给你施加个能量，让你缓慢减少，你想增加，我还是不乐意，给你施加个能量，让你缓慢增加</p><p>​    对此做出如下理解，电感储存的能量转化成反向电动势用于减缓电流减为0的过程，这不就是电感电流不能突变</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 小知识 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> MOS管 </tag>
+            
+            <tag> 反向电动势 </tag>
+            
+            <tag> 电感 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>反激变换器</title>
+      <link href="/2024/08/27/tuo-bu-fan-ji-bian-huan-qi/"/>
+      <url>/2024/08/27/tuo-bu-fan-ji-bian-huan-qi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="反激变换器"><a href="#反激变换器" class="headerlink" title="反激变换器"></a>反激变换器</h2><h3 id="反激变换器拓扑结构"><a href="#反激变换器拓扑结构" class="headerlink" title="反激变换器拓扑结构"></a>反激变换器拓扑结构</h3><img src="/2024/08/27/tuo-bu-fan-ji-bian-huan-qi/image-20240827150755166.png" class><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><img src="/2024/08/27/tuo-bu-fan-ji-bian-huan-qi/e8b7ce99d22d3741e5267ff689143590.png" class><p><strong>S导通(开关管导通)时：</strong></p><ul><li>电流由输入电压端流经变压器原边线圈与开关形成电流回路。此时变压器原边线圈两端压降为Vi</li><li>副边线圈两端感应电压Vi/n，因回路上二极管不导通，<strong>副边回路上无电流</strong></li><li>变压器原边线圈因电流流过而产生磁力线于变压器铁芯内，其数量会随流通电流的时间增加而增加</li><li>因副边线圈无电流流通，原边电流增加使得<strong>原边能量累积于原边线圈中</strong>，直到开关断开为止</li></ul><p><strong>S关断(开关管关断)时：</strong></p><ul><li>原边线圈两端电压因磁力线累积储存在变压器铁芯内，因而产生反电势</li><li>原边线圈两端反电势由铁芯内累积的磁力线，使得副边线圈两端电压产生相对感应电势</li><li>二极管导通(理想二极管)，副边线圈两端电压为Vo，原边线圈两端电压为Vo*n</li><li>电流 由副边线圈开始经二极管与输出电容形成回路，并将变压器的能量释放，直到下一次开关导通为止</li></ul><p><strong>总结</strong></p><p>​    特点:变压器的一次和二次绕组的极性相反</p><ul><li>当开关管<strong>导通</strong>时，变压器原边电感电流开始上升，此时由于次级同名端的关系，输出二极管截止，变压器<strong>储存能量</strong>，负载由输出电容提供能量。</li><li>当开关管<strong>截止</strong>时，变压器原边电感感应电压反向，此时输出二极管导通，变压器中的能量经由输出二极管向负载<strong>供电</strong>，同时对电容充电，补充刚刚损失的能量。</li></ul><p>+++</p><p>考虑到原边漏感的能量可能会造成开关S两端过压，损坏S，因此一般要加入吸收电路</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 拓扑 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 反激 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>继电器</title>
+      <link href="/2024/08/26/qi-jian-ji-dian-qi/"/>
+      <url>/2024/08/26/qi-jian-ji-dian-qi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="继电器"><a href="#继电器" class="headerlink" title="继电器"></a>继电器</h2><p><strong>控制原理</strong></p><img src="/2024/08/26/qi-jian-ji-dian-qi/image-20240826131510078.png" class><p>​    给线圈接电，线圈有了磁性，它的衔铁会被吸引，这样电灯泡就会被电量</p><p><strong>继电器外壳</strong></p><img src="/2024/08/26/qi-jian-ji-dian-qi/image-20240826131627090.png" class><img src="/2024/08/26/qi-jian-ji-dian-qi/image-20240826131652546.png" class><p><strong>coil 5V：</strong>当施加5V的电压的时候，继电器的触电就会闭环，灯泡亮</p><p>​    当施加电压小于5V的时候，所激发的电磁力不能激发触电动作</p><p>​    当施加电压大于5V时，继电器的线圈很可能会直接烧毁</p><img src="/2024/08/26/qi-jian-ji-dian-qi/image-20240826132102772.png" class><p>​    给mos管一个高电平，线圈接收到5V的电压，触点闭合，灯泡点亮</p><p><strong>与mos管比，继电器的优缺点：</strong></p><p><strong>优点</strong></p><ul><li>与MOS相比，继电器更能适应大电压大电流，<ul><li>比如图中的继电器外壳数值，说的是它在直流电压下，最高能承受110V的电压，在给他施加交流电时，能承受380V交流电</li><li>MOS管是不能施加交流电的</li></ul></li><li>继电器具有电气隔离功能<ul><li><img src="/2024/08/26/qi-jian-ji-dian-qi/image-20240826132641345.png" class></li></ul></li></ul><p><strong>劣势</strong></p><ul><li>开关次数：10w次，mos不用管开关次数</li><li>动作时间：10ms，1s开关100次，mos：10ns，继电器吸合一次的时间mos有100w次</li><li>散热：继电器不需要散热。稍微有点功率的mos得加散热</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电子器件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 继电器 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>DCDC烧坏</title>
+      <link href="/2024/08/26/shi-xi-dcdc-shao-pi/"/>
+      <url>/2024/08/26/shi-xi-dcdc-shao-pi/</url>
+      
+        <content type="html"><![CDATA[<h2 id="DCDC烧坏"><a href="#DCDC烧坏" class="headerlink" title="DCDC烧坏"></a>DCDC烧坏</h2><h3 id="状况分析"><a href="#状况分析" class="headerlink" title="状况分析"></a>状况分析</h3><p>​    在dcdc电路中，两个mos管同时烧坏</p><h3 id="可能原因分析"><a href="#可能原因分析" class="headerlink" title="可能原因分析"></a>可能原因分析</h3><ul><li>瞬态电压过大<ul><li>正向</li><li>反向</li></ul></li><li>两个mos管同时导通了</li><li>选型</li><li>质量</li><li>过温<ul><li>过温在本次案例中可能性过小，有封装，有风扇</li></ul></li></ul><h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><ul><li>切片<ul><li>主要来看看是哪部分的问题</li><li>正向的时候，是PN结有问题</li><li>反向的时候，是二极管有问题</li></ul></li><li>软件<ul><li>实时监控</li></ul></li><li>硬件<ul><li>用示波器接到变换器上，来测量行驶过程中的相关波形</li></ul></li><li>主要测试电位<ul><li>MOS管的电压</li><li>DCDC输入电压</li><li>DC内部的工作电流</li></ul></li></ul><h4 id="困难"><a href="#困难" class="headerlink" title="困难"></a>困难</h4><p>​    软件部分只能做正向的，做不了反向的，硬件也差不多，示波器只能看到正向情况的输出波形，</p><p>​    那么考虑是不是可以加个整流，对于正压不处理，反压经过整流再进行采集</p><h3 id="相关分析"><a href="#相关分析" class="headerlink" title="相关分析"></a>相关分析</h3><ul><li>该设计中未考虑瞬态抑制，只考虑MOS的耐压</li><li>在某品牌的产品中也出现过类似的~不过更为严重，PCB的铜板也烧坏了，原因是正负极反接了</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 实习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 故障分析 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>半桥变换器</title>
+      <link href="/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/"/>
+      <url>/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/</url>
+      
+        <content type="html"><![CDATA[<h3 id="半桥变换器"><a href="#半桥变换器" class="headerlink" title="半桥变换器"></a>半桥变换器</h3><h4 id="拓扑结构"><a href="#拓扑结构" class="headerlink" title="拓扑结构"></a>拓扑结构</h4><img src="/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/image-20240826134603191.png" class><ul><li>分隔电容C~1~, C~2~</li><li>变压器T</li><li>原边线圈圈数 N~p~</li><li>副边线圈圈数 N~s1~  , N~s2~</li><li>储能电感 L</li><li>滤波电容 C</li></ul><h4 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h4><p>10  00  01  00</p><p><strong>S1导通，S2关断</strong></p><img src="/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/image-20240826134904019.png" class><ul><li><strong>左边：</strong>电流由输入电压端流经S1、变压器原边线圈与C2形成电流回路。此时<strong>变压器原边线圈两端压降为Vi-Vi/2=Vi/2</strong></li><li><strong>变压器</strong>原边线圈因电流流过而产生磁力线，磁力线透过铁芯传到副边线圈1，<strong>副边线圈1产生感应电势</strong></li><li><strong>右边：</strong>副边线圈1两端感应电压Vi/(2*n)，使得理想整流二极管D1导通，电流形成回路，通过D1、输出储能电感与输出电容</li><li>副边储能电感两端固定压降VL，使得电感线圈上产生电流，此增加的电流于电感铁芯内累积磁力线，直到S1关闭为止</li></ul><p><strong>S1关断，S2关断：</strong></p><img src="/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/image-20240826135353989.png" class><ul><li>原边线圈因S1关断，原边无电流回路产生，变压器停止传输能量，此时变压器副边线圈1和线圈2，端点电压皆为0</li><li><strong>副边电流方向由储能电感到输出电容，经过两线圈共同连接点，各一半电流到D1与D2，回到储能电感</strong></li><li>电感产生反电势致使D1与D2同时导通，储能电感在开关关断时续流，电感上压降与输出相同</li><li>储存电感将导通时间储存在铁芯内的磁力线，透过电感上的感应线圈以电流形式进行释放</li></ul><p><strong>S1关断，S2导通时：</strong></p><img src="/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/image-20240826135937512.png" class><ul><li>电流由输入电压端流经C1、变压器原边线圈与S2形成电流回路，此时变压器原边线圈两端压降为Vi-Vi/2=Vi/2</li><li>变压器原边线圈因电流流过而产生磁力线，其磁力线透过铁芯传到副边线圈2，<strong>副边线圈2产生感应电势</strong></li><li>副边线圈2两端感应电压Vi/(2*n)，使得理想整流二极管D2导通。电流形成回路，通过D2、输出储能电感与输出电容</li><li>副边储能电感两端固定压降VL，使得电感线圈上产生电流，该增加的电流在电感铁芯内累积磁力线，直到S2关闭为止</li></ul><p><strong>S1关断，S2关断时：</strong></p><img src="/2024/08/26/ji-chu-dian-lu-ban-qiao-bian-huan-qi/image-20240826140402603.png" class><ul><li>与上一次00是一样的</li></ul><p><strong>总结</strong></p><ul><li>10与01的区别：上管导通的话，副边就是上面线圈起作用了，下管导通寄宿下面的线圈作用，主要看变压器，一个是流入变压器，一个电流流出变压器，所以电流方向不同，根据二极管，所以导通不同回路</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础电路 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 半桥 </tag>
             
         </tags>
       
@@ -50,6 +204,33 @@
             <tag> EMC </tag>
             
             <tag> 滤波 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>三极管推挽电路</title>
+      <link href="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/"/>
+      <url>/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/</url>
+      
+        <content type="html"><![CDATA[<h2 id="三极管推挽电路"><a href="#三极管推挽电路" class="headerlink" title="三极管推挽电路"></a>三极管推挽电路</h2><h3 id="三极管推挽电路-1"><a href="#三极管推挽电路-1" class="headerlink" title="三极管推挽电路"></a>三极管推挽电路</h3><p>​    功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大</p><p>​    电流驱动能力不足，加一个推挽电路，用于驱动后续电路</p><h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019"></p><p>上面的三极管为npn三极管，下面的是pnp管，前面是限流电阻，两个三极管的中间位置是信号的输出</p><p><strong>分析方波</strong></p><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101025688.png" alt></p><p>​    对于Q2，它的基极电压为5V，发射极电压4.3V，对于PNP来说，导通要求基极电压需要低于发射极0.7V，因此它反向偏置不导通，Q1为NPN型，基极电压大于0.7V，集电极-发射极电压为正，可以导通，经过管压降为4.3V（输出）</p><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101820094.png" alt></p><p>​    由此，实现了上方三极管导通的时候下方断，输出高电平，上方断的时候下方导通，输出为低电平。这里最后输出的是0.7V</p><p><strong>分析实际方波，存在斜率</strong></p><p>  <strong>分析上升过程</strong></p><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p><p>下降过程不再赘述，在实际中，也不会出现Q12同时导通的情况</p><h5 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h5><ul><li><p>高电平情况下</p><ul><li><strong>V输出= V输入– V BE1</strong></li></ul></li><li><p>当输入信号为负时，Q1 关闭，Q2 开始导通并在输出端产生负输入的复制品。</p><ul><li><strong>V OUT = V IN + V BE2</strong></li></ul></li></ul><p><strong>为啥都是上面是NPN，下面是PNP</strong></p><p>​    为啥会有这个问题，因为一般的三极管都是集电极输出，但是在这里，两个三极管都是发射极输出</p><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822104254575.png" alt="image-20240822104254575"></p><p>对于三极管，BE之间可以视为二极管，如果上面是PNP，下面是NPN，就会直接导通，容易烧坏三极管</p><h4 id="定义特性啥的"><a href="#定义特性啥的" class="headerlink" title="定义特性啥的"></a>定义特性啥的</h4><p>推挽放大器由<strong>2个晶体管</strong>组成，其中一个是<strong>NPN型</strong>，另外一个<strong>PNP型</strong>。<strong>一个晶体管在正半周期推动输出，另一个在负半周期拉动输出，因此被称为推挽放大器。</strong></p><p>主要优点是当没有信号时，输出晶体管没有功耗。推挽放大电路有多种类型，但<strong>通常将B类放大器视为推挽放大器。</strong></p><h4 id="A类放大器"><a href="#A类放大器" class="headerlink" title="A类放大器"></a>A类放大器</h4><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png" alt></p><p>​    仅由一个设置为<strong>始终保持导通状态的开关晶体管</strong>组成，产生<strong>最小的失真</strong>和<strong>最大幅度的输出信号</strong>。</p><p>​    A类放大器的效率很低，接近30%。即使没有连接输入信号，A 类放大器的级也允许相同数量的负载电流流过它，因此输出晶体管需要大散热器。</p><h4 id="B类放大器"><a href="#B类放大器" class="headerlink" title="B类放大器"></a>B类放大器</h4><p>​    <strong>B类放大器</strong>是实际的<strong>推挽放大器</strong>。B 类放大器的效率高于 A 类放大器，因为它由两个晶体管 NPN 和 PNP 组成。</p><p>​    B 类放大器电路<strong>每个晶体管将在输入波形的一个半周期内工作</strong>。因此，这类放大电路的导通角为180度。一个晶体管在正半周期推动输出，而另一个在负半周期拉动输出，这就是它被称为<strong>推挽放大器</strong>的原因。</p><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png" alt></p><h5 id="交叉失真"><a href="#交叉失真" class="headerlink" title="交叉失真"></a>交叉失真</h5><p>​    B 类通常会受到称为<strong>交叉失真</strong>的影响，其中信号在 0V 时失真。我们知道，晶体管需要在其基极 - 发射极结处提供 0.7v 的电压才能将其打开。因此，当交流输入电压施加到推挽放大器时，它从 0 开始增加，直到达到 0.7v，晶体管保持关断状态，我们没有得到任何输出。PNP 晶体管在交流波的负半周也会发生同样的事情，这被称为死区。为了克服这个问题，二极管用于偏置，然后放大器被称为 AB 类放大器。</p><h4 id="AB类放大器"><a href="#AB类放大器" class="headerlink" title="AB类放大器"></a>AB类放大器</h4><p>​    交叉失真缺陷可以通过使用两个在晶体管位置导通的二极管来校正。修改后的电路现在称为 <strong>AB 类放大器电路</strong>。</p><p>​    从 0V 到 0.7V，<strong>二极管偏置在导通状态，此时晶体管在基极没有信号。这解决了交叉失真问题。</strong></p><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822110004707.png" alt="image-20240822110004707"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 基础电路 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 推挽 </tag>
+            
+            <tag> 三极管推挽 </tag>
             
         </tags>
       
@@ -89,7 +270,7 @@
       <link href="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/"/>
       <url>/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/</url>
       
-        <content type="html"><![CDATA[<h3 id="mos管防反接电路">mos管防反接电路</h3><p><strong>why</strong></p><p>反接会导致许多电子器件烧毁</p><p><strong>常见的放反接电路有四种</strong></p><ul><li>二极管串联<ul><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821103201763.png"></li><li>问题是功耗过大</li></ul></li><li>整流桥<ul><li>可以实现无论正反接电路都能导通</li><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821103301712.png"></li><li>不管是一个二极管还是多个二极管，都会产生管压降并消耗电能</li></ul></li><li>NMOS<ul><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821103356382.png"></li><li>当输入端为上正下负的时候，电流经过R1,R2，以及mos管的寄生二极管到地，经过电阻分压之后，GS两极之间的电压大于MOS管的导通电压V<sub>gs</sub>，随后mos管导通（G是最上面的，S是两条线回合的，D是另外一边）</li><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821104029125.png"></li><li>当下正上负的时候，电源反接，这时候电流路径会被mos管的寄生二极管反向截止，那么GS由于没有用了电压而截止，电路回路被切断</li><li>这里加电阻，是怕</li></ul></li><li>PMOS<ul><li>与nmos是一样的，区别在于nmos接负极，pmos放上面，接正极</li><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821104237826.png"></li></ul></li></ul><p>看的另外一个视频的长这样，它的g极与一个电阻串联</p><p><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821104915545.png" style="zoom:150%;"></p><ul><li>加入电阻的目的：为了保护MOS管不被过高的栅极电压击穿。电阻的作用是给G极提供导通电压的同时，给稳压管提供工作电流。</li><li>能保证稳压管正常工作的前提下，阻值可以大一点，这样可以减小电流消耗。</li><li>接G极的小阻值电阻，要求不高的情况下，可以去掉不用。如果工作电压低于Vgs，也可以不用电阻和稳压管保护。</li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="mos管防反接电路"><a href="#mos管防反接电路" class="headerlink" title="mos管防反接电路"></a>mos管防反接电路</h3><p><strong>why</strong></p><p>反接会导致许多电子器件烧毁</p><p><strong>常见的放反接电路有四种</strong></p><ul><li>二极管串联<ul><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821103201763.png" alt></li><li>问题是功耗过大</li></ul></li><li>整流桥<ul><li>可以实现无论正反接电路都能导通</li><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821103301712.png" alt></li><li>不管是一个二极管还是多个二极管，都会产生管压降并消耗电能</li></ul></li><li>NMOS<ul><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821103356382.png" alt></li><li>当输入端为上正下负的时候，电流经过R1,R2，以及mos管的寄生二极管到地，经过电阻分压之后，G S两极之间的电压大于MOS管的导通电压V~gs~，随后mos管导通（G是最上面的，S是两条线回合的，D是另外一边）</li><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821104029125.png" alt></li><li>当下正上负的时候，电源反接，这时候电流路径会被mos管的寄生二极管反向截止，那么GS由于没有用了电压而截止，电路回路被切断</li><li>这里加电阻，是怕</li></ul></li><li>PMOS<ul><li>与nmos是一样的，区别在于nmos接负极，pmos放上面，接正极</li><li><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821104237826.png" alt></li></ul></li></ul><p>看的另外一个视频的长这样，它的g极与一个电阻串联</p><p><img src="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/image-20240821104915545.png" style="zoom:150%;"></p><ul><li>加入电阻的目的：为了保护MOS管不被过高的栅极电压击穿。电阻的作用是给G极提供导通电压的同时，给稳压管提供工作电流。</li><li>能保证稳压管正常工作的前提下，阻值可以大一点，这样可以减小电流消耗。</li><li>接G极的小阻值电阻，要求不高的情况下，可以去掉不用。如果工作电压低于Vgs，也可以不用电阻和稳压管保护。</li></ul><h2 id="注意在Nmos跟PMOS防反接电路中，电流方向与一般相比是反的，比如在NMOS中，正常是D-S，但是这里是S-D"><a href="#注意在Nmos跟PMOS防反接电路中，电流方向与一般相比是反的，比如在NMOS中，正常是D-S，但是这里是S-D" class="headerlink" title="注意在Nmos跟PMOS防反接电路中，电流方向与一般相比是反的，比如在NMOS中，正常是D-S，但是这里是S-D"></a>注意在Nmos跟PMOS防反接电路中，电流方向与一般相比是反的，比如在NMOS中，正常是D-S，但是这里是S-D</h2><p>​    对于S,D，其实应该是一个沟道的两端，他可以从D-S也可以从S-D，跟PN结的单向导电还是有区别的</p>]]></content>
       
       
       <categories>
@@ -110,11 +291,11 @@
     
     
     <entry>
-      <title>认识MOSFET</title>
-      <link href="/2024/08/21/qi-jian-ren-shi-mosfet/"/>
-      <url>/2024/08/21/qi-jian-ren-shi-mosfet/</url>
+      <title>认识三极管</title>
+      <link href="/2024/08/21/qi-jian-san-ji-guan/"/>
+      <url>/2024/08/21/qi-jian-san-ji-guan/</url>
       
-        <content type="html"><![CDATA[<h2 id="认识mosfet">认识MOSFET</h2><h3 id="三个极的判定">1. 三个极的判定</h3><img src="/2024/08/21/qi-jian-ren-shi-mosfet/ae3be941d58a27bc1c7ae66900a319c1.png" class><p>G极(gate)—栅极，不用说比较好认S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边</p><h3 id="n沟道与p沟道判别">2. N沟道与P沟道判别</h3><img src="/2024/08/21/qi-jian-ren-shi-mosfet/64c2d9fd96130f91825e0e984d740bcc.png" class><img src="/2024/08/21/qi-jian-ren-shi-mosfet/9ef5be7a51aeceb28b8987a10ec993d0.png" class><p>箭头指向G极的是N沟道 箭头背向G极的是P沟道</p><h3 id="寄生二极管方向判定">3. 寄生二极管方向判定</h3><img src="/2024/08/21/qi-jian-ren-shi-mosfet/0d3f045ce50459361e98fbabf604795f.png" class title="这里写图片描述"><img src="/2024/08/21/qi-jian-ren-shi-mosfet/c2f7e5496a9171ae53d25792558fec95.png" class title="这里写图片描述"><p>不论N沟道还是P沟道MOS管，中间衬底箭头方向和寄生二极管的箭头方向总是一致的：<strong>要么都由S指向D，要么都有D指向S</strong></p><h3 id="mos开关实现的功能">4. MOS开关实现的功能</h3><ul><li>信号切换</li><li>电压通断</li></ul><h3 id="mos管用作开关时在电路中的连接方法">5.MOS管用作开关时在电路中的连接方法</h3><p>关键点:</p><ul><li><p>确定那一极连接输入端，那一极连接输出端</p></li><li><p>控制极电平为？V 时MOS管导通</p></li><li><p>控制极电平为？V 时MOS管截止</p><img src="/2024/08/21/qi-jian-ren-shi-mosfet/132d75104da1250e7e34398a024abebc.png" class title="这里写图片描述"><img src="/2024/08/21/qi-jian-ren-shi-mosfet/94bbdd38004fca0abedb90ff7033ee45.png" class title="这里写图片描述"><p>NMOS：D极接输入，S极接输出 PMOS：S极接输入，D极接输出</p></li></ul><p><strong>反证法加强理解</strong> NMOS假如：S接输入，D接输出<img src="/2024/08/21/qi-jian-ren-shi-mosfet/a323f755db58f9f870272b32bb82e765.png" class title="这里写图片描述">由于寄生二极管直接导通，因此S极电压可以无条件到D极，MOS管就失去了开关的作用PMOS假如：D接输入，S接输出 <img src="/2024/08/21/qi-jian-ren-shi-mosfet/9cbebe85df4c5c1413c116ce4efdbc03.png" class title="这里写图片描述"> 同样失去了开关的作用</p><h3 id="mos管的开关条件">6. MOS管的开关条件</h3><p>N沟道—导通时 Ug&gt; Us,Ugs&gt; Ugs(th)时导通 P沟道—导通时 Ug&lt;Us,Ugs&lt; Ugs(th)时导通总之，导通条件：<strong>|Ugs|&gt;|Ugs(th)|</strong></p><ul><li><p><strong>n型三极管（NPN）</strong>：</p><ul><li><strong>高电平</strong>（基极相对于发射极的电压高于0.7V）时导通。</li><li><strong>低电平</strong>时断开。</li></ul></li><li><p><strong>p型三极管（PNP）</strong>：</p><ul><li><p><strong>低电平</strong>（基极相对于发射极的电压低于-0.7V）时导通。</p></li><li><p><strong>高电平</strong>时断开。</p></li></ul></li></ul><h3 id="相关概念">7. 相关概念</h3><p><strong>BJT</strong> Bipolar Junction Transistor双极性晶体管，BJT是电流控制器件； <strong>FET</strong> Field EffectTransistor 场效应晶体管，FET是电压控制器件.按结构场效应管分为：结型场效应（简称JFET）、绝缘栅场效应（简称MOSFET）两大类按沟道材料：结型和绝缘栅型各分N沟道和P沟道两种.按导电方式：耗尽型与增强型，结型场效应管均为耗尽型，绝缘栅型场效应管既有耗尽型的，也有增强型的。总的来说场效应晶体管可分为结场效应晶体管和MOS场效应晶体管，而MOS场效应晶体管又分为N沟耗尽型和增强型；P沟耗尽型和增强型四大类。</p><h3 id="mos管重要参数">8. MOS管重要参数</h3><p>①封装 ②类型（NMOS、PMOS）③耐压Vds（器件在断开状态下漏极和源极所能承受的最大的电压） ④饱和电流Id⑤导通阻抗Rds ⑥栅极阈值电压Vgs(th)</p><h3 id="从mos管实物识别管脚">9. 从MOS管实物识别管脚</h3><img src="/2024/08/21/qi-jian-ren-shi-mosfet/efa35a300065748d7fd26bf13d9bfd5a.png" class title="这里写图片描述"><p>无论是NMOS还是PMOS 按上图方向摆正，中间的一脚为D，左边为G，右边为S。或者这么记：单独的一脚为D，逆时针转DGS。这里顺便提一下三极管的管脚识别：同样按照上图方向摆正，中间一脚为C，左边为B，右边为E。</p><p><strong>管脚编号</strong> <img src="/2024/08/21/qi-jian-ren-shi-mosfet/2f582e677354f945e3ef8ef879f69e76.png" class title="这里写图片描述"> 从G脚开始，逆时针123三极管的管脚编号同样从B脚开始，逆时针123</p><h3 id="用万用表辨别nnospmos">10. 用万用表辨别NNOS、PMOS</h3><p>借助寄生二极管来辨别。将万用表档位拨至二极管档，红表笔接S,黑表笔接D，有数值显示，反过来接无数值，说明是N沟道，若情况相反是P沟道。</p><h3 id="画一个mos管">11. 画一个MOS管</h3><img src="/2024/08/21/qi-jian-ren-shi-mosfet/a7d7e822d114cfe84232d3df505bec93.png" class title="这里写图片描述">]]></content>
+        <content type="html"><![CDATA[<h2 id="认识三极管"><a href="#认识三极管" class="headerlink" title="认识三极管"></a>认识三极管</h2><h3 id="1-三个极的判定"><a href="#1-三个极的判定" class="headerlink" title="1. 三个极的判定"></a>1. 三个极的判定</h3><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240821164130856.png" class><ul><li>B极 基极</li><li>C 集电极，没有箭头</li><li>E 发射极， 有箭头</li></ul><h3 id="2-N沟道与P沟道判别"><a href="#2-N沟道与P沟道判别" class="headerlink" title="2. N沟道与P沟道判别"></a>2. N沟道与P沟道判别</h3><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240821164753128.png" class><ul><li><strong>1.  NPN三极管：</strong><br><strong>基极加高电压，集电极与发射极短路，即三极管导通；</strong><br>基极加低电压，集电极与发射极开路，即三极管截止。</li></ul><p>即高电位（高电平）有效。</p><ul><li><strong>2.  PNP三极管：</strong><br>基极高电压，集电极与发射极开路，即三极管截止；<br><strong>基极加低电位，集电极与发射极短路，即三极管导通。</strong></li></ul><p>即低电位（低电平）有效。</p><h4 id="3-NPN与PNP的区别？"><a href="#3-NPN与PNP的区别？" class="headerlink" title="3. NPN与PNP的区别？"></a>3. NPN与PNP的区别？</h4><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240821165722629.png" class><p>答：NPN：用 B→E 的电流（IB）控制 C→E 的电流（IC）。E极电位最低，且正常放大时通常C极电位最高，即 VC &gt; VB &gt; VE；</p><p>PNP：用 E→B 的电流（IB）控制 E→C 的电流（IC）。E极电位最高，且正常放大时通常C极电位最低，即 VC &lt; VB &lt; VE。</p><h4 id="4-三极管导通条件"><a href="#4-三极管导通条件" class="headerlink" title="4. 三极管导通条件"></a>4. 三极管导通条件</h4><p>导通这玩意是不看集电极的，只看基极跟发射极</p><ul><li>NPN型三极管的导通条件是：基极-发射极电压（V_BE）大于其导通电压，一般在0.6V至0.7V之间，同时集电极-发射极电压（V_CE）为正。这意味着基极电流流入，电子从发射极流向集电极，导致三极管导通。</li><li>对于PNP型三极管，其导通条件是：基极-发射极电压（V_BE）小于负导通电压（通常在-0.6V至-0.7V之间），同时集电极-发射极电压（V_CE）为负值。也就是说，基极电压低于发射极电压，电子从集电极流向发射极，导致三极管导通。</li></ul><h4 id="5-正偏反偏"><a href="#5-正偏反偏" class="headerlink" title="5. 正偏反偏"></a>5. 正偏反偏</h4><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240822133600971.png" class><p>不知道是不是可以这样理解，已知对于NPN型BJT，当其工作在放大区时，有U~c~&gt;U~B~&gt;U~E~,然后再记住发射结正偏集电结反偏时处于放大区，这下好了~死记硬背了，寄</p><p>以NPN为例，集电极与基极之间形成PN结称为<strong>集电结</strong>；发射区与基区之间形成的PN结为<strong>发射结</strong></p><ul><li>当C点电位高于b点电位几伏时，<strong>集电结处于反偏状态</strong></li><li>当b点电位高于e点电位零点几伏时，<strong>发射极处于正偏状态</strong></li></ul><p><strong>悟道</strong></p><p>​    联想记忆，是不是可以考虑PN结，NPN，基极为P，那么电压高放前面，PN就是正偏，NP就是反偏，发射极正偏的话就是说PN，基极到发射极，UB&gt;UE</p><p>​    再进一步，也就是说，NPN型，正偏的时候肯定是Ub大；反偏肯定Ub小</p><h4 id="6-三个工作区域"><a href="#6-三个工作区域" class="headerlink" title="6. 三个工作区域"></a>6. 三个工作区域</h4><h5 id="截止区"><a href="#截止区" class="headerlink" title="截止区"></a>截止区</h5><p>​    三极管的发射结反偏，集电结反偏时，三极管会进入截止状态</p><p>Uc &gt; Ub且Ue &gt; Ub </p><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240822135429144.png" class><p>​    还是得看水龙头，这个基极不过是个开关，流通还得是集电极跟发射极，那么对于一般的三极管，都是集电极输出，意思就是你打开阀门~肯定是集电极那就开始放大了，然后留到发射极，而不是在发射极才放大输出</p><h5 id="放大区"><a href="#放大区" class="headerlink" title="放大区"></a>放大区</h5><p>​    ”当三极管发射结正偏，<a href="https://www.zhihu.com/search?q=集电结&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra={&quot;sourceType&quot;%3A&quot;answer&quot;%2C&quot;sourceId&quot;%3A3112575006}">集电结</a>反偏，三极管就会进入<strong>放大状态</strong>。”</p><p>​    U~E~&gt;U~B~&gt;U~C~;</p><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240822140355730.png" class><p>在放大状态下，基极电流大一点儿~集电极的电流也会跟着变大</p><h5 id="饱和区"><a href="#饱和区" class="headerlink" title="饱和区"></a>饱和区</h5><p>“当三极管发射结正偏，集电结正偏时，三极管工作在<strong>饱和状态</strong>。”</p><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240822140705435.png" class>]]></content>
       
       
       <categories>
@@ -135,11 +316,11 @@
     
     
     <entry>
-      <title>认识三极管</title>
-      <link href="/2024/08/21/qi-jian-san-ji-guan/"/>
-      <url>/2024/08/21/qi-jian-san-ji-guan/</url>
+      <title>MOS管</title>
+      <link href="/2024/08/21/qi-jian-mos-guan/"/>
+      <url>/2024/08/21/qi-jian-mos-guan/</url>
       
-        <content type="html"><![CDATA[<h2 id="认识三极管">认识三极管</h2><h3 id="三个极的判定">1. 三个极的判定</h3><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240821164130856.png" class><ul><li>B极 基极</li><li>C 集电极，没有箭头</li><li>E 发射极， 有箭头</li></ul><h3 id="n沟道与p沟道判别">2. N沟道与P沟道判别</h3><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240821164753128.png" class><ul><li><strong>1. NPN三极管：</strong><strong>基极加高电压，集电极与发射极短路，即三极管导通；</strong>基极加低电压，集电极与发射极开路，即三极管截止。</li></ul><p>即高电位（高电平）有效。</p><ul><li><strong>2. PNP三极管：</strong>基极高电压，集电极与发射极开路，即三极管截止；<strong>基极加低电位，集电极与发射极短路，即三极管导通。</strong></li></ul><p>即低电位（低电平）有效。</p><h4 id="npn与pnp的区别">3. NPN与PNP的区别？</h4><img src="/2024/08/21/qi-jian-san-ji-guan/image-20240821165722629.png" class><p>答：NPN：用 B→E 的电流（IB）控制 C→E的电流（IC）。E极电位最低，且正常放大时通常C极电位最高，即 VC &gt; VB&gt; VE；</p><p>PNP：用 E→B 的电流（IB）控制 E→C的电流（IC）。E极电位最高，且正常放大时通常C极电位最低，即 VC &lt; VB&lt; VE。</p>]]></content>
+        <content type="html"><![CDATA[<h2 id="MOS管"><a href="#MOS管" class="headerlink" title="MOS管"></a>MOS管</h2><h3 id="1-三个极的判定"><a href="#1-三个极的判定" class="headerlink" title="1. 三个极的判定"></a>1. 三个极的判定</h3><p><img src="/2024/08/21/qi-jian-mos-guan/ae3be941d58a27bc1c7ae66900a319c1.png" alt><br>G极(gate)—栅极，不用说比较好认<br>S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是<br>D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边</p><h3 id="2-N沟道与P沟道判别"><a href="#2-N沟道与P沟道判别" class="headerlink" title="2. N沟道与P沟道判别"></a>2. N沟道与P沟道判别</h3><p><img src="/2024/08/21/qi-jian-mos-guan/64c2d9fd96130f91825e0e984d740bcc.png" alt><img src="/2024/08/21/qi-jian-mos-guan/9ef5be7a51aeceb28b8987a10ec993d0.png" alt><br>箭头指向G极的是N沟道<br>箭头背向G极的是P沟道</p><h3 id="3-寄生二极管方向判定"><a href="#3-寄生二极管方向判定" class="headerlink" title="3. 寄生二极管方向判定"></a>3. 寄生二极管方向判定</h3><p><img src="/2024/08/21/qi-jian-mos-guan/0d3f045ce50459361e98fbabf604795f.png" alt="这里写图片描述"><img src="/2024/08/21/qi-jian-mos-guan/c2f7e5496a9171ae53d25792558fec95.png" alt="这里写图片描述"><br>不论N沟道还是P沟道MOS管，中间衬底箭头方向和寄生二极管的箭头方向总是一致的：<br><strong>要么都由S指向D，要么都有D指向S</strong></p><h3 id="MOS管的方向"><a href="#MOS管的方向" class="headerlink" title="MOS管的方向"></a>MOS管的方向</h3><ul><li>nmos—从D到S，D接电源正极，S接电源负极</li><li>Pmos—从S到D，S接电源正极，D接电源负极</li></ul><p>这个跟二极管对应着看就行，二极管导通要我MOS干嘛</p><p>也不能这么说，SD是同一沟道的两端，跟PN结不一样，这玩意两个方向其实都能导通，只要满足导通条件，</p><h3 id="MOS管的导通"><a href="#MOS管的导通" class="headerlink" title="MOS管的导通"></a>MOS管的导通</h3><ul><li>nmos—-G为高电平，S为低电平（D—&gt;S)</li><li>pmos—-S极电压大于G极，则导通(S—&gt;D)</li></ul><h3 id="4-MOS开关实现的功能"><a href="#4-MOS开关实现的功能" class="headerlink" title="4. MOS开关实现的功能"></a>4. MOS开关实现的功能</h3><ul><li>信号切换</li><li>电压通断</li></ul><h3 id="5-MOS管用作开关时在电路中的连接方法"><a href="#5-MOS管用作开关时在电路中的连接方法" class="headerlink" title="5. MOS管用作开关时在电路中的连接方法"></a>5. MOS管用作开关时在电路中的连接方法</h3><p>关键点:</p><ul><li><p>确定那一极连接输入端，那一极连接输出端</p></li><li><p>控制极电平为？V 时MOS管导通</p></li><li><p>控制极电平为？V 时MOS管截止</p><p><img src="/2024/08/21/qi-jian-mos-guan/132d75104da1250e7e34398a024abebc.png" alt="这里写图片描述"><img src="/2024/08/21/qi-jian-mos-guan/94bbdd38004fca0abedb90ff7033ee45.png" alt="这里写图片描述"></p><p>NMOS：D极接输入，S极接输出<br>PMOS：S极接输入，D极接输出</p></li></ul><p><strong>反证法加强理解</strong><br>NMOS假如：S接输入，D接输出<br><img src="/2024/08/21/qi-jian-mos-guan/a323f755db58f9f870272b32bb82e765.png" alt="这里写图片描述"><br>由于寄生二极管直接导通，因此S极电压可以无条件到D极，MOS管就失去了开关的作用<br>PMOS假如：D接输入，S接输出<br><img src="/2024/08/21/qi-jian-mos-guan/9cbebe85df4c5c1413c116ce4efdbc03.png" alt="这里写图片描述"><br>同样失去了开关的作用</p><h3 id="6-MOS管的开关条件"><a href="#6-MOS管的开关条件" class="headerlink" title="6. MOS管的开关条件"></a>6. MOS管的开关条件</h3><p>N沟道—导通时 Ug&gt; Us,Ugs&gt; Ugs(th)时导通<br>P沟道—导通时 Ug&lt; Us,Ugs&lt; Ugs(th)时导通<br>总之，导通条件：<strong>|Ugs|&gt;|Ugs(th)|</strong></p><ul><li><p><strong>n型三极管（NPN）</strong>：</p><ul><li><strong>高电平</strong>（基极相对于发射极的电压高于0.7V）时导通。</li><li><strong>低电平</strong>时断开。</li></ul></li><li><p><strong>p型三极管（PNP）</strong>：</p><ul><li><p><strong>低电平</strong>（基极相对于发射极的电压低于-0.7V）时导通。</p></li><li><p><strong>高电平</strong>时断开。</p></li></ul></li></ul><h3 id="7-相关概念"><a href="#7-相关概念" class="headerlink" title="7. 相关概念"></a>7. 相关概念</h3><p><strong>BJT</strong><br>Bipolar Junction Transistor 双极性晶体管，BJT是电流控制器件；<br><strong>FET</strong><br>Field Effect Transistor 场效应晶体管，FET是电压控制器件.<br>按结构场效应管分为：结型场效应（简称JFET）、绝缘栅场效应（简称MOSFET）两大类<br>按沟道材料：结型和绝缘栅型各分N沟道和P沟道两种.<br>按导电方式：耗尽型与增强型，结型场效应管均为耗尽型，绝缘栅型场效应管既有耗尽型的，也有增强型的。<br>总的来说场效应晶体管可分为结场效应晶体管和MOS场效应晶体管，而MOS场效应晶体管又分为N沟耗尽型和增强型；P沟耗尽型和增强型四大类。</p><h3 id="8-MOS管重要参数"><a href="#8-MOS管重要参数" class="headerlink" title="8. MOS管重要参数"></a>8. MOS管重要参数</h3><p>①封装<br>②类型（NMOS、PMOS）<br>③耐压Vds（器件在断开状态下漏极和源极所能承受的最大的电压）<br>④饱和电流Id<br>⑤导通阻抗Rds<br>⑥栅极阈值电压Vgs(th)</p><h3 id="9-从MOS管实物识别管脚"><a href="#9-从MOS管实物识别管脚" class="headerlink" title="9. 从MOS管实物识别管脚"></a>9. 从MOS管实物识别管脚</h3><p><img src="/2024/08/21/qi-jian-mos-guan/efa35a300065748d7fd26bf13d9bfd5a.png" alt="这里写图片描述"><br>无论是NMOS还是PMOS<br>按上图方向摆正，中间的一脚为D，左边为G，右边为S。<br>或者这么记：单独的一脚为D，逆时针转DGS。<br>这里顺便提一下三极管的管脚识别：同样按照上图方向摆正，中间一脚为C，左边为B，右边为E。</p><p><strong>管脚编号</strong><br><img src="/2024/08/21/qi-jian-mos-guan/2f582e677354f945e3ef8ef879f69e76.png" alt="这里写图片描述"><br>从G脚开始，逆时针123<br>三极管的管脚编号同样从B脚开始，逆时针123</p><h3 id="10-用万用表辨别NNOS、PMOS"><a href="#10-用万用表辨别NNOS、PMOS" class="headerlink" title="10. 用万用表辨别NNOS、PMOS"></a>10. 用万用表辨别NNOS、PMOS</h3><p>借助寄生二极管来辨别。将万用表档位拨至二极管档，红表笔接S,黑表笔接D，有数值显示，反过来接无数值，说明是N沟道，若情况相反是P沟道。</p><h3 id="11-画一个MOS管"><a href="#11-画一个MOS管" class="headerlink" title="11. 画一个MOS管"></a>11. 画一个MOS管</h3><p><img src="/2024/08/21/qi-jian-mos-guan/a7d7e822d114cfe84232d3df505bec93.png" alt="这里写图片描述"></p>]]></content>
       
       
       <categories>
@@ -151,7 +332,32 @@
       
         <tags>
             
-            <tag> MOSFET </tag>
+            <tag> MOS管 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>二极管</title>
+      <link href="/2024/08/21/qi-jian-er-ji-guan/"/>
+      <url>/2024/08/21/qi-jian-er-ji-guan/</url>
+      
+        <content type="html"><![CDATA[<h2 id="二极管"><a href="#二极管" class="headerlink" title="二极管"></a>二极管</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 电子器件 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 二极管 </tag>
             
         </tags>
       
@@ -161,10 +367,10 @@
     
     <entry>
       <title>TVS</title>
-      <link href="/2024/08/21/xiao-zhi-shi-tvs/"/>
-      <url>/2024/08/21/xiao-zhi-shi-tvs/</url>
+      <link href="/2024/08/21/qi-jian-tvs/"/>
+      <url>/2024/08/21/qi-jian-tvs/</url>
       
-        <content type="html"><![CDATA[<h3 id="tvs">TVS</h3><p>​ TVS（Transient VoltageSuppression）二极管，也称为<strong>瞬态电压抑制二极管</strong>，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：<strong>抑制电压峰值</strong></p><img src="/2024/08/21/xiao-zhi-shi-tvs/image-20240821105350767.png" class><p>​比如这里，电源为5V，这时候突然来了个2000V的尖峰电压，如果没有TVS，内部电路会被烧坏，但是经过TVS之后，它的电压波形会变成右边所示，TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰电压的冲击</p><img src="/2024/08/21/xiao-zhi-shi-tvs/image-20240821105554721.png" class><ul><li><p>当5V的电压工作时，TVS的阻抗非常高，该支路相当于开路状态</p><img src="/2024/08/21/xiao-zhi-shi-tvs/image-20240821105649150.png" class></li><li><p>当尖峰电压来临，这个TVS的阻抗变得极低，此时电压尖峰的能量都通过TVS流向了负极，相当于TVS把后面都给短路了</p></li></ul><h4 id="重要参数">重要参数</h4><img src="/2024/08/21/xiao-zhi-shi-tvs/image-20240821110011921.png" class><p>下图为它的伏安特性曲线，右边为正向导通，左边为施加反向电压，施加正向时与普通无异，主要就是施加反向电压时的这些参数</p><img src="/2024/08/21/xiao-zhi-shi-tvs/image-20240821110727339.png" class><ul><li>在达到V<sub>RWM</sub>时，它的电流I<sub>R</sub>及其微弱，只有1.5ua，V<sub>RWM</sub>就是最大工作电压，对应电流为漏电流，设备工作范围就应该在V<sub>RWM</sub>内，当设备电压小于该值时，漏电流较小，当设备电压大于该值的时候，漏电流急剧增大，漏电流过大意味着能耗越大</li><li>当到达V<sub>BR</sub>时，TVS开始击穿，所以V<sub>BR</sub>叫做反向击穿电压，之后电流增加的更加急剧。但是电压增加的很慢，直到增加到V<sub>C</sub></li><li>V<sub>C</sub>是钳位电压，此型号的V<sub>C</sub>为11V，代表的意义是，当TVS接收到来自电源的尖端电压后，会将这个尖端电压钳位到11V，设备工作时<strong>最大电压</strong>一定要大于V<sub>C</sub>,因为V<sub>C</sub>随时都可能出现，如果设备工作的最大电压小于这个值，会导致设备损坏，与之相对的电流就是I<sub>pp</sub>峰值脉冲电流，意思是当TVS处于钳位电压时，他能流过的最大电流，该型号的I<sub>PP</sub>为120A，如果超过这个电流TVS可能会发生损坏<ul><li><img src="/2024/08/21/xiao-zhi-shi-tvs/image-20240821111326638.png" class></li><li>V<sub>c</sub>*I<sub>pp</sub>=P<sub>PP</sub>,就是反向脉冲峰值功率P<sub>pp</sub>那么如果说工作过程可能出现的静电能量是1000w，那么P<sub>pp</sub>&gt;1000w,否则管子也可能击穿</li></ul></li></ul>]]></content>
+        <content type="html"><![CDATA[<h3 id="TVS"><a href="#TVS" class="headerlink" title="TVS"></a>TVS</h3><p>​    TVS（Transient Voltage Suppression）二极管，也称为<strong>瞬态电压抑制二极管</strong>，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：<strong>抑制电压峰值</strong></p><p><img src="/2024/08/21/qi-jian-tvs/image-20240821105350767.png" alt></p><p>​    比如这里，电源为5V，这时候突然来了个2000V的尖峰电压，如果没有TVS，内部电路会被烧坏，但是经过TVS之后，它的电压波形会变成右边所示， TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰电压的冲击</p><p><img src="/2024/08/21/qi-jian-tvs/image-20240821105554721.png" alt></p><ul><li><p>当5V的电压工作时，TVS的阻抗非常高，该支路相当于开路状态</p><p><img src="/2024/08/21/qi-jian-tvs/image-20240821105649150.png" alt></p></li><li><p>当尖峰电压来临，这个TVS的阻抗变得极低，此时电压尖峰的能量都通过TVS流向了负极，相当于TVS把后面都给短路了</p></li></ul><h4 id="重要参数"><a href="#重要参数" class="headerlink" title="重要参数"></a>重要参数</h4><p><img src="/2024/08/21/qi-jian-tvs/image-20240821110011921.png" alt></p><p>下图为它的伏安特性曲线，右边为正向导通，左边为施加反向电压，施加正向时与普通无异，主要就是施加反向电压时的这些参数</p><p><img src="/2024/08/21/qi-jian-tvs/image-20240821110727339.png" alt></p><ul><li>在达到V~RWM~时，它的电流I~R~及其微弱，只有1.5ua，V~RWM~就是最大工作电压，对应电流为漏电流，设备工作范围就应该在V~RWM~内，当设备电压小于该值时，漏电流较小，当设备电压大于该值的时候，漏电流急剧增大，漏电流过大意味着能耗越大</li><li>当到达V~BR~时，TVS开始击穿，所以V~BR~叫做反向击穿电压，之后电流增加的更加急剧。但是电压增加的很慢，直到增加到V~C~</li><li>V~C~是钳位电压，此型号的V~C~为11V，代表的意义是，当TVS接收到来自电源的尖端电压后，会将这个尖端电压钳位到11V，设备工作时<strong>最大电压</strong>一定要大于V~C~, 因为V~C~随时都可能出现，如果设备工作的最大电压小于这个值，会导致设备损坏，与之相对的电流就是I~pp~峰值脉冲电流，意思是当TVS处于钳位电压时，他能流过的最大电流，该型号的I~PP~为120A，如果超过这个电流TVS可能会发生损坏<ul><li><img src="/2024/08/21/qi-jian-tvs/image-20240821111326638.png" alt></li><li>V~c~*I~pp~=P~PP~,就是反向脉冲峰值功率P~pp~那么如果说工作过程可能出现的静电能量是1000w，那么P~pp~&gt;1000w,否则管子也可能击穿</li></ul></li></ul>]]></content>
       
       
       <categories>
