@@ -477,46 +477,54 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="DCDC烧坏"><a href="#DCDC烧坏" class="headerlink" title="DCDC烧坏"></a>DCDC烧坏</h2><h3 id="状况分析"><a href="#状况分析" class="headerlink" title="状况分析"></a>状况分析</h3><p>​    在dcdc电路中，两个mos管同时烧坏</p>
-<h3 id="可能原因分析"><a href="#可能原因分析" class="headerlink" title="可能原因分析"></a>可能原因分析</h3><ul>
-<li>瞬态电压过大<ul>
+                <h2 id="dcdc烧坏">DCDC烧坏</h2>
+<h3 id="状况分析">状况分析</h3>
+<p>​ 在dcdc电路中，两个mos管同时烧坏</p>
+<h3 id="可能原因分析">可能原因分析</h3>
+<ul>
+<li>瞬态电压过大
+<ul>
 <li>正向</li>
 <li>反向</li>
-</ul>
-</li>
+</ul></li>
 <li>两个mos管同时导通了</li>
 <li>选型</li>
 <li>质量</li>
-<li>过温<ul>
+<li>过温
+<ul>
 <li>过温在本次案例中可能性过小，有封装，有风扇</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h3><ul>
-<li>切片<ul>
+<h3 id="实验">实验</h3>
+<ul>
+<li>切片
+<ul>
 <li>主要来看看是哪部分的问题</li>
 <li>正向的时候，是PN结有问题</li>
 <li>反向的时候，是二极管有问题</li>
-</ul>
-</li>
-<li>软件<ul>
+</ul></li>
+<li>软件
+<ul>
 <li>实时监控</li>
-</ul>
-</li>
-<li>硬件<ul>
+</ul></li>
+<li>硬件
+<ul>
 <li>用示波器接到变换器上，来测量行驶过程中的相关波形</li>
-</ul>
-</li>
-<li>主要测试电位<ul>
+</ul></li>
+<li>主要测试电位
+<ul>
 <li>MOS管的电压</li>
 <li>DCDC输入电压</li>
 <li>DC内部的工作电流</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h4 id="困难"><a href="#困难" class="headerlink" title="困难"></a>困难</h4><p>​    软件部分只能做正向的，做不了反向的，硬件也差不多，示波器只能看到正向情况的输出波形，</p>
-<p>​    那么考虑是不是可以加个整流，对于正压不处理，反压经过整流再进行采集</p>
-<h3 id="相关分析"><a href="#相关分析" class="headerlink" title="相关分析"></a>相关分析</h3><ul>
+<h4 id="困难">困难</h4>
+<p>​
+软件部分只能做正向的，做不了反向的，硬件也差不多，示波器只能看到正向情况的输出波形，</p>
+<p>​
+那么考虑是不是可以加个整流，对于正压不处理，反压经过整流再进行采集</p>
+<h3 id="相关分析">相关分析</h3>
+<ul>
 <li>该设计中未考虑瞬态抑制，只考虑MOS的耐压</li>
 <li>在某品牌的产品中也出现过类似的~不过更为严重，PCB的铜板也烧坏了，原因是正负极反接了</li>
 </ul>
@@ -759,55 +767,6 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/27/qi-jian-06-bian-ya-qi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="电子器件06-----变压器">
-                        
-                        <span class="card-title">电子器件06-----变压器</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-27
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6/" class="post-category">
-                                    电子器件
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8F%98%E5%8E%8B%E5%99%A8/">
-                        <span class="chip bg-color">变压器</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2024/08/26/qi-jian-05-ji-dian-qi/">
                     <div class="card-image">
                         
@@ -824,9 +783,9 @@
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-26
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-26
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -844,6 +803,55 @@
                     
                     <a href="/tags/%E7%BB%A7%E7%94%B5%E5%99%A8/">
                         <span class="chip bg-color">继电器</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/08/26/tuo-bu-ban-qiao-bian-huan-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="半桥变换器">
+                        
+                        <span class="card-title">半桥变换器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-26
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%8B%93%E6%89%91/" class="post-category">
+                                    拓扑
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E5%8D%8A%E6%A1%A5/">
+                        <span class="chip bg-color">半桥</span>
                     </a>
                     
                 </div>

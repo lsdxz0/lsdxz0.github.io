@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="三极管推挽电路, LSDXZ">
+    <meta name="keywords" content="复位电路, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>三极管推挽电路 | LSDXZ</title>
+    <title>复位电路 | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -310,12 +310,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">三极管推挽电路</h1>
+                    <h1 class="description center-align post-title">复位电路</h1>
                 </div>
             </div>
         </div>
@@ -431,12 +431,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%8E%A8%E6%8C%BD/">
-                                <span class="chip bg-color">推挽</span>
+                            <a href="/tags/%E5%A4%8D%E4%BD%8D/">
+                                <span class="chip bg-color">复位</span>
                             </a>
                         
-                            <a href="/tags/%E4%B8%89%E6%9E%81%E7%AE%A1%E6%8E%A8%E6%8C%BD/">
-                                <span class="chip bg-color">三极管推挽</span>
+                            <a href="/tags/stm32/">
+                                <span class="chip bg-color">stm32</span>
                             </a>
                         
                     </div>
@@ -460,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-08-22
+                    2024-09-03
                 </div>
                 
 
@@ -481,47 +481,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="三极管推挽电路"><a href="#三极管推挽电路" class="headerlink" title="三极管推挽电路"></a>三极管推挽电路</h2><h3 id="三极管推挽电路-1"><a href="#三极管推挽电路-1" class="headerlink" title="三极管推挽电路"></a>三极管推挽电路</h3><p>​    功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大</p>
-<p>​    电流驱动能力不足，加一个推挽电路，用于驱动后续电路</p>
-<h4 id="原理分析"><a href="#原理分析" class="headerlink" title="原理分析"></a>原理分析</h4><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019"></p>
-<p>上面的三极管为npn三极管，下面的是pnp管，前面是限流电阻，两个三极管的中间位置是信号的输出</p>
-<p><strong>分析方波</strong></p>
-<p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101025688.png" alt></p>
-<p>​    对于Q2，它的基极电压为5V，发射极电压4.3V，对于PNP来说，导通要求基极电压需要低于发射极0.7V，因此它反向偏置不导通，Q1为NPN型，基极电压大于0.7V，集电极-发射极电压为正，可以导通，经过管压降为4.3V（输出）</p>
-<p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101820094.png" alt></p>
-<p>​    由此，实现了上方三极管导通的时候下方断，输出高电平，上方断的时候下方导通，输出为低电平。这里最后输出的是0.7V</p>
-<p><strong>分析实际方波，存在斜率</strong></p>
-<p>  <strong>分析上升过程</strong></p>
-<p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p>
-<p>下降过程不再赘述，在实际中，也不会出现Q12同时导通的情况</p>
-<h5 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h5><ul>
-<li><p>高电平情况下</p>
+                <h2 id="复位电路">复位电路</h2>
+<h3 id="为啥要复位">为啥要复位</h3>
 <ul>
-<li><strong>V输出= V输入– V BE1</strong></li>
+<li>程序逻辑错误，复位可以把所有逻辑状态恢复到初始值</li>
+<li>电源接通到电源稳定期，是一个缓慢的爬坡过程，这时候单片机不能正常工作，需要复位电路延时到电压稳定后才正常执行程序</li>
 </ul>
-</li>
-<li><p>当输入信号为负时，Q1 关闭，Q2 开始导通并在输出端产生负输入的复制品。</p>
+<h3 id="高低电平复位">高低电平复位</h3>
+<p>​
+单片机属于数字电路，数字电路里只有0（低电平）和1（高电平）之分，因此，单片机要么是高电平复位，要么是低电平复位，</p>
+<p>​ 单片机中，小于1.5V的电压为低电平，大于1.5V的电压为高电平</p>
+<h4 id="高电平复位">高电平复位</h4>
+<img src="/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/image-20240903160626999.png" class>
 <ul>
-<li><strong>V OUT = V IN + V BE2</strong></li>
+<li>上电复位电路的本质就是RC串联充电电路</li>
+<li>上电后，电容两端的电压不能突变，上电一瞬间电容等效为短路，RST为高电位，电位等于VCC，复位</li>
+<li>之后通过电阻R1对电容进行充电，此时电阻两端电压开始减小，根据时间常数τ=RC，对于上图中的电路而言，大概需要4τ-5τ，也就是0.4s-0.5s左右可近似认为电容充电完毕，此时电容两端电压差近似为VCC，电阻两端电压差为0V，RST为低电平，近似为0V，单片机正常工作</li>
+<li>按下按钮，电容被短路，电容放电，电阻上开始有点压，RST变为高电平，复位</li>
 </ul>
-</li>
+<h4 id="低电平复位">低电平复位</h4>
+<img src="/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/image-20240903161550668.png" class>
+<img src="/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/image-20240903161842630.png" class>
+<ul>
+<li>上电后，电容两端电压不能突变，上电一瞬间RST端口近似为GND，即低电平，复位</li>
+<li>经过4τ-5τ的时间后，电容充电完毕，电容两端电压差近似为VCC，电阻两端电压差为0V，相当于导线，RST端电位近似为VCC，后正常工作</li>
 </ul>
-<p><strong>为啥都是上面是NPN，下面是PNP</strong></p>
-<p>​    为啥会有这个问题，因为一般的三极管都是集电极输出，但是在这里，两个三极管都是发射极输出</p>
-<p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822104254575.png" alt="image-20240822104254575"></p>
-<p>对于三极管，BE之间可以视为二极管，如果上面是PNP，下面是NPN，就会直接导通，容易烧坏三极管</p>
-<h4 id="定义特性啥的"><a href="#定义特性啥的" class="headerlink" title="定义特性啥的"></a>定义特性啥的</h4><p>推挽放大器由<strong>2个晶体管</strong>组成，其中一个是<strong>NPN型</strong>，另外一个<strong>PNP型</strong>。<strong>一个晶体管在正半周期推动输出，另一个在负半周期拉动输出，因此被称为推挽放大器。</strong></p>
-<p>主要优点是当没有信号时，输出晶体管没有功耗。推挽放大电路有多种类型，但<strong>通常将B类放大器视为推挽放大器。</strong></p>
-<h4 id="A类放大器"><a href="#A类放大器" class="headerlink" title="A类放大器"></a>A类放大器</h4><p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png" alt></p>
-<p>​    仅由一个设置为<strong>始终保持导通状态的开关晶体管</strong>组成，产生<strong>最小的失真</strong>和<strong>最大幅度的输出信号</strong>。</p>
-<p>​    A类放大器的效率很低，接近30%。即使没有连接输入信号，A 类放大器的级也允许相同数量的负载电流流过它，因此输出晶体管需要大散热器。</p>
-<h4 id="B类放大器"><a href="#B类放大器" class="headerlink" title="B类放大器"></a>B类放大器</h4><p>​    <strong>B类放大器</strong>是实际的<strong>推挽放大器</strong>。B 类放大器的效率高于 A 类放大器，因为它由两个晶体管 NPN 和 PNP 组成。</p>
-<p>​    B 类放大器电路<strong>每个晶体管将在输入波形的一个半周期内工作</strong>。因此，这类放大电路的导通角为180度。一个晶体管在正半周期推动输出，而另一个在负半周期拉动输出，这就是它被称为<strong>推挽放大器</strong>的原因。</p>
-<p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png" alt></p>
-<h5 id="交叉失真"><a href="#交叉失真" class="headerlink" title="交叉失真"></a>交叉失真</h5><p>​    B 类通常会受到称为<strong>交叉失真</strong>的影响，其中信号在 0V 时失真。我们知道，晶体管需要在其基极 - 发射极结处提供 0.7v 的电压才能将其打开。因此，当交流输入电压施加到推挽放大器时，它从 0 开始增加，直到达到 0.7v，晶体管保持关断状态，我们没有得到任何输出。PNP 晶体管在交流波的负半周也会发生同样的事情，这被称为死区。为了克服这个问题，二极管用于偏置，然后放大器被称为 AB 类放大器。</p>
-<h4 id="AB类放大器"><a href="#AB类放大器" class="headerlink" title="AB类放大器"></a>AB类放大器</h4><p>​    交叉失真缺陷可以通过使用两个在晶体管位置导通的二极管来校正。修改后的电路现在称为 <strong>AB 类放大器电路</strong>。</p>
-<p>​    从 0V 到 0.7V，<strong>二极管偏置在导通状态，此时晶体管在基极没有信号。这解决了交叉失真问题。</strong></p>
-<p><img src="/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822110004707.png" alt="image-20240822110004707"></p>
 
                 
             </div>
@@ -548,7 +532,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lsdxz0.github.io/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/">https://lsdxz0.github.io/2024/08/22/ji-ben-dian-lu-san-ji-guan-tui-wan-dian-lu/</a>
+                    <a href="https://lsdxz0.github.io/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/">https://lsdxz0.github.io/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -586,12 +570,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%8E%A8%E6%8C%BD/">
-                                    <span class="chip bg-color">推挽</span>
+                                <a href="/tags/%E5%A4%8D%E4%BD%8D/">
+                                    <span class="chip bg-color">复位</span>
                                 </a>
                             
-                                <a href="/tags/%E4%B8%89%E6%9E%81%E7%AE%A1%E6%8E%A8%E6%8C%BD/">
-                                    <span class="chip bg-color">三极管推挽</span>
+                                <a href="/tags/stm32/">
+                                    <span class="chip bg-color">stm32</span>
                                 </a>
                             
                         </div>
@@ -765,13 +749,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/22/ji-chu-dian-lu-emi-lu-bo-dian-lu/">
+                <a href="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="EMI滤波">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="钳位电路">
                         
-                        <span class="card-title">EMI滤波</span>
+                        <span class="card-title">钳位电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -782,7 +766,7 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-04
                         </span>
                         <span class="publish-author">
                             
@@ -799,16 +783,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/EMI/">
-                        <span class="chip bg-color">EMI</span>
-                    </a>
-                    
-                    <a href="/tags/EMC/">
-                        <span class="chip bg-color">EMC</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%BB%A4%E6%B3%A2/">
-                        <span class="chip bg-color">滤波</span>
+                    <a href="/tags/%E9%92%B3%E4%BD%8D%E7%94%B5%E8%B7%AF/">
+                        <span class="chip bg-color">钳位电路</span>
                     </a>
                     
                 </div>
@@ -822,13 +798,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/21/stm32-3.gpio/">
+                <a href="/2024/08/30/qi-jian-07-dian-wei-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="03. GPIO">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="电子器件07-----电位器">
                         
-                        <span class="card-title">03. GPIO</span>
+                        <span class="card-title">电子器件07-----电位器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -839,14 +815,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-21
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-30
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/STM32/" class="post-category">
-                                    STM32
+                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6/" class="post-category">
+                                    电子器件
                                 </a>
                             
                             
@@ -856,12 +832,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B1%9F%E7%A7%91%E5%A4%A7/">
-                        <span class="chip bg-color">江科大</span>
-                    </a>
-                    
-                    <a href="/tags/STM32/">
-                        <span class="chip bg-color">STM32</span>
+                    <a href="/tags/%E7%94%B5%E4%BD%8D%E5%99%A8/">
+                        <span class="chip bg-color">电位器</span>
                     </a>
                     
                 </div>
