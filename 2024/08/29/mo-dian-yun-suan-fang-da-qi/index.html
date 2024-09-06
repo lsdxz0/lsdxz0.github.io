@@ -477,110 +477,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="运算放大器">运算放大器</h2>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142143361.png" class title="运算放大器原理图">
-<h5 id="同相反相">同相？反相？</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829082119300.png" class>
-<h3 id="了解虚短-虚断">了解“虚短” “虚断”</h3>
-<ul>
-<li>理想运放的输入阻抗无穷大----------虚断
-<ul>
+                <h2 id="运算放大器"><a href="#运算放大器" class="headerlink" title="运算放大器"></a>运算放大器</h2><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142143361.png" class title="运算放大器原理图">
+<h5 id="同相？反相？"><a href="#同相？反相？" class="headerlink" title="同相？反相？"></a>同相？反相？</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829082119300.png" class>
+<h3 id="了解“虚短”-“虚断”"><a href="#了解“虚短”-“虚断”" class="headerlink" title="了解“虚短”  “虚断”"></a>了解“虚短”  “虚断”</h3><ul>
+<li>理想运放的输入阻抗无穷大—————虚断<ul>
 <li>因为无穷大，所以给输入端施加电压，还是没电流，跟断路了一样，但是他又没断，所以叫虚断，</li>
 <li>输入两个端口就可以画×了</li>
-</ul></li>
-<li>当给运放引入负反馈时，U<sub>n</sub>=U<sub>p</sub>-------虚短
-<ul>
-<li><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142536084.png" class></li>
-<li>随着反馈，U<sub>p</sub>-U<sub>N</sub>越来越小，最后基本没差，也就是在右侧的图上不断左移，U<sub>n</sub>跟U<sub>out</sub>都在不断修正，最终得到的结果就是U<sub>p</sub>=U<sub>n</sub>;</li>
-</ul></li>
 </ul>
-<h3 id="如何理解运放">如何理解运放</h3>
-<p>不接任何反馈: 输出电压只会处于两种状态,
-接近供电正电压的高电平或者接近负电压(接地时负电压为0)的低电平</p>
+</li>
+<li>当给运放引入负反馈时，U~n~=U~p~———-虚短<ul>
+<li><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142536084.png" class></li>
+<li>随着反馈，U~p~-U~N~越来越小，最后基本没差，也就是在右侧的图上不断左移，U~n~跟U~out~都在不断修正，最终得到的结果就是U~p~=U~n~;</li>
+</ul>
+</li>
+</ul>
+<h3 id="如何理解运放"><a href="#如何理解运放" class="headerlink" title="如何理解运放"></a>如何理解运放</h3><p>不接任何反馈: 输出电压只会处于两种状态, 接近供电正电压的高电平或者接近负电压(接地时负电压为0)的低电平</p>
 <ul>
 <li>如果同相输入(+)电压高于反相输入(-), 输出高电平</li>
 <li>如果同相输入(+)电压低于反相输入(-), 输出低电平</li>
 </ul>
 <img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828143642353.png" class>
-<p>​ 反馈接负输入端(存疑，视频里没有反馈，搞不懂)</p>
+<p>​    反馈接负输入端(存疑，视频里没有反馈，搞不懂)</p>
 <p>运放在不断检测正负输入端的电压</p>
 <ul>
 <li>当正输入端的电压大于负输入端的电压的时候，运算放大器就会尽可能地抬高输出电压，直到正负输入端电压相等或者输出电压无法被继续抬高</li>
 <li>当正输入端的电压小于负输入端的电压的时候，运算放大器就会尽可能地压低输出电压，直到正负输入端电压相等或者输出电压无法被继续压低</li>
 </ul>
-<h3 id="运放工作在线性非线性区域">运放工作在线性？非线性区域？</h3>
-<p>判断运放工作区的方法是：</p>
+<h3 id="运放工作在线性？非线性区域？"><a href="#运放工作在线性？非线性区域？" class="headerlink" title="运放工作在线性？非线性区域？"></a>运放工作在线性？非线性区域？</h3><p>判断运放工作区的方法是：</p>
 <p>如有负反馈，则工作在线性区；</p>
 <p>如有正反馈或者无反馈，则工作在非线性区；</p>
 <p>PS：运放处于非线性状态时：虚短不成立，虚断可以使用。</p>
-<h3 id="运算放大器的应用">运算放大器的应用</h3>
-<h5 id="同相放大电路">同相放大电路</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829084355954.png" class>
-<p>​ 因为虚短-----&gt;V<sub>P</sub>=V-</p>
-<p>​ 因为虚断-----&gt;输入端没有电流，所以两个电阻串联</p>
-<p>​<br>
-<span class="math display">\[
-I=\frac{V_o}{R_1+R_2}\cdot\cdot\cdot\cdot V_p=V_-=I\cdot R_2\leftarrow
-\]</span></p>
-<p><span class="math display">\[
-V_o=\frac{R_1+R_2}{R_2}V_p=1+\frac{R_1}{R_2}V_p
-\]</span></p>
-<p>​ 输出和输出信号是相位相同。放大倍数由Rg和Rf共同决定。</p>
-<h5 id="电压跟随器">电压跟随器</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829104518389.png" class>
-<p>​
-输出电压通过反馈电阻（或直接）接到反相输入端，反相输入端不再接地，信号由正向输入端输入</p>
+<h3 id="运算放大器的应用"><a href="#运算放大器的应用" class="headerlink" title="运算放大器的应用"></a>运算放大器的应用</h3><h5 id="同相放大电路"><a href="#同相放大电路" class="headerlink" title="同相放大电路"></a>同相放大电路</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829084355954.png" class>
+<p>​    因为虚短——-&gt;V~P~=V-</p>
+<p>​    因为虚断——-&gt;输入端没有电流，所以两个电阻串联</p>
+<p>​    </p>
+<script type="math/tex; mode=display">
+I=\frac{V_o}{R_1+R_2}\cdot\cdot\cdot\cdot V_p=V_-=I\cdot R_2\leftarrow</script><script type="math/tex; mode=display">
+V_o=\frac{R_1+R_2}{R_2}V_p=1+\frac{R_1}{R_2}V_p</script><p>​    输出和输出信号是相位相同。放大倍数由Rg和Rf共同决定。</p>
+<h5 id="电压跟随器"><a href="#电压跟随器" class="headerlink" title="电压跟随器"></a>电压跟随器</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829104518389.png" class>
+<p>​    输出电压通过反馈电阻（或直接）接到反相输入端，反相输入端不再接地，信号由正向输入端输入</p>
 <p>特点：<strong>高阻抗输入，大到兆欧级别，低阻抗输出，低到几欧姆</strong></p>
 <p>作用：<strong>一个是起缓冲作用，前面接高阻抗，后面接低阻抗，二是隔离作用</strong></p>
-<p>​ 输入电压与输出电压相同，充当缓冲器，不对信号提供放大或衰减</p>
+<p>​    输入电压与输出电压相同，充当缓冲器，不对信号提供放大或衰减</p>
 <p>详解作用：</p>
 <ul>
-<li>消耗很小的电流
-<ul>
+<li>消耗很小的电流<ul>
 <li>因为它高阻抗呀，电流小</li>
-</ul></li>
+</ul>
+</li>
 <li>适合用于分压电路</li>
 </ul>
-<h5 id="反向放大电路">反向放大电路</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829085547572.png" class>
-<p>​ 因为虚短-----&gt;V<sub>P</sub>=V-</p>
-<p>​ 因为虚断-----&gt;输入端没有电流，所以两个电阻串联</p>
-<p>​<br>
-<span class="math display">\[
-I_1=\frac{V_n-V_-}{R_1}\cdot\cdot\cdot\cdot\cdot
-I_f=\frac{V_--V_o}{R_f}\leftarrow
-\]</span></p>
-<p><span class="math display">\[
-由I_1=I_f得到  V_0=-\frac{R_1}{R_f}V_n
-\]</span></p>
-<p>​ 输出和输出信号是相位相反。放大倍数由Rg和Rf共同决定。</p>
-<h5 id="加法电路">加法电路</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829090643662.png" class>
+<h5 id="反向放大电路"><a href="#反向放大电路" class="headerlink" title="反向放大电路"></a>反向放大电路</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829085547572.png" class>
+<p>​    因为虚短——-&gt;V~P~=V-</p>
+<p>​    因为虚断——-&gt;输入端没有电流，所以两个电阻串联</p>
+<p>​    </p>
+<script type="math/tex; mode=display">
+I_1=\frac{V_n-V_-}{R_1}\cdot\cdot\cdot\cdot\cdot I_f=\frac{V_--V_o}{R_f}\leftarrow</script><script type="math/tex; mode=display">
+由I_1=I_f得到  V_0=-\frac{R_1}{R_f}V_n</script><p>​    输出和输出信号是相位相反。放大倍数由Rg和Rf共同决定。</p>
+<h5 id="加法电路"><a href="#加法电路" class="headerlink" title="加法电路"></a>加法电路</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829090643662.png" class>
 <p>假定四个电阻阻值相同，那么输出电压就等于三个电压之和了，相位相反</p>
 <p><strong>再假定有个R5，给电压限制，只有0跟1V，如图绿色部分，根据电压状态，可以得到下面的表格</strong></p>
 <img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091047469.png" class title="image-20240829091047469">
 <p>这个表格其实就是数模转换中的DAC</p>
 <p>每个信号的放大倍数由反馈电阻Rf与每个输入信号串联的电阻R共同决定。</p>
-<h5 id="减法器">减法器</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091838222.png" class>
-<p>一般R<sub>1</sub>=R<sub>2</sub>=R<sub>A</sub>;
-R<sub>3</sub>=R<sub>4</sub>=R<sub>B</sub></p>
-<p>利用叠加定理，将其拆解为反向放大器和同相放大器，最后U<sub>O1</sub>+U<sub>02</sub>即可</p>
+<h5 id="减法器"><a href="#减法器" class="headerlink" title="减法器"></a>减法器</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091838222.png" class>
+<p>一般R~1~=R~2~=R~A~;    R~3~=R~4~=R~B~</p>
+<p>利用叠加定理，将其拆解为反向放大器和同相放大器，最后U~O1~+U~02~即可</p>
 <img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829092048410.png" class>
-<p><span class="math display">\[
-V_{out}=(V_B-V_A)*\frac{R_B}{R_A}
-\]</span></p>
-<h5 id="差分放大器">差分放大器</h5>
-<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829142127525.png" class>
-<p>​ 它属于是反向比例放大的变种 <span class="math display">\[
-V_{out}=(\frac{R_1+R_2}{R_3+R_4})\times\frac{R_4}{R_1}\times
-V_2-\frac{R_2}{R_1}\times V_1
-\]</span>
-当R<sub>1</sub>=R<sub>3</sub>且R<sub>2</sub>=R<sub>4</sub>时，可以得到下式，可以对差分信号进行放大
-<span class="math display">\[
-V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
-\]</span> ​
-输出信号是输入信号之差。输出信号可先由分压器规则计算同相输入端的电压V+，然后使用同相运放增益公式计算出通相输出电压Vout1。然后在使用反向增益公式计算反向输出级的电压Vout2。最后将两个输出电压相加即可。</p>
+<script type="math/tex; mode=display">
+V_{out}=(V_B-V_A)*\frac{R_B}{R_A}</script><h5 id="差分放大器"><a href="#差分放大器" class="headerlink" title="差分放大器"></a>差分放大器</h5><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829142127525.png" class>
+<p>​    它属于是反向比例放大的变种</p>
+<script type="math/tex; mode=display">
+V_{out}=(\frac{R_1+R_2}{R_3+R_4})\times\frac{R_4}{R_1}\times V_2-\frac{R_2}{R_1}\times V_1</script><p>当R~1~=R~3~且R~2~=R~4~时，可以得到下式，可以对差分信号进行放大</p>
+<script type="math/tex; mode=display">
+V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})</script><p>​    输出信号是输入信号之差。输出信号可先由分压器规则计算同相输入端的电压V+，然后使用同相运放增益公式计算出通相输出电压Vout1。然后在使用反向增益公式计算反向输出级的电压Vout2。最后将两个输出电压相加即可。</p>
 
                 
             </div>

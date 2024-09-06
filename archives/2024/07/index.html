@@ -477,12 +477,8 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    滑模控制
-原理
-特点：
-滑模控制本质上是非线性控制的一种，简单的说，它的非线性表现为控制的不连续性，即系统的“结构”不固定，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的状态轨迹运动。
-​
-滑模
+                                    滑模控制原理特点： 滑模控制本质上是非线性控制的一种，简单的说，它的非线性表现为控制的不连续性，即系统的“结构”不固定，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的状态轨迹运动。
+​    滑模控制的核
                                 
                             </div>
                             <div class="publish-info">
@@ -541,10 +537,8 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    PID控制器
-基本公式
-\[
-u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+\frac1{T_{i}}\int_{0}^
+                                    PID控制器基本公式
+u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+\frac1{T_{i}}\int_{0}^{t}e(\t
                                 
                             </div>
                             <div class="publish-info">
@@ -603,12 +597,10 @@ u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    01. STM32+软件安装
-1. 硬件介绍
-面板板
+                                    01. STM32+软件安装1. 硬件介绍面板板
 面包板的跳线，较短，可以贴在面包板上，适合长时间的接线
 上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块
-STM32最小系统
+STM32最小系统板，上面这黑色
                                 
                             </div>
                             <div class="publish-info">
@@ -669,19 +661,15 @@ STM32最小系统
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    09. 开环仿真验证
-模型初始化参数
+                                    09. 开环仿真验证模型初始化参数模型属性
 
-模型属性
 
 分压电容
-
 
 在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响
 设置初始电压为Udc/2
 
-模块旋转
-ctrl
+模块旋转ctrl + R = 旋转90°    
                                 
                             </div>
                             <div class="publish-info">
@@ -742,13 +730,10 @@ ctrl
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    simulink使用中遇到的问题
-1. 旋转
-ctrl + R = 旋转90° ctrl + I = 左右旋转
-2. SCOPE显示的波形带圆圈
-打开示波器-视图-样式-标记（maker）-修改为无（none）
+                                    simulink使用中遇到的问题1. 旋转ctrl + R = 旋转90°      ctrl + I = 左右旋转
+2. SCOPE显示的波形带圆圈打开示波器-视图-样式-标记（maker）-修改为无（none）
 
-3. 谐振器中
+3. 谐振器中的变压器
                                 
                             </div>
                             <div class="publish-info">
@@ -807,16 +792,15 @@ ctrl + R = 旋转90° ctrl + I = 左右旋转
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    温湿度仪原理图
-1. 主控电路
-查找芯片
+                                    温湿度仪原理图1. 主控电路查找芯片
 主控电路选用stm32g030k6t6
-放置--器件--搜索--stm,,,,,,--放置
+放置—器件—搜索—stm,,,,,,—放置
 
 PB9，PB8
-​ 点击芯片，找到数据手册，搜索PB9，可以得到
+​    点击芯片，找到数据手册，搜索PB9，可以得到
 
-​ 该表格介绍引脚
+​    该表格介绍引脚分配和描述，
+在I
                                 
                             </div>
                             <div class="publish-info">
@@ -863,27 +847,23 @@ PB9，PB8
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/">
+                        <a href="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="05. 占空比D在0.5到1之间的工作波形分析">
+                                <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="06. 占空比D在0到0.5之间的工作波形分析">
                                 
-                                <span class="card-title">05. 占空比D在0.5到1之间的工作波形分析</span>
+                                <span class="card-title">06. 占空比D在0到0.5之间的工作波形分析</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    05.
-占空比D在0.5到1之间的工作波形分析
+                                    06. 占空比D在0到0.5之间的工作波形分析
 
 
-开关管S1,2
-
-横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，所以调制信号视为
-D 。
-调制信号与载波进行比较，中间
+一样的分析。t~1~=DT~s~。  t~2~= (1-D)T~s~
+0
                                 
                             </div>
                             <div class="publish-info">
@@ -932,28 +912,24 @@ D 。
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/">
+                        <a href="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="06. 占空比D在0到0.5之间的工作波形分析">
+                                <img src="/medias/featureimages/11.jpg" class="responsive-img" alt="05. 占空比D在0.5到1之间的工作波形分析">
                                 
-                                <span class="card-title">06. 占空比D在0到0.5之间的工作波形分析</span>
+                                <span class="card-title">05. 占空比D在0.5到1之间的工作波形分析</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    06.
-占空比D在0到0.5之间的工作波形分析
+                                    05. 占空比D在0.5到1之间的工作波形分析 
 
+开关管S~1,2~
 
-
-一样的分析。t1=DTs。
-t2= (1-D)Ts
-0&lt;U2&lt;U1/2;
-dU1=U1/2-U2&gt;0;
-此时电感电流上升。dU2=-U2&lt;0，下
+横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，所以调制信号视为 D 。
+调制信号与载波进行比较，中间这个时间就是
                                 
                             </div>
                             <div class="publish-info">
@@ -1014,13 +990,10 @@ dU1=U1/2-U2&gt;0;
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    08. 计算输入侧分压电容
-0&lt;D&lt;0.5,C-D-B-D-C
+                                    08. 计算输入侧分压电容0&lt;D&lt;0.5,C-D-B-D-C
 
-​
-为了保持电荷平衡，b的时间跟c的时间是一样的，工作状态在bd之间与cd之间切换，二者具有对称性，只分析一个即可。
-​
-在b状态。C1放电给负载，由
+​    为了保持电荷平衡，b的时间跟c的时间是一样的，工作状态在bd之间与cd之间切换，二者具有对称性，只分析一个即可。
+​    在b状态。C~1~放电给负载，
                                 
                             </div>
                             <div class="publish-info">
@@ -1082,7 +1055,6 @@ dU1=U1/2-U2&gt;0;
                             <div class="summary block-with-text">
                                 
                                     11. 晶体管元件温度计算方法
-
                                 
                             </div>
                             <div class="publish-info">

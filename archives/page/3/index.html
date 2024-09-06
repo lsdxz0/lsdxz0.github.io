@@ -477,15 +477,10 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    三极管推挽电路
-三极管推挽电路
-​
-功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大
-​ 电流驱动能力不足，加一个推挽电路，用于驱动后续电路
+                                    三极管推挽电路三极管推挽电路​    功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大
+​    电流驱动能力不足，加一个推挽电路，用于驱动后续电路
 原理分析
-
-
-image-2024082210052
+上面的三极管为npn三极管，下面的是pnp管，前面
                                 
                             </div>
                             <div class="publish-info">
@@ -546,14 +541,12 @@ image-2024082210052
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    GPIO输出
-GPIO简介
-
+                                    GPIO输出GPIO简介
 GPIO 通用输入输出口
 可配置8种输入输出模式
 引脚电平：0V-3.3V， 部分引脚可容忍5V
 输出模式下可控制端口输出高低电平，用以驱动LED、控制蜂鸣器、模拟通信协议输出时序等
-输入模式下可
+输入模式下可读取端口的高低电平
                                 
                             </div>
                             <div class="publish-info">
@@ -614,12 +607,8 @@ GPIO 通用输入输出口
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    电子器件01-----MOS管
-1. 三个极的判定
-
-G极(gate)—栅极，不用说比较好认
-S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是
-D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边
+                                    电子器件01——-MOS管1. 三个极的判定G极(gate)—栅极，不用说比较好认S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边
+2. N沟道与P沟道判
                                 
                             </div>
                             <div class="publish-info">
@@ -678,9 +667,7 @@ D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    电子器件03-----三极管
-1. 三个极的判定
-
+                                    电子器件03——-三极管1. 三个极的判定
 
 B极 基极
 C 集电极，没有箭头
@@ -688,10 +675,7 @@ E 发射极， 有箭头
 
 2. N沟道与P沟道判别
 
-
-1. NPN三极管：
-基极加高电压，集电极与发射极短路，即三极管导通；
-
+1.  NPN三极管：基极加高电压，集电极与发射极短路，即三极管导通；基极加低电压，集电极与发射极开路，即三
                                 
                             </div>
                             <div class="publish-info">
@@ -750,12 +734,9 @@ E 发射极， 有箭头
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    电子器件04-----TVS
-​ TVS（Transient Voltage
-Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：抑制电压峰值
+                                    电子器件04——-TVS​    TVS（Transient Voltage Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：抑制电压峰值
 
-​
-比如这里，电源为5V，
+​    比如这里，电源为5V，这时
                                 
                             </div>
                             <div class="publish-info">
@@ -814,21 +795,24 @@ Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    mos管防反接电路
-why
+                                    mos管防反接电路why
 反接会导致许多电子器件烧毁
 常见的放反接电路有四种
 
 二极管串联
 
-
 问题是功耗过大
 
-整流桥
 
+整流桥
 可以实现无论正反接电路都能导通
 
-不管是一个二极管还是多个二极管，都会产生管压降并消耗
+不管是一个二极管还是多个二极管，都会产生管压降并消耗电能
+
+
+NMOS
+
+当输入端为
                                 
                             </div>
                             <div class="publish-info">
@@ -888,10 +872,8 @@ why
                             <div class="summary block-with-text">
                                 
                                     信号
-
 模拟信号是连续的，数字信号是离散的
-在数字逻辑电子电路中，数字信号是二进制的，即只有0 1
-表示为高低电平
+在数字逻辑电子电路中，数字信号是二进制的，即只有0 1 表示为高低电平
 
 
                                 
@@ -952,14 +934,10 @@ why
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    ＣＬＬＣ
-型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略
-设计要求：
-​
-400-500V输入，输出48V开关频率范围为：88-170KHz，死区时间td=200ns
+                                    ＣＬＬＣ 型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略设计要求：
+​    400-500V输入，输出48V开关频率范围为：88-170KHz，死区时间t~d~=200ns
 
-确定谐振频率
-CLLC是由LLC改进而来的，先设计一个LL
+确定谐振频率 CLLC是由LLC改进而来的，先设计一个LLC的谐
                                 
                             </div>
                             <div class="publish-info">
@@ -1008,12 +986,12 @@ CLLC是由LLC改进而来的，先设计一个LL
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    看门狗
-设计目的：防止死机，cpu死机后，触发看门狗，复位
-什么是看门狗
-看门狗----Watch Dog Timer 本质还是一个定时器
+                                    看门狗设计目的：防止死机，cpu死机后，触发看门狗，复位
+什么是看门狗看门狗——Watch Dog Timer  本质还是一个定时器
 
-比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时
+比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时255ms
+
+看
                                 
                             </div>
                             <div class="publish-info">
@@ -1073,7 +1051,6 @@ CLLC是由LLC改进而来的，先设计一个LL
                             <div class="summary block-with-text">
                                 
                                     CAN总线
-
                                 
                             </div>
                             <div class="publish-info">

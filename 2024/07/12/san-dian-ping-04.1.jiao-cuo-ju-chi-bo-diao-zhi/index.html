@@ -481,30 +481,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="交错锯齿波调制">4.1 交错锯齿波调制</h2>
-<p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712104549073.png"></p>
+                <h2 id="4-1-交错锯齿波调制"><a href="#4-1-交错锯齿波调制" class="headerlink" title="4.1 交错锯齿波调制"></a>4.1 交错锯齿波调制</h2><p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712104549073.png" alt></p>
 <ul>
 <li>用锯齿波那么就不用考虑对称了，对于c不用对半分了</li>
 </ul>
-<p><strong>S<sub>1，2</sub></strong></p>
+<p><strong>S~1，2~</strong></p>
 <ul>
-<li>这两个开关管互补导通，所以只看S<sub>1</sub>就行，S<sub>2</sub>进行取反</li>
-<li>调制如右图所示，蓝色的直角三角形为载波信号，被绿色的调制信号所截，设调制信号大于载波为高电平，小于载波为低电平，可得10即开关管S<sub>1</sub>的状态，设1为t<sub>1</sub>，0为t<sub>2</sub>，
-根据三角形的相似可得调制信号（的高度）为t<sub>1</sub>/T<sub>s</sub>，即为占空比</li>
+<li>这两个开关管互补导通，所以只看S~1~就行，S~2~进行取反</li>
+<li>调制如右图所示，蓝色的直角三角形为载波信号，被绿色的调制信号所截，设调制信号大于载波为高电平，小于载波为低电平，可得10即开关管S~1~的状态，设1为t~1~，0为t~2~， 根据三角形的相似可得调制信号（的高度）为t~1~/T~s~，即为占空比</li>
 </ul>
-<p><strong>S<sub>3,4</sub></strong></p>
+<p><strong>S~3,4~</strong></p>
 <ul>
 <li>对于这俩开关状态，因为是0100，都交叉着，所以可以多写两个周期，如右侧表所示</li>
-<li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105126369.png">
-<ul>
-<li>S<sub>1,2</sub>对应的开关状态往左平移半个周期即为S<sub>3,4</sub>的开关状态</li>
-<li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105313733.png"></li>
-<li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105355675.png"></li>
-</ul></li>
+<li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105126369.png" alt><ul>
+<li>S~1,2~对应的开关状态往左平移半个周期即为S~3,4~的开关状态</li>
+<li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105313733.png" alt></li>
+<li><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105355675.png" alt></li>
 </ul>
-<p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105645917.png"></p>
+</li>
+</ul>
+<p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105645917.png" alt></p>
 <p>计数器的实现如图红色所示：当他到达周期时间后，重新开始计数</p>
-<p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105727973.png"></p>
+<p><img src="/2024/07/12/san-dian-ping-04.1.jiao-cuo-ju-chi-bo-diao-zhi/image-20240712105727973.png" alt></p>
 
                 
             </div>

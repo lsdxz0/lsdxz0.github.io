@@ -468,130 +468,80 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电力电子器件">2. 电力电子器件</h2>
-<h3 id="功率半导体器件概述">2.1 功率半导体器件概述</h3>
-<ul>
-<li>种类多， 用作电力电子设备中的开关或整流的半导体器件，
-也称为功率器件， 功率IC</li>
+                <h2 id="2-电力电子器件"><a href="#2-电力电子器件" class="headerlink" title="2. 电力电子器件"></a>2. 电力电子器件</h2><h3 id="2-1-功率半导体器件概述"><a href="#2-1-功率半导体器件概述" class="headerlink" title="2.1 功率半导体器件概述"></a>2.1 功率半导体器件概述</h3><ul>
+<li>种类多， 用作电力电子设备中的开关或整流的半导体器件， 也称为功率器件， 功率IC</li>
 <li>功率范围广 uw~MW</li>
-<li>工作模式：
-<ul>
+<li>工作模式：<ul>
 <li>整流：用于让电流只往一个方向流动</li>
 <li>放大 用于放大电子信号</li>
 <li>开关：用于控制电力的导通和关断</li>
 <li>功率半导体器件多用于整流和开关， 极少用于放大， 为了降低损耗</li>
-</ul></li>
-<li>开关特性：
-<ul>
+</ul>
+</li>
+<li>开关特性：<ul>
 <li>导通时， 阻抗很小， 接近于短路，管压降接近于0 电流由外电路决定</li>
-<li>阻断时， 阻抗很大， 接近于开路， 电流几乎为0
-而罐子两端电压由外电路决定</li>
+<li>阻断时， 阻抗很大， 接近于开路， 电流几乎为0 而罐子两端电压由外电路决定</li>
 <li>导通关断瞬间将产生较大功率</li>
 <li>分析电路稳态的时候不会考虑开通和关断的损耗问题（用理想开关替代）</li>
 <li>当器件的选型， 散热能不能达到要求， 考虑开通和关断的过程</li>
-</ul></li>
-<li>耗散功率大
-<ul>
+</ul>
+</li>
+<li>耗散功率大<ul>
 <li>耗散功率大， 通常需要配备额外冷却装置</li>
-<li>当前攻略半导体器件热量的设计是优化的关键因素之一
-<ul>
+<li>当前攻略半导体器件热量的设计是优化的关键因素之一<ul>
 <li>自然冷却</li>
 <li>强制风冷</li>
 <li>水冷</li>
 <li>热管冷却</li>
 <li>强制风冷</li>
 <li>混合冷却</li>
-</ul></li>
-</ul></li>
 </ul>
-<h3 id="功率二极管power-diode">2.2 功率二极管Power Diode</h3>
-<h4 id="pn结原理介绍">2.2.1 PN结原理介绍</h4>
-<p>**二极管， P接+，N接-则导通</p>
-<p>PN结， P接电源正极， N接电源负极， 抵消里面的势垒层，
-电子源源不断的从外部电路进入到N区， P区， 再回到外部电路， 导通</p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730533.png" alt="image-20240312161534252">
-<figcaption aria-hidden="true">image-20240312161534252</figcaption>
-</figure>
-<p>遇到的那俩绿色的就是共价键， 自由电子就是往外跑的那个
-剩下的坑是空穴</p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="2-2-功率二极管Power-Diode"><a href="#2-2-功率二极管Power-Diode" class="headerlink" title="2.2 功率二极管Power Diode"></a>2.2 功率二极管Power Diode</h3><h4 id="2-2-1-PN结原理介绍"><a href="#2-2-1-PN结原理介绍" class="headerlink" title="2.2.1 PN结原理介绍"></a>2.2.1 PN结原理介绍</h4><p>**二极管， P接+，N接-则导通</p>
+<p>PN结， P接电源正极， N接电源负极， 抵消里面的势垒层， 电子源源不断的从外部电路进入到N区， P区， 再回到外部电路， 导通</p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730533.png" alt="image-20240312161534252"></p>
+<p>遇到的那俩绿色的就是共价键， 自由电子就是往外跑的那个 剩下的坑是空穴</p>
 <p><strong>N掺杂</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730534.png" alt="image-20240312161634773">
-<figcaption aria-hidden="true">image-20240312161634773</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730534.png" alt="image-20240312161634773"></p>
 <ul>
 <li>掺杂价电子为5的磷</li>
 <li>有一个电子可在其中自由移动</li>
 </ul>
 <p><strong>P掺杂</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730535.png" alt="image-20240312161844090">
-<figcaption aria-hidden="true">image-20240312161844090</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730535.png" alt="image-20240312161844090"></p>
 <ul>
 <li>掺杂价电子为3的铝;</li>
 <li>有一个可放置电子的空穴;</li>
-<li>相邻电子可随时填上，电子运动即空穴相对运动;<strong>空穴是不会动的，
-动的是自由电子</strong></li>
+<li>相邻电子可随时填上，电子运动即空穴相对运动;<strong>空穴是不会动的， 动的是自由电子</strong></li>
 </ul>
 <p><strong>PN结</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730536.png" alt="image-20240312162042127">
-<figcaption aria-hidden="true">image-20240312162042127</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730537.png" alt="image-20240312163038904">
-<figcaption aria-hidden="true">image-20240312163038904</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730538.png" alt="image-20240312163527966">
-<figcaption aria-hidden="true">image-20240312163527966</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730539.png" alt="image-20240312164347765">
-<figcaption aria-hidden="true">image-20240312164347765</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730540.png" alt="image-20240312164445659">
-<figcaption aria-hidden="true">image-20240312164445659</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730536.png" alt="image-20240312162042127"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730537.png" alt="image-20240312163038904"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730538.png" alt="image-20240312163527966"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730539.png" alt="image-20240312164347765"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730540.png" alt="image-20240312164445659"></p>
 <p>势垒区随着电压的增大不断抵消，最终消失</p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730541.png" alt="image-20240312164550299">
-<figcaption aria-hidden="true">image-20240312164550299</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730542.png" alt="image-20240312164700114">
-<figcaption aria-hidden="true">image-20240312164700114</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730541.png" alt="image-20240312164550299"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730542.png" alt="image-20240312164700114"></p>
 <p>这里反向饱和电流的产生主要是因为空穴发生了漂移运动</p>
-<h5 id="两种击穿">2.2.1.2 两种击穿</h5>
+<h5 id="2-2-1-2-两种击穿"><a href="#2-2-1-2-两种击穿" class="headerlink" title="2.2.1.2 两种击穿"></a>2.2.1.2 两种击穿</h5><ul>
+<li><p><strong>雪崩击穿</strong> —撞出来了</p>
 <ul>
-<li><strong>雪崩击穿</strong> --撞出来了
-<ul>
-<li><figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730543.png" alt="image-20240312165123268">
-<figcaption aria-hidden="true">image-20240312165123268</figcaption>
-</figure></li>
-</ul></li>
-<li>齐纳击穿--拉出来的
+<li><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730543.png" alt="image-20240312165123268"></li>
+</ul>
+</li>
+<li><p>齐纳击穿—拉出来的</p>
 <ul>
 <li><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730544.png" alt="image-20240312165255229"></li>
-</ul></li>
 </ul>
-<h5 id="电容">2.2.1.3 电容</h5>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730545.png" alt="image-20240312165521715">
-<figcaption aria-hidden="true">image-20240312165521715</figcaption>
-</figure>
-<h4 id="功率二极管的引出">2.2.2 功率二极管的引出</h4>
-<p>​ 通过在两个重掺杂的P+和N+层之间引入所需厚度的轻掺杂N-"漂移层(drift
-layer)”以解决功率二极管需求的矛盾。</p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730546.png" alt="image-20240313150952843">
-<figcaption aria-hidden="true">image-20240313150952843</figcaption>
-</figure>
+</li>
+</ul>
+<h5 id="2-2-1-3-电容"><a href="#2-2-1-3-电容" class="headerlink" title="2.2.1.3 电容"></a>2.2.1.3 电容</h5><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730545.png" alt="image-20240312165521715"></p>
+<h4 id="2-2-2-功率二极管的引出"><a href="#2-2-2-功率二极管的引出" class="headerlink" title="2.2.2 功率二极管的引出"></a>2.2.2 功率二极管的引出</h4><p>​    通过在两个重掺杂的P+和N+层之间引入所需厚度的轻掺杂N-“漂移层(drift layer)”以解决功率二极管需求的矛盾。</p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730546.png" alt="image-20240313150952843"></p>
 <p>增加了N-的影响：</p>
 <ul>
 <li>提高耐压</li>
@@ -599,139 +549,53 @@ layer)”以解决功率二极管需求的矛盾。</p>
 <li>结电容増加</li>
 </ul>
 <p><strong>结构</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730547.png" alt="image-20240313151245570">
-<figcaption aria-hidden="true">image-20240313151245570</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730547.png" alt="image-20240313151245570"></p>
 <p><strong>符号</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730548.png" alt="image-20240313151315256">
-<figcaption aria-hidden="true">image-20240313151315256</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730548.png" alt="image-20240313151315256"></p>
 <p>A是阳极， k是阴极， 电流指向阴极，</p>
-<h4 id="功率二极管的静态特性-体现器件最基本的电压与电流稳态特性伏安特性">2.2.3
-功率二极管的静态特性-体现器件最基本的电压与电流稳态特性（伏安特性）</h4>
-<p><strong>反向偏置</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730549.png" alt="image-20240313152855121">
-<figcaption aria-hidden="true">image-20240313152855121</figcaption>
-</figure>
+<h4 id="2-2-3-功率二极管的静态特性-体现器件最基本的电压与电流稳态特性（伏安特性）"><a href="#2-2-3-功率二极管的静态特性-体现器件最基本的电压与电流稳态特性（伏安特性）" class="headerlink" title="2.2.3 功率二极管的静态特性-体现器件最基本的电压与电流稳态特性（伏安特性）"></a>2.2.3 功率二极管的静态特性-体现器件最基本的电压与电流稳态特性（伏安特性）</h4><p><strong>反向偏置</strong></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730549.png" alt="image-20240313152855121"></p>
 <p>从右往左看</p>
 <p><strong>几个参数</strong></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730550.png" alt="image-20240313153034186">
-<figcaption aria-hidden="true">image-20240313153034186</figcaption>
-</figure>
-<h5 id="正向偏置">2.2.3.2 正向偏置</h5>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730551.png" alt="image-20240313153520745">
-<figcaption aria-hidden="true">image-20240313153520745</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730552.png" alt="image-20240313154032153">
-<figcaption aria-hidden="true">image-20240313154032153</figcaption>
-</figure>
-<h4 id="功率二极管的动态特性开关特性">2.2.4
-功率二极管的动态特性（开关特性）</h4>
-<ul>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730550.png" alt="image-20240313153034186"></p>
+<h5 id="2-2-3-2-正向偏置"><a href="#2-2-3-2-正向偏置" class="headerlink" title="2.2.3.2 正向偏置"></a>2.2.3.2 正向偏置</h5><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730551.png" alt="image-20240313153520745"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730552.png" alt="image-20240313154032153"></p>
+<h4 id="2-2-4-功率二极管的动态特性（开关特性）"><a href="#2-2-4-功率二极管的动态特性（开关特性）" class="headerlink" title="2.2.4 功率二极管的动态特性（开关特性）"></a>2.2.4 功率二极管的动态特性（开关特性）</h4><ul>
 <li>动态过程中可伴随过电压或过电流的产生</li>
-<li>器件开关过程中， 电压和电流可同时存在，
-动态过程与器件的能量损耗有关</li>
+<li>器件开关过程中， 电压和电流可同时存在， 动态过程与器件的能量损耗有关</li>
 </ul>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730553.png" alt="image-20240313154153681">
-<figcaption aria-hidden="true">image-20240313154153681</figcaption>
-</figure>
-<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730554.png"></p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730555.png" alt="image-20240313154637730">
-<figcaption aria-hidden="true">image-20240313154637730</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730556.png" alt="image-20240313154921323">
-<figcaption aria-hidden="true">image-20240313154921323</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730553.png" alt="image-20240313154153681"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730554.png" alt></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730555.png" alt="image-20240313154637730"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730556.png" alt="image-20240313154921323"></p>
 <p>二极管仍然有电流通过， 电压保持不变</p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730557.png" alt="image-20240313155031690">
-<figcaption aria-hidden="true">image-20240313155031690</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730558.png" alt="image-20240313155058731">
-<figcaption aria-hidden="true">image-20240313155058731</figcaption>
-</figure>
-<h5 id="功率二极管的分类">2.2.3 功率二极管的分类</h5>
-<ul>
-<li>功率二极管似乎只是用于处理比信号二极管更大的电流和电压。理想情况，
-它允许电流在一个方向(阳极到阴极)上流过它的两端，并阻止电流在另一
-个方向(阴极到阳极)上流过它。</li>
-<li>事实上，半导体物理学和当前工艺阻止了理想二极管”的诞生，现实功率
-二极管只能按照不同的性能参数制造，以满足不同的应用场合。</li>
-<li>功率二极管包括常规、快恢复和超快恢复PN结二极管，以及肖特基势垒二极
-管。各类型都有不同的特点。</li>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730557.png" alt="image-20240313155031690"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730558.png" alt="image-20240313155058731"></p>
+<h5 id="2-2-3-功率二极管的分类"><a href="#2-2-3-功率二极管的分类" class="headerlink" title="2.2.3 功率二极管的分类"></a>2.2.3 功率二极管的分类</h5><ul>
+<li>功率二极管似乎只是用于处理比信号二极管更大的电流和电压。理想情况，<br>它允许电流在一个方向(阳极到阴极)上流过它的两端，并阻止电流在另一<br>个方向(阴极到阳极)上流过它。</li>
+<li>事实上，半导体物理学和当前工艺阻止了理想二极管”的诞生，现实功率<br>二极管只能按照不同的性能参数制造，以满足不同的应用场合。</li>
+<li>功率二极管包括常规、快恢复和超快恢复PN结二极管，以及肖特基势垒二极<br>管。各类型都有不同的特点。</li>
 </ul>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730559.png" alt="image-20240313203735710">
-<figcaption aria-hidden="true">image-20240313203735710</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730560.png" alt="image-20240313204107043">
-<figcaption aria-hidden="true">image-20240313204107043</figcaption>
-</figure>
-<h3 id="双极结型晶体管bjt">2.3 双极结型晶体管—BJT</h3>
-<h4 id="三极管npn原理">2.3.1 三极管NPN原理</h4>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730561.png" alt="image-20240313204429409">
-<figcaption aria-hidden="true">image-20240313204429409</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730562.png" alt="image-20240313204505451">
-<figcaption aria-hidden="true">image-20240313204505451</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730559.png" alt="image-20240313203735710"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730560.png" alt="image-20240313204107043"></p>
+<h3 id="2-3-双极结型晶体管—BJT"><a href="#2-3-双极结型晶体管—BJT" class="headerlink" title="2.3 双极结型晶体管—BJT"></a>2.3 双极结型晶体管—BJT</h3><h4 id="2-3-1-三极管NPN原理"><a href="#2-3-1-三极管NPN原理" class="headerlink" title="2.3.1 三极管NPN原理"></a>2.3.1 三极管NPN原理</h4><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730561.png" alt="image-20240313204429409"></p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730562.png" alt="image-20240313204505451"></p>
 <p>同方向的是增强， 不同方向的减弱</p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730563.png" alt="image-20240314152843968">
-<figcaption aria-hidden="true">image-20240314152843968</figcaption>
-</figure>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730563.png" alt="image-20240314152843968"></p>
 <p>NPN结 ，N是发射极， P为基极， N为集电极</p>
-<p>控制里面的那个电压， 增大它，
-会有更多的电子从n到p，那么会有更多的电子到n， 实现放大</p>
-<p>β=集电极电流比基极电流， β是放大倍数</p>
-<h4 id="功率bjt引出">2.3.2 功率BJT引出</h4>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730564.png" alt="image-20240314193442888">
-<figcaption aria-hidden="true">image-20240314193442888</figcaption>
-</figure>
+<p>控制里面的那个电压， 增大它， 会有更多的电子从n到p，那么会有更多的电子到n， 实现放大</p>
+<p>β=集电极电流比基极电流，   β是放大倍数</p>
+<h4 id="2-3-2-功率BJT引出"><a href="#2-3-2-功率BJT引出" class="headerlink" title="2.3.2 功率BJT引出"></a>2.3.2 功率BJT引出</h4><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730564.png" alt="image-20240314193442888"></p>
 <p>往外的是NPN型</p>
 <p>这玩意，中间的是基极B， 有箭头的是E，发射极， 剩下的是集电极C</p>
-<h4 id="功率bjt的静态特性">2.3.3 功率BJT的静态特性</h4>
-<p>对于三极管而言， 在电力电子中主要用在它的截止区跟饱和区，
-在截止区，电压很大没有电流，相当于断路，
-在饱和区电流很大，电压很小，，而在放大区， 既有电压又有电流pass</p>
-<p>输入特性： VCE Vbe与ib之间的关系</p>
-<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730565.png"></p>
+<h4 id="2-3-3-功率BJT的静态特性"><a href="#2-3-3-功率BJT的静态特性" class="headerlink" title="2.3.3 功率BJT的静态特性"></a>2.3.3 功率BJT的静态特性</h4><p>对于三极管而言， 在电力电子中主要用在它的截止区跟饱和区， 在截止区，电压很大没有电流，相当于断路， 在饱和区电流很大，电压很小，，而在放大区， 既有电压又有电流pass</p>
+<p>输入特性： VCE    Vbe与ib之间的关系 </p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730565.png" alt="  "></p>
 <p>输出特性：I B 一定， Ic跟Vce之间的关系</p>
-<h4 id="功率bjt的动态特性">2.3.4 功率BJT的动态特性</h4>
-<h3 id="晶闸管-triac与gto">2.4 晶闸管， Triac与GTO</h3>
-<h4 id="晶闸管的引出及pnpn结">2.4.1 晶闸管的引出及PNPN结</h4>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730566.png" alt="image-20240314212429792">
-<figcaption aria-hidden="true">image-20240314212429792</figcaption>
-</figure>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730567.png" alt="image-20240314213006752">
-<figcaption aria-hidden="true">image-20240314213006752</figcaption>
-</figure>
-<h4 id="晶闸管的引出及pnpn结-1">2.4.2 晶闸管的引出及PNPN结</h4>
-<h4 id="triac及其特性双向晶闸管">2.4.3 TRIAC及其特性（双向晶闸管）</h4>
-<h4 id="gto及其特性">2.4.4 GTO及其特性</h4>
-<h3 id="功率mosfet">2.5 功率MOSFET</h3>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730568.png" alt="image-20240314213603106">
-<figcaption aria-hidden="true">image-20240314213603106</figcaption>
-</figure>
-<h3 id="igbt">2.6 IGBT</h3>
-
+<h4 id="2-3-4-功率BJT的动态特性"><a href="#2-3-4-功率BJT的动态特性" class="headerlink" title="2.3.4 功率BJT的动态特性"></a>2.3.4 功率BJT的动态特性</h4><h3 id="2-4-晶闸管，-Triac与GTO"><a href="#2-4-晶闸管，-Triac与GTO" class="headerlink" title="2.4 晶闸管， Triac与GTO"></a>2.4 晶闸管， Triac与GTO</h3><h4 id="2-4-1-晶闸管的引出及PNPN结"><a href="#2-4-1-晶闸管的引出及PNPN结" class="headerlink" title="2.4.1 晶闸管的引出及PNPN结"></a>2.4.1 晶闸管的引出及PNPN结</h4><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730566.png" alt="image-20240314212429792"> </p>
+<p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730567.png" alt="image-20240314213006752"></p>
+<h4 id="2-4-2-晶闸管的引出及PNPN结"><a href="#2-4-2-晶闸管的引出及PNPN结" class="headerlink" title="2.4.2 晶闸管的引出及PNPN结"></a>2.4.2 晶闸管的引出及PNPN结</h4><h4 id="2-4-3-TRIAC及其特性（双向晶闸管）"><a href="#2-4-3-TRIAC及其特性（双向晶闸管）" class="headerlink" title="2.4.3 TRIAC及其特性（双向晶闸管）"></a>2.4.3 TRIAC及其特性（双向晶闸管）</h4><h4 id="2-4-4-GTO及其特性"><a href="#2-4-4-GTO及其特性" class="headerlink" title="2.4.4 GTO及其特性"></a>2.4.4 GTO及其特性</h4><h3 id="2-5-功率MOSFET"><a href="#2-5-功率MOSFET" class="headerlink" title="2.5 功率MOSFET"></a>2.5 功率MOSFET</h3><p><img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406101730568.png" alt="image-20240314213603106"></p>
+<h3 id="2-6-IGBT"><a href="#2-6-IGBT" class="headerlink" title="2.6 IGBT"></a>2.6 IGBT</h3>
                 
             </div>
             <hr/>

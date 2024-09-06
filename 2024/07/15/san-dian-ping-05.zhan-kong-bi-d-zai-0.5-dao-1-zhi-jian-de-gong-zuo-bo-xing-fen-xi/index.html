@@ -481,41 +481,41 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="占空比d在0.5到1之间的工作波形分析">05.
-占空比D在0.5到1之间的工作波形分析</h2>
-<p><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715150501849.png" class title="开关状态"></p>
+                <h2 id="05-占空比D在0-5到1之间的工作波形分析"><a href="#05-占空比D在0-5到1之间的工作波形分析" class="headerlink" title="05. 占空比D在0.5到1之间的工作波形分析"></a>05. 占空比D在0.5到1之间的工作波形分析</h2> <img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715150501849.png" class title="开关状态">
 <img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715150523767.png" class title="D&gt;0.5的工作波形">
-<p><strong>开关管S<sub>1,2</sub></strong></p>
+<p><strong>开关管S~1,2~</strong></p>
 <ul>
-<li>横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，所以调制信号视为
-D 。</li>
-<li>调制信号与载波进行比较，中间这个时间就是**t<sub>1</sub>=D*T<sub>s</sub>**
-，大于载波就是高电平，小于载波为低电平，这个时间就是图一中的t<sub>1</sub>。</li>
-<li>所以S<sub>1</sub>就是010，S<sub>2</sub>为其互补。为101</li>
+<li>横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，所以调制信号视为 D 。</li>
+<li>调制信号与载波进行比较，中间这个时间就是<strong>t~1~=D*T~s~</strong> ，大于载波就是高电平，小于载波为低电平，这个时间就是图一中的t~1~。</li>
+<li>所以S~1~就是010，S~2~为其互补。为101</li>
 </ul>
-<p><strong>开关管S<sub>3,4</sub></strong></p>
+<p><strong>开关管S~3,4~</strong></p>
 <ul>
-<li>同样的比较方式，S<sub>4</sub>为101，S<sub>3</sub>互补</li>
-<li>所以对应中间的这段时间即为t<sub>2</sub>。可得<strong>t<sub>2</sub>=（1-D）T<sub>s</sub></strong>
-。</li>
+<li>同样的比较方式，S~4~为101，S~3~互补</li>
+<li>所以对应中间的这段时间即为t~2~。可得<strong>t~2~=（1-D）T~s~</strong> 。</li>
 </ul>
-<p><strong>电感波形 i<sub>L</sub></strong></p>
+<p><strong>电感波形 i~L~</strong></p>
 <ul>
-<li><p>电感电流先看电感电压，电压大于0，电感电流上升，电压小于0.电感电流下降，（通过i=L*du/dt）</p></li>
-<li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715151636879.png" class></li>
-<li><p>由图可以看出，电感上的电压就是U<sub>ab</sub>减去U<sub>2</sub></p></li>
-<li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715151824042.png" class></li>
-<li><p>那么对于dU<sub>1</sub> &lt;0，
-对应的时间段i<sub>L</sub>呈现下降趋势，dU<sub>2</sub>时间上升，+伏秒平衡，上升的值等于下降的值</p></li>
+<li><p>电感电流先看电感电压，电压大于0，电感电流上升，电压小于0.电感电流下降，（通过i=L*du/dt）</p>
+</li>
+<li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715151636879.png" class>
+</li>
+<li><p>由图可以看出，电感上的电压就是U~ab~减去U~2~</p>
+</li>
+<li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715151824042.png" class>
+</li>
+<li><p>那么对于dU~1~ &lt;0， 对应的时间段i~L~呈现下降趋势，dU~2~时间上升，+伏秒平衡，上升的值等于下降的值</p>
+</li>
 <li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152036951.png" class title="电感电流波形">
 <p><strong>输入输出对应的关系跟普通的一样</strong></p>
-<p>U<sub>ab</sub><em>所对应的时间等于U<sub>2</sub></em>Ts，根据上图的电压值与时间的对应关系可得：</p>
-<img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152510327.png" class></li>
+<p>U~ab~<em>所对应的时间等于U~2~</em>Ts，根据上图的电压值与时间的对应关系可得：</p>
+<img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152510327.png" class>
+</li>
 </ul>
 <p><strong>电感电流纹波的变化</strong></p>
 <img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715152752499.png" class>
 <ul>
-<li>直接计算红色部分的电感电流纹波，因为这段变化的时间是已知的，就是t<sub>2</sub></li>
+<li>直接计算红色部分的电感电流纹波，因为这段变化的时间是已知的，就是t~2~</li>
 <li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153131058.png" class title="三电平的电感电流纹波"></li>
 <li><img src="/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153230930.png" class title="一般buck的电感电流纹波"></li>
 <li>三电平的多减了一个u1/2，所以其电感电流纹波减少，且倍频了，相同标准时电感体积可以更小</li>
@@ -763,13 +763,13 @@ D 。</li>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/">
+                <a href="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="温湿度仪原理图">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="06. 占空比D在0到0.5之间的工作波形分析">
                         
-                        <span class="card-title">温湿度仪原理图</span>
+                        <span class="card-title">06. 占空比D在0到0.5之间的工作波形分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -780,14 +780,14 @@ D 。</li>
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-16
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-07-15
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" class="post-category">
-                                    开源项目
+                            <a href="/categories/%E4%B8%89%E7%94%B5%E5%B9%B3/" class="post-category">
+                                    三电平
                                 </a>
                             
                             
@@ -797,8 +797,12 @@ D 。</li>
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%B8%A9%E6%B9%BF%E5%BA%A6%E4%BB%AA/">
-                        <span class="chip bg-color">温湿度仪</span>
+                    <a href="/tags/%E6%9C%A8%E4%BF%AE%E4%BA%8E%E6%B7%8B/">
+                        <span class="chip bg-color">木修于淋</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%89%E7%94%B5%E5%B9%B3DCDC/">
+                        <span class="chip bg-color">三电平DCDC</span>
                     </a>
                     
                 </div>
@@ -812,13 +816,13 @@ D 。</li>
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/">
+                <a href="/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="06. 占空比D在0到0.5之间的工作波形分析">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="08. 计算输入侧分压电容">
                         
-                        <span class="card-title">06. 占空比D在0到0.5之间的工作波形分析</span>
+                        <span class="card-title">08. 计算输入侧分压电容</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
