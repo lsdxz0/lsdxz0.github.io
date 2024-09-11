@@ -3273,4 +3273,185 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})</script><p>​    输出信号是
         <tag>CAN总线</tag>
       </tags>
   </entry>
+  <entry>
+    <title>数据分析--02. 综合评价</title>
+    <url>/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-02.zong-he-ping-jie/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="8e6de127abc16abc89a5fab9c81cd2d4fda7c1e8936f8788e12de34bc1df4ea2">3db845c297da67fde545b6fd44e821f4a2912ecd85497d6da945dc583f4f4992cd8cfdc3aed68d64ecdf1efb90271e6177bd65940b4c89d9b5b36e8870bd23574d8f1c29e462f042365e23191e0730ba7089dce839cb71cbf979391a1f9a468733f4f63a57630344d44c1398ca2dfd34c6032a853a72048d37b27e4cdc9ac4aed44eb6a4db4b09fd8cae71556cbb2119214a70c4ac848a23482a68720588486cbcd0e0b29a2a8ce4f7f5c46cae10b708bbca0f64966c0d743726fa5f97c4fe990780672eacc02f1bec850af8f1ae68698f34b19404f828985a09a60a1dbdec28ee379c02ccd0893209cf5dc9b02c74ff2ba59485044d6a6330a88ed09976a492565d501c347908e899df35087dc85f7f595b023328bd2109a4be23db460d13759a0451a50efe2f0dff84c38400b39467b1db0f28d4626d1f112a97bcf281d7fc42d76db16fec7ce2b22f83ef66c9ad1010ae902a14263c88727fcdd94def99a9ca3da7c01f44e073aad11124963e032533fda7553a057145334972ed10343a36aa9f331454fa9f55e1521b09170486eccfeb186e00e85d57c6aef2d00bae5462e83a2f4d953d8dcf6cb3abc6fe4be79a4049d95dea5f34b347741316b91301600c4d72f87f35c1a0a8aef72927c3130a9391b6f50da1bdd90f6f6811386fe01f4f22c62c57ba9aa464f31ca410fe067244bfe2ee11cfd450bc12156a565f370ed750fa6f973f5d0e11fd582ecb415b0f4ebf478d1994754618db1d8ceeb8163eeecde55cbde176f26f5e69a7b9981041f667eab90402f777221840128f08038199cec03ec2ce743b2c4347e351e160a9ce31e9eab3ab5ae3a8b0aad8c7c682e7fff82baab7130a144374370e83e8b38cbfd338ca851b0b2a114e9da69289ee2345227e900d71227f47f1700b3eb90de17b788e2b4f5355b6c4018614cc9a599f0ac8cc4497ed9432682fb3b3498e4ce45ad354bd4805858129f878fdcafbfb9d850c4fe5550436e7a06d5aa605b542f5e5cd4fd0bdfcb39b3e9a4b6837513224e312bb2df312c28ed783fbe9acf085aefa150579ab9f811aa430dbe4023f6577364f4d0461f406c04d235175d372037f588a7563419edb2c7c22e6aa43d2f5a1bbc56b142774f114bcd99609b0e38b10d8a0d719892cb805fd3aad9a5a735d6f9be66bdffb1702339b0ebe253e26b99921203ff7c8b6bf232821d7d04022a62c0e14cf3535f7e66a0a754e0fefdb0a07c79b2d642fbfe0da0c36af44b9e7ff81da87559d4486dce9d7e3cb817fac13e34dc65986d03c783c2ba3a8ed90e9c922968ee4f5f89b9b3bef72efe200884f60cfedecd6dc51411baf2480a3cded7a8dc7790115970a955a184aac477075a6376b006677fe52d58e9dd5f6cf7ad01362b0ba82c85a2eea263a1ac397b597c8f195bb33242daeeef691dbc9e9be2090c8d11def0b2b9d944a9899ced43ac3568ff6338b2950930aafc7be6f3cbce23d693405918d9b4712fa610332a9d3cba7824cc218fd64faf7fd57e817d738805ed332f02a204888f58aad5081c7be1b2d139070755d9a94fba6ddccc8950df4aee3d2631deeb13a951b1290b3a0646cd560bcb43a4c6626dc5b590cb487fc0b634235e73589e211d2708d0c386fe79790a38090daaf690f168c877af117ab08676bb77bced3057bc4843c4f3795f68101db06b0d810d4660a4ecd77c499f5fecd62fc90286cbac44404c901aed41edaca64240f41d1b632cfec92ddb3903618c0d48fb65e2d5feb9d0e5960e7a2916dc086fd680aaddcaf70f3cad2e25c806c34846d2b7b081cc02de78aaed557048c65420850839c7c2795ab53ae8421538b339dd32eaac71b6450861e7407e8f8cd4fc7a5f6aa44dd944ec71958bec405fdc1e7be7dcbfa37f85bbf966a0fbeb611f404f4ea9452132672d75185a7273a4f6117421304dfc633d0816607228b882f4731c85056778a1e9da687872152e320df36ce61f04b03e28e09a2f6661869cff4e5875ae4f79d047b205246d2da5bda18e517b47a440b8b37ae71bfea93cd037ec7e6d6217327a02e6a944ce346782be529cf3495f0fcfe2d01e7cf53e00932a182716a36a6c8a9f530f2618426186df0941962ebe667a5790105dcda9d836e5aefe2fe044cd1d41e59c02ebe29dd867b3bdb52580f93cd2f1195a98ee3e0d3a26fcf45d08680ccc9ff6e6d8833bec1522fa18baac3306c92d8079ad62c202ebc7976c8ebd6327e856c5baf703e6b3c76da1e2b9bda100666ac07b2428437ee9b41be2903fe88214656a0c933920c1596e63be3ef3dd7db4c07cc2e5ec197b686369bbe5eed12fb48669758d7bf89cfedab9fb69956462f9ed0ddd56d2f0b895ff946e4b77dd29b664dc648ae698c2dd7123ff73a18feba4395485fe519f187e2ba093f74aecda39927a99ebb47d5901a5a93823d3067e67f30b78c4009194a931e1ab3cad10a681081dc32088ca1e01a66d006770137496b2ee7cb68fd138d567ca035e77c9dd6f234a5e55cc873b6b4f6a4aa933812c7281e417457a57e1eb42b340742f4cf1e7217b90ee531c3a5b590</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
+        <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据处理</title>
+    <url>/2024/09/11/shu-xue-jian-mo-shu-ju-chu-li/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="10466423d1d110af75493dd0a6c2d293d5ebf50910cac2fc7a96e8a5365260d2">3db845c297da67fde545b6fd44e821f4a2912ecd85497d6da945dc583f4f499240b1f8eccfb956e03c910b58352d49dcbb637df2efeb0f1143273eb82a6228dbdb9a391821c0d9d9bcba65484218262b6059264c0aa38ea4fddd52faaada3ff3c78857962f21232222a182d73aec4f6a76310ba0593cfc5a75a437aa2414eb4045338f42418cc3070d940d3d97a6564be6a7b972fb349de0bcc51fd5206d10664e44223cbea0b1d1e6a5a0c0daa77b1adc6c46f5b7b793f7bfbf0815e3d4a2584d31ed1bc1fbe05c09c6ad65352c1804d223dac07bc7ddaca95d66915034877c5806490931440cf05f9e202dbbb96136a8bd7af6b3571c9e837d878a75fce7e6812cfbe15587dfae387ae501abb77659eb24fd6071e436d6c8adaf021d50d5f564b1a0ad3ef1da834785786d4177893b5ed137181299017b3f7dd84cb8e529976f86425cb5eca7c8b439a8be5a51c641a1bec7aea4da512d593afc1aa567373ced643e073988ab9b7bd79915b6e2d5f1184de1e8e5ba96778bd8b2146af55d1d9145234d5504f5047c0b2eb499f872f59c2845825cce0fcd83492fc068cc58acdfc54d89e00921ddad0adbebef263535a6113e11e5d320e2c01c0fd56b18a8cb21bb9b17519848dbd9bad1001ff87480a728ca42d53b882b66ac962d9e62aa7713231d5d8ee939f4f825afe776e237ba7ed8c08ffae6510f3fe1916e6d8fa5fb3e951ef339ef3d1f3489386fd0b8274b2bdafeaae904021c7bbb0481144361e8adf5cb6dff34f8b9e04a069caa0a354fcee4736809575eb4c36e6cab635f220d4101b804a04aff408b6d2e47553d640b81e50ad9db1fab88698f8bd9608fcf9f87ed1c1e3c7b7c9d6e91d5e771a9c3832e3a7ce99b7e5379abd89c7d10e57ef9df0e346cf04b5230ea55cd6e32010388373199d832a388bba62f0715ff543e7e8ca05928dffe4ab657e2f18e120d66e8b909c0dd7f4e296daf9263c04fcc9798d433f0b2e3c22bd17a4811634a31c4c71b51eb741e3c3bfd727f91c71cc800a4d9e02cc55015fdfcf7a56a5f4087bdcbe845f34df42c3f7eac7f168212c548b1ac20b03576017c1e98b35b80d9dd38690f076ec0b618b8be440a4d21b95b4b750489b8e5c168caac86a5e7c9573ab20cc11cf274c0a98e41df278aedbe43d4196660db0f633f16aa3dc44cfed7b9900ddace0fc0fae5e8f557a25a8832fb7bbd048b229d73713ca7d5357a4e55ac5e519fe59128fe294702c072b5c4ec6321905fe9d7ffc18a57aaad07f4339e55477e35555c90c3a1f1b291ae582ca0d02f78c5f837a2a60df2a6706a0206587e17c7c4d000f36145eb1a7aed2e07c46a989de7a00cba718d2d223a36c50a30ded3a70f3fad644845bf8b3a63b1cd17f06edf0912ecce7271b505b3e9315e7a84f3c7461a92e8900badcc427c7fbdb44f244dd4e6c5e83c5ea390983a176de952d507604f7ab0d58367144f294626d3d37e46cd869b1e569df661fdd0c25d164dc979ace31381d443e127d35b521fb47067efb7d94ebc23442f35960a2ca893a86c487b83be1a166b10fbb695ffc5b6f2eb4b3dd129eaea1b329947dce2b7c7b94298fa43ac2b2f7ab604d6257bdd20f576554ee4556f1443a26c2718bd048aa94b5a3edbc185beedc9a5a580863743bc395500fcad2bf6867688c23f590a7589a8d3c51d6ead7ae6ddef8fae75f94612be38d39f3ea1eede9a0fb005ec444c4fcb6b443c3efde850e6d3e02afe4c219e7f5c8abc21654f6becd49ca10c4b31a9958b81682df367caee39a2fa9f9b677a6679bb63389e85c8ea739af06bc117b89dc56803f2a73fe8e728f5da173472011ccfb2cc558db66c5865ac5a01b131b12c57ffad75e5830f49826a644a68e1bff4b7bffa7c5543ce46c962d67bece597081ae80630cffdce9dc53ba53b9257ca3d0e63873c987847d6e2cbde4f2a4554ef44d941c25db1a386b3468b483f62c2ab16f621dd3ad2d0bb6ddc785d42c21988e948202c66956c1228ffc54a796ddc494e55836e041054b73066c862bbcb089896fe8e6c30d69609accc73a237214f82656efbfadb7ae31ff5480db888a266fe34c2aa2e574f4174c13e0a08398d7425b3cd605c9f63e8d0d485d505cd090e39cb73cc66c55a66f9b8b97cee0b960080665714e61f4cd8647f47012d771a3fe87217a22fef343db7bf88b1124f351cf160af858ee79c7c6ac5f22056219e639a794c9ff940ddc43e59b2faba9a1576cb198c8da7a69a85510b0a725abda52a09a6951170bc3634c1fb803c87361451a81e32e2aef72607146354cd59558f73a67b877b28019e05117e9b8a2d4a4ce7e2458144a63a5e155e2a175596fc701d1e810dc2bb7e62c8a034c644eec47280a7d9ad0fa83f127317064fc959703d9282ec45cd577edccb2798546fa2530c2e5f826a106303e1a7cffddf788354a620ff27f4a1cfe4f5a854b5e2776f6f60288de02657d8207b3c9e1c832bbdee704f1002a9a0f94bad18e65f117104b6bdbf1f4c2f53b5e8d1dd4577e4a07282c4a1d8dd63c73b8776c575f4bc21038e161354f65638764ca7eb6da797e23c8a888371ffae18cf9191b160cc7d7712e176b79ff602aaa4b9dd1a8730f2882012230a47c059487db967e9e443c7f7a2e07ed8609ae44bf54d3c772b495a955a7eb78d389cc5072097c6475290404653b286772276bfb9af9787cf8eeb65f4043329ee80b67dbd2d9f2dda54f26dd1bde5fd859e72af3a473fe54e2bbbda7eca156d12513f8277e3bc6b44818d257b5fa5a39332cca2250fd95f6b7315a5c5f3c04cc589e60bd53ebd82660b434a2fa8b6fb687ea16edf1f3afea988dae9e1662bc4db569c8e2634621f06624ab1ef995568cab671b427e449b11b491f5b642850a20b7f55cd3ccb37fb5b905522fdee37cfb0ed7752d9285d0f8324757f286a5c35198134e8c563a3574ebd58cd7b53c8dc30ff8e98b56298e974d06464948d72d8890d7d4b0724ea5b7f2ad95f79f2d8a26bdcf2194ed7c062bc882273631cd89528afbdf2ffc2a93d8f9c6d66d7dcdef403efe540e45ecad4db954d01ed3801fc062d21509107c7e4f6c7efc16d8e6882774e5401a9b4032ff685c31648bf829c7b7289e17aa37cee08665828aba7ecd31a17d9f806574c96a1cf9417d9b9e3a520aedf2311d526fed76fed593781aae6c638d93577980995a30c635efffc8665466146f8af52722bcd7d86165f4b82b8b2a52abac3bab9b4977f2ed734890adf7ca49f9949eaea242d64f883e84b16437d51da7bdf6fa54a6351a26d1a819a1b7e6766c0c3d9ffbd3993d20138bb53196596723e8b5868e124c32c4dfb9b13678d9989980ee7656cc8cfc4068b6ff5571df04bc64d285f257e14513b13606bbb2d4c714857fa199f143174a82fca3c00c8f873106bfcf82140a7744e64894bf1f7d6aa0af5f64d0bc0b282f55870d85f817f0f3d7f3aa22e00cf1b7d4e90004ffc165587532cf27091f8ec8b459bcd47d96b4ccdc8d5b07d86596f037572929197d8031c05ed3a2a74472997a5912837ee143e8740d6883d19d7ac71c8c3cd19089efb83557c7ce1c5635256a9dbab8f1c51cccf16724a3da4c99d8fda1c170e60ac170665c20e12d508dacfdfc897101986acc9c74011f6a20c58e39919ceb285ee6c921ed954fdbeb8f49c78cba7d0131c22e87525696235074f685ee82637fedfd509b22c5eb1ba40b7c67563328082baeff107e13dc1708dc88e5a6db232bdb8547d78439b2f23d1eb2c3d1495f2945b90bb9c1c8ed92d7373b124e01077c61bde9f285174f5179fb4295e7303c2d5d9aeba099a07028835178325c4266cca5d45d6d0657d3a86c2910b99bd42dc81b13b5ce030e4fa54d4a17cee9f96a2323e0e25a328d6a671245076bdae689e1d32e61317c41e7e7b68b95278ccdb3e596ce47857ccecbbe9d44d3ea4dbd854226b66e24c4372d1df34d7099683cb53bb68d37ad97ffd18d943039bb8f1cc9d5c842cd957985b1dc2711c9feeb6538a7aa85946ccb66612c80742be4221a9817fe6d95e3314a1a5bc349a30424041d391d02d12232944aeca9bed901c590efe12df8ad3201a9a111a17a4df61498f9e9099a7b69e2ccae99618fbc330e842e0dd61c80d31c1ff712bba62739c831290f1c836f62677806d4b1f78d589b78ed4bf0ec0c26a534e844b0bcba602068577c000ea16f246e6459bf36cfa5a0f961e749df74a0e9e42df452fc1fef2c59945780db19dbb4c1b2af5629862de0ce4bf5551d9ae38a8f31d80f74b6a792c031fb26b476881ddbbf8588d378d4d18777fc179f2177a780df051bfc506ca72eab287a2fe69e5005f5411efa9cd35be03d28a28d6b61e22ebd27275c6f8776079311a5ea99cce36be7a4d976d4318266e31f68bdbf2426e5e8149ea562f44cd412e3617f17428ea503e80196de88abbdfaab9f144ea3d04ecc09f57f52559bb18236b353dfb7290871ce9829174ad786f1189eada8551aaa8f4887abecf7432c216ca37e99afe023315794cf77eac5ae7a69217898160e477855a71d5a2971fdca7b9bcabf12eb1fe9cdd75bc9c70d3370563b5128835de6314078805ac7e0ec878f9c37f89680bc143823cdc475ec8a9f439e15747cf98d0e3b76aa46414c8fa20e502bed533ed2411dc9e357a79a00b906bc2d7f5a3540dd756831d2294d9966abf7a81499b0f1f352d8a2392c8062e155896e0e16bd142086e33d593aed87b3676a3f486e6559807770182322aec4dae8e704c5f282497f6634ceb1050c82877f69a2c82b6e497654398af9744256c4e417951ca613e80df0371d708a76c2b6b18e11098a1be17db9c9d36d81e42ff4411a9d7462ff2735102085aefdf95ed3c8996994154f2adbf846e36a87ae743ea01606070e4c271b418a209b8333c32b9ea68aed6c4420a9d494611fa801939e8f418ca70643564f4d339adba2b644968fed89a4cec3e0c4037037fc344620852a1853c843a2af466d7a73c02520a9083146fc44213dc404991844c18c90eede2022c22a1ad754bd9b1e964de9e778f194fce4045faa74479339ba085e6c9cc0958b6a3250a27e3b02bb2b0e59461e719c124357d5e2fbcc953e4164ef8655d7e8318dc0ad4c54326dfcff1f711ad3189f6f667d82bb6994223b2fe52d8e3aa97396f1c6bad199f62d4b184faa059ed5e169bbbba75ba391ceaf02b45c91b2b0b9bddcd508a09cff87c943cb896ff7eb13e5f065143666964a7abd6f08f88535e01ec7c386b5090333dd2611f9d89b3b3600c509a1bbb9053d14d32f813db96cbf313be682e3d10ea48d85e5e213426a8e7bf4878823daba1a728c8ae92c21daf39b4765df5fa3a9d7f464f3054a0bf8180328af12e15c5e2619149eb0d91d49609749d85c6b5ac60d83c64eea48e60e6eb5d379c21af96e60c71e24e64200ef496b40882e65ffd0010a9df06dbcbc3690097336de044a1c6f7faf45e8f808c30e23f818f9fb175302e373c0763cc11728022561097716e8c229edf7a20ec8c4171b9ea6e0cd59e4ab29d30b1005a9ee625a34fbd19492872fda85c7ceaa37ab50f8bf200b081a35863303a69d58c0763416428cf65890490af38703dfa03b8e665d523c2ac76ce2083ea2045527eb726c5367e2bed4ed46984fe1f08444499dbd48c2008b1acc3c8287881ab46e0f8f75efea15847347ecabdc0f7be1ef8df6e27f5dc2fd3610d64cdef2be9baca0a6d1a3397</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
+        <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上拉电阻与下拉电阻</title>
+    <url>/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/</url>
+    <content><![CDATA[<h2 id="上拉电阻与下拉电阻">上拉电阻与下拉电阻</h2>
+<h3 id="什么是上下拉电阻">什么是上下拉电阻</h3>
+<p>​
+上拉下拉电阻统称为拉电阻，<strong>作用</strong>是将状态不确定的信号线通过一个电阻将其钳位至高电平（上拉）或低电平（下拉）</p>
+<p><strong>啥是状态不确定的信号</strong></p>
+<p>​ 在数字电路中，通常有三种状态：<strong>0（低电平） 1（高电平）
+浮空（不确定）</strong></p>
+<h3 id="如何辨别拉电阻">如何辨别拉电阻</h3>
+<ul>
+<li>上拉电阻与电源串联</li>
+<li>下拉电阻与地串联</li>
+</ul>
+<h3 id="拉电阻原理">拉电阻原理</h3>
+<p><strong>并联外接电阻，提高输出电平</strong>、</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164436977.png" class>
+<p>下拉电阻同理</p>
+<h3 id="上拉电阻">上拉电阻</h3>
+<p><strong>引出</strong></p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164602023.png" class>
+<p>单片机GPIO输出高电平，这时候给他个下拉电阻，发现电压变为了3.8V，</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164700284.png" class>
+<p>再给他加一个上拉电阻，发现该点电压变为了4.2V</p>
+<p>这里得看<strong>内部</strong></p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164805252.png" class title="单片机内部引脚电路">
+<p>想让他输出高电平时，上面的MOS导通，下面的截止，该点电压为电源电压，</p>
+<p>加入100Ω的下拉电阻变为3.8V</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164932769.png" class>
+<p>电源内部是有电阻的，上面的MOS管也是有内阻的，当下面MOS截止时，可以视为其阻抗无穷大，电路可以等效为</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165024399.png" class>
+<p>所以测量的电压为3.8V 串联分压了</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165118192.png" class>
+<p>加入上拉电阻，上面俩电阻并联，电阻值变小，下面的电阻会分到更多的电压，所以电压会回升为4.2V，<strong>提供更高的驱动能力</strong></p>
+<p><strong>上拉电阻最本质上就是让上拉电阻与单片机里面的内阻并联</strong></p>
+<p><strong>上拉电阻还可以将一个不确定的信号钳位在高电平</strong></p>
+<p>为啥会有不确定信号</p>
+<p>​
+比如当引脚处于开漏输出时，上面的MOS永远是断开的，相当于连着一个无穷大的电阻，如果想让他输出高电平，下面的MOS也得断开，就相当于两个无穷的电阻串联了，所以它的输出信号是不确定的</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165724175.png" class>
+<p>这时候给他加个上拉电阻</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165823969.png" class title="image-20240909165823969">
+<p>相比于无穷大的电阻，上面的电阻并联后电阻变低，相比于无穷大忽略，电压全部落在下面的电阻上，即可输出为高电平</p>
+<h3 id="下拉电阻">下拉电阻</h3>
+<p><strong>作用</strong> 将不确定信号转化为低电平信号</p>
+<p><strong>为啥信号是不确定的</strong></p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082405111.png" class>
+<p>​
+这是当单片机处于数字输入时，单片机的内部电路，是简化过的，本来三极管应该是触发器</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082453711.png" class>
+<p>​ 两块半导体的阻抗太大了，所以P点的电压是飘忽不定的</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082627428.png" class>
+<p>​
+三极管内阻非常大，这三电阻串联，根据串联分压，下拉电阻的电压就近乎为0，</p>
+<p>​ 如果直接接地，也可以实现低电平，但是没办法实现高电平</p>
+<p>​ 比如再直接加个5V的电平，但是输出还是低电平</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082829194.png" class>
+<p>直接加个5V，但是电源是有内阻的，电压全部落在内阻上，该点位电压仍为0V</p>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910083011198.png" class title="image-20240910083011198">
+<p>​ 实现高电平了</p>
+]]></content>
+      <categories>
+        <category>基础电路</category>
+      </categories>
+      <tags>
+        <tag>上拉电阻</tag>
+        <tag>下拉电阻</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析--01. 描述性分析</title>
+    <url>/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="28969db5621510385a283f14ba0ccd275b9b24bfe331a69d7314aab5d98b86c8">3db845c297da67fde545b6fd44e821f4a2912ecd85497d6da945dc583f4f4992cd8cfdc3aed68d64ecdf1efb90271e61c4cb3898a232fc4f67121ac45ca13da9ebe6e0dd14bee5bb0f6d2b95481ca1b0c6042e7099900824ec6a2a4e56c7ce0cf11f60d78d65d13731eef506134f447d0687f116fa7237456d1cedde3f5d50fefa2927308194a0cab130f8ad889e81207d09ea7f829771bd2a1c56f11fae4d3968f861e3f42e4fc6e9f5fdd43be56ef5f21f73b6a5b09179b23e07c754f24302f7efc0e9dd7e3fc223eec26a045d137ba730f3f06e3d439c6ca7d99bb617b24c72c38c87ad0bcf29c038fe95b92b58460c5c3e089e144838d0680768246bb8549bcc4ef450fa76c77ead9deeb2f72609adca7ef873bbba782d2dff5cf1a2144459529d7eeb9ff1776eab6db9aa96ec34b3db3d196a6bf460e8d579411aff9e38d22918fb02c21db4e054c634bd6c916440d4752fa0a2939e0b3d62065e94047db167d25ed2b3cc3ea279f0bef7b6c99bdb580d3cb3b94245cf96adc89e7c479c7418b54b74622f39ca3c0b6700d89bffbf9cc4aeef46204e435aaa1430b84a4cca0e1d1e2e39bdfe84497771490ac3cb09a2d6f679dd708cdc4e8bbfb0d809839a1485571d989a62e8e68beeb9886e89ea3091e6dd4d7fa9d3af8667cb82b069792ccf0b9759b696ed441b38c9b98961f146071b450fc1310c7c69ce1fbd17fc63ed15da12aff5c752eef3e408478854e96f89e154641d4844b86cae9cf9d44119d204f5f39b4837c97e234451ddb610a4ac39c9a26b29b1592c5a834c5db29cf9de846833aecd16201ee8f6459072a64be5340819f6db6e020380c9d9b21109c848c0a9c0cd8d79b5f9ac42f5a966c5c7b9aa454777d3c11e456aa4eebb61dbd2eedc38c45dd481cb0a82326347d31ca075b15bdf033413783e465ad61ef68a8eea7ba8225cd531df8ec7a2e0ada0a5ef8e02f7839d6e64b314cd23b53f610183d0368f04f979ad0ea57959d813fc8ab461ca386055b52b2d31bd7640949ebb2db417c2671a30b8e3db63bf7791418c1452d957edd0421208cdf622ab2d340bf11782c297cf284705b658dc3728b6c2a377764db99294691b3dcf8434116221be61f7a7c31101aba3cb8474fc957214f3fea43bd1d1385a4bbc1cc0b47c8f521f50888fd3ea730b5badb27de1a545cb7c420e06bb6c0dcc21a9fafdf479f565c3c1d309636539238842758830212eabdda9eb85940897aa3d368d8330fdd903a929b5f73f07c124d7e6774b35d14d27cdb76d915a45d4d489bc4bc9641540dfa9c9fa6bc61fafacefc7e42b9e523c23eb082ac8c8bada96c4fb68a9489748e67dea2b7504f6ecd0df71e400e8f7d47b740e26a240122705344369e1a86e09ebd30d76150514ec8146540d4658ee054487ce8465fb1297f163f6a8d68ec7b8465f3e4848d09db8051cb93ca0a92d139abf04b5910b52638c031b96b8646788bc3b856befbe6451a0981b5f34c1ee9efcdd0db25bc0060fd731e94c9ff2fe471ad184b1cfa62a174c552363e9391eb20c87ce64e022c5cc18063055c0b383ac514bf66aecfe3b810a5715dc55d8ee2da829d8161e532847570fc5175089ebe2ff27289d162c907d543c8b7c99c5f08913b73b37ca92d45bb82f58ff22e7c15171432c7ce6da5b61d13b60eec3c0cc2a56b042e89b48edf85ad8d1aabdb1821fc89ed8b48275fa9cc3677f73aae6914f99b3e642ce6b75af8ef2661e85265bf20d0b1937269acbc0f221222fa9b49f90b7d3737d5fa2c65b9283cfdb7021d3bc7612c8dae3f4ce79b644f6670e873d59e588fe9b5a8ee7d948ad3d47f60f840358fc78895299321c443930c2e0e891566d153d21a6d5801c9d27333fe31cc89f0f925d42203ba9257ff4afa617223a55e8e6ac1330406b02742a0c43a7e1482106b272bd1214dc83619a5b851a1c441f97eee6e0e2d26913df3241161d2f2481488858c0e2c89e29813f12f799c83a3af03eda8bae60df3a11ae8ca8386d1a2ce0ea375645b2632f3b7c1c03222b34b7be</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
+        <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>GPIO输出</title>
+    <url>/2024/09/10/dan-pian-ji-gpio-shu-chu/</url>
+    <content><![CDATA[<h2 id="gpio输出">GPIO输出</h2>
+<h3 id="gpio内部示意图">GPIO内部示意图</h3>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083607163.png" class>
+<p>​ 所以GPIO配置为输出时，就会处于这三种状态</p>
+<h3 id="推挽输出">推挽输出</h3>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083742242.png" class>
+<p>把这俩拿出来做个组合</p>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083819842.png" class>
+<p>​ 输出高电平为推，把电流推出去</p>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083844787.png" class>
+<p>​
+输出为低电平的时候，电流流入，给外面的MOS的栅极放电，给电流挽回来</p>
+<h3 id="开漏输出">开漏输出</h3>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153145304.png" class>
+<p>这个组合里，上面的MOS一直是关闭的，这时候下面MOS管的漏极就相当于啥也没接，就是<strong>开漏</strong></p>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153254163.png" class title="image-20240910153254163">
+<p><strong>第一个作用</strong></p>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153441565.png" class>
+<ul>
+<li>Q2关闭，输出为高阻态，这时候给他一个上拉电阻，输出为3.3V的高电平</li>
+<li>Q2打开，电压全部落在上拉电阻上，该点处电压为低电平</li>
+</ul>
+<p><strong>第二个作用</strong></p>
+<p>​ 实现几个GPIO同时控制一个输入</p>
+<p><strong>如果用推挽的话</strong></p>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153734659.png" class>
+<p>所以需要把两个GPIO配置为开漏模式，然后再外接一个上拉电阻</p>
+<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153821628.png" class>
+<p>​ 只要有任意一个GPIO输出低电平，这边的enable就是低电平</p>
+<p>​ 如果都处于高阻态，就输出高电平</p>
+]]></content>
+      <categories>
+        <category>单片机</category>
+      </categories>
+      <tags>
+        <tag>推挽输出</tag>
+        <tag>开漏输出</tag>
+      </tags>
+  </entry>
 </search>
