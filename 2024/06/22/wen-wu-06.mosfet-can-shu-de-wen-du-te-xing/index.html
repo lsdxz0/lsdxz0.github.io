@@ -485,80 +485,55 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="mosfet特性简单版强调温度特性">06.
-MOSFET特性简单版，强调温度特性</h2>
-<h4 id="mosfet特性">MOSFET特性</h4>
-<p><strong>MOSFET寄生电容模型图</strong></p>
-<figure>
-<img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222006942.png" alt="image-20240622222006942">
-<figcaption aria-hidden="true">image-20240622222006942</figcaption>
-</figure>
+                <h2 id="06-MOSFET特性简单版，强调温度特性"><a href="#06-MOSFET特性简单版，强调温度特性" class="headerlink" title="06. MOSFET特性简单版，强调温度特性"></a>06. MOSFET特性简单版，强调温度特性</h2><h4 id="MOSFET特性"><a href="#MOSFET特性" class="headerlink" title="MOSFET特性"></a>MOSFET特性</h4><p><strong>MOSFET寄生电容模型图</strong></p>
+<p><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222006942.png" alt="image-20240622222006942"></p>
+<div class="table-container">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>符号</th>
 <th>算式</th>
 <th>含义</th>
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Ciss</td>
 <td>Cgs+Cgd</td>
 <td>输入容量</td>
 </tr>
-<tr class="even">
+<tr>
 <td>Coss</td>
 <td>Cds（main）+Cgd</td>
 <td>输出容量</td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Crss</td>
 <td>Cgd</td>
 <td>反馈容量</td>
 </tr>
 </tbody>
 </table>
+</div>
 <p>Cgd是反馈电容，Crss称为反向传输电容</p>
-<figure>
-<img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222338939.png" alt="image-20240622222338939">
-<figcaption aria-hidden="true">image-20240622222338939</figcaption>
-</figure>
+<p><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222338939.png" alt="image-20240622222338939"></p>
 <p>Ciss在面对Vds的变化时，反应不是很明显，但是Coss跟Crss会有较大影响</p>
-<h4 id="温度特性">温度特性</h4>
-<p>​ 上面这三个玩意，在面对温度发生改变的时候，基本不受影响</p>
-<figure>
-<img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222601604.png" alt="image-20240622222601604">
-<figcaption aria-hidden="true">image-20240622222601604</figcaption>
-</figure>
-<h4 id="关于mosfet的开关及其温度特性">关于MOSFET的开关及其温度特性</h4>
-<p><strong>开关时间</strong></p>
-<p>​
-栅极电压ON/OFF之后，MOSFET才ON/OFF，这个延迟时间为<strong>开关时间</strong>，一般在规格书上记为下面的</p>
-<figure>
-<img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222836701.png" alt="image-20240622222836701">
-<figcaption aria-hidden="true">image-20240622222836701</figcaption>
-</figure>
-<p>​ （在算一些损耗，阶跃谐振会用到）</p>
+<h4 id="温度特性"><a href="#温度特性" class="headerlink" title="温度特性"></a>温度特性</h4><p>​    上面这三个玩意，在面对温度发生改变的时候，基本不受影响</p>
+<p><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222601604.png" alt="image-20240622222601604"></p>
+<h4 id="关于MOSFET的开关及其温度特性"><a href="#关于MOSFET的开关及其温度特性" class="headerlink" title="关于MOSFET的开关及其温度特性"></a>关于MOSFET的开关及其温度特性</h4><p><strong>开关时间</strong></p>
+<p>​    栅极电压ON/OFF之后，MOSFET才ON/OFF，这个延迟时间为<strong>开关时间</strong>，一般在规格书上记为下面的</p>
+<p><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222836701.png" alt="image-20240622222836701"></p>
+<p>​    （在算一些损耗，阶跃谐振会用到）</p>
 <p><strong>温度特性</strong></p>
-<p>​
-温度上升的同时开关时间略微增加，但是100℃上升时增加10%成左右，几乎没有开关特性的温度依存性</p>
-<h4 id="关于mosfet的vgsth界限值">关于MOSFET的Vgs（th）（界限值）</h4>
-<p>​ MOS管开启时，GS（栅极，源极）间的电压称为Vgs（th）</p>
-<p>​ 即，输入界限值以上的电压时，MOSFET为开启状态。</p>
-<figure>
-<img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622223938184.png" alt="image-20240622223938184">
-<figcaption aria-hidden="true">image-20240622223938184</figcaption>
-</figure>
-<p>输入Vds=V时，使1mA电流通过Id所需的栅极界限值电压Id（th）为1.0V to
-2.5V</p>
-<p><strong>Id--Vgs特性和温度特性</strong></p>
-<p>​ 温度越高，所需导通的阈值电压越低，不太行这玩意</p>
-<figure>
-<img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622224136003.png" alt="image-20240622224136003">
-<figcaption aria-hidden="true">image-20240622224136003</figcaption>
-</figure>
-<p>​ 可能会误导通</p>
+<p>​    温度上升的同时开关时间略微增加，但是100℃上升时增加10%成左右，几乎没有开关特性的温度依存性</p>
+<h4 id="关于MOSFET的Vgs（th）（界限值）"><a href="#关于MOSFET的Vgs（th）（界限值）" class="headerlink" title="关于MOSFET的Vgs（th）（界限值）"></a>关于MOSFET的Vgs（th）（界限值）</h4><p>​    MOS管开启时，GS（栅极，源极）间的电压称为Vgs（th）</p>
+<p>​    即，输入界限值以上的电压时，MOSFET为开启状态。</p>
+<p><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622223938184.png" alt="image-20240622223938184"></p>
+<p>输入Vds=V时，使1mA电流通过Id所需的栅极界限值电压Id（th）为1.0V to 2.5V</p>
+<p><strong>Id—Vgs特性和温度特性</strong></p>
+<p>​    温度越高，所需导通的阈值电压越低，不太行这玩意</p>
+<p><img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622224136003.png" alt="image-20240622224136003"></p>
+<p>​    可能会误导通</p>
 <p><strong>补充</strong></p>
 <img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240821103742716.png" class>
 <ul>
@@ -1060,8 +1035,6 @@ MOSFET特性简单版，强调温度特性</h2>
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1078,7 +1051,7 @@ MOSFET特性简单版，强调温度特性</h2>
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1266,8 +1239,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

@@ -481,67 +481,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="晶振电路">晶振电路</h2>
-<h3 id="作用">作用</h3>
-<p>​
-单片机的正常运行需要时钟信号，可以简单的理解为单片机收到一个脉冲，就执行一次或多次指令。晶振电路就是用来产生时钟信号的</p>
+                <h2 id="晶振电路"><a href="#晶振电路" class="headerlink" title="晶振电路"></a>晶振电路</h2><h3 id="作用"><a href="#作用" class="headerlink" title="作用"></a>作用</h3><p>​    单片机的正常运行需要时钟信号，可以简单的理解为单片机收到一个脉冲，就执行一次或多次指令。晶振电路就是用来产生时钟信号的</p>
 <img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830133131255.png" class title="image-20240830133131255">
 <p>比如像这样，在外部施加适当的电压后，就可以输出预先设置好的周期性时钟信号</p>
-<h3 id="简介">简介</h3>
-<p>​
-<strong>晶体振荡器</strong>用一种能把电能和机械能相互转化的晶体在共振的状态下工作，以提供稳定，精确的单频振荡。晶振提供的时钟频率越高，单片机的运行速度也就越快。</p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>​    <strong>晶体振荡器</strong>用一种能把电能和机械能相互转化的晶体在共振的状态下工作，以提供稳定，精确的单频振荡。晶振提供的时钟频率越高，单片机的运行速度也就越快。</p>
 <p><strong>晶振的封装</strong></p>
 <img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830134548963.png" class>
-<p>​
-下图左边为原理图，右边为等效电路图，生成的是<strong>正弦波</strong></p>
+<p>​    下图左边为原理图，右边为等效电路图，生成的是<strong>正弦波</strong></p>
 <img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830134437406.png" class>
 <img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830134506676.png" class title="image-20240830134506676">
-<p>​ <strong>晶振连接单片机的OSC32-IN跟OUT</strong></p>
+<p>​    <strong>晶振连接单片机的OSC32-IN跟OUT</strong></p>
 <ul>
-<li>不同频率的晶振有着不同的作用,
-例如：32.768K晶振通常用于时间显示，16MHZ、26MHZ等用于传输信号的</li>
-<li>下面这两个电容叫<strong>匹配电容</strong>C<sub>L1,2</sub>;有点多，另起了</li>
+<li>不同频率的晶振有着不同的作用, 例如：32.768K晶振通常用于时间显示，16MHZ、26MHZ等用于传输信号的</li>
+<li>下面这两个电容叫<strong>匹配电容</strong>C~L1,2~;有点多，另起了</li>
 </ul>
-<h4 id="关于晶振电路的电容">关于晶振电路的电容</h4>
+<h4 id="关于晶振电路的电容"><a href="#关于晶振电路的电容" class="headerlink" title="关于晶振电路的电容"></a>关于晶振电路的电容</h4><ul>
+<li><p><strong>负载电容C~L~</strong></p>
 <ul>
-<li><p><strong>负载电容C<sub>L</sub></strong></p></li>
-<li><p>首先，这个晶振跨接晶体两端的总有效电容称为<strong>负载电容</strong>，</p></li>
-<li><p>也就是说，你选了这个型号，数据手册上写了，它的负载电容是多少。</p></li>
-<li><p><strong>它主要影响负载谐振频率和等效负载电阻，与晶体一起决定振荡器电路的工作频率</strong>，</p></li>
-<li><p>然后就可以根据这个负载电容来调整外界电容值的大小，来微调晶振电路工作中输出频率的精度</p></li>
-<li><p><strong>匹配电容C<sub>L1</sub>C<sub>L2</sub></strong></p>
+<li>首先，这个晶振跨接晶体两端的总有效电容称为<strong>负载电容</strong>，</li>
+<li>也就是说，你选了这个型号，数据手册上写了，它的负载电容是多少。</li>
+<li><strong>它主要影响负载谐振频率和等效负载电阻，与晶体一起决定振荡器电路的工作频率</strong>，</li>
+<li>然后就可以根据这个负载电容来调整外界电容值的大小，来微调晶振电路工作中输出频率的精度</li>
+</ul>
+</li>
+<li><p><strong>匹配电容C~L1~C~L2~</strong></p>
 <ul>
 <li>接地的那两个电容</li>
 <li>一般外接这两个电容是为了使晶振两端的等效电容等于或接近负载电容</li>
 <li>一般晶振两端所接电容是所要求的负载电容的两倍。这样并联起来就接近负载电容了。</li>
 <li>电容值的大小影响谐振频率（也就是会发生频偏），一般情况下，<strong>增大电容会使震荡频率下降，减小电容会使震荡频率升高</strong>。</li>
-</ul></li>
 </ul>
-<h5 id="匹配电容的计算">匹配电容的计算</h5>
-<p>​ 为了保持晶体的负载平衡，在实际应用中，一般要求<span class="math inline">\(\mathrm{C_{L1}=C_{L2}}\)</span>,所以进一步可以得到下式
-<span class="math display">\[
-\mathrm{C_{L1}=C_{L2}=2\times(C_L-C_{ic}-\triangle C)}
-\]</span> <span class="math inline">\(\mathrm{C_{ic}+\triangle
-C}\)</span>​​一般为3---5pf</p>
+</li>
+</ul>
+<h5 id="匹配电容的计算"><a href="#匹配电容的计算" class="headerlink" title="匹配电容的计算"></a>匹配电容的计算</h5><p>​    为了保持晶体的负载平衡，在实际应用中，一般要求$\mathrm{C<em>{L1}=C</em>{L2}}$,所以进一步可以得到下式</p>
+<script type="math/tex; mode=display">
+\mathrm{C_{L1}=C_{L2}=2\times(C_L-C_{ic}-\triangle C)}</script><p>$\mathrm{C_{ic}+\triangle C}$​​一般为3—-5pf</p>
 <ul>
-<li><p>C<sub>L</sub>为晶振负载电容，查手册</p></li>
-<li><p>Cs为引线电容，可通过查询芯片数据手册获取</p></li>
-<li><p>C<sub>i</sub>为引脚电容，可以通过查询芯片数据手册获取</p></li>
+<li><p>C~L~为晶振负载电容，查手册</p>
+</li>
+<li><p>Cs为引线电容，可通过查询芯片数据手册获取</p>
+</li>
+<li>C~i~为引脚电容，可以通过查询芯片数据手册获取</li>
 </ul>
-<p>比如当负载电容取6pF时，当C<sub>stray</sub>=2pF <span class="math display">\[
-\mathrm C_{\mathrm L1}=\mathrm C_{\mathrm L2}=2\times(6-2)\mathrm
-p\mathrm F=8\mathrm p\mathrm F
-\]</span></p>
-<h3 id="分类">分类</h3>
-<h4 id="有源振荡">有源振荡</h4>
-<img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830141310103.png" class title="image-20240830141310103">
+<p>比如当负载电容取6pF时，当C~stray~=2pF</p>
+<script type="math/tex; mode=display">
+\mathrm C_{\mathrm L1}=\mathrm C_{\mathrm L2}=2\times(6-2)\mathrm p\mathrm F=8\mathrm p\mathrm F</script><h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><h4 id="有源振荡"><a href="#有源振荡" class="headerlink" title="有源振荡"></a>有源振荡</h4><img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830141310103.png" class title="image-20240830141310103">
 <ul>
 <li><strong>自身就可以产生振荡信号，不依赖外部电路</strong></li>
 <li>一般四个引脚。一个电源，一个接地，一个信号输出，一个NC（空脚）</li>
 <li></li>
 </ul>
-<h4 id="无源振荡">无源振荡</h4>
-<img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830141225209.png" class title="image-20240830141225209">
+<h4 id="无源振荡"><a href="#无源振荡" class="headerlink" title="无源振荡"></a>无源振荡</h4><img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830141225209.png" class title="image-20240830141225209">
 <ul>
 <li>借助时钟电路产生振荡信号</li>
 <li>一般俩引脚，输入跟输出</li>
@@ -1031,8 +1021,6 @@ p\mathrm F=8\mathrm p\mathrm F
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1049,7 +1037,7 @@ p\mathrm F=8\mathrm p\mathrm F
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1237,8 +1225,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

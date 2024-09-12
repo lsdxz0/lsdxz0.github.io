@@ -481,41 +481,33 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="llc变换器设计基础第二节-谐振变换器zvs原理">【LLC变换器设计基础】第二节
-谐振变换器ZVS原理</h1>
-<h3 id="电感电容模式">1. 电感电容模式</h3>
-<p>​ 搞谐振电路的目的就是为了实现 ZVS ZCS</p>
+                <h1 id="【LLC变换器设计基础】第二节-谐振变换器ZVS原理"><a href="#【LLC变换器设计基础】第二节-谐振变换器ZVS原理" class="headerlink" title="【LLC变换器设计基础】第二节 谐振变换器ZVS原理"></a>【LLC变换器设计基础】第二节 谐振变换器ZVS原理</h1><h3 id="1-电感电容模式"><a href="#1-电感电容模式" class="headerlink" title="1. 电感电容模式"></a>1. 电感电容模式</h3><p>​    搞谐振电路的目的就是为了实现 ZVS   ZCS</p>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204118539.png" class title="image-20240618204118539">
-<p>​ 负载越重，gain越陡，越窄，Re越小，Q越大，越窄</p>
-<p>​
-找谐振峰值，小于谐振峰值的时候，电容占据主导地位，呈容性，当大于谐振峰值的时候，电感占据主导地位，呈感性。</p>
+<p>​    负载越重，gain越陡，越窄，Re越小，Q越大，越窄</p>
+<p>​    找谐振峰值，小于谐振峰值的时候，电容占据主导地位，呈容性，当大于谐振峰值的时候，电感占据主导地位，呈感性。</p>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204414646.png" class title="image-20240618204414646">
 <p><strong>谐振峰值</strong></p>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204642891.png" class title="image-20240618204642891">
-<p>​ 所以在这个DCgain里面，fo左侧为电容模式，右侧为电感模式</p>
+<p>​    所以在这个DCgain里面，fo左侧为电容模式，右侧为电感模式</p>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204520521.png" class title="image-20240618204520521">
 <p><strong>1. 容性</strong></p>
-<p>​
-此时，如果输入电压是个正弦的话，电流应该超前于电压，实现ZCS，这里纯容性的话，会超前90°，所以这里最大为90°</p>
+<p>​    此时，如果输入电压是个正弦的话，电流应该超前于电压，实现ZCS，这里纯容性的话，会超前90°，所以这里最大为90°</p>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205000111.png" class title="image-20240618205000111">
 <p><strong>2. 感性</strong></p>
-<p>​ 电流滞后于电压，纯感性的话，电压比电流超前90°，</p>
-<p>​ <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205113313.png" class title="image-20240618205113313"></p>
-<h3 id="zvs原理这里默认占空比50只调频">2.ZVS原理（这里默认占空比50，只调频）</h3>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621211918013.png" class title="image-20240621211918013">
-<p>​ 电容隔离作用，设工作在感性状态下，绿色的iL，滞后于电压，</p>
-<p>​ 应该是先把Q2关断，再打开Q1，来控制死区</p>
+<p>​    电流滞后于电压，纯感性的话，电压比电流超前90°，</p>
+<p>​    <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205113313.png" class title="image-20240618205113313"></p>
+<h3 id="2-ZVS原理（这里默认占空比50，只调频）"><a href="#2-ZVS原理（这里默认占空比50，只调频）" class="headerlink" title="2.ZVS原理（这里默认占空比50，只调频）"></a>2.ZVS原理（这里默认占空比50，只调频）</h3><img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621211918013.png" class title="image-20240621211918013">
+<p>​    电容隔离作用，设工作在感性状态下，绿色的iL，滞后于电压，</p>
+<p>​    应该是先把Q2关断，再打开Q1，来控制死区</p>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621213135314.png" class title="image-20240621213135314">
-<p>​
-电感放电，电流方向如那个绿色的颜色很重的那个~经过不了Q2，但是Q1因为有电容的存在，电流也过不去，Q1两端的电压如Vds所示，当他降到0的时候，电容g了，如果还有电流存在，就通过Q1的二极管，所以最后会出现一个零点几的反向电压，然后Q1接受到PWM的导通信号，Q1导通</p>
+<p>​    电感放电，电流方向如那个绿色的颜色很重的那个~经过不了Q2，但是Q1因为有电容的存在，电流也过不去，Q1两端的电压如Vds所示，当他降到0的时候，电容g了，如果还有电流存在，就通过Q1的二极管，所以最后会出现一个零点几的反向电压，然后Q1接受到PWM的导通信号，Q1导通  </p>
 <p>tip：</p>
 <ul>
 <li>要有负电流，（相对于导通的方向）</li>
 <li>适当的死区</li>
 </ul>
 <p>如何去实现负电流：</p>
-<p>​
-使整个谐振腔呈现感性，电流才滞后于电压，电压上升的时候，电流还是负的，利用这个电流来充放电结电容，实现对当前开通管子的ZVS</p>
+<p>​    使整个谐振腔呈现感性，电流才滞后于电压，电压上升的时候，电流还是负的，利用这个电流来充放电结电容，实现对当前开通管子的ZVS</p>
 <p><strong>零电压导通（ZVS）</strong>的实现依赖于将开关器件导通时的电压降至接近零。具体步骤如下：</p>
 <ul>
 <li>当一个开关器件（比如S1）关闭时，电感和电容的谐振作用会使电压开始下降。</li>
@@ -524,8 +516,8 @@
 </ul>
 <p><strong>关系总结：</strong></p>
 <ul>
-<li>工作频率f<sub>sw</sub>&gt;谐振频率f<sub>0</sub>，呈现为感性，此时电流滞后于电压，易于实现ZVS</li>
-<li>工作频率f<sub>sw</sub>&lt;谐振频率f<sub>0</sub>，呈现为容性，此时电流超前于电压，易于实现ZCS</li>
+<li>工作频率f~sw~&gt;谐振频率f~0~，呈现为感性，此时电流滞后于电压，易于实现ZVS</li>
+<li>工作频率f~sw~&lt;谐振频率f~0~，呈现为容性，此时电流超前于电压，易于实现ZCS</li>
 </ul>
 
                 
@@ -1024,8 +1016,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1042,7 +1032,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1230,8 +1220,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

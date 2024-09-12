@@ -485,124 +485,101 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="滤波电路">滤波电路</h2>
-<h3 id="滤波原理">滤波原理</h3>
-<ul>
+                <h2 id="滤波电路"><a href="#滤波电路" class="headerlink" title="滤波电路"></a>滤波电路</h2><h3 id="滤波原理"><a href="#滤波原理" class="headerlink" title="滤波原理"></a>滤波原理</h3><ul>
 <li><strong>单向脉动性直流电压</strong></li>
 </ul>
-<p>​
-整流电路输出的电压时单向脉动性电压，不能直接给电子电路使用，所以要对输出的电压进行滤波，消除电压中的交流成分</p>
+<p>​    整流电路输出的电压时单向脉动性电压，不能直接给电子电路使用，所以要对输出的电压进行滤波，消除电压中的交流成分</p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240829163349350.png" class title="单向脉动性电压的分解">
-<p>​
-如左图所示，电压的方向性都是一致的，但是在电压幅度上是波动的，就是在时间轴上，电压呈现出周期性的变化，所以是脉动性的</p>
-<p>​ 该电压可以分解为一个直流电压跟一组频率不同的交流电压，如右图所示</p>
+<p>​    如左图所示，电压的方向性都是一致的，但是在电压幅度上是波动的，就是在时间轴上，电压呈现出周期性的变化，所以是脉动性的</p>
+<p>​    该电压可以分解为一个直流电压跟一组频率不同的交流电压，如右图所示</p>
 <ul>
 <li><strong>电容滤波原理</strong></li>
 </ul>
-<p>​ 利用电容器<strong>隔直通交</strong>原理</p>
+<p>​    利用电容器<strong>隔直通交</strong>原理</p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240829163719784.png" class>
-<p>​
-电容C对于直流电相当于开路，所以直流电只能找负载玩；交流电通过电容接地流出了，这是因为电容C的容量较大，容抗较小，</p>
-<p>​
-滤波电容C的容量越大，对交流成分的容抗越小，使残留在负载R上的交流成分越小，滤波效果越好</p>
+<p>​    电容C对于直流电相当于开路，所以直流电只能找负载玩；交流电通过电容接地流出了，这是因为电容C的容量较大，容抗较小，</p>
+<p>​    滤波电容C的容量越大，对交流成分的容抗越小，使残留在负载R上的交流成分越小，滤波效果越好</p>
 <ul>
 <li><strong>电容滤波原理</strong></li>
 </ul>
-<p>​ 电感<strong>通直隔交</strong></p>
+<p>​    电感<strong>通直隔交</strong></p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240829164224235.png" class>
-<p>​ 对于整流电路输出的交流成分，因 L1
-电感量较大，感抗较大，对交流成分产生很大的阻碍作用，阻止了交流电通过 C1
-流到加到负载 RL。这样，通过电感 L1
-的滤波，从单向脉动性直流电中取出了所需要的直流电压 +U。</p>
-<p>​ 滤波电感 L1 的电感量越大，对交流成分的感抗越大，使残留在负载 RL
-上的交流成分越小，滤波效果就越好，但直流电阻也会增大。</p>
-<h3 id="rc滤波">RC滤波</h3>
-<img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240829165013006.png" class>
-<p>​
-其实这里可以看做是RC串联，然后输出电阻跟后面的那个元器件并联，所以输出电压就是后面的器件的电压</p>
-<p>​
-那么感觉就可以理解为一个分压电路了，并且下面的器件应该是分担绝大部分电压，分压看阻抗，即应该选择阻抗相比要很大的器件在下面。电阻的阻抗是个常数，跟频率无关，那么电容呢，<span class="math inline">\(Z_{C}=\frac{1}{j\omega C}\)</span>,其中<span class="math inline">\(\omega=2\pi f\)</span>。</p>
-<h5 id="如何记忆区分">如何记忆区分</h5>
-<p>​
-当我们想通低频信号的时候，频率低，容抗高，那么输出电压就应该是电容两端的电压，所以低通应该是电容在下面</p>
-<p>​
-想通高频信号的时候，频率高，容抗低，那么输出电压应该是电阻两端的电压，所以高通电容在上面</p>
+<p>​    对于整流电路输出的交流成分，因 L1 电感量较大，感抗较大，对交流成分产生很大的阻碍作用，阻止了交流电通过 C1 流到加到负载 RL。这样，通过电感 L1 的滤波，从单向脉动性直流电中取出了所需要的直流电压 +U。</p>
+<p>​    滤波电感 L1 的电感量越大，对交流成分的感抗越大，使残留在负载 RL 上的交流成分越小，滤波效果就越好，但直流电阻也会增大。</p>
+<h3 id="RC滤波"><a href="#RC滤波" class="headerlink" title="RC滤波"></a>RC滤波</h3><img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240829165013006.png" class>
+<p>​    其实这里可以看做是RC串联，然后输出电阻跟后面的那个元器件并联，所以输出电压就是后面的器件的电压</p>
+<p>​    那么感觉就可以理解为一个分压电路了，并且下面的器件应该是分担绝大部分电压，分压看阻抗，即应该选择阻抗相比要很大的器件在下面。电阻的阻抗是个常数，跟频率无关，那么电容呢，$Z_{C}=\frac{1}{j\omega C}$,其中$\omega=2\pi f$。</p>
+<h5 id="如何记忆区分"><a href="#如何记忆区分" class="headerlink" title="如何记忆区分"></a>如何记忆区分</h5><p>​    当我们想通低频信号的时候，频率低，容抗高，那么输出电压就应该是电容两端的电压，所以低通应该是电容在下面</p>
+<p>​    想通高频信号的时候，频率高，容抗低，那么输出电压应该是电阻两端的电压，所以高通电容在上面</p>
 <p><strong>进一步的理解</strong></p>
-<p><strong>低通滤波</strong></p>
+<p><strong>低通滤波</strong>    </p>
 <ul>
-<li>低频信号
-<ul>
+<li>低频信号<ul>
 <li>容抗大，电流更多的通过R</li>
 <li>大部分电压降在电容C上，即输出电压近似于输入电压</li>
 <li>V=V称之为信号容易通过</li>
-</ul></li>
-<li>高频信号
-<ul>
+</ul>
+</li>
+<li>高频信号<ul>
 <li>容抗低，电容接近于短路，大部分（高频）电流直接流过电容器并流入地</li>
 <li>输出电压小，</li>
 <li>输出跟输入比小的一，称之为信号不容易通过</li>
-</ul></li>
+</ul>
+</li>
 <li>低通就是，低频信号时，输出等于输入；高频信号时，会被衰减，在极限情况下，输出为零，这样不就只保留有用的低频信号了</li>
 </ul>
 <p><strong>高通滤波</strong></p>
 <ul>
-<li>低频信号
-<ul>
+<li>低频信号<ul>
 <li>容抗大，电压都在电容上，输出电压非常小</li>
 <li>这里电容就给低频信号拦住了，不让他去输出端</li>
-</ul></li>
-<li>高频信号
-<ul>
-<li>容抗小，电压都在电阻上，输出电压等于输入电压</li>
-</ul></li>
 </ul>
-<h3 id="lc滤波">LC滤波</h3>
-<ul>
+</li>
+<li>高频信号<ul>
+<li>容抗小，电压都在电阻上，输出电压等于输入电压</li>
+</ul>
+</li>
+</ul>
+<h3 id="LC滤波"><a href="#LC滤波" class="headerlink" title="LC滤波"></a>LC滤波</h3><ul>
 <li><strong>低通滤波器</strong>：Low Pass Filter（简称：LPF）</li>
 </ul>
-<p>​
-仅提取低频（Low）侧频率的滤波器。因为是让低于阻断频率的频率通过的滤波器，所以被称为低通滤波器。</p>
+<p>​    仅提取低频（Low）侧频率的滤波器。因为是让低于阻断频率的频率通过的滤波器，所以被称为低通滤波器。</p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103040784.png" class>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/basic-img0006.png" class title="图：低通滤波器">
 <ul>
 <li><strong>高通滤波器</strong>：High Pass Filter（简称：HPF）</li>
 </ul>
-<p>​
-仅提取高频（High）侧频率的滤波器。因为是让高于阻断频率的频率通过的滤波器，所以被称为高通滤波器。</p>
+<p>​    仅提取高频（High）侧频率的滤波器。因为是让高于阻断频率的频率通过的滤波器，所以被称为高通滤波器。</p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103106873.png" class>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/basic-img0007.png" class>
 <ul>
 <li><strong>带通滤波器</strong>：Band Pass Filter（简称：BPF）</li>
 </ul>
-<p>​
-仅提取特定频率范围的滤波器。因为是只让所设定频率范围通过的滤波器，所以被称为带通滤波器。</p>
+<p>​    仅提取特定频率范围的滤波器。因为是只让所设定频率范围通过的滤波器，所以被称为带通滤波器。</p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103118605.png" class>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/basic-img0008.png" class>
 <ul>
-<li><strong>带阻滤波器</strong>：Band Elimination
-Filter（简称：BEF）</li>
+<li><strong>带阻滤波器</strong>：Band Elimination Filter（简称：BEF）</li>
 </ul>
-<p>​ 因为是只阻断特定频率范围的滤波器，所以被称为带阻滤波器。</p>
+<p>​    因为是只阻断特定频率范围的滤波器，所以被称为带阻滤波器。</p>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/basic-img0009.png" class>
-<h4 id="低通滤波器的种类">低通滤波器的种类</h4>
-<ul>
-<li>L型滤波器(1) 应用场景：输入阻抗 ⇒ 高；输出阻抗 ⇒ 低 时</li>
+<h4 id="低通滤波器的种类"><a href="#低通滤波器的种类" class="headerlink" title="低通滤波器的种类"></a>低通滤波器的种类</h4><ul>
+<li>L型滤波器(1)<br>应用场景：输入阻抗 ⇒ 高；输出阻抗 ⇒ 低 时</li>
 </ul>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103216168.png" class>
 <ul>
-<li>L型滤波器(2) 应用场景：输入阻抗 ⇒ 低；输出阻抗 ⇒ 高 时</li>
+<li>L型滤波器(2)<br>应用场景：输入阻抗 ⇒ 低；输出阻抗 ⇒ 高 时</li>
 </ul>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103249336.png" class>
 <ul>
-<li>π型滤波器 应用场景输入阻抗 ⇒ 高；输出阻抗 ⇒ 高 时</li>
+<li>π型滤波器<br>应用场景输入阻抗 ⇒ 高；输出阻抗 ⇒ 高 时</li>
 </ul>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103300105.png" class>
 <ul>
-<li>T型滤波器 应用场景：输入阻抗 ⇒ 低；输出阻抗 ⇒ 低 时</li>
+<li>T型滤波器<br>应用场景：输入阻抗 ⇒ 低；输出阻抗 ⇒ 低 时</li>
 </ul>
 <img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240830103308612.png" class>
-<p>​
-相比L型滤波器，π型和T型滤波器的噪声去除效果更好，因而还要考虑这方面的因素来选定电路。</p>
+<p>​    相比L型滤波器，π型和T型滤波器的噪声去除效果更好，因而还要考虑这方面的因素来选定电路。</p>
 
                 
             </div>
@@ -850,55 +827,6 @@ Filter（简称：BEF）</li>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/30/ji-chu-dian-lu-fang-dao-guan-dian-lu/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="防倒灌电路">
-                        
-                        <span class="card-title">防倒灌电路</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-30
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
-                                    基础电路
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E9%98%B2%E5%80%92%E7%81%8C/">
-                        <span class="chip bg-color">防倒灌</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/">
                     <div class="card-image">
                         
@@ -915,9 +843,9 @@ Filter（简称：BEF）</li>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -943,6 +871,55 @@ Filter（简称：BEF）</li>
                     
                     <a href="/tags/%E8%BF%90%E6%94%BE/">
                         <span class="chip bg-color">运放</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/08/29/mo-dian-bi-jiao-qi/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="比较器">
+                        
+                        <span class="card-title">比较器</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E6%A8%A1%E7%94%B5/" class="post-category">
+                                    模电
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E6%AF%94%E8%BE%83%E5%99%A8/">
+                        <span class="chip bg-color">比较器</span>
                     </a>
                     
                 </div>
@@ -1100,8 +1077,6 @@ Filter（简称：BEF）</li>
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1118,7 +1093,7 @@ Filter（简称：BEF）</li>
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1306,8 +1281,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

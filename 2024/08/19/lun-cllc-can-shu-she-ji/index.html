@@ -464,64 +464,44 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ｃｌｌｃ-型三电平双向-ｄｃｄｃ-变换器混合控制策略">ＣＬＬＣ
-型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略</h2>
-<p><strong>设计要求：</strong></p>
-<p>​
-400-500V输入，输出48V开关频率范围为：88-170KHz，死区时间t<sub>d</sub>=200ns</p>
+                <h2 id="CLLC-型三电平双向-DC／DC-变换器混合控制策略"><a href="#CLLC-型三电平双向-DC／DC-变换器混合控制策略" class="headerlink" title="ＣＬＬＣ 型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略"></a>ＣＬＬＣ 型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略</h2><p><strong>设计要求：</strong></p>
+<p>​    400-500V输入，输出48V开关频率范围为：88-170KHz，死区时间t~d~=200ns</p>
 <ul>
-<li><strong>确定谐振频率</strong>
-CLLC是由LLC改进而来的，先设计一个LLC的谐振网络，再设计剩余的低压侧谐振电容、选取LLC变换器的第二谐振频率为<em>f</em><sub>LLC</sub>=100
-kHz.</li>
-<li><strong>选取励磁电感：</strong>
-<ul>
-<li><em>i</em><sub>Lm</sub>(<em>t</em>)的峰值电流公式近似计算得到：<span class="math inline">\(i_{\mathrm{Lmp}}\approx\frac{nU_{\mathrm{ol}}}{L_{\mathrm{m}}}
-\frac{T_{s}}{4}\)</span></li>
-<li>为保证开关管结电容死区时间内完全放电，<em>i</em><sub>Lmp</sub>需满足：<span class="math inline">\(i_\text{ Lmp}t_\text{ d}&gt;2C_\text{
-oss}U_1\)</span></li>
-<li>由于第二谐振频率处的<em>M</em><sub>1</sub>小于1，<span class="math inline">\(L_\text{m}&lt;\frac{nU_\text{ol}T_st_\text{d}}{8C_\text{oss}U_1}=\frac{M_1T_st_\text{d}}{16C_\text{oss}}&lt;\frac{t_\text{d}}{16C_\text{oss}f_s}\)</span>​</li>
-<li>死区时间<em>t<sub>d</sub></em>=200 ns，
-第二谐振频率<em>f<sub>s</sub></em>=100kHz，
-结电容<em>C<sub>oss</sub></em>=415 pF。由上面第二个式子可得
-<em>L<sub>m</sub></em>&lt;301.2 uH。 所以Lm实际取值280 uH</li>
-</ul></li>
-<li><strong>选取电感比值<em>h</em></strong>
-<ul>
-<li><em>h</em>=<em>L<sub>m</sub>/L<sub>r</sub></em>
-，选取h=3，确定谐振电感Lr为84uh，再由<span class="math inline">\(f_{\mathrm{~LLC}}=1/2\pi
-\sqrt{L_{\mathrm{~r}}C_{\mathrm{~rl}}}\)</span>
-得到高压侧谐振电容C<sub>r1</sub>的数值为31.7uf</li>
-</ul></li>
-<li><strong>选取谐振电容比值g</strong>
-<ul>
-<li><span class="math inline">\(g=C_{r2}/n^2C_{r1}\)</span>​</li>
+<li><strong>确定谐振频率</strong> CLLC是由LLC改进而来的，先设计一个LLC的谐振网络，再设计剩余的低压侧谐振电容、选取LLC变换器的第二谐振频率为<em>f</em>~LLC~=100 kHz.</li>
+<li><strong>选取励磁电感：</strong><ul>
+<li><em>i</em>~Lm~(<em>t</em>)的峰值电流公式近似计算得到：$i<em>{\mathrm{Lmp}}\approx\frac{nU</em>{\mathrm{ol}}}{L<em>{\mathrm{m}}} \frac{T</em>{s}}{4}$</li>
+<li>为保证开关管结电容死区时间内完全放电，<em>i</em>~Lmp~需满足：$i<em>\text{ Lmp}t</em>\text{ d}&gt;2C_\text{ oss}U_1$</li>
+<li>由于第二谐振频率处的<em>M</em>~1~小于1，$L<em>\text{m}&lt;\frac{nU</em>\text{ol}T<em>st</em>\text{d}}{8C<em>\text{oss}U_1}=\frac{M_1T_st</em>\text{d}}{16C<em>\text{oss}}&lt;\frac{t</em>\text{d}}{16C_\text{oss}f_s}$​</li>
+<li>死区时间<em>t~d~</em>=200 ns， 第二谐振频率<em>f~s~</em>=100kHz， 结电容<em>C~oss~</em>=415 pF。由上面第二个式子可得 <em>L~m~</em>&lt;301.2 uH。 所以Lm实际取值280 uH</li>
+</ul>
+</li>
+<li><strong>选取电感比值<em>h</em></strong><ul>
+<li><em>h</em>=<em>L~m~/L~r~</em>  ，选取h=3，确定谐振电感Lr为84uh，再由$f<em>{\mathrm{~LLC}}=1/2\pi \sqrt{L</em>{\mathrm{~r}}C_{\mathrm{~rl}}}$ 得到高压侧谐振电容C~r1~的数值为31.7uf</li>
+</ul>
+</li>
+<li><strong>选取谐振电容比值g</strong><ul>
+<li>$g=C<em>{r2}/n^2C</em>{r1}$​</li>
 <li>g值太小，则正向电压争议曲线的谐振峰值太高，且在第二谐振频率处的曲线斜率太小，导致变换器在很宽的调节范围内几乎没有电压调节能力</li>
 <li>g值太大，则反向工作时的直流增益将比正向工作时高很多，不满足设计要求</li>
 <li>一般g取值在1-3之间比较合适，取g=2</li>
-</ul></li>
-<li><strong>选取变压器的变比n</strong>
-<ul>
-<li><span class="math inline">\(n=M_1
-\frac{U_1}{2U_{\mathrm{ol}}}\)</span></li>
-<li>根据文中设置，U<sub>1</sub>=400，U<sub>0</sub>=48
-想要M<sub>1</sub>小于1，需要小于4.167</li>
-<li>n取值过小，会导致反向工作所需电压增益变高，开关管工作频率变低，从而会失去ZVS条件，故可初步选取
-n=40:11</li>
-<li>在得到谐振电容比值g之后，通过<span class="math inline">\(g=C_{r2}/n^2C_{r1}\)</span> 计算得到:<span class="math inline">\(C_{r2}=1014.4nF\)</span></li>
-</ul></li>
-<li><strong>计算相位角</strong>
-<ul>
-<li>移相占空比D和Lm存在对应关系，且在0-0.5内，未必能实现软开关，定义临界移相占空比D<sub>0</sub>
-只有当意向占空比满足0&lt;D&lt;D<sub>0</sub>的条件时，变换器中所有软开关条件才可全部完成，因此对应于变换器高压侧最大输出电压U<sub>1max</sub>，有如下表达式</li>
-<li><span class="math inline">\(\begin{cases}(0.5-D_0)\cos(\pi
-D_0)=\frac{16L_\text{m}C_\text{oss}}{T_\text{s}t_\text{d}}\\\\U_\text{ol}=\frac{\cos(\pi
-D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
---------&gt;D<sub>0</sub>=0.28</li>
-<li>移相控制模式中最大移相角为：$_<sup></sup>$</li>
-</ul></li>
+</ul>
+</li>
+<li><strong>选取变压器的变比n</strong><ul>
+<li>$n=M<em>1 \frac{U_1}{2U</em>{\mathrm{ol}}}$</li>
+<li>根据文中设置，U~1~=400，U~0~=48 想要M~1~小于1，需要小于4.167</li>
+<li>n取值过小，会导致反向工作所需电压增益变高，开关管工作频率变低，从而会失去ZVS条件，故可初步选取 n=40:11</li>
+<li>在得到谐振电容比值g之后，通过$g=C<em>{r2}/n^2C</em>{r1}$ 计算得到:$C_{r2}=1014.4nF$</li>
+</ul>
+</li>
+<li><strong>计算相位角</strong><ul>
+<li>移相占空比D和Lm存在对应关系，且在0-0.5内，未必能实现软开关，定义临界移相占空比D~0~ 只有当意向占空比满足0&lt;D&lt;D~0~的条件时，变换器中所有软开关条件才可全部完成，因此对应于变换器高压侧最大输出电压U~1max~，有如下表达式</li>
+<li>$\begin{cases}(0.5-D<em>0)\cos(\pi D_0)=\frac{16L</em>\text{m}C<em>\text{oss}}{T</em>\text{s}t<em>\text{d}}\\U</em>\text{ol}=\frac{\cos(\pi D<em>0)U</em>\text{lmax}}{2n}\end{cases}$ ————&gt;D~0~=0.28</li>
+<li>移相控制模式中最大移相角为：$_\alpha=0.28\times180^\circ=50.4^\circ $</li>
+</ul>
+</li>
 </ul>
 <p><strong>参数</strong></p>
-<p><img src="/2024/08/19/lun-cllc-can-shu-she-ji/image-20240815104704407.png"></p>
+<p><img src="/2024/08/19/lun-cllc-can-shu-she-ji/image-20240815104704407.png" alt></p>
 
                 
             </div>
@@ -992,8 +972,6 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1010,7 +988,7 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1198,8 +1176,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

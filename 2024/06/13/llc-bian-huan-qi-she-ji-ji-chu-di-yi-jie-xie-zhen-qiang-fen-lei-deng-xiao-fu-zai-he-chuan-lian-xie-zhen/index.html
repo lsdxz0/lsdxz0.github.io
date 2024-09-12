@@ -481,45 +481,22 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="llc变换器设计基础第一节-谐振腔分类-等效负载和串联谐振">【LLC变换器设计基础】第一节
-谐振腔分类 等效负载和串联谐振</h1>
-<h4 id="谐振腔分类">1.谐振腔分类</h4>
-<figure>
-<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100012343.png" alt="image-20240613100012343">
-<figcaption aria-hidden="true">image-20240613100012343</figcaption>
-</figure>
-<p>​ 串联 并联（不是那种L与C并到一块的） LCC LLC</p>
-<h4 id="等效负载计算">2.等效负载计算</h4>
-<figure>
-<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100817623.png" alt="image-20240613100817623">
-<figcaption aria-hidden="true">image-20240613100817623</figcaption>
-</figure>
-<p>​
-副边，谐振腔等效为电流源，电流波形为Ip正弦，整流桥的电压波形为Eo，电流经过全波整流之后变成馒头波Ip，滤波之后的平均值为Io
-<span class="math display">\[
-i_{0}=\frac{2}{\pi}i_{p}=\frac{2\sqrt{2}}{\pi}i_{\mathrm{ac}}(rms)
-\]</span> 把这个倒过来就可以得到 Iac（rms） <span class="math display">\[
-I_{ac}(rms)\quad=\quad\frac{\pi}{2\sqrt{2}}\quad
-\]</span> ​
-Eo为方波信号的最大值，那么对于峰值电压Eac_p。对于一个方波电压，其等效正弦波的峰值电压是方波最大值Eo
-的倍数。这倍数由傅里叶级数的第一项决定，即方波的基波成分。基波成分的峰值是方波峰值的4/π倍
-<span class="math display">\[
-E_{ac_p}=\frac4\pi E_o
-\]</span> 等效正弦波的有效值是其峰值的1/根号2 倍： <span class="math display">\[
-E_{ac}(rms)\quad=\quad\frac{2\sqrt{2}}\pi E_o
-\]</span> 等效电阻Rac <span class="math display">\[
-R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}=\frac{8}{\pi^{2}}R_{L}
-\]</span>
-<strong>在并联的情况下，比如电容并到变压器的两段，LCC。视为电压驱动，</strong></p>
-<figure>
-<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613103623395.png" alt="image-20240613103623395">
-<figcaption aria-hidden="true">image-20240613103623395</figcaption>
-</figure>
-<h4 id="串联谐振">3.串联谐振</h4>
-<figure>
-<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613143610199.png" alt="image-20240613143610199">
-<figcaption aria-hidden="true">image-20240613143610199</figcaption>
-</figure>
+                <h1 id="【LLC变换器设计基础】第一节-谐振腔分类-等效负载和串联谐振"><a href="#【LLC变换器设计基础】第一节-谐振腔分类-等效负载和串联谐振" class="headerlink" title="【LLC变换器设计基础】第一节 谐振腔分类 等效负载和串联谐振"></a>【LLC变换器设计基础】第一节 谐振腔分类 等效负载和串联谐振</h1><h4 id="1-谐振腔分类"><a href="#1-谐振腔分类" class="headerlink" title="1.谐振腔分类"></a>1.谐振腔分类</h4><p><img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100012343.png" alt="image-20240613100012343"></p>
+<p>​    串联                并联（不是那种L与C并到一块的）        LCC                LLC</p>
+<h4 id="2-等效负载计算"><a href="#2-等效负载计算" class="headerlink" title="2.等效负载计算"></a>2.等效负载计算</h4><p><img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100817623.png" alt="image-20240613100817623"></p>
+<p>​    副边，谐振腔等效为电流源，电流波形为Ip正弦，整流桥的电压波形为Eo，电流经过全波整流之后变成馒头波Ip，滤波之后的平均值为Io</p>
+<script type="math/tex; mode=display">
+i_{0}=\frac{2}{\pi}i_{p}=\frac{2\sqrt{2}}{\pi}i_{\mathrm{ac}}(rms)</script><p>把这个倒过来就可以得到 Iac（rms）</p>
+<script type="math/tex; mode=display">
+I_{ac}(rms)\quad=\quad\frac{\pi}{2\sqrt{2}}\quad</script><p>​    Eo为方波信号的最大值，那么对于峰值电压Eac_p。对于一个方波电压，其等效正弦波的峰值电压是方波最大值Eo 的倍数。这倍数由傅里叶级数的第一项决定，即方波的基波成分。基波成分的峰值是方波峰值的4/π倍</p>
+<script type="math/tex; mode=display">
+E_{ac_p}=\frac4\pi E_o</script><p>等效正弦波的有效值是其峰值的1/根号2 倍：</p>
+<script type="math/tex; mode=display">
+E_{ac}(rms)\quad=\quad\frac{2\sqrt{2}}\pi E_o</script><p>等效电阻Rac</p>
+<script type="math/tex; mode=display">
+R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}=\frac{8}{\pi^{2}}R_{L}</script><p><strong>在并联的情况下，比如电容并到变压器的两段，LCC。视为电压驱动，</strong></p>
+<p><img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613103623395.png" alt="image-20240613103623395"></p>
+<h4 id="3-串联谐振"><a href="#3-串联谐振" class="headerlink" title="3.串联谐振"></a>3.串联谐振</h4><p><img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613143610199.png" alt="image-20240613143610199"></p>
 <ul>
 <li>在串联谐振里， DCgain=ACgain，在谐振点处为1</li>
 <li>在谐振点的时候，输入进来就输出出去了</li>
@@ -820,13 +797,13 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/06/11/wen-wu-03.jing-ti-guan-fen-lei-gai-shu/">
+                <a href="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="03.晶体管分类概述">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="02.晶体管截止频率定义和反向漏电流">
                         
-                        <span class="card-title">03.晶体管分类概述</span>
+                        <span class="card-title">02.晶体管截止频率定义和反向漏电流</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1017,8 +994,6 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1035,7 +1010,7 @@ R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1223,8 +1198,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

@@ -481,20 +481,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="gpio输出">GPIO输出</h2>
-<h3 id="gpio内部示意图">GPIO内部示意图</h3>
-<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083607163.png" class>
-<p>​ 所以GPIO配置为输出时，就会处于这三种状态</p>
-<h3 id="推挽输出">推挽输出</h3>
-<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083742242.png" class>
+                <h2 id="GPIO输出"><a href="#GPIO输出" class="headerlink" title="GPIO输出"></a>GPIO输出</h2><h3 id="GPIO内部示意图"><a href="#GPIO内部示意图" class="headerlink" title="GPIO内部示意图"></a>GPIO内部示意图</h3><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083607163.png" class>
+<p>​    所以GPIO配置为输出时，就会处于这三种状态</p>
+<h3 id="推挽输出"><a href="#推挽输出" class="headerlink" title="推挽输出"></a>推挽输出</h3><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083742242.png" class>
 <p>把这俩拿出来做个组合</p>
 <img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083819842.png" class>
-<p>​ 输出高电平为推，把电流推出去</p>
+<p>​    输出高电平为推，把电流推出去</p>
 <img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083844787.png" class>
-<p>​
-输出为低电平的时候，电流流入，给外面的MOS的栅极放电，给电流挽回来</p>
-<h3 id="开漏输出">开漏输出</h3>
-<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153145304.png" class>
+<p>​    输出为低电平的时候，电流流入，给外面的MOS的栅极放电，给电流挽回来</p>
+<h3 id="开漏输出"><a href="#开漏输出" class="headerlink" title="开漏输出"></a>开漏输出</h3><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153145304.png" class>
 <p>这个组合里，上面的MOS一直是关闭的，这时候下面MOS管的漏极就相当于啥也没接，就是<strong>开漏</strong></p>
 <img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153254163.png" class title="image-20240910153254163">
 <p><strong>第一个作用</strong></p>
@@ -504,13 +499,13 @@
 <li>Q2打开，电压全部落在上拉电阻上，该点处电压为低电平</li>
 </ul>
 <p><strong>第二个作用</strong></p>
-<p>​ 实现几个GPIO同时控制一个输入</p>
+<p>​    实现几个GPIO同时控制一个输入</p>
 <p><strong>如果用推挽的话</strong></p>
 <img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153734659.png" class>
 <p>所以需要把两个GPIO配置为开漏模式，然后再外接一个上拉电阻</p>
 <img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153821628.png" class>
-<p>​ 只要有任意一个GPIO输出低电平，这边的enable就是低电平</p>
-<p>​ 如果都处于高阻态，就输出高电平</p>
+<p>​    只要有任意一个GPIO输出低电平，这边的enable就是低电平</p>
+<p>​    如果都处于高阻态，就输出高电平</p>
 
                 
             </div>
@@ -754,13 +749,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/09/11/shu-xue-jian-mo-shu-ju-chu-li/">
+                <a href="/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="数据处理">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="数据分析--01. 描述性分析">
                         
-                        <span class="card-title">数据处理</span>
+                        <span class="card-title">数据分析--01. 描述性分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1000,8 +995,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1018,7 +1011,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1206,8 +1199,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     

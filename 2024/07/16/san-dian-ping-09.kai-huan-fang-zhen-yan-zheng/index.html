@@ -481,35 +481,28 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="开环仿真验证">09. 开环仿真验证</h2>
-<h4 id="模型初始化参数">模型初始化参数</h4>
-<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716095949318.png" class>
-<p>模型属性</p>
+                <h2 id="09-开环仿真验证"><a href="#09-开环仿真验证" class="headerlink" title="09. 开环仿真验证"></a>09. 开环仿真验证</h2><h4 id="模型初始化参数"><a href="#模型初始化参数" class="headerlink" title="模型初始化参数"></a>模型初始化参数</h4><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716095949318.png" class>模型属性
+
 <img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716100026671.png" class>
-<h4 id="分压电容">分压电容</h4>
-<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716101041055.png" class>
+<h4 id="分压电容"><a href="#分压电容" class="headerlink" title="分压电容"></a>分压电容</h4><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716101041055.png" class>
 <ul>
 <li>在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响</li>
 <li>设置初始电压为Udc/2</li>
 </ul>
-<h4 id="模块旋转">模块旋转</h4>
-<p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p>
-<h4 id="信号调制">信号调制</h4>
-<p><strong>总体介绍</strong></p>
+<h4 id="模块旋转"><a href="#模块旋转" class="headerlink" title="模块旋转"></a>模块旋转</h4><p>ctrl + R = 旋转90°      ctrl + I = 左右旋转</p>
+<h4 id="信号调制"><a href="#信号调制" class="headerlink" title="信号调制"></a>信号调制</h4><p><strong>总体介绍</strong></p>
 <ul>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152008403.png" class title="image-20240716152008403"></li>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152008403.png" class title="image-20240716152008403">
+</li>
 </ul>
 <p><strong>模块介绍</strong></p>
 <ul>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152027015.png" class title="image-20240716152027015">
-表示占空比</li>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152049383.png" class title="image-20240716152049383">
-这个就是载波；参数设计为：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152111011.png" class title="image-20240716152111011"></li>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152027015.png" class title="image-20240716152027015">表示占空比</li>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152049383.png" class title="image-20240716152049383">这个就是载波；参数设计为：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152111011.png" class title="image-20240716152111011"></li>
 <li>因为载波为0-1，所以加一个限幅：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152146101.png" class title="image-20240716152146101">设置为0-0.98</li>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152201990.png" class title="image-20240716152201990">
-比较模块；<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152217557.png" class title="image-20240716152217557"></li>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152201990.png" class title="image-20240716152201990">比较模块；<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152217557.png" class title="image-20240716152217557"></li>
 <li>调制信号大于载波，则开关管1输出高电平，否则输出低电平，开关管2与之相反</li>
-<li>对于<strong>S<sub>3,4</sub></strong>其载波有：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152345436.png" class title="image-20240716152345436">波形相差180°</li>
+<li>对于<strong>S~3,4~</strong>其载波有：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152345436.png" class title="image-20240716152345436">波形相差180°</li>
 </ul>
 
                 
@@ -993,8 +986,6 @@
             
             
             
-            
-            
             <span id="busuanzi_container_site_pv">
                 |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
                     class="white-color"></span>&nbsp;次
@@ -1011,7 +1002,7 @@
             <br>
             
         </div>
-        <div class="col s12 m4 l4 social-link social-statis">
+        <div class="col s12 m4 l4 social-link ">
     <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
@@ -1199,8 +1190,6 @@ $(function () {
     
     <script src="/libs/others/clicklove.js" async="async"></script>
     
-    
-    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
     
 
     
