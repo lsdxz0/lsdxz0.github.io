@@ -481,59 +481,57 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="01-三电平DCDC拓扑结构介绍"><a href="#01-三电平DCDC拓扑结构介绍" class="headerlink" title="01. 三电平DCDC拓扑结构介绍"></a>01. 三电平DCDC拓扑结构介绍</h2><p><strong>单相三电平DCDC变换器-Buck-主电路结构</strong></p>
+                <h2 id="三电平dcdc拓扑结构介绍">01. 三电平DCDC拓扑结构介绍</h2>
+<p><strong>单相三电平DCDC变换器-Buck-主电路结构</strong></p>
 <img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102410864.png" class>
 <img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102432328.png" class>
-<p>U~1~为输入电压，U~2~为输出电压，C~12~为分压电容，每个电容的电压为1/2；四个开关管，（都用的双向的，所以可以实现能量的双向流动）；下面的图把电感分为两个是为了对称，为上图的一半；</p>
+<p>U<sub>1</sub>为输入电压，U<sub>2</sub>为输出电压，C<sub>12</sub>为分压电容，每个电容的电压为1/2；四个开关管，（都用的双向的，所以可以实现能量的双向流动）；下面的图把电感分为两个是为了对称，为上图的一半；</p>
 <ul>
-<li><strong>三个电平</strong>： **U~ab~： 0（右侧电路通过S~23~的二极管续流，ab两侧电位差为0，电压为0）</li>
+<li><strong>三个电平</strong>： **U<sub>ab</sub>：
+0（右侧电路通过S<sub>23</sub>的二极管续流，ab两侧电位差为0，电压为0）</li>
 </ul>
 <img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709103928483.png" class title="image-20240709103928483">
-<p><strong>U~1~/2</strong>：U~ab~为电容C~1~两端的电压</p>
+<p><strong>U<sub>1</sub>/2</strong>：U<sub>ab</sub>为电容C<sub>1</sub>两端的电压</p>
 <img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104134177.png" class>
-<p> <strong>-U~1~/2</strong>：U~ab~为电容C~2~两端的电压</p>
+<p><strong>-U<sub>1</sub>/2</strong>：U<sub>ab</sub>为电容C<sub>2</sub>两端的电压</p>
 <img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104236304.png" class>
-<p>​    S~1~这里就跟电容C~1~并联了，所以对于S~1~,它的耐压基准应该根据U~1~/2来选择，S~4~同理(根据前面一个图来选)</p>
-<p><strong>U~1~</strong>:</p>
+<p>​
+S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub>,它的耐压基准应该根据U<sub>1</sub>/2来选择，S<sub>4</sub>同理(根据前面一个图来选)</p>
+<p><strong>U<sub>1</sub></strong>:</p>
 <img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104457821.png" class>
-<p>这里S~2,3~分别与C~1,2~并联了，其耐压也是以U~1~/2</p>
+<p>这里S<sub>2,3</sub>分别与C<sub>1,2</sub>并联了，其耐压也是以U<sub>1</sub>/2</p>
 <ul>
-<li>S~1,2~互补导通，S~3,4~互补导通，否则上下直流侧会短路从而烧毁管子，则有且仅有四种开关状态 </li>
-<li>两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反<ul>
-<li></li>
-</ul>
-</li>
+<li>S<sub>1,2</sub>互补导通，S<sub>3,4</sub>互补导通，否则上下直流侧会短路从而烧毁管子，则有且仅有四种开关状态</li>
+<li><h2 id="两对不同工作状态的管子则最简要么他们的调制信号相同载波不同通常是相位不同或者相反">两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反</h2></li>
 </ul>
 <p><strong>补充：关于调制信号与载波</strong></p>
-<p>​    <strong>调制信号</strong>：通常是个低频信号</p>
-<p>​    <strong>载波信号</strong>：通常是高频锯齿波或三角波信号</p>
+<p>​ <strong>调制信号</strong>：通常是个低频信号</p>
+<p>​ <strong>载波信号</strong>：通常是高频锯齿波或三角波信号</p>
 <p><strong>工作过程</strong></p>
-<ol>
-<li><strong>调制信号与载波信号的比较：</strong><ul>
+<ol type="1">
+<li><strong>调制信号与载波信号的比较：</strong>
+<ul>
 <li>将调制信号与载波信号输入到比较器。</li>
 <li>比较器实时比较两者的瞬时值。</li>
-</ul>
-</li>
-<li><strong>产生PWM信号：</strong><ul>
+</ul></li>
+<li><strong>产生PWM信号：</strong>
+<ul>
 <li>当调制信号大于载波信号时，比较器输出高电平。</li>
 <li>当调制信号小于载波信号时，比较器输出低电平。</li>
 <li>通过这种比较，产生一个脉宽调制（PWM）信号，其脉冲宽度与调制信号的幅度成比例。</li>
-</ul>
-</li>
-<li><strong>控制开关管导通：</strong><ul>
+</ul></li>
+<li><strong>控制开关管导通：</strong>
+<ul>
 <li>PWM信号用来驱动开关管（如晶体管或MOSFET）。</li>
 <li>当PWM信号为高电平时，开关管导通；当PWM信号为低电平时，开关管关闭。</li>
 <li>通过控制PWM信号的占空比，可以精确控制开关管的导通时间，从而实现对负载（如电机、电源）的控制。</li>
-</ul>
-</li>
+</ul></li>
 </ol>
 <ul>
-<li>C~1,2~的平衡：考虑电位偏移，电位波动</li>
-<li>换流时最好是0-U~1~/2-U~1~，否则开关损耗增加，电压变化太过剧烈</li>
-<li><p>输出侧电路和原Buck一致，参数计算方法不变</p>
-</li>
-<li><p>其余优点通过理论分析来获得：电感电流纹波减小，纹波频率提高一倍，因此电感体积可以减少</p>
-</li>
+<li><p>C<sub>1,2</sub>的平衡：考虑电位偏移，电位波动</p></li>
+<li><p>换流时最好是0-U<sub>1</sub>/2-U<sub>1</sub>，否则开关损耗增加，电压变化太过剧烈</p></li>
+<li><p>输出侧电路和原Buck一致，参数计算方法不变</p></li>
+<li><p>其余优点通过理论分析来获得：电感电流纹波减小，纹波频率提高一倍，因此电感体积可以减少</p></li>
 </ul>
 
                 

@@ -477,36 +477,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="自抗扰控制器"><a href="#自抗扰控制器" class="headerlink" title="自抗扰控制器"></a>自抗扰控制器</h2><p>自抗扰控制器的设计分为三部分：</p>
+                <h2 id="自抗扰控制器">自抗扰控制器</h2>
+<p>自抗扰控制器的设计分为三部分：</p>
 <ul>
 <li><strong>安排过渡过程：</strong>就是用跟踪微分器（TD）合理提取微分</li>
 <li><strong>估计状态和总扰动：</strong>用状态扩张观测器（ESO）估计状态和总扰动</li>
 <li><strong>计算控制量：</strong>不局限于比例、微分和积分的线性组合</li>
 </ul>
-<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801093421261.png" class title="ADRC总体控制框图">
-<p><strong>工作过程：</strong>输入期待电压v，经过TD，对V进行平滑处理，V~2~是对V的求导，然后同时对给定信号与给定信号的微分做了一个误差，然后再送到nlsef里面，这玩意是非线性状态误差反馈，也就是常说的补偿器环节。下面这个是状态扩张观测器（ESO)，这玩意是核心环节，它的作用是可以估计出实际的控制对象和我们状态观测器内部标称控制对象的误差值，这个误差值叫做Z~3~这样的话就可以把这个部分给他化简成我们的控制标准型，这里选择的是积分器串联型。</p>
-<p>​    它在外界扰动/自身扰动发生前补偿该扰动，并将系统变为简单的双积分器进行控制</p>
+<h4 id="原理">原理</h4>
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801093421261.png" class title="ADRC总体控制框图">
+<p><strong>工作过程：</strong>输入期待电压v，经过TD，对V进行平滑处理，V<sub>2</sub>是对V的求导，然后同时对给定信号与给定信号的微分做了一个误差，然后再送到nlsef里面，这玩意是非线性状态误差反馈，也就是常说的补偿器环节。下面这个是状态扩张观测器（ESO)，这玩意是核心环节，它的作用是可以估计出实际的控制对象和我们状态观测器内部标称控制对象的误差值，这个误差值叫做Z<sub>3</sub>这样的话就可以把这个部分给他化简成我们的控制标准型，这里选择的是积分器串联型。</p>
+<p>​
+它在外界扰动/自身扰动发生前补偿该扰动，并将系统变为简单的双积分器进行控制</p>
 <p><strong>ADRC是PID的改进版</strong>，韩先生认为<strong>PID的缺点</strong>为：</p>
 <ul>
-<li>误差的取法不合理<ul>
+<li>误差的取法不合理
+<ul>
 <li>PID的误差是以e=v-y的方式产生的，但是这里的控制目标v在过程中是可以跳变的，而对象输出y的变化是有惯性的，不可能发生跳变（也就是输入信号阶跃，但是输出电压还是有过程的变化，而不是突变）所以要求让缓变的变量y来跟踪能够跳变的变量v本身就不合理会产生<strong>’‘快速性’‘</strong>和<strong>’‘超调’‘</strong>之间的矛盾</li>
-</ul>
-</li>
-<li>由误差提取其微分的办法不合理；常用$y=\frac{v(t)-v(t-\tau)}{\tau}$实现，但是当输入信号v（t）被噪声n（t）污染时，$y=\frac{v(t)-v(t-\tau)+n(t)}\tau $，输出y中的近似微分信号$\frac{v(t)-v(t-\tau)}\tau $会被放大的噪声分量$\frac{n(t)}\tau $所淹没，无法利用</li>
+</ul></li>
+<li>由误差提取其微分的办法不合理；常用<span class="math inline">\(y=\frac{v(t)-v(t-\tau)}{\tau}\)</span>实现，但是当输入信号v（t）被噪声n（t）污染时，$y=<span class="math inline">\(，输出y中的近似微分信号\)</span><span class="math inline">\(会被放大的噪声分量\)</span>$所淹没，无法利用</li>
 <li>线性加权的策略不一定最好</li>
 <li>积分反馈有许多副作用；会使得闭环变得迟钝，容易产生振荡，积分饱和引起的控制量饱和</li>
 </ul>
 <p>为此提出了以下<strong>解决办法</strong>：</p>
 <ul>
 <li>安排合适的过渡过程</li>
-<li>合理提取”微分”—“跟踪微分器”（TD）</li>
-<li>探讨合适的组合方法—“非线性状态误差反馈”（NLSEF）</li>
-<li>探讨“扰动估计”办法—“扩张状态观测器”（ESO）</li>
+<li>合理提取"微分"--“跟踪微分器”（TD）</li>
+<li>探讨合适的组合方法--“非线性状态误差反馈"（NLSEF）</li>
+<li>探讨“扰动估计”办法--“扩张状态观测器”（ESO）</li>
 </ul>
 <p>假定模型控制的是电机速度，则其具体含义如下图：</p>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801100009241.png" class>
-<p>​    上下两图结合，我们就能明白 ADRC 控制系统的<strong>工作流程</strong>，首先给定目标速度，由 TD 得到实际模型跟踪的速度和加速度，扩张状态观测器根据电机的控制输入和实际输出得到观测的速度，加速度和扰动，与跟踪速度和加速度做差得到误差，由非线性状态误差反馈系统将误差进行非线性组合，减去扰动即为实际的控制输入。</p>
-<h4 id="跟踪微分器（TD）"><a href="#跟踪微分器（TD）" class="headerlink" title="跟踪微分器（TD）"></a>跟踪微分器（TD）</h4><p>​    跟踪微分器-Tracking differentiator：分为线性和非线性两种，本质上是一种<strong>低通滤波器</strong>，作用是平滑指令以及减少闭环传递函数的超调（将闭环传递函数的峰值压低到0dB以下）。</p>
+<p>​ 上下两图结合，我们就能明白 ADRC
+控制系统的<strong>工作流程</strong>，首先给定目标速度，由 TD
+得到实际模型跟踪的速度和加速度，扩张状态观测器根据电机的控制输入和实际输出得到观测的速度，加速度和扰动，与跟踪速度和加速度做差得到误差，由非线性状态误差反馈系统将误差进行非线性组合，减去扰动即为实际的控制输入。</p>
+<h4 id="跟踪微分器td">跟踪微分器（TD）</h4>
+<p>​ 跟踪微分器-Tracking
+differentiator：分为线性和非线性两种，本质上是一种<strong>低通滤波器</strong>，作用是平滑指令以及减少闭环传递函数的超调（将闭环传递函数的峰值压低到0dB以下）。</p>
 <p><strong>目的：</strong>解决由不连续或带随机噪声的量测信号，合理提取连续信号（跟踪给定）及微分信号的问题</p>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801101735736.png" class>
 <p><strong>输入</strong></p>
@@ -528,58 +535,80 @@
 </ul>
 <p><strong>数学表达形式</strong></p>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801145352420.png" class>
-<p>​    r： 跟踪速度因子；它与跟踪速度正相关，但是过大会放大噪声，因此引入滤波因子h   对噪声进行抑制，h越大滤波效果越强</p>
-<h4 id="扩张状态观测器（ESO"><a href="#扩张状态观测器（ESO" class="headerlink" title="扩张状态观测器（ESO)"></a><strong>扩张状态观测器（ESO)</strong></h4><p><strong>状态观测器</strong></p>
-<p>​    根据测量到的系统输入（控制量）和系统输出（部分状态变量或状态变量的函数）来确定系统所有内部状态信息的装置就是状态观测器</p>
-<p>​    ADRC是一种单输入单输出的控制，因此只能适用于<strong>非耦合</strong>的情况，（非耦合可以理解为独立性，互不影响）</p>
-<p>​    如何理解ESO哩，对控制过程中真实存在的扰动进行补偿，达到抗干扰，鲁棒性好，对模型依赖性降低的效果，所谓扩张，则是将扰动项视为新的状态变量，所以是对状态向量的一种扩张</p>
+<p>​ r：
+跟踪速度因子；它与跟踪速度正相关，但是过大会放大噪声，因此引入滤波因子h
+对噪声进行抑制，h越大滤波效果越强</p>
+<h4 id="扩张状态观测器eso"><strong>扩张状态观测器（ESO)</strong></h4>
+<p><strong>状态观测器</strong></p>
+<p>​
+根据测量到的系统输入（控制量）和系统输出（部分状态变量或状态变量的函数）来确定系统所有内部状态信息的装置就是状态观测器</p>
+<p>​
+ADRC是一种单输入单输出的控制，因此只能适用于<strong>非耦合</strong>的情况，（非耦合可以理解为独立性，互不影响）</p>
+<p>​
+如何理解ESO哩，对控制过程中真实存在的扰动进行补偿，达到抗干扰，鲁棒性好，对模型依赖性降低的效果，所谓扩张，则是将扰动项视为新的状态变量，所以是对状态向量的一种扩张</p>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154106911.png" class title="二阶系统ESO结构图">
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154140878.png" class title="n阶系统的ESO">
-<p>对于以下二阶系统：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}&x_{1}^{\prime}=x_{2}\\&x_{2}^{\prime}=f(x_1,x_2)+bu\\&y=x_1\end{aligned}</script><p>我们将耦合项$f(x_1,x_2)$看作扰动，将其扩张为新的状态变量$x_3$故有如下式子：</p>
-<script type="math/tex; mode=display">
+<p>对于以下二阶系统： <span class="math display">\[
+\begin{aligned}&amp;x_{1}^{\prime}=x_{2}\\&amp;x_{2}^{\prime}=f(x_1,x_2)+bu\\&amp;y=x_1\end{aligned}
+\]</span> 我们将耦合项<span class="math inline">\(f(x_1,x_2)\)</span>看作扰动，将其扩张为新的状态变量<span class="math inline">\(x_3\)</span>故有如下式子： <span class="math display">\[
 \begin{aligned}
-&x_1^{\prime} =x_{2} \\
-&\text{.} x_{2}^{\prime}=x_{3}+bu \\
-&x_3^{\prime}=w(t) \\
-&y=x_{1}
-\end{aligned}</script><p>对于这样的系统，ESO的形式如下：</p>
-<script type="math/tex; mode=display">
+&amp;x_1^{\prime} =x_{2} \\
+&amp;\text{.} x_{2}^{\prime}=x_{3}+bu \\
+&amp;x_3^{\prime}=w(t) \\
+&amp;y=x_{1}
+\end{aligned}
+\]</span> 对于这样的系统，ESO的形式如下： <span class="math display">\[
 \begin{aligned}
-&e_1=z_1(k)-y(k) \\
-&z_1(k+1)=z_1(k)+h(z_2(k)-\beta_1e_1) \\
-&z_2(k+1)=z_2(k)+h(z_3(k)-\beta_2fal(e_1,\alpha_1,\delta)) \\
-&z_3(k+1)=z_3(k)-h\beta_3fal(e_1,\alpha_2,\delta)
-\end{aligned}</script><p>另一文中写到：</p>
-<script type="math/tex; mode=display">
-\begin{aligned}&e=z_1-y,fe=fal(e,0.5,\delta),fel=fal(e,0.25,\delta)\\&z_1=z_1+h\left(z_2-\beta_{01}e\right)\\&z_2=z_2+h\left(z_3-\beta_{02}fe+bu\right)\\&z_3=z_3+h\left(-\beta_{03}fe1\right)\end{aligned}</script><p>​    参数$\beta<em>{01},\beta</em>{02},\beta<em>{03}$是由系统所用采样步长来决定的不管什么样的对象，采样步长一样，都可以用相同的$\beta</em>{01},\beta<em>{02},\beta</em>{03}$</p>
-<p>对于<strong>ESO的参数整定</strong>方法，有一些经验公式：</p>
-<script type="math/tex; mode=display">
-\beta_{01}=\frac1h,\beta_{02}=\frac1{3h^2},\beta_{03}=\frac2{8^2h^3},\beta_{04}=\frac5{13^3h^4},\cdots</script><h4 id="非线性反馈控制器"><a href="#非线性反馈控制器" class="headerlink" title="非线性反馈控制器"></a>非线性反馈控制器</h4><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801155609966.png" class>
-<p>所以这里其实是又回到PID控制了，只不过e~1,2,3~发生了变化，过渡过程产生的误差信号$e_1=v_1-z_1$；误差微分信号：$e_2=v_2-z_2$ ，及根据误差信号生成的积分信号：$\mathrm{e}_0=\int_0^te_1(\tau)d\tau $；只不过这里结合的时候不是采用的线性组合，通常采用的非线性组合有如下两种形式：</p>
-<script type="math/tex; mode=display">
-u_{0}=\beta_{0}fal\left(e_{0},\alpha_{0},\delta\right)+\beta_{1}fal\left(e_{1},\alpha_{1},\delta\right)+\beta_{2}fal(e_{2},\alpha_{2},\delta),\alpha_{0}<0<\alpha_{1}<1<\alpha_{2}\\u_{0}=k_{0}e_{0}-fhan\left(e_{1},ce_{2},r,h\right)</script><p>其中</p>
-<script type="math/tex; mode=display">
-fal(e,\alpha,\delta)=\begin{cases}|e|^\alpha\operatorname{sign}(e),|e|>\delta\\\frac{e}{\delta1-\alpha}&,|e|\leq\delta\end{cases}\\\begin{cases}d=rh^2\\a_0=hx_2\\y=x_1+a_0\\a_1=\sqrt{d(d+8|y|)}\\a_2=a_0+\operatorname{sign}(y)\left(a_1-d\right)/2\\fsg(y,d)=(\operatorname{sign}(y+d)-\operatorname{sign}(y-d))/2\\a=(a_0+y-a_2)fsg(y,d)+a_2\\fsg(a,d)=(\operatorname{sign}(a+d)-\operatorname{sign}(a-d))/2\\\mathrm{~fhan~}=-r\left(\frac ad-\operatorname{sign}(a)\right)f\operatorname{sg}(a,d)-r\operatorname{sign}(a)&\end{cases}</script><p>由于ADRC具有扰动估计能力及较强的抗干扰性，所以无需依赖积分补偿来消除扰动的影响。故积分项可不添加</p>
-<script type="math/tex; mode=display">
-u_0=\beta_1fal\left(e_1,\alpha_1,\delta\right)+\beta_2fal(e_2,\alpha_2,\delta),\alpha_0<0<\alpha_1<1<\alpha_2\\u_0=-fhan\left(e_1,ce_2,r,h\right)</script><p>将ESO估计的扰动$z_3$补偿到控制器的输出$u_0$上，b是控制器的增益，可得到以下两种形式：</p>
-<script type="math/tex; mode=display">
-u=u_0-\frac{z_3}b\\u=\frac{u_0-z_3}b</script><p>最终跟踪微分器（TD），扩张状态观测器（ESO），非线性反馈控制器组成了ADRC算法：</p>
+&amp;e_1=z_1(k)-y(k) \\
+&amp;z_1(k+1)=z_1(k)+h(z_2(k)-\beta_1e_1) \\
+&amp;z_2(k+1)=z_2(k)+h(z_3(k)-\beta_2fal(e_1,\alpha_1,\delta)) \\
+&amp;z_3(k+1)=z_3(k)-h\beta_3fal(e_1,\alpha_2,\delta)
+\end{aligned}
+\]</span> 另一文中写到： <span class="math display">\[
+\begin{aligned}&amp;e=z_1-y,fe=fal(e,0.5,\delta),fel=fal(e,0.25,\delta)\\&amp;z_1=z_1+h\left(z_2-\beta_{01}e\right)\\&amp;z_2=z_2+h\left(z_3-\beta_{02}fe+bu\right)\\&amp;z_3=z_3+h\left(-\beta_{03}fe1\right)\end{aligned}
+\]</span> ​ 参数<span class="math inline">\(\beta_{01},\beta_{02},\beta_{03}\)</span>是由系统所用采样步长来决定的不管什么样的对象，采样步长一样，都可以用相同的<span class="math inline">\(\beta_{01},\beta_{02},\beta_{03}\)</span></p>
+<p>对于<strong>ESO的参数整定</strong>方法，有一些经验公式： <span class="math display">\[
+\beta_{01}=\frac1h,\beta_{02}=\frac1{3h^2},\beta_{03}=\frac2{8^2h^3},\beta_{04}=\frac5{13^3h^4},\cdots
+\]</span></p>
+<h4 id="非线性反馈控制器">非线性反馈控制器</h4>
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801155609966.png" class>
+所以这里其实是又回到PID控制了，只不过e<sub>1,2,3</sub>发生了变化，过渡过程产生的误差信号<span class="math inline">\(e_1=v_1-z_1\)</span>；误差微分信号：<span class="math inline">\(e_2=v_2-z_2\)</span>
+，及根据误差信号生成的积分信号：$<em>0=<em>0^te_1()d<span class="math inline">\(；只不过这里结合的时候不是采用的线性组合，通常采用的非线性组合有如下两种形式：\)</span>$
+u</em>{0}=</em>{0}fal(e_{0},<em>{0},)+</em>{1}fal(e_{1},<em>{1},)+</em>{2}fal(e_{2},<em>{2},),</em>{0}&lt;0&lt;<em>{1}&lt;1&lt;</em>{2}\u_{0}=k_{0}e_{0}-fhan(e_{1},ce_{2},r,h)
+<span class="math display">\[
+其中
+\]</span> fal(e,,)=
+<span class="math display">\[\begin{cases}|e|^\alpha\operatorname{sign}(e),|e|&gt;\delta\\\frac{e}{\delta1-\alpha}&amp;,|e|\leq\delta\end{cases}\]</span>
+\
+<span class="math display">\[\begin{cases}d=rh^2\\a_0=hx_2\\y=x_1+a_0\\a_1=\sqrt{d(d+8|y|)}\\a_2=a_0+\operatorname{sign}(y)\left(a_1-d\right)/2\\fsg(y,d)=(\operatorname{sign}(y+d)-\operatorname{sign}(y-d))/2\\a=(a_0+y-a_2)fsg(y,d)+a_2\\fsg(a,d)=(\operatorname{sign}(a+d)-\operatorname{sign}(a-d))/2\\\mathrm{~fhan~}=-r\left(\frac
+ad-\operatorname{sign}(a)\right)f\operatorname{sg}(a,d)-r\operatorname{sign}(a)&amp;\end{cases}\]</span>
+<p><span class="math display">\[
+由于ADRC具有扰动估计能力及较强的抗干扰性，所以无需依赖积分补偿来消除扰动的影响。故积分项可不添加
+\]</span>
+u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,h)
+<span class="math display">\[
+将ESO估计的扰动$z_3$补偿到控制器的输出$u_0$上，b是控制器的增益，可得到以下两种形式：
+\]</span> u=u_0-b\u=b $$
+最终跟踪微分器（TD），扩张状态观测器（ESO），非线性反馈控制器组成了ADRC算法：</p>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801161309839.png" class>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801163452762.png" class>
-<h4 id="ADRC的一些问题与局限性"><a href="#ADRC的一些问题与局限性" class="headerlink" title="ADRC的一些问题与局限性"></a>ADRC的一些问题与局限性</h4><h5 id="TD的局限性"><a href="#TD的局限性" class="headerlink" title="TD的局限性"></a>TD的局限性</h5><p><strong>线性TD</strong>的本质其实就是一个阻尼比为1的标准二阶系统，并且没有任何零点。对于一个标准的二阶系统，将其写成状态空间的形式，其中的两个状态就分别对应为滤波后的输入以及滤波后输入的微分</p>
+<h4 id="adrc的一些问题与局限性">ADRC的一些问题与局限性</h4>
+<h5 id="td的局限性">TD的局限性</h5>
+<p><strong>线性TD</strong>的本质其实就是一个阻尼比为1的标准二阶系统，并且没有任何零点。对于一个标准的二阶系统，将其写成状态空间的形式，其中的两个状态就分别对应为滤波后的输入以及滤波后输入的微分</p>
 <p><strong>TD减小超调的原因</strong></p>
-<p>​    闭环系统超调的本质原因，其实可以总结为以下两点：</p>
+<p>​ 闭环系统超调的本质原因，其实可以总结为以下两点：</p>
 <ul>
 <li>系统相位裕度不足，即开环系统在截止频率（开环增益0dB）处的相位滞后太多，导致系统阻尼太小，从而引起超调</li>
 <li>尽管系统具有足够的相位裕度，但是某些高频模态引起的振荡也会造成超调</li>
 </ul>
 <p><strong>TD的局限性1：减小超调</strong></p>
-<p>​    因为采用了二阶系统，并且没有零点，必然导致有较大的相位滞后，从而会降低响应速度。</p>
+<p>​
+因为采用了二阶系统，并且没有零点，必然导致有较大的相位滞后，从而会降低响应速度。</p>
 <p><strong>TD的局限:2：作为滤波器（微分器）</strong></p>
-<p>​    TD作为滤波器的一大缺陷就是难以接受的相位滞后。</p>
-<h5 id="ESO的局限"><a href="#ESO的局限" class="headerlink" title="ESO的局限"></a>ESO的局限</h5><p>​    太多字了，不想看了<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/156228260?utm_id=0">https://zhuanlan.zhihu.com/p/156228260?utm_id=0</a></p>
+<p>​ TD作为滤波器的一大缺陷就是难以接受的相位滞后。</p>
+<h5 id="eso的局限">ESO的局限</h5>
+<p>​
+太多字了，不想看了https://zhuanlan.zhihu.com/p/156228260?utm_id=0</p>
 
                 
             </div>

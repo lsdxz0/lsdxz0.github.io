@@ -477,30 +477,39 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="PWM移相跟占空比可变"><a href="#PWM移相跟占空比可变" class="headerlink" title="PWM移相跟占空比可变"></a>PWM移相跟占空比可变</h2><img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914135217996.png" class title="image-20240914135217996">
-<h3 id="PWM的两种输出方式"><a href="#PWM的两种输出方式" class="headerlink" title="PWM的两种输出方式"></a>PWM的两种输出方式</h3><h4 id="PWM模式"><a href="#PWM模式" class="headerlink" title="PWM模式"></a>PWM模式</h4><img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914090203238.png" class>
+                <h2 id="pwm移相跟占空比可变">PWM移相跟占空比可变</h2>
+<img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914135217996.png" class title="image-20240914135217996">
+<h3 id="pwm的两种输出方式">PWM的两种输出方式</h3>
+<h4 id="pwm模式">PWM模式</h4>
+<img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914090203238.png" class>
 <ul>
 <li>ARR 当计数器达到ARR值的时候，计数器会自动重置为0</li>
-<li>CCR  比较寄存器，定时器的计数器与CRR相比，当计数器的值达到CCR时，PWM输出信号会改变状态</li>
+<li>CCR
+比较寄存器，定时器的计数器与CRR相比，当计数器的值达到CCR时，PWM输出信号会改变状态</li>
 <li>PWM波形的周期由ARR决定，输出频率等于定时器的时钟频率除以ARR。</li>
 </ul>
-<h4 id="输出比较模式"><a href="#输出比较模式" class="headerlink" title="输出比较模式"></a>输出比较模式</h4><p>​    这里有一个用于递增或递减的计数器<strong>CNT</strong>，当<strong>CNT=CCR</strong>时，电平发生翻转，这个翻转行为决定了PWM的占空比，CNT超过ARR时，溢出置零</p>
-<h4 id="二者区别与联系"><a href="#二者区别与联系" class="headerlink" title="二者区别与联系"></a>二者区别与联系</h4><ul>
-<li><p><strong>通过调整ARR，可以改变PWM信号的频率，而调整CCR可以改变占空比</strong></p>
-</li>
+<h4 id="输出比较模式">输出比较模式</h4>
+<p>​
+这里有一个用于递增或递减的计数器<strong>CNT</strong>，当<strong>CNT=CCR</strong>时，电平发生翻转，这个翻转行为决定了PWM的占空比，CNT超过ARR时，溢出置零</p>
+<h4 id="二者区别与联系">二者区别与联系</h4>
+<ul>
+<li><p><strong>通过调整ARR，可以改变PWM信号的频率，而调整CCR可以改变占空比</strong></p></li>
 <li><p>PWM模式与翻转模式下所输出的波形频率是相差2倍的，即PWM模式下输出频率为10Hz，那么输出比较模式下的输出频率只有5Hz</p>
 <ul>
 <li>超过CNT=CCR临界值时跳变一次，CNT溢出置零跳变一次</li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="PWM的移相"><a href="#PWM的移相" class="headerlink" title="PWM的移相"></a>PWM的移相</h3><h4 id="PWM模式移相"><a href="#PWM模式移相" class="headerlink" title="PWM模式移相"></a>PWM模式移相</h4><p>用PWM模式输出实现45°的移相，其中ARR=2000，占空比=50%</p>
-<p>​    把ARR=2000与角度360°一一对应起来，或者说是360°均分为ARR份，那么要移相45°就是</p>
+<h3 id="pwm的移相">PWM的移相</h3>
+<h4 id="pwm模式移相">PWM模式移相</h4>
+<p>用PWM模式输出实现45°的移相，其中ARR=2000，占空比=50%</p>
+<p>​
+把ARR=2000与角度360°一一对应起来，或者说是360°均分为ARR份，那么要移相45°就是</p>
 <img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914105259235.png" class>
 <p><strong>需要注意的是</strong>，这里求得是CCR的差值，</p>
-<p>AB两点之间的△CRR计算公式如下：</p>
-<script type="math/tex; mode=display">
-\Delta CCR=\frac{ARR}{360^o}*x</script><p><strong>相位移</strong>：当你调整一个PWM信号的CCR值，相对于另一个信号进行移相时，相位的改变实际上是由两个信号的CCR差值决定的。</p>
+<p>AB两点之间的△CRR计算公式如下： <span class="math display">\[
+\Delta CCR=\frac{ARR}{360^o}*x
+\]</span>
+<strong>相位移</strong>：当你调整一个PWM信号的CCR值，相对于另一个信号进行移相时，相位的改变实际上是由两个信号的CCR差值决定的。</p>
 <p>可以把移相看作是<strong>对两个PWM信号之间CCR差值的调整</strong>，而不是直接在单一路PWM信号的CCR值上做调整。</p>
 
                 

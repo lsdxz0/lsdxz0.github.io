@@ -481,31 +481,35 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="GPIO输出"><a href="#GPIO输出" class="headerlink" title="GPIO输出"></a>GPIO输出</h3><h4 id="GPIO简介"><a href="#GPIO简介" class="headerlink" title="GPIO简介"></a>GPIO简介</h4><ul>
+                <h3 id="gpio输出">GPIO输出</h3>
+<h4 id="gpio简介">GPIO简介</h4>
+<ul>
 <li>GPIO 通用输入输出口</li>
 <li>可配置8种输入输出模式</li>
 <li>引脚电平：0V-3.3V， 部分引脚可容忍5V</li>
 <li>输出模式下可控制端口输出高低电平，用以驱动LED、控制蜂鸣器、模拟通信协议输出时序等</li>
 <li>输入模式下可读取端口的高低电平或电压，用于读取按键输入、外接模块电平信号输入、ADC电压采集、模拟通信协议接收数据等</li>
 </ul>
-<h4 id="GPIO基本结构"><a href="#GPIO基本结构" class="headerlink" title="GPIO基本结构"></a>GPIO基本结构</h4><img src="/2024/08/21/stm32-3.gpio/image-20240827205639500.png" class>
+<h4 id="gpio基本结构">GPIO基本结构</h4>
+<img src="/2024/08/21/stm32-3.gpio/image-20240827205639500.png" class>
 <p>在STM32中，所有GPIO都是挂载在APB2外设总线上的</p>
 <img src="/2024/08/21/stm32-3.gpio/image-20240827205701930.png" class>
-<h4 id="GPIO位结构"><a href="#GPIO位结构" class="headerlink" title="GPIO位结构"></a>GPIO位结构</h4><img src="/2024/08/21/stm32-3.gpio/image-20240827205935196.png" class>
+<h4 id="gpio位结构">GPIO位结构</h4>
+<img src="/2024/08/21/stm32-3.gpio/image-20240827205935196.png" class>
 <ul>
 <li>左边三个为寄存器</li>
 <li>中间虚线部分为驱动器</li>
 <li>右边这个就是某一个IO口的引脚</li>
 </ul>
-<p>​    整体结构可以分为如下两个部分，上面是输入部分，下面是输出部分。</p>
+<p>​ 整体结构可以分为如下两个部分，上面是输入部分，下面是输出部分。</p>
 <img src="/2024/08/21/stm32-3.gpio/image-20240827210035886.png" class>
 <ul>
-<li>这里的触发器应该是翻译错误，应该是施密特触发器，规定某一阈值上下限，高于阈值输出高电平，低于阈值输出低电平<ul>
+<li>这里的触发器应该是翻译错误，应该是施密特触发器，规定某一阈值上下限，高于阈值输出高电平，低于阈值输出低电平
+<ul>
 <li>这里是规定了两个值，大于大的才是高，低于小的才为低，在遇到上下限之前~电平不会发生变化</li>
 <li><img src="/2024/08/21/stm32-3.gpio/image-20240827210703188.png" class title="image-20240827210703188"></li>
 <li>绿色的为上下限阈值，蓝色的为输出波形，红色为给定信号</li>
-</ul>
-</li>
+</ul></li>
 </ul>
 
                 

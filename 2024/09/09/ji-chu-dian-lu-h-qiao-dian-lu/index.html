@@ -477,34 +477,49 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="H桥电路"><a href="#H桥电路" class="headerlink" title="H桥电路"></a>H桥电路</h2><h3 id="什么是H桥电路"><a href="#什么是H桥电路" class="headerlink" title="什么是H桥电路"></a>什么是H桥电路</h3><p>​    一个简单电路，包含<strong>4个开关元件，负载位于中心，呈H型</strong></p>
+                <h2 id="h桥电路">H桥电路</h2>
+<h3 id="什么是h桥电路">什么是H桥电路</h3>
+<p>​
+一个简单电路，包含<strong>4个开关元件，负载位于中心，呈H型</strong></p>
 <img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909095641491.png" class>
 <p><strong>开关元件（Q1-Q4）</strong>通常都是<strong>双极性晶体管</strong>或者<strong>FET晶体管</strong>，在某些高压应用是IGBT。<strong>二级管（D1-D4）</strong>称为<strong>钳位二极管</strong>，通常是肖特基型。</p>
-<h3 id="H桥电路详解"><a href="#H桥电路详解" class="headerlink" title="H桥电路详解"></a>H桥电路详解</h3><img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909095802841.png" class>
-<p>​    可以实现正转与反转</p>
-<h3 id="工作状态分析"><a href="#工作状态分析" class="headerlink" title="工作状态分析"></a>工作状态分析</h3><h4 id="正转"><a href="#正转" class="headerlink" title="正转"></a>正转</h4><img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100021755.png" class>
+<h3 id="h桥电路详解">H桥电路详解</h3>
+<img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909095802841.png" class>
+<p>​ 可以实现正转与反转</p>
+<h3 id="工作状态分析">工作状态分析</h3>
+<h4 id="正转">正转</h4>
+<img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100021755.png" class>
 <ul>
-<li>Q~1~, Q~4~ 导通</li>
-<li>Q~2~  Q~3~ 截止</li>
+<li>Q<sub>1</sub>, Q<sub>4</sub> 导通</li>
+<li>Q<sub>2</sub> Q<sub>3</sub> 截止</li>
 </ul>
-<h4 id="反转"><a href="#反转" class="headerlink" title="反转"></a>反转</h4><img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100121234.png" class>
-<h4 id="调速"><a href="#调速" class="headerlink" title="调速"></a>调速</h4><img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100139359.png" class>
+<h4 id="反转">反转</h4>
+<img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100121234.png" class>
+<h4 id="调速">调速</h4>
+<img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100139359.png" class>
 <ul>
-<li>Q~1~  Q~4~  给它输入50%占空比的PWM波形，就达到了降低转速的效果</li>
+<li>Q<sub>1</sub> Q<sub>4</sub>
+给它输入50%占空比的PWM波形，就达到了降低转速的效果</li>
 <li>增加转速则将输入PWM的占空比设置为100%</li>
 </ul>
-<h4 id="停止状态"><a href="#停止状态" class="headerlink" title="停止状态"></a>停止状态</h4><p>这里以电机从正转切换到停止状态为例；</p>
+<h4 id="停止状态">停止状态</h4>
+<p>这里以电机从正转切换到停止状态为例；</p>
 <ul>
 <li>正转情况下；<code>Q1</code>和<code>Q4</code>是打开状态；</li>
 <li>这时候如果关闭<code>Q1</code>和<code>Q4</code>，直流电机内部可以<strong>等效成电感，也就是感性负载，电流不会突变</strong>，那么电流将继续保持原来的方向进行流动，这时候我们希望电机里的电流可以快速衰减；</li>
 </ul>
 <p><strong>这里有两种方法</strong></p>
 <p>第一种：</p>
-<p>​    关闭Q~1~  Q~4~  这时候电流仍然会通过反向续流二极管进行流动，此时短暂打开Q~1~ 和Q~3~ 从而打算快速衰减电流的目的</p>
+<p>​ 关闭Q<sub>1</sub> Q<sub>4</sub>
+这时候电流仍然会通过反向续流二极管进行流动，此时短暂打开Q<sub>1</sub>
+和Q<sub>3</sub> 从而打算快速衰减电流的目的</p>
 <img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100538456.png" class>
 <p>第二种：</p>
-<p>​    关闭Q~1~,打开Q~2~  这时候电流不会衰减的很快，电流循环在Q~2~， M  Q~4~之间流动，通过MOS管内阻将电能消耗掉</p>
+<p>​ 关闭Q<sub>1</sub>,打开Q<sub>2</sub>
+这时候电流不会衰减的很快，电流循环在Q<sub>2</sub>， M
+Q<sub>4</sub>之间流动，通过MOS管内阻将电能消耗掉</p>
 <img src="/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/image-20240909100657455.png" class>
+
                 
             </div>
             <hr/>

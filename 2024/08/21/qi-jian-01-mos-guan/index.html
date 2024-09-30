@@ -477,58 +477,91 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电子器件01——-MOS管"><a href="#电子器件01——-MOS管" class="headerlink" title="电子器件01——-MOS管"></a>电子器件01——-MOS管</h2><h3 id="1-三个极的判定"><a href="#1-三个极的判定" class="headerlink" title="1. 三个极的判定"></a>1. 三个极的判定</h3><p><img src="/2024/08/21/qi-jian-01-mos-guan/ae3be941d58a27bc1c7ae66900a319c1.png" alt><br>G极(gate)—栅极，不用说比较好认<br>S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是<br>D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边</p>
-<h3 id="2-N沟道与P沟道判别"><a href="#2-N沟道与P沟道判别" class="headerlink" title="2. N沟道与P沟道判别"></a>2. N沟道与P沟道判别</h3><p><img src="/2024/08/21/qi-jian-01-mos-guan/64c2d9fd96130f91825e0e984d740bcc.png" alt><img src="/2024/08/21/qi-jian-01-mos-guan/9ef5be7a51aeceb28b8987a10ec993d0.png" alt><br>箭头指向G极的是N沟道<br>箭头背向G极的是P沟道</p>
-<h3 id="3-寄生二极管方向判定"><a href="#3-寄生二极管方向判定" class="headerlink" title="3. 寄生二极管方向判定"></a>3. 寄生二极管方向判定</h3><p><img src="/2024/08/21/qi-jian-01-mos-guan/0d3f045ce50459361e98fbabf604795f.png" alt="这里写图片描述"><img src="/2024/08/21/qi-jian-01-mos-guan/c2f7e5496a9171ae53d25792558fec95.png" alt="这里写图片描述"><br>不论N沟道还是P沟道MOS管，中间衬底箭头方向和寄生二极管的箭头方向总是一致的：<br><strong>要么都由S指向D，要么都有D指向S</strong></p>
-<h3 id="MOS管的方向"><a href="#MOS管的方向" class="headerlink" title="MOS管的方向"></a>MOS管的方向</h3><ul>
-<li>nmos—从D到S，D接电源正极，S接电源负极</li>
-<li>Pmos—从S到D，S接电源正极，D接电源负极</li>
+                <h2 id="电子器件01-----mos管">电子器件01-----MOS管</h2>
+<h3 id="三个极的判定">1. 三个极的判定</h3>
+<p><img src="/2024/08/21/qi-jian-01-mos-guan/ae3be941d58a27bc1c7ae66900a319c1.png">
+G极(gate)—栅极，不用说比较好认
+S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是
+D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边</p>
+<h3 id="n沟道与p沟道判别">2. N沟道与P沟道判别</h3>
+<p><img src="/2024/08/21/qi-jian-01-mos-guan/64c2d9fd96130f91825e0e984d740bcc.png"><img src="/2024/08/21/qi-jian-01-mos-guan/9ef5be7a51aeceb28b8987a10ec993d0.png">
+箭头指向G极的是N沟道 箭头背向G极的是P沟道</p>
+<h3 id="寄生二极管方向判定">3. 寄生二极管方向判定</h3>
+<p><img src="/2024/08/21/qi-jian-01-mos-guan/0d3f045ce50459361e98fbabf604795f.png" alt="这里写图片描述"><img src="/2024/08/21/qi-jian-01-mos-guan/c2f7e5496a9171ae53d25792558fec95.png" alt="这里写图片描述">
+不论N沟道还是P沟道MOS管，中间衬底箭头方向和寄生二极管的箭头方向总是一致的：
+<strong>要么都由S指向D，要么都有D指向S</strong></p>
+<h3 id="mos管的方向">MOS管的方向</h3>
+<ul>
+<li>nmos--从D到S，D接电源正极，S接电源负极</li>
+<li>Pmos--从S到D，S接电源正极，D接电源负极</li>
 </ul>
 <p>这个跟二极管对应着看就行，二极管导通要我MOS干嘛</p>
 <p>也不能这么说，SD是同一沟道的两端，跟PN结不一样，这玩意两个方向其实都能导通，只要满足导通条件，</p>
-<h3 id="MOS管的导通"><a href="#MOS管的导通" class="headerlink" title="MOS管的导通"></a>MOS管的导通</h3><ul>
-<li>nmos—-G为高电平，S为低电平（D—&gt;S)</li>
-<li>pmos—-S极电压大于G极，则导通(S—&gt;D)</li>
+<h3 id="mos管的导通">MOS管的导通</h3>
+<ul>
+<li>nmos---G为高电平，S为低电平（D--&gt;S)</li>
+<li>pmos---S极电压大于G极，则导通(S--&gt;D)</li>
 </ul>
-<h3 id="4-MOS开关实现的功能"><a href="#4-MOS开关实现的功能" class="headerlink" title="4. MOS开关实现的功能"></a>4. MOS开关实现的功能</h3><ul>
+<h3 id="mos开关实现的功能">4. MOS开关实现的功能</h3>
+<ul>
 <li>信号切换</li>
 <li>电压通断</li>
 </ul>
-<h3 id="5-MOS管用作开关时在电路中的连接方法"><a href="#5-MOS管用作开关时在电路中的连接方法" class="headerlink" title="5. MOS管用作开关时在电路中的连接方法"></a>5. MOS管用作开关时在电路中的连接方法</h3><p>关键点:</p>
+<h3 id="mos管用作开关时在电路中的连接方法">5.
+MOS管用作开关时在电路中的连接方法</h3>
+<p>关键点:</p>
 <ul>
-<li><p>确定那一极连接输入端，那一极连接输出端</p>
-</li>
-<li><p>控制极电平为？V 时MOS管导通</p>
-</li>
+<li><p>确定那一极连接输入端，那一极连接输出端</p></li>
+<li><p>控制极电平为？V 时MOS管导通</p></li>
 <li><p>控制极电平为？V 时MOS管截止</p>
 <p><img src="/2024/08/21/qi-jian-01-mos-guan/132d75104da1250e7e34398a024abebc.png" alt="这里写图片描述"><img src="/2024/08/21/qi-jian-01-mos-guan/94bbdd38004fca0abedb90ff7033ee45.png" alt="这里写图片描述"></p>
-<p>NMOS：D极接输入，S极接输出<br>PMOS：S极接输入，D极接输出</p>
-</li>
+<p>NMOS：D极接输入，S极接输出 PMOS：S极接输入，D极接输出</p></li>
 </ul>
-<p><strong>反证法加强理解</strong><br>NMOS假如：S接输入，D接输出<br><img src="/2024/08/21/qi-jian-01-mos-guan/a323f755db58f9f870272b32bb82e765.png" alt="这里写图片描述"><br>由于寄生二极管直接导通，因此S极电压可以无条件到D极，MOS管就失去了开关的作用<br>PMOS假如：D接输入，S接输出<br><img src="/2024/08/21/qi-jian-01-mos-guan/9cbebe85df4c5c1413c116ce4efdbc03.png" alt="这里写图片描述"><br>同样失去了开关的作用</p>
-<h3 id="6-MOS管的开关条件"><a href="#6-MOS管的开关条件" class="headerlink" title="6. MOS管的开关条件"></a>6. MOS管的开关条件</h3><p>N沟道—导通时 Ug&gt; Us,Ugs&gt; Ugs(th)时导通<br>P沟道—导通时 Ug&lt; Us,Ugs&lt; Ugs(th)时导通<br>总之，导通条件：<strong>|Ugs|&gt;|Ugs(th)|</strong></p>
+<p><strong>反证法加强理解</strong> NMOS假如：S接输入，D接输出 <img src="/2024/08/21/qi-jian-01-mos-guan/a323f755db58f9f870272b32bb82e765.png" alt="这里写图片描述">
+由于寄生二极管直接导通，因此S极电压可以无条件到D极，MOS管就失去了开关的作用
+PMOS假如：D接输入，S接输出 <img src="/2024/08/21/qi-jian-01-mos-guan/9cbebe85df4c5c1413c116ce4efdbc03.png" alt="这里写图片描述"> 同样失去了开关的作用</p>
+<h3 id="mos管的开关条件">6. MOS管的开关条件</h3>
+<p>N沟道—导通时 Ug&gt; Us,Ugs&gt; Ugs(th)时导通 P沟道—导通时 Ug&lt;
+Us,Ugs&lt; Ugs(th)时导通
+总之，导通条件：<strong>|Ugs|&gt;|Ugs(th)|</strong></p>
 <ul>
 <li><p><strong>n型三极管（NPN）</strong>：</p>
 <ul>
 <li><strong>高电平</strong>（基极相对于发射极的电压高于0.7V）时导通。</li>
 <li><strong>低电平</strong>时断开。</li>
-</ul>
-</li>
+</ul></li>
 <li><p><strong>p型三极管（PNP）</strong>：</p>
 <ul>
-<li><p><strong>低电平</strong>（基极相对于发射极的电压低于-0.7V）时导通。</p>
-</li>
-<li><p><strong>高电平</strong>时断开。</p>
-</li>
+<li><p><strong>低电平</strong>（基极相对于发射极的电压低于-0.7V）时导通。</p></li>
+<li><p><strong>高电平</strong>时断开。</p></li>
+</ul></li>
 </ul>
-</li>
-</ul>
-<h3 id="7-相关概念"><a href="#7-相关概念" class="headerlink" title="7. 相关概念"></a>7. 相关概念</h3><p><strong>BJT</strong><br>Bipolar Junction Transistor 双极性晶体管，BJT是电流控制器件；<br><strong>FET</strong><br>Field Effect Transistor 场效应晶体管，FET是电压控制器件.<br>按结构场效应管分为：结型场效应（简称JFET）、绝缘栅场效应（简称MOSFET）两大类<br>按沟道材料：结型和绝缘栅型各分N沟道和P沟道两种.<br>按导电方式：耗尽型与增强型，结型场效应管均为耗尽型，绝缘栅型场效应管既有耗尽型的，也有增强型的。<br>总的来说场效应晶体管可分为结场效应晶体管和MOS场效应晶体管，而MOS场效应晶体管又分为N沟耗尽型和增强型；P沟耗尽型和增强型四大类。</p>
-<h3 id="8-MOS管重要参数"><a href="#8-MOS管重要参数" class="headerlink" title="8. MOS管重要参数"></a>8. MOS管重要参数</h3><p>①封装<br>②类型（NMOS、PMOS）<br>③耐压Vds（器件在断开状态下漏极和源极所能承受的最大的电压）<br>④饱和电流Id<br>⑤导通阻抗Rds<br>⑥栅极阈值电压Vgs(th)</p>
-<h3 id="9-从MOS管实物识别管脚"><a href="#9-从MOS管实物识别管脚" class="headerlink" title="9. 从MOS管实物识别管脚"></a>9. 从MOS管实物识别管脚</h3><p><img src="/2024/08/21/qi-jian-01-mos-guan/efa35a300065748d7fd26bf13d9bfd5a.png" alt="这里写图片描述"><br>无论是NMOS还是PMOS<br>按上图方向摆正，中间的一脚为D，左边为G，右边为S。<br>或者这么记：单独的一脚为D，逆时针转DGS。<br>这里顺便提一下三极管的管脚识别：同样按照上图方向摆正，中间一脚为C，左边为B，右边为E。</p>
-<p><strong>管脚编号</strong><br><img src="/2024/08/21/qi-jian-01-mos-guan/2f582e677354f945e3ef8ef879f69e76.png" alt="这里写图片描述"><br>从G脚开始，逆时针123<br>三极管的管脚编号同样从B脚开始，逆时针123</p>
-<h3 id="10-用万用表辨别NNOS、PMOS"><a href="#10-用万用表辨别NNOS、PMOS" class="headerlink" title="10. 用万用表辨别NNOS、PMOS"></a>10. 用万用表辨别NNOS、PMOS</h3><p>借助寄生二极管来辨别。将万用表档位拨至二极管档，红表笔接S,黑表笔接D，有数值显示，反过来接无数值，说明是N沟道，若情况相反是P沟道。</p>
-<h3 id="11-画一个MOS管"><a href="#11-画一个MOS管" class="headerlink" title="11. 画一个MOS管"></a>11. 画一个MOS管</h3><p><img src="/2024/08/21/qi-jian-01-mos-guan/a7d7e822d114cfe84232d3df505bec93.png" alt="这里写图片描述"></p>
+<h3 id="相关概念">7. 相关概念</h3>
+<p><strong>BJT</strong> Bipolar Junction Transistor
+双极性晶体管，BJT是电流控制器件； <strong>FET</strong> Field Effect
+Transistor 场效应晶体管，FET是电压控制器件.
+按结构场效应管分为：结型场效应（简称JFET）、绝缘栅场效应（简称MOSFET）两大类
+按沟道材料：结型和绝缘栅型各分N沟道和P沟道两种.
+按导电方式：耗尽型与增强型，结型场效应管均为耗尽型，绝缘栅型场效应管既有耗尽型的，也有增强型的。
+总的来说场效应晶体管可分为结场效应晶体管和MOS场效应晶体管，而MOS场效应晶体管又分为N沟耗尽型和增强型；P沟耗尽型和增强型四大类。</p>
+<h3 id="mos管重要参数">8. MOS管重要参数</h3>
+<p>①封装 ②类型（NMOS、PMOS）
+③耐压Vds（器件在断开状态下漏极和源极所能承受的最大的电压） ④饱和电流Id
+⑤导通阻抗Rds ⑥栅极阈值电压Vgs(th)</p>
+<h3 id="从mos管实物识别管脚">9. 从MOS管实物识别管脚</h3>
+<p><img src="/2024/08/21/qi-jian-01-mos-guan/efa35a300065748d7fd26bf13d9bfd5a.png" alt="这里写图片描述"> 无论是NMOS还是PMOS
+按上图方向摆正，中间的一脚为D，左边为G，右边为S。
+或者这么记：单独的一脚为D，逆时针转DGS。
+这里顺便提一下三极管的管脚识别：同样按照上图方向摆正，中间一脚为C，左边为B，右边为E。</p>
+<p><strong>管脚编号</strong> <img src="/2024/08/21/qi-jian-01-mos-guan/2f582e677354f945e3ef8ef879f69e76.png" alt="这里写图片描述"> 从G脚开始，逆时针123
+三极管的管脚编号同样从B脚开始，逆时针123</p>
+<h3 id="用万用表辨别nnospmos">10. 用万用表辨别NNOS、PMOS</h3>
+<p>借助寄生二极管来辨别。将万用表档位拨至二极管档，红表笔接S,黑表笔接D，有数值显示，反过来接无数值，说明是N沟道，若情况相反是P沟道。</p>
+<h3 id="画一个mos管">11. 画一个MOS管</h3>
+<figure>
+<img src="/2024/08/21/qi-jian-01-mos-guan/a7d7e822d114cfe84232d3df505bec93.png" alt="这里写图片描述">
+<figcaption aria-hidden="true">这里写图片描述</figcaption>
+</figure>
 
                 
             </div>

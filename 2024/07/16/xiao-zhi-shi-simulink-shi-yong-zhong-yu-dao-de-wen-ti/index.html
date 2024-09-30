@@ -477,29 +477,38 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="simulink使用中遇到的问题"><a href="#simulink使用中遇到的问题" class="headerlink" title="simulink使用中遇到的问题"></a>simulink使用中遇到的问题</h2><h4 id="1-旋转"><a href="#1-旋转" class="headerlink" title="1. 旋转"></a>1. 旋转</h4><p>ctrl + R = 旋转90°      ctrl + I = 左右旋转</p>
-<h4 id="2-SCOPE显示的波形带圆圈"><a href="#2-SCOPE显示的波形带圆圈" class="headerlink" title="2. SCOPE显示的波形带圆圈"></a>2. SCOPE显示的波形带圆圈</h4><p>打开示波器-视图-样式-标记（maker）-修改为无（none）</p>
-<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240716153355953.png" alt></p>
-<h4 id="3-谐振器中的变压器"><a href="#3-谐振器中的变压器" class="headerlink" title="3. 谐振器中的变压器"></a>3. 谐振器中的变压器</h4><p><strong>器件名称：</strong>linear transformer</p>
-<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095309933.png" alt></p>
-<p>​    取消框选，变为单相变压器，这样就只有两个铁芯了</p>
+                <h2 id="simulink使用中遇到的问题">simulink使用中遇到的问题</h2>
+<h4 id="旋转">1. 旋转</h4>
+<p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p>
+<h4 id="scope显示的波形带圆圈">2. SCOPE显示的波形带圆圈</h4>
+<p>打开示波器-视图-样式-标记（maker）-修改为无（none）</p>
+<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240716153355953.png"></p>
+<h4 id="谐振器中的变压器">3. 谐振器中的变压器</h4>
+<p><strong>器件名称：</strong>linear transformer</p>
+<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095309933.png"></p>
+<p>​ 取消框选，变为单相变压器，这样就只有两个铁芯了</p>
 <p><strong>参数设计：</strong></p>
 <ul>
-<li>units那里有两个选项，默认是pu，你学过电机或者电力系统应该就知道这是<strong>标幺制</strong>，所以我就不解释啥是标幺制了。另一个选项是SI，也就是国际单位制。</li>
-<li>如果选的是国际单位制，那么units下面的nominal power and frequency就不用管了。这个是用来设置变压器的额定容量和额定频率的，只在标幺制的时候才用的到，</li>
-<li>Winding 1 就是一次侧绕组，Winding 2 就是二次侧绕组。</li>
-<li><p>V1 V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就是电压的有效值。</p>
-</li>
-<li><p>R1，R2，L1，L2是一二次侧的电阻和电感。就是那个变压器的等效电路，图里X1，X2就是电感的电抗值，对应的就是L1和L2，</p>
-</li>
+<li><p>units那里有两个选项，默认是pu，你学过电机或者电力系统应该就知道这是<strong>标幺制</strong>，所以我就不解释啥是标幺制了。另一个选项是SI，也就是国际单位制。</p></li>
+<li><p>如果选的是国际单位制，那么units下面的nominal power and
+frequency就不用管了。这个是用来设置变压器的额定容量和额定频率的，只在标幺制的时候才用的到，</p></li>
+<li><p>Winding 1 就是一次侧绕组，Winding 2 就是二次侧绕组。</p></li>
+<li><p>V1
+V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就是电压的有效值。</p></li>
+<li><p>R1，R2，L1，L2是一二次侧的电阻和电感。就是那个变压器的等效电路，图里X1，X2就是电感的电抗值，对应的就是L1和L2，</p></li>
 </ul>
-<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095553742.png" alt="变压器等效电路"></p>
+<figure>
+<img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095553742.png" alt="变压器等效电路">
+<figcaption aria-hidden="true">变压器等效电路</figcaption>
+</figure>
 <ul>
 <li>Rm、Lm就是励磁电阻和<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?q=励磁电感&amp;zhida_source=entity&amp;is_preview=1">励磁电感</a>。在上面的图上就是中间的rm和Xm。（怎么写下标来着。。）</li>
 </ul>
-<p>上面提到的就是它能设置的全部参数了。如果你想要的是<strong>理想型变压器</strong>，没有损耗的那种，咋设置嘞。就把R1,L1,R2,L2都设置成0，Rm和Lm设置成inf就行了。像我这样。这时候，我这个变压器的变压比就是V1 / V2了。</p>
+<p>上面提到的就是它能设置的全部参数了。如果你想要的是<strong>理想型变压器</strong>，没有损耗的那种，咋设置嘞。就把R1,L1,R2,L2都设置成0，Rm和Lm设置成inf就行了。像我这样。这时候，我这个变压器的变压比就是V1
+/ V2了。</p>
 <img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240831092234015.png" class>
-<h4 id="4-死区时间—Delay模块"><a href="#4-死区时间—Delay模块" class="headerlink" title="4. 死区时间—Delay模块"></a>4. 死区时间—Delay模块</h4><p>延时模块</p>
+<h4 id="死区时间--delay模块">4. 死区时间--Delay模块</h4>
+<p>延时模块</p>
 <img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240903164654628.png" class>
 <img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240903164716263.png" class title="模块参数">
 <ul>
