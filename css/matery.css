@@ -241,29 +241,20 @@ mark {
 }
 
 /* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
-.navbar {
-    background: linear-gradient(135deg, #0f4c75, #3282b8, #bbe1fa);
-    color: #e6f7ff;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+.bg-color {
+    background-image: 
+      radial-gradient(circle at 80% 20%, rgba(235,245,255,0.4) 15%, transparent 30%),
+      linear-gradient(145deg, 
+        #E8F4FF 10%,   /* 冰晶白蓝 */
+        #B3DFFF 30%,   /* 晨雾蓝 */
+        #8AC6FF 50%,   /* 浅海蓝 */
+        #6CB2EB 70%,   /* 钴蓝透光层 */
+        rgba(169,218,255,0.7) 90%); /* 薄云层 */
+    background-blend-mode: multiply;
+    box-shadow: inset 0 12px 24px rgba(143,188,255,0.08);
   }
-  
-  .navbar:hover {
-    background: linear-gradient(140deg, #0f4c75 15%, #3282b8 45%, #bbe1fa 85%);
-    box-shadow: 0 4px 15px rgba(15, 76, 117, 0.2);
-  }
-  
-  @media (prefers-reduced-motion: no-preference) {
-    .navbar {
-      animation: gradient-flow 12s ease infinite;
-      background-size: 200% 200%;
-    }
-    
-    @keyframes gradient-flow {
-      0% { background-position: 0% 50% }
-      50% { background-position: 100% 50% }
-      100% { background-position: 0% 50% }
-    }
-  }
+
+
 .text-color {
     color: #0f9d58 !important;
 }
