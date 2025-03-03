@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="test, LSDXZ">
+    <meta name="keywords" content="【CLLC】参数设计, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>test | LSDXZ</title>
+    <title>【CLLC】参数设计 | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -314,12 +314,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/10.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">test</h1>
+                    <h1 class="description center-align post-title">【CLLC】参数设计</h1>
                 </div>
             </div>
         </div>
@@ -433,12 +433,25 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/CLLC/">
+                                <span class="chip bg-color">CLLC</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E8%AE%BA%E6%96%87/" class="post-category">
+                                论文
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -447,7 +460,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2025-01-07
+                    2025-02-27
                 </div>
                 
 
@@ -456,14 +469,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    10
+                    694
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -483,8 +496,64 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="迁移">迁移</h2>
-<p>https://blog.csdn.net/m0_51341794/article/details/136694058</p>
+                <h2 id="ｃｌｌｃ-型三电平双向-ｄｃｄｃ-变换器混合控制策略">ＣＬＬＣ
+型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略</h2>
+<p><strong>设计要求：</strong></p>
+<p>​
+400-500V输入，输出48V开关频率范围为：88-170KHz，死区时间t<sub>d</sub>=200ns</p>
+<ul>
+<li><strong>确定谐振频率</strong>
+CLLC是由LLC改进而来的，先设计一个LLC的谐振网络，再设计剩余的低压侧谐振电容、选取LLC变换器的第二谐振频率为<em>f</em><sub>LLC</sub>=100
+kHz.</li>
+<li><strong>选取励磁电感：</strong>
+<ul>
+<li><em>i</em><sub>Lm</sub>(<em>t</em>)的峰值电流公式近似计算得到：<span class="math inline">\(i_{\mathrm{Lmp}}\approx\frac{nU_{\mathrm{ol}}}{L_{\mathrm{m}}}
+\frac{T_{s}}{4}\)</span></li>
+<li>为保证开关管结电容死区时间内完全放电，<em>i</em><sub>Lmp</sub>需满足：<span class="math inline">\(i_\text{ Lmp}t_\text{ d}&gt;2C_\text{
+oss}U_1\)</span></li>
+<li>由于第二谐振频率处的<em>M</em><sub>1</sub>小于1，<span class="math inline">\(L_\text{m}&lt;\frac{nU_\text{ol}T_st_\text{d}}{8C_\text{oss}U_1}=\frac{M_1T_st_\text{d}}{16C_\text{oss}}&lt;\frac{t_\text{d}}{16C_\text{oss}f_s}\)</span>​</li>
+<li>死区时间<em>t<sub>d</sub></em>=200 ns，
+第二谐振频率<em>f<sub>s</sub></em>=100kHz，
+结电容<em>C<sub>oss</sub></em>=415 pF。由上面第二个式子可得
+<em>L<sub>m</sub></em>&lt;301.2 uH。 所以Lm实际取值280 uH</li>
+</ul></li>
+<li><strong>选取电感比值<em>h</em></strong>
+<ul>
+<li><em>h</em>=<em>L<sub>m</sub>/L<sub>r</sub></em>
+，选取h=3，确定谐振电感Lr为84uh，再由<span class="math inline">\(f_{\mathrm{~LLC}}=1/2\pi
+\sqrt{L_{\mathrm{~r}}C_{\mathrm{~rl}}}\)</span>
+得到高压侧谐振电容C<sub>r1</sub>的数值为31.7uf</li>
+</ul></li>
+<li><strong>选取谐振电容比值g</strong>
+<ul>
+<li><span class="math inline">\(g=C_{r2}/n^2C_{r1}\)</span>​</li>
+<li>g值太小，则正向电压争议曲线的谐振峰值太高，且在第二谐振频率处的曲线斜率太小，导致变换器在很宽的调节范围内几乎没有电压调节能力</li>
+<li>g值太大，则反向工作时的直流增益将比正向工作时高很多，不满足设计要求</li>
+<li>一般g取值在1-3之间比较合适，取g=2</li>
+</ul></li>
+<li><strong>选取变压器的变比n</strong>
+<ul>
+<li><span class="math inline">\(n=M_1
+\frac{U_1}{2U_{\mathrm{ol}}}\)</span></li>
+<li>根据文中设置，U<sub>1</sub>=400，U<sub>0</sub>=48
+想要M<sub>1</sub>小于1，需要小于4.167</li>
+<li>n取值过小，会导致反向工作所需电压增益变高，开关管工作频率变低，从而会失去ZVS条件，故可初步选取
+n=40:11</li>
+<li>在得到谐振电容比值g之后，通过<span class="math inline">\(g=C_{r2}/n^2C_{r1}\)</span> 计算得到:<span class="math inline">\(C_{r2}=1014.4nF\)</span></li>
+</ul></li>
+<li><strong>计算相位角</strong>
+<ul>
+<li>移相占空比D和Lm存在对应关系，且在0-0.5内，未必能实现软开关，定义临界移相占空比D<sub>0</sub>
+只有当意向占空比满足0&lt;D&lt;D<sub>0</sub>的条件时，变换器中所有软开关条件才可全部完成，因此对应于变换器高压侧最大输出电压U<sub>1max</sub>，有如下表达式</li>
+<li><span class="math inline">\(\begin{cases}(0.5-D_0)\cos(\pi
+D_0)=\frac{16L_\text{m}C_\text{oss}}{T_\text{s}t_\text{d}}\\\\U_\text{ol}=\frac{\cos(\pi
+D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
+--------&gt;D<sub>0</sub>=0.28</li>
+<li>移相控制模式中最大移相角为：$_<sup></sup>$</li>
+</ul></li>
+</ul>
+<p><strong>参数</strong></p>
+<p><img src="/2025/02/27/lun-cllc-can-shu-she-ji/image-20240815104704407.png"></p>
 
                 
             </div>
@@ -511,7 +580,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lsdxz0.github.io/2025/01/07/test/">https://lsdxz0.github.io/2025/01/07/test/</a>
+                    <a href="https://lsdxz0.github.io/2025/02/27/lun-cllc-can-shu-she-ji/">https://lsdxz0.github.io/2025/02/27/lun-cllc-can-shu-she-ji/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -548,7 +617,11 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/CLLC/">
+                                    <span class="chip bg-color">CLLC</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -720,13 +793,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2025/01/09/eda-04.xin-jian-gong-cheng-ji-led-deng-mo-kuai/">
+                <a href="/2025/02/27/cllc-vco/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/20.jpg" class="responsive-img" alt="立创eda-04 原理图的绘制">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="【simulink】VCO">
                         
-                        <span class="card-title">立创eda-04 原理图的绘制</span>
+                        <span class="card-title">【simulink】VCO</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -737,14 +810,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2025-01-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-02-27
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="post-category">
-                                    软件
+                            <a href="/categories/%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    仿真
                                 </a>
                             
                             
@@ -754,8 +827,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eda/">
-                        <span class="chip bg-color">eda</span>
+                    <a href="/tags/simulink/">
+                        <span class="chip bg-color">simulink</span>
+                    </a>
+                    
+                    <a href="/tags/CLLC/">
+                        <span class="chip bg-color">CLLC</span>
                     </a>
                     
                 </div>
@@ -769,13 +846,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2025/01/07/eda-01-ji-chu/">
+                <a href="/2025/02/26/cllc-pi-kong-zhi-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="立创eda-01 基础篇">
+                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="【simulink】PI控制器">
                         
-                        <span class="card-title">立创eda-01 基础篇</span>
+                        <span class="card-title">【simulink】PI控制器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -786,14 +863,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2025-01-07
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-02-26
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="post-category">
-                                    软件
+                            <a href="/categories/%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    仿真
                                 </a>
                             
                             
@@ -803,8 +880,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/eda/">
-                        <span class="chip bg-color">eda</span>
+                    <a href="/tags/simulink/">
+                        <span class="chip bg-color">simulink</span>
+                    </a>
+                    
+                    <a href="/tags/CLLC/">
+                        <span class="chip bg-color">CLLC</span>
                     </a>
                     
                 </div>
@@ -936,6 +1017,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -1007,7 +1095,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51.1k</span>&nbsp;字
+                class="white-color">51k</span>&nbsp;字
             
             
             
