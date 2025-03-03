@@ -240,10 +240,30 @@ mark {
     margin-bottom: 0;
 }
 
-.bg-color {
-    background-image: linear-gradient(to right, #4cbf30 0%, #0f9d58 100%);
-}
-
+/* 整体背景颜色，包括导航、移动端的导航、页尾、标签页等的背景颜色. */
+.navbar {
+    background: linear-gradient(135deg, #0f4c75, #3282b8, #bbe1fa);
+    color: #e6f7ff;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .navbar:hover {
+    background: linear-gradient(140deg, #0f4c75 15%, #3282b8 45%, #bbe1fa 85%);
+    box-shadow: 0 4px 15px rgba(15, 76, 117, 0.2);
+  }
+  
+  @media (prefers-reduced-motion: no-preference) {
+    .navbar {
+      animation: gradient-flow 12s ease infinite;
+      background-size: 200% 200%;
+    }
+    
+    @keyframes gradient-flow {
+      0% { background-position: 0% 50% }
+      50% { background-position: 100% 50% }
+      100% { background-position: 0% 50% }
+    }
+  }
 .text-color {
     color: #0f9d58 !important;
 }
@@ -1896,7 +1916,7 @@ footer .copy-right {
     display: none;
     position: fixed;
     right: 15px;
-    bottom: 15px;
+    bottom: 135px;
     padding-top: 15px;
     margin-bottom: 0;
     z-index: 998;
