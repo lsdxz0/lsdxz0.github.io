@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 
@@ -362,7 +366,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/07/11/%E3%80%90%E4%B8%89%E7%94%B5%E5%B9%B3%E3%80%9102.%20%E5%B7%A5%E4%BD%9C%E7%8A%B6%E6%80%81%E5%88%86%E6%9E%90%20/">
+                    <a href="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/">
                         <div class="card-image">
                             
                             
@@ -375,9 +379,16 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                02. 工作状态分析 有且仅有四种开关状态
-![](【三电平】02. 工作状态分析 &#x2F;image-20240711154237712.png)
-![](【三电平】02. 工作状态分析 &#x2F;image-20240711154
+                                02. 工作状态分析
+有且仅有四种开关状态
+
+
+
+​
+电感上的电流是不可以突变的，所以当S1,4关断后，电流通过二极管续流，而不是经过开关管
+
+​
+这里电流到了B为啥不往上经过二极管，因为：电流更容易往低电位流，上面那电位
                             
                         </div>
                         <div class="publish-info">
@@ -415,59 +426,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/07/11/%E3%80%90%E4%B8%89%E7%94%B5%E5%B9%B3%E3%80%9104.%20%E8%BD%BD%E6%B3%A2%E8%B0%83%E5%88%B6%E8%BF%87%E7%A8%8B%E8%AF%A6%E7%BB%86%E5%88%86%E6%9E%90%20%20/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="04. 载波调制过程详细分析">
-                            
-                            <span class="card-title">04. 载波调制过程详细分析</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                04. 载波调制过程详细分析![image-20240712101818471](【三电平】04. 载波调制过程详细分析  &#x2F;image-20240712101818471.png)
-​	设C为t2将其分成两份，为使两电容电位平衡
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-11
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E4%B8%89%E7%94%B5%E5%B9%B3/" class="post-category">
-                                    三电平
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%9C%A8%E4%BF%AE%E4%BA%8E%E6%B7%8B/">
-                            <span class="chip bg-color">木修于淋</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%B8%89%E7%94%B5%E5%B9%B3DCDC/">
-                            <span class="chip bg-color">三电平DCDC</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/07/11/%E3%80%90%E4%B8%89%E7%94%B5%E5%B9%B3%E3%80%9103.%20%E7%A1%AE%E5%AE%9A%E6%9C%80%E7%BB%88%E7%9A%84%E4%B8%A4%E4%B8%AA%E8%B0%83%E5%88%B6%E7%8A%B6%E6%80%81%20/">
+                    <a href="/2024/07/11/san-dian-ping-03.que-ding-zui-zhong-de-liang-ge-diao-zhi-zhuang-tai/">
                         <div class="card-image">
                             
                             
@@ -480,9 +439,19 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                03. 确定最终的两个调制状态![image-20240711160439391](【三电平】03. 确定最终的两个调制状态 &#x2F;image-20240711160439391.png)
- 常用的载波形状：
-![](【三电平】03.
+                                03. 确定最终的两个调制状态
+
+
+image-20240711160439391
+
+常用的载波形状：
+
+
+
+image-20240711162201850
+
+红色的横线为调制信号，大于则为高电平，小于为低电平
+第一
                             
                         </div>
                         <div class="publish-info">
@@ -520,7 +489,66 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/07/09/%E3%80%90%E4%B8%89%E7%94%B5%E5%B9%B3%E3%80%9101.%20%E4%B8%89%E7%94%B5%E5%B9%B3DCDC%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84%E4%BB%8B%E7%BB%8D/">
+                    <a href="/2024/07/11/san-dian-ping-04.zai-bo-diao-zhi-guo-cheng-xiang-xi-fen-xi/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="04. 载波调制过程详细分析">
+                            
+                            <span class="card-title">04. 载波调制过程详细分析</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                04. 载波调制过程详细分析
+
+
+image-20240712101818471
+
+​
+设C为t2将其分成两份，为使两电容电位平衡，可得b的时间也为t2，由S101110
+可得载波为等腰三角波，被调制信号所截，为010 。
+
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-07-11
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E4%B8%89%E7%94%B5%E5%B9%B3/" class="post-category">
+                                    三电平
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%9C%A8%E4%BF%AE%E4%BA%8E%E6%B7%8B/">
+                            <span class="chip bg-color">木修于淋</span>
+                        </a>
+                        
+                        <a href="/tags/%E4%B8%89%E7%94%B5%E5%B9%B3DCDC/">
+                            <span class="chip bg-color">三电平DCDC</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/">
                         <div class="card-image">
                             
                             
@@ -533,9 +561,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                01. 三电平DCDC拓扑结构介绍单相三电平DCDC变换器-Buck-主电路结构
-![](【三电平】01. 三电平DCDC拓扑结构介绍&#x2F;image-20240709102410864.png)
-![](【三电平】01. 三电平DC
+                                01. 三电平DCDC拓扑结构介绍
+单相三电平DCDC变换器-Buck-主电路结构
+
+
+U1为输入电压，U2为输出电压，C12为分压电容，每个电容的电压为1/2；四个开关管，（都用的双向的，所以可以实现能量的双向流动）；下面的图把电
                             
                         </div>
                         <div class="publish-info">
@@ -573,63 +603,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/28/%E3%80%90%E6%96%87%E4%BA%94%E3%80%9108.%20MOSFET%E6%80%BB%E6%A0%85%E6%9E%81%E7%94%B5%E8%8D%B7Qg/">
-                        <div class="card-image">
-                            
-                            
-                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="08. MOSFET总栅极电荷Qg">
-                            
-                            <span class="card-title">08. MOSFET总栅极电荷Qg</span>
-                        </div>
-                    </a>
-
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                08. MOSFET总栅极电荷Qg啥是总栅极电荷（Qg）​	Qg是指： 为导通MOS而注入到栅极电极的电荷量。也称为栅极总电荷，单位为库仑(C)
-​	总栅极电荷值较大，则导通MOS所需的电容充电时间变长，开关损耗增加，数值越小，开关损耗（切
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-28
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E6%96%87%E5%A4%A9%E7%A5%A5%E4%BA%94%E5%88%86%E9%92%9F%E8%AF%BE%E5%A0%82/" class="post-category">
-                                    文天祥五分钟课堂
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/MOSFET/">
-                            <span class="chip bg-color">MOSFET</span>
-                        </a>
-                        
-                        <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
-                            <span class="chip bg-color">文天祥</span>
-                        </a>
-                        
-                        <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
-                            <span class="chip bg-color">晶体管</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/06/28/%E3%80%90%E6%96%87%E4%BA%94%E3%80%9109+10.%20SOA%E5%AE%89%E5%85%A8%E4%BD%BF%E7%94%A8%E6%99%B6%E4%BD%93%E7%AE%A1%E7%9A%84%E9%80%89%E5%AE%9A%E6%96%B9%E6%B3%95/">
+                    <a href="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/">
                         <div class="card-image">
                             
                             
@@ -642,8 +616,20 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                09+10. SOA安全使用晶体管的选定方法判断流程![](【文五】09+10. SOA安全使用晶体管的选定方法&#x2F;image-20240628210018165.png)
-1. 测定实际的电流、电压波形​	用示波器确定晶体管上的电
+                                09+10.
+SOA安全使用晶体管的选定方法
+判断流程
+
+1. 测定实际的电流、电压波形
+​
+用示波器确定晶体管上的电压电流，需要全部满足规格书上记载的额定值，特别应该确认下列项目
+
+
+
+晶体管的种类
+电压
+电流
+
                             
                         </div>
                         <div class="publish-info">
@@ -681,7 +667,67 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/22/%E3%80%90%E6%96%87%E4%BA%94%E3%80%9106.%20MOSFET%E5%8F%82%E6%95%B0%E7%9A%84%E6%B8%A9%E5%BA%A6%E7%89%B9%E6%80%A7/">
+                    <a href="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/">
+                        <div class="card-image">
+                            
+                            
+                            <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="08. MOSFET总栅极电荷Qg">
+                            
+                            <span class="card-title">08. MOSFET总栅极电荷Qg</span>
+                        </div>
+                    </a>
+
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                08. MOSFET总栅极电荷Qg
+#### 啥是总栅极电荷（Qg）
+​ Qg是指：
+为导通MOS而注入到栅极电极的电荷量。也称为栅极总电荷，单位为库仑(C)
+​
+总栅极电荷值较大，则导通MOS所需的电容充电时间变长，开关损耗增加
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-06-28
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E6%96%87%E5%A4%A9%E7%A5%A5%E4%BA%94%E5%88%86%E9%92%9F%E8%AF%BE%E5%A0%82/" class="post-category">
+                                    文天祥五分钟课堂
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/MOSFET/">
+                            <span class="chip bg-color">MOSFET</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
+                            <span class="chip bg-color">文天祥</span>
+                        </a>
+                        
+                        <a href="/tags/%E6%99%B6%E4%BD%93%E7%AE%A1/">
+                            <span class="chip bg-color">晶体管</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/">
                         <div class="card-image">
                             
                             
@@ -694,8 +740,26 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                06. MOSFET特性简单版，强调温度特性MOSFET特性MOSFET寄生电容模型图
-![image-20240622222006942](06. MOSFET参数的温度特性&#x2F;image-20240622222006942.pn
+                                06.
+MOSFET特性简单版，强调温度特性
+MOSFET特性
+MOSFET寄生电容模型图
+
+
+image-20240622222006942
+
+
+
+
+符号
+算式
+含义
+
+
+
+
+Ciss
+Cgs+Cgd
                             
                         </div>
                         <div class="publish-info">
@@ -737,7 +801,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/22/%E3%80%90%E6%96%87%E4%BA%94%E3%80%9107.%20MOSFET%E5%AF%BC%E9%80%9A%E7%94%B5%E9%98%BB%E7%89%B9%E6%80%A7/">
+                    <a href="/2024/06/22/wen-wu-07.mosfet-dao-tong-dian-zu-te-xing/">
                         <div class="card-image">
                             
                             
@@ -750,10 +814,13 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                0.7 MOSFET导通电阻特性啥是导通电阻​	MOS管工作时，漏极跟源极之间的阻值称为导通电阻（RDS(ON))
-​	数值越小，工作时损耗（功率损耗）越小。
+                                0.7 MOSFET导通电阻特性
+啥是导通电阻
+​ MOS管工作时，漏极跟源极之间的阻值称为导通电阻（RDS(ON))
+​ 数值越小，工作时损耗（功率损耗）越小。
 关于导通电阻的电气特性
-​	晶体管的消耗功率用集电极饱和电压（Vce（sat））
+​
+晶体管的消耗功率用集电极饱和电压（V
                             
                         </div>
                         <div class="publish-info">
@@ -795,7 +862,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/21/%E3%80%90LLC%E5%8F%98%E6%8D%A2%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%B8%89%E8%8A%82%20ZCS%E5%B9%B6%E8%81%94%E8%B0%90%E6%8C%AFLLC%E7%9A%84%E8%B0%90%E6%8C%AF%E5%88%86%E6%9E%90Q%E5%93%81%E8%B4%A8%E5%9B%A0%E6%95%B0%E7%9A%84%E6%AD%A3%E8%A7%A3/">
+                    <a href="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/">
                         <div class="card-image">
                             
                             
@@ -808,7 +875,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                【LLC变换器设计基础】第三节 ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解1.ZCS的理解​	对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现象，所以有较
+                                【LLC变换器设计基础】第三节
+ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解
+1.ZCS的理解
+​
+对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现
                             
                         </div>
                         <div class="publish-info">
@@ -850,7 +921,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/21/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E5%88%9D%E8%AF%86%E5%9B%BE%E7%BA%B8/">
+                    <a href="/2024/06/21/xiao-zhi-shi-chu-shi-tu-zhi/">
                         <div class="card-image">
                             
                             
@@ -865,17 +936,15 @@
                             
                                 初识图纸
 
+
+image-20240816082415415
+
+
 φ：直径
 R：半径
 M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，也就是公称直径
-螺纹式双线，这个外螺纹，螺纹的牙顶线就是大径粗直线，里面的小径是细直线
-在左视图里呢，外是牙顶圆，里面是牙底圆
 
-
-
-
-
-外面有圆角
+螺纹式双线，这个外螺纹，螺纹的牙顶线就是大径粗直线，里面
                             
                         </div>
                         <div class="publish-info">
@@ -909,7 +978,7 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/21/%E3%80%90%E6%96%87%E4%BA%94%E3%80%9104+05.%E6%95%B0%E5%AD%97%E6%99%B6%E4%BD%93%E7%AE%A1%E7%9A%84%E5%8E%9F%E7%90%86/">
+                    <a href="/2024/06/21/wen-wu-04-05.shu-zi-jing-ti-guan-de-yuan-li/">
                         <div class="card-image">
                             
                             
@@ -923,11 +992,15 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
                         <div class="summary block-with-text">
                             
                                 04+05.数字晶体管的原理
+
+
+image-20240621222247268
+
 这就是数字晶体管，里面加了俩内置电阻，（TR指的是晶体管，中间是集电极B，下面是发射极E，上面是集电极C）
 
 饱和条件
 
-要使晶体管达到饱和状态，集电极电流 IC与基极电流 IB的比率设为 20:1。这意味着：
+要使晶体管达到饱
                             
                         </div>
                         <div class="publish-info">
@@ -969,7 +1042,7 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/18/%E3%80%90LLC%E5%8F%98%E6%8D%A2%E5%99%A8%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%E3%80%91%E7%AC%AC%E4%BA%8C%E8%8A%82%20%E8%B0%90%E6%8C%AF%E5%8F%98%E6%8D%A2%E5%99%A8ZVS%E5%8E%9F%E7%90%86/">
+                    <a href="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/">
                         <div class="card-image">
                             
                             
@@ -982,8 +1055,15 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                【LLC变换器设计基础】第二节 谐振变换器ZVS原理1. 电感电容模式​	搞谐振电路的目的就是为了实现 ZVS   ZCS
-![image-20240618204118539](【LLC变换器设计基础】第二节 谐振变换器ZVS原理&#x2F
+                                【LLC变换器设计基础】第二节
+谐振变换器ZVS原理
+1. 电感电容模式
+​ 搞谐振电路的目的就是为了实现 ZVS ZCS
+
+
+image-20240618204118539
+
+​ 负载越重，gain越陡，越窄，Re越小，Q
                             
                         </div>
                         <div class="publish-info">
@@ -1119,6 +1199,9 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">51.1k</span>&nbsp;字
             
             
             

@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 
@@ -398,20 +402,20 @@
                 </a>
                 
                 
-                <a href="/categories/STM32/" title="STM32: 3">
+                <a href="/categories/simulink/" title="simulink: 1">
                     <span class="chip center-align waves-effect waves-light
-                             chip-active "
-                            style="background-color: #FEF9E7;">STM32
-                        <span class="tag-length">3</span>
+                             chip-default "
+                            style="background-color: #FEF9E7;">simulink
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/simulink/" title="simulink: 1">
+                <a href="/categories/STM32/" title="STM32: 3">
                     <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #F8F9F9;">simulink
-                        <span class="tag-length">1</span>
+                             chip-active "
+                            style="background-color: #F8F9F9;">STM32
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -573,7 +577,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/11/04/%E3%80%90stm32%E3%80%913.%20GPIO/">
+                    <a href="/2024/11/04/stm32-3.gpio/">
                         <div class="card-image tag-image">
                             
                             
@@ -585,12 +589,14 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                GPIO输出GPIO简介
+                                GPIO输出
+GPIO简介
+
 GPIO 通用输入输出口
 可配置8种输入输出模式
 引脚电平：0V-3.3V， 部分引脚可容忍5V
 输出模式下可控制端口输出高低电平，用以驱动LED、控制蜂鸣器、模拟通信协议输出时序等
-输入模式下可读取端口的高低电平
+输入模式下可
                             
                         </div>
                         <div class="publish-info">
@@ -628,7 +634,7 @@ GPIO 通用输入输出口
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/09/%E3%80%90stm32%E3%80%912.%20%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B/">
+                    <a href="/2024/08/09/stm32-2.xin-jian-gong-cheng/">
                         <div class="card-image tag-image">
                             
                             
@@ -640,19 +646,20 @@ GPIO 通用输入输出口
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                02. 新建工程目前STM32的开发方式主要有
+                                02. 新建工程
+目前STM32的开发方式主要有
 
 基于寄存器
 库函数
-需要固件库
 
+需要固件库
 
 HAL库
 
 1. 新建工程文件
-project—new project
-在工程文件里，新建一个文件夹用于存放工程结构，然后再里面输入项目名称
-需要添加工程
+
+project---new project
+在工程文件里，新建一个文件夹用于存放工程结构，然
                             
                         </div>
                         <div class="publish-info">
@@ -690,7 +697,7 @@ project—new project
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/07/20/%E3%80%90stm32%E3%80%911.%20STM32+%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">
+                    <a href="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/">
                         <div class="card-image tag-image">
                             
                             
@@ -702,8 +709,12 @@ project—new project
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                01. STM32+软件安装1. 硬件介绍![image-20240720213900952](【stm32】 1. STM32+软件安装&#x2F;image-20240720213900952.png)面板板
-![image-20240
+                                01. STM32+软件安装
+1. 硬件介绍
+面板板
+面包板的跳线，较短，可以贴在面包板上，适合长时间的接线
+上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块
+STM32最小系统
                             
                         </div>
                         <div class="publish-info">
@@ -813,6 +824,9 @@ project—new project
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">51.1k</span>&nbsp;字
             
             
             

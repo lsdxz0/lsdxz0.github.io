@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 
@@ -398,20 +402,20 @@
                 </a>
                 
                 
-                <a href="/categories/STM32/" title="STM32: 3">
+                <a href="/categories/simulink/" title="simulink: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">STM32
-                        <span class="tag-length">3</span>
+                            style="background-color: #FEF9E7;">simulink
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/simulink/" title="simulink: 1">
+                <a href="/categories/STM32/" title="STM32: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">simulink
-                        <span class="tag-length">1</span>
+                            style="background-color: #F8F9F9;">STM32
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -573,7 +577,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/12/04/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E8%B0%83%E5%88%B6%E6%96%B9%E5%BC%8F/">
+                    <a href="/2024/12/04/xiao-zhi-shi-diao-zhi-fang-shi/">
                         <div class="card-image tag-image">
                             
                             
@@ -585,7 +589,11 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                调制方式PWMPFM​	信号是有载波也就是常见的那个正弦波；跟调制信号（一条直线）构成的，所谓调频，调的是载波的频率，那么对应的方波呢？正弦波频率改变，幅值没变，占空比没变，周期变了。对应方波的周期也会发生变化
+                                调制方式
+PWM
+PFM
+​
+信号是有载波也就是常见的那个正弦波；跟调制信号（一条直线）构成的，所谓调频，调的是载波的频率，那么对应的方波呢？正弦波频率改变，幅值没变，占空比没变，周期变了。对应方波的周期也会发生变化
 
                             
                         </div>
@@ -620,7 +628,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/12/04/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91ZVS%E4%B8%8EZCS/">
+                    <a href="/2024/12/04/xiao-zhi-shi-zvs-yu-zcs/">
                         <div class="card-image tag-image">
                             
                             
@@ -633,6 +641,7 @@
                         <div class="summary block-with-text">
                             
                                 ZVS与ZCS
+
                             
                         </div>
                         <div class="publish-info">
@@ -666,7 +675,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/10/09/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E5%AE%B9%E5%99%A8/">
+                    <a href="/2024/10/09/xiao-zhi-shi-rong-qi/">
                         <div class="card-image tag-image">
                             
                             
@@ -678,11 +687,15 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                初识容器1. 如何理解Docker​	Docker利用‘’容器‘’技术，将应用程序及其所有依赖项打包在一个可移植的容器，封装成一个整体了，直接打开就能用
+                                初识容器
+1. 如何理解Docker
+​
+Docker利用‘’容器‘’技术，将应用程序及其所有依赖项打包在一个可移植的容器，封装成一个整体了，直接打开就能用
 2. Docker架构
 
+
 镜像：也就是容器的模版
-镜像仓库：用于存储和管理镜像，（上传
+镜像仓库：用于
                             
                         </div>
                         <div class="publish-info">
@@ -716,7 +729,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/27/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E7%94%B5%E6%84%9F%E5%8F%8D%E5%90%91%E7%94%B5%E5%8A%A8%E5%8A%BF/">
+                    <a href="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/">
                         <div class="card-image tag-image">
                             
                             
@@ -730,14 +743,15 @@
                             
                                 电感反向电动势
 
+
 电阻上面没有压降，所以施加在MOS管漏极上的电压就有6V
 那么将电阻换成电感会发生什么
 
+
+image-20240827110337793
+
 当mos管截止的时候，MOS管的漏极电压峰值高达40V
 
-电感电流不能突变
-
-MOS关断了，但是电流还需要一段时间才能停止流动，但是
                             
                         </div>
                         <div class="publish-info">
@@ -779,7 +793,7 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/21/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E4%BF%A1%E5%8F%B7%E9%9A%8F%E7%AC%94/">
+                    <a href="/2024/08/21/xiao-zhi-shi-xin-hao-sui-bi/">
                         <div class="card-image tag-image">
                             
                             
@@ -792,8 +806,10 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
                         <div class="summary block-with-text">
                             
                                 信号
+
 模拟信号是连续的，数字信号是离散的
-在数字逻辑电子电路中，数字信号是二进制的，即只有0 1 表示为高低电平
+在数字逻辑电子电路中，数字信号是二进制的，即只有0 1
+表示为高低电平
 
 
                             
@@ -829,7 +845,7 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/15/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E7%94%B5%E5%8E%8B%E5%A2%9E%E7%9B%8A%E6%9B%B2%E7%BA%BF/">
+                    <a href="/2024/08/15/xiao-zhi-shi-dian-ya-zeng-yi-qu-xian/">
                         <div class="card-image tag-image">
                             
                             
@@ -841,7 +857,12 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                电压增益曲线电压增益（Gv）定义为输出电压 Uo与输入电压Ui之比：$$G_v&#x3D;\frac{U_o}{U_i}$$​	电压增益曲线描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是变换器在不同频率下的性能表现
+                                电压增益曲线
+电压增益（Gv）定义为输出电压
+Uo与输入电压Ui之比： \[
+G_v=\frac{U_o}{U_i}
+\] ​
+电压增益曲线描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是变换器在不同频率下
                             
                         </div>
                         <div class="publish-info">
@@ -875,7 +896,7 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/07/16/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91simulink%E4%BD%BF%E7%94%A8%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98/">
+                    <a href="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/">
                         <div class="card-image tag-image">
                             
                             
@@ -887,10 +908,13 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                simulink使用中遇到的问题1. 旋转ctrl + R &#x3D; 旋转90°      ctrl + I &#x3D; 左右旋转
-2. SCOPE显示的波形带圆圈打开示波器-视图-样式-标记（maker）-修改为无（none）
+                                simulink使用中遇到的问题
+1. 旋转
+ctrl + R = 旋转90° ctrl + I = 左右旋转
+2. SCOPE显示的波形带圆圈
+打开示波器-视图-样式-标记（maker）-修改为无（none）
 
-3
+3. 谐振器中
                             
                         </div>
                         <div class="publish-info">
@@ -924,7 +948,7 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/06/21/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E5%88%9D%E8%AF%86%E5%9B%BE%E7%BA%B8/">
+                    <a href="/2024/06/21/xiao-zhi-shi-chu-shi-tu-zhi/">
                         <div class="card-image tag-image">
                             
                             
@@ -938,17 +962,15 @@ MOS关断了，但是电流还需要一段时间才能停止流动，但是
                             
                                 初识图纸
 
+
+image-20240816082415415
+
+
 φ：直径
 R：半径
 M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，也就是公称直径
-螺纹式双线，这个外螺纹，螺纹的牙顶线就是大径粗直线，里面的小径是细直线
-在左视图里呢，外是牙顶圆，里面是牙底圆
 
-
-
-
-
-外面有圆角
+螺纹式双线，这个外螺纹，螺纹的牙顶线就是大径粗直线，里面
                             
                         </div>
                         <div class="publish-info">
@@ -1054,6 +1076,9 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">51.1k</span>&nbsp;字
             
             
             

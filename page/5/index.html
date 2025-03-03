@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 
@@ -362,7 +366,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/21/%E3%80%90%E5%99%A8%E4%BB%B6%E3%80%9101%20MOS%E7%AE%A1/">
+                    <a href="/2024/08/21/qi-jian-01-mos-guan/">
                         <div class="card-image">
                             
                             
@@ -375,7 +379,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                电子器件01—–MOS管1. 三个极的判定![](【器件】 认识MOSFET&#x2F;ae3be941d58a27bc1c7ae66900a319c1.png)G极(gate)—栅极，不用说比较好认S极(source)—源极，不论是P沟道
+                                电子器件01-----MOS管
+1. 三个极的判定
+
+G极(gate)—栅极，不用说比较好认
+S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是
+D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边
                             
                         </div>
                         <div class="publish-info">
@@ -409,7 +418,7 @@
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/21/%E3%80%90%E5%99%A8%E4%BB%B6%E3%80%9103%20%E4%B8%89%E6%9E%81%E7%AE%A1/">
+                    <a href="/2024/08/21/qi-jian-03-san-ji-guan/">
                         <div class="card-image">
                             
                             
@@ -422,7 +431,9 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                电子器件03—–三极管1. 三个极的判定
+                                电子器件03-----三极管
+1. 三个极的判定
+
 
 B极 基极
 C 集电极，没有箭头
@@ -430,7 +441,10 @@ E 发射极， 有箭头
 
 2. N沟道与P沟道判别
 
-1.  NPN三极管：基极加高电压，集电极与发射极短路，即三极管导通；基极加低电压，集电极与发射极开路，即三极
+
+1. NPN三极管：
+基极加高电压，集电极与发射极短路，即三极管导通；
+
                             
                         </div>
                         <div class="publish-info">
@@ -464,7 +478,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/21/%E3%80%90%E5%99%A8%E4%BB%B6%E3%80%9104%20TVS/">
+                    <a href="/2024/08/21/qi-jian-04-tvs/">
                         <div class="card-image">
                             
                             
@@ -477,8 +491,12 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                电子器件04—–TVS​	TVS（Transient Voltage Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：抑制电压峰值
-![](【小知识】 TVS&#x2F;imag
+                                电子器件04-----TVS
+​ TVS（Transient Voltage
+Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：抑制电压峰值
+
+​
+比如这里，电源为5V，
                             
                         </div>
                         <div class="publish-info">
@@ -512,7 +530,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/21/%E3%80%90%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF%E3%80%91%20mos%E9%98%B2%E5%8F%8D%E6%8E%A5%E7%94%B5%E8%B7%AF/">
+                    <a href="/2024/08/21/ji-chu-dian-lu-mos-fang-fan-jie-dian-lu/">
                         <div class="card-image">
                             
                             
@@ -525,17 +543,21 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                mos管防反接电路why
+                                mos管防反接电路
+why
 反接会导致许多电子器件烧毁
 常见的放反接电路有四种
 
 二极管串联
-![](【小知识】 mos防反接电路&#x2F;image-20240821103201763.png)
+
+
 问题是功耗过大
 
-
 整流桥
-可以实现无论正
+
+可以实现无论正反接电路都能导通
+
+不管是一个二极管还是多个二极管，都会产生管压降并消耗
                             
                         </div>
                         <div class="publish-info">
@@ -569,7 +591,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/21/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E4%BF%A1%E5%8F%B7%E9%9A%8F%E7%AC%94/">
+                    <a href="/2024/08/21/xiao-zhi-shi-xin-hao-sui-bi/">
                         <div class="card-image">
                             
                             
@@ -583,8 +605,10 @@ E 发射极， 有箭头
                         <div class="summary block-with-text">
                             
                                 信号
+
 模拟信号是连续的，数字信号是离散的
-在数字逻辑电子电路中，数字信号是二进制的，即只有0 1 表示为高低电平
+在数字逻辑电子电路中，数字信号是二进制的，即只有0 1
+表示为高低电平
 
 
                             
@@ -620,7 +644,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/19/%E3%80%90%E5%8D%95%E7%89%87%E6%9C%BA%E3%80%91%20%E7%9C%8B%E9%97%A8%E7%8B%97%20/">
+                    <a href="/2024/08/19/dan-pian-ji-kan-men-gou/">
                         <div class="card-image">
                             
                             
@@ -633,10 +657,12 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                看门狗**设计目的：**防止死机，cpu死机后，触发看门狗，复位
-什么是看门狗看门狗—-Watch Dog Timer  本质还是一个定时器
-![](【单片机】 看门狗 &#x2F;image-20240819141651132.png)
+                                看门狗
+设计目的：防止死机，cpu死机后，触发看门狗，复位
+什么是看门狗
+看门狗----Watch Dog Timer 本质还是一个定时器
 
+比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时
                             
                         </div>
                         <div class="publish-info">
@@ -670,7 +696,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/19/%E3%80%90%E9%80%9A%E8%AE%AF%E3%80%91%20CAN%E6%80%BB%E7%BA%BF/">
+                    <a href="/2024/08/19/tong-xun-can-zong-xian/">
                         <div class="card-image">
                             
                             
@@ -683,11 +709,14 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                CAN总线1. 为什么要用CANCAN通讯协议是什么​	CAN通讯协议是一种多主多节点架构^1的串行通讯协议^2 
+                                CAN总线
+1. 为什么要用CAN
+CAN通讯协议是什么
+​ CAN通讯协议是一种多主多节点架构1的串行通讯协议2
 可以简单把CAN通信理解成开一场电话会议，
 
 当一个人讲话时其他人就听（广播），
-当多个人同时讲话时则根据一定规则来决定谁先
+当多个人同时讲话时则根据一定
                             
                         </div>
                         <div class="publish-info">
@@ -721,7 +750,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/15/%E3%80%90%E5%B0%8F%E7%9F%A5%E8%AF%86%E3%80%91%E7%94%B5%E5%8E%8B%E5%A2%9E%E7%9B%8A%E6%9B%B2%E7%BA%BF/">
+                    <a href="/2024/08/15/xiao-zhi-shi-dian-ya-zeng-yi-qu-xian/">
                         <div class="card-image">
                             
                             
@@ -734,7 +763,12 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                电压增益曲线电压增益（Gv）定义为输出电压 Uo与输入电压Ui之比：$$G_v&#x3D;\frac{U_o}{U_i}$$​	电压增益曲线描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是变换器在不同频率下的性能表现
+                                电压增益曲线
+电压增益（Gv）定义为输出电压
+Uo与输入电压Ui之比： \[
+G_v=\frac{U_o}{U_i}
+\] ​
+电压增益曲线描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是变换器在不同频率下
                             
                         </div>
                         <div class="publish-info">
@@ -768,7 +802,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/12/%E3%80%90%E6%8E%92%E7%89%88%E3%80%91%20mathtype%E5%85%AC%E5%BC%8F%E6%8E%92%E7%89%88/">
+                    <a href="/2024/08/12/pai-ban-mathtype-gong-shi-pai-ban/">
                         <div class="card-image">
                             
                             
@@ -781,9 +815,17 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                mathtype 公式排版公式右编号实现效果：![](【排版】 mathtype公式排版&#x2F;image-20240812140321850.png)
+                                mathtype 公式排版
+公式右编号
+实现效果：
 实现：
-![](【排版】 mathtype公式排版&#x2F;image-2024
+
+点击右编号，默认直接生成，可以得到
+
+点击编号，插入编号，格式化
+
+将节编号取消就是期刊用的（1）了
+，引用的时候，点击mathtype上面的插入引用这里去双
                             
                         </div>
                         <div class="publish-info">
@@ -817,7 +859,7 @@ E 发射极， 有箭头
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/09/%E3%80%90stm32%E3%80%912.%20%E6%96%B0%E5%BB%BA%E5%B7%A5%E7%A8%8B/">
+                    <a href="/2024/08/09/stm32-2.xin-jian-gong-cheng/">
                         <div class="card-image">
                             
                             
@@ -830,19 +872,20 @@ E 发射极， 有箭头
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                02. 新建工程目前STM32的开发方式主要有
+                                02. 新建工程
+目前STM32的开发方式主要有
 
 基于寄存器
 库函数
-需要固件库
 
+需要固件库
 
 HAL库
 
 1. 新建工程文件
-project—new project
-在工程文件里，新建一个文件夹用于存放工程结构，然后再里面输入项目名称
-需要添加工程
+
+project---new project
+在工程文件里，新建一个文件夹用于存放工程结构，然
                             
                         </div>
                         <div class="publish-info">
@@ -880,7 +923,7 @@ project—new project
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/02/%E3%80%90%E6%8E%A7%E5%88%B6%E5%99%A8%E3%80%91%E8%87%AA%E9%80%82%E5%BA%94%E6%8E%A7%E5%88%B6/">
+                    <a href="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/">
                         <div class="card-image">
                             
                             
@@ -893,8 +936,14 @@ project—new project
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                自适应控制什么是自适应控制​	自适应控制（APC）是一种带有在线参数识别的控制方法，自适应控制可以看做是一个  能根据环境变化  智能调节自身特性  的反馈控制系统。
-​	自适应控制的研究对象是具有不确定性的系统。能修正自己的特性以适应对象
+                                自适应控制
+什么是自适应控制
+​
+自适应控制（APC）是一种带有在线参数识别的控制方法，自适应控制可以看做是一个
+能根据环境变化 智能调节自身特性
+的反馈控制系统。
+​
+自适应控制的研究对象是具有不确定性的系统。能修正自己的特
                             
                         </div>
                         <div class="publish-info">
@@ -928,7 +977,7 @@ project—new project
             
             <div class="article col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/01/%E3%80%90%E6%8E%A7%E5%88%B6%E5%99%A8%E3%80%91%E8%87%AA%E6%8A%97%E6%89%B0%E6%8E%A7%E5%88%B6/">
+                    <a href="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/">
                         <div class="card-image">
                             
                             
@@ -941,13 +990,15 @@ project—new project
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                自抗扰控制器自抗扰控制器的设计分为三部分：
+                                自抗扰控制器
+自抗扰控制器的设计分为三部分：
 
-**安排过渡过程：**就是用跟踪微分器（TD）合理提取微分
-**估计状态和总扰动：**用状态扩张观测器（ESO）估计状态和总扰动
-**计算控制量：**不局限于比例、微分和积分的线性组合
+安排过渡过程：就是用跟踪微分器（TD）合理提取微分
+估计状态和总扰动：用状态扩张观测器（ESO）估计状态和总扰动
+计算控制量：不局限于比例、微分和积分的线性组合
 
 原理
+
 
                             
                         </div>
@@ -1080,6 +1131,9 @@ project—new project
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">51.1k</span>&nbsp;字
             
             
             

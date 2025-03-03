@@ -29,7 +29,11 @@
 
     <script src="/libs/jquery/jquery.min.js"></script>
 
-<meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 
@@ -398,20 +402,20 @@
                 </a>
                 
                 
-                <a href="/categories/STM32/" title="STM32: 3">
+                <a href="/categories/simulink/" title="simulink: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #FEF9E7;">STM32
-                        <span class="tag-length">3</span>
+                            style="background-color: #FEF9E7;">simulink
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/simulink/" title="simulink: 1">
+                <a href="/categories/STM32/" title="STM32: 3">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8F9F9;">simulink
-                        <span class="tag-length">1</span>
+                            style="background-color: #F8F9F9;">STM32
+                        <span class="tag-length">3</span>
                     </span>
                 </a>
                 
@@ -573,7 +577,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/09/10/%E3%80%90%E5%8D%95%E7%89%87%E6%9C%BA%E3%80%91GPIO%E8%BE%93%E5%87%BA/">
+                    <a href="/2024/09/10/dan-pian-ji-gpio-shu-chu/">
                         <div class="card-image tag-image">
                             
                             
@@ -585,16 +589,18 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                GPIO输出GPIO内部示意图
-​	所以GPIO配置为输出时，就会处于这三种状态
+                                GPIO输出
+GPIO内部示意图
+
+​ 所以GPIO配置为输出时，就会处于这三种状态
 推挽输出
+
 把这俩拿出来做个组合
 
-​	输出高电平为推，把电流推出去
+​ 输出高电平为推，把电流推出去
 
-​	输出为低电平的时候，电流流入，给外面的MOS的栅极放电，给电流挽回来
-开漏输出
-这个
+​
+输出为低电平的时候，电流流入，给外面的MOS的栅极放电，
                             
                         </div>
                         <div class="publish-info">
@@ -632,7 +638,7 @@
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
-                    <a href="/2024/08/19/%E3%80%90%E5%8D%95%E7%89%87%E6%9C%BA%E3%80%91%20%E7%9C%8B%E9%97%A8%E7%8B%97%20/">
+                    <a href="/2024/08/19/dan-pian-ji-kan-men-gou/">
                         <div class="card-image tag-image">
                             
                             
@@ -644,10 +650,12 @@
                     <div class="card-content article-content">
                         <div class="summary block-with-text">
                             
-                                看门狗**设计目的：**防止死机，cpu死机后，触发看门狗，复位
-什么是看门狗看门狗—-Watch Dog Timer  本质还是一个定时器
-![](【单片机】 看门狗 &#x2F;image-20240819141651132.png)
+                                看门狗
+设计目的：防止死机，cpu死机后，触发看门狗，复位
+什么是看门狗
+看门狗----Watch Dog Timer 本质还是一个定时器
 
+比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时
                             
                         </div>
                         <div class="publish-info">
@@ -753,6 +761,9 @@
             |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
             |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
             <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">51.1k</span>&nbsp;字
             
             
             
