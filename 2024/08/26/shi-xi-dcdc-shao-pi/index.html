@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    295
+                    9
                 </div>
                 
 
@@ -471,61 +471,26 @@
         
 
         
+        <!-- 代码块折行 -->
+        <style type="text/css">
+            code[class*="language-"], pre[class*="language-"] { white-space: pre-wrap !important; }
+        </style>
+        
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="dcdc烧坏">DCDC烧坏</h2>
-<h3 id="状况分析">状况分析</h3>
-<p>​ 在dcdc电路中，两个mos管同时烧坏</p>
-<h3 id="可能原因分析">可能原因分析</h3>
-<ul>
-<li>瞬态电压过大
-<ul>
-<li>正向</li>
-<li>反向</li>
-</ul></li>
-<li>两个mos管同时导通了</li>
-<li>选型</li>
-<li>质量</li>
-<li>过温
-<ul>
-<li>过温在本次案例中可能性过小，有封装，有风扇</li>
-</ul></li>
-</ul>
-<h3 id="实验">实验</h3>
-<ul>
-<li>切片
-<ul>
-<li>主要来看看是哪部分的问题</li>
-<li>正向的时候，是PN结有问题</li>
-<li>反向的时候，是二极管有问题</li>
-</ul></li>
-<li>软件
-<ul>
-<li>实时监控</li>
-</ul></li>
-<li>硬件
-<ul>
-<li>用示波器接到变换器上，来测量行驶过程中的相关波形</li>
-</ul></li>
-<li>主要测试电位
-<ul>
-<li>MOS管的电压</li>
-<li>DCDC输入电压</li>
-<li>DC内部的工作电流</li>
-</ul></li>
-</ul>
-<h4 id="困难">困难</h4>
-<p>​
-软件部分只能做正向的，做不了反向的，硬件也差不多，示波器只能看到正向情况的输出波形，</p>
-<p>​
-那么考虑是不是可以加个整流，对于正压不处理，反压经过整流再进行采集</p>
-<h3 id="相关分析">相关分析</h3>
-<ul>
-<li>该设计中未考虑瞬态抑制，只考虑MOS的耐压</li>
-<li>在某品牌的产品中也出现过类似的~不过更为严重，PCB的铜板也烧坏了，原因是正负极反接了</li>
-</ul>
-
+                <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="514afbe4f347f18d964cc1f75d7830d904c362c353a25f76ceb5a128263cf292">dba70c5695197b5b3c51187085f4377b41ac6de5678be60d1b0d4642265920d0a6fca921a8320a2c9d7e7b6586cc8330948d5146ec6f0b59c510a64da18a6404dfe6cfbb327b8a93ee383c44d7db10ce332e74242bac618faea90bc03a3d8e07bc4c02d60a4f0eb70607238a767332333a5b4a09de6f8505264f7fec0d998f6e8593e3c2fd696150200ca5f2b05f39373a19f924c0e44d8ce75672861381ad146c3b79fdb34b85f73739180b261f6d3b2788222d16b45aa3216eae57059a187d6ff02f5e30dbb7378bd4b46cdcdb889f6b52a55ffead3565d0540d40e26c44470ad4c30fbf1b33eb49279a51209e003829d543de452216a802dcb7aeeede2a1f1fbd2a3e74c76443c6b59810d3f3949936846cc64775da6e966b331ba2f95a90c9c2fc8c3a01eb24af09564f37eb8f3bfeb26b25b57525d8c45c61e79390673b35837c4e8d551ad7c568645e2c178e98e0f7cf1bb0d634b4569969a37fdcd98f2b00af9ade00eb8f7bc403880c454ec79f8b5d2b3f25040d3b87af58724201a0edf21037a13e20cdffc1893884027a6a6504c0301a547ecbb59bfd9dbdcd6b699bac385e607245a0a7a7b9b69c3c204c6bd7a5a32624080ed3f07927cee120f5225b84e3bae56184f19e198131a9cb7c50d6f4005cac6c2d191b8ab4bce9a4e64bf08cca8398c4a8ab9e57665456faa1cea05d935edfd774838a674c935bfd992a3d859557cc9eb30fe1ac41ffe67d9059de6ea2a5813b566575c3f3cdf391567e76ad211874f931488ca9d3f72e898a3840f2e4d9e1e5a380976c8624cf60c3ba960ca2b00ae911aa5fc3590cbd87a8408cc332c5be889673d9b3efbd60b9c90565727ccacd57a99c5109fd2fffe9f4a9863a8bfb8b4e91520f3897e59839d03ed419e1b7f2b6c5347ed7b5bffbd50bb82f0e9a4a430998cce6edcd78cdc1127a086691c362e88f2cac57100ab4f03a69eeb68ceed02c8cba57f004b6e760130ab089a99efd58a27ce52da102b0a6c49ba834715270ba6a120c4681a795343f02b61285ac1ba5633b06bf332c5e75d3b9de7d5943d1dd14f3660fc15ebedcb4988a9248a5b1eb3dc96e163f3d75502fc6b3f34e06c5712f4f6cd34b45983b0edc33c0a7ae932f46162db3472ff85b4f7a1dad4a7a1694254442596a2bd8f5d7e81b1a625e93da029a82444e2dbdc446dec634b724a7026d7e3d84ba6c9d83e3dd5f25fc9ac730e17f26f0c11530d5c1f79c95cd55427cea0bc54388bf990f5bf8a33b90313f6aa3e31519f6ee7a2a58a373e665195733d8e5db2576792656906ded97daf007a27fdfc3a3072c9d6b12c608bd0534c40a5d89a75246e2ac50cc4215efdd30abb5838a2e95be892ade92abaf920db030c8a129705727c4c01cc726c6f3ad533761a4e7cc2f6a1e2828509b11ce9fd10b9b08b6aeb39ddc0fdea5739666820c06eb2996a73316aa20e414ba5ef27629ee346faf9a0eb5a42f769183b22b2bee4d2c1ec952b8371f54c33830a33972a943a21282a83eb600d3d6e2af595a79aa8588326f6c7a459cc871fc5b556da46552156f5bc49b6cc5aa6a742635e0778623c4d787503b462011cbd76642648cfb4fd63c6ebebf226eadb4aae2db01d01c1bccaa5277cbdbf918d73615b7badfed20d13eb58233d992cf60f9b64fed15c0e85190f1594c13d534a99952b4a1e953918490274798990ec9a189dfffef0ae901be3d6f172149b8808a52ca476281ec42977ef38a185bd5c54dea3c87be9c7625895bce085de6c2af0a7f2d1a0b224e9fa0e6bffbf105dc2da2d30ddb4ddb1386ea680ab662b69d0a6d0685ff8d8f284cddeed41b524c54ded01d715ed047283fc253d47bb903636eba96c4c45ac31988ce17c0212e1456966de066717cd3673e11aec72e2f8af3815d25843c7f913877ea228a3ba445f17b202dd8a78a0a8dc45aba471e6d8f51cda0b38a77c61d8ec511ec86e89d76ad8fe5cd9ab84c07cde69aa7e82308f9b972eae25656688d8870e2eae3c88d8c9916f982ea18c29a34a02dd4864248763484bbb222e6885f3667623ce724e5001b4e9f59457127a6083ef1ace21fea50651e955a2df3166ee1f20d029799307488e4b480a4f5af8d1b38e38501e78e0866424a078905ec3e82a72eb83bef7ffa737de63c</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
                 
             </div>
             <hr/>
@@ -611,132 +576,6 @@
 
                 </div>
             </div>
-            
-                <style>
-    #reward {
-        margin: 40px 0;
-        text-align: center;
-    }
-
-    #reward .reward-link {
-        font-size: 1.4rem;
-        line-height: 38px;
-    }
-
-    #reward .btn-floating:hover {
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
-    }
-
-    #rewardModal {
-        width: 320px;
-        height: 350px;
-    }
-
-    #rewardModal .reward-title {
-        margin: 15px auto;
-        padding-bottom: 5px;
-    }
-
-    #rewardModal .modal-content {
-        padding: 10px;
-    }
-
-    #rewardModal .close {
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        color: rgba(0, 0, 0, 0.5);
-        font-size: 1.3rem;
-        line-height: 20px;
-        cursor: pointer;
-    }
-
-    #rewardModal .close:hover {
-        color: #ef5350;
-        transform: scale(1.3);
-        -moz-transform:scale(1.3);
-        -webkit-transform:scale(1.3);
-        -o-transform:scale(1.3);
-    }
-
-    #rewardModal .reward-tabs {
-        margin: 0 auto;
-        width: 210px;
-    }
-
-    .reward-tabs .tabs {
-        height: 38px;
-        margin: 10px auto;
-        padding-left: 0;
-    }
-
-    .reward-content ul {
-        padding-left: 0 !important;
-    }
-
-    .reward-tabs .tabs .tab {
-        height: 38px;
-        line-height: 38px;
-    }
-
-    .reward-tabs .tab a {
-        color: #fff;
-        background-color: #ccc;
-    }
-
-    .reward-tabs .tab a:hover {
-        background-color: #ccc;
-        color: #fff;
-    }
-
-    .reward-tabs .wechat-tab .active {
-        color: #fff !important;
-        background-color: #22AB38 !important;
-    }
-
-    .reward-tabs .alipay-tab .active {
-        color: #fff !important;
-        background-color: #019FE8 !important;
-    }
-
-    .reward-tabs .reward-img {
-        width: 210px;
-        height: 210px;
-    }
-</style>
-
-<div id="reward">
-    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
-
-    <!-- Modal Structure -->
-    <div id="rewardModal" class="modal">
-        <div class="modal-content">
-            <a class="close modal-close"><i class="fas fa-times"></i></a>
-            <h4 class="reward-title">你的赏识是我前进的动力</h4>
-            <div class="reward-content">
-                <div class="reward-tabs">
-                    <ul class="tabs row">
-                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
-                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
-                    </ul>
-                    <div id="alipay">
-                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
-                    </div>
-                    <div id="wechat">
-                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $(function () {
-        $('.tabs').tabs();
-    });
-</script>
-
             
         </div>
     </div>
@@ -997,7 +836,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">51k</span>&nbsp;字
+                class="white-color">50.7k</span>&nbsp;字
             
             
             
@@ -1021,13 +860,13 @@
             
         </div>
         <div class="col s12 m4 l4 social-link social-statis">
-    <a href="https://github.com/blinkfox" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+    <a href="https://github.com/lsdxz0" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
         <i class="fab fa-github"></i>
     </a>
 
 
 
-    <a href="mailto:1181062873@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+    <a href="mailto:1350721740@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
         <i class="fas fa-envelope-open"></i>
     </a>
 
@@ -1037,7 +876,7 @@
 
 
 
-    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1181062873" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1181062873" data-position="top" data-delay="50">
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1350721740" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1350721740" data-position="top" data-delay="50">
         <i class="fab fa-qq"></i>
     </a>
 
