@@ -502,37 +502,29 @@
             <div id="articleContent">
                 <h2 id="三电平dcdc拓扑结构介绍">01. 三电平DCDC拓扑结构介绍</h2>
 <p><strong>单相三电平DCDC变换器-Buck-主电路结构</strong></p>
-<p><img
-src="【三电平】01.%20三电平DCDC拓扑结构介绍/image-20240709102410864.png" /></p>
-<p><img
-src="【三电平】01.%20三电平DCDC拓扑结构介绍/image-20240709102432328.png" /></p>
+<p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102410864.png"></p>
+<p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102432328.png"></p>
 <p>U<sub>1</sub>为输入电压，U<sub>2</sub>为输出电压，C<sub>12</sub>为分压电容，每个电容的电压为1/2；四个开关管，（都用的双向的，所以可以实现能量的双向流动）；下面的图把电感分为两个是为了对称，为上图的一半；</p>
 <ul>
 <li><strong>三个电平</strong>： **U<sub>ab</sub>：
 0（右侧电路通过S<sub>23</sub>的二极管续流，ab两侧电位差为0，电压为0）</li>
 </ul>
 <figure>
-<img
-src="【三电平】01.%20三电平DCDC拓扑结构介绍/image-20240709103928483.png"
-alt="image-20240709103928483" />
+<img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709103928483.png" alt="image-20240709103928483">
 <figcaption aria-hidden="true">image-20240709103928483</figcaption>
 </figure>
 <p><strong>U<sub>1</sub>/2</strong>：U<sub>ab</sub>为电容C<sub>1</sub>两端的电压</p>
-<p><img
-src="【三电平】01.%20三电平DCDC拓扑结构介绍/image-20240709104134177.png" /></p>
+<p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104134177.png"></p>
 <p><strong>-U<sub>1</sub>/2</strong>：U<sub>ab</sub>为电容C<sub>2</sub>两端的电压</p>
-<p><img
-src="【三电平】01.%20三电平DCDC拓扑结构介绍/image-20240709104236304.png" /></p>
+<p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104236304.png"></p>
 <p>​
 S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub>,它的耐压基准应该根据U<sub>1</sub>/2来选择，S<sub>4</sub>同理(根据前面一个图来选)</p>
 <p><strong>U<sub>1</sub></strong>:</p>
-<p><img
-src="【三电平】01.%20三电平DCDC拓扑结构介绍/image-20240709104457821.png" /></p>
+<p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709104457821.png"></p>
 <p>这里S<sub>2,3</sub>分别与C<sub>1,2</sub>并联了，其耐压也是以U<sub>1</sub>/2</p>
 <ul>
 <li>S<sub>1,2</sub>互补导通，S<sub>3,4</sub>互补导通，否则上下直流侧会短路从而烧毁管子，则有且仅有四种开关状态</li>
-<li><h2
-id="两对不同工作状态的管子则最简要么他们的调制信号相同载波不同通常是相位不同或者相反">两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反</h2></li>
+<li><h2 id="两对不同工作状态的管子则最简要么他们的调制信号相同载波不同通常是相位不同或者相反">两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反</h2></li>
 </ul>
 <p><strong>补充：关于调制信号与载波</strong></p>
 <p>​ <strong>调制信号</strong>：通常是个低频信号</p>
@@ -859,13 +851,13 @@ id="两对不同工作状态的管子则最简要么他们的调制信号相同�
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/">
+                <a href="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="09+10. SOA安全使用晶体管的选定方法">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="08. MOSFET总栅极电荷Qg">
                         
-                        <span class="card-title">09+10. SOA安全使用晶体管的选定方法</span>
+                        <span class="card-title">08. MOSFET总栅极电荷Qg</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -892,6 +884,10 @@ id="两对不同工作状态的管子则最简要么他们的调制信号相同�
                 </div>
                 
                 <div class="card-action article-tags">
+                    
+                    <a href="/tags/MOSFET/">
+                        <span class="chip bg-color">MOSFET</span>
+                    </a>
                     
                     <a href="/tags/%E6%96%87%E5%A4%A9%E7%A5%A5/">
                         <span class="chip bg-color">文天祥</span>

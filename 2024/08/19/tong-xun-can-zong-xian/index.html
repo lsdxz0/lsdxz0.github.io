@@ -499,11 +499,7 @@
                 <h2 id="can总线">CAN总线</h2>
 <h3 id="为什么要用can">1. 为什么要用CAN</h3>
 <h5 id="can通讯协议是什么">CAN通讯协议是什么</h5>
-<p>​ CAN通讯协议是一种<strong>多主多节点架构</strong><a href="#fn1"
-class="footnote-ref" id="fnref1"
-role="doc-noteref"><sup>1</sup></a>的<strong>串行通讯协议</strong><a
-href="#fn2" class="footnote-ref" id="fnref2"
-role="doc-noteref"><sup>2</sup></a></p>
+<p>​ CAN通讯协议是一种<strong>多主多节点架构</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>的<strong>串行通讯协议</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
 <p>可以简单把CAN通信理解成开一场电话会议，</p>
 <ul>
 <li>当一个人讲话时其他人就听（广播），</li>
@@ -533,8 +529,7 @@ role="doc-noteref"><sup>2</sup></a></p>
 <p>​ CAN 协议如下图 所示涵盖了 ISO 规定的 OSI
 基本参照模型中的传输层、数据链路层及物理层。</p>
 <figure>
-<img src="【通讯】%20CAN总线/image-20241021141022021.png"
-alt="ISO/OSI基础参照模型" />
+<img src="/2024/08/19/tong-xun-can-zong-xian/image-20241021141022021.png" alt="ISO/OSI基础参照模型">
 <figcaption aria-hidden="true">ISO/OSI基础参照模型</figcaption>
 </figure>
 <h4 id="物理层硬件部分">2.1 物理层（硬件部分）</h4>
@@ -545,16 +540,11 @@ CAN_High 和 CAN_Low
 <ul>
 <li>差分信号中的两根数据线通常是通过<strong>双绞线</strong>布线的，会受到等效干扰，即某一时刻干扰使得一根数据线电压上升20mV，那么同样的干扰也会影响另一根，导致类似的电压变化，而差分信号只依赖于两线之间的电压差，而不是绝对电压值。</li>
 </ul>
-<section id="footnotes" class="footnotes footnotes-end-of-document"
-role="doc-endnotes">
-<hr />
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
 <ol>
-<li
-id="fn1"><p>多主结构：多个节点都有发起通信的能力，不依赖中心控制；；多节点结构：在这个网络里，每个节点既可以发送信息，也可以接收其他节点发来的信息，<a
-href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li
-id="fn2"><p>（区别于并行通讯协议，并行是同时通过多条数据线传输多个比特，串行是一个接一个传输比特）<a
-href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p>多主结构：多个节点都有发起通信的能力，不依赖中心控制；；多节点结构：在这个网络里，每个节点既可以发送信息，也可以接收其他节点发来的信息，<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>（区别于并行通讯协议，并行是同时通过多条数据线传输多个比特，串行是一个接一个传输比特）<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 

@@ -498,12 +498,11 @@
             <div id="articleContent">
                 <h2 id="运算放大器">运算放大器</h2>
 <figure>
-<img src="【模电】运算放大器/image-20240828142143361.png"
-alt="运算放大器原理图" />
+<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142143361.png" alt="运算放大器原理图">
 <figcaption aria-hidden="true">运算放大器原理图</figcaption>
 </figure>
 <h5 id="同相反相">同相？反相？</h5>
-<p><img src="【模电】运算放大器/image-20240829082119300.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829082119300.png"></p>
 <h3 id="了解虚短-虚断">了解“虚短” “虚断”</h3>
 <ul>
 <li>理想运放的输入阻抗无穷大----------虚断
@@ -513,7 +512,7 @@ alt="运算放大器原理图" />
 </ul></li>
 <li>当给运放引入负反馈时，U<sub>n</sub>=U<sub>p</sub>-------虚短
 <ul>
-<li><img src="【模电】运算放大器/image-20240828142536084.png" /></li>
+<li><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142536084.png"></li>
 <li>随着反馈，U<sub>p</sub>-U<sub>N</sub>越来越小，最后基本没差，也就是在右侧的图上不断左移，U<sub>n</sub>跟U<sub>out</sub>都在不断修正，最终得到的结果就是U<sub>p</sub>=U<sub>n</sub>;</li>
 </ul></li>
 </ul>
@@ -524,7 +523,7 @@ alt="运算放大器原理图" />
 <li>如果同相输入(+)电压高于反相输入(-), 输出高电平</li>
 <li>如果同相输入(+)电压低于反相输入(-), 输出低电平</li>
 </ul>
-<p><img src="【模电】运算放大器/image-20240828143642353.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828143642353.png"></p>
 <p>​ 反馈接负输入端(存疑，视频里没有反馈，搞不懂)</p>
 <p>运放在不断检测正负输入端的电压</p>
 <ul>
@@ -538,10 +537,10 @@ alt="运算放大器原理图" />
 <p>PS：运放处于非线性状态时：虚短不成立，虚断可以使用。</p>
 <h3 id="运算放大器的应用">运算放大器的应用</h3>
 <h5 id="同相放大电路">同相放大电路</h5>
-<p><img src="【模电】运算放大器/image-20240829084355954.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829084355954.png"></p>
 <p>​ 因为虚短-----&gt;V<sub>P</sub>=V-</p>
 <p>​ 因为虚断-----&gt;输入端没有电流，所以两个电阻串联</p>
-<p>​<br />
+<p>​<br>
 <span class="math display">\[
 I=\frac{V_o}{R_1+R_2}\cdot\cdot\cdot\cdot V_p=V_-=I\cdot R_2\leftarrow
 \]</span></p>
@@ -550,7 +549,7 @@ V_o=\frac{R_1+R_2}{R_2}V_p=1+\frac{R_1}{R_2}V_p
 \]</span></p>
 <p>​ 输出和输出信号是相位相同。放大倍数由Rg和Rf共同决定。</p>
 <h5 id="电压跟随器">电压跟随器</h5>
-<p><img src="【模电】运算放大器/image-20240829104518389.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829104518389.png"></p>
 <p>​
 输出电压通过反馈电阻（或直接）接到反相输入端，反相输入端不再接地，信号由正向输入端输入</p>
 <p>特点：<strong>高阻抗输入，大到兆欧级别，低阻抗输出，低到几欧姆</strong></p>
@@ -565,10 +564,10 @@ V_o=\frac{R_1+R_2}{R_2}V_p=1+\frac{R_1}{R_2}V_p
 <li>适合用于分压电路</li>
 </ul>
 <h5 id="反向放大电路">反向放大电路</h5>
-<p><img src="【模电】运算放大器/image-20240829085547572.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829085547572.png"></p>
 <p>​ 因为虚短-----&gt;V<sub>P</sub>=V-</p>
 <p>​ 因为虚断-----&gt;输入端没有电流，所以两个电阻串联</p>
-<p>​<br />
+<p>​<br>
 <span class="math display">\[
 I_1=\frac{V_n-V_-}{R_1}\cdot\cdot\cdot\cdot\cdot
 I_f=\frac{V_--V_o}{R_f}\leftarrow
@@ -578,27 +577,25 @@ I_f=\frac{V_--V_o}{R_f}\leftarrow
 \]</span></p>
 <p>​ 输出和输出信号是相位相反。放大倍数由Rg和Rf共同决定。</p>
 <h5 id="加法电路">加法电路</h5>
-<p><img src="【模电】运算放大器/image-20240829090643662.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829090643662.png"></p>
 <p>假定四个电阻阻值相同，那么输出电压就等于三个电压之和了，相位相反</p>
 <p><strong>再假定有个R5，给电压限制，只有0跟1V，如图绿色部分，根据电压状态，可以得到下面的表格</strong></p>
 <figure>
-<img src="【模电】运算放大器/image-20240829091047469.png"
-alt="image-20240829091047469" />
+<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091047469.png" alt="image-20240829091047469">
 <figcaption aria-hidden="true">image-20240829091047469</figcaption>
 </figure>
 <p>这个表格其实就是数模转换中的DAC</p>
 <p>每个信号的放大倍数由反馈电阻Rf与每个输入信号串联的电阻R共同决定。</p>
 <h5 id="减法器">减法器</h5>
-<p><img src="【模电】运算放大器/image-20240829091838222.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091838222.png"></p>
 <p>一般R<sub>1</sub>=R<sub>2</sub>=R<sub>A</sub>;
 R<sub>3</sub>=R<sub>4</sub>=R<sub>B</sub></p>
 <p>利用叠加定理，将其拆解为反向放大器和同相放大器，最后U<sub>O1</sub>+U<sub>02</sub>即可</p>
-<p><img src="【模电】运算放大器/image-20240829092048410.png" /> <span
-class="math display">\[
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829092048410.png"> <span class="math display">\[
 V_{out}=(V_B-V_A)*\frac{R_B}{R_A}
 \]</span></p>
 <h5 id="差分放大器">差分放大器</h5>
-<p><img src="【模电】运算放大器/image-20240829142127525.png" /></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829142127525.png"></p>
 <p>​ 它属于是反向比例放大的变种 <span class="math display">\[
 V_{out}=(\frac{R_1+R_2}{R_3+R_4})\times\frac{R_4}{R_1}\times
 V_2-\frac{R_2}{R_1}\times V_1
@@ -847,13 +844,13 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/">
+                <a href="/2024/08/29/mo-dian-bi-jiao-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="采样保持电路">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="比较器">
                         
-                        <span class="card-title">采样保持电路</span>
+                        <span class="card-title">比较器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -870,8 +867,8 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
-                                    基础电路
+                            <a href="/categories/%E6%A8%A1%E7%94%B5/" class="post-category">
+                                    模电
                                 </a>
                             
                             
@@ -881,16 +878,8 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E9%87%87%E6%A0%B7/">
-                        <span class="chip bg-color">采样</span>
-                    </a>
-                    
-                    <a href="/tags/ADC/">
-                        <span class="chip bg-color">ADC</span>
-                    </a>
-                    
-                    <a href="/tags/%E8%BF%90%E6%94%BE/">
-                        <span class="chip bg-color">运放</span>
+                    <a href="/tags/%E6%AF%94%E8%BE%83%E5%99%A8/">
+                        <span class="chip bg-color">比较器</span>
                     </a>
                     
                 </div>
@@ -904,13 +893,13 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/29/mo-dian-bi-jiao-qi/">
+                <a href="/2024/08/29/mo-dian-cai-yang-ji-chu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="比较器">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ADC采样">
                         
-                        <span class="card-title">比较器</span>
+                        <span class="card-title">ADC采样</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -938,8 +927,8 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%AF%94%E8%BE%83%E5%99%A8/">
-                        <span class="chip bg-color">比较器</span>
+                    <a href="/tags/%E9%87%87%E6%A0%B7/">
+                        <span class="chip bg-color">采样</span>
                     </a>
                     
                 </div>

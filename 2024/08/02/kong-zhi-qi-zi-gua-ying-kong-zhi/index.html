@@ -529,31 +529,27 @@
 <p>​
 外环为一个控制器参数估计器，控制根据历史数据估计未知参数然后再设计控制器的为<strong>间接校正控制系统</strong>；直接根据历史数据估计控制器参数的为<strong>直接自校正控制系统</strong></p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802093750769.png"
-alt="自校正控制系统" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802093750769.png" alt="自校正控制系统">
 <figcaption aria-hidden="true">自校正控制系统</figcaption>
 </figure>
 <p>可调节器接收：测量输出、设定输入以及自适应机构提供的参数估计</p>
 <p>自适应机构（参数调节器）接收：测量输出、设定输入以及控制量进行参数估计</p>
 <p>可以将STC看做是参数估计器+控制器</p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802094025045.png"
-alt="STC结构框图" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094025045.png" alt="STC结构框图">
 <figcaption aria-hidden="true">STC结构框图</figcaption>
 </figure>
 <p>常见的参数估计器可利用如下方法构成：递推最小二乘法（RLS）、快速仿射投影算法（FAP）、最小均方误差（MSE）、卡尔曼滤波（KF）、扩展卡尔曼滤波（EKF）。</p>
 <p>构成STC的常见控制器：比例积分微分控制器（PID）、滑模控制（SMC）、模糊控制、神经网络、遗传算法、预测控制（PC）、二次型最优控制（LQR）、时间延迟控制（TDC）、基于不确定扰动估计器（UDE）的控制器。</p>
 <p><strong>间接自校正控制</strong></p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802094457175.png"
-alt="间接自校正控制" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094457175.png" alt="间接自校正控制">
 <figcaption aria-hidden="true">间接自校正控制</figcaption>
 </figure>
 <p>​ ”参数估计器“先辨识被控对象（过程）参数</p>
 <p><strong>直接自校正控制</strong></p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802094601724.png"
-alt="直接自校正控制" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094601724.png" alt="直接自校正控制">
 <figcaption aria-hidden="true">直接自校正控制</figcaption>
 </figure>
 <p>​ “控制器参数计算器”直接可以估计可调控制器参数</p>
@@ -564,15 +560,13 @@ alt="直接自校正控制" />
 <p>​
 在该控制框架中，可以人为构造一个所谓的“参考模型”，用以表征希望的闭环系统控制性能。而模型参考自适应控制则是希望求得一种动态调整的反馈控制律，使得系统的闭环控制性能与参考模型的性能可以保持一致。</p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802101807647.png"
-alt="模型参考自适应控制" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802101807647.png" alt="模型参考自适应控制">
 <figcaption aria-hidden="true">模型参考自适应控制</figcaption>
 </figure>
 <p><strong>自适应机构的作用</strong>：调节控制器的参数使误差e减小直至为零时停止调节</p>
 <p><strong>自适应机构设计方法：</strong>基于稳定性理论的方法和局部参数最优化方法</p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802102225930.png"
-alt="模型参考自适应控制" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802102225930.png" alt="模型参考自适应控制">
 <figcaption aria-hidden="true">模型参考自适应控制</figcaption>
 </figure>
 <p>系统由参考模型、可调系统、自适应机构三部分构成。</p>
@@ -582,16 +576,14 @@ alt="模型参考自适应控制" />
 <li>当参考模型与实际被控对象的输出有差异时，经比较器检测后，通过自适应机构做出决策，改变调节器（包括前置和反馈控制器）参数或生成辅助输入，以消除误差，使过程输出和参考模型输出一致。</li>
 </ul>
 <p><strong>分类</strong>：直接模型参考自适应控制(直接估计控制器参数)、间接模型参考自适应控制(先估计模型参数，后调整控制器参数)</p>
-<h5
-id="关于模型参考自适应控制系统的假定">关于模型参考自适应控制系统的假定</h5>
+<h5 id="关于模型参考自适应控制系统的假定">关于模型参考自适应控制系统的假定</h5>
 <ul>
 <li>参考模型是时不变系统</li>
 <li>参考模型和可调模型是线性的，有时为了分析方便，还假设它们的阶次相同；</li>
 <li>广义误差可测</li>
 <li>在自适应控制过程中，可调参数或辅助信号仅依赖于自适应机构</li>
 </ul>
-<h5
-id="基于局部参数最优化的设计方法mit方案">基于局部参数最优化的设计方法（MIT方案）</h5>
+<h5 id="基于局部参数最优化的设计方法mit方案">基于局部参数最优化的设计方法（MIT方案）</h5>
 <p>​
 局部参数最优化方法的<strong>设计思想：</strong>系统包含若干可调参数，当被控对象的特性受外界干扰而变化时，自适应机构对这些可调参数进行调整，以补偿外界环境或其他干扰对系统性能的影响，从而逐步使得参考模型和控制对象之间的广义误差所构成的性能指标达到或接近最小值。</p>
 <p>​
@@ -604,56 +596,31 @@ id="基于局部参数最优化的设计方法mit方案">基于局部参数最�
 </ul>
 <h5 id="直接mrac">直接MRAC</h5>
 <figure>
-<img src="【控制器】自适应控制/image-20240802105928352.png"
-alt="直接MRAC控制器结构" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802105928352.png" alt="直接MRAC控制器结构">
 <figcaption aria-hidden="true">直接MRAC控制器结构</figcaption>
 </figure>
 <p><strong>间接MRAC</strong></p>
 <figure>
-<img src="【控制器】自适应控制/image-20240802141301743.png"
-alt="间接MRAC" />
+<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802141301743.png" alt="间接MRAC">
 <figcaption aria-hidden="true">间接MRAC</figcaption>
 </figure>
 <p><strong>参考模型的设计</strong></p>
-<p>假设被控对象的状态方程和输出方程如下所示： <span
-class="math display">\[
+<p>假设被控对象的状态方程和输出方程如下所示： <span class="math display">\[
 \begin{aligned}&amp;\dot{x}(t)=Ax(t)+Bu(t)\\&amp;y(t)=x(t)\end{aligned}
-\]</span> 那么参考模型的状态方程和输出方程可构造为如下所示： <span
-class="math display">\[
+\]</span> 那么参考模型的状态方程和输出方程可构造为如下所示： <span class="math display">\[
 \begin{aligned}&amp;\dot{x}_m(t)=A_mx_m(t)+B_mc(t)\\&amp;y_m(t)=x_m(t)\end{aligned}
 \]</span> <strong>自适应律的设计（重头戏）</strong></p>
-<p>​ 控制器<span class="math inline">\(u(t)\)</span>方程可以表示为：<span
-class="math inline">\(u(t)=ac(t)+bx(t)\)</span>，然而参数<span
-class="math inline">\(a、b\)</span>未知</p>
-<p>​ 由于控制器<span
-class="math inline">\(u(t)\)</span>中的参数啊，b未知，便有了自适应率的出现。自适应率的设计目的就是为了在线辨识出控制器中的两个未知参数。自适应率的设计一般可以分为两种方法，梯度法和稳定性理论分析法。</p>
+<p>​ 控制器<span class="math inline">\(u(t)\)</span>方程可以表示为：<span class="math inline">\(u(t)=ac(t)+bx(t)\)</span>，然而参数<span class="math inline">\(a、b\)</span>未知</p>
+<p>​ 由于控制器<span class="math inline">\(u(t)\)</span>中的参数啊，b未知，便有了自适应率的出现。自适应率的设计目的就是为了在线辨识出控制器中的两个未知参数。自适应率的设计一般可以分为两种方法，梯度法和稳定性理论分析法。</p>
 <p><strong>方法1： 梯度法（MIT rule)</strong></p>
-<p>​ 假设 MRAC控制器中含有一个未知可调节的参数<span
-class="math inline">\({\boldsymbol{\theta}}\)</span>,定义参考模型和被控对象的状态变量偏差如下：<span
-class="math inline">\(e=x_m-x\)</span>，目标是通过调节参数<span
-class="math inline">\({\boldsymbol{\theta}}\)</span>来令偏差<span
-class="math inline">\(e\)</span>最小，即<span
-class="math inline">\(e\to0\)</span>。</p>
-<p>这里引入一个损失函数：<span
-class="math inline">\(J=\frac12e^2\)</span></p>
-<p>如果令<span class="math inline">\(e\to 0\)</span>，则<span
-class="math inline">\(J\to 0\)</span>。也就是需要求得<span
-class="math inline">\(J\)</span>的最小值</p>
-<p>于是采用<strong>梯度下降算法</strong>即**沿着<span
-class="math inline">\(J\)</span>的负梯度方向变化参数<span
-class="math inline">\({\boldsymbol{\theta}}\)</span>，（由于梯度的正方向是损失函数<span
-class="math inline">\(J\)</span>上升最快的方向，我们要最小化<span
-class="math inline">\(J\)</span>,即让参数沿着梯度相反的方向前进一个步长，因此参数<span
-class="math inline">\({\boldsymbol{\theta}}\)</span>变化的反方向与<span
-class="math inline">\(J\)</span>的负梯度方向一致，可以获得<span
-class="math inline">\(J\)</span>的极小值）即： <span
-class="math display">\[
+<p>​ 假设 MRAC控制器中含有一个未知可调节的参数<span class="math inline">\({\boldsymbol{\theta}}\)</span>,定义参考模型和被控对象的状态变量偏差如下：<span class="math inline">\(e=x_m-x\)</span>，目标是通过调节参数<span class="math inline">\({\boldsymbol{\theta}}\)</span>来令偏差<span class="math inline">\(e\)</span>最小，即<span class="math inline">\(e\to0\)</span>。</p>
+<p>这里引入一个损失函数：<span class="math inline">\(J=\frac12e^2\)</span></p>
+<p>如果令<span class="math inline">\(e\to 0\)</span>，则<span class="math inline">\(J\to 0\)</span>。也就是需要求得<span class="math inline">\(J\)</span>的最小值</p>
+<p>于是采用<strong>梯度下降算法</strong>即**沿着<span class="math inline">\(J\)</span>的负梯度方向变化参数<span class="math inline">\({\boldsymbol{\theta}}\)</span>，（由于梯度的正方向是损失函数<span class="math inline">\(J\)</span>上升最快的方向，我们要最小化<span class="math inline">\(J\)</span>,即让参数沿着梯度相反的方向前进一个步长，因此参数<span class="math inline">\({\boldsymbol{\theta}}\)</span>变化的反方向与<span class="math inline">\(J\)</span>的负梯度方向一致，可以获得<span class="math inline">\(J\)</span>的极小值）即： <span class="math display">\[
 \Delta\theta=-\kappa\frac{\partial J}{\partial\theta}=-\kappa
 e\frac{\partial e}{\partial\theta}\\\dot{\theta}=-\gamma\frac{\partial
 J}{\partial\theta}=-\gamma e\frac{\partial e}{\partial\theta}
-\]</span> 其中，$<span
-class="math inline">\(为两个步长的差值，\)</span>k<span
-class="math inline">\(为学习步长，\)</span>$为调整速率。上式中第二行也可被单独成为MIT
+\]</span> 其中，$<span class="math inline">\(为两个步长的差值，\)</span>k<span class="math inline">\(为学习步长，\)</span>$为调整速率。上式中第二行也可被单独成为MIT
 rule</p>
 <p><strong>方法2：稳定性理论分析法（李雅普诺夫第二法，波波夫超稳定性法）</strong></p>
 

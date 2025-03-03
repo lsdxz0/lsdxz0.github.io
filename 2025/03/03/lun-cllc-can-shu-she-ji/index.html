@@ -494,14 +494,11 @@ CLLC是由LLC改进而来的，先设计一个LLC的谐振网络，再设计剩�
 kHz.</li>
 <li><strong>选取励磁电感：</strong>
 <ul>
-<li><em>i</em><sub>Lm</sub>(<em>t</em>)的峰值电流公式近似计算得到：<span
-class="math inline">\(i_{\mathrm{Lmp}}\approx\frac{nU_{\mathrm{ol}}}{L_{\mathrm{m}}}
+<li><em>i</em><sub>Lm</sub>(<em>t</em>)的峰值电流公式近似计算得到：<span class="math inline">\(i_{\mathrm{Lmp}}\approx\frac{nU_{\mathrm{ol}}}{L_{\mathrm{m}}}
 \frac{T_{s}}{4}\)</span></li>
-<li>为保证开关管结电容死区时间内完全放电，<em>i</em><sub>Lmp</sub>需满足：<span
-class="math inline">\(i_\text{ Lmp}t_\text{ d}&gt;2C_\text{
+<li>为保证开关管结电容死区时间内完全放电，<em>i</em><sub>Lmp</sub>需满足：<span class="math inline">\(i_\text{ Lmp}t_\text{ d}&gt;2C_\text{
 oss}U_1\)</span></li>
-<li>由于第二谐振频率处的<em>M</em><sub>1</sub>小于1，<span
-class="math inline">\(L_\text{m}&lt;\frac{nU_\text{ol}T_st_\text{d}}{8C_\text{oss}U_1}=\frac{M_1T_st_\text{d}}{16C_\text{oss}}&lt;\frac{t_\text{d}}{16C_\text{oss}f_s}\)</span>​</li>
+<li>由于第二谐振频率处的<em>M</em><sub>1</sub>小于1，<span class="math inline">\(L_\text{m}&lt;\frac{nU_\text{ol}T_st_\text{d}}{8C_\text{oss}U_1}=\frac{M_1T_st_\text{d}}{16C_\text{oss}}&lt;\frac{t_\text{d}}{16C_\text{oss}f_s}\)</span>​</li>
 <li>死区时间<em>t<sub>d</sub></em>=200 ns，
 第二谐振频率<em>f<sub>s</sub></em>=100kHz，
 结电容<em>C<sub>oss</sub></em>=415 pF。由上面第二个式子可得
@@ -510,8 +507,7 @@ class="math inline">\(L_\text{m}&lt;\frac{nU_\text{ol}T_st_\text{d}}{8C_\text{os
 <li><strong>选取电感比值<em>h</em></strong>
 <ul>
 <li><em>h</em>=<em>L<sub>m</sub>/L<sub>r</sub></em>
-，选取h=3，确定谐振电感Lr为84uh，再由<span
-class="math inline">\(f_{\mathrm{~LLC}}=1/2\pi
+，选取h=3，确定谐振电感Lr为84uh，再由<span class="math inline">\(f_{\mathrm{~LLC}}=1/2\pi
 \sqrt{L_{\mathrm{~r}}C_{\mathrm{~rl}}}\)</span>
 得到高压侧谐振电容C<sub>r1</sub>的数值为31.7uf</li>
 </ul></li>
@@ -530,9 +526,7 @@ class="math inline">\(f_{\mathrm{~LLC}}=1/2\pi
 想要M<sub>1</sub>小于1，需要小于4.167</li>
 <li>n取值过小，会导致反向工作所需电压增益变高，开关管工作频率变低，从而会失去ZVS条件，故可初步选取
 n=40:11</li>
-<li>在得到谐振电容比值g之后，通过<span
-class="math inline">\(g=C_{r2}/n^2C_{r1}\)</span> 计算得到:<span
-class="math inline">\(C_{r2}=1014.4nF\)</span></li>
+<li>在得到谐振电容比值g之后，通过<span class="math inline">\(g=C_{r2}/n^2C_{r1}\)</span> 计算得到:<span class="math inline">\(C_{r2}=1014.4nF\)</span></li>
 </ul></li>
 <li><strong>计算相位角</strong>
 <ul>
@@ -546,7 +540,7 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
 </ul></li>
 </ul>
 <p><strong>参数</strong></p>
-<p><img src="CLLC参数设计/image-20240815104704407.png" /></p>
+<p><img src="/2025/03/03/lun-cllc-can-shu-she-ji/image-20240815104704407.png"></p>
 
                 
             </div>

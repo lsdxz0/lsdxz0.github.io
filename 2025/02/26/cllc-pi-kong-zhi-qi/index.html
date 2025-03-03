@@ -501,13 +501,10 @@
         <div class="card-content article-card-content">
             <div id="articleContent">
                 <figure>
-<img
-src="D:\My%20blog\source_posts【CLLC】%20PI控制器\image-20250226151246541.png"
-alt="PI控制器" />
+<img src="/2025/02/26/cllc-pi-kong-zhi-qi/image-20250226151246541.png" alt="PI控制器">
 <figcaption aria-hidden="true">PI控制器</figcaption>
 </figure>
-<h4
-id="fr不好说了还有说是电压增益">1.Fr（不好说了，还有说是电压增益）</h4>
+<h4 id="fr不好说了还有说是电压增益">1.Fr（不好说了，还有说是电压增益）</h4>
 <p><strong>定义</strong></p>
 <p>fr通常表示<strong>基准频率</strong>，通常对应CLLC谐振变换器的固有谐振频率，在控制系统中，可能以<strong>归一化值表示</strong>，来简化数值计算</p>
 <p><strong>作用</strong></p>
@@ -532,13 +529,11 @@ id="fr不好说了还有说是电压增益">1.Fr（不好说了，还有说是�
 </ul>
 <p><strong>这里还得额外说一下</strong></p>
 <p><strong>首先，啥时候是感抗，啥时候是容抗</strong></p>
-<p>CLLC的谐振腔是由谐振电感电容组成的，其阻抗为 <span
-class="math display">\[
+<p>CLLC的谐振腔是由谐振电感电容组成的，其阻抗为 <span class="math display">\[
 Z_{res}=j\omega L_r+\frac{1}{j\omega C_r}=j\left(\omega
 L_r-\frac{1}{\omega C_r}\right)
 \]</span> 这里虚部符号决定了阻抗的性质，正为感性，负为容性，</p>
-<p>此外这个<span class="math inline">\(w\)</span>，跟开关频率有关，<span
-class="math inline">\(w=2πfsw\)</span></p>
+<p>此外这个<span class="math inline">\(w\)</span>，跟开关频率有关，<span class="math inline">\(w=2πfsw\)</span></p>
 <p>而对于固有频率 <span class="math display">\[
 f_r=\frac{1}{2\pi\sqrt{L_rC_r}}
 \]</span> 带进去即可得到这样的关系</p>
@@ -551,8 +546,7 @@ f_r=\frac{1}{2\pi\sqrt{L_rC_r}}
 </ul>
 <h4 id="后面这部分为啥用减法器而不是加法器">2.
 后面这部分，为啥用减法器而不是加法器</h4>
-<p>首先，这部分的输出是一个<strong>工作频率</strong><span
-class="math inline">\(f_{sw}=f_r-\text{PI输出值}\)</span></p>
+<p>首先，这部分的输出是一个<strong>工作频率</strong><span class="math inline">\(f_{sw}=f_r-\text{PI输出值}\)</span></p>
 <p>当电压误差增大时，PI输出值增加，导致开关频率降低，增益升高，拉回输出电压至目标值</p>
 <p><strong>为啥是减法器呢</strong></p>
 <ul>

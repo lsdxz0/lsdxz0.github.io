@@ -510,7 +510,7 @@
 <li>输入模式下可读取端口的高低电平或电压，用于读取按键输入、外接模块电平信号输入、ADC电压采集、模拟通信协议接收数据等</li>
 </ul>
 <h4 id="gpio基本结构">GPIO基本结构</h4>
-<p><img src="【stm32】3.%20GPIO/image-20240827205639500.png" /></p>
+<p><img src="/2024/11/04/stm32-3.gpio/image-20240827205639500.png"></p>
 <ul>
 <li>GPIO 外设的名称是按照GPIOA，GPIOB....</li>
 <li>每个GPIO外设，总共有16个引脚，编号0-15，PA0...PA15</li>
@@ -522,21 +522,20 @@
 </ul></li>
 </ul>
 <p>在STM32中，所有GPIO都是挂载在APB2外设总线上的</p>
-<p><img src="【stm32】3.%20GPIO/image-20240827205701930.png" /></p>
+<p><img src="/2024/11/04/stm32-3.gpio/image-20240827205701930.png"></p>
 <h4 id="gpio位结构">GPIO位结构</h4>
-<p><img src="【stm32】3.%20GPIO/image-20241104212156937.png" /></p>
+<p><img src="/2024/11/04/stm32-3.gpio/image-20241104212156937.png"></p>
 <ul>
 <li>左边三个为寄存器</li>
 <li>中间虚线部分为驱动器</li>
 <li>右边这个就是某一个IO口的引脚</li>
 </ul>
 <p>​ 整体结构可以分为如下两个部分，上面是输入部分，下面是输出部分。</p>
-<p><img src="【stm32】3.%20GPIO/image-20240827210035886.png" /></p>
+<p><img src="/2024/11/04/stm32-3.gpio/image-20240827210035886.png"></p>
 <p><strong>输入部分</strong></p>
 <ul>
 <li><figure>
-<img src="【stm32】3.%20GPIO/image-20241104212337333.png"
-alt="image-20241104212337333" />
+<img src="/2024/11/04/stm32-3.gpio/image-20241104212337333.png" alt="image-20241104212337333">
 <figcaption aria-hidden="true">image-20241104212337333</figcaption>
 </figure>
 <ul>
@@ -546,8 +545,7 @@ alt="image-20241104212337333" />
 <li>0-3.3V，正常工作</li>
 </ul></li>
 <li><figure>
-<img src="【stm32】3.%20GPIO/image-20241104212541578.png"
-alt="image-20241104212541578" />
+<img src="/2024/11/04/stm32-3.gpio/image-20241104212541578.png" alt="image-20241104212541578">
 <figcaption aria-hidden="true">image-20241104212541578</figcaption>
 </figure>
 <ul>
@@ -556,23 +554,20 @@ alt="image-20241104212541578" />
 <li>两个都断开----&gt;浮空输入模式</li>
 </ul></li>
 <li><figure>
-<img src="【stm32】3.%20GPIO/image-20241104212709323.png"
-alt="image-20241104212709323" />
+<img src="/2024/11/04/stm32-3.gpio/image-20241104212709323.png" alt="image-20241104212709323">
 <figcaption aria-hidden="true">image-20241104212709323</figcaption>
 </figure>
 <ul>
 <li>这里的触发器应该是翻译错误，应该是施密特触发器，规定某一阈值上下限，高于阈值输出高电平，低于阈值输出低电平</li>
 <li>这里是规定了两个值，大于大的才是高，低于小的才为低，在遇到上下限之前~电平不会发生变化</li>
 <li><figure>
-<img src="【stm32】3.%20GPIO/image-20240827210703188.png"
-alt="image-20240827210703188" />
+<img src="/2024/11/04/stm32-3.gpio/image-20240827210703188.png" alt="image-20240827210703188">
 <figcaption aria-hidden="true">image-20240827210703188</figcaption>
 </figure></li>
 <li>绿色的为上下限阈值，蓝色的为输出波形，红色为给定信号</li>
 </ul></li>
 <li><figure>
-<img src="【stm32】3.%20GPIO/image-20241104213316506.png"
-alt="image-20241104213316506" />
+<img src="/2024/11/04/stm32-3.gpio/image-20241104213316506.png" alt="image-20241104213316506">
 <figcaption aria-hidden="true">image-20241104213316506</figcaption>
 </figure>
 <ul>
@@ -583,8 +578,7 @@ alt="image-20241104213316506" />
 <li>复用功能输入，连接到其他需要读取端口的外设上的，比如串口的输入引脚等，接收的是数字量，所以在施密特触发器后面</li>
 </ul></li>
 </ul></li>
-<li>输出部分<img src="【stm32】3.%20GPIO/image-20241104213640096.png"
-alt="image-20241104213640096" />
+<li>输出部分<img src="/2024/11/04/stm32-3.gpio/image-20241104213640096.png" alt="image-20241104213640096">
 <ul>
 <li>数字部分可以由输出数据寄存器或片上外设控制</li>
 <li>选择通过输出</li>

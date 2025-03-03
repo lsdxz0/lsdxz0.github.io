@@ -498,13 +498,12 @@
             <div id="articleContent">
                 <h2 id="pwm移相跟占空比可变">PWM移相跟占空比可变</h2>
 <figure>
-<img src="【调制】PWM移相/image-20240914135217996.png"
-alt="image-20240914135217996" />
+<img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914135217996.png" alt="image-20240914135217996">
 <figcaption aria-hidden="true">image-20240914135217996</figcaption>
 </figure>
 <h3 id="pwm的两种输出方式">PWM的两种输出方式</h3>
 <h4 id="pwm模式">PWM模式</h4>
-<p><img src="【调制】PWM移相/image-20240914090203238.png" /></p>
+<p><img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914090203238.png"></p>
 <ul>
 <li>ARR 当计数器达到ARR值的时候，计数器会自动重置为0</li>
 <li>CCR
@@ -527,7 +526,7 @@ alt="image-20240914135217996" />
 <p>用PWM模式输出实现45°的移相，其中ARR=2000，占空比=50%</p>
 <p>​
 把ARR=2000与角度360°一一对应起来，或者说是360°均分为ARR份，那么要移相45°就是</p>
-<p><img src="【调制】PWM移相/image-20240914105259235.png" /></p>
+<p><img src="/2024/09/14/diao-zhi-pwm-yi-xiang/image-20240914105259235.png"></p>
 <p><strong>需要注意的是</strong>，这里求得是CCR的差值，</p>
 <p>AB两点之间的△CRR计算公式如下： <span class="math display">\[
 \Delta CCR=\frac{ARR}{360^o}*x

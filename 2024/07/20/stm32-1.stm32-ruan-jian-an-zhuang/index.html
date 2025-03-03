@@ -502,60 +502,24 @@
             <div id="articleContent">
                 <h2 id="stm32软件安装">01. STM32+软件安装</h2>
 <h4 id="硬件介绍">1. 硬件介绍</h4>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720213900952.png"
-alt="image-20240720213900952" />面板板</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720213913143.png"
-alt="image-20240720213913143" />面包板的跳线，较短，可以贴在面包板上，适合长时间的接线</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214004609.png"
-alt="image-20240720214004609" />上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214108007.png"
-alt="image-20240720214108007" />STM32最小系统板，上面这黑色的就是stm32，</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214138860.png"
-alt="image-20240720214138860" />0.96寸的OLED显示屏模块，4引脚的</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214213483.png"
-alt="image-20240720214213483" />电位器，主要用来进行AD转换实验</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214232595.png"
-alt="image-20240720214232595" />按键，选用两引脚正好可以跨接在面包板的引脚插孔和电源插孔之间，<img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214319164.png"
-alt="image-20240720214319164" /></p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214332567.png"
-alt="image-20240720214332567" />led灯</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214344197.png"
-alt="image-20240720214344197" />STLINK，用来下载程序和供电的</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214404156.png"
-alt="image-20240720214404156" />USB转串口模块，使用这个模块就可以实现STM32和电脑进行串口通信了</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214515832.png"
-alt="image-20240720214515832" />有源蜂鸣器模块，内置振荡源，接电就响</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720214610516.png"
-alt="image-20240720214610516" />一些传感器模块分别是:光敏电阻模块，下面的四个引脚有两个是用来供电，还有两个是光敏电阻信号的模拟输出和数字输出，可以用来进行IO口读取实验或者AD实验，第二个是热敏电阻模块，也是有模拟输出和数字输出的；第三个是对射式红外模块，配合遮光片可以用来计次，或者配合编码盘用来测速；第四个是反射式红外模块，在小车寻迹里，向地面发射红外光，再用红外接收管接收地面反射的红外光，通过判断接收光的强度，就可以大致识别出地面的颜色变化</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720215011924.png"
-alt="image-20240720215011924" />W25Q64
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720213900952.png" alt="image-20240720213900952">面板板</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720213913143.png" alt="image-20240720213913143">面包板的跳线，较短，可以贴在面包板上，适合长时间的接线</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214004609.png" alt="image-20240720214004609">上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214108007.png" alt="image-20240720214108007">STM32最小系统板，上面这黑色的就是stm32，</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214138860.png" alt="image-20240720214138860">0.96寸的OLED显示屏模块，4引脚的</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214213483.png" alt="image-20240720214213483">电位器，主要用来进行AD转换实验</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214232595.png" alt="image-20240720214232595">按键，选用两引脚正好可以跨接在面包板的引脚插孔和电源插孔之间，<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214319164.png" alt="image-20240720214319164"></p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214332567.png" alt="image-20240720214332567">led灯</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214344197.png" alt="image-20240720214344197">STLINK，用来下载程序和供电的</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214404156.png" alt="image-20240720214404156">USB转串口模块，使用这个模块就可以实现STM32和电脑进行串口通信了</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214515832.png" alt="image-20240720214515832">有源蜂鸣器模块，内置振荡源，接电就响</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214610516.png" alt="image-20240720214610516">一些传感器模块分别是:光敏电阻模块，下面的四个引脚有两个是用来供电，还有两个是光敏电阻信号的模拟输出和数字输出，可以用来进行IO口读取实验或者AD实验，第二个是热敏电阻模块，也是有模拟输出和数字输出的；第三个是对射式红外模块，配合遮光片可以用来计次，或者配合编码盘用来测速；第四个是反射式红外模块，在小车寻迹里，向地面发射红外光，再用红外接收管接收地面反射的红外光，通过判断接收光的强度，就可以大致识别出地面的颜色变化</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215011924.png" alt="image-20240720215011924">W25Q64
 Flash存储模块，可以存储数据，并且是用SPI总线进行通信的</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720215105486.png"
-alt="image-20240720215105486" />MPU6050陀螺仪和加速度计；可以测量芯片自身的姿态，I2C总线通信</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720215145944.png"
-alt="image-20240720215145944" />旋转编码器，可以输出两路正交的方波信号，用于指示旋转的方向和速度，</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720215258620.png"
-alt="image-20240720215258620" />直流电机和TB6612电机驱动模块，可以用来进行直流电机的PWM调速实验</p>
-<p><img
-src="【stm32】%201.%20STM32+软件安装/image-20240720215339362.png"
-alt="image-20240720215339362" />SG90舵机；用PWM控制，输出端可以像船舵一样，根据给定PWM信号的占空比固定在某个角度上</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215105486.png" alt="image-20240720215105486">MPU6050陀螺仪和加速度计；可以测量芯片自身的姿态，I2C总线通信</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215145944.png" alt="image-20240720215145944">旋转编码器，可以输出两路正交的方波信号，用于指示旋转的方向和速度，</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215258620.png" alt="image-20240720215258620">直流电机和TB6612电机驱动模块，可以用来进行直流电机的PWM调速实验</p>
+<p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215339362.png" alt="image-20240720215339362">SG90舵机；用PWM控制，输出端可以像船舵一样，根据给定PWM信号的占空比固定在某个角度上</p>
 <h4 id="stm32简介">2. STM32简介</h4>
 <p>​ 32位微处理器，st是公司，m是微控制器；51是8位的，采用ARM
 Cortex-M内核</p>
@@ -575,8 +539,7 @@ Cortex-M内核</p>
 </ul>
 <p><strong>片上资源/外设</strong></p>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240720220154004.png"
-alt="image-20240720220154004" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720220154004.png" alt="image-20240720220154004">
 <figcaption aria-hidden="true">image-20240720220154004</figcaption>
 </figure>
 <ul>
@@ -612,14 +575,12 @@ alt="image-20240720220154004" />
 </ul>
 <h4 id="芯片命名规则">芯片命名规则</h4>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240809151119400.png"
-alt="芯片命名规则" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809151119400.png" alt="芯片命名规则">
 <figcaption aria-hidden="true">芯片命名规则</figcaption>
 </figure>
 <h4 id="芯片系统结构">芯片系统结构</h4>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240809151207671.png"
-alt="系统结构" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809151207671.png" alt="系统结构">
 <figcaption aria-hidden="true">系统结构</figcaption>
 </figure>
 <ul>
@@ -629,8 +590,7 @@ alt="系统结构" />
 <h4 id="引脚配置">引脚配置</h4>
 <h4 id="启动配置">启动配置</h4>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240809152619484.png"
-alt="启动配置" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809152619484.png" alt="启动配置">
 <figcaption aria-hidden="true">启动配置</figcaption>
 </figure>
 <p>​
@@ -640,21 +600,18 @@ alt="启动配置" />
 <p><strong>why</strong></p>
 <p>​ 型号多，芯片的器件支持包独立出来，只需要安装对应的器件支持包即可</p>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240809153210049.png"
-alt="image-20240809153210049" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809153210049.png" alt="image-20240809153210049">
 <figcaption aria-hidden="true">image-20240809153210049</figcaption>
 </figure>
 <p><strong>how</strong></p>
 <p>在线安装</p>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240809153302214.png"
-alt="image-20240809153302214" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809153302214.png" alt="image-20240809153302214">
 <figcaption aria-hidden="true">image-20240809153302214</figcaption>
 </figure>
 <p>点击绿色按钮</p>
 <figure>
-<img src="【stm32】%201.%20STM32+软件安装/image-20240809153420780.png"
-alt="image-20240809153420780" />
+<img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809153420780.png" alt="image-20240809153420780">
 <figcaption aria-hidden="true">image-20240809153420780</figcaption>
 </figure>
 

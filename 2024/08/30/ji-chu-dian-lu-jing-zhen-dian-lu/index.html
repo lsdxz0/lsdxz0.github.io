@@ -505,8 +505,7 @@
 <p>​
 单片机的正常运行需要时钟信号，可以简单的理解为单片机收到一个脉冲，就执行一次或多次指令。晶振电路就是用来产生时钟信号的</p>
 <figure>
-<img src="【基础电路】晶振电路/image-20240830133131255.png"
-alt="image-20240830133131255" />
+<img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830133131255.png" alt="image-20240830133131255">
 <figcaption aria-hidden="true">image-20240830133131255</figcaption>
 </figure>
 <p>比如像这样，在外部施加适当的电压后，就可以输出预先设置好的周期性时钟信号</p>
@@ -514,13 +513,12 @@ alt="image-20240830133131255" />
 <p>​
 <strong>晶体振荡器</strong>用一种能把电能和机械能相互转化的晶体在共振的状态下工作，以提供稳定，精确的单频振荡。晶振提供的时钟频率越高，单片机的运行速度也就越快。</p>
 <p><strong>晶振的封装</strong></p>
-<p><img src="【基础电路】晶振电路/image-20240830134548963.png" /></p>
+<p><img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830134548963.png"></p>
 <p>​
 下图左边为原理图，右边为等效电路图，生成的是<strong>正弦波</strong></p>
-<p><img src="【基础电路】晶振电路/image-20240830134437406.png" /></p>
+<p><img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830134437406.png"></p>
 <figure>
-<img src="【基础电路】晶振电路/image-20240830134506676.png"
-alt="image-20240830134506676" />
+<img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830134506676.png" alt="image-20240830134506676">
 <figcaption aria-hidden="true">image-20240830134506676</figcaption>
 </figure>
 <p>​ <strong>晶振连接单片机的OSC32-IN跟OUT</strong></p>
@@ -545,8 +543,7 @@ alt="image-20240830134506676" />
 </ul></li>
 </ul>
 <h5 id="匹配电容的计算">匹配电容的计算</h5>
-<p>​ 为了保持晶体的负载平衡，在实际应用中，一般要求<span
-class="math inline">\(\mathrm{C_{L1}=C_{L2}}\)</span>,所以进一步可以得到下式
+<p>​ 为了保持晶体的负载平衡，在实际应用中，一般要求<span class="math inline">\(\mathrm{C_{L1}=C_{L2}}\)</span>,所以进一步可以得到下式
 <span class="math display">\[
 \mathrm{C_{L1}=C_{L2}=2\times(C_L-C_{ic}-\triangle C)}
 \]</span> <span class="math inline">\(\mathrm{C_{ic}+\triangle
@@ -556,16 +553,14 @@ C}\)</span>​​一般为3---5pf</p>
 <li><p>Cs为引线电容，可通过查询芯片数据手册获取</p></li>
 <li><p>C<sub>i</sub>为引脚电容，可以通过查询芯片数据手册获取</p></li>
 </ul>
-<p>比如当负载电容取6pF时，当C<sub>stray</sub>=2pF <span
-class="math display">\[
+<p>比如当负载电容取6pF时，当C<sub>stray</sub>=2pF <span class="math display">\[
 \mathrm C_{\mathrm L1}=\mathrm C_{\mathrm L2}=2\times(6-2)\mathrm
 p\mathrm F=8\mathrm p\mathrm F
 \]</span></p>
 <h3 id="分类">分类</h3>
 <h4 id="有源振荡">有源振荡</h4>
 <figure>
-<img src="【基础电路】晶振电路/image-20240830141310103.png"
-alt="image-20240830141310103" />
+<img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830141310103.png" alt="image-20240830141310103">
 <figcaption aria-hidden="true">image-20240830141310103</figcaption>
 </figure>
 <ul>
@@ -575,8 +570,7 @@ alt="image-20240830141310103" />
 </ul>
 <h4 id="无源振荡">无源振荡</h4>
 <figure>
-<img src="【基础电路】晶振电路/image-20240830141225209.png"
-alt="image-20240830141225209" />
+<img src="/2024/08/30/ji-chu-dian-lu-jing-zhen-dian-lu/image-20240830141225209.png" alt="image-20240830141225209">
 <figcaption aria-hidden="true">image-20240830141225209</figcaption>
 </figure>
 <ul>

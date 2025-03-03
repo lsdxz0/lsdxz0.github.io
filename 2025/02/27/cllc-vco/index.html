@@ -502,37 +502,36 @@
             <div id="articleContent">
                 <h2 id="simulinkvco">【simulink】VCO</h2>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227150215222.png" alt="VCO" />
+<img src="/2025/02/27/cllc-vco/image-20250227150215222.png" alt="VCO">
 <figcaption aria-hidden="true">VCO</figcaption>
 </figure>
 <p>都tm长这样</p>
 <h4 id="积分模块-integrator">1.积分模块 Integrator</h4>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227153717442.png" alt="长这b样" />
+<img src="/2025/02/27/cllc-vco/image-20250227153717442.png" alt="长这b样">
 <figcaption aria-hidden="true">长这b样</figcaption>
 </figure>
 <p>恒明显，长的不一样，可以开始改设置了（双击）</p>
 <h5 id="外部重置">外部重置</h5>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227153859360.png" alt="外部重置" />
+<img src="/2025/02/27/cllc-vco/image-20250227153859360.png" alt="外部重置">
 <figcaption aria-hidden="true">外部重置</figcaption>
 </figure>
 <p><strong>作用：</strong>除无以外的外部条件后，积分器将增加<strong>第二个输入端口</strong></p>
 <p>这里用的是<strong>上升沿</strong>，这玩意的意思就是说，给我一个重置信号，然后这个信号<strong>从负值或0上升到正时</strong>重置状态</p>
 <p>比如我这里有个矩阵波，_|—|__|—| 就像这个，</p>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227154430791.png"
-alt="看这个，上面是波，下面的输出" />
+<img src="/2025/02/27/cllc-vco/image-20250227154430791.png" alt="看这个，上面是波，下面的输出">
 <figcaption aria-hidden="true">看这个，上面是波，下面的输出</figcaption>
 </figure>
 <p>然后他就变成了这样</p>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227154530387.png" alt="一次进化" />
+<img src="/2025/02/27/cllc-vco/image-20250227154530387.png" alt="一次进化">
 <figcaption aria-hidden="true">一次进化</figcaption>
 </figure>
 <h5 id="初始条件">初始条件</h5>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227154613908.png" alt="初始条件" />
+<img src="/2025/02/27/cllc-vco/image-20250227154613908.png" alt="初始条件">
 <figcaption aria-hidden="true">初始条件</figcaption>
 </figure>
 <p>初始条件选外部，又多了个输入，x0</p>
@@ -541,12 +540,12 @@ alt="看这个，上面是波，下面的输出" />
 <li>选择外部则增加一个x_0输入端口用来指定积分初始值，同时初始条件对话框消失。</li>
 </ul>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227155031779.png" alt="二次进化!" />
+<img src="/2025/02/27/cllc-vco/image-20250227155031779.png" alt="二次进化!">
 <figcaption aria-hidden="true">二次进化!</figcaption>
 </figure>
 <h5 id="限制输出">限制输出</h5>
 <figure>
-<img src="【CLLC】%20VCO/image-20250227155103097.png" alt="搞不懂" />
+<img src="/2025/02/27/cllc-vco/image-20250227155103097.png" alt="搞不懂">
 <figcaption aria-hidden="true">搞不懂</figcaption>
 </figure>
 <p>inf~是无穷，看不懂，脱了裤子放屁？AI说是，看似无用，实则策略，</p>
@@ -557,8 +556,7 @@ alt="看这个，上面是波，下面的输出" />
 "传递" 状态。</li>
 <li>如果在当前时间步重置模块，则状态端口的输出为模块尚未重置时在模块的标准输出中显示的值。</li>
 </ul>
-<p><img src="【CLLC】%20VCO/def10d8641f9ddce3c2f5363bdfe51ae.png"
-alt="img" />每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。
+<p><img src="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png" alt="img">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。
 （对于代数环，后面将会单独拿出一篇文章来讲) ————————————————</p>
 <pre><code>                        版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</code></pre>
 <p>原文链接：https://blog.csdn.net/m0_64651092/article/details/130336132</p>

@@ -501,12 +501,10 @@
 <p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p>
 <h4 id="scope显示的波形带圆圈">2. SCOPE显示的波形带圆圈</h4>
 <p>打开示波器-视图-样式-标记（maker）-修改为无（none）</p>
-<p><img
-src="simulink使用中遇到的问题/image-20240716153355953.png" /></p>
+<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240716153355953.png"></p>
 <h4 id="谐振器中的变压器">3. 谐振器中的变压器</h4>
 <p><strong>器件名称：</strong>linear transformer</p>
-<p><img
-src="simulink使用中遇到的问题/image-20240814095309933.png" /></p>
+<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095309933.png"></p>
 <p>​ 取消框选，变为单相变压器，这样就只有两个铁芯了</p>
 <p><strong>参数设计：</strong></p>
 <ul>
@@ -519,26 +517,20 @@ V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就�
 <li><p>R1，R2，L1，L2是一二次侧的电阻和电感。就是那个变压器的等效电路，图里X1，X2就是电感的电抗值，对应的就是L1和L2，</p></li>
 </ul>
 <figure>
-<img src="simulink使用中遇到的问题/image-20240814095553742.png"
-alt="变压器等效电路" />
+<img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095553742.png" alt="变压器等效电路">
 <figcaption aria-hidden="true">变压器等效电路</figcaption>
 </figure>
 <ul>
-<li>Rm、Lm就是励磁电阻和<a
-target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?q=励磁电感&amp;zhida_source=entity&amp;is_preview=1">励磁电感</a>。在上面的图上就是中间的rm和Xm。（怎么写下标来着。。）</li>
+<li>Rm、Lm就是励磁电阻和<a target="_blank" rel="noopener" href="https://zhida.zhihu.com/search?q=励磁电感&amp;zhida_source=entity&amp;is_preview=1">励磁电感</a>。在上面的图上就是中间的rm和Xm。（怎么写下标来着。。）</li>
 </ul>
 <p>上面提到的就是它能设置的全部参数了。如果你想要的是<strong>理想型变压器</strong>，没有损耗的那种，咋设置嘞。就把R1,L1,R2,L2都设置成0，Rm和Lm设置成inf就行了。像我这样。这时候，我这个变压器的变压比就是V1
 / V2了。</p>
-<p><img
-src="【小知识】simulink使用中遇到的问题/image-20240831092234015.png" /></p>
+<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240831092234015.png"></p>
 <h4 id="死区时间--delay模块">4. 死区时间--Delay模块</h4>
 <p>延时模块</p>
-<p><img
-src="【小知识】simulink使用中遇到的问题/image-20240903164654628.png" /></p>
+<p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240903164654628.png"></p>
 <figure>
-<img
-src="【小知识】simulink使用中遇到的问题/image-20240903164716263.png"
-alt="模块参数" />
+<img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240903164716263.png" alt="模块参数">
 <figcaption aria-hidden="true">模块参数</figcaption>
 </figure>
 <ul>

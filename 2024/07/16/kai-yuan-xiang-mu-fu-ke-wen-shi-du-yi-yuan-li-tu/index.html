@@ -501,12 +501,10 @@
 <p><strong>查找芯片</strong></p>
 <p>主控电路选用stm32g030k6t6</p>
 <p>放置--器件--搜索--stm,,,,,,--放置</p>
-<p><img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716164616562.png" /></p>
+<p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716164616562.png"></p>
 <p><strong>PB9</strong>，PB8</p>
 <p>​ 点击芯片，找到数据手册，搜索PB9，可以得到</p>
-<p><img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716164712804.png" /></p>
+<p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716164712804.png"></p>
 <p>​ 该表格介绍引脚分配和描述，</p>
 <p>在I2C总线通信中，I2C1_SDA和I2C1_SCL分别是两条主要的信号线。</p>
 <ul>
@@ -518,111 +516,80 @@ src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716164
 <li><p><strong>I2C1_SCL（PB8）</strong>：连接到温度传感器的时钟输入端。</p></li>
 <li><p><strong>I2C1_SDA（PB9）</strong>：连接到温度传感器的数据输入/输出端。</p></li>
 </ul>
-<p>在Description中找到他的电压能够承受多少V<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716165329781.png"
-alt="image-20240716165329781" /></p>
+<p>在Description中找到他的电压能够承受多少V<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716165329781.png" alt="image-20240716165329781"></p>
 <p>if给芯片5V的电压就坏事了，本设计使用两节电池，1.5V+1.5V=3V符合条件</p>
 <p><strong>修改网络标识</strong></p>
 <p>放置--网络标签--tap键修改名称--然后alt+w引出导线连接加号与引脚</p>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716170036992.png"
-alt="image-20240716170036992" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716170036992.png" alt="image-20240716170036992">
 <figcaption aria-hidden="true">image-20240716170036992</figcaption>
 </figure>
-<p>这里还得微调一下，移动网络标识直至加号完全消失<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716172600029.png"
-alt="image-20240716172600029" /></p>
+<p>这里还得微调一下，移动网络标识直至加号完全消失<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716172600029.png" alt="image-20240716172600029"></p>
 <p><strong>网络标识</strong></p>
-<p><img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716171216260.png"
-alt="image-20240716171216260" />4.5引脚为网络标识；，放置-网络标识</p>
+<p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716171216260.png" alt="image-20240716171216260">4.5引脚为网络标识；，放置-网络标识</p>
 <p>右侧的方式需要左右翻转，快捷键X</p>
 <p><strong>非连接标识</strong></p>
 <p>​
-用于提示不用连接引脚，防止报错，在放置--非连接标识，必须放在黑色圆圈处才有作用<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716172954723.png"
-alt="image-20240716172954723" /></p>
+用于提示不用连接引脚，防止报错，在放置--非连接标识，必须放在黑色圆圈处才有作用<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716172954723.png" alt="image-20240716172954723"></p>
 <p><strong>复位引脚</strong></p>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716173319896.png"
-alt="image-20240716173319896" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716173319896.png" alt="image-20240716173319896">
 <figcaption aria-hidden="true">image-20240716173319896</figcaption>
 </figure>
 <p><strong>10kΩ的电阻</strong></p>
 <p>​ 放置-器件，搜索10k，加入限定0805+stn基础库--应用筛选</p>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716173508920.png"
-alt="image-20240716173508920" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716173508920.png" alt="image-20240716173508920">
 <figcaption aria-hidden="true">image-20240716173508920</figcaption>
 </figure>
 <p><strong>100nf的电容同理</strong></p>
 <p>​ 这里也可以shift+F 直接进入器件的搜索</p>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240716173656116.png"
-alt="image-20240716173656116" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240716173656116.png" alt="image-20240716173656116">
 <figcaption aria-hidden="true">image-20240716173656116</figcaption>
 </figure>
 <p>可以点击两个元器件，在右侧显示出其封装</p>
 <p>上面那玩意呢不知道是啥，但是L1不是电感，叫磁珠</p>
 <h4 id="晶振模块">2. 晶振模块</h4>
-<p><img src="【开源项目复刻】 【温湿度仪】原理图 /image-20240717150942554.png" alt="image-20240717150942554" style="zoom: 200%;" /></p>
+<p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717150942554.png" alt="image-20240717150942554" style="zoom: 200%;"></p>
 <p>使用32.768K来为他进行RTC的计时</p>
 <h4 id="sht40温湿度传感器模块">3. SHT40温湿度传感器模块</h4>
-<p><img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717153610150.png" /></p>
+<p><img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717153610150.png"></p>
 <h4 id="三态输出8位移位寄存器">4. 三态输出8位移位寄存器</h4>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717160922061.png"
-alt="image-20240717160922061" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717160922061.png" alt="image-20240717160922061">
 <figcaption aria-hidden="true">image-20240717160922061</figcaption>
 </figure>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717154713251.png"
-alt="image-20240717154713251" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717154713251.png" alt="image-20240717154713251">
 <figcaption aria-hidden="true">image-20240717154713251</figcaption>
 </figure>
 <p>后面的U<sub>5,6</sub>与其高度相似，区别在于LED1，，还是LED2</p>
 <p>右键芯片，选择扇出网络标签，批量修改</p>
 <h4 id="唤醒按键">5. 唤醒按键</h4>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717162327499.png"
-alt="image-20240717162327499" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717162327499.png" alt="image-20240717162327499">
 <figcaption aria-hidden="true">image-20240717162327499</figcaption>
 </figure>
 <p>中间这玩意是个按键</p>
 <h4 id="测试led">6. 测试led</h4>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717162407592.png"
-alt="image-20240717162407592" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717162407592.png" alt="image-20240717162407592">
 <figcaption aria-hidden="true">image-20240717162407592</figcaption>
 </figure>
 <h4 id="共阴极三位数码管">7. 共阴极三位数码管</h4>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717164050812.png"
-alt="image-20240717164050812" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717164050812.png" alt="image-20240717164050812">
 <figcaption aria-hidden="true">image-20240717164050812</figcaption>
 </figure>
 <h4 id="两节5号电池盒防反接">8. 两节5号电池盒+防反接</h4>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717171003758.png"
-alt="image-20240717171003758" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717171003758.png" alt="image-20240717171003758">
 <figcaption aria-hidden="true">image-20240717171003758</figcaption>
 </figure>
 <h4 id="swd下载调试接口">9. SWD下载调试接口</h4>
 <figure>
-<img
-src="【开源项目复刻】%20【温湿度仪】原理图%20/image-20240717172115713.png"
-alt="image-20240717172115713" />
+<img src="/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/image-20240717172115713.png" alt="image-20240717172115713">
 <figcaption aria-hidden="true">image-20240717172115713</figcaption>
 </figure>
 

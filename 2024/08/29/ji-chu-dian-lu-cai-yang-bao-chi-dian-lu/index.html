@@ -509,16 +509,13 @@
 <p>​
 采样保持电路，有时表示为S/H电路或S&amp;H电路，通常与模数转换器一起使用来采样输入模拟信号并保持采样信号，因此得名为采样保持电路。</p>
 <p>​ 典型的采样保持电路的简单框图</p>
-<p><img
-src="【基础电路】采样保持电路/image-20240829141802736.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829141802736.png"></p>
 <p>​ PWM控制mos，开关闭合时，信号被采样，打开时，电路保持输出信号</p>
 <h3 id="基本采样保持电路">基本采样保持电路</h3>
-<p><img
-src="【基础电路】采样保持电路/image-20240829151600448.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829151600448.png"></p>
 <p>主要包括四个主要部分：输入放大器，电容，输出缓冲器和开关电路</p>
 <p>​ 核心是<strong>电容</strong></p>
-<p><img
-src="【基础电路】采样保持电路/image-20240829152312997.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829152312997.png"></p>
 <p><strong>当 MOSFET
 作为闭合开关工作时，通过漏极端子提供给它的模拟信号将被馈送到电容器，然后电容将充电至其峰值。</strong>当释放开关时，电容停止充电。由于电路末端连接了高阻抗运算放大器，电容将因此而产生高阻抗，因此无法放电。</p>
 <h3 id="电压采样电路">电压采样电路</h3>
@@ -537,8 +534,7 @@ src="【基础电路】采样保持电路/image-20240829152312997.png" /></p>
 </ul>
 <h5 id="非隔离型电压采样电路">非隔离型电压采样电路</h5>
 <figure>
-<img src="【基础电路】采样保持电路/image-20240829152808581.png"
-alt="电压分压采样电路" />
+<img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829152808581.png" alt="电压分压采样电路">
 <figcaption aria-hidden="true">电压分压采样电路</figcaption>
 </figure>
 <p>​
@@ -563,8 +559,7 @@ ADC 进行转换。</li>
 <p><strong>霍尔电压采样</strong></p>
 <p>​
 霍尔元件的采样原理：霍尔传感器内部包含垂直于磁场方向放置的半导体薄片，根据霍尔效应，当有电流流过半导体薄片时会产生电动势，该电动势称为霍尔电势，可以通过测量电动势的大小得到留过电流的大小。</p>
-<p><img
-src="【基础电路】采样保持电路/image-20240829154642737.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829154642737.png"></p>
 <p>​
 待测电压通过采样电阻Rs3接入霍尔电压传感单元U1，得到一个幅值在0~V+的输出电压Vo。</p>
 <p>​
@@ -572,15 +567,13 @@ Vo经过分压电阻Rs1与Rs2后接入运算放大器U2，分压电阻的作用�
 <p>​
 运算放大器U2起到电压跟随的作用。U2的输出再经过低通滤波器（R1、C1）后接入ADC采样单元。</p>
 <p><strong>隔离运放电压采样</strong></p>
-<p><img
-src="【基础电路】采样保持电路/image-20240829155055932.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829155055932.png"></p>
 <p>​
 输入电压经过Rs1与Rs2分压后接入隔离运算放大器，随后接入差分运放电路中，运放U1的输出电压经过滤波器（R1、C1）后接入ADC采样模块。</p>
 <h3 id="电流采样电路">电流采样电路</h3>
 <h5 id="非隔离型电流采样电路">非隔离型电流采样电路</h5>
 <figure>
-<img src="【基础电路】采样保持电路/image-20240829155356943.png"
-alt="电流分流采样电路" />
+<img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829155356943.png" alt="电流分流采样电路">
 <figcaption aria-hidden="true">电流分流采样电路</figcaption>
 </figure>
 <p>​
@@ -591,8 +584,7 @@ alt="电流分流采样电路" />
 <p><strong>霍尔电流采样电路</strong></p>
 <p>​ 霍尔电流采样电路一般由霍尔传感元件、运算放大器和滤波器构成。</p>
 <p>以单电源闭环霍尔电流采样为例：</p>
-<p><img
-src="【基础电路】采样保持电路/image-20240829155810646.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829155810646.png"></p>
 <p>​
 待测电流穿过霍尔电流传感器U1会产生一个幅值在0~V+之间的输出电压值Vo。</p>
 <p>​
@@ -605,36 +597,30 @@ Vo经分压电阻Rs1与Rs2后接入运放U2，随后经低通滤波器（R1、C1
 <li>利用现有的电压产生20v的基准电压</li>
 </ul>
 <figure>
-<img src="【基础电路】采样保持电路/image-20240829160634407.png"
-alt="image-20240829160634407" />
+<img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829160634407.png" alt="image-20240829160634407">
 <figcaption aria-hidden="true">image-20240829160634407</figcaption>
 </figure>
 <ul>
 <li>通过运放将Uo与20V做差分</li>
 </ul>
-<p><img
-src="【基础电路】采样保持电路/image-20240829160706988.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829160706988.png"></p>
 <ul>
 <li>分压及输出阻抗匹配（电压跟随器）</li>
 </ul>
-<p><img
-src="【基础电路】采样保持电路/image-20240829160848576.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829160848576.png"></p>
 <ul>
 <li>输出钳位保护</li>
 </ul>
-<p><img
-src="【基础电路】采样保持电路/image-20240829160908157.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829160908157.png"></p>
 <p><strong>形式二</strong></p>
 <ul>
 <li>将Uo分压7倍，即将0-28v映射到0-4v，同理将20v也分压7倍即要产生2.857v的电压基准</li>
 </ul>
-<p><img
-src="【基础电路】采样保持电路/image-20240829161026166.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829161026166.png"></p>
 <ul>
 <li>差分并放大2.887倍及钳位电路（计算方法：3.3/（4-2.857），差放直接输入给AD不需要阻抗匹配）</li>
 </ul>
-<p><img
-src="【基础电路】采样保持电路/image-20240829161041603.png" /></p>
+<p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829161041603.png"></p>
 
                 
             </div>
@@ -882,6 +868,55 @@ src="【基础电路】采样保持电路/image-20240829161041603.png" /></p>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
+                <a href="/2024/08/30/ji-chu-dian-lu-fang-dao-guan-dian-lu/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="防倒灌电路">
+                        
+                        <span class="card-title">防倒灌电路</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-30
+                        </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
+                                    基础电路
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/%E9%98%B2%E5%80%92%E7%81%8C/">
+                        <span class="chip bg-color">防倒灌</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
                 <a href="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/">
                     <div class="card-image">
                         
@@ -898,9 +933,9 @@ src="【基础电路】采样保持电路/image-20240829161041603.png" /></p>
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
+                            </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -926,55 +961,6 @@ src="【基础电路】采样保持电路/image-20240829161041603.png" /></p>
                     
                     <a href="/tags/LC%E6%BB%A4%E6%B3%A2/">
                         <span class="chip bg-color">LC滤波</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
-                <a href="/2024/08/29/mo-dian-yun-suan-fang-da-qi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="运算放大器">
-                        
-                        <span class="card-title">运算放大器</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
-                            </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%A8%A1%E7%94%B5/" class="post-category">
-                                    模电
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E8%BF%90%E6%94%BE/">
-                        <span class="chip bg-color">运放</span>
                     </a>
                     
                 </div>

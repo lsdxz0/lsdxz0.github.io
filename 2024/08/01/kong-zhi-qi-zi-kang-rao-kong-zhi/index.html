@@ -505,8 +505,7 @@
 </ul>
 <h4 id="原理">原理</h4>
 <figure>
-<img src="【控制器】自抗扰控制/image-20240801093421261.png"
-alt="ADRC总体控制框图" />
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801093421261.png" alt="ADRC总体控制框图">
 <figcaption aria-hidden="true">ADRC总体控制框图</figcaption>
 </figure>
 <p><strong>工作过程：</strong>输入期待电压v，经过TD，对V进行平滑处理，V<sub>2</sub>是对V的求导，然后同时对给定信号与给定信号的微分做了一个误差，然后再送到nlsef里面，这玩意是非线性状态误差反馈，也就是常说的补偿器环节。下面这个是状态扩张观测器（ESO)，这玩意是核心环节，它的作用是可以估计出实际的控制对象和我们状态观测器内部标称控制对象的误差值，这个误差值叫做Z<sub>3</sub>这样的话就可以把这个部分给他化简成我们的控制标准型，这里选择的是积分器串联型。</p>
@@ -518,10 +517,7 @@ alt="ADRC总体控制框图" />
 <ul>
 <li>PID的误差是以e=v-y的方式产生的，但是这里的控制目标v在过程中是可以跳变的，而对象输出y的变化是有惯性的，不可能发生跳变（也就是输入信号阶跃，但是输出电压还是有过程的变化，而不是突变）所以要求让缓变的变量y来跟踪能够跳变的变量v本身就不合理会产生<strong>’‘快速性’‘</strong>和<strong>’‘超调’‘</strong>之间的矛盾</li>
 </ul></li>
-<li>由误差提取其微分的办法不合理；常用<span
-class="math inline">\(y=\frac{v(t)-v(t-\tau)}{\tau}\)</span>实现，但是当输入信号v（t）被噪声n（t）污染时，$y=<span
-class="math inline">\(，输出y中的近似微分信号\)</span><span
-class="math inline">\(会被放大的噪声分量\)</span>$所淹没，无法利用</li>
+<li>由误差提取其微分的办法不合理；常用<span class="math inline">\(y=\frac{v(t)-v(t-\tau)}{\tau}\)</span>实现，但是当输入信号v（t）被噪声n（t）污染时，$y=<span class="math inline">\(，输出y中的近似微分信号\)</span><span class="math inline">\(会被放大的噪声分量\)</span>$所淹没，无法利用</li>
 <li>线性加权的策略不一定最好</li>
 <li>积分反馈有许多副作用；会使得闭环变得迟钝，容易产生振荡，积分饱和引起的控制量饱和</li>
 </ul>
@@ -533,7 +529,7 @@ class="math inline">\(会被放大的噪声分量\)</span>$所淹没，无法利
 <li>探讨“扰动估计”办法--“扩张状态观测器”（ESO）</li>
 </ul>
 <p>假定模型控制的是电机速度，则其具体含义如下图：</p>
-<p><img src="【控制器】自抗扰控制/image-20240801100009241.png" /></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801100009241.png"></p>
 <p>​ 上下两图结合，我们就能明白 ADRC
 控制系统的<strong>工作流程</strong>，首先给定目标速度，由 TD
 得到实际模型跟踪的速度和加速度，扩张状态观测器根据电机的控制输入和实际输出得到观测的速度，加速度和扰动，与跟踪速度和加速度做差得到误差，由非线性状态误差反馈系统将误差进行非线性组合，减去扰动即为实际的控制输入。</p>
@@ -541,7 +537,7 @@ class="math inline">\(会被放大的噪声分量\)</span>$所淹没，无法利
 <p>​ 跟踪微分器-Tracking
 differentiator：分为线性和非线性两种，本质上是一种<strong>低通滤波器</strong>，作用是平滑指令以及减少闭环传递函数的超调（将闭环传递函数的峰值压低到0dB以下）。</p>
 <p><strong>目的：</strong>解决由不连续或带随机噪声的量测信号，合理提取连续信号（跟踪给定）及微分信号的问题</p>
-<p><img src="【控制器】自抗扰控制/image-20240801101735736.png" /></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801101735736.png"></p>
 <p><strong>输入</strong></p>
 <ul>
 <li><strong>期望信号（设定值）</strong>：比如我们的期望输出电压</li>
@@ -551,16 +547,16 @@ differentiator：分为线性和非线性两种，本质上是一种<strong>低�
 <li><strong>平滑的期望轨迹</strong>：TD生成的平滑轨迹，使得系统能够跟踪期望信号而不会出现突变</li>
 <li><strong>期望轨迹的导数：</strong>期望电压的变化率</li>
 </ul>
-<p><img src="【控制器】自抗扰控制/image-20240801111245527.png" /></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801111245527.png"></p>
 <p>通过TD，依据微分输出与最速综合函数，可以来安排过渡过程</p>
-<p><img src="【控制器】自抗扰控制/image-20240801111538792.png" /></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801111538792.png"></p>
 <p><strong>特点：</strong></p>
 <ul>
 <li>使<strong>误差反馈增益和误差微分增益</strong>选取范围扩大</li>
 <li>使<strong>给定的反馈增益所适应的对象参数</strong>范围扩大</li>
 </ul>
 <p><strong>数学表达形式</strong></p>
-<p><img src="【控制器】自抗扰控制/image-20240801145352420.png" /></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801145352420.png"></p>
 <p>​ r：
 跟踪速度因子；它与跟踪速度正相关，但是过大会放大噪声，因此引入滤波因子h
 对噪声进行抑制，h越大滤波效果越强</p>
@@ -573,21 +569,16 @@ ADRC是一种单输入单输出的控制，因此只能适用于<strong>非耦�
 <p>​
 如何理解ESO哩，对控制过程中真实存在的扰动进行补偿，达到抗干扰，鲁棒性好，对模型依赖性降低的效果，所谓扩张，则是将扰动项视为新的状态变量，所以是对状态向量的一种扩张</p>
 <figure>
-<img src="【控制器】自抗扰控制/image-20240801154106911.png"
-alt="二阶系统ESO结构图" />
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154106911.png" alt="二阶系统ESO结构图">
 <figcaption aria-hidden="true">二阶系统ESO结构图</figcaption>
 </figure>
 <figure>
-<img src="【控制器】自抗扰控制/image-20240801154140878.png"
-alt="n阶系统的ESO" />
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154140878.png" alt="n阶系统的ESO">
 <figcaption aria-hidden="true">n阶系统的ESO</figcaption>
 </figure>
 <p>对于以下二阶系统： <span class="math display">\[
 \begin{aligned}&amp;x_{1}^{\prime}=x_{2}\\&amp;x_{2}^{\prime}=f(x_1,x_2)+bu\\&amp;y=x_1\end{aligned}
-\]</span> 我们将耦合项<span
-class="math inline">\(f(x_1,x_2)\)</span>看作扰动，将其扩张为新的状态变量<span
-class="math inline">\(x_3\)</span>故有如下式子： <span
-class="math display">\[
+\]</span> 我们将耦合项<span class="math inline">\(f(x_1,x_2)\)</span>看作扰动，将其扩张为新的状态变量<span class="math inline">\(x_3\)</span>故有如下式子： <span class="math display">\[
 \begin{aligned}
 &amp;x_1^{\prime} =x_{2} \\
 &amp;\text{.} x_{2}^{\prime}=x_{3}+bu \\
@@ -603,29 +594,21 @@ class="math display">\[
 \end{aligned}
 \]</span> 另一文中写到： <span class="math display">\[
 \begin{aligned}&amp;e=z_1-y,fe=fal(e,0.5,\delta),fel=fal(e,0.25,\delta)\\&amp;z_1=z_1+h\left(z_2-\beta_{01}e\right)\\&amp;z_2=z_2+h\left(z_3-\beta_{02}fe+bu\right)\\&amp;z_3=z_3+h\left(-\beta_{03}fe1\right)\end{aligned}
-\]</span> ​ 参数<span
-class="math inline">\(\beta_{01},\beta_{02},\beta_{03}\)</span>是由系统所用采样步长来决定的不管什么样的对象，采样步长一样，都可以用相同的<span
-class="math inline">\(\beta_{01},\beta_{02},\beta_{03}\)</span></p>
-<p>对于<strong>ESO的参数整定</strong>方法，有一些经验公式： <span
-class="math display">\[
+\]</span> ​ 参数<span class="math inline">\(\beta_{01},\beta_{02},\beta_{03}\)</span>是由系统所用采样步长来决定的不管什么样的对象，采样步长一样，都可以用相同的<span class="math inline">\(\beta_{01},\beta_{02},\beta_{03}\)</span></p>
+<p>对于<strong>ESO的参数整定</strong>方法，有一些经验公式： <span class="math display">\[
 \beta_{01}=\frac1h,\beta_{02}=\frac1{3h^2},\beta_{03}=\frac2{8^2h^3},\beta_{04}=\frac5{13^3h^4},\cdots
 \]</span></p>
 <h4 id="非线性反馈控制器">非线性反馈控制器</h4>
-<p><img src="【控制器】自抗扰控制/image-20240801155609966.png" /></p>
-所以这里其实是又回到PID控制了，只不过e<sub>1,2,3</sub>发生了变化，过渡过程产生的误差信号<span
-class="math inline">\(e_1=v_1-z_1\)</span>；误差微分信号：<span
-class="math inline">\(e_2=v_2-z_2\)</span>
-，及根据误差信号生成的积分信号：$<em>0=<em>0^te_1()d<span
-class="math inline">\(；只不过这里结合的时候不是采用的线性组合，通常采用的非线性组合有如下两种形式：\)</span>$
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801155609966.png"></p>
+所以这里其实是又回到PID控制了，只不过e<sub>1,2,3</sub>发生了变化，过渡过程产生的误差信号<span class="math inline">\(e_1=v_1-z_1\)</span>；误差微分信号：<span class="math inline">\(e_2=v_2-z_2\)</span>
+，及根据误差信号生成的积分信号：$<em>0=<em>0^te_1()d<span class="math inline">\(；只不过这里结合的时候不是采用的线性组合，通常采用的非线性组合有如下两种形式：\)</span>$
 u</em>{0}=</em>{0}fal(e_{0},<em>{0},)+</em>{1}fal(e_{1},<em>{1},)+</em>{2}fal(e_{2},<em>{2},),</em>{0}&lt;0&lt;<em>{1}&lt;1&lt;</em>{2}\u_{0}=k_{0}e_{0}-fhan(e_{1},ce_{2},r,h)
 <span class="math display">\[
 其中
 \]</span> fal(e,,)=
-<span
-class="math display">\[\begin{cases}|e|^\alpha\operatorname{sign}(e),|e|&gt;\delta\\\frac{e}{\delta1-\alpha}&amp;,|e|\leq\delta\end{cases}\]</span>
+<span class="math display">\[\begin{cases}|e|^\alpha\operatorname{sign}(e),|e|&gt;\delta\\\frac{e}{\delta1-\alpha}&amp;,|e|\leq\delta\end{cases}\]</span>
 \
-<span
-class="math display">\[\begin{cases}d=rh^2\\a_0=hx_2\\y=x_1+a_0\\a_1=\sqrt{d(d+8|y|)}\\a_2=a_0+\operatorname{sign}(y)\left(a_1-d\right)/2\\fsg(y,d)=(\operatorname{sign}(y+d)-\operatorname{sign}(y-d))/2\\a=(a_0+y-a_2)fsg(y,d)+a_2\\fsg(a,d)=(\operatorname{sign}(a+d)-\operatorname{sign}(a-d))/2\\\mathrm{~fhan~}=-r\left(\frac
+<span class="math display">\[\begin{cases}d=rh^2\\a_0=hx_2\\y=x_1+a_0\\a_1=\sqrt{d(d+8|y|)}\\a_2=a_0+\operatorname{sign}(y)\left(a_1-d\right)/2\\fsg(y,d)=(\operatorname{sign}(y+d)-\operatorname{sign}(y-d))/2\\a=(a_0+y-a_2)fsg(y,d)+a_2\\fsg(a,d)=(\operatorname{sign}(a+d)-\operatorname{sign}(a-d))/2\\\mathrm{~fhan~}=-r\left(\frac
 ad-\operatorname{sign}(a)\right)f\operatorname{sg}(a,d)-r\operatorname{sign}(a)&amp;\end{cases}\]</span>
 <p><span class="math display">\[
 由于ADRC具有扰动估计能力及较强的抗干扰性，所以无需依赖积分补偿来消除扰动的影响。故积分项可不添加
@@ -635,8 +618,8 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
 将ESO估计的扰动$z_3$补偿到控制器的输出$u_0$上，b是控制器的增益，可得到以下两种形式：
 \]</span> u=u_0-b\u=b $$
 最终跟踪微分器（TD），扩张状态观测器（ESO），非线性反馈控制器组成了ADRC算法：</p>
-<p><img src="【控制器】自抗扰控制/image-20240801161309839.png" /></p>
-<p><img src="【控制器】自抗扰控制/image-20240801163452762.png" /></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801161309839.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801163452762.png"></p>
 <h4 id="adrc的一些问题与局限性">ADRC的一些问题与局限性</h4>
 <h5 id="td的局限性">TD的局限性</h5>
 <p><strong>线性TD</strong>的本质其实就是一个阻尼比为1的标准二阶系统，并且没有任何零点。对于一个标准的二阶系统，将其写成状态空间的形式，其中的两个状态就分别对应为滤波后的输入以及滤波后输入的微分</p>

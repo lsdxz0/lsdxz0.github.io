@@ -500,54 +500,43 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1
-id="llc变换器设计基础第一节-谐振腔分类-等效负载和串联谐振">【LLC变换器设计基础】第一节
+                <h1 id="llc变换器设计基础第一节-谐振腔分类-等效负载和串联谐振">【LLC变换器设计基础】第一节
 谐振腔分类 等效负载和串联谐振</h1>
 <h4 id="谐振腔分类">1.谐振腔分类</h4>
 <figure>
-<img
-src="【LLC设计】01.谐振腔分类，等效负载和串联谐振/image-20240613100012343.png"
-alt="image-20240613100012343" />
+<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100012343.png" alt="image-20240613100012343">
 <figcaption aria-hidden="true">image-20240613100012343</figcaption>
 </figure>
 <p>​ 串联 并联（不是那种L与C并到一块的） LCC LLC</p>
 <h4 id="等效负载计算">2.等效负载计算</h4>
 <figure>
-<img
-src="【LLC设计】01.谐振腔分类，等效负载和串联谐振/image-20240613100817623.png"
-alt="image-20240613100817623" />
+<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613100817623.png" alt="image-20240613100817623">
 <figcaption aria-hidden="true">image-20240613100817623</figcaption>
 </figure>
 <p>​
 副边，谐振腔等效为电流源，电流波形为Ip正弦，整流桥的电压波形为Eo，电流经过全波整流之后变成馒头波Ip，滤波之后的平均值为Io
 <span class="math display">\[
 i_{0}=\frac{2}{\pi}i_{p}=\frac{2\sqrt{2}}{\pi}i_{\mathrm{ac}}(rms)
-\]</span> 把这个倒过来就可以得到 Iac（rms） <span
-class="math display">\[
+\]</span> 把这个倒过来就可以得到 Iac（rms） <span class="math display">\[
 I_{ac}(rms)\quad=\quad\frac{\pi}{2\sqrt{2}}\quad
 \]</span> ​
 Eo为方波信号的最大值，那么对于峰值电压Eac_p。对于一个方波电压，其等效正弦波的峰值电压是方波最大值Eo
 的倍数。这倍数由傅里叶级数的第一项决定，即方波的基波成分。基波成分的峰值是方波峰值的4/π倍
 <span class="math display">\[
 E_{ac_p}=\frac4\pi E_o
-\]</span> 等效正弦波的有效值是其峰值的1/根号2 倍： <span
-class="math display">\[
+\]</span> 等效正弦波的有效值是其峰值的1/根号2 倍： <span class="math display">\[
 E_{ac}(rms)\quad=\quad\frac{2\sqrt{2}}\pi E_o
 \]</span> 等效电阻Rac <span class="math display">\[
 R_{ac}=\frac{E_{ac}(rms)}{I_{ac}(rms)}\quad=\frac{8}{\pi^{2}}\frac{E_{0}}{I_{0}}=\frac{8}{\pi^{2}}R_{L}
 \]</span>
 <strong>在并联的情况下，比如电容并到变压器的两段，LCC。视为电压驱动，</strong></p>
 <figure>
-<img
-src="【LLC设计】01.谐振腔分类，等效负载和串联谐振/image-20240613103623395.png"
-alt="image-20240613103623395" />
+<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613103623395.png" alt="image-20240613103623395">
 <figcaption aria-hidden="true">image-20240613103623395</figcaption>
 </figure>
 <h4 id="串联谐振">3.串联谐振</h4>
 <figure>
-<img
-src="【LLC设计】01.谐振腔分类，等效负载和串联谐振/image-20240613143610199.png"
-alt="image-20240613143610199" />
+<img src="/2024/06/13/llc-bian-huan-qi-she-ji-ji-chu-di-yi-jie-xie-zhen-qiang-fen-lei-deng-xiao-fu-zai-he-chuan-lian-xie-zhen/image-20240613143610199.png" alt="image-20240613143610199">
 <figcaption aria-hidden="true">image-20240613143610199</figcaption>
 </figure>
 <ul>
