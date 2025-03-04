@@ -451,14 +451,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    519
+                    1.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    4 分
                 </div>
                 
 
@@ -539,10 +539,114 @@
 "传递" 状态。</li>
 <li>如果在当前时间步重置模块，则状态端口的输出为模块尚未重置时在模块的标准输出中显示的值。</li>
 </ul>
-<p><img src="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png" alt="img">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。
-（对于代数环，后面将会单独拿出一篇文章来讲) ————————————————</p>
-<pre><code>                        版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</code></pre>
-<p>原文链接：https://blog.csdn.net/m0_64651092/article/details/130336132</p>
+<p>这里区分一下这个常规输出</p>
+<p>​ 比如有一个银行账户，每天凌晨自动计算利息并更新余额</p>
+<ul>
+<li><strong>状态端口：</strong>
+随时可以查看当前的余额（截止到昨晚24点的余额）</li>
+<li><strong>常规输出：</strong>银行计算利息后生成的明日新余额（今天24点菜1生效）</li>
+</ul>
+<p>​
+积分器的输出本质上是<strong>系统状态变量的时间积分结果</strong>。状态端口直接暴露的是积分器内部存储的<strong>当前时刻状态值</strong>（即积分结果），而常规输出端口是<strong>下一时刻的状态值</strong>（积分结果的更新版本）</p>
+<p><strong>再举个例子，汽车运动建模</strong></p>
+<ul>
+<li>系统方程：<span class="math display">\[x(t)=∫v（t）dt\]</span></li>
+<li><strong>状态端口：</strong>直接暴露当前时刻<span class="math inline">\(t\)</span>的位置<span class="math inline">\(x(t)\)</span></li>
+<li><strong>常规输出：</strong>根据当前速度<span class="math inline">\(v(t)\)</span>预测下一时刻<span class="math inline">\(t+△t\)</span>的位置<span class="math inline">\(x（t+△t）\)</span></li>
+</ul>
+<p>在仿真中，假设仿真时间从时间<code>t=10秒</code>到<code>t=11秒</code></p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>状态端口值</th>
+<th>常规输出值</th>
+<th>物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>t=10s</code></td>
+<td><code>x(10)</code>（实际值）</td>
+<td><code>x(11)</code>（预测值）</td>
+<td>当前vs下一时刻位置</td>
+</tr>
+</tbody>
+</table>
+<p><strong>反馈是基于当前状态控制而非依赖未发生的未来值</strong></p>
+<p><img src="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。</p>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304133829722.png" alt="究极进化">
+<figcaption aria-hidden="true">究极进化</figcaption>
+</figure>
+<h4 id="compare-to-constant1模块">0.1.0.2. 2. Compare To Constant(&gt;1模块)</h4>
+<p>​ 状态端口输出到俩地方，首先就是这玩意，</p>
+<ul>
+<li><strong>输入：</strong>积分器的当前输出值</li>
+<li><strong>作用：</strong>实时比较积分器的输出值与常数1
+<ul>
+<li>当积分器输出&gt;1时，<strong>输出高电平</strong></li>
+<li>否则<strong>输出低电平</strong></li>
+</ul></li>
+<li><strong>用于触发积分器复位</strong></li>
+</ul>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304135354081.png" alt="速速重开">
+<figcaption aria-hidden="true">速速重开</figcaption>
+</figure>
+<h4 id="bias">0.1.0.3. 3. bias</h4>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304135435571.png" alt="减去偏置">
+<figcaption aria-hidden="true">减去偏置</figcaption>
+</figure>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304135455216.png" alt="参数">
+<figcaption aria-hidden="true">参数</figcaption>
+</figure>
+<h4 id="ic">0.1.0.4. 4. IC</h4>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304140512662.png" alt="IC">
+<figcaption aria-hidden="true">IC</figcaption>
+</figure>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304140524557.png" alt="模块参数">
+<figcaption aria-hidden="true">模块参数</figcaption>
+</figure>
+<p>3跟4结合起来作为积分器的初始条件x（0）</p>
+<ul>
+<li><strong>IC模块接在Bias后</strong>：实现积分器初始条件的动态更新，使每次复位后积分起点由Bias计算结果决定</li>
+</ul>
+<p><strong>静态初始条件（IC=固定值）：</strong></p>
+<p>​ 每次复位后，积分器均从固定值（如图中的0）开始，生成标准锯齿波</p>
+<p>三跟四哩，就给积分器生成了周期性的锯齿波，流程如下：</p>
+<ul>
+<li><strong>1.首次积分:</strong>
+<ul>
+<li>IC模块初始值 = 0 → 积分器从0开始积分。</li>
+</ul></li>
+<li><strong>2.首次复位：</strong>
+<ul>
+<li>积分器输出达到1.0 → 比较器触发复位。</li>
+<li>Bias模块计算新初始值 = 1.0 -1 = 0 → IC模块将初始值更新为0。</li>
+<li>积分器重新从0开始积分，形成锯齿波（0→1→0→1…）。</li>
+</ul></li>
+<li><strong>特殊情况：</strong>若积分器复位前输出为1.2：
+<ul>
+<li>新初始值 = 1.2 -1 = 0.2 →
+下一周期从0.2开始积分，直到再次超过1。</li>
+<li>此时波形为0.2→1→0.2→1…，频率仍由输入电压控制。</li>
+</ul></li>
+</ul>
+<p>此时x0端口的输入为：</p>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304141252928.png" alt="这俩模块的输出波">
+<figcaption aria-hidden="true">这俩模块的输出波</figcaption>
+</figure>
+<h4 id="vco输出">0.1.0.5. 5. VCO输出</h4>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304141541977.png" alt="输出这玩意">
+<figcaption aria-hidden="true">输出这玩意</figcaption>
+</figure>
 
                 
             </div>
@@ -664,9 +768,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【simulink】PWM">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">【simulink】PWM</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -681,11 +785,27 @@
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            LS
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    仿真
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/simulink/">
+                        <span class="chip bg-color">simulink</span>
+                    </a>
+                    
+                    <a href="/tags/CLLC/">
+                        <span class="chip bg-color">CLLC</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -888,7 +1008,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.3k</span>&nbsp;字
+                class="white-color">53.9k</span>&nbsp;字
             
             
             

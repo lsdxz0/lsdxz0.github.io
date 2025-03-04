@@ -452,10 +452,266 @@ f_r=\frac{1}{2\pi\sqrt{L_rC_r}}
 "传递" 状态。</li>
 <li>如果在当前时间步重置模块，则状态端口的输出为模块尚未重置时在模块的标准输出中显示的值。</li>
 </ul>
-<p><img src="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png" alt="img">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。
-（对于代数环，后面将会单独拿出一篇文章来讲) ————————————————</p>
-<pre><code>                        版权声明：本文为博主原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接和本声明。</code></pre>
-<p>原文链接：https://blog.csdn.net/m0_64651092/article/details/130336132</p>
+<p>这里区分一下这个常规输出</p>
+<p>​ 比如有一个银行账户，每天凌晨自动计算利息并更新余额</p>
+<ul>
+<li><strong>状态端口：</strong>
+随时可以查看当前的余额（截止到昨晚24点的余额）</li>
+<li><strong>常规输出：</strong>银行计算利息后生成的明日新余额（今天24点菜1生效）</li>
+</ul>
+<p>​
+积分器的输出本质上是<strong>系统状态变量的时间积分结果</strong>。状态端口直接暴露的是积分器内部存储的<strong>当前时刻状态值</strong>（即积分结果），而常规输出端口是<strong>下一时刻的状态值</strong>（积分结果的更新版本）</p>
+<p><strong>再举个例子，汽车运动建模</strong></p>
+<ul>
+<li>系统方程：<span class="math display">\[x(t)=∫v（t）dt\]</span></li>
+<li><strong>状态端口：</strong>直接暴露当前时刻<span class="math inline">\(t\)</span>的位置<span class="math inline">\(x(t)\)</span></li>
+<li><strong>常规输出：</strong>根据当前速度<span class="math inline">\(v(t)\)</span>预测下一时刻<span class="math inline">\(t+△t\)</span>的位置<span class="math inline">\(x（t+△t）\)</span></li>
+</ul>
+<p>在仿真中，假设仿真时间从时间<code>t=10秒</code>到<code>t=11秒</code></p>
+<table>
+<thead>
+<tr>
+<th>时间</th>
+<th>状态端口值</th>
+<th>常规输出值</th>
+<th>物理意义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>t=10s</code></td>
+<td><code>x(10)</code>（实际值）</td>
+<td><code>x(11)</code>（预测值）</td>
+<td>当前vs下一时刻位置</td>
+</tr>
+</tbody>
+</table>
+<p><strong>反馈是基于当前状态控制而非依赖未发生的未来值</strong></p>
+<p><img src="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。</p>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304133829722.png" alt="究极进化">
+<figcaption aria-hidden="true">究极进化</figcaption>
+</figure>
+<h4 id="compare-to-constant1模块">0.1.0.2. 2. Compare To Constant(&gt;1模块)</h4>
+<p>​ 状态端口输出到俩地方，首先就是这玩意，</p>
+<ul>
+<li><strong>输入：</strong>积分器的当前输出值</li>
+<li><strong>作用：</strong>实时比较积分器的输出值与常数1
+<ul>
+<li>当积分器输出&gt;1时，<strong>输出高电平</strong></li>
+<li>否则<strong>输出低电平</strong></li>
+</ul></li>
+<li><strong>用于触发积分器复位</strong></li>
+</ul>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304135354081.png" alt="速速重开">
+<figcaption aria-hidden="true">速速重开</figcaption>
+</figure>
+<h4 id="bias">0.1.0.3. 3. bias</h4>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304135435571.png" alt="减去偏置">
+<figcaption aria-hidden="true">减去偏置</figcaption>
+</figure>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304135455216.png" alt="参数">
+<figcaption aria-hidden="true">参数</figcaption>
+</figure>
+<h4 id="ic">0.1.0.4. 4. IC</h4>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304140512662.png" alt="IC">
+<figcaption aria-hidden="true">IC</figcaption>
+</figure>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304140524557.png" alt="模块参数">
+<figcaption aria-hidden="true">模块参数</figcaption>
+</figure>
+<p>3跟4结合起来作为积分器的初始条件x（0）</p>
+<ul>
+<li><strong>IC模块接在Bias后</strong>：实现积分器初始条件的动态更新，使每次复位后积分起点由Bias计算结果决定</li>
+</ul>
+<p><strong>静态初始条件（IC=固定值）：</strong></p>
+<p>​ 每次复位后，积分器均从固定值（如图中的0）开始，生成标准锯齿波</p>
+<p>三跟四哩，就给积分器生成了周期性的锯齿波，流程如下：</p>
+<ul>
+<li><strong>1.首次积分:</strong>
+<ul>
+<li>IC模块初始值 = 0 → 积分器从0开始积分。</li>
+</ul></li>
+<li><strong>2.首次复位：</strong>
+<ul>
+<li>积分器输出达到1.0 → 比较器触发复位。</li>
+<li>Bias模块计算新初始值 = 1.0 -1 = 0 → IC模块将初始值更新为0。</li>
+<li>积分器重新从0开始积分，形成锯齿波（0→1→0→1…）。</li>
+</ul></li>
+<li><strong>特殊情况：</strong>若积分器复位前输出为1.2：
+<ul>
+<li>新初始值 = 1.2 -1 = 0.2 →
+下一周期从0.2开始积分，直到再次超过1。</li>
+<li>此时波形为0.2→1→0.2→1…，频率仍由输入电压控制。</li>
+</ul></li>
+</ul>
+<p>此时x0端口的输入为：</p>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304141252928.png" alt="这俩模块的输出波">
+<figcaption aria-hidden="true">这俩模块的输出波</figcaption>
+</figure>
+<h4 id="vco输出">0.1.0.5. 5. VCO输出</h4>
+<figure>
+<img src="/2025/02/27/cllc-vco/image-20250304141541977.png" alt="输出这玩意">
+<figcaption aria-hidden="true">输出这玩意</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>仿真</category>
+      </categories>
+      <tags>
+        <tag>simulink</tag>
+        <tag>CLLC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【simulink】PWM</title>
+    <url>/2025/03/04/cllc-pwm-sheng-cheng-qi/</url>
+    <content><![CDATA[<h2 id="simulinkpwm">0.1. 【simulink】PWM</h2>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304152717270.png" alt="PWM模块">
+<figcaption aria-hidden="true">PWM模块</figcaption>
+</figure>
+<p>​
+变频是在VCO里完成的，这里哩就是产生变频的占空比固定（0.5）的PWM波</p>
+<h4 id="产生波">0.1.0.1. 1. 产生波</h4>
+<p>​ VCO产生锯齿波，然后跟0.5比，大于0.5为高电平，小于0.5为低电平，</p>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304155706119.png" alt="Re~Op的结果">
+<figcaption aria-hidden="true">Re~Op的结果</figcaption>
+</figure>
+<h4 id="data-type-conversion模块">0.1.0.2. 2. Data Type Conversion模块</h4>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304160449208.png" alt="Data">
+<figcaption aria-hidden="true">Data</figcaption>
+</figure>
+<p>​ 前面的方波的输出是逻辑电平，0/1也就是布尔类型，而后面的Transport
+Delay（传输延迟）、AND逻辑等模块通常需要
+<strong>双精度浮点数（double）</strong>
+作为输入。所以加个这玩意改变一下数据类型</p>
+<p>​
+这里其实也就是<strong>0---&gt;0.0</strong>以及<strong>1---&gt;1.0</strong>，仅改变数据类型，不改变信号逻辑值</p>
+<h4 id="transport-delay">0.1.0.3. 3. Transport Delay</h4>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304161230214.png" alt="死区时间">
+<figcaption aria-hidden="true">死区时间</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 18%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>参数项</strong></th>
+<th><strong>设定值</strong></th>
+<th><strong>物理意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>时滞</strong></td>
+<td><code>100e-9</code>秒（100ns）</td>
+<td>信号延迟时间，需大于开关管关断时间（如MOSFET的关断延迟+体二极管反向恢复时间）。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>初始输出</strong></td>
+<td><code>0</code></td>
+<td>仿真开始时模块输出为0，避免初始阶段误触发驱动信号。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>初始缓冲区大小</strong></td>
+<td><code>1024</code></td>
+<td>预分配内存存储历史信号数据，确保延迟计算的稳定性（<strong>一般无需修改</strong>）。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>使用固定缓冲区大小</strong></td>
+<td>勾选</td>
+<td>禁止仿真中动态调整缓冲区，提升运行效率。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Pade阶（用于线性化）</strong></td>
+<td><code>0</code></td>
+<td>禁用Pade近似，保持精确的非线性延迟（适合开关电源仿真）。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>信号流示例：</strong>
+<ul>
+<li><strong>原始PWM波</strong>（S1驱动信号）：
+<ul>
+<li><code>0→1→0→1...</code></li>
+<li><code>0→（延迟100ns）→1...</code></li>
+</ul></li>
+<li><strong>互补信号生成</strong>
+<ul>
+<li>S1驱动信号：原PWM波延迟100ns →
+<code>[0→延迟→1→延迟→0...]</code></li>
+<li>S4驱动信号：原PWM波取反后延迟100ns →
+<code>[1→延迟→0→延迟→1...]</code></li>
+</ul></li>
+</ul></li>
+<li><strong>死区生成效果</strong>
+<ul>
+<li>S1和S4的驱动信号在跳变沿之间存在100ns的重叠低电平区（死区），完全消除直通风险</li>
+</ul></li>
+</ul>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304162125397.png" alt="死区效果">
+<figcaption aria-hidden="true">死区效果</figcaption>
+</figure>
+<h4 id="and">0.1.0.4. 4. AND</h4>
+<p>​ 首先要明确AND的功能</p>
+<h5 id="死区时间的生成原理">0.1.0.4.1. (1) 死区时间的生成原理</h5>
+<ul>
+<li><p><strong>目标</strong>：在S14和S23的跳变沿之间插入100ns低电平区间（死区）。</p></li>
+<li><p><strong>实现逻辑：</strong></p>
+<p>只有当<strong>原始信号</strong>和
+<strong>延迟后的信号</strong>同时为高电平 时，AND门才输出高电平。</p>
+<p><strong>效果：</strong></p>
+<ul>
+<li>每个跳变沿（上升沿或下降沿）后，原始信号与延迟信号存在100ns的不同步。</li>
+<li>AND操作将高电平持续时间缩短100ns，形成死区窗口。</li>
+</ul></li>
+</ul>
+<h5 id="具体波形示例">0.1.0.4.2. (2) 具体波形示例</h5>
+<p>假设原始方波为50%占空比（高电平10μs，低电平10μs，频率50kHz）：</p>
+<ul>
+<li><strong>路径A（直接通道）</strong>：立即跟随原始方波。</li>
+<li><strong>路径B（延迟通道）</strong>：原始方波延迟100ns后到达AND门。</li>
+<li><strong>AND输出（S14）</strong>
+<ul>
+<li>仅当两路信号均为高电平时输出高电平。</li>
+<li><strong>高电平持续时间</strong> = 原始高电平时间 - 延迟时间 = 10μs -
+100ns = 9.9μs。</li>
+<li><strong>死区效果</strong>：在原始方波下降沿后的100ns内，AND输出保持低电平。</li>
+</ul></li>
+</ul>
+<p><strong>一个自我误区</strong></p>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304164519330.png" alt="误区">
+<figcaption aria-hidden="true">误区</figcaption>
+</figure>
+<p>（黄色是A，蓝色是B）<strong>死区时间是100ns而不是200ns</strong>，别看两个波的前后比，而是单个波</p>
+<ul>
+<li><p><strong>原始信号（A）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">高电平时间：0μs→10μs  </span><br><span class="line">低电平时间：10μs→20μs  </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>延迟信号（B = A延迟100ns）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">高电平时间：0.1μs→10.1μs  </span><br><span class="line">低电平时间：10.1μs→20.1μs  </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>AND输出（A AND B）</strong>：
+仅当A和B同时为高时输出高电平，因此高电平区间为
+​<strong>0.1μs→10μs</strong>，持续时间为 ​<strong>9.9μs</strong>。
+​<strong>高电平减少量</strong>​ = 原始高电平时间（10μs） -
+AND输出高电平时间（9.9μs） =
+​<strong>100ns</strong>​（而非200ns）</p></li>
+</ul>
 ]]></content>
       <categories>
         <category>仿真</category>
@@ -628,42 +884,6 @@ ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1>
       </tags>
   </entry>
   <entry>
-    <title>OBC控制电路</title>
-    <url>/2024/12/03/obc-kong-zhi-dian-lu/</url>
-    <content><![CDATA[<h1 id="obc控制电路">1. OBC控制电路</h1>
-<h3 id="控制导引电路">1.0.1. 控制导引电路</h3>
-<p><strong>作用：</strong>
-用于判断与充电桩连接状态及充电电流上限的电路</p>
-<p>​
-背景：电动汽车应具备检测CC和CP信号并进行判断的功能，在电车充电过程中，CC信号用于判断充电器是否与电车的车身插座完全连接且能通过CC信号判断供电设备线缆能承受的最大充电电流值；CP信号用于向充电机转达供电设备能供给的最大电流值</p>
-<p><strong>应该用不到论文里，主要看车身插座那边的电压信号</strong></p>
-<hr>
-<h3 id="can通信电路">1.0.2. CAN通信电路</h3>
-<p><strong>作用：</strong>MCU通过SPI通信的方式对CAN收发器进行配置，将其设定为某一帧ID报文或某一类ID报文即输出唤醒，即受到特定的来自CAN总线的报文后唤醒充电机，可实现充电机的<strong>远程唤醒</strong></p>
-<hr>
-<h3 id="唤醒电路设计">1.0.3. 唤醒电路设计</h3>
-<p><strong>作用：</strong>不充电的时候，电车一般处于休眠状态，所以得唤醒</p>
-<p><strong>两种唤醒方式</strong></p>
-<ul>
-<li>CP唤醒
-<ul>
-<li>当车辆未充电时，充电机与12V常电切断联系，充电机处于休眠状态，当检测到CP信号传入时，CP信号会使辅助电源的开关管动作，使12V电池与充电机恢复联系进而唤醒充电机</li>
-</ul></li>
-<li>远程唤醒
-<ul>
-<li>向充电机发送唤醒报文使其由休眠状态转为待机状态并保持唤醒，通常在进行电检时使用，通过CAN收发器完成，不需要单独的唤醒电路</li>
-</ul></li>
-</ul>
-<hr>
-]]></content>
-      <categories>
-        <category>论文</category>
-      </categories>
-      <tags>
-        <tag>OBC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>OBC背景</title>
     <url>/2024/12/03/obc-chang-jing/</url>
     <content><![CDATA[<h1 id="obc背景">1. OBC背景</h1>
@@ -719,8 +939,44 @@ DC/DC SiC MOSFET驱动选型及供电设计要点 (ti.com.cn)</a></p>
         <category>论文</category>
       </categories>
       <tags>
-        <tag>OBC</tag>
         <tag>电池充电</tag>
+        <tag>OBC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>OBC控制电路</title>
+    <url>/2024/12/03/obc-kong-zhi-dian-lu/</url>
+    <content><![CDATA[<h1 id="obc控制电路">1. OBC控制电路</h1>
+<h3 id="控制导引电路">1.0.1. 控制导引电路</h3>
+<p><strong>作用：</strong>
+用于判断与充电桩连接状态及充电电流上限的电路</p>
+<p>​
+背景：电动汽车应具备检测CC和CP信号并进行判断的功能，在电车充电过程中，CC信号用于判断充电器是否与电车的车身插座完全连接且能通过CC信号判断供电设备线缆能承受的最大充电电流值；CP信号用于向充电机转达供电设备能供给的最大电流值</p>
+<p><strong>应该用不到论文里，主要看车身插座那边的电压信号</strong></p>
+<hr>
+<h3 id="can通信电路">1.0.2. CAN通信电路</h3>
+<p><strong>作用：</strong>MCU通过SPI通信的方式对CAN收发器进行配置，将其设定为某一帧ID报文或某一类ID报文即输出唤醒，即受到特定的来自CAN总线的报文后唤醒充电机，可实现充电机的<strong>远程唤醒</strong></p>
+<hr>
+<h3 id="唤醒电路设计">1.0.3. 唤醒电路设计</h3>
+<p><strong>作用：</strong>不充电的时候，电车一般处于休眠状态，所以得唤醒</p>
+<p><strong>两种唤醒方式</strong></p>
+<ul>
+<li>CP唤醒
+<ul>
+<li>当车辆未充电时，充电机与12V常电切断联系，充电机处于休眠状态，当检测到CP信号传入时，CP信号会使辅助电源的开关管动作，使12V电池与充电机恢复联系进而唤醒充电机</li>
+</ul></li>
+<li>远程唤醒
+<ul>
+<li>向充电机发送唤醒报文使其由休眠状态转为待机状态并保持唤醒，通常在进行电检时使用，通过CAN收发器完成，不需要单独的唤醒电路</li>
+</ul></li>
+</ul>
+<hr>
+]]></content>
+      <categories>
+        <category>论文</category>
+      </categories>
+      <tags>
+        <tag>OBC</tag>
       </tags>
   </entry>
   <entry>
@@ -986,26 +1242,6 @@ DC/DC SiC MOSFET驱动选型及供电设计要点 (ti.com.cn)</a></p>
       </tags>
   </entry>
   <entry>
-    <title></title>
-    <url>/2025/03/04/cllc-pwm-sheng-cheng-qi/</url>
-    <content><![CDATA[
-]]></content>
-  </entry>
-  <entry>
-    <title>延时模块</title>
-    <url>/2024/09/04/simulink-yan-shi-mo-kuai/</url>
-    <content><![CDATA[<h2 id="延时模块">0.1. 延时模块</h2>
-<h3 id="delay">0.1.1. delay</h3>
-]]></content>
-      <categories>
-        <category>simulink</category>
-      </categories>
-      <tags>
-        <tag>simulink</tag>
-        <tag>延时</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>立创eda-05 封装绘制</title>
     <url>/2025/02/24/eda-05.feng-zhuang-hui-zhi/</url>
     <content><![CDATA[<h2 id="立创eda-05-封装绘制">0.1. 立创eda-05 封装绘制</h2>
@@ -1117,6 +1353,20 @@ DC/DC SiC MOSFET驱动选型及供电设计要点 (ti.com.cn)</a></p>
       </categories>
       <tags>
         <tag>eda</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>延时模块</title>
+    <url>/2024/09/04/simulink-yan-shi-mo-kuai/</url>
+    <content><![CDATA[<h2 id="延时模块">0.1. 延时模块</h2>
+<h3 id="delay">0.1.1. delay</h3>
+]]></content>
+      <categories>
+        <category>simulink</category>
+      </categories>
+      <tags>
+        <tag>simulink</tag>
+        <tag>延时</tag>
       </tags>
   </entry>
   <entry>
@@ -1686,48 +1936,6 @@ S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub
       </tags>
   </entry>
   <entry>
-    <title>06. 占空比D在0到0.5之间的工作波形分析</title>
-    <url>/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/</url>
-    <content><![CDATA[<h2 id="占空比d在0到0.5之间的工作波形分析">0.1. 06.
-占空比D在0到0.5之间的工作波形分析</h2>
-<figure>
-<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153716110.png" alt="image-20240715153716110">
-<figcaption aria-hidden="true">image-20240715153716110</figcaption>
-</figure>
-<figure>
-<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153725566.png" alt="image-20240715153725566">
-<figcaption aria-hidden="true">image-20240715153725566</figcaption>
-</figure>
-<ul>
-<li>一样的分析。<strong>t<sub>1</sub>=DT<sub>s</sub></strong>。
-<strong>t<sub>2</sub>= (1-D)T<sub>s</sub></strong></li>
-<li>0&lt;U<sub>2</sub>&lt;U<sub>1</sub>/2;
-dU<sub>1</sub>=U<sub>1</sub>/2-U<sub>2</sub>&gt;0;
-此时电感电流上升。dU<sub>2</sub>=-U<sub>2</sub>&lt;0，下降</li>
-<li>**电感电流纹波：（选取t<sub>1</sub>-t<sub>2</sub>）
-<ul>
-<li><figure>
-<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715154250607.png" alt="三电平电感电流纹波">
-<figcaption aria-hidden="true">三电平电感电流纹波</figcaption>
-</figure></li>
-<li><figure>
-<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715154446961.png" alt="一般buck的电感电流纹波">
-<figcaption aria-hidden="true">一般buck的电感电流纹波</figcaption>
-</figure></li>
-<li>又多减去了U1/2L*DT<sub>s</sub></li>
-<li>带入数据可得，相比于之前，电感电流波动总共减少了5.2A,之前总共约7.8A，还剩2.6A</li>
-</ul></li>
-</ul>
-]]></content>
-      <categories>
-        <category>三电平</category>
-      </categories>
-      <tags>
-        <tag>木修于淋</tag>
-        <tag>三电平DCDC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>05. 占空比D在0.5到1之间的工作波形分析</title>
     <url>/2024/07/15/san-dian-ping-05.zhan-kong-bi-d-zai-0.5-dao-1-zhi-jian-de-gong-zuo-bo-xing-fen-xi/</url>
     <content><![CDATA[<h2 id="占空比d在0.5到1之间的工作波形分析">0.1. 05.
@@ -1794,6 +2002,48 @@ D 。</li>
       </tags>
   </entry>
   <entry>
+    <title>06. 占空比D在0到0.5之间的工作波形分析</title>
+    <url>/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/</url>
+    <content><![CDATA[<h2 id="占空比d在0到0.5之间的工作波形分析">0.1. 06.
+占空比D在0到0.5之间的工作波形分析</h2>
+<figure>
+<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153716110.png" alt="image-20240715153716110">
+<figcaption aria-hidden="true">image-20240715153716110</figcaption>
+</figure>
+<figure>
+<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153725566.png" alt="image-20240715153725566">
+<figcaption aria-hidden="true">image-20240715153725566</figcaption>
+</figure>
+<ul>
+<li>一样的分析。<strong>t<sub>1</sub>=DT<sub>s</sub></strong>。
+<strong>t<sub>2</sub>= (1-D)T<sub>s</sub></strong></li>
+<li>0&lt;U<sub>2</sub>&lt;U<sub>1</sub>/2;
+dU<sub>1</sub>=U<sub>1</sub>/2-U<sub>2</sub>&gt;0;
+此时电感电流上升。dU<sub>2</sub>=-U<sub>2</sub>&lt;0，下降</li>
+<li>**电感电流纹波：（选取t<sub>1</sub>-t<sub>2</sub>）
+<ul>
+<li><figure>
+<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715154250607.png" alt="三电平电感电流纹波">
+<figcaption aria-hidden="true">三电平电感电流纹波</figcaption>
+</figure></li>
+<li><figure>
+<img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715154446961.png" alt="一般buck的电感电流纹波">
+<figcaption aria-hidden="true">一般buck的电感电流纹波</figcaption>
+</figure></li>
+<li>又多减去了U1/2L*DT<sub>s</sub></li>
+<li>带入数据可得，相比于之前，电感电流波动总共减少了5.2A,之前总共约7.8A，还剩2.6A</li>
+</ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>三电平</category>
+      </categories>
+      <tags>
+        <tag>木修于淋</tag>
+        <tag>三电平DCDC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>07. 重新计算输出侧电感值和电容值</title>
     <url>/2024/07/12/san-dian-ping-07.chong-xin-ji-suan-shu-chu-ce-dian-gan-zhi-he-dian-rong-zhi/</url>
     <content><![CDATA[<h2 id="重新计算输出侧电感值和电容值">0.1. 07.
@@ -1847,6 +2097,47 @@ D 。</li>
 <ul>
 <li>△U<sub>cmax</sub>=2%*Udc=8V，可取C<sub>1</sub>=C<sub>2</sub>=22uf</li>
 </ul></li>
+</ul>
+]]></content>
+      <categories>
+        <category>三电平</category>
+      </categories>
+      <tags>
+        <tag>木修于淋</tag>
+        <tag>三电平DCDC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>09. 开环仿真验证</title>
+    <url>/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/</url>
+    <content><![CDATA[<h2 id="开环仿真验证">0.1. 09. 开环仿真验证</h2>
+<h4 id="模型初始化参数">0.1.0.1. 模型初始化参数</h4>
+<p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716095949318.png">模型属性</p>
+<p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716100026671.png"></p>
+<h4 id="分压电容">0.1.0.2. 分压电容</h4>
+<p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716101041055.png"></p>
+<ul>
+<li>在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响</li>
+<li>设置初始电压为Udc/2</li>
+</ul>
+<h4 id="模块旋转">0.1.0.3. 模块旋转</h4>
+<p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p>
+<h4 id="信号调制">0.1.0.4. 信号调制</h4>
+<p><strong>总体介绍</strong></p>
+<ul>
+<li><figure>
+<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152008403.png" alt="image-20240716152008403">
+<figcaption aria-hidden="true">image-20240716152008403</figcaption>
+</figure></li>
+</ul>
+<p><strong>模块介绍</strong></p>
+<ul>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152027015.png" alt="image-20240716152027015">表示占空比</li>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152049383.png" alt="image-20240716152049383">这个就是载波；参数设计为：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152111011.png" alt="image-20240716152111011"></li>
+<li>因为载波为0-1，所以加一个限幅：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152146101.png" alt="image-20240716152146101">设置为0-0.98</li>
+<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152201990.png" alt="image-20240716152201990">比较模块；<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152217557.png" alt="image-20240716152217557"></li>
+<li>调制信号大于载波，则开关管1输出高电平，否则输出低电平，开关管2与之相反</li>
+<li>对于<strong>S<sub>3,4</sub></strong>其载波有：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152345436.png" alt="image-20240716152345436">波形相差180°</li>
 </ul>
 ]]></content>
       <categories>
@@ -1928,93 +2219,6 @@ D 。</li>
       <tags>
         <tag>推挽输出</tag>
         <tag>开漏输出</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>09. 开环仿真验证</title>
-    <url>/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/</url>
-    <content><![CDATA[<h2 id="开环仿真验证">0.1. 09. 开环仿真验证</h2>
-<h4 id="模型初始化参数">0.1.0.1. 模型初始化参数</h4>
-<p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716095949318.png">模型属性</p>
-<p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716100026671.png"></p>
-<h4 id="分压电容">0.1.0.2. 分压电容</h4>
-<p><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716101041055.png"></p>
-<ul>
-<li>在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响</li>
-<li>设置初始电压为Udc/2</li>
-</ul>
-<h4 id="模块旋转">0.1.0.3. 模块旋转</h4>
-<p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p>
-<h4 id="信号调制">0.1.0.4. 信号调制</h4>
-<p><strong>总体介绍</strong></p>
-<ul>
-<li><figure>
-<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152008403.png" alt="image-20240716152008403">
-<figcaption aria-hidden="true">image-20240716152008403</figcaption>
-</figure></li>
-</ul>
-<p><strong>模块介绍</strong></p>
-<ul>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152027015.png" alt="image-20240716152027015">表示占空比</li>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152049383.png" alt="image-20240716152049383">这个就是载波；参数设计为：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152111011.png" alt="image-20240716152111011"></li>
-<li>因为载波为0-1，所以加一个限幅：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152146101.png" alt="image-20240716152146101">设置为0-0.98</li>
-<li><img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152201990.png" alt="image-20240716152201990">比较模块；<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152217557.png" alt="image-20240716152217557"></li>
-<li>调制信号大于载波，则开关管1输出高电平，否则输出低电平，开关管2与之相反</li>
-<li>对于<strong>S<sub>3,4</sub></strong>其载波有：<img src="/2024/07/16/san-dian-ping-09.kai-huan-fang-zhen-yan-zheng/image-20240716152345436.png" alt="image-20240716152345436">波形相差180°</li>
-</ul>
-]]></content>
-      <categories>
-        <category>三电平</category>
-      </categories>
-      <tags>
-        <tag>木修于淋</tag>
-        <tag>三电平DCDC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电子器件02-----二极管</title>
-    <url>/2024/08/28/qi-jian-02-er-ji-guan/</url>
-    <content><![CDATA[<h2 id="电子器件02-----二极管">0.1. 电子器件02-----二极管</h2>
-<h3 id="前言">0.1.1. 前言</h3>
-<p>​ 二极管的本质是由P型半导体和N型半导体接触形成的PN结</p>
-<p>​ PN结除了构成单向到点的二极管外，还存在一个结电容</p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082007449.png"></p>
-<p><strong>结电容会导致‘双向’导电</strong></p>
-<h3 id="反向恢复时间">0.1.2. 反向恢复时间</h3>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082922646.png"></p>
-<h5 id="对于二极管串联电阻的情况">0.1.2.0.1. 对于二极管串联电阻的情况</h5>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082952128.png"></p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083004153.png"></p>
-<p>在t<sub>1</sub>时刻，电压反向，但二极管的并<strong>不是立即截止</strong>，而是由正向的I<sub>F</sub>变成一个很大的反向电流
-I<sub>R</sub>=V<sub>R</sub>/R<sub>L</sub>(R<sub>L</sub>是与二极管串联的电阻)这个电流维持一段时间t<sub>S</sub>之后才逐渐下降，再经过t<sub>t</sub>后，下降到一个很小的值0.1R，这时二极管才进入反向截止状态。</p>
-<p><strong>把二极管从正向导通转为反向截止所经过的转化过程称为反向恢复过程</strong></p>
-<p>t<sub>S</sub>称为<strong>存储时间</strong>；t<sub>t</sub>称为<strong>过渡时间</strong>；t<sub>rr</sub>=t<sub>s</sub>+t<sub>t</sub>
-称为**反向恢复时间</p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083446010.png"></p>
-<ul>
-<li>由于结电容的存在，电压不能突变，所以在电压突变之后，且由于之前存储的电荷，电荷没有放完，二极管两端的电压就不会变反向</li>
-<li>因为电源电压方向，所以电流也会立马反向，需要注意，这时电流的成因是少数载流子反向运动的结果，到了t<sub>s</sub>，少数载流子被消耗光了，二极管恢复反向阻断能力</li>
-</ul>
-<h5 id="对于二极管串联电感的情况">0.1.2.0.2. 对于二极管串联电感的情况</h5>
-<p>电路不同，当没有电阻或者电阻很小的时候，反向电流会非常大，从正向变为反向需要时间，di/dt就非常大，就不能忽略电感了</p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083913935.png"></p>
-<ul>
-<li>t<sub>0</sub>时刻，电源突然反向，此时二极管内充满电荷，相当于导体，压降很小，反向电压全部落在电感上，电流以斜率为di/dt斜率下降</li>
-<li>t<sub>s</sub>二极管恢复阻断能力，此时电流达到最大，随后电流下降</li>
-<li>t&gt;t<sub>s</sub>后，二极管的电流为复合电流，随着载流子越来越少，电流也越来越小，此时电感会阻碍电流变小，因此会产生反向感应电压，这会导致在二极管两侧的反向电压比电源电压还大，也就是会出现<strong>反向电压尖峰V<sub>rm</sub></strong></li>
-</ul>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083933570.png"></p>
-<h5 id="总结">0.1.2.0.3. 总结</h5>
-<ul>
-<li><strong>总的来说，反向恢复时间就是存储的少数载流子耗尽所需要的时间</strong></li>
-<li>误区：反向恢复时间与结电容的大小其实没啥关系</li>
-</ul>
-]]></content>
-      <categories>
-        <category>电子器件</category>
-      </categories>
-      <tags>
-        <tag>二极管</tag>
       </tags>
   </entry>
   <entry>
@@ -2111,6 +2315,52 @@ Transistor 场效应晶体管，FET是电压控制器件.
       </categories>
       <tags>
         <tag>MOS管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>电子器件02-----二极管</title>
+    <url>/2024/08/28/qi-jian-02-er-ji-guan/</url>
+    <content><![CDATA[<h2 id="电子器件02-----二极管">0.1. 电子器件02-----二极管</h2>
+<h3 id="前言">0.1.1. 前言</h3>
+<p>​ 二极管的本质是由P型半导体和N型半导体接触形成的PN结</p>
+<p>​ PN结除了构成单向到点的二极管外，还存在一个结电容</p>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082007449.png"></p>
+<p><strong>结电容会导致‘双向’导电</strong></p>
+<h3 id="反向恢复时间">0.1.2. 反向恢复时间</h3>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082922646.png"></p>
+<h5 id="对于二极管串联电阻的情况">0.1.2.0.1. 对于二极管串联电阻的情况</h5>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082952128.png"></p>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083004153.png"></p>
+<p>在t<sub>1</sub>时刻，电压反向，但二极管的并<strong>不是立即截止</strong>，而是由正向的I<sub>F</sub>变成一个很大的反向电流
+I<sub>R</sub>=V<sub>R</sub>/R<sub>L</sub>(R<sub>L</sub>是与二极管串联的电阻)这个电流维持一段时间t<sub>S</sub>之后才逐渐下降，再经过t<sub>t</sub>后，下降到一个很小的值0.1R，这时二极管才进入反向截止状态。</p>
+<p><strong>把二极管从正向导通转为反向截止所经过的转化过程称为反向恢复过程</strong></p>
+<p>t<sub>S</sub>称为<strong>存储时间</strong>；t<sub>t</sub>称为<strong>过渡时间</strong>；t<sub>rr</sub>=t<sub>s</sub>+t<sub>t</sub>
+称为**反向恢复时间</p>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083446010.png"></p>
+<ul>
+<li>由于结电容的存在，电压不能突变，所以在电压突变之后，且由于之前存储的电荷，电荷没有放完，二极管两端的电压就不会变反向</li>
+<li>因为电源电压方向，所以电流也会立马反向，需要注意，这时电流的成因是少数载流子反向运动的结果，到了t<sub>s</sub>，少数载流子被消耗光了，二极管恢复反向阻断能力</li>
+</ul>
+<h5 id="对于二极管串联电感的情况">0.1.2.0.2. 对于二极管串联电感的情况</h5>
+<p>电路不同，当没有电阻或者电阻很小的时候，反向电流会非常大，从正向变为反向需要时间，di/dt就非常大，就不能忽略电感了</p>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083913935.png"></p>
+<ul>
+<li>t<sub>0</sub>时刻，电源突然反向，此时二极管内充满电荷，相当于导体，压降很小，反向电压全部落在电感上，电流以斜率为di/dt斜率下降</li>
+<li>t<sub>s</sub>二极管恢复阻断能力，此时电流达到最大，随后电流下降</li>
+<li>t&gt;t<sub>s</sub>后，二极管的电流为复合电流，随着载流子越来越少，电流也越来越小，此时电感会阻碍电流变小，因此会产生反向感应电压，这会导致在二极管两侧的反向电压比电源电压还大，也就是会出现<strong>反向电压尖峰V<sub>rm</sub></strong></li>
+</ul>
+<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083933570.png"></p>
+<h5 id="总结">0.1.2.0.3. 总结</h5>
+<ul>
+<li><strong>总的来说，反向恢复时间就是存储的少数载流子耗尽所需要的时间</strong></li>
+<li>误区：反向恢复时间与结电容的大小其实没啥关系</li>
+</ul>
+]]></content>
+      <categories>
+        <category>电子器件</category>
+      </categories>
+      <tags>
+        <tag>二极管</tag>
       </tags>
   </entry>
   <entry>
@@ -2379,6 +2629,45 @@ TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰�
       </tags>
   </entry>
   <entry>
+    <title>电子器件07-----电位器</title>
+    <url>/2024/08/30/qi-jian-07-dian-wei-qi/</url>
+    <content><![CDATA[<h2 id="电子器件07-----电位器">0.1. 电子器件07-----电位器</h2>
+<h3 id="符号">0.1.1. 符号</h3>
+<figure>
+<img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830143857720.png" alt="符号">
+<figcaption aria-hidden="true">符号</figcaption>
+</figure>
+<figure>
+<img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830143923291.png" alt="PCB">
+<figcaption aria-hidden="true">PCB</figcaption>
+</figure>
+<figure>
+<img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830144005545.png" alt="实物">
+<figcaption aria-hidden="true">实物</figcaption>
+</figure>
+<p>有三端，两个固定端，一个活动端子，</p>
+<h3 id="作用">0.1.2. 作用</h3>
+<ul>
+<li>用作分压器</li>
+<li>用作变阻器
+<ul>
+<li>把它接成两端器件</li>
+</ul></li>
+<li>用作电流控制器
+<ul>
+<li>此时其中一个选定的电流输出端必须是滑动触电引出端</li>
+</ul></li>
+</ul>
+<p><strong>基本上就是一个滑动变阻器</strong></p>
+]]></content>
+      <categories>
+        <category>电子器件</category>
+      </categories>
+      <tags>
+        <tag>电位器</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>H桥电路</title>
     <url>/2024/09/09/ji-chu-dian-lu-h-qiao-dian-lu/</url>
     <content><![CDATA[<h2 id="h桥电路">0.1. H桥电路</h2>
@@ -2429,45 +2718,6 @@ Q<sub>4</sub>之间流动，通过MOS管内阻将电能消耗掉</p>
       </categories>
       <tags>
         <tag>H桥电路</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>电子器件07-----电位器</title>
-    <url>/2024/08/30/qi-jian-07-dian-wei-qi/</url>
-    <content><![CDATA[<h2 id="电子器件07-----电位器">0.1. 电子器件07-----电位器</h2>
-<h3 id="符号">0.1.1. 符号</h3>
-<figure>
-<img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830143857720.png" alt="符号">
-<figcaption aria-hidden="true">符号</figcaption>
-</figure>
-<figure>
-<img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830143923291.png" alt="PCB">
-<figcaption aria-hidden="true">PCB</figcaption>
-</figure>
-<figure>
-<img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830144005545.png" alt="实物">
-<figcaption aria-hidden="true">实物</figcaption>
-</figure>
-<p>有三端，两个固定端，一个活动端子，</p>
-<h3 id="作用">0.1.2. 作用</h3>
-<ul>
-<li>用作分压器</li>
-<li>用作变阻器
-<ul>
-<li>把它接成两端器件</li>
-</ul></li>
-<li>用作电流控制器
-<ul>
-<li>此时其中一个选定的电流输出端必须是滑动触电引出端</li>
-</ul></li>
-</ul>
-<p><strong>基本上就是一个滑动变阻器</strong></p>
-]]></content>
-      <categories>
-        <category>电子器件</category>
-      </categories>
-      <tags>
-        <tag>电位器</tag>
       </tags>
   </entry>
   <entry>
@@ -2647,85 +2897,6 @@ EMI是电磁干扰的意思，EMC是电磁兼容的意思，消灭了电磁干�
       </tags>
   </entry>
   <entry>
-    <title>上拉电阻与下拉电阻</title>
-    <url>/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/</url>
-    <content><![CDATA[<h2 id="上拉电阻与下拉电阻">0.1. 上拉电阻与下拉电阻</h2>
-<h3 id="什么是上下拉电阻">0.1.1. 什么是上下拉电阻</h3>
-<p>​
-上拉下拉电阻统称为拉电阻，<strong>作用</strong>是将状态不确定的信号线通过一个电阻将其钳位至高电平（上拉）或低电平（下拉）</p>
-<p><strong>啥是状态不确定的信号</strong></p>
-<p>​ 在数字电路中，通常有三种状态：<strong>0（低电平） 1（高电平）
-浮空（不确定）</strong></p>
-<h3 id="如何辨别拉电阻">0.1.2. 如何辨别拉电阻</h3>
-<ul>
-<li>上拉电阻与电源串联</li>
-<li>下拉电阻与地串联</li>
-</ul>
-<h3 id="拉电阻原理">0.1.3. 拉电阻原理</h3>
-<p><strong>并联外接电阻，提高输出电平</strong>、</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164436977.png"></p>
-<p>下拉电阻同理</p>
-<h3 id="上拉电阻">0.1.4. 上拉电阻</h3>
-<p><strong>引出</strong></p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164602023.png"></p>
-<p>单片机GPIO输出高电平，这时候给他个下拉电阻，发现电压变为了3.8V，</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164700284.png"></p>
-<p>再给他加一个上拉电阻，发现该点电压变为了4.2V</p>
-<p>这里得看<strong>内部</strong></p>
-<figure>
-<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164805252.png" alt="单片机内部引脚电路">
-<figcaption aria-hidden="true">单片机内部引脚电路</figcaption>
-</figure>
-<p>想让他输出高电平时，上面的MOS导通，下面的截止，该点电压为电源电压，</p>
-<p>加入100Ω的下拉电阻变为3.8V</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164932769.png"></p>
-<p>电源内部是有电阻的，上面的MOS管也是有内阻的，当下面MOS截止时，可以视为其阻抗无穷大，电路可以等效为</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165024399.png"></p>
-<p>所以测量的电压为3.8V 串联分压了</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165118192.png"></p>
-<p>加入上拉电阻，上面俩电阻并联，电阻值变小，下面的电阻会分到更多的电压，所以电压会回升为4.2V，<strong>提供更高的驱动能力</strong></p>
-<p><strong>上拉电阻最本质上就是让上拉电阻与单片机里面的内阻并联</strong></p>
-<p><strong>上拉电阻还可以将一个不确定的信号钳位在高电平</strong></p>
-<p>为啥会有不确定信号</p>
-<p>​
-比如当引脚处于开漏输出时，上面的MOS永远是断开的，相当于连着一个无穷大的电阻，如果想让他输出高电平，下面的MOS也得断开，就相当于两个无穷的电阻串联了，所以它的输出信号是不确定的</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165724175.png"></p>
-<p>这时候给他加个上拉电阻</p>
-<figure>
-<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165823969.png" alt="image-20240909165823969">
-<figcaption aria-hidden="true">image-20240909165823969</figcaption>
-</figure>
-<p>相比于无穷大的电阻，上面的电阻并联后电阻变低，相比于无穷大忽略，电压全部落在下面的电阻上，即可输出为高电平</p>
-<h3 id="下拉电阻">0.1.5. 下拉电阻</h3>
-<p><strong>作用</strong> 将不确定信号转化为低电平信号</p>
-<p><strong>为啥信号是不确定的</strong></p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082405111.png"></p>
-<p>​
-这是当单片机处于数字输入时，单片机的内部电路，是简化过的，本来三极管应该是触发器</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082453711.png"></p>
-<p>​ 两块半导体的阻抗太大了，所以P点的电压是飘忽不定的</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082627428.png"></p>
-<p>​
-三极管内阻非常大，这三电阻串联，根据串联分压，下拉电阻的电压就近乎为0，</p>
-<p>​ 如果直接接地，也可以实现低电平，但是没办法实现高电平</p>
-<p>​ 比如再直接加个5V的电平，但是输出还是低电平</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082829194.png"></p>
-<p>直接加个5V，但是电源是有内阻的，电压全部落在内阻上，该点位电压仍为0V</p>
-<figure>
-<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910083011198.png" alt="image-20240910083011198">
-<figcaption aria-hidden="true">image-20240910083011198</figcaption>
-</figure>
-<p>​ 实现高电平了</p>
-]]></content>
-      <categories>
-        <category>基础电路</category>
-      </categories>
-      <tags>
-        <tag>上拉电阻</tag>
-        <tag>下拉电阻</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>三极管推挽电路</title>
     <url>/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/</url>
     <content><![CDATA[<h2 id="三极管推挽电路">0.1. 三极管推挽电路</h2>
@@ -2808,6 +2979,85 @@ AB 类放大器。</p>
       <tags>
         <tag>推挽</tag>
         <tag>三极管推挽</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上拉电阻与下拉电阻</title>
+    <url>/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/</url>
+    <content><![CDATA[<h2 id="上拉电阻与下拉电阻">0.1. 上拉电阻与下拉电阻</h2>
+<h3 id="什么是上下拉电阻">0.1.1. 什么是上下拉电阻</h3>
+<p>​
+上拉下拉电阻统称为拉电阻，<strong>作用</strong>是将状态不确定的信号线通过一个电阻将其钳位至高电平（上拉）或低电平（下拉）</p>
+<p><strong>啥是状态不确定的信号</strong></p>
+<p>​ 在数字电路中，通常有三种状态：<strong>0（低电平） 1（高电平）
+浮空（不确定）</strong></p>
+<h3 id="如何辨别拉电阻">0.1.2. 如何辨别拉电阻</h3>
+<ul>
+<li>上拉电阻与电源串联</li>
+<li>下拉电阻与地串联</li>
+</ul>
+<h3 id="拉电阻原理">0.1.3. 拉电阻原理</h3>
+<p><strong>并联外接电阻，提高输出电平</strong>、</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164436977.png"></p>
+<p>下拉电阻同理</p>
+<h3 id="上拉电阻">0.1.4. 上拉电阻</h3>
+<p><strong>引出</strong></p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164602023.png"></p>
+<p>单片机GPIO输出高电平，这时候给他个下拉电阻，发现电压变为了3.8V，</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164700284.png"></p>
+<p>再给他加一个上拉电阻，发现该点电压变为了4.2V</p>
+<p>这里得看<strong>内部</strong></p>
+<figure>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164805252.png" alt="单片机内部引脚电路">
+<figcaption aria-hidden="true">单片机内部引脚电路</figcaption>
+</figure>
+<p>想让他输出高电平时，上面的MOS导通，下面的截止，该点电压为电源电压，</p>
+<p>加入100Ω的下拉电阻变为3.8V</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164932769.png"></p>
+<p>电源内部是有电阻的，上面的MOS管也是有内阻的，当下面MOS截止时，可以视为其阻抗无穷大，电路可以等效为</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165024399.png"></p>
+<p>所以测量的电压为3.8V 串联分压了</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165118192.png"></p>
+<p>加入上拉电阻，上面俩电阻并联，电阻值变小，下面的电阻会分到更多的电压，所以电压会回升为4.2V，<strong>提供更高的驱动能力</strong></p>
+<p><strong>上拉电阻最本质上就是让上拉电阻与单片机里面的内阻并联</strong></p>
+<p><strong>上拉电阻还可以将一个不确定的信号钳位在高电平</strong></p>
+<p>为啥会有不确定信号</p>
+<p>​
+比如当引脚处于开漏输出时，上面的MOS永远是断开的，相当于连着一个无穷大的电阻，如果想让他输出高电平，下面的MOS也得断开，就相当于两个无穷的电阻串联了，所以它的输出信号是不确定的</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165724175.png"></p>
+<p>这时候给他加个上拉电阻</p>
+<figure>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165823969.png" alt="image-20240909165823969">
+<figcaption aria-hidden="true">image-20240909165823969</figcaption>
+</figure>
+<p>相比于无穷大的电阻，上面的电阻并联后电阻变低，相比于无穷大忽略，电压全部落在下面的电阻上，即可输出为高电平</p>
+<h3 id="下拉电阻">0.1.5. 下拉电阻</h3>
+<p><strong>作用</strong> 将不确定信号转化为低电平信号</p>
+<p><strong>为啥信号是不确定的</strong></p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082405111.png"></p>
+<p>​
+这是当单片机处于数字输入时，单片机的内部电路，是简化过的，本来三极管应该是触发器</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082453711.png"></p>
+<p>​ 两块半导体的阻抗太大了，所以P点的电压是飘忽不定的</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082627428.png"></p>
+<p>​
+三极管内阻非常大，这三电阻串联，根据串联分压，下拉电阻的电压就近乎为0，</p>
+<p>​ 如果直接接地，也可以实现低电平，但是没办法实现高电平</p>
+<p>​ 比如再直接加个5V的电平，但是输出还是低电平</p>
+<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082829194.png"></p>
+<p>直接加个5V，但是电源是有内阻的，电压全部落在内阻上，该点位电压仍为0V</p>
+<figure>
+<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910083011198.png" alt="image-20240910083011198">
+<figcaption aria-hidden="true">image-20240910083011198</figcaption>
+</figure>
+<p>​ 实现高电平了</p>
+]]></content>
+      <categories>
+        <category>基础电路</category>
+      </categories>
+      <tags>
+        <tag>上拉电阻</tag>
+        <tag>下拉电阻</tag>
       </tags>
   </entry>
   <entry>
@@ -3415,6 +3665,40 @@ D为正向偏压型，所加的偏压与二极管导通方向相同时，波形�
       </tags>
   </entry>
   <entry>
+    <title>DCDC烧坏</title>
+    <url>/2024/08/26/shi-xi-dcdc-shao-pi/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="457f179d5bb840bfe2308971609908eefda9f4c2f9aac3469961190523c5c8cf">dba70c5695197b5b3c51187085f4377b41ac6de5678be60d1b0d4642265920d000424bb6de74db2febb53f9123c7671c0819f895908088615dbd01160b93dca0674b01c628152b55d639ce404431b6eab1b786723e132ac1563b9fd9316a44858ca36e827e94f7e1b09116336eeb74db853a58246135ebf270f4e5f3ea2ec50aa63d7d074fecf40c3aa62822c22cc1018f5a6c64eef2a7d1f2ba6275aabcf938750ab1e5fae05346bf437bb51383820a9d6867a43b6e230b123365ac2ae938a842cd780612fb64337a1716bc66b39d4855931a890e4b0c4b5fdd471cddd8db38071bc3a29d2ca16a049ff4ded4577b984e7ecf3f5a7aa093c7903487a16059fda60fdf63e28838efcf3a278e15ccdf8f50aba1acca760837c6c16fb8fb555e1edb1d0abc390ec47eca9732c885260c5d887a91e5bea8d050d7d7a270f1c4c6ee4d0b3995782d9406445135495009d29d9b47f4b00b8402de4f82aace4eba24a262e72251f28a37db2d68c2622daa6c928a8273bd40f0d051f38c070ad7f0b0150c7f0483b4ed2e099bf96385dfe6312fae85612eef6ba8a4d2a9f694ee2b79851486b901c288dbae1673bea7da484c0dfc3d5374a5c29852042ffddb067116fc6fe83d857c8b2c5198f786ec8bfcc1faf762fa1c626bc46cf380de37ce4538a046518d29981b8adf33b370d655c7f0b02130f02888b32dabc5aaaed471a5fe5c1f2b9e6a6fc674ffb19002a9313bb6c2f9c2fe6f2ecd05664a4d2efc089417da56dcec467794d4e5e9e48a0e3ebfe5ea7d08a9fabc502689115220974827cebc54bc0c03284bc3f8e76c22dec671c8c4fbdf1ce53fd2d6742c64f193e159b66ddb83cdeeafc4659957be81c2b69b235582bb4c1c5e544dca20bbf1c652f7034f2bc1251ba897e219caa6ff565d3af916bfd9124b4b02ab696c6b60810589c9e89d3eb4b3e1e51283078c4a273173a701f621e32a85350660040ef25fd032aa58b12b13e24ac0c71828a09388de226af9541a5dd22679e75a7567e4d2f9b36f9df87648c4098a396c2c8c05a1e061c2d52c01cf935edc0ee7325b5127c2bab4395f4168f025f16c569a6a93df49e50cfa15617cbff0429f0bec1f98705207f34a1e18d184ed970aa7a7c88e6fa0402831b2f205c0a48e8b3c5e6e5ab8a7091a527f0a615f4ce169c74753010dafec70b8ecb77b9f3578f0f3a61a1abdcb92a222b721b13c5dd0c21b64de1309134c118177949c5425d4763c4a40aede85a2f799b2988fa8a9308d5f97c16667f7f4197afeecee28d46ae541f9fc7b061f82c2ea5231dbe1b9e26e104e027b2b0df212a1f02bc7e45f6749001e3718376e24f10031f67fcce11ededed5458a116ff14468a60d06014d43470e6b82025f8cf0787dd45c45b6fc139ddc2e9b99116b1503874097eaf4fd6d8aaf6d4f291fbe5f425baef6b5db360625d2f9cb726c36f6149b9739e6902e6f6f9d93f4697d44424535e79e1fff82ed7cdc8ad1c54c69e3906a9d929fcdbaae5b0042cf5651fe1ac64370c72a06441145a1d6cad42d8460b8ec46a9d068812e7e0cbcce457bd8355aa054451e60874e80c6ba0fa4059ba3be5b93535719e0775c9318718d52505965469226e067151588a72e19b5f4df35fc3beea8ba64e383d4b300295f980aec1e777182e8d8c37d1410929bdce21f2de14997efcf236d382c81f28eabe8b0bdd7ec868cf42e000b4395816db950423808fd93610f44c824313f01f6cca58b52dc95b35bb97b3ffcf54d46d9fc1a935d628e7cc0131b86f16f52c1dc53bcfc5d2ff1c565774423894779215e770fd97124e38a52b09f1768a133b16420d74358a03ffb84decbfcb83ccab9a94b8dd24d699be3ade91a267008dc433d19fee58e740258f6a7002cf66362560ef588ad268130dc7f91e5ddf5bcaa18d942e502a7659c7ffc9760281276d71a1b0b1350e82cc4d9c9de20616f75702c8f3b186659b89815506217a7ad65f35454b61b19b437111fab39e18085cc8351392dfedfdcc8e70bb715e80d18932e6f1a351f36751b16abb3b7062c587d1420dce3fd9579d846cdd58f7a8caa4fc362446ed192824c125a89d504017721f93253e97c9c70c3379fb8bc8eead568be1bc451f0c4ae44ad53bf3f83208caa0a498644cba13f34abe91ed2473dde88819ec64f6b6ca1ee76f37550442bfac89037c0e0b47bec2a73</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>实习</category>
+      </categories>
+      <tags>
+        <tag>实习</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ZVS与ZCS</title>
+    <url>/2024/12/04/xiao-zhi-shi-zvs-yu-zcs/</url>
+    <content><![CDATA[<h2 id="zvs与zcs">0.1. ZVS与ZCS</h2>
+]]></content>
+      <categories>
+        <category>小知识</category>
+      </categories>
+      <tags>
+        <tag>软开关</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>simulink使用中遇到的问题</title>
     <url>/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/</url>
     <content><![CDATA[<h2 id="simulink使用中遇到的问题">0.1. simulink使用中遇到的问题</h2>
@@ -3465,40 +3749,6 @@ V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就�
       </categories>
       <tags>
         <tag>simulink</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>DCDC烧坏</title>
-    <url>/2024/08/26/shi-xi-dcdc-shao-pi/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="457f179d5bb840bfe2308971609908eefda9f4c2f9aac3469961190523c5c8cf">dba70c5695197b5b3c51187085f4377b41ac6de5678be60d1b0d4642265920d000424bb6de74db2febb53f9123c7671c0819f895908088615dbd01160b93dca0674b01c628152b55d639ce404431b6eab1b786723e132ac1563b9fd9316a44858ca36e827e94f7e1b09116336eeb74db853a58246135ebf270f4e5f3ea2ec50aa63d7d074fecf40c3aa62822c22cc1018f5a6c64eef2a7d1f2ba6275aabcf938750ab1e5fae05346bf437bb51383820a9d6867a43b6e230b123365ac2ae938a842cd780612fb64337a1716bc66b39d4855931a890e4b0c4b5fdd471cddd8db38071bc3a29d2ca16a049ff4ded4577b984e7ecf3f5a7aa093c7903487a16059fda60fdf63e28838efcf3a278e15ccdf8f50aba1acca760837c6c16fb8fb555e1edb1d0abc390ec47eca9732c885260c5d887a91e5bea8d050d7d7a270f1c4c6ee4d0b3995782d9406445135495009d29d9b47f4b00b8402de4f82aace4eba24a262e72251f28a37db2d68c2622daa6c928a8273bd40f0d051f38c070ad7f0b0150c7f0483b4ed2e099bf96385dfe6312fae85612eef6ba8a4d2a9f694ee2b79851486b901c288dbae1673bea7da484c0dfc3d5374a5c29852042ffddb067116fc6fe83d857c8b2c5198f786ec8bfcc1faf762fa1c626bc46cf380de37ce4538a046518d29981b8adf33b370d655c7f0b02130f02888b32dabc5aaaed471a5fe5c1f2b9e6a6fc674ffb19002a9313bb6c2f9c2fe6f2ecd05664a4d2efc089417da56dcec467794d4e5e9e48a0e3ebfe5ea7d08a9fabc502689115220974827cebc54bc0c03284bc3f8e76c22dec671c8c4fbdf1ce53fd2d6742c64f193e159b66ddb83cdeeafc4659957be81c2b69b235582bb4c1c5e544dca20bbf1c652f7034f2bc1251ba897e219caa6ff565d3af916bfd9124b4b02ab696c6b60810589c9e89d3eb4b3e1e51283078c4a273173a701f621e32a85350660040ef25fd032aa58b12b13e24ac0c71828a09388de226af9541a5dd22679e75a7567e4d2f9b36f9df87648c4098a396c2c8c05a1e061c2d52c01cf935edc0ee7325b5127c2bab4395f4168f025f16c569a6a93df49e50cfa15617cbff0429f0bec1f98705207f34a1e18d184ed970aa7a7c88e6fa0402831b2f205c0a48e8b3c5e6e5ab8a7091a527f0a615f4ce169c74753010dafec70b8ecb77b9f3578f0f3a61a1abdcb92a222b721b13c5dd0c21b64de1309134c118177949c5425d4763c4a40aede85a2f799b2988fa8a9308d5f97c16667f7f4197afeecee28d46ae541f9fc7b061f82c2ea5231dbe1b9e26e104e027b2b0df212a1f02bc7e45f6749001e3718376e24f10031f67fcce11ededed5458a116ff14468a60d06014d43470e6b82025f8cf0787dd45c45b6fc139ddc2e9b99116b1503874097eaf4fd6d8aaf6d4f291fbe5f425baef6b5db360625d2f9cb726c36f6149b9739e6902e6f6f9d93f4697d44424535e79e1fff82ed7cdc8ad1c54c69e3906a9d929fcdbaae5b0042cf5651fe1ac64370c72a06441145a1d6cad42d8460b8ec46a9d068812e7e0cbcce457bd8355aa054451e60874e80c6ba0fa4059ba3be5b93535719e0775c9318718d52505965469226e067151588a72e19b5f4df35fc3beea8ba64e383d4b300295f980aec1e777182e8d8c37d1410929bdce21f2de14997efcf236d382c81f28eabe8b0bdd7ec868cf42e000b4395816db950423808fd93610f44c824313f01f6cca58b52dc95b35bb97b3ffcf54d46d9fc1a935d628e7cc0131b86f16f52c1dc53bcfc5d2ff1c565774423894779215e770fd97124e38a52b09f1768a133b16420d74358a03ffb84decbfcb83ccab9a94b8dd24d699be3ade91a267008dc433d19fee58e740258f6a7002cf66362560ef588ad268130dc7f91e5ddf5bcaa18d942e502a7659c7ffc9760281276d71a1b0b1350e82cc4d9c9de20616f75702c8f3b186659b89815506217a7ad65f35454b61b19b437111fab39e18085cc8351392dfedfdcc8e70bb715e80d18932e6f1a351f36751b16abb3b7062c587d1420dce3fd9579d846cdd58f7a8caa4fc362446ed192824c125a89d504017721f93253e97c9c70c3379fb8bc8eead568be1bc451f0c4ae44ad53bf3f83208caa0a498644cba13f34abe91ed2473dde88819ec64f6b6ca1ee76f37550442bfac89037c0e0b47bec2a73</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">您好, 这里需要密码.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>实习</category>
-      </categories>
-      <tags>
-        <tag>实习</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ZVS与ZCS</title>
-    <url>/2024/12/04/xiao-zhi-shi-zvs-yu-zcs/</url>
-    <content><![CDATA[<h2 id="zvs与zcs">0.1. ZVS与ZCS</h2>
-]]></content>
-      <categories>
-        <category>小知识</category>
-      </categories>
-      <tags>
-        <tag>软开关</tag>
       </tags>
   </entry>
   <entry>
@@ -3789,6 +4039,22 @@ h值较小时，系统的增益曲线可能会变得较为平坦，这意味着�
       </tags>
   </entry>
   <entry>
+    <title>调制方式</title>
+    <url>/2024/12/04/xiao-zhi-shi-diao-zhi-fang-shi/</url>
+    <content><![CDATA[<h2 id="调制方式">0.1. 调制方式</h2>
+<h3 id="pwm">0.1.1. PWM</h3>
+<h3 id="pfm">0.1.2. PFM</h3>
+<p>​
+信号是有载波也就是常见的那个正弦波；跟调制信号（一条直线）构成的，所谓调频，调的是载波的频率，那么对应的方波呢？正弦波频率改变，幅值没变，占空比没变，<strong>周期变了</strong>。对应方波的周期也会发生变化</p>
+]]></content>
+      <categories>
+        <category>小知识</category>
+      </categories>
+      <tags>
+        <tag>调制</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>温湿度仪原理图</title>
     <url>/2024/07/16/kai-yuan-xiang-mu-fu-ke-wen-shi-du-yi-yuan-li-tu/</url>
     <content><![CDATA[<h2 id="温湿度仪原理图">0.1. 温湿度仪原理图</h2>
@@ -3893,22 +4159,6 @@ h值较小时，系统的增益曲线可能会变得较为平坦，这意味着�
       </categories>
       <tags>
         <tag>温湿度仪</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>调制方式</title>
-    <url>/2024/12/04/xiao-zhi-shi-diao-zhi-fang-shi/</url>
-    <content><![CDATA[<h2 id="调制方式">0.1. 调制方式</h2>
-<h3 id="pwm">0.1.1. PWM</h3>
-<h3 id="pfm">0.1.2. PFM</h3>
-<p>​
-信号是有载波也就是常见的那个正弦波；跟调制信号（一条直线）构成的，所谓调频，调的是载波的频率，那么对应的方波呢？正弦波频率改变，幅值没变，占空比没变，<strong>周期变了</strong>。对应方波的周期也会发生变化</p>
-]]></content>
-      <categories>
-        <category>小知识</category>
-      </categories>
-      <tags>
-        <tag>调制</tag>
       </tags>
   </entry>
   <entry>
@@ -4357,50 +4607,6 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
       </tags>
   </entry>
   <entry>
-    <title>数据分析--01. 描述性分析</title>
-    <url>/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/</url>
-    <content><![CDATA[<h2 id="数据分析--01.-描述性分析">0.1. 数据分析--01. 描述性分析</h2>
-<h3 id="频数分析">0.1.1. 频数分析</h3>
-<p>​ 分类为a,b,c,d,,看每个类别出现的频次</p>
-<h3 id="列联交叉分析">0.1.2. 列联（交叉）分析</h3>
-<p>​ 用于描述两个或多个分类变量之间的关系，</p>
-<p>例如在市场调研中，用于分析不同消费者群体对产品偏好的差异；在医学研究中，用于探索不同治疗方法在不同人群中的效果；在社会科学研究中，用于分析社会群体中不同特征的分布和关联。</p>
-<h3 id="描述性统计">0.1.3. 描述性统计</h3>
-<p>​ 比如找一群数据的，最大，最小，平均，方差等等</p>
-<h3 id="分类汇总">0.1.4. 分类汇总</h3>
-<p>​
-在分类完成的基础上对各类别相关数据分别进行求和、求平均数、求个数、求最大值、求最小值等方法的汇总。</p>
-<h3 id="正态性分析">0.1.5. 正态性分析</h3>
-<p>​
-一种对称的概率分布，其特点是均值、中位数和众数相等，而且数据围绕均值对称分布，形成一个钟形曲线。</p>
-<p>​ 许多经典的推断统计方法，如 t
-检验、ANOVA（方差分析）、线性回归等，都基于数据服从正态分布的假设。</p>
-<h3 id="数据概述">0.1.6. 数据概述</h3>
-<p><img src="/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/image-20240911102511937.png"></p>
-]]></content>
-      <categories>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>数学建模</tag>
-        <tag>比赛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>21年D题</title>
-    <url>/2024/09/19/shu-xue-jian-mo-21-nian-d-si-lu-kuang-jia/</url>
-    <content><![CDATA[<h2 id="年d题">0.1. 21年D题</h2>
-<h3 id="数据预处理">0.1.1. 数据预处理</h3>
-]]></content>
-      <categories>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>数学建模</tag>
-        <tag>比赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>自适应控制</title>
     <url>/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/</url>
     <content><![CDATA[<h2 id="自适应控制">0.1. 自适应控制</h2>
@@ -4539,6 +4745,20 @@ rule</p>
       </tags>
   </entry>
   <entry>
+    <title>21年D题</title>
+    <url>/2024/09/19/shu-xue-jian-mo-21-nian-d-si-lu-kuang-jia/</url>
+    <content><![CDATA[<h2 id="年d题">0.1. 21年D题</h2>
+<h3 id="数据预处理">0.1.1. 数据预处理</h3>
+]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
+        <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>数据分析--02. 综合评价</title>
     <url>/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-02.zong-he-ping-jie/</url>
     <content><![CDATA[<h2 id="数据分析--02.-综合评价">0.1. 数据分析--02. 综合评价</h2>
@@ -4577,6 +4797,36 @@ rule</p>
 <p>​ <strong>广泛用于业绩评价</strong></p>
 <h3 id="模糊综合评价">0.1.4. 模糊综合评价</h3>
 <h3 id="优劣解距离法">0.1.5. 优劣解距离法</h3>
+]]></content>
+      <categories>
+        <category>比赛</category>
+      </categories>
+      <tags>
+        <tag>数学建模</tag>
+        <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>数据分析--01. 描述性分析</title>
+    <url>/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/</url>
+    <content><![CDATA[<h2 id="数据分析--01.-描述性分析">0.1. 数据分析--01. 描述性分析</h2>
+<h3 id="频数分析">0.1.1. 频数分析</h3>
+<p>​ 分类为a,b,c,d,,看每个类别出现的频次</p>
+<h3 id="列联交叉分析">0.1.2. 列联（交叉）分析</h3>
+<p>​ 用于描述两个或多个分类变量之间的关系，</p>
+<p>例如在市场调研中，用于分析不同消费者群体对产品偏好的差异；在医学研究中，用于探索不同治疗方法在不同人群中的效果；在社会科学研究中，用于分析社会群体中不同特征的分布和关联。</p>
+<h3 id="描述性统计">0.1.3. 描述性统计</h3>
+<p>​ 比如找一群数据的，最大，最小，平均，方差等等</p>
+<h3 id="分类汇总">0.1.4. 分类汇总</h3>
+<p>​
+在分类完成的基础上对各类别相关数据分别进行求和、求平均数、求个数、求最大值、求最小值等方法的汇总。</p>
+<h3 id="正态性分析">0.1.5. 正态性分析</h3>
+<p>​
+一种对称的概率分布，其特点是均值、中位数和众数相等，而且数据围绕均值对称分布，形成一个钟形曲线。</p>
+<p>​ 许多经典的推断统计方法，如 t
+检验、ANOVA（方差分析）、线性回归等，都基于数据服从正态分布的假设。</p>
+<h3 id="数据概述">0.1.6. 数据概述</h3>
+<p><img src="/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/image-20240911102511937.png"></p>
 ]]></content>
       <categories>
         <category>比赛</category>
@@ -4674,6 +4924,140 @@ sampling），即结合过采样和欠采样的方法调整两类别的样本数
       <tags>
         <tag>数学建模</tag>
         <tag>比赛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>01.晶体管的由来及内置电阻晶体管</title>
+    <url>/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/</url>
+    <content><![CDATA[<h2 id="晶体管的由来及内置电阻晶体管">0.1. 01
+晶体管的由来及内置电阻晶体管</h2>
+<h4 id="材料">0.1.0.1. 材料</h4>
+<p>​ 从锗（80℃左右发生损害）到硅（180℃）</p>
+<h4 id="作用">0.1.0.2. 作用</h4>
+<p>​ <strong>增幅</strong>和<strong>开关</strong></p>
+<p>​
+增幅：不改变输入信号的波形，只<strong>放大</strong>电压或电流，指模拟信号</p>
+<p>​ 开关：在数字信号中，晶体管起着切换0和1的开关作用</p>
+<h4 id="集电阻和晶体管于一体">0.1.0.3. 集电阻和晶体管于一体</h4>
+<p>​ 数字晶体管即内置了电阻的晶体管</p>
+<figure>
+<img src="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611204750395.png" alt="image-20240611204750395">
+<figcaption aria-hidden="true">image-20240611204750395</figcaption>
+</figure>
+<p><strong>优点：</strong></p>
+<ul>
+<li>安装面积减少</li>
+<li>安装时间减少</li>
+<li>部件数量减少</li>
+</ul>
+<h4 id="基极是自来的阀门发射极是配管集电极是水龙头">0.1.0.4. 基极是自来的阀门，发射极是配管，集电极是水龙头</h4>
+<p>​
+通过微小之力（基极的输入信号）来控制自来水的阀门，从而调节水龙头喷出巨大的水流（集电极电流）</p>
+<figure>
+<img src="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611205055893.png" alt="image-20240611205055893">
+<figcaption aria-hidden="true">image-20240611205055893</figcaption>
+</figure>
+<p>​ <strong>放大+电流型器件</strong></p>
+]]></content>
+      <categories>
+        <category>文天祥五分钟课堂</category>
+      </categories>
+      <tags>
+        <tag>文天祥</tag>
+        <tag>晶体管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>02.晶体管截止频率定义和反向漏电流</title>
+    <url>/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
+    <content><![CDATA[<h2 id="晶体管截止频率定义和反向漏电流">0.1. 02.晶体管截止频率定义和反向漏电流</h2>
+<h4 id="关于晶体管on时的逆向电流e---c">0.1.0.1. 关于晶体管ON时的逆向电流（E---&gt;C）</h4>
+<p>这个对于<strong>NPN型</strong>的来说，E-C是逆向的，</p>
+<figure>
+<img src="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" alt="image-20240611212018881">
+<figcaption aria-hidden="true">image-20240611212018881</figcaption>
+</figure>
+<p>​
+基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p>
+<p><strong>逆向晶体管的特点：</strong></p>
+<ul>
+<li>放大倍数低h（正向10%一下）</li>
+<li>耐压低（7..8V与Vebo的导通电压一样低）</li>
+<li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li>
+</ul>
+<h4 id="关于封装攻略容许功耗">0.1.0.2. 关于封装攻略容许功耗</h4>
+<p><strong>定义：</strong>
+由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj=150℃）时的功率</p>
+<figure>
+<img src="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" alt="image-20240611212524409">
+<figcaption aria-hidden="true">image-20240611212524409</figcaption>
+</figure>
+<h4 id="晶体管的速度">0.1.0.3. 晶体管的速度</h4>
+<p><strong>fT：增益带宽积、截止频率、开关速度</strong></p>
+<p>​ <strong>增益带宽积</strong>
+指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p>
+<p>提高基极输入频率，则hfe放大倍数变低</p>
+<p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p>
+<p>但是实际使用时能够动作的只有fT的1/5to1/10</p>
+]]></content>
+      <categories>
+        <category>文天祥五分钟课堂</category>
+      </categories>
+      <tags>
+        <tag>文天祥</tag>
+        <tag>晶体管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>03.晶体管分类概述</title>
+    <url>/2024/06/11/wen-wu-03.jing-ti-guan-fen-lei-gai-shu/</url>
+    <content><![CDATA[<h2 id="晶体管分类概述">0.1. 03.晶体管分类概述</h2>
+<h4 id="晶体管的代表形状-tosmt">0.1.0.1. 晶体管的代表形状 TO/SMT</h4>
+<figure>
+<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920664.png" alt="image-20240611213213155">
+<figcaption aria-hidden="true">image-20240611213213155</figcaption>
+</figure>
+<h4 id="根据工作原理分为双极晶体管和单极晶体管">0.1.0.2. 根据工作原理，分为双极晶体管和单极晶体管</h4>
+<figure>
+<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920665.png" alt="image-20240611213250901">
+<figcaption aria-hidden="true">image-20240611213250901</figcaption>
+</figure>
+<p><strong>双极晶体管</strong></p>
+<p>​
+即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p>
+<p><strong>FET</strong></p>
+<p>​ 指场效应晶体管，有接合型FET和MOS型，GaAs型</p>
+<p>​ 接合型多用于音频设备的模拟电路</p>
+<p>​ MOS型主要用于微控制器等数字IC</p>
+<p>​ GaAs用于卫星广播信号接收等的微波增幅</p>
+<h3 id="按功率分类">0.1.1. 按功率分类</h3>
+<p>​ 以最大额定值的集电极功率Pc进行区分</p>
+<figure>
+<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920666.png" alt="image-20240611213714517">
+<figcaption aria-hidden="true">image-20240611213714517</figcaption>
+</figure>
+<p><strong>小信号晶体管</strong></p>
+<p>​
+最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p>
+<p><strong>功率晶体管</strong></p>
+<p>​ Pc&gt;1W，</p>
+<h3 id="按集成度分类">0.1.2. 按集成度分类</h3>
+<figure>
+<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920667.png" alt="image-20240611214034489">
+<figcaption aria-hidden="true">image-20240611214034489</figcaption>
+</figure>
+<h3 id="按形状分类">0.1.3. 按形状分类</h3>
+<figure>
+<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920668.png" alt="image-20240611214203911">
+<figcaption aria-hidden="true">image-20240611214203911</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>文天祥五分钟课堂</category>
+      </categories>
+      <tags>
+        <tag>文天祥</tag>
+        <tag>晶体管</tag>
       </tags>
   </entry>
   <entry>
@@ -4792,92 +5176,6 @@ I_{C}=h_{FE}\times((Vin-V_{BE})/R_{1})-(V_{BE}/R_{2}))\cdot\cdot\cdot\odot1
         <tag>文天祥</tag>
         <tag>晶体管</tag>
         <tag>数字晶体管</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>03.晶体管分类概述</title>
-    <url>/2024/06/11/wen-wu-03.jing-ti-guan-fen-lei-gai-shu/</url>
-    <content><![CDATA[<h2 id="晶体管分类概述">0.1. 03.晶体管分类概述</h2>
-<h4 id="晶体管的代表形状-tosmt">0.1.0.1. 晶体管的代表形状 TO/SMT</h4>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920664.png" alt="image-20240611213213155">
-<figcaption aria-hidden="true">image-20240611213213155</figcaption>
-</figure>
-<h4 id="根据工作原理分为双极晶体管和单极晶体管">0.1.0.2. 根据工作原理，分为双极晶体管和单极晶体管</h4>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920665.png" alt="image-20240611213250901">
-<figcaption aria-hidden="true">image-20240611213250901</figcaption>
-</figure>
-<p><strong>双极晶体管</strong></p>
-<p>​
-即：流经构成晶体管的半导体的电流由空穴（正极性）和电子（负极性）产生。一般而言的晶体管是指这种由硅构成的晶体管</p>
-<p><strong>FET</strong></p>
-<p>​ 指场效应晶体管，有接合型FET和MOS型，GaAs型</p>
-<p>​ 接合型多用于音频设备的模拟电路</p>
-<p>​ MOS型主要用于微控制器等数字IC</p>
-<p>​ GaAs用于卫星广播信号接收等的微波增幅</p>
-<h3 id="按功率分类">0.1.1. 按功率分类</h3>
-<p>​ 以最大额定值的集电极功率Pc进行区分</p>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920666.png" alt="image-20240611213714517">
-<figcaption aria-hidden="true">image-20240611213714517</figcaption>
-</figure>
-<p><strong>小信号晶体管</strong></p>
-<p>​
-最大集电极电流在500mA以下，最大集电极功率不超过1W，以树脂封装居多</p>
-<p><strong>功率晶体管</strong></p>
-<p>​ Pc&gt;1W，</p>
-<h3 id="按集成度分类">0.1.2. 按集成度分类</h3>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920667.png" alt="image-20240611214034489">
-<figcaption aria-hidden="true">image-20240611214034489</figcaption>
-</figure>
-<h3 id="按形状分类">0.1.3. 按形状分类</h3>
-<figure>
-<img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406130920668.png" alt="image-20240611214203911">
-<figcaption aria-hidden="true">image-20240611214203911</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>文天祥五分钟课堂</category>
-      </categories>
-      <tags>
-        <tag>文天祥</tag>
-        <tag>晶体管</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>08. MOSFET总栅极电荷Qg</title>
-    <url>/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/</url>
-    <content><![CDATA[<h2 id="mosfet总栅极电荷qg">0.1. 08. MOSFET总栅极电荷Qg</h2>
-<p>#### 啥是总栅极电荷（Qg）</p>
-<p>​ Qg是指：
-为导通MOS而注入到栅极电极的电荷量。也称为栅极总电荷，单位为库仑(C)</p>
-<p>​
-总栅极电荷值较大，则导通MOS所需的电容充电时间变<strong>长</strong>，开关损耗增加，数值越小，开关损耗（切换损耗）越小，从而可实现高速开关。</p>
-<h4 id="总栅极电荷和导通电阻">0.1.0.1. 总栅极电荷和导通电阻</h4>
-<p>​
-<strong>总栅极电荷</strong>越小，开关损耗越小。而且，<strong>导通电阻值越</strong>小，工作时的功耗越小。</p>
-<p>​
-但需要注意的是，这俩的特性处于<strong>权衡</strong>关系，MOS的芯片尺寸（表面积）越小，总电荷量越小，但导通电阻值会变大，换句话说：
-<strong>开关损耗与工作时的功耗之间存在权衡关系</strong></p>
-<figure>
-<img src="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/image-20240628205520776.png" alt="image-20240628205520776">
-<figcaption aria-hidden="true">image-20240628205520776</figcaption>
-</figure>
-<figure>
-<img src="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/image-20240628205527283.png" alt="image-20240628205527283">
-<figcaption aria-hidden="true">image-20240628205527283</figcaption>
-</figure>
-<p>比较复杂，暂时只要知道这个总栅极电荷与损耗，开关速度有关就行</p>
-]]></content>
-      <categories>
-        <category>文天祥五分钟课堂</category>
-      </categories>
-      <tags>
-        <tag>MOSFET</tag>
-        <tag>文天祥</tag>
-        <tag>晶体管</tag>
       </tags>
   </entry>
   <entry>
@@ -5012,55 +5310,35 @@ MOSFET特性简单版，强调温度特性</h2>
       </tags>
   </entry>
   <entry>
-    <title>11. 晶体管元件温度计算方法</title>
-    <url>/2024/07/15/wen-wu-11.jing-ti-guan-yuan-jian-wen-du-ji-suan-fang-fa/</url>
-    <content><![CDATA[<h2 id="晶体管元件温度计算方法">0.1. 11. 晶体管元件温度计算方法</h2>
+    <title>08. MOSFET总栅极电荷Qg</title>
+    <url>/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/</url>
+    <content><![CDATA[<h2 id="mosfet总栅极电荷qg">0.1. 08. MOSFET总栅极电荷Qg</h2>
+<p>#### 啥是总栅极电荷（Qg）</p>
+<p>​ Qg是指：
+为导通MOS而注入到栅极电极的电荷量。也称为栅极总电荷，单位为库仑(C)</p>
+<p>​
+总栅极电荷值较大，则导通MOS所需的电容充电时间变<strong>长</strong>，开关损耗增加，数值越小，开关损耗（切换损耗）越小，从而可实现高速开关。</p>
+<h4 id="总栅极电荷和导通电阻">0.1.0.1. 总栅极电荷和导通电阻</h4>
+<p>​
+<strong>总栅极电荷</strong>越小，开关损耗越小。而且，<strong>导通电阻值越</strong>小，工作时的功耗越小。</p>
+<p>​
+但需要注意的是，这俩的特性处于<strong>权衡</strong>关系，MOS的芯片尺寸（表面积）越小，总电荷量越小，但导通电阻值会变大，换句话说：
+<strong>开关损耗与工作时的功耗之间存在权衡关系</strong></p>
+<figure>
+<img src="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/image-20240628205520776.png" alt="image-20240628205520776">
+<figcaption aria-hidden="true">image-20240628205520776</figcaption>
+</figure>
+<figure>
+<img src="/2024/06/28/wen-wu-08.mosfet-zong-zha-ji-dian-he-qg/image-20240628205527283.png" alt="image-20240628205527283">
+<figcaption aria-hidden="true">image-20240628205527283</figcaption>
+</figure>
+<p>比较复杂，暂时只要知道这个总栅极电荷与损耗，开关速度有关就行</p>
 ]]></content>
       <categories>
         <category>文天祥五分钟课堂</category>
       </categories>
       <tags>
-        <tag>文天祥</tag>
-        <tag>晶体管</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>01.晶体管的由来及内置电阻晶体管</title>
-    <url>/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/</url>
-    <content><![CDATA[<h2 id="晶体管的由来及内置电阻晶体管">0.1. 01
-晶体管的由来及内置电阻晶体管</h2>
-<h4 id="材料">0.1.0.1. 材料</h4>
-<p>​ 从锗（80℃左右发生损害）到硅（180℃）</p>
-<h4 id="作用">0.1.0.2. 作用</h4>
-<p>​ <strong>增幅</strong>和<strong>开关</strong></p>
-<p>​
-增幅：不改变输入信号的波形，只<strong>放大</strong>电压或电流，指模拟信号</p>
-<p>​ 开关：在数字信号中，晶体管起着切换0和1的开关作用</p>
-<h4 id="集电阻和晶体管于一体">0.1.0.3. 集电阻和晶体管于一体</h4>
-<p>​ 数字晶体管即内置了电阻的晶体管</p>
-<figure>
-<img src="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611204750395.png" alt="image-20240611204750395">
-<figcaption aria-hidden="true">image-20240611204750395</figcaption>
-</figure>
-<p><strong>优点：</strong></p>
-<ul>
-<li>安装面积减少</li>
-<li>安装时间减少</li>
-<li>部件数量减少</li>
-</ul>
-<h4 id="基极是自来的阀门发射极是配管集电极是水龙头">0.1.0.4. 基极是自来的阀门，发射极是配管，集电极是水龙头</h4>
-<p>​
-通过微小之力（基极的输入信号）来控制自来水的阀门，从而调节水龙头喷出巨大的水流（集电极电流）</p>
-<figure>
-<img src="/2024/06/11/wen-wu-01.jing-ti-guan-de-you-lai-ji-nei-zhi-dian-zu-jing-ti-guan/image-20240611205055893.png" alt="image-20240611205055893">
-<figcaption aria-hidden="true">image-20240611205055893</figcaption>
-</figure>
-<p>​ <strong>放大+电流型器件</strong></p>
-]]></content>
-      <categories>
-        <category>文天祥五分钟课堂</category>
-      </categories>
-      <tags>
+        <tag>MOSFET</tag>
         <tag>文天祥</tag>
         <tag>晶体管</tag>
       </tags>
@@ -5163,6 +5441,19 @@ SOA安全使用晶体管的选定方法</h2>
 <p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215606408.png"></p>
 <p><strong>功率计算的积分公式</strong>---<u>通用，不仅于半导体</u></p>
 <p><img src="/2024/06/28/wen-wu-09-10.soa-an-quan-shi-yong-jing-ti-guan-de-xuan-ding-fang-fa/image-20240628215811609.png"></p>
+]]></content>
+      <categories>
+        <category>文天祥五分钟课堂</category>
+      </categories>
+      <tags>
+        <tag>文天祥</tag>
+        <tag>晶体管</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>11. 晶体管元件温度计算方法</title>
+    <url>/2024/07/15/wen-wu-11.jing-ti-guan-yuan-jian-wen-du-ji-suan-fang-fa/</url>
+    <content><![CDATA[<h2 id="晶体管元件温度计算方法">0.1. 11. 晶体管元件温度计算方法</h2>
 ]]></content>
       <categories>
         <category>文天祥五分钟课堂</category>
@@ -5333,47 +5624,6 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
 ]]></content>
       <tags>
         <tag>记忆</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>02.晶体管截止频率定义和反向漏电流</title>
-    <url>/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/</url>
-    <content><![CDATA[<h2 id="晶体管截止频率定义和反向漏电流">0.1. 02.晶体管截止频率定义和反向漏电流</h2>
-<h4 id="关于晶体管on时的逆向电流e---c">0.1.0.1. 关于晶体管ON时的逆向电流（E---&gt;C）</h4>
-<p>这个对于<strong>NPN型</strong>的来说，E-C是逆向的，</p>
-<figure>
-<img src="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212018881.png" alt="image-20240611212018881">
-<figcaption aria-hidden="true">image-20240611212018881</figcaption>
-</figure>
-<p>​
-基极B被偏置为正，集电极C被偏置为负，由发射极流向集电极的是<strong>逆电流</strong></p>
-<p><strong>逆向晶体管的特点：</strong></p>
-<ul>
-<li>放大倍数低h（正向10%一下）</li>
-<li>耐压低（7..8V与Vebo的导通电压一样低）</li>
-<li>Vce（sat）饱和电压跟Vbe（ON）导通电压没有太大变化</li>
-</ul>
-<h4 id="关于封装攻略容许功耗">0.1.0.2. 关于封装攻略容许功耗</h4>
-<p><strong>定义：</strong>
-由于输入晶体管的电压，电流产生的功耗在元件发热时，结温Tj为绝对最大额定值限定的温度（Tj=150℃）时的功率</p>
-<figure>
-<img src="/2024/06/11/wen-wu-02.jing-ti-guan-jie-zhi-pin-lu-ding-yi-he-fan-xiang-lou-dian-liu/image-20240611212524409.png" alt="image-20240611212524409">
-<figcaption aria-hidden="true">image-20240611212524409</figcaption>
-</figure>
-<h4 id="晶体管的速度">0.1.0.3. 晶体管的速度</h4>
-<p><strong>fT：增益带宽积、截止频率、开关速度</strong></p>
-<p>​ <strong>增益带宽积</strong>
-指晶体管能够动作的极限频率，所谓极限，即基极电流对集电极电流的比（放大倍数）为1的情况</p>
-<p>提高基极输入频率，则hfe放大倍数变低</p>
-<p>这时，hfe为1的频率较多fT，指在该频率下能够工作的极限值</p>
-<p>但是实际使用时能够动作的只有fT的1/5to1/10</p>
-]]></content>
-      <categories>
-        <category>文天祥五分钟课堂</category>
-      </categories>
-      <tags>
-        <tag>文天祥</tag>
-        <tag>晶体管</tag>
       </tags>
   </entry>
   <entry>
@@ -5587,6 +5837,68 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
       </tags>
   </entry>
   <entry>
+    <title>CAN总线</title>
+    <url>/2024/08/19/tong-xun-can-zong-xian/</url>
+    <content><![CDATA[<h2 id="can总线">0.1. CAN总线</h2>
+<h3 id="为什么要用can">0.1.1. 1. 为什么要用CAN</h3>
+<h5 id="can通讯协议是什么">0.1.1.0.1. CAN通讯协议是什么</h5>
+<p>​ CAN通讯协议是一种<strong>多主多节点架构</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>的<strong>串行通讯协议</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
+<p>可以简单把CAN通信理解成开一场电话会议，</p>
+<ul>
+<li>当一个人讲话时其他人就听（广播），</li>
+<li>当多个人同时讲话时则根据一定规则来决定谁先讲话谁后讲话（仲裁）</li>
+</ul>
+<p>但值得注意的是，在这场会议中，讲话人会确认听话人是否成功接收信息，如果说话人传递的信息有误，听话人会及时<strong>指出错误</strong>。</p>
+<h5 id="特点">0.1.1.0.2. 特点</h5>
+<ul>
+<li>多主控制</li>
+<li>通信速度快，距离远</li>
+<li>具有错误检测、错误通知和错误恢复功能
+<ul>
+<li>A听出了错误，通知给其他参会人员，演讲人强制闭嘴，不断反复重新叙述，直到说对发出声音</li>
+</ul></li>
+<li>故障封闭
+<ul>
+<li>判断错误类型是暂时的数据错误（如外部噪声）还是持续的数据错误（如单元内部故障、驱动器故障、断线等），当发生持续数据错误时，将故障的单元从总线上隔离出去</li>
+</ul></li>
+<li>多节点结构</li>
+<li>仲裁机制
+<ul>
+<li>采用非破坏性仲裁机制，通过比较消息标识符的优先级来决定哪个节点有权继续发送数据，保证有序性，避免冲突</li>
+<li>没有红绿灯的路上让路规则</li>
+</ul></li>
+</ul>
+<h3 id="can协议的分层架构">0.1.2. 2. CAN协议的分层架构</h3>
+<p>​ CAN 协议如下图 所示涵盖了 ISO 规定的 OSI
+基本参照模型中的传输层、数据链路层及物理层。</p>
+<figure>
+<img src="/2024/08/19/tong-xun-can-zong-xian/image-20241021141022021.png" alt="ISO/OSI基础参照模型">
+<figcaption aria-hidden="true">ISO/OSI基础参照模型</figcaption>
+</figure>
+<h4 id="物理层硬件部分">0.1.2.1. 2.1 物理层（硬件部分）</h4>
+<p>​
+与I2C、SPI等具有时钟信号的同步通讯方式不同，CAN通讯并不是以时钟信号来进行同步的，它是一种<strong>异步通讯</strong>，只具有
+CAN_High 和 CAN_Low
+两条信号线，共同构成一组<strong>差分信号线</strong>，以差分信号的形式进行通讯。</p>
+<ul>
+<li>差分信号中的两根数据线通常是通过<strong>双绞线</strong>布线的，会受到等效干扰，即某一时刻干扰使得一根数据线电压上升20mV，那么同样的干扰也会影响另一根，导致类似的电压变化，而差分信号只依赖于两线之间的电压差，而不是绝对电压值。</li>
+</ul>
+<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn1"><p>多主结构：多个节点都有发起通信的能力，不依赖中心控制；；多节点结构：在这个网络里，每个节点既可以发送信息，也可以接收其他节点发来的信息，<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>（区别于并行通讯协议，并行是同时通过多条数据线传输多个比特，串行是一个接一个传输比特）<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+]]></content>
+      <categories>
+        <category>通讯协议</category>
+      </categories>
+      <tags>
+        <tag>CAN总线</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>调制方式---移相控制</title>
     <url>/2024/09/11/sui-bi-diao-zhi-fang-shi/</url>
     <content><![CDATA[<h2 id="调制方式">0.1. 调制方式</h2>
@@ -5669,68 +5981,6 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
       </categories>
       <tags>
         <tag>调制</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CAN总线</title>
-    <url>/2024/08/19/tong-xun-can-zong-xian/</url>
-    <content><![CDATA[<h2 id="can总线">0.1. CAN总线</h2>
-<h3 id="为什么要用can">0.1.1. 1. 为什么要用CAN</h3>
-<h5 id="can通讯协议是什么">0.1.1.0.1. CAN通讯协议是什么</h5>
-<p>​ CAN通讯协议是一种<strong>多主多节点架构</strong><a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>的<strong>串行通讯协议</strong><a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<p>可以简单把CAN通信理解成开一场电话会议，</p>
-<ul>
-<li>当一个人讲话时其他人就听（广播），</li>
-<li>当多个人同时讲话时则根据一定规则来决定谁先讲话谁后讲话（仲裁）</li>
-</ul>
-<p>但值得注意的是，在这场会议中，讲话人会确认听话人是否成功接收信息，如果说话人传递的信息有误，听话人会及时<strong>指出错误</strong>。</p>
-<h5 id="特点">0.1.1.0.2. 特点</h5>
-<ul>
-<li>多主控制</li>
-<li>通信速度快，距离远</li>
-<li>具有错误检测、错误通知和错误恢复功能
-<ul>
-<li>A听出了错误，通知给其他参会人员，演讲人强制闭嘴，不断反复重新叙述，直到说对发出声音</li>
-</ul></li>
-<li>故障封闭
-<ul>
-<li>判断错误类型是暂时的数据错误（如外部噪声）还是持续的数据错误（如单元内部故障、驱动器故障、断线等），当发生持续数据错误时，将故障的单元从总线上隔离出去</li>
-</ul></li>
-<li>多节点结构</li>
-<li>仲裁机制
-<ul>
-<li>采用非破坏性仲裁机制，通过比较消息标识符的优先级来决定哪个节点有权继续发送数据，保证有序性，避免冲突</li>
-<li>没有红绿灯的路上让路规则</li>
-</ul></li>
-</ul>
-<h3 id="can协议的分层架构">0.1.2. 2. CAN协议的分层架构</h3>
-<p>​ CAN 协议如下图 所示涵盖了 ISO 规定的 OSI
-基本参照模型中的传输层、数据链路层及物理层。</p>
-<figure>
-<img src="/2024/08/19/tong-xun-can-zong-xian/image-20241021141022021.png" alt="ISO/OSI基础参照模型">
-<figcaption aria-hidden="true">ISO/OSI基础参照模型</figcaption>
-</figure>
-<h4 id="物理层硬件部分">0.1.2.1. 2.1 物理层（硬件部分）</h4>
-<p>​
-与I2C、SPI等具有时钟信号的同步通讯方式不同，CAN通讯并不是以时钟信号来进行同步的，它是一种<strong>异步通讯</strong>，只具有
-CAN_High 和 CAN_Low
-两条信号线，共同构成一组<strong>差分信号线</strong>，以差分信号的形式进行通讯。</p>
-<ul>
-<li>差分信号中的两根数据线通常是通过<strong>双绞线</strong>布线的，会受到等效干扰，即某一时刻干扰使得一根数据线电压上升20mV，那么同样的干扰也会影响另一根，导致类似的电压变化，而差分信号只依赖于两线之间的电压差，而不是绝对电压值。</li>
-</ul>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>多主结构：多个节点都有发起通信的能力，不依赖中心控制；；多节点结构：在这个网络里，每个节点既可以发送信息，也可以接收其他节点发来的信息，<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>（区别于并行通讯协议，并行是同时通过多条数据线传输多个比特，串行是一个接一个传输比特）<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
-]]></content>
-      <categories>
-        <category>通讯协议</category>
-      </categories>
-      <tags>
-        <tag>CAN总线</tag>
       </tags>
   </entry>
 </search>

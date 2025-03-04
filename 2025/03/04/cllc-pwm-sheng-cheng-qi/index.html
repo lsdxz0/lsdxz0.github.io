@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LSDXZ">
+    <meta name="keywords" content="【simulink】PWM, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LSDXZ</title>
+    <title>【simulink】PWM | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -292,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">【simulink】PWM</h1>
                 </div>
             </div>
         </div>
@@ -411,12 +411,29 @@
             <div class="row tag-cate">
                 <div class="col s7">
                     
-                          <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
-                          </div>
+                    <div class="article-tag">
+                        
+                            <a href="/tags/simulink/">
+                                <span class="chip bg-color">simulink</span>
+                            </a>
+                        
+                            <a href="/tags/CLLC/">
+                                <span class="chip bg-color">CLLC</span>
+                            </a>
+                        
+                    </div>
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                仿真
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -434,14 +451,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    0
+                    900
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    3 分
                 </div>
                 
 
@@ -466,7 +483,146 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                
+                <h2 id="simulinkpwm">0.1. 【simulink】PWM</h2>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304152717270.png" alt="PWM模块">
+<figcaption aria-hidden="true">PWM模块</figcaption>
+</figure>
+<p>​
+变频是在VCO里完成的，这里哩就是产生变频的占空比固定（0.5）的PWM波</p>
+<h4 id="产生波">0.1.0.1. 1. 产生波</h4>
+<p>​ VCO产生锯齿波，然后跟0.5比，大于0.5为高电平，小于0.5为低电平，</p>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304155706119.png" alt="Re~Op的结果">
+<figcaption aria-hidden="true">Re~Op的结果</figcaption>
+</figure>
+<h4 id="data-type-conversion模块">0.1.0.2. 2. Data Type Conversion模块</h4>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304160449208.png" alt="Data">
+<figcaption aria-hidden="true">Data</figcaption>
+</figure>
+<p>​ 前面的方波的输出是逻辑电平，0/1也就是布尔类型，而后面的Transport
+Delay（传输延迟）、AND逻辑等模块通常需要
+<strong>双精度浮点数（double）</strong>
+作为输入。所以加个这玩意改变一下数据类型</p>
+<p>​
+这里其实也就是<strong>0---&gt;0.0</strong>以及<strong>1---&gt;1.0</strong>，仅改变数据类型，不改变信号逻辑值</p>
+<h4 id="transport-delay">0.1.0.3. 3. Transport Delay</h4>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304161230214.png" alt="死区时间">
+<figcaption aria-hidden="true">死区时间</figcaption>
+</figure>
+<table>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 18%">
+<col style="width: 58%">
+</colgroup>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>参数项</strong></th>
+<th><strong>设定值</strong></th>
+<th><strong>物理意义</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>时滞</strong></td>
+<td><code>100e-9</code>秒（100ns）</td>
+<td>信号延迟时间，需大于开关管关断时间（如MOSFET的关断延迟+体二极管反向恢复时间）。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>初始输出</strong></td>
+<td><code>0</code></td>
+<td>仿真开始时模块输出为0，避免初始阶段误触发驱动信号。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>初始缓冲区大小</strong></td>
+<td><code>1024</code></td>
+<td>预分配内存存储历史信号数据，确保延迟计算的稳定性（<strong>一般无需修改</strong>）。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>使用固定缓冲区大小</strong></td>
+<td>勾选</td>
+<td>禁止仿真中动态调整缓冲区，提升运行效率。</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Pade阶（用于线性化）</strong></td>
+<td><code>0</code></td>
+<td>禁用Pade近似，保持精确的非线性延迟（适合开关电源仿真）。</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>信号流示例：</strong>
+<ul>
+<li><strong>原始PWM波</strong>（S1驱动信号）：
+<ul>
+<li><code>0→1→0→1...</code></li>
+<li><code>0→（延迟100ns）→1...</code></li>
+</ul></li>
+<li><strong>互补信号生成</strong>
+<ul>
+<li>S1驱动信号：原PWM波延迟100ns →
+<code>[0→延迟→1→延迟→0...]</code></li>
+<li>S4驱动信号：原PWM波取反后延迟100ns →
+<code>[1→延迟→0→延迟→1...]</code></li>
+</ul></li>
+</ul></li>
+<li><strong>死区生成效果</strong>
+<ul>
+<li>S1和S4的驱动信号在跳变沿之间存在100ns的重叠低电平区（死区），完全消除直通风险</li>
+</ul></li>
+</ul>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304162125397.png" alt="死区效果">
+<figcaption aria-hidden="true">死区效果</figcaption>
+</figure>
+<h4 id="and">0.1.0.4. 4. AND</h4>
+<p>​ 首先要明确AND的功能</p>
+<h5 id="死区时间的生成原理">0.1.0.4.1. (1) 死区时间的生成原理</h5>
+<ul>
+<li><p><strong>目标</strong>：在S14和S23的跳变沿之间插入100ns低电平区间（死区）。</p></li>
+<li><p><strong>实现逻辑：</strong></p>
+<p>只有当<strong>原始信号</strong>和
+<strong>延迟后的信号</strong>同时为高电平 时，AND门才输出高电平。</p>
+<p><strong>效果：</strong></p>
+<ul>
+<li>每个跳变沿（上升沿或下降沿）后，原始信号与延迟信号存在100ns的不同步。</li>
+<li>AND操作将高电平持续时间缩短100ns，形成死区窗口。</li>
+</ul></li>
+</ul>
+<h5 id="具体波形示例">0.1.0.4.2. (2) 具体波形示例</h5>
+<p>假设原始方波为50%占空比（高电平10μs，低电平10μs，频率50kHz）：</p>
+<ul>
+<li><strong>路径A（直接通道）</strong>：立即跟随原始方波。</li>
+<li><strong>路径B（延迟通道）</strong>：原始方波延迟100ns后到达AND门。</li>
+<li><strong>AND输出（S14）</strong>
+<ul>
+<li>仅当两路信号均为高电平时输出高电平。</li>
+<li><strong>高电平持续时间</strong> = 原始高电平时间 - 延迟时间 = 10μs -
+100ns = 9.9μs。</li>
+<li><strong>死区效果</strong>：在原始方波下降沿后的100ns内，AND输出保持低电平。</li>
+</ul></li>
+</ul>
+<p><strong>一个自我误区</strong></p>
+<figure>
+<img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304164519330.png" alt="误区">
+<figcaption aria-hidden="true">误区</figcaption>
+</figure>
+<p>（黄色是A，蓝色是B）<strong>死区时间是100ns而不是200ns</strong>，别看两个波的前后比，而是单个波</p>
+<ul>
+<li><p><strong>原始信号（A）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">高电平时间：0μs→10μs  </span><br><span class="line">低电平时间：10μs→20μs  </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>延迟信号（B = A延迟100ns）</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">高电平时间：0.1μs→10.1μs  </span><br><span class="line">低电平时间：10.1μs→20.1μs  </span><br></pre></td></tr></table></figure></li>
+<li><p><strong>AND输出（A AND B）</strong>：
+仅当A和B同时为高时输出高电平，因此高电平区间为
+​<strong>0.1μs→10μs</strong>，持续时间为 ​<strong>9.9μs</strong>。
+​<strong>高电平减少量</strong>​ = 原始高电平时间（10μs） -
+AND输出高电平时间（9.9μs） =
+​<strong>100ns</strong>​（而非200ns）</p></li>
+</ul>
 
                 
             </div>
@@ -530,7 +686,15 @@
                 <div class="post-meta__tag-list" style="display: inline-block;">
                     
                         <div class="article-tag">
-                            <span class="chip bg-color">无标签</span>
+                            
+                                <a href="/tags/simulink/">
+                                    <span class="chip bg-color">simulink</span>
+                                </a>
+                            
+                                <a href="/tags/CLLC/">
+                                    <span class="chip bg-color">CLLC</span>
+                                </a>
+                            
                         </div>
                     
                 </div>
@@ -581,9 +745,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【simulink】PWM">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">【simulink】PWM</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -598,13 +762,29 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            LS
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    仿真
+                                </a>
+                            
                             
                         </span>
                     </div>
                 </div>
 
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/simulink/">
+                        <span class="chip bg-color">simulink</span>
+                    </a>
+                    
+                    <a href="/tags/CLLC/">
+                        <span class="chip bg-color">CLLC</span>
+                    </a>
+                    
+                </div>
                 
             </div>
         </div>
@@ -786,6 +966,13 @@
 </main>
 
 
+<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script>
+    MathJax.Hub.Config({
+        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
+    });
+</script>
+
 
 
     <footer class="page-footer bg-color">
@@ -803,7 +990,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">52.3k</span>&nbsp;字
+                class="white-color">53.9k</span>&nbsp;字
             
             
             
