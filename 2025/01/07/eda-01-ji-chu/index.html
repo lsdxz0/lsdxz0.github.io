@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    325
+                    367
                 </div>
                 
 
@@ -479,8 +479,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="立创eda-01-基础篇">立创eda-01 基础篇</h2>
-<h3 id="pcb印制电路板">0. PCB印制电路板</h3>
+                <h2 id="立创eda-01-基础篇">0.1. 立创eda-01 基础篇</h2>
+<h3 id="pcb印制电路板">0.1.1. 0. PCB印制电路板</h3>
 <ol type="1">
 <li><p>PCB的定义</p>
 <p>印刷线路板；</p>
@@ -490,8 +490,8 @@
 <li>实现诸多电子元器件电气连接的载体</li>
 </ul></li>
 </ol>
-<h3 id="pcb的层叠结构">1. PCB的层叠结构</h3>
-<h4 id="pcb单层板">1.1 PCB单层板</h4>
+<h3 id="pcb的层叠结构">0.1.2. 1. PCB的层叠结构</h3>
+<h4 id="pcb单层板">0.1.2.1. 1.1 PCB单层板</h4>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107214406992.png" alt="单层板">
 <figcaption aria-hidden="true">单层板</figcaption>
@@ -509,30 +509,30 @@
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107214832339.png" alt="丝印层">
 <figcaption aria-hidden="true">丝印层</figcaption>
 </figure>
-<h4 id="pcb双层板">1.2 PCB双层板</h4>
+<h4 id="pcb双层板">0.1.2.2. 1.2 PCB双层板</h4>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107215048664.png" alt="过孔">
 <figcaption aria-hidden="true">过孔</figcaption>
 </figure>
 <p>打个孔，用铜导通</p>
-<h4 id="pcb四层板">1.3 PCB四层板</h4>
+<h4 id="pcb四层板">0.1.2.3. 1.3 PCB四层板</h4>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107215429929.png" alt="四层板">
 <figcaption aria-hidden="true">四层板</figcaption>
 </figure>
-<h4 id="图层管理器">1.4 图层管理器</h4>
+<h4 id="图层管理器">0.1.2.4. 1.4 图层管理器</h4>
 <p>工具---&gt;图层管理器</p>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107215915322.png" alt="图层管理器">
 <figcaption aria-hidden="true">图层管理器</figcaption>
 </figure>
 <hr>
-<h3 id="pcb的通孔盲孔埋孔">2. PCB的通孔，盲孔，埋孔</h3>
+<h3 id="pcb的通孔盲孔埋孔">0.1.3. 2. PCB的通孔，盲孔，埋孔</h3>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107220556691.png" alt="三种孔">
 <figcaption aria-hidden="true">三种孔</figcaption>
 </figure>
-<h3 id="元器件的符号和封装">3 元器件的符号和封装</h3>
+<h3 id="元器件的符号和封装">0.1.4. 3 元器件的符号和封装</h3>
 <p>立创商城</p>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107222058280.png" alt="电阻">
@@ -543,15 +543,15 @@
 <li>紫色这个框的意思就是里面不需要上绿油</li>
 <li>黄色这个框是丝印层，呈现为白色，表示这个框里面是一个整体</li>
 </ul>
-<h3 id="pcb的元素组成">4. PCB的元素组成</h3>
+<h3 id="pcb的元素组成">0.1.5. 4. PCB的元素组成</h3>
 <figure>
 <img src="/2025/01/07/eda-01-ji-chu/image-20250107225403791.png" alt="元素组成">
 <figcaption aria-hidden="true">元素组成</figcaption>
 </figure>
-<h3 id="pcb的生产过程">5. PCB的生产过程</h3>
+<h3 id="pcb的生产过程">0.1.6. 5. PCB的生产过程</h3>
 <p>PCBA就是·工厂帮你焊好了元器件</p>
-<h3 id="pcb焊接技术">6. PCB焊接技术</h3>
-<h3 id="pcb和pcba">7. PCB和PCBA</h3>
+<h3 id="pcb焊接技术">0.1.7. 6. PCB焊接技术</h3>
+<h3 id="pcb和pcba">0.1.8. 7. PCB和PCBA</h3>
 <ul>
 <li>PCBA是英文印刷电路板+组装的缩写
 <ul>
@@ -818,8 +818,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -831,7 +831,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -909,7 +909,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

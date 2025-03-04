@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    2k
+                    2.1k
                 </div>
                 
 
@@ -479,8 +479,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="滑模控制">滑模控制</h2>
-<h4 id="原理">原理</h4>
+                <h2 id="滑模控制">0.1. 滑模控制</h2>
+<h4 id="原理">0.1.0.1. 原理</h4>
 <p><strong>特点：</strong>
 滑模控制本质上是<strong>非线性控制</strong>的一种，简单的说，它的非线性表现为控制的不连续性，即<strong>系统的“结构”不固定</strong>，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的状态轨迹运动。</p>
 <p>​
@@ -495,7 +495,7 @@
 <p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731151630068.png"></p>
 <p>​
 系统状态在处于滑模面等于0（或附近）系统是稳定的，所以设计的目标就是如何使s趋近于0，从而系统稳定，比如令s的导数&lt;0.当s&gt;0时，s<sup>.</sup>&lt;0,反正s&lt;0,s<sup>.</sup>&gt;0，这样s最终趋近于0</p>
-<h4 id="优缺点">优缺点</h4>
+<h4 id="优缺点">0.1.0.2. 优缺点</h4>
 <p><strong>优点：</strong></p>
 <ul>
 <li>克服系统的不确定性</li>
@@ -507,7 +507,7 @@
 <li><p>硬件无法适应高频的信号切换</p></li>
 <li><p>当状态轨迹到达滑动模态面后，难以严格沿着滑动模态面向平衡点滑动，而是在两侧两会穿越地趋近平衡点，从而产生抖振</p></li>
 </ul>
-<h4 id="构建滑模面">构建滑模面</h4>
+<h4 id="构建滑模面">0.1.0.3. 构建滑模面</h4>
 <p>​ 滑模面<em>S(x)</em>通常被设计为状态变量的线性组合： <span class="math display">\[
 S(x)=Cx
 \]</span> 其中 C
@@ -579,7 +579,7 @@ S(x)=e(t)=x(t)-x_d(t)
 &amp;=|\mathrm{s}|\left(\left|\begin{array}{c}\Gamma+\mathrm{f}-\mathrm{x}_{1\mathrm{d}}^{(3)}\end{array}\right|-\mathrm{kg}\right)
 \end{aligned}
 \]</span> 所以只要右侧括号内≤0，就有V的导数≤0，从而达到稳定</p>
-<h4 id="滑模控制器设计">滑模控制器设计</h4>
+<h4 id="滑模控制器设计">0.1.0.4. 滑模控制器设计</h4>
 <p>对于滑模变结构控制器的设计如下：</p>
 <p>u=u<sub>eq</sub>+u<sub>sw</sub></p>
 <p>u<sub>eq</sub>是等效控制，能够实现系统状态的跟踪，即将系统的状态一直保持在滑模面上；</p>
@@ -599,7 +599,7 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
 \]</span> 综上所述，滑模变结构的控制器设计为 <span class="math display">\[
 \begin{aligned}\text{u}&amp;=u_{eq}+u_{sw}\\&amp;=\frac{1}{K_{h}\omega_{h}^{2}}\begin{bmatrix}(c_{1}-\omega_{h}^{2})e_{2}+(c_{2}-2\xi_{h}\omega_{h})e_{3}\\+\varepsilon\operatorname{sgn}(\mathrm{s})+\mathrm{ks}\end{bmatrix}\end{aligned}
 \]</span></p>
-<h5 id="补充为什么控制率这么设计能保证s0">补充：为什么控制率这么设计能保证s=0</h5>
+<h5 id="补充为什么控制率这么设计能保证s0">0.1.0.4.1. 补充：为什么控制率这么设计能保证s=0</h5>
 <p>在控制原理中，用Lyapunov函数来判断系统的稳定性，对于系统状态方程s˙=cx<sub>2</sub>+u（目标已经变成s=0，因此现在写成s的状态方程），对于平衡点s，如果存在一个连续函数V满足</p>
 <p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153854650.png"></p>
 <p>那么系统将在平衡点s=0处稳定，即<span class="math inline">\(\operatorname*{lim}_{t\to\infty}s=0\)</span>
@@ -861,8 +861,8 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -874,7 +874,7 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -959,7 +959,7 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    355
+                    361
                 </div>
                 
 
@@ -487,8 +487,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="mosfet导通电阻特性">0.7 MOSFET导通电阻特性</h2>
-<h4 id="啥是导通电阻">啥是导通电阻</h4>
+                <h2 id="mosfet导通电阻特性">0.1. 0.7 MOSFET导通电阻特性</h2>
+<h4 id="啥是导通电阻">0.1.0.1. 啥是导通电阻</h4>
 <p>​ MOS管工作时，漏极跟源极之间的阻值称为导通电阻（RDS(ON))</p>
 <p>​ 数值<strong>越小</strong>，工作时损耗（功率损耗）越小。</p>
 <p><strong>关于导通电阻的电气特性</strong></p>
@@ -790,8 +790,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -803,7 +803,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -881,7 +881,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

@@ -479,8 +479,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="自适应控制">自适应控制</h2>
-<h4 id="什么是自适应控制">什么是自适应控制</h4>
+                <h2 id="自适应控制">0.1. 自适应控制</h2>
+<h4 id="什么是自适应控制">0.1.0.1. 什么是自适应控制</h4>
 <p>​
 自适应控制（APC）是一种带有在线参数识别的控制方法，自适应控制可以看做是一个
 <strong>能根据环境变化</strong> <strong>智能调节自身特性</strong>
@@ -507,7 +507,7 @@
 <p><strong>分类</strong></p>
 <p>​
 主要可以分为模型参考自适应控制（MRAC）、自校正控制器（STC）、参数自适应控制（PAC）、智能自适应控制系统（专家控制、模糊控制、神经网络控制、遗传算法等）</p>
-<h4 id="自校正控制器stc">自校正控制器（STC）</h4>
+<h4 id="自校正控制器stc">0.1.0.2. 自校正控制器（STC）</h4>
 <p>在线参数估计---&gt;控制器改变</p>
 <p>​
 外环为一个控制器参数估计器，控制根据历史数据估计未知参数然后再设计控制器的为<strong>间接校正控制系统</strong>；直接根据历史数据估计控制器参数的为<strong>直接自校正控制系统</strong></p>
@@ -538,7 +538,7 @@
 <p>​ “控制器参数计算器”直接可以估计可调控制器参数</p>
 <p>​ 参数估计方法：最小二乘法，随机逼近法，极大似然法</p>
 <p>​ 控制策略：极点配置、PID、最小方差</p>
-<h4 id="模型参考自适应控制mrac">模型参考自适应控制MRAC</h4>
+<h4 id="模型参考自适应控制mrac">0.1.0.3. 模型参考自适应控制MRAC</h4>
 <p>自适应率---&gt;控制器改变</p>
 <p>​
 在该控制框架中，可以人为构造一个所谓的“参考模型”，用以表征希望的闭环系统控制性能。而模型参考自适应控制则是希望求得一种动态调整的反馈控制律，使得系统的闭环控制性能与参考模型的性能可以保持一致。</p>
@@ -559,14 +559,14 @@
 <li>当参考模型与实际被控对象的输出有差异时，经比较器检测后，通过自适应机构做出决策，改变调节器（包括前置和反馈控制器）参数或生成辅助输入，以消除误差，使过程输出和参考模型输出一致。</li>
 </ul>
 <p><strong>分类</strong>：直接模型参考自适应控制(直接估计控制器参数)、间接模型参考自适应控制(先估计模型参数，后调整控制器参数)</p>
-<h5 id="关于模型参考自适应控制系统的假定">关于模型参考自适应控制系统的假定</h5>
+<h5 id="关于模型参考自适应控制系统的假定">0.1.0.3.1. 关于模型参考自适应控制系统的假定</h5>
 <ul>
 <li>参考模型是时不变系统</li>
 <li>参考模型和可调模型是线性的，有时为了分析方便，还假设它们的阶次相同；</li>
 <li>广义误差可测</li>
 <li>在自适应控制过程中，可调参数或辅助信号仅依赖于自适应机构</li>
 </ul>
-<h5 id="基于局部参数最优化的设计方法mit方案">基于局部参数最优化的设计方法（MIT方案）</h5>
+<h5 id="基于局部参数最优化的设计方法mit方案">0.1.0.3.2. 基于局部参数最优化的设计方法（MIT方案）</h5>
 <p>​
 局部参数最优化方法的<strong>设计思想：</strong>系统包含若干可调参数，当被控对象的特性受外界干扰而变化时，自适应机构对这些可调参数进行调整，以补偿外界环境或其他干扰对系统性能的影响，从而逐步使得参考模型和控制对象之间的广义误差所构成的性能指标达到或接近最小值。</p>
 <p>​
@@ -577,7 +577,7 @@
 <li>设计过程并未考虑稳定性问题，在得到自适应率后需要进行稳定性校验，以保证误差e在闭环回路中能收敛于某一容许值</li>
 <li>对于一阶系统，按照MIT法则设计的闭环自适应系统总是稳定的，跟踪速度或者自适应速度是按照指数规律进行的，理论上仅当时间趋于无穷时误差才为0，所以实际中并不要求e完全为0，当$|e|$时，认为系统就跟踪上参考模型了，在此意义上，自适应调节时间是有限的</li>
 </ul>
-<h5 id="直接mrac">直接MRAC</h5>
+<h5 id="直接mrac">0.1.0.3.3. 直接MRAC</h5>
 <figure>
 <img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802105928352.png" alt="直接MRAC控制器结构">
 <figcaption aria-hidden="true">直接MRAC控制器结构</figcaption>
@@ -865,8 +865,8 @@ rule</p>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -878,7 +878,7 @@ rule</p>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -963,7 +963,7 @@ rule</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

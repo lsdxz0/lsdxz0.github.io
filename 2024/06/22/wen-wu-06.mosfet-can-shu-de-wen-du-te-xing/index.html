@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    408
+                    426
                 </div>
                 
 
@@ -487,9 +487,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="mosfet特性简单版强调温度特性">06.
+                <h2 id="mosfet特性简单版强调温度特性">0.1. 06.
 MOSFET特性简单版，强调温度特性</h2>
-<h4 id="mosfet特性">MOSFET特性</h4>
+<h4 id="mosfet特性">0.1.0.1. MOSFET特性</h4>
 <p><strong>MOSFET寄生电容模型图</strong></p>
 <figure>
 <img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222006942.png" alt="image-20240622222006942">
@@ -527,13 +527,13 @@ MOSFET特性简单版，强调温度特性</h2>
 <figcaption aria-hidden="true">image-20240622222338939</figcaption>
 </figure>
 <p>Ciss在面对Vds的变化时，反应不是很明显，但是Coss跟Crss会有较大影响</p>
-<h4 id="温度特性">温度特性</h4>
+<h4 id="温度特性">0.1.0.2. 温度特性</h4>
 <p>​ 上面这三个玩意，在面对温度发生改变的时候，基本不受影响</p>
 <figure>
 <img src="/2024/06/22/wen-wu-06.mosfet-can-shu-de-wen-du-te-xing/image-20240622222601604.png" alt="image-20240622222601604">
 <figcaption aria-hidden="true">image-20240622222601604</figcaption>
 </figure>
-<h4 id="关于mosfet的开关及其温度特性">关于MOSFET的开关及其温度特性</h4>
+<h4 id="关于mosfet的开关及其温度特性">0.1.0.3. 关于MOSFET的开关及其温度特性</h4>
 <p><strong>开关时间</strong></p>
 <p>​
 栅极电压ON/OFF之后，MOSFET才ON/OFF，这个延迟时间为<strong>开关时间</strong>，一般在规格书上记为下面的</p>
@@ -545,7 +545,7 @@ MOSFET特性简单版，强调温度特性</h2>
 <p><strong>温度特性</strong></p>
 <p>​
 温度上升的同时开关时间略微增加，但是100℃上升时增加10%成左右，几乎没有开关特性的温度依存性</p>
-<h4 id="关于mosfet的vgsth界限值">关于MOSFET的Vgs（th）（界限值）</h4>
+<h4 id="关于mosfet的vgsth界限值">0.1.0.4. 关于MOSFET的Vgs（th）（界限值）</h4>
 <p>​ MOS管开启时，GS（栅极，源极）间的电压称为Vgs（th）</p>
 <p>​ 即，输入界限值以上的电压时，MOSFET为开启状态。</p>
 <figure>
@@ -843,8 +843,8 @@ MOSFET特性简单版，强调温度特性</h2>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -856,7 +856,7 @@ MOSFET特性简单版，强调温度特性</h2>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -934,7 +934,7 @@ MOSFET特性简单版，强调温度特性</h2>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

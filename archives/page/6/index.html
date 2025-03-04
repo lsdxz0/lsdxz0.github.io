@@ -459,12 +459,11 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    01. STM32+软件安装
-1. 硬件介绍
+                                    0.1. 01. STM32+软件安装
+0.1.0.1. 1. 硬件介绍
 面板板
 面包板的跳线，较短，可以贴在面包板上，适合长时间的接线
-上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块
-STM32最小系统
+上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电
                                 
                             </div>
                             <div class="publish-info">
@@ -525,18 +524,15 @@ STM32最小系统
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    09. 开环仿真验证
-模型初始化参数
+                                    0.1. 09. 开环仿真验证
+0.1.0.1. 模型初始化参数
 模型属性
 
-分压电容
+0.1.0.2. 分压电容
 
 
 在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响
-设置初始电压为Udc/2
-
-模块旋转
-ctrl +
+设置初始电
                                 
                             </div>
                             <div class="publish-info">
@@ -597,13 +593,11 @@ ctrl +
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    simulink使用中遇到的问题
-1. 旋转
+                                    0.1. simulink使用中遇到的问题
+0.1.0.1. 1. 旋转
 ctrl + R = 旋转90° ctrl + I = 左右旋转
-2. SCOPE显示的波形带圆圈
-打开示波器-视图-样式-标记（maker）-修改为无（none）
-
-3. 谐振器中
+0.1.0.2. 2. SCOPE显示的波形带圆圈
+打开示波器-视图-样式-标记（maker
                                 
                             </div>
                             <div class="publish-info">
@@ -662,16 +656,14 @@ ctrl + R = 旋转90° ctrl + I = 左右旋转
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    温湿度仪原理图
-1. 主控电路
+                                    0.1. 温湿度仪原理图
+0.1.0.1. 1. 主控电路
 查找芯片
 主控电路选用stm32g030k6t6
 放置--器件--搜索--stm,,,,,,--放置
 
 PB9，PB8
-​ 点击芯片，找到数据手册，搜索PB9，可以得到
-
-​ 该表格介绍引脚
+​ 点击芯片，找到数据手册，搜索PB9，可以得
                                 
                             </div>
                             <div class="publish-info">
@@ -730,7 +722,7 @@ PB9，PB8
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    05.
+                                    0.1. 05.
 占空比D在0.5到1之间的工作波形分析
 
 
@@ -742,7 +734,7 @@ D&gt;0.5的工作波形
 
 开关管S1,2
 
-横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，
+横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波
                                 
                             </div>
                             <div class="publish-info">
@@ -803,7 +795,7 @@ D&gt;0.5的工作波形
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    06.
+                                    0.1. 06.
 占空比D在0到0.5之间的工作波形分析
 
 
@@ -815,8 +807,7 @@ image-20240715153725566
 
 
 一样的分析。t1=DTs。
-t2= (1-D)Ts
-0&
+t2= (1-D)T
                                 
                             </div>
                             <div class="publish-info">
@@ -877,13 +868,13 @@ t2= (1-D)Ts
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    08. 计算输入侧分压电容
+                                    0.1. 08. 计算输入侧分压电容
 0&lt;D&lt;0.5,C-D-B-D-C
 
 ​
 为了保持电荷平衡，b的时间跟c的时间是一样的，工作状态在bd之间与cd之间切换，二者具有对称性，只分析一个即可。
 ​
-在b状态。C1放电给负载，由
+在b状态。C1放电
                                 
                             </div>
                             <div class="publish-info">
@@ -944,7 +935,7 @@ t2= (1-D)Ts
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    11. 晶体管元件温度计算方法
+                                    0.1. 11. 晶体管元件温度计算方法
 
                                 
                             </div>
@@ -1006,7 +997,7 @@ t2= (1-D)Ts
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    4.1 交错锯齿波调制
+                                    0.1. 4.1 交错锯齿波调制
 
 
 用锯齿波那么就不用考虑对称了，对于c不用对半分了
@@ -1014,7 +1005,7 @@ t2= (1-D)Ts
 S1，2
 
 这两个开关管互补导通，所以只看S1就行，S2进行取反
-调制如右图所示，蓝色的直角三角形为载波信号，被绿色的调制信号所截，设调制信号大
+调制如右图所示，蓝色的直角三角形为载波信号，被绿色的调制信号所截，设
                                 
                             </div>
                             <div class="publish-info">
@@ -1075,7 +1066,7 @@ S1，2
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    07.
+                                    0.1. 07.
 重新计算输出侧电感值和电容值
 ​
 首先根据设计要求，计算出占空比，选择对应的开关控制策略，及其相应的纹波计算公式
@@ -1083,10 +1074,9 @@ S1，2
 
 设计要求
 
-输出侧电感值
+0.1.0.1. 输出侧电感值
 根据新的纹波公式重新计算电感参数：
 
-关于这个电感电流纹波值8
 
                                 
                             </div>
@@ -1148,7 +1138,7 @@ S1，2
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    02. 工作状态分析
+                                    0.1. 02. 工作状态分析
 有且仅有四种开关状态
 
 
@@ -1157,7 +1147,7 @@ S1，2
 电感上的电流是不可以突变的，所以当S1,4关断后，电流通过二极管续流，而不是经过开关管
 
 ​
-这里电流到了B为啥不往上经过二极管，因为：电流更容易往低电位流，上面那电位
+这里电流到了B为啥不往上经过二极管，因为：电流更容易往低电位流，
                                 
                             </div>
                             <div class="publish-info">
@@ -1218,7 +1208,7 @@ S1，2
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    03. 确定最终的两个调制状态
+                                    0.1. 03. 确定最终的两个调制状态
 
 
 image-20240711160439391
@@ -1229,8 +1219,7 @@ image-20240711160439391
 
 image-20240711162201850
 
-红色的横线为调制信号，大于则为高电平，小于为低电平
-第一
+红色的横线为调制信号，大于则为高电平，小于为低电
                                 
                             </div>
                             <div class="publish-info">
@@ -1311,7 +1300,7 @@ image-20240711162201850
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

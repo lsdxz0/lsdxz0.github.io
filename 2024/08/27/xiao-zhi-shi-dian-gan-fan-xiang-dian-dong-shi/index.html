@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    258
+                    265
                 </div>
                 
 
@@ -487,7 +487,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电感反向电动势">电感反向电动势</h2>
+                <h2 id="电感反向电动势">0.1. 电感反向电动势</h2>
 <p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110154574.png"></p>
 <p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110228615.png"></p>
 <p>电阻上面没有压降，所以施加在MOS管漏极上的电压就有6V</p>
@@ -504,7 +504,7 @@
 <p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110702516.png"></p>
 <p><strong>解决办法</strong></p>
 <p><img src="/2024/08/27/xiao-zhi-shi-dian-gan-fan-xiang-dian-dong-shi/image-20240827110805149.png"></p>
-<h5 id="为啥说是反向的">为啥说是反向的</h5>
+<h5 id="为啥说是反向的">0.1.0.0.1. 为啥说是反向的</h5>
 <p>​
 首先理解<strong>反向</strong>，反向的意思就是说，你想减少，我不乐意，给你施加个能量，让你缓慢减少，你想增加，我还是不乐意，给你施加个能量，让你缓慢增加</p>
 <p>​
@@ -772,8 +772,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -785,7 +785,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -870,7 +870,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

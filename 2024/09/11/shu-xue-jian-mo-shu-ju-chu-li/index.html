@@ -451,14 +451,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    821
+                    859
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -483,13 +483,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="数据处理">数据处理</h2>
-<h3 id="数据标签">数据标签</h3>
+                <h2 id="数据处理">0.1. 数据处理</h2>
+<h3 id="数据标签">0.1.1. 数据标签</h3>
 <p>​ 男为0，女为1，数字化处理</p>
-<h3 id="数据编码">数据编码</h3>
+<h3 id="数据编码">0.1.2. 数据编码</h3>
 <p>​
 0-100的数，规定50以下为0,50以上为1，将变量数再次编码，进一步浓缩整合</p>
-<h3 id="异常值处理">异常值处理</h3>
+<h3 id="异常值处理">0.1.3. 异常值处理</h3>
 <ul>
 <li>3σ准则的，超过这3σ就属于异常值了，进行置空或者填补为其他有效值
 <ul>
@@ -509,13 +509,13 @@
 <li>孤立森林
 <ul>
 <li>一种无监督学习算法，属于组合决策树，</li>
-<li>先在最大，值和最小值之间随机选择一个值 X，然后按照 <X 和>=X
-可以把数据分成左右两组，在这两组数据中分别重复这个步骤，直到数据不可再分。</X></li>
+<li>先在最大，值和最小值之间随机选择一个值 X，然后按照 <x 和>=X
+可以把数据分成左右两组，在这两组数据中分别重复这个步骤，直到数据不可再分。</x></li>
 <li>相对聚集的点需要分割的次数较多，比较孤立的点需要的分割次数少，孤立森林就是利用分割的次数来度量一个点是聚集的（正常）还是孤立的（异常）。</li>
 <li><img src="/2024/09/11/shu-xue-jian-mo-shu-ju-chu-li/image-20240911090956050.png"></li>
 </ul></li>
 </ul>
-<h3 id="数据标准化处理">数据标准化处理</h3>
+<h3 id="数据标准化处理">0.1.4. 数据标准化处理</h3>
 <ul>
 <li><strong>量纲化</strong>
 <ul>
@@ -526,24 +526,24 @@
 <li>正向评价指标跟负向评价指标不能直接相加，取反或其他方法进行一直化处理</li>
 </ul></li>
 </ul>
-<h3 id="虚拟变量转换">虚拟变量转换</h3>
+<h3 id="虚拟变量转换">0.1.5. 虚拟变量转换</h3>
 <p>​ 常用在回归分析中</p>
 <ul>
 <li>将类别进行0 1 变换</li>
 <li><strong>哑变量化</strong>
 比如有三种，那么第三种就是哑变量的参考，前两者都为0则是第三者</li>
 </ul>
-<h3 id="特征筛选">特征筛选</h3>
+<h3 id="特征筛选">0.1.6. 特征筛选</h3>
 <p>​ 降维</p>
-<h3 id="特征降维">特征降维</h3>
+<h3 id="特征降维">0.1.7. 特征降维</h3>
 <p>​ 将多维数据合并为更少维度的数据集</p>
-<h3 id="缺失值处理">缺失值处理</h3>
+<h3 id="缺失值处理">0.1.8. 缺失值处理</h3>
 <p>​ 空缺的用中位补</p>
-<h3 id="时序数据滑窗转换">时序数据滑窗转换</h3>
+<h3 id="时序数据滑窗转换">0.1.9. 时序数据滑窗转换</h3>
 <ul>
 <li>将<strong>连续的时间数据</strong>分割成多个<strong>小窗口</strong>的方式，就像你从一段长视频中截取多个小片段一样。通过这些“窗口”，我们可以用过去的一段时间的数据，预测未来的一个或多个时间点。</li>
 </ul>
-<h3 id="样本均衡">样本均衡</h3>
+<h3 id="样本均衡">0.1.10. 样本均衡</h3>
 <p>​
 某一类别有995个数据，另一类别有5个数据时，此时属于严重的数据样本分布不均衡，模型很难从中提取规律，所以当发现样本不均衡时，需要做样本均衡处理，通过以下三种方法使得因变量不同类别的样本数量相差不大：</p>
 <ol type="1">
@@ -552,10 +552,10 @@
 <li>3.混合采样（mixed
 sampling），即结合过采样和欠采样的方法调整两类别的样本数量。</li>
 </ol>
-<h3 id="缩尾截尾处理">缩尾截尾处理</h3>
+<h3 id="缩尾截尾处理">0.1.11. 缩尾截尾处理</h3>
 <p>​
 对变量数值进行从小到大排列后，处理超出变量特定百分位范围的数值（被称作极端值）。缩尾是将这些极端值替换为其特定数值，截尾是直接删除这些极端值。</p>
-<h3 id="数据变换">数据变换</h3>
+<h3 id="数据变换">0.1.12. 数据变换</h3>
 <p>​ 对原始数据进行转换或处理</p>
 <ul>
 <li>BOX-Cox变换，让数据分布服从正态分布</li>
@@ -824,8 +824,8 @@ sampling），即结合过采样和欠采样的方法调整两类别的样本数
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -837,7 +837,7 @@ sampling），即结合过采样和欠采样的方法调整两类别的样本数
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -922,7 +922,7 @@ sampling），即结合过采样和欠采样的方法调整两类别的样本数
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    449
+                    465
                 </div>
                 
 
@@ -483,17 +483,17 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="复位电路">复位电路</h2>
-<h3 id="为啥要复位">为啥要复位</h3>
+                <h2 id="复位电路">0.1. 复位电路</h2>
+<h3 id="为啥要复位">0.1.1. 为啥要复位</h3>
 <ul>
 <li>程序逻辑错误，复位可以把所有逻辑状态恢复到初始值</li>
 <li>电源接通到电源稳定期，是一个缓慢的爬坡过程，这时候单片机不能正常工作，需要复位电路延时到电压稳定后才正常执行程序</li>
 </ul>
-<h3 id="高低电平复位">高低电平复位</h3>
+<h3 id="高低电平复位">0.1.2. 高低电平复位</h3>
 <p>​
 单片机属于数字电路，数字电路里只有0（低电平）和1（高电平）之分，因此，单片机要么是高电平复位，要么是低电平复位，</p>
 <p>​ 单片机中，小于1.5V的电压为低电平，大于1.5V的电压为高电平</p>
-<h4 id="高电平复位">高电平复位</h4>
+<h4 id="高电平复位">0.1.2.1. 高电平复位</h4>
 <p><img src="/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/image-20240903160626999.png"></p>
 <ul>
 <li>上电复位电路的本质就是RC串联充电电路</li>
@@ -501,7 +501,7 @@
 <li>之后通过电阻R1对电容进行充电，此时电阻两端电压开始减小，根据时间常数τ=RC，对于上图中的电路而言，大概需要4τ-5τ，也就是0.4s-0.5s左右可近似认为电容充电完毕，此时电容两端电压差近似为VCC，电阻两端电压差为0V，RST为低电平，近似为0V，单片机正常工作</li>
 <li>按下按钮，电容被短路，电容放电，电阻上开始有点压，RST变为高电平，复位</li>
 </ul>
-<h4 id="低电平复位">低电平复位</h4>
+<h4 id="低电平复位">0.1.2.2. 低电平复位</h4>
 <p><img src="/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/image-20240903161550668.png"></p>
 <p><img src="/2024/09/03/ji-chu-dian-lu-fu-wei-dian-lu/image-20240903161842630.png"></p>
 <ul>
@@ -767,8 +767,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -780,7 +780,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -865,7 +865,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

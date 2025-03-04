@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    697
+                    708
                 </div>
                 
 
@@ -479,8 +479,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="半桥变换器">半桥变换器</h3>
-<h4 id="拓扑结构">拓扑结构</h4>
+                <h3 id="半桥变换器">0.0.1. 半桥变换器</h3>
+<h4 id="拓扑结构">0.0.1.1. 拓扑结构</h4>
 <p><img src="/2024/08/26/tuo-bu-ban-qiao-bian-huan-qi/image-20240826134603191.png"></p>
 <ul>
 <li>分隔电容C<sub>1</sub>, C<sub>2</sub></li>
@@ -490,7 +490,7 @@
 <li>储能电感 L</li>
 <li>滤波电容 C</li>
 </ul>
-<h4 id="工作原理">工作原理</h4>
+<h4 id="工作原理">0.0.1.2. 工作原理</h4>
 <p>10 00 01 00</p>
 <p><strong>S1导通，S2关断</strong></p>
 <p><img src="/2024/08/26/tuo-bu-ban-qiao-bian-huan-qi/image-20240826134904019.png"></p>
@@ -788,8 +788,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -801,7 +801,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -886,7 +886,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

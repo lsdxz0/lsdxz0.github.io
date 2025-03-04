@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    31
+                    40
                 </div>
                 
 
@@ -479,14 +479,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="立创eda-02-了解立创eda软件">立创eda-02 了解立创EDA软件</h2>
-<h3 id="改路径">改路径</h3>
+                <h2 id="立创eda-02-了解立创eda软件">0.1. 立创eda-02 了解立创EDA软件</h2>
+<h3 id="改路径">0.1.1. 改路径</h3>
 <p>设置---客户端</p>
 <figure>
 <img src="/2025/01/09/eda-02.liao-jie-li-chuang-ead-ruan-jian/image-20250109101549945.png" alt="数据路径">
 <figcaption aria-hidden="true">数据路径</figcaption>
 </figure>
-<h4 id="运行模式">运行模式</h4>
+<h4 id="运行模式">0.1.1.1. 运行模式</h4>
 <figure>
 <img src="/2025/01/09/eda-02.liao-jie-li-chuang-ead-ruan-jian/image-20250109101609057.png" alt="运行模式">
 <figcaption aria-hidden="true">运行模式</figcaption>
@@ -746,8 +746,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -759,7 +759,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -837,7 +837,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

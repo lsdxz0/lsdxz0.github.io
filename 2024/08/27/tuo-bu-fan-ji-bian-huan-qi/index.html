@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    505
+                    513
                 </div>
                 
 
@@ -479,10 +479,10 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="反激变换器">反激变换器</h2>
-<h3 id="反激变换器拓扑结构">反激变换器拓扑结构</h3>
+                <h2 id="反激变换器">0.1. 反激变换器</h2>
+<h3 id="反激变换器拓扑结构">0.1.1. 反激变换器拓扑结构</h3>
 <p><img src="/2024/08/27/tuo-bu-fan-ji-bian-huan-qi/image-20240827150755166.png"></p>
-<h3 id="工作原理">工作原理</h3>
+<h3 id="工作原理">0.1.2. 工作原理</h3>
 <p><img src="/2024/08/27/tuo-bu-fan-ji-bian-huan-qi/e8b7ce99d22d3741e5267ff689143590.png"></p>
 <p><strong>S导通(开关管导通)时：</strong></p>
 <ul>
@@ -770,8 +770,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -783,7 +783,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -868,7 +868,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

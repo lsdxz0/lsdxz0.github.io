@@ -487,21 +487,21 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="采样保持电路">采样保持电路</h2>
-<h3 id="简介">简介</h3>
+                <h2 id="采样保持电路">0.1. 采样保持电路</h2>
+<h3 id="简介">0.1.1. 简介</h3>
 <p>​
 采样保持电路，有时表示为S/H电路或S&amp;H电路，通常与模数转换器一起使用来采样输入模拟信号并保持采样信号，因此得名为采样保持电路。</p>
 <p>​ 典型的采样保持电路的简单框图</p>
 <p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829141802736.png"></p>
 <p>​ PWM控制mos，开关闭合时，信号被采样，打开时，电路保持输出信号</p>
-<h3 id="基本采样保持电路">基本采样保持电路</h3>
+<h3 id="基本采样保持电路">0.1.2. 基本采样保持电路</h3>
 <p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829151600448.png"></p>
 <p>主要包括四个主要部分：输入放大器，电容，输出缓冲器和开关电路</p>
 <p>​ 核心是<strong>电容</strong></p>
 <p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829152312997.png"></p>
 <p><strong>当 MOSFET
 作为闭合开关工作时，通过漏极端子提供给它的模拟信号将被馈送到电容器，然后电容将充电至其峰值。</strong>当释放开关时，电容停止充电。由于电路末端连接了高阻抗运算放大器，电容将因此而产生高阻抗，因此无法放电。</p>
-<h3 id="电压采样电路">电压采样电路</h3>
+<h3 id="电压采样电路">0.1.3. 电压采样电路</h3>
 <ul>
 <li>隔离型
 <ul>
@@ -515,7 +515,7 @@
 <li>运放直接采样</li>
 </ul></li>
 </ul>
-<h5 id="非隔离型电压采样电路">非隔离型电压采样电路</h5>
+<h5 id="非隔离型电压采样电路">0.1.3.0.1. 非隔离型电压采样电路</h5>
 <figure>
 <img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829152808581.png" alt="电压分压采样电路">
 <figcaption aria-hidden="true">电压分压采样电路</figcaption>
@@ -538,7 +538,7 @@ ADC 进行转换。</li>
 <p>​ 电压经过运行（跟随器）之后，输入到MCU的ADC模块</p>
 <p>​
 由于运放具有<strong>输入电阻无穷大</strong>，而<strong>输出电阻无穷小</strong>的特点。等效电阻与运放的输入电阻相比较，可以忽略。输入到运行正极的电压等于Uin+，这样Uout=Uin+。</p>
-<h5 id="隔离型电压采样电路">隔离型电压采样电路</h5>
+<h5 id="隔离型电压采样电路">0.1.3.0.2. 隔离型电压采样电路</h5>
 <p><strong>霍尔电压采样</strong></p>
 <p>​
 霍尔元件的采样原理：霍尔传感器内部包含垂直于磁场方向放置的半导体薄片，根据霍尔效应，当有电流流过半导体薄片时会产生电动势，该电动势称为霍尔电势，可以通过测量电动势的大小得到留过电流的大小。</p>
@@ -553,8 +553,8 @@ Vo经过分压电阻Rs1与Rs2后接入运算放大器U2，分压电阻的作用�
 <p><img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829155055932.png"></p>
 <p>​
 输入电压经过Rs1与Rs2分压后接入隔离运算放大器，随后接入差分运放电路中，运放U1的输出电压经过滤波器（R1、C1）后接入ADC采样模块。</p>
-<h3 id="电流采样电路">电流采样电路</h3>
-<h5 id="非隔离型电流采样电路">非隔离型电流采样电路</h5>
+<h3 id="电流采样电路">0.1.4. 电流采样电路</h3>
+<h5 id="非隔离型电流采样电路">0.1.4.0.1. 非隔离型电流采样电路</h5>
 <figure>
 <img src="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/image-20240829155356943.png" alt="电流分流采样电路">
 <figcaption aria-hidden="true">电流分流采样电路</figcaption>
@@ -563,7 +563,7 @@ Vo经过分压电阻Rs1与Rs2后接入运算放大器U2，分压电阻的作用�
 在待测支路中串联采样电阻Rs3，并将电阻两端电压接入运算放大器U2中。</p>
 <p>​ 电路中U2以及电阻Ry21-Ry24构成的差分电路。</p>
 <p>​ 差分电路的输出经过滤波器（R11、C11）后接入ADC采样模块。</p>
-<h5 id="隔离型电流采样电路">隔离型电流采样电路</h5>
+<h5 id="隔离型电流采样电路">0.1.4.0.2. 隔离型电流采样电路</h5>
 <p><strong>霍尔电流采样电路</strong></p>
 <p>​ 霍尔电流采样电路一般由霍尔传感元件、运算放大器和滤波器构成。</p>
 <p>以单电源闭环霍尔电流采样为例：</p>
@@ -572,7 +572,7 @@ Vo经过分压电阻Rs1与Rs2后接入运算放大器U2，分压电阻的作用�
 待测电流穿过霍尔电流传感器U1会产生一个幅值在0~V+之间的输出电压值Vo。</p>
 <p>​
 Vo经分压电阻Rs1与Rs2后接入运放U2，随后经低通滤波器（R1、C1）后接入ADC采样单元。U2、Rs1与Rs2作用可参考霍尔电压采样电路。</p>
-<h3 id="电压采样电路设计">电压采样电路设计</h3>
+<h3 id="电压采样电路设计">0.1.5. 电压采样电路设计</h3>
 <p><strong>要求：</strong>采集一个输出范围为20V-28V的Uo电压信号到0-3.3V的AD。
 <strong>设计思路：</strong>将20v到28v中的8v压差全部映射到0-3.3v的范围内，才内能更好的利用AD模块，所以首先将Uo与20V做差分，将电压抬低到0-8v（注：有时碍于仪放信号输入电压的范围较小会先分压再抬低见形式二），然后通过电阻分压将8v映射到3.3v的范围内。
 <strong>形式一</strong></p>
@@ -875,8 +875,8 @@ Vo经分压电阻Rs1与Rs2后接入运放U2，随后经低通滤波器（R1、C1
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -888,7 +888,7 @@ Vo经分压电阻Rs1与Rs2后接入运放U2，随后经低通滤波器（R1、C1
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -973,7 +973,7 @@ Vo经分压电阻Rs1与Rs2后接入运放U2，随后经低通滤波器（R1、C1
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

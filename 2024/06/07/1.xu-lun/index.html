@@ -438,7 +438,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    263
+                    277
                 </div>
                 
 
@@ -470,20 +470,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="绪论">1. 绪论</h2>
-<h3 id="电力电子是干啥的">1. 电力电子是干啥的</h3>
+                <h2 id="绪论">0.1. 1. 绪论</h2>
+<h3 id="电力电子是干啥的">0.1.1. 1. 电力电子是干啥的</h3>
 <figure>
 <img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406071712091.png" alt="image-20240311162400570">
 <figcaption aria-hidden="true">image-20240311162400570</figcaption>
 </figure>
 <p>控制器比如用的单片机， 输出5v,3.3v
 被控对象要用几百v的电压，电力电子：我会出手</p>
-<h3 id="什么是电力电子技术">2. 什么是电力电子技术</h3>
+<h3 id="什么是电力电子技术">0.1.2. 2. 什么是电力电子技术</h3>
 <figure>
 <img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406071712092.png" alt="image-20240311162704621">
 <figcaption aria-hidden="true">image-20240311162704621</figcaption>
 </figure>
-<h3 id="电力电子变换器的分类">3. 电力电子变换器的分类</h3>
+<h3 id="电力电子变换器的分类">0.1.3. 3. 电力电子变换器的分类</h3>
 <p>tip：</p>
 <ul>
 <li>变换器Converter 包含功率半导体开关器件， 及储能元件（电感电容）</li>
@@ -510,7 +510,7 @@
 <li>用于变换交流电的等级和频率</li>
 </ul></li>
 </ul>
-<h3 id="电力电子的概念">4. 电力电子的概念</h3>
+<h3 id="电力电子的概念">0.1.4. 4. 电力电子的概念</h3>
 <figure>
 <img src="https://raw.githubusercontent.com/lsdxz0/photo/main/image/202406071712093.png" alt="image-20240311170409638">
 <figcaption aria-hidden="true">image-20240311170409638</figcaption>
@@ -774,8 +774,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -787,7 +787,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -865,7 +865,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

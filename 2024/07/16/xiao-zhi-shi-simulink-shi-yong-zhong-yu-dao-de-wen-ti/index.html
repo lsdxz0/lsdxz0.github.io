@@ -447,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    528
+                    546
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -479,13 +479,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="simulink使用中遇到的问题">simulink使用中遇到的问题</h2>
-<h4 id="旋转">1. 旋转</h4>
+                <h2 id="simulink使用中遇到的问题">0.1. simulink使用中遇到的问题</h2>
+<h4 id="旋转">0.1.0.1. 1. 旋转</h4>
 <p>ctrl + R = 旋转90° ctrl + I = 左右旋转</p>
-<h4 id="scope显示的波形带圆圈">2. SCOPE显示的波形带圆圈</h4>
+<h4 id="scope显示的波形带圆圈">0.1.0.2. 2. SCOPE显示的波形带圆圈</h4>
 <p>打开示波器-视图-样式-标记（maker）-修改为无（none）</p>
 <p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240716153355953.png"></p>
-<h4 id="谐振器中的变压器">3. 谐振器中的变压器</h4>
+<h4 id="谐振器中的变压器">0.1.0.3. 3. 谐振器中的变压器</h4>
 <p><strong>器件名称：</strong>linear transformer</p>
 <p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240814095309933.png"></p>
 <p>​ 取消框选，变为单相变压器，这样就只有两个铁芯了</p>
@@ -509,7 +509,7 @@ V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就�
 <p>上面提到的就是它能设置的全部参数了。如果你想要的是<strong>理想型变压器</strong>，没有损耗的那种，咋设置嘞。就把R1,L1,R2,L2都设置成0，Rm和Lm设置成inf就行了。像我这样。这时候，我这个变压器的变压比就是V1
 / V2了。</p>
 <p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240831092234015.png"></p>
-<h4 id="死区时间--delay模块">4. 死区时间--Delay模块</h4>
+<h4 id="死区时间--delay模块">0.1.0.4. 4. 死区时间--Delay模块</h4>
 <p>延时模块</p>
 <p><img src="/2024/07/16/xiao-zhi-shi-simulink-shi-yong-zhong-yu-dao-de-wen-ti/image-20240903164654628.png"></p>
 <figure>
@@ -780,8 +780,8 @@ V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就�
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -793,7 +793,7 @@ V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就�
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -871,7 +871,7 @@ V2肯定知道，是一二次侧的电压。注意人家写的是Vrms，也就�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

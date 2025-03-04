@@ -447,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    820
+                    842
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -479,31 +479,31 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="pid控制器">PID控制器</h2>
-<h4 id="基本公式">基本公式</h4>
+                <h2 id="pid控制器">0.1. PID控制器</h2>
+<h4 id="基本公式">0.1.0.1. 基本公式</h4>
 <p><span class="math display">\[
 u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+\frac1{T_{i}}\int_{0}^{t}e(\tau)d\tau+T_{d}\frac
 d{dt}e(t)]
 \]</span></p>
-<h4 id="p-比例环节----误差">P 比例环节----误差</h4>
+<h4 id="p-比例环节----误差">0.1.0.2. P 比例环节----误差</h4>
 <p>​ P比例作用是对<strong>偏差</strong>
 在<strong>瞬间</strong>做出反应，即偏差一旦产生，立即产生作用，使其控制类朝减少变化，控制的强弱取决于比例系数，系数越大控制作用越强</p>
 <p>​
 比如：烧水，要烧到60度，水温一开始25，那么就有偏差了。60-25，，用p*这个差值进行控制，下个周期温度可能是40了，就变成了pe<sub>ss</sub>，由此可见，也接近目标温度，P的作用越小</p>
 <p><strong>特点：</strong>比例控制P决定了系统响应的迅速性，能够加快调节的速度，使系统更快到达期望值，但由于稳态误差的存在，仅有P控制器的存在并不能到达期望值，而总是有偏差存在。而且，如果P控制器的参数过大，增长曲线的斜率也会较大，导致震荡幅度增大，系统震荡更加频繁，导致系统不稳定。</p>
-<h4 id="i-积分环节----误差累积">I 积分环节----误差累积</h4>
+<h4 id="i-积分环节----误差累积">0.1.0.3. I 积分环节----误差累积</h4>
 <p>​
 回到刚才的例子，在烧水的过程中，p不断修正，水自身也会散热，就会出现一个情况，在某一时刻，加热的速度正好等于水的散热速度，那么水温就不会再升高了，系统变成稳定了，水壶一直被加热但是温度并不会上升，这个时候实际温度到目标温度之间的差值就是<strong>静态误差</strong></p>
 <p>​
 由于稳态误差的存在，只有P的调节作用是不够的，所以我们需要<strong>积分环节I</strong>来消除稳态误差，只要实际温度和目标温度存在偏差就会把这个偏差进行累加，然后把这个积分后的结果作用到加热设备上</p>
 <p><strong>特点：</strong>积分控制I
 是为了消除系统的稳态误差，使系统到达期望值，但是这会导致调节时间变长，超调量增加。</p>
-<h4 id="d微分环节">D微分环节</h4>
+<h4 id="d微分环节">0.1.0.4. D微分环节</h4>
 <p>​
 那么这时候，水温越来越接近60°了，但是水温的<strong>变化速度</strong>还有存在，所以需要微分环节来消除这个变化速度，也就是说，当误差越来越小时，增量应该放缓，而不是保持一个速度去增加，这样会导致水温超过目标值，</p>
 <p><strong>特点：</strong>微分控制D决定了控制系统是否具有前瞻性，也就是影响着系统的未来，能够减少调节时间，使系统更快到达期望值，还能减少超调量。但是微分控制器容易受到干扰，当有外界干扰存在时，D的参数越大，系统越不稳定。</p>
 <p>P专注于当下，I总结的是过去，D预测未来！</p>
-<h4 id="组合情况">组合情况</h4>
+<h4 id="组合情况">0.1.0.5. 组合情况</h4>
 <p>对于干扰较强的系统，最好不使用D；对于对响应速度没有高要求的系统，采用PI控制就足够；对于车辆速度控制，使用PI控制，对于转向控制，使用PD控制</p>
 
                 
@@ -764,8 +764,8 @@ d{dt}e(t)]
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -777,7 +777,7 @@ d{dt}e(t)]
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -862,7 +862,7 @@ d{dt}e(t)]
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

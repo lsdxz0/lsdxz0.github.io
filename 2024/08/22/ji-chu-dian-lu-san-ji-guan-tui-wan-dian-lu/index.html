@@ -483,12 +483,12 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="三极管推挽电路">三极管推挽电路</h2>
-<h3 id="三极管推挽电路-1">三极管推挽电路</h3>
+                <h2 id="三极管推挽电路">0.1. 三极管推挽电路</h2>
+<h3 id="三极管推挽电路-1">0.1.1. 三极管推挽电路</h3>
 <p>​
 功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大</p>
 <p>​ 电流驱动能力不足，加一个推挽电路，用于驱动后续电路</p>
-<h4 id="原理分析">原理分析</h4>
+<h4 id="原理分析">0.1.1.1. 原理分析</h4>
 <figure>
 <img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019">
 <figcaption aria-hidden="true">image-20240822100523019</figcaption>
@@ -505,7 +505,7 @@
 <p><strong>分析上升过程</strong></p>
 <p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p>
 <p>下降过程不再赘述，在实际中，也不会出现Q12同时导通的情况</p>
-<h5 id="输入输出">输入输出</h5>
+<h5 id="输入输出">0.1.1.1.1. 输入输出</h5>
 <ul>
 <li>高电平情况下
 <ul>
@@ -524,29 +524,29 @@
 <figcaption aria-hidden="true">image-20240822104254575</figcaption>
 </figure>
 <p>对于三极管，BE之间可以视为二极管，如果上面是PNP，下面是NPN，就会直接导通，容易烧坏三极管</p>
-<h4 id="定义特性啥的">定义特性啥的</h4>
+<h4 id="定义特性啥的">0.1.1.2. 定义特性啥的</h4>
 <p>推挽放大器由<strong>2个晶体管</strong>组成，其中一个是<strong>NPN型</strong>，另外一个<strong>PNP型</strong>。<strong>一个晶体管在正半周期推动输出，另一个在负半周期拉动输出，因此被称为推挽放大器。</strong></p>
 <p>主要优点是当没有信号时，输出晶体管没有功耗。推挽放大电路有多种类型，但<strong>通常将B类放大器视为推挽放大器。</strong></p>
-<h4 id="a类放大器">A类放大器</h4>
+<h4 id="a类放大器">0.1.1.3. A类放大器</h4>
 <p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png"></p>
 <p>​
 仅由一个设置为<strong>始终保持导通状态的开关晶体管</strong>组成，产生<strong>最小的失真</strong>和<strong>最大幅度的输出信号</strong>。</p>
 <p>​ A类放大器的效率很低，接近30%。即使没有连接输入信号，A
 类放大器的级也允许相同数量的负载电流流过它，因此输出晶体管需要大散热器。</p>
-<h4 id="b类放大器">B类放大器</h4>
+<h4 id="b类放大器">0.1.1.4. B类放大器</h4>
 <p>​ <strong>B类放大器</strong>是实际的<strong>推挽放大器</strong>。B
 类放大器的效率高于 A 类放大器，因为它由两个晶体管 NPN 和 PNP 组成。</p>
 <p>​ B
 类放大器电路<strong>每个晶体管将在输入波形的一个半周期内工作</strong>。因此，这类放大电路的导通角为180度。一个晶体管在正半周期推动输出，而另一个在负半周期拉动输出，这就是它被称为<strong>推挽放大器</strong>的原因。</p>
 <p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png"></p>
-<h5 id="交叉失真">交叉失真</h5>
+<h5 id="交叉失真">0.1.1.4.1. 交叉失真</h5>
 <p>​ B 类通常会受到称为<strong>交叉失真</strong>的影响，其中信号在 0V
 时失真。我们知道，晶体管需要在其基极 - 发射极结处提供 0.7v
 的电压才能将其打开。因此，当交流输入电压施加到推挽放大器时，它从 0
 开始增加，直到达到 0.7v，晶体管保持关断状态，我们没有得到任何输出。PNP
 晶体管在交流波的负半周也会发生同样的事情，这被称为死区。为了克服这个问题，二极管用于偏置，然后放大器被称为
 AB 类放大器。</p>
-<h4 id="ab类放大器">AB类放大器</h4>
+<h4 id="ab类放大器">0.1.1.5. AB类放大器</h4>
 <p>​
 交叉失真缺陷可以通过使用两个在晶体管位置导通的二极管来校正。修改后的电路现在称为
 <strong>AB 类放大器电路</strong>。</p>
@@ -823,8 +823,8 @@ AB 类放大器。</p>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -836,7 +836,7 @@ AB 类放大器。</p>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -921,7 +921,7 @@ AB 类放大器。</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

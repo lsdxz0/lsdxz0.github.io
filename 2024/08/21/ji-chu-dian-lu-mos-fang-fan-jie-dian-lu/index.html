@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    486
+                    491
                 </div>
                 
 
@@ -479,7 +479,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="mos管防反接电路">mos管防反接电路</h3>
+                <h3 id="mos管防反接电路">0.0.1. mos管防反接电路</h3>
 <p><strong>why</strong></p>
 <p>反接会导致许多电子器件烧毁</p>
 <p><strong>常见的放反接电路有四种</strong></p>
@@ -517,7 +517,7 @@ S两极之间的电压大于MOS管的导通电压V<sub>gs</sub>，随后mos管�
 <li>能保证稳压管正常工作的前提下，阻值可以大一点，这样可以减小电流消耗。</li>
 <li>接G极的小阻值电阻，要求不高的情况下，可以去掉不用。如果工作电压低于Vgs，也可以不用电阻和稳压管保护。</li>
 </ul>
-<h2 id="注意在nmos跟pmos防反接电路中电流方向与一般相比是反的比如在nmos中正常是d-s但是这里是s-d">注意在Nmos跟PMOS防反接电路中，电流方向与一般相比是反的，比如在NMOS中，正常是D-S，但是这里是S-D</h2>
+<h2 id="注意在nmos跟pmos防反接电路中电流方向与一般相比是反的比如在nmos中正常是d-s但是这里是s-d">0.1. 注意在Nmos跟PMOS防反接电路中，电流方向与一般相比是反的，比如在NMOS中，正常是D-S，但是这里是S-D</h2>
 <p>​
 对于S,D，其实应该是一个沟道的两端，他可以从D-S也可以从S-D，跟PN结的单向导电还是有区别的</p>
 
@@ -775,8 +775,8 @@ S两极之间的电压大于MOS管的导通电压V<sub>gs</sub>，随后mos管�
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -788,7 +788,7 @@ S两极之间的电压大于MOS管的导通电压V<sub>gs</sub>，随后mos管�
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -873,7 +873,7 @@ S两极之间的电压大于MOS管的导通电压V<sub>gs</sub>，随后mos管�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

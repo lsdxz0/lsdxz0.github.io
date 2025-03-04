@@ -487,8 +487,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="滤波电路">滤波电路</h2>
-<h3 id="滤波原理">滤波原理</h3>
+                <h2 id="滤波电路">0.1. 滤波电路</h2>
+<h3 id="滤波原理">0.1.1. 滤波原理</h3>
 <ul>
 <li><strong>单向脉动性直流电压</strong></li>
 </ul>
@@ -521,13 +521,13 @@
 的滤波，从单向脉动性直流电中取出了所需要的直流电压 +U。</p>
 <p>​ 滤波电感 L1 的电感量越大，对交流成分的感抗越大，使残留在负载 RL
 上的交流成分越小，滤波效果就越好，但直流电阻也会增大。</p>
-<h3 id="rc滤波">RC滤波</h3>
+<h3 id="rc滤波">0.1.2. RC滤波</h3>
 <p><img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/image-20240829165013006.png"></p>
 <p>​
 其实这里可以看做是RC串联，然后输出电阻跟后面的那个元器件并联，所以输出电压就是后面的器件的电压</p>
 <p>​
 那么感觉就可以理解为一个分压电路了，并且下面的器件应该是分担绝大部分电压，分压看阻抗，即应该选择阻抗相比要很大的器件在下面。电阻的阻抗是个常数，跟频率无关，那么电容呢，<span class="math inline">\(Z_{C}=\frac{1}{j\omega C}\)</span>,其中<span class="math inline">\(\omega=2\pi f\)</span>。</p>
-<h5 id="如何记忆区分">如何记忆区分</h5>
+<h5 id="如何记忆区分">0.1.2.0.1. 如何记忆区分</h5>
 <p>​
 当我们想通低频信号的时候，频率低，容抗高，那么输出电压就应该是电容两端的电压，所以低通应该是电容在下面</p>
 <p>​
@@ -561,7 +561,7 @@
 <li>容抗小，电压都在电阻上，输出电压等于输入电压</li>
 </ul></li>
 </ul>
-<h3 id="lc滤波">LC滤波</h3>
+<h3 id="lc滤波">0.1.3. LC滤波</h3>
 <ul>
 <li><strong>低通滤波器</strong>：Low Pass Filter（简称：LPF）</li>
 </ul>
@@ -592,7 +592,7 @@ Filter（简称：BEF）</li>
 </ul>
 <p>​ 因为是只阻断特定频率范围的滤波器，所以被称为带阻滤波器。</p>
 <p><img src="/2024/08/29/ji-chu-dian-lu-lu-bo-dian-lu/basic-img0009.png"></p>
-<h4 id="低通滤波器的种类">低通滤波器的种类</h4>
+<h4 id="低通滤波器的种类">0.1.3.1. 低通滤波器的种类</h4>
 <ul>
 <li>L型滤波器(1) 应用场景：输入阻抗 ⇒ 高；输出阻抗 ⇒ 低 时</li>
 </ul>
@@ -882,8 +882,8 @@ Filter（简称：BEF）</li>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -895,7 +895,7 @@ Filter（简称：BEF）</li>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -980,7 +980,7 @@ Filter（简称：BEF）</li>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

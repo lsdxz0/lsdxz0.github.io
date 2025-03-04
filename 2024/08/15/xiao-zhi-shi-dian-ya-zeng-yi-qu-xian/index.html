@@ -447,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    863
+                    902
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    2 分
+                    3 分
                 </div>
                 
 
@@ -479,13 +479,13 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电压增益曲线">电压增益曲线</h2>
+                <h2 id="电压增益曲线">0.1. 电压增益曲线</h2>
 <p><strong>电压增益</strong>（<em>Gv</em>）定义为输出电压
 <em>Uo</em>与输入电压<em>Ui</em>之比： <span class="math display">\[
 G_v=\frac{U_o}{U_i}
 \]</span> ​
 <strong>电压增益曲线</strong>描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是<strong>变换器在不同频率下的性能表现</strong></p>
-<h4 id="坐标轴">坐标轴</h4>
+<h4 id="坐标轴">0.1.0.1. 坐标轴</h4>
 <p><strong>x轴</strong></p>
 <ul>
 <li>频率（f）：通常用赫兹（Hz）或归一化频率（f<sub>n</sub>=f/f<sub>s</sub>）表示，其中
@@ -496,32 +496,32 @@ f<sub>s</sub>
 <ul>
 <li>电压增益（<em>Gv</em>）：通常为无单位的比值，也可以表示为倍数或dB（分贝）。表示输出电压相对于输入电压的放大或衰减程度，增益值越大，输出电压相对于输入电压越高；小于1时，表示输出电压低于输入电压</li>
 </ul>
-<h4 id="电压增益曲线的意义">电压增益曲线的意义</h4>
-<h5 id="谐振频率">1. 谐振频率</h5>
+<h4 id="电压增益曲线的意义">0.1.0.2. 电压增益曲线的意义</h4>
+<h5 id="谐振频率">0.1.0.2.1. 1. 谐振频率</h5>
 <ul>
 <li>CLLC谐振变换器有两个主要谐振频率：串联谐振频率（fs）（第一谐振频率）和并联谐振频率（fp）（第二谐振频率）。在这些频率附近，电压增益可能会出现峰值，意味着系统在这些频率下的能量传递效率较高。</li>
 </ul>
-<h5 id="峰值增益">2. 峰值增益</h5>
+<h5 id="峰值增益">0.1.0.2.2. 2. 峰值增益</h5>
 <ul>
 <li>变换器在特定频率下的最高效率工作点</li>
 <li>电压增益峰值通常出现在谐振频率附近，此时变换器的电感和电容网络处于谐振状态，谐振状态下，电路阻抗最低，能量传递效率最高，峰值增益越高，能量传递效率越高，能将更多的输入电压转化为输出电压</li>
 <li></li>
 </ul>
-<h4 id="正反向电压增益曲线的谐振峰值随着ｈ-值-的-增-大-而-降低这也就意味着ｈ-值越小电压调节范围越宽cllc里面的">正、反向电压增益曲线的谐振峰值随着ｈ
+<h4 id="正反向电压增益曲线的谐振峰值随着ｈ-值-的-增-大-而-降低这也就意味着ｈ-值越小电压调节范围越宽cllc里面的">0.1.0.3. 正、反向电压增益曲线的谐振峰值随着ｈ
 值 的 增 大 而 降低。这也就意味着ｈ
 值越小，电压调节范围越宽(CLLC里面的)</h4>
-<h5 id="电感比h">1. 电感比h</h5>
+<h5 id="电感比h">0.1.0.3.1. 1. 电感比h</h5>
 <p><span class="math display">\[
 h=\frac{L_r}{L_m}
 \]</span></p>
 <p>Lr是谐振电感，Lm是励磁电感</p>
-<h5 id="h值与增益曲线的关系">2. h值与增益曲线的关系</h5>
+<h5 id="h值与增益曲线的关系">0.1.0.3.2. 2. h值与增益曲线的关系</h5>
 <ul>
 <li><em>h</em>增大时，比值增加，会导致谐振频率的调整，由于谐振频率的位置决定了电压增益曲线的形状和峰值位置，h值的增大通常会导致电压增益曲线的谐振峰值降低，换句话说，<strong>增大h值会使得电压增益曲线的峰值变得不那么高</strong></li>
 <li><strong>物理原因：</strong>
 当h值增大时，谐振网络的谐振频率可能会更接近原边电感主导的频率，在这一频率下，电路阻抗更高，导致电压增益减小，从而降低了谐振峰值</li>
 </ul>
-<h5 id="为啥h越小电压调节范围越宽">为啥h越小，电压调节范围越宽</h5>
+<h5 id="为啥h越小电压调节范围越宽">0.1.0.3.3. 为啥h越小，电压调节范围越宽</h5>
 <ul>
 <li><p><strong>峰值与调节范围的关系</strong>：</p>
 <ul>
@@ -790,8 +790,8 @@ h值较小时，系统的增益曲线可能会变得较为平坦，这意味着�
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -803,7 +803,7 @@ h值较小时，系统的增益曲线可能会变得较为平坦，这意味着�
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -888,7 +888,7 @@ h值较小时，系统的增益曲线可能会变得较为平坦，这意味着�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

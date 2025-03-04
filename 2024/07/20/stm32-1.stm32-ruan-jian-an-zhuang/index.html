@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.4k
+                    1.5k
                 </div>
                 
 
@@ -483,8 +483,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="stm32软件安装">01. STM32+软件安装</h2>
-<h4 id="硬件介绍">1. 硬件介绍</h4>
+                <h2 id="stm32软件安装">0.1. 01. STM32+软件安装</h2>
+<h4 id="硬件介绍">0.1.0.1. 1. 硬件介绍</h4>
 <p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720213900952.png" alt="image-20240720213900952">面板板</p>
 <p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720213913143.png" alt="image-20240720213913143">面包板的跳线，较短，可以贴在面包板上，适合长时间的接线</p>
 <p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720214004609.png" alt="image-20240720214004609">上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块</p>
@@ -503,7 +503,7 @@ Flash存储模块，可以存储数据，并且是用SPI总线进行通信的</p
 <p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215145944.png" alt="image-20240720215145944">旋转编码器，可以输出两路正交的方波信号，用于指示旋转的方向和速度，</p>
 <p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215258620.png" alt="image-20240720215258620">直流电机和TB6612电机驱动模块，可以用来进行直流电机的PWM调速实验</p>
 <p><img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240720215339362.png" alt="image-20240720215339362">SG90舵机；用PWM控制，输出端可以像船舵一样，根据给定PWM信号的占空比固定在某个角度上</p>
-<h4 id="stm32简介">2. STM32简介</h4>
+<h4 id="stm32简介">0.1.0.2. 2. STM32简介</h4>
 <p>​ 32位微处理器，st是公司，m是微控制器；51是8位的，采用ARM
 Cortex-M内核</p>
 <p><strong>ARM</strong></p>
@@ -556,12 +556,12 @@ Cortex-M内核</p>
 <li><strong>USB OTG: </strong>
 可以让stm32作为USB主机去读取其他usb设备</li>
 </ul>
-<h4 id="芯片命名规则">芯片命名规则</h4>
+<h4 id="芯片命名规则">0.1.0.3. 芯片命名规则</h4>
 <figure>
 <img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809151119400.png" alt="芯片命名规则">
 <figcaption aria-hidden="true">芯片命名规则</figcaption>
 </figure>
-<h4 id="芯片系统结构">芯片系统结构</h4>
+<h4 id="芯片系统结构">0.1.0.4. 芯片系统结构</h4>
 <figure>
 <img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809151207671.png" alt="系统结构">
 <figcaption aria-hidden="true">系统结构</figcaption>
@@ -570,16 +570,16 @@ Cortex-M内核</p>
 <li>左上角是Cortex-M3的内核，引出三条总线，分别是ICode指令总线，DCode数据总线，System系统总线，前两种总线主要是用于连接Flash闪存的，Flash里面存储的是我们编写的程序，ICode指令总线是用来加载程序指令的，DCode数据总线是用来加载数据的，比如常量和调试参数这些；System系统总线连接了些其他东西，比如SRAM，用于存储程序运行时的变量数据，还有FMSC，AHB系统总线，用于挂载基本或高性能外设，比如复位和时钟控制这些基本电路，还有SDIO也是挂载上AHB上的，再后来就是两个桥接，接到了APB2和APB1两个外设总线上，APB是指先进外设总线，用于连接一般的外设</li>
 <li>（待重学）</li>
 </ul>
-<h4 id="引脚配置">引脚配置</h4>
-<h4 id="启动配置">启动配置</h4>
+<h4 id="引脚配置">0.1.0.5. 引脚配置</h4>
+<h4 id="启动配置">0.1.0.6. 启动配置</h4>
 <figure>
 <img src="/2024/07/20/stm32-1.stm32-ruan-jian-an-zhuang/image-20240809152619484.png" alt="启动配置">
 <figcaption aria-hidden="true">启动配置</figcaption>
 </figure>
 <p>​
 用于指定程序开始运行的位置，一般情况下，程序都是从Flash程序存储器开始运行，</p>
-<h2 id="软件安装">软件安装</h2>
-<h4 id="安装器件支持包">安装器件支持包</h4>
+<h2 id="软件安装">0.2. 软件安装</h2>
+<h4 id="安装器件支持包">0.2.0.1. 安装器件支持包</h4>
 <p><strong>why</strong></p>
 <p>​ 型号多，芯片的器件支持包独立出来，只需要安装对应的器件支持包即可</p>
 <figure>
@@ -860,8 +860,8 @@ Cortex-M内核</p>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -873,7 +873,7 @@ Cortex-M内核</p>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -951,7 +951,7 @@ Cortex-M内核</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

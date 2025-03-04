@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    682
+                    689
                 </div>
                 
 
@@ -483,9 +483,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="llc变换器设计基础第二节-谐振变换器zvs原理">【LLC变换器设计基础】第二节
+                <h1 id="llc变换器设计基础第二节-谐振变换器zvs原理">1. 【LLC变换器设计基础】第二节
 谐振变换器ZVS原理</h1>
-<h3 id="电感电容模式">1. 电感电容模式</h3>
+<h3 id="电感电容模式">1.0.1. 1. 电感电容模式</h3>
 <p>​ 搞谐振电路的目的就是为了实现 ZVS ZCS</p>
 <figure>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204118539.png" alt="image-20240618204118539">
@@ -518,7 +518,7 @@
 <p><strong>2. 感性</strong></p>
 <p>​ 电流滞后于电压，纯感性的话，电压比电流超前90°，</p>
 <p>​ <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205113313.png" alt="image-20240618205113313"></p>
-<h3 id="zvs原理这里默认占空比50只调频">2.ZVS原理（这里默认占空比50，只调频）</h3>
+<h3 id="zvs原理这里默认占空比50只调频">1.0.2. 2.ZVS原理（这里默认占空比50，只调频）</h3>
 <figure>
 <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621211918013.png" alt="image-20240621211918013">
 <figcaption aria-hidden="true">image-20240621211918013</figcaption>
@@ -821,8 +821,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -834,7 +834,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -919,7 +919,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

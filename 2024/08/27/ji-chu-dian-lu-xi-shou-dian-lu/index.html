@@ -447,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    574
+                    591
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    1 分
+                    2 分
                 </div>
                 
 
@@ -479,14 +479,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="吸收电路">吸收电路</h2>
-<h3 id="为啥要用吸收电路">为啥要用吸收电路</h3>
+                <h2 id="吸收电路">0.1. 吸收电路</h2>
+<h3 id="为啥要用吸收电路">0.1.1. 为啥要用吸收电路</h3>
 <p>场景：</p>
 <ul>
 <li>电感反向电动势</li>
 <li>变压器</li>
 </ul>
-<h4 id="反激电路里为啥要用吸收电路">反激电路里为啥要用吸收电路</h4>
+<h4 id="反激电路里为啥要用吸收电路">0.1.1.1. 反激电路里为啥要用吸收电路</h4>
 <p>​ 反激常用RCD，这里就用RCD电路来概述</p>
 <p>​
 <strong>RCD的出现是为了解决原边MOS关闭时，漏感能量造成原边MOS应力过高的问题</strong></p>
@@ -499,12 +499,12 @@
 <li>假设MOS关断的时候，漏感上的电流为1A，MOS关断，阻抗视为无穷大，可假定他为10MΩ，此时MOS上的电压为I*R=10MV，“pong“炸了</li>
 </ul></li>
 </ul>
-<h5 id="还要注意一个问题">还要注意一个问题</h5>
+<h5 id="还要注意一个问题">0.1.1.1.1. 还要注意一个问题</h5>
 <p>​
 尖峰吸收电路所需吸收的能量是变压器漏感产生的尖峰电压，而不是开关管关断后主线圈中产生的反向电动势</p>
 <p>​
 初级线圈的反向电动势是向二次供电线圈和次级线圈传递能量的，绝对不能让尖峰吸收电路吸收它产生的能量，否则的话次级线圈回路和二次供电回路就没有电压产生。</p>
-<h3 id="rcd吸收电路">RCD吸收电路</h3>
+<h3 id="rcd吸收电路">0.1.2. RCD吸收电路</h3>
 <p><img src="/2024/08/27/ji-chu-dian-lu-xi-shou-dian-lu/image-20240827153206094.png"></p>
 <ul>
 <li>当MOS关断的时候，漏感的能量通过二极管，到电容C里存储能量</li>
@@ -774,8 +774,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -787,7 +787,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -872,7 +872,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

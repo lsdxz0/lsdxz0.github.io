@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    92
+                    100
                 </div>
                 
 
@@ -479,8 +479,8 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电子器件07-----电位器">电子器件07-----电位器</h2>
-<h3 id="符号">符号</h3>
+                <h2 id="电子器件07-----电位器">0.1. 电子器件07-----电位器</h2>
+<h3 id="符号">0.1.1. 符号</h3>
 <figure>
 <img src="/2024/08/30/qi-jian-07-dian-wei-qi/image-20240830143857720.png" alt="符号">
 <figcaption aria-hidden="true">符号</figcaption>
@@ -494,7 +494,7 @@
 <figcaption aria-hidden="true">实物</figcaption>
 </figure>
 <p>有三端，两个固定端，一个活动端子，</p>
-<h3 id="作用">作用</h3>
+<h3 id="作用">0.1.2. 作用</h3>
 <ul>
 <li>用作分压器</li>
 <li>用作变阻器
@@ -770,8 +770,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -783,7 +783,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -861,7 +861,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

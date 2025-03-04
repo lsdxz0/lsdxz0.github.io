@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    648
+                    652
                 </div>
                 
 
@@ -483,7 +483,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="三电平dcdc拓扑结构介绍">01. 三电平DCDC拓扑结构介绍</h2>
+                <h2 id="三电平dcdc拓扑结构介绍">0.1. 01. 三电平DCDC拓扑结构介绍</h2>
 <p><strong>单相三电平DCDC变换器-Buck-主电路结构</strong></p>
 <p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102410864.png"></p>
 <p><img src="/2024/07/09/san-dian-ping-01.san-dian-ping-dcdc-tuo-bu-jie-gou-jie-shao/image-20240709102432328.png"></p>
@@ -507,7 +507,7 @@ S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub
 <p>这里S<sub>2,3</sub>分别与C<sub>1,2</sub>并联了，其耐压也是以U<sub>1</sub>/2</p>
 <ul>
 <li>S<sub>1,2</sub>互补导通，S<sub>3,4</sub>互补导通，否则上下直流侧会短路从而烧毁管子，则有且仅有四种开关状态</li>
-<li><h2 id="两对不同工作状态的管子则最简要么他们的调制信号相同载波不同通常是相位不同或者相反">两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反</h2></li>
+<li><h2 id="两对不同工作状态的管子则最简要么他们的调制信号相同载波不同通常是相位不同或者相反">0.2. 两对不同工作状态的管子，则最简要么他们的调制信号相同，载波不同（通常是相位不同），或者相反</h2></li>
 </ul>
 <p><strong>补充：关于调制信号与载波</strong></p>
 <p>​ <strong>调制信号</strong>：通常是个低频信号</p>
@@ -809,8 +809,8 @@ S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -822,7 +822,7 @@ S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -900,7 +900,7 @@ S<sub>1</sub>这里就跟电容C<sub>1</sub>并联了，所以对于S<sub>1</sub
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

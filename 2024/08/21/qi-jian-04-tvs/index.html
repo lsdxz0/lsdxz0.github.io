@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    607
+                    614
                 </div>
                 
 
@@ -479,7 +479,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="电子器件04-----tvs">电子器件04-----TVS</h3>
+                <h3 id="电子器件04-----tvs">0.0.1. 电子器件04-----TVS</h3>
 <p>​ TVS（Transient Voltage
 Suppression）二极管，也称为<strong>瞬态电压抑制二极管</strong>，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：<strong>抑制电压峰值</strong></p>
 <p><img src="/2024/08/21/qi-jian-04-tvs/image-20240821105350767.png"></p>
@@ -492,7 +492,7 @@ TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰�
 <p><img src="/2024/08/21/qi-jian-04-tvs/image-20240821105649150.png"></p></li>
 <li><p>当尖峰电压来临，这个TVS的阻抗变得极低，此时电压尖峰的能量都通过TVS流向了负极，相当于TVS把后面都给短路了</p></li>
 </ul>
-<h4 id="重要参数">重要参数</h4>
+<h4 id="重要参数">0.0.1.1. 重要参数</h4>
 <p><img src="/2024/08/21/qi-jian-04-tvs/image-20240821110011921.png"></p>
 <p>下图为它的伏安特性曲线，右边为正向导通，左边为施加反向电压，施加正向时与普通无异，主要就是施加反向电压时的这些参数</p>
 <p><img src="/2024/08/21/qi-jian-04-tvs/image-20240821110727339.png"></p>
@@ -761,8 +761,8 @@ TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰�
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -774,7 +774,7 @@ TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰�
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -859,7 +859,7 @@ TVS把它的电压钳位在了10V，所以后面的电路就可以免收尖峰�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

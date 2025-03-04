@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    694
+                    696
                 </div>
                 
 
@@ -479,7 +479,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="ｃｌｌｃ-型三电平双向-ｄｃｄｃ-变换器混合控制策略">ＣＬＬＣ
+                <h2 id="ｃｌｌｃ-型三电平双向-ｄｃｄｃ-变换器混合控制策略">0.1. ＣＬＬＣ
 型三电平双向 ＤＣ／ＤＣ 变换器混合控制策略</h2>
 <p><strong>设计要求：</strong></p>
 <p>​
@@ -800,8 +800,8 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -813,7 +813,7 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -898,7 +898,7 @@ D_0)U_\text{lmax}}{2n}\end{cases}\)</span>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

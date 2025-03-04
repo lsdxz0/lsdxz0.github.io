@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    241
+                    243
                 </div>
                 
 
@@ -483,7 +483,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="工作状态分析">02. 工作状态分析</h2>
+                <h2 id="工作状态分析">0.1. 02. 工作状态分析</h2>
 <p><strong>有且仅有四种开关状态</strong></p>
 <p><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711154237712.png"></p>
 <p><img src="/2024/07/11/san-dian-ping-02.gong-zuo-zhuang-tai-fen-xi/image-20240711154247126.png"></p>
@@ -775,8 +775,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -788,7 +788,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -866,7 +866,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

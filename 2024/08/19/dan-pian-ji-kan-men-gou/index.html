@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    222
+                    233
                 </div>
                 
 
@@ -479,15 +479,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h3 id="看门狗">看门狗</h3>
+                <h3 id="看门狗">0.0.1. 看门狗</h3>
 <p><strong>设计目的：</strong>防止死机，cpu死机后，触发看门狗，复位</p>
-<h4 id="什么是看门狗">什么是看门狗</h4>
+<h4 id="什么是看门狗">0.0.1.1. 什么是看门狗</h4>
 <p>看门狗----Watch Dog Timer 本质还是一个<strong>定时器</strong></p>
 <p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819141651132.png"></p>
 <p>比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时255ms</p>
 <p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142021849.png"></p>
 <p>看门狗到达时间后不是中断，而是<strong>重启</strong></p>
-<h4 id="怎么使用看门狗">怎么使用看门狗</h4>
+<h4 id="怎么使用看门狗">0.0.1.2. 怎么使用看门狗</h4>
 <p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142124282.png"></p>
 <p>这是一段流水灯的程序</p>
 <p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142239363.png"></p>
@@ -751,8 +751,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -764,7 +764,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -849,7 +849,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

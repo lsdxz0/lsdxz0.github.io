@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    201
+                    203
                 </div>
                 
 
@@ -483,7 +483,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="计算输入侧分压电容">08. 计算输入侧分压电容</h2>
+                <h2 id="计算输入侧分压电容">0.1. 08. 计算输入侧分压电容</h2>
 <p>0&lt;D&lt;0.5,C-D-B-D-C</p>
 <p><img src="/2024/07/15/san-dian-ping-08.ji-suan-shu-ru-ce-fen-ya-dian-rong/image-20240715212810924.png"></p>
 <p>​
@@ -770,8 +770,8 @@
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -783,7 +783,7 @@
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -861,7 +861,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

@@ -459,14 +459,14 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    自适应控制
-什么是自适应控制
+                                    0.1. 自适应控制
+0.1.0.1. 什么是自适应控制
 ​
 自适应控制（APC）是一种带有在线参数识别的控制方法，自适应控制可以看做是一个
 能根据环境变化 智能调节自身特性
 的反馈控制系统。
 ​
-自适应控制的研究对象是具有不确定性的系统。能修正自己的特
+自适应控制的研究对象是具有不
                                 
                             </div>
                             <div class="publish-info">
@@ -525,16 +525,14 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    自抗扰控制器
+                                    0.1. 自抗扰控制器
 自抗扰控制器的设计分为三部分：
 
 安排过渡过程：就是用跟踪微分器（TD）合理提取微分
 估计状态和总扰动：用状态扩张观测器（ESO）估计状态和总扰动
 计算控制量：不局限于比例、微分和积分的线性组合
 
-原理
-
-
+0.
                                 
                             </div>
                             <div class="publish-info">
@@ -598,12 +596,10 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    滑模控制
-原理
+                                    0.1. 滑模控制
+0.1.0.1. 原理
 特点：
-滑模控制本质上是非线性控制的一种，简单的说，它的非线性表现为控制的不连续性，即系统的“结构”不固定，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的状态轨迹运动。
-​
-滑模
+滑模控制本质上是非线性控制的一种，简单的说，它的非线性表现为控制的不连续性，即系统的“结构”不固定，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的
                                 
                             </div>
                             <div class="publish-info">
@@ -662,10 +658,10 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    PID控制器
-基本公式
+                                    0.1. PID控制器
+0.1.0.1. 基本公式
 \[
-u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+\frac1{T_{i}}\int_{0}^
+u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+\frac1{T
                                 
                             </div>
                             <div class="publish-info">
@@ -724,12 +720,11 @@ u(t)=K_{p}e(t)+K_{i}\int_{0}^{t}e(\tau)d\tau+K_{d}\frac{d}{dt}e(t)\\=K_{p}[e(t)+
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    01. STM32+软件安装
-1. 硬件介绍
+                                    0.1. 01. STM32+软件安装
+0.1.0.1. 1. 硬件介绍
 面板板
 面包板的跳线，较短，可以贴在面包板上，适合长时间的接线
-上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电路模块
-STM32最小系统
+上面这个是面包板的飞线，比较长，方便挪动；下面是杜邦线，分别是公对母和母对母的，用于插接一些电
                                 
                             </div>
                             <div class="publish-info">
@@ -790,18 +785,15 @@ STM32最小系统
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    09. 开环仿真验证
-模型初始化参数
+                                    0.1. 09. 开环仿真验证
+0.1.0.1. 模型初始化参数
 模型属性
 
-分压电容
+0.1.0.2. 分压电容
 
 
 在仿真中，电容不能直接与电源并联，会报错，所以加上一个电阻，设置一个非常小的电阻值，不会对电容产生影响
-设置初始电压为Udc/2
-
-模块旋转
-ctrl +
+设置初始电
                                 
                             </div>
                             <div class="publish-info">
@@ -862,13 +854,11 @@ ctrl +
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    simulink使用中遇到的问题
-1. 旋转
+                                    0.1. simulink使用中遇到的问题
+0.1.0.1. 1. 旋转
 ctrl + R = 旋转90° ctrl + I = 左右旋转
-2. SCOPE显示的波形带圆圈
-打开示波器-视图-样式-标记（maker）-修改为无（none）
-
-3. 谐振器中
+0.1.0.2. 2. SCOPE显示的波形带圆圈
+打开示波器-视图-样式-标记（maker
                                 
                             </div>
                             <div class="publish-info">
@@ -927,16 +917,14 @@ ctrl + R = 旋转90° ctrl + I = 左右旋转
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    温湿度仪原理图
-1. 主控电路
+                                    0.1. 温湿度仪原理图
+0.1.0.1. 1. 主控电路
 查找芯片
 主控电路选用stm32g030k6t6
 放置--器件--搜索--stm,,,,,,--放置
 
 PB9，PB8
-​ 点击芯片，找到数据手册，搜索PB9，可以得到
-
-​ 该表格介绍引脚
+​ 点击芯片，找到数据手册，搜索PB9，可以得
                                 
                             </div>
                             <div class="publish-info">
@@ -995,7 +983,7 @@ PB9，PB8
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    05.
+                                    0.1. 05.
 占空比D在0.5到1之间的工作波形分析
 
 
@@ -1007,7 +995,7 @@ D&gt;0.5的工作波形
 
 开关管S1,2
 
-横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波为0-1，
+横着的线为调制信号，有两个相位相差180°的载波，跟同一个调制信号比较，归一化之后认为载波
                                 
                             </div>
                             <div class="publish-info">
@@ -1068,7 +1056,7 @@ D&gt;0.5的工作波形
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    06.
+                                    0.1. 06.
 占空比D在0到0.5之间的工作波形分析
 
 
@@ -1080,8 +1068,7 @@ image-20240715153725566
 
 
 一样的分析。t1=DTs。
-t2= (1-D)Ts
-0&
+t2= (1-D)T
                                 
                             </div>
                             <div class="publish-info">
@@ -1142,13 +1129,13 @@ t2= (1-D)Ts
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    08. 计算输入侧分压电容
+                                    0.1. 08. 计算输入侧分压电容
 0&lt;D&lt;0.5,C-D-B-D-C
 
 ​
 为了保持电荷平衡，b的时间跟c的时间是一样的，工作状态在bd之间与cd之间切换，二者具有对称性，只分析一个即可。
 ​
-在b状态。C1放电给负载，由
+在b状态。C1放电
                                 
                             </div>
                             <div class="publish-info">
@@ -1209,7 +1196,7 @@ t2= (1-D)Ts
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    11. 晶体管元件温度计算方法
+                                    0.1. 11. 晶体管元件温度计算方法
 
                                 
                             </div>
@@ -1291,7 +1278,7 @@ t2= (1-D)Ts
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

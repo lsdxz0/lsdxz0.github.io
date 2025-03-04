@@ -455,7 +455,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    285
+                    294
                 </div>
                 
 
@@ -487,16 +487,16 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="llc变换器设计基础第三节-zcs并联谐振llc的谐振分析q品质因数的正解">【LLC变换器设计基础】第三节
+                <h1 id="llc变换器设计基础第三节-zcs并联谐振llc的谐振分析q品质因数的正解">1. 【LLC变换器设计基础】第三节
 ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1>
-<h4 id="zcs的理解">1.ZCS的理解</h4>
+<h4 id="zcs的理解">1.0.0.1. 1.ZCS的理解</h4>
 <p>​
 对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现象，所以有较大的关断损耗</p>
 <p><img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215559332.png"></p>
 <p>​ 电容模式，电流超前电压，再这个位置<img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621215644838.png" alt="image-20240621215644838">之前，都是Q1在导通，然后电流反向了，Q1关断，实现ZCSOFF。这时候下面的IGBT还没导通，但是电流反向了呀，所以只能通过D1（上管的反向二极管)，直到下管导通的时候，电流走下管了，那么把下管关断，就会从下管的D2续流，实现ZCSOFF</p>
 <p><strong>开通挑战</strong>：容性模式下实现零电流开通较为困难，因为电流超前电压，开关器件开通时电流可能不为零，导致开通损耗增加</p>
 <p>这里出现出入，实现ZCS应该也是在感性状态下的</p>
-<h4 id="并联谐振">2. 并联谐振</h4>
+<h4 id="并联谐振">1.0.0.2. 2. 并联谐振</h4>
 <figure>
 <img src="/2024/06/21/llc-bian-huan-qi-she-ji-ji-chu-di-san-jie-zcs-bing-lian-xie-zhen-llc-de-xie-zhen-fen-xi-q-pin-zhi-yin-shu-de-zheng-jie/image-20240621220449704.png" alt="并联谐振">
 <figcaption aria-hidden="true">并联谐振</figcaption>
@@ -773,8 +773,8 @@ ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1>
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -786,7 +786,7 @@ ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1>
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -871,7 +871,7 @@ ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解</h1>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             

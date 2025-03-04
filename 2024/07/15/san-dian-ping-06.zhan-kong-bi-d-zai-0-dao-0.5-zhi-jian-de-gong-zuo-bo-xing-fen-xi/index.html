@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    130
+                    132
                 </div>
                 
 
@@ -483,7 +483,7 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="占空比d在0到0.5之间的工作波形分析">06.
+                <h2 id="占空比d在0到0.5之间的工作波形分析">0.1. 06.
 占空比D在0到0.5之间的工作波形分析</h2>
 <figure>
 <img src="/2024/07/15/san-dian-ping-06.zhan-kong-bi-d-zai-0-dao-0.5-zhi-jian-de-gong-zuo-bo-xing-fen-xi/image-20240715153716110.png" alt="image-20240715153716110">
@@ -780,8 +780,8 @@ dU<sub>1</sub>=U<sub>1</sub>/2-U<sub>2</sub>&gt;0;
             tocSelector: '#toc-content',
             contentSelector: '#articleContent',
             headingsOffset: -($(window).height() * 0.4 - 45),
-            collapseDepth: Number('0'),
-            headingSelector: 'h2, h3, h4'
+            collapseDepth: Number('1'),
+            headingSelector: 'h1, h2, h3, h4, h5, h6'
         });
 
         // modify the toc link href to support Chinese.
@@ -793,7 +793,7 @@ dU<sub>1</sub>=U<sub>1</sub>/2-U<sub>2</sub>&gt;0;
 
         // modify the heading title id to support Chinese.
         i = 0;
-        $('#articleContent').children('h2, h3, h4').each(function () {
+        $('#articleContent').children('h1, h2, h3, h4, h5, h6').each(function () {
             $(this).attr('id', tocHeading + (++i));
         });
 
@@ -871,7 +871,7 @@ dU<sub>1</sub>=U<sub>1</sub>/2-U<sub>2</sub>&gt;0;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">50.7k</span>&nbsp;字
+                class="white-color">52.3k</span>&nbsp;字
             
             
             
