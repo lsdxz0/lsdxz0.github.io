@@ -451,7 +451,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    900
+                    872
                 </div>
                 
 
@@ -483,20 +483,20 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="simulinkpwm">0.1. 【simulink】PWM</h2>
+                <h2 id="simulinkpwm">【simulink】PWM</h2>
 <figure>
 <img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304152717270.png" alt="PWM模块">
 <figcaption aria-hidden="true">PWM模块</figcaption>
 </figure>
 <p>​
 变频是在VCO里完成的，这里哩就是产生变频的占空比固定（0.5）的PWM波</p>
-<h4 id="产生波">0.1.0.1. 1. 产生波</h4>
+<h4 id="产生波">1. 产生波</h4>
 <p>​ VCO产生锯齿波，然后跟0.5比，大于0.5为高电平，小于0.5为低电平，</p>
 <figure>
 <img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304155706119.png" alt="Re~Op的结果">
 <figcaption aria-hidden="true">Re~Op的结果</figcaption>
 </figure>
-<h4 id="data-type-conversion模块">0.1.0.2. 2. Data Type Conversion模块</h4>
+<h4 id="data-type-conversion模块">2. Data Type Conversion模块</h4>
 <figure>
 <img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304160449208.png" alt="Data">
 <figcaption aria-hidden="true">Data</figcaption>
@@ -507,7 +507,7 @@ Delay（传输延迟）、AND逻辑等模块通常需要
 作为输入。所以加个这玩意改变一下数据类型</p>
 <p>​
 这里其实也就是<strong>0---&gt;0.0</strong>以及<strong>1---&gt;1.0</strong>，仅改变数据类型，不改变信号逻辑值</p>
-<h4 id="transport-delay">0.1.0.3. 3. Transport Delay</h4>
+<h4 id="transport-delay">3. Transport Delay</h4>
 <figure>
 <img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304161230214.png" alt="死区时间">
 <figcaption aria-hidden="true">死区时间</figcaption>
@@ -578,9 +578,9 @@ Delay（传输延迟）、AND逻辑等模块通常需要
 <img src="/2025/03/04/cllc-pwm-sheng-cheng-qi/image-20250304162125397.png" alt="死区效果">
 <figcaption aria-hidden="true">死区效果</figcaption>
 </figure>
-<h4 id="and">0.1.0.4. 4. AND</h4>
+<h4 id="and">4. AND</h4>
 <p>​ 首先要明确AND的功能</p>
-<h5 id="死区时间的生成原理">0.1.0.4.1. (1) 死区时间的生成原理</h5>
+<h5 id="死区时间的生成原理"><strong>(1) 死区时间的生成原理</strong></h5>
 <ul>
 <li><p><strong>目标</strong>：在S14和S23的跳变沿之间插入100ns低电平区间（死区）。</p></li>
 <li><p><strong>实现逻辑：</strong></p>
@@ -592,7 +592,7 @@ Delay（传输延迟）、AND逻辑等模块通常需要
 <li>AND操作将高电平持续时间缩短100ns，形成死区窗口。</li>
 </ul></li>
 </ul>
-<h5 id="具体波形示例">0.1.0.4.2. (2) 具体波形示例</h5>
+<h5 id="具体波形示例"><strong>(2) 具体波形示例</strong></h5>
 <p>假设原始方波为50%占空比（高电平10μs，低电平10μs，频率50kHz）：</p>
 <ul>
 <li><strong>路径A（直接通道）</strong>：立即跟随原始方波。</li>
@@ -744,9 +744,9 @@ AND输出高电平时间（9.9μs） =
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="模糊PI控制器">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【控制器】---模糊PI控制器">
                         
-                        <span class="card-title">模糊PI控制器</span>
+                        <span class="card-title">【控制器】---模糊PI控制器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -984,7 +984,7 @@ AND输出高电平时间（9.9μs） =
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

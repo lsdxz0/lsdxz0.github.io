@@ -459,12 +459,12 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 08. MOSFET总栅极电荷Qg
+                                    08. MOSFET总栅极电荷Qg
 #### 啥是总栅极电荷（Qg）
 ​ Qg是指：
 为导通MOS而注入到栅极电极的电荷量。也称为栅极总电荷，单位为库仑(C)
 ​
-总栅极电荷值较大，则导通MOS所需的电容充电时间变长，开
+总栅极电荷值较大，则导通MOS所需的电容充电时间变长，开关损耗增加
                                 
                             </div>
                             <div class="publish-info">
@@ -527,13 +527,20 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 09+10.
+                                    09+10.
 SOA安全使用晶体管的选定方法
-0.1.0.1. 判断流程
+判断流程
 
-0.1.0.2. 1. 测定实际的电流、电压波形
+1. 测定实际的电流、电压波形
 ​
 用示波器确定晶体管上的电压电流，需要全部满足规格书上记载的额定值，特别应该确认下列项目
+
+
+
+晶体管的种类
+电压
+电流
+
                                 
                             </div>
                             <div class="publish-info">
@@ -594,9 +601,9 @@ SOA安全使用晶体管的选定方法
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 06.
+                                    06.
 MOSFET特性简单版，强调温度特性
-0.1.0.1. MOSFET特性
+MOSFET特性
 MOSFET寄生电容模型图
 
 
@@ -612,6 +619,8 @@ image-20240622222006942
 
 
 
+Ciss
+Cgs+Cgd
                                 
                             </div>
                             <div class="publish-info">
@@ -674,13 +683,13 @@ image-20240622222006942
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 0.7 MOSFET导通电阻特性
-0.1.0.1. 啥是导通电阻
+                                    0.7 MOSFET导通电阻特性
+啥是导通电阻
 ​ MOS管工作时，漏极跟源极之间的阻值称为导通电阻（RDS(ON))
 ​ 数值越小，工作时损耗（功率损耗）越小。
 关于导通电阻的电气特性
 ​
-晶体管的
+晶体管的消耗功率用集电极饱和电压（V
                                 
                             </div>
                             <div class="publish-info">
@@ -743,11 +752,11 @@ image-20240622222006942
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    1. 【LLC变换器设计基础】第三节
+                                    【LLC变换器设计基础】第三节
 ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解
-1.0.0.1. 1.ZCS的理解
+1.ZCS的理解
 ​
-对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT
+对于MOSFET而言，ZCS用的比较少，ZVS会比较多，那么ZCS会用在IGBT里面比较多，IGBT在关断的时候有个拖尾的现
                                 
                             </div>
                             <div class="publish-info">
@@ -810,7 +819,7 @@ ZCS|并联谐振|LLC的谐振分析|Q品质因数的正解
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 初识图纸
+                                    初识图纸
 
 
 image-20240816082415415
@@ -820,7 +829,7 @@ image-20240816082415415
 R：半径
 M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，也就是公称直径
 
-螺纹式双线，这个外螺纹，螺纹的牙顶线就是大径粗
+螺纹式双线，这个外螺纹，螺纹的牙顶线就是大径粗直线，里面
                                 
                             </div>
                             <div class="publish-info">
@@ -879,7 +888,7 @@ M50：普通外螺纹；M代表的是普通螺纹，50代表螺纹的大径，�
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 04+05.数字晶体管的原理
+                                    04+05.数字晶体管的原理
 
 
 image-20240621222247268
@@ -888,7 +897,7 @@ image-20240621222247268
 
 饱和条件
 
-要使晶
+要使晶体管达到饱
                                 
                             </div>
                             <div class="publish-info">
@@ -951,15 +960,15 @@ image-20240621222247268
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    1. 【LLC变换器设计基础】第二节
+                                    【LLC变换器设计基础】第二节
 谐振变换器ZVS原理
-1.0.1. 1. 电感电容模式
+1. 电感电容模式
 ​ 搞谐振电路的目的就是为了实现 ZVS ZCS
 
 
 image-20240618204118539
 
-​ 负载越重，gain越陡
+​ 负载越重，gain越陡，越窄，Re越小，Q
                                 
                             </div>
                             <div class="publish-info">
@@ -1020,15 +1029,18 @@ image-20240618204118539
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    1. 【LLC变换器设计基础】第一节
+                                    【LLC变换器设计基础】第一节
 谐振腔分类 等效负载和串联谐振
-1.0.0.1. 1.谐振腔分类
+1.谐振腔分类
 
 
 image-20240613100012343
 
 ​ 串联 并联（不是那种L与C并到一块的） LCC LLC
-1.0
+2.等效负载计算
+
+
+i
                                 
                             </div>
                             <div class="publish-info">
@@ -1089,15 +1101,15 @@ image-20240613100012343
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 01
+                                    01
 晶体管的由来及内置电阻晶体管
-0.1.0.1. 材料
+材料
 ​ 从锗（80℃左右发生损害）到硅（180℃）
-0.1.0.2. 作用
+作用
 ​ 增幅和开关
 ​
 增幅：不改变输入信号的波形，只放大电压或电流，指模拟信号
-​ 
+​ 开关：在数字信号中，晶体管起着切换0和1的开关
                                 
                             </div>
                             <div class="publish-info">
@@ -1158,15 +1170,15 @@ image-20240613100012343
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 02.晶体管截止频率定义和反向漏电流
-0.1.0.1. 关于晶体管ON时的逆向电流（E---&gt;C）
+                                    02.晶体管截止频率定义和反向漏电流
+关于晶体管ON时的逆向电流（E---&gt;C）
 这个对于NPN型的来说，E-C是逆向的，
 
 
 image-20240611212018881
 
 ​
-基极B被
+基极B被偏置为正，集电极C被偏置为负
                                 
                             </div>
                             <div class="publish-info">
@@ -1227,16 +1239,19 @@ image-20240611212018881
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 03.晶体管分类概述
-0.1.0.1. 晶体管的代表形状 TO/SMT
+                                    03.晶体管分类概述
+晶体管的代表形状 TO/SMT
 
 
 image-20240611213213155
 
-0.1.0.2. 根据工作原理，分为双极晶体管和单极晶体管
+根据工作原理，分为双极晶体管和单极晶体管
 
 
-image-20240
+image-20240611213250901
+
+双极晶体管
+
                                 
                             </div>
                             <div class="publish-info">
@@ -1316,7 +1331,7 @@ image-20240
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

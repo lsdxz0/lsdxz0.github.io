@@ -459,13 +459,13 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 采样保持电路
-0.1.1. 简介
+                                    采样保持电路
+简介
 ​
 采样保持电路，有时表示为S/H电路或S&amp;H电路，通常与模数转换器一起使用来采样输入模拟信号并保持采样信号，因此得名为采样保持电路。
 ​ 典型的采样保持电路的简单框图
 
-​ 
+​ PWM控制mos，开关闭
                                 
                             </div>
                             <div class="publish-info">
@@ -528,12 +528,12 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 比较器
+                                    比较器
 ​ 首先要明确，比较器跟运放是两个不同的器件
 
 
 ​ 有专门的比较器，别用运放实现比较器，局限性较大
-0.1.1. 输出高低电平
+输出高低电平
 
 单电源供电
 
@@ -543,7 +543,7 @@
 
 
 ​
-当你不需要输出负压，就
+当你不需要输出负压，就选择单电源供电，如果需要
                                 
                             </div>
                             <div class="publish-info">
@@ -602,18 +602,18 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 运算放大器
+                                    运算放大器
 
 
 运算放大器原理图
 
-0.1.0.0.1. 同相？反相？
+同相？反相？
 
-0.1.1. 了解“虚短” “虚断”
+了解“虚短” “虚断”
 
 理想运放的输入阻抗无穷大----------虚断
 
-因为无穷大，所以给输入端施加电压，还是没电
+因为无穷大，所以给输入端施加电压，还是没电流，跟断路了一样，但是他又没断，所以叫虚断，
                                 
                             </div>
                             <div class="publish-info">
@@ -672,12 +672,15 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. ADC采样
-0.1.1. ADC采样原理
+                                    ADC采样
+ADC采样原理
 ​
 ADC是将模拟信号按照一定的采样频率进行离散化然后转换为数字信号的过程
 ​ 包含四个步骤，采样，保持，量化，编码；
-采样和保持在采样保持电路中完成，而量化和编码步骤则在ADC
+采样和保持在采样保持电路中完成，而量化和编码步骤则在ADC中完成。
+
+采样
+
                                 
                             </div>
                             <div class="publish-info">
@@ -736,13 +739,16 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电子器件02-----二极管
-0.1.1. 前言
+                                    电子器件02-----二极管
+前言
 ​ 二极管的本质是由P型半导体和N型半导体接触形成的PN结
 ​ PN结除了构成单向到点的二极管外，还存在一个结电容
 
 结电容会导致‘双向’导电
-0.1.2. 反向恢复时
+反向恢复时间
+
+对于二极管串联电阻的情况
+
                                 
                             </div>
                             <div class="publish-info">
@@ -801,8 +807,8 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电子器件06-----TVS变压器
-0.1.1. 变压器模型
+                                    电子器件06-----TVS变压器
+变压器模型
 
 作用：
 
@@ -810,7 +816,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
 提高降低电压或电流
 
 \[
-\frac{\nu_1}{\nu_2}=\frac{N_1}{N_2}\quad\frac{i_1}
+\frac{\nu_1}{\nu_2}=\frac{N_1}{N_2}\quad\frac{i_1}{i_2}=\frac{
                                 
                             </div>
                             <div class="publish-info">
@@ -869,17 +875,17 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 吸收电路
-0.1.1. 为啥要用吸收电路
+                                    吸收电路
+为啥要用吸收电路
 场景：
 
 电感反向电动势
 变压器
 
-0.1.1.1. 反激电路里为啥要用吸收电路
+反激电路里为啥要用吸收电路
 ​ 反激常用RCD，这里就用RCD电路来概述
 ​
-RCD的出现是为了解决原边MOS关闭
+RCD的出现是为了解决原边MOS关闭时，漏感能量造成原边MOS应力过高的问题
                                 
                             </div>
                             <div class="publish-info">
@@ -938,7 +944,7 @@ RCD的出现是为了解决原边MOS关闭
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电感反向电动势
+                                    电感反向电动势
 
 
 电阻上面没有压降，所以施加在MOS管漏极上的电压就有6V
@@ -947,7 +953,8 @@ RCD的出现是为了解决原边MOS关闭
 
 image-20240827110337793
 
-当mos管截止的时候，MOS管的漏极电压峰值高达4
+当mos管截止的时候，MOS管的漏极电压峰值高达40V
+
                                 
                             </div>
                             <div class="publish-info">
@@ -1010,15 +1017,15 @@ image-20240827110337793
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 反激变换器
-0.1.1. 反激变换器拓扑结构
+                                    反激变换器
+反激变换器拓扑结构
 
-0.1.2. 工作原理
+工作原理
 
 S导通(开关管导通)时：
 
 电流由输入电压端流经变压器原边线圈与开关形成电流回路。此时变压器原边线圈两端压降为Vi
-副边线圈两端感应电压Vi
+副边线圈两端感应电压Vi/n，因回路上二极管不导通，副边回路上
                                 
                             </div>
                             <div class="publish-info">
@@ -1077,7 +1084,7 @@ S导通(开关管导通)时：
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电子器件05-----继电器
+                                    电子器件05-----继电器
 控制原理
 
 ​ 给线圈接电，线圈有了磁性，它的衔铁会被吸引，这样电灯泡就会被电量
@@ -1086,7 +1093,7 @@ S导通(开关管导通)时：
 
 coil
 5V：当施加5V的电压的时候，继电器的触电就会闭环，灯泡亮
-​ 当施加电压
+​ 当施加电压小于5V的
                                 
                             </div>
                             <div class="publish-info">
@@ -1146,7 +1153,7 @@ coil
                             <div class="summary block-with-text">
                                 
                                     
-  dba70c5695197b5b3c51187085f4377b41ac6de5678be60d1b0d4642265920d000424bb6de74db2febb53f9123c7671c0819f895908088615dbd0
+  dba70c5695197b5b3c51187085f4377b41ac6de5678be60d1b0d4642265920d0a6fca921a8320a2c9d7e7b6586cc8330948d5146ec6f0b59c510a
                                 
                             </div>
                             <div class="publish-info">
@@ -1205,8 +1212,8 @@ coil
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.0.1. 半桥变换器
-0.0.1.1. 拓扑结构
+                                    半桥变换器
+拓扑结构
 
 
 分隔电容C1, C2
@@ -1216,8 +1223,12 @@ coil
 储能电感 L
 滤波电容 C
 
-0.0.1.2. 工作原理
-10 00 0
+工作原理
+10 00 01 00
+S1导通，S2关断
+
+
+左边：电
                                 
                             </div>
                             <div class="publish-info">
@@ -1296,7 +1307,7 @@ coil
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

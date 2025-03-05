@@ -447,31 +447,24 @@
             <article class="cd-timeline-content" data-aos="fade-up">
                 <div class="article col s12 m6">
                     <div class="card">
-                        <a href="/2024/08/21/qi-jian-03-san-ji-guan/">
+                        <a href="/2024/08/21/qi-jian-01-mos-guan/">
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="电子器件03-----三极管">
+                                <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="电子器件01-----MOS管">
                                 
-                                <span class="card-title">电子器件03-----三极管</span>
+                                <span class="card-title">电子器件01-----MOS管</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电子器件03-----三极管
-0.1.1. 1. 三个极的判定
+                                    电子器件01-----MOS管
+1. 三个极的判定
 
-
-B极 基极
-C 集电极，没有箭头
-E 发射极， 有箭头
-
-0.1.2. 2. N沟道与P沟道判别
-
-
-1. NPN三极管：
-基极加高电压，
+G极(gate)—栅极，不用说比较好认
+S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是
+D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边
                                 
                             </div>
                             <div class="publish-info">
@@ -494,7 +487,7 @@ E 发射极， 有箭头
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/MOSFET/"><span class="chip bg-color">MOSFET</span></a>
+                            <a href="/tags/MOS%E7%AE%A1/"><span class="chip bg-color">MOS管</span></a>
                             
                         </div>
                         
@@ -530,12 +523,12 @@ E 发射极， 有箭头
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.0.1. 电子器件04-----TVS
+                                    电子器件04-----TVS
 ​ TVS（Transient Voltage
 Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于保护电子电路免受瞬态电压冲击的器件。作用：抑制电压峰值
 
 ​
-比如这里
+比如这里，电源为5V，
                                 
                             </div>
                             <div class="publish-info">
@@ -594,7 +587,7 @@ Suppression）二极管，也称为瞬态电压抑制二极管，是一种用于
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.0.1. mos管防反接电路
+                                    mos管防反接电路
 why
 反接会导致许多电子器件烧毁
 常见的放反接电路有四种
@@ -608,7 +601,7 @@ why
 
 可以实现无论正反接电路都能导通
 
-不管是一个二极管还是多个二极管，都会产
+不管是一个二极管还是多个二极管，都会产生管压降并消耗
                                 
                             </div>
                             <div class="publish-info">
@@ -667,7 +660,7 @@ why
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 信号
+                                    信号
 
 模拟信号是连续的，数字信号是离散的
 在数字逻辑电子电路中，数字信号是二进制的，即只有0 1
@@ -732,12 +725,12 @@ why
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.0.1. 看门狗
+                                    看门狗
 设计目的：防止死机，cpu死机后，触发看门狗，复位
-0.0.1.1. 什么是看门狗
+什么是看门狗
 看门狗----Watch Dog Timer 本质还是一个定时器
 
-比如这样一个八位的定时器，他最多可定时255个脉冲，if
+比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时
                                 
                             </div>
                             <div class="publish-info">
@@ -796,13 +789,14 @@ why
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. CAN总线
-0.1.1. 1. 为什么要用CAN
-0.1.1.0.1. CAN通讯协议是什么
+                                    CAN总线
+1. 为什么要用CAN
+CAN通讯协议是什么
 ​ CAN通讯协议是一种多主多节点架构1的串行通讯协议2
 可以简单把CAN通信理解成开一场电话会议，
 
-当一个人讲话时其他人
+当一个人讲话时其他人就听（广播），
+当多个人同时讲话时则根据一定
                                 
                             </div>
                             <div class="publish-info">
@@ -861,12 +855,12 @@ why
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电压增益曲线
+                                    电压增益曲线
 电压增益（Gv）定义为输出电压
 Uo与输入电压Ui之比： \[
 G_v=\frac{U_o}{U_i}
 \] ​
-电压增益曲线描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是变换器在
+电压增益曲线描述了当输入电压和负载条件固定时，随着频率的变化，输出电压的变化，看的是变换器在不同频率下
                                 
                             </div>
                             <div class="publish-info">
@@ -925,8 +919,8 @@ G_v=\frac{U_o}{U_i}
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. mathtype 公式排版
-0.1.0.1. 公式右编号
+                                    mathtype 公式排版
+公式右编号
 实现效果：
 实现：
 
@@ -935,7 +929,7 @@ G_v=\frac{U_o}{U_i}
 点击编号，插入编号，格式化
 
 将节编号取消就是期刊用的（1）了
-，引用的时候，点击matht
+，引用的时候，点击mathtype上面的插入引用这里去双
                                 
                             </div>
                             <div class="publish-info">
@@ -994,7 +988,7 @@ G_v=\frac{U_o}{U_i}
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 02. 新建工程
+                                    02. 新建工程
 目前STM32的开发方式主要有
 
 基于寄存器
@@ -1004,10 +998,10 @@ G_v=\frac{U_o}{U_i}
 
 HAL库
 
-0.1.1. 1. 新建工程文件
+1. 新建工程文件
 
 project---new project
-在工程文件里，新建一个文
+在工程文件里，新建一个文件夹用于存放工程结构，然
                                 
                             </div>
                             <div class="publish-info">
@@ -1060,22 +1054,22 @@ project---new project
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="自适应控制">
+                                <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="【控制器】---自适应控制">
                                 
-                                <span class="card-title">自适应控制</span>
+                                <span class="card-title">【控制器】---自适应控制</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 自适应控制
-0.1.0.1. 什么是自适应控制
+                                    【控制器】---自适应控制
+什么是自适应控制
 ​
 自适应控制（APC）是一种带有在线参数识别的控制方法，自适应控制可以看做是一个
 能根据环境变化 智能调节自身特性
 的反馈控制系统。
 ​
-自适应控制的研究对象是具有不
+自适应控制的研究对象是具有不确定性的系统
                                 
                             </div>
                             <div class="publish-info">
@@ -1126,22 +1120,21 @@ project---new project
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="自抗扰控制器">
+                                <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【控制器】---自抗扰控制器">
                                 
-                                <span class="card-title">自抗扰控制器</span>
+                                <span class="card-title">【控制器】---自抗扰控制器</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 自抗扰控制器
+                                    【控制器】---自抗扰控制器
 自抗扰控制器的设计分为三部分：
 
 安排过渡过程：就是用跟踪微分器（TD）合理提取微分
 估计状态和总扰动：用状态扩张观测器（ESO）估计状态和总扰动
 计算控制量：不局限于比例、微分和积分的线性组合
 
-0.
                                 
                             </div>
                             <div class="publish-info">
@@ -1197,18 +1190,18 @@ project---new project
                             <div class="card-image">
                                 
                                 
-                                <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="滑模控制">
+                                <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【控制器】---滑模控制">
                                 
-                                <span class="card-title">滑模控制</span>
+                                <span class="card-title">【控制器】---滑模控制</span>
                             </div>
                         </a>
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 滑模控制
-0.1.0.1. 原理
+                                    【控制器】---滑模控制
+原理
 特点：
-滑模控制本质上是非线性控制的一种，简单的说，它的非线性表现为控制的不连续性，即系统的“结构”不固定，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的
+滑模控制本质上是非线性控制的一种，简单的说，它的非线性表现为控制的不连续性，即系统的“结构”不固定，可以在动态过程中根据系统当前的状态有目的地不断变化，迫使系统按照预定“滑动模态”的状态轨迹运动
                                 
                             </div>
                             <div class="publish-info">
@@ -1287,7 +1280,7 @@ project---new project
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

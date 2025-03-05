@@ -447,7 +447,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    925
+                    886
                 </div>
                 
 
@@ -479,15 +479,15 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电子器件03-----三极管">0.1. 电子器件03-----三极管</h2>
-<h3 id="三个极的判定">0.1.1. 1. 三个极的判定</h3>
+                <h2 id="电子器件03-----三极管">电子器件03-----三极管</h2>
+<h3 id="三个极的判定">1. 三个极的判定</h3>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240821164130856.png"></p>
 <ul>
 <li>B极 基极</li>
 <li>C 集电极，没有箭头</li>
 <li>E 发射极， 有箭头</li>
 </ul>
-<h3 id="n沟道与p沟道判别">0.1.2. 2. N沟道与P沟道判别</h3>
+<h3 id="n沟道与p沟道判别">2. N沟道与P沟道判别</h3>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240821164753128.png"></p>
 <ul>
 <li><strong>1. NPN三极管：</strong>
@@ -501,7 +501,7 @@
 <strong>基极加低电位，集电极与发射极短路，即三极管导通。</strong></li>
 </ul>
 <p>即低电位（低电平）有效。</p>
-<h4 id="npn与pnp的区别">0.1.2.1. 3. NPN与PNP的区别？</h4>
+<h4 id="npn与pnp的区别">3. NPN与PNP的区别？</h4>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240821165722629.png"></p>
 <p>答：NPN：用 B→E 的电流（IB）控制 C→E
 的电流（IC）。E极电位最低，且正常放大时通常C极电位最高，即 VC &gt; VB
@@ -509,13 +509,13 @@
 <p>PNP：用 E→B 的电流（IB）控制 E→C
 的电流（IC）。E极电位最高，且正常放大时通常C极电位最低，即 VC &lt; VB
 &lt; VE。</p>
-<h4 id="三极管导通条件">0.1.2.2. 4. 三极管导通条件</h4>
+<h4 id="三极管导通条件">4. 三极管导通条件</h4>
 <p>导通这玩意是不看集电极的，只看基极跟发射极</p>
 <ul>
 <li>NPN型三极管的导通条件是：基极-发射极电压（V_BE）大于其导通电压，一般在0.6V至0.7V之间，同时集电极-发射极电压（V_CE）为正。这意味着基极电流流入，电子从发射极流向集电极，导致三极管导通。</li>
 <li>对于PNP型三极管，其导通条件是：基极-发射极电压（V_BE）小于负导通电压（通常在-0.6V至-0.7V之间），同时集电极-发射极电压（V_CE）为负值。也就是说，基极电压低于发射极电压，电子从集电极流向发射极，导致三极管导通。</li>
 </ul>
-<h4 id="正偏反偏">0.1.2.3. 5. 正偏反偏</h4>
+<h4 id="正偏反偏">5. 正偏反偏</h4>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240822133600971.png"></p>
 <p>不知道是不是可以这样理解，已知对于NPN型BJT，当其工作在放大区时，有U<sub>c</sub>&gt;U<sub>B</sub>&gt;U<sub>E</sub>,然后再记住发射结正偏集电结反偏时处于放大区，这下好了~死记硬背了，寄</p>
 <p>以NPN为例，集电极与基极之间形成PN结称为<strong>集电结</strong>；发射区与基区之间形成的PN结为<strong>发射结</strong></p>
@@ -527,19 +527,19 @@
 <p>​
 联想记忆，是不是可以考虑PN结，NPN，基极为P，那么电压高放前面，PN就是正偏，NP就是反偏，发射极正偏的话就是说PN，基极到发射极，UB&gt;UE</p>
 <p>​ 再进一步，也就是说，NPN型，正偏的时候肯定是Ub大；反偏肯定Ub小</p>
-<h4 id="三个工作区域">0.1.2.4. 6. 三个工作区域</h4>
-<h5 id="截止区">0.1.2.4.1. 截止区</h5>
+<h4 id="三个工作区域">6. 三个工作区域</h4>
+<h5 id="截止区">截止区</h5>
 <p>​ 三极管的发射结反偏，集电结反偏时，三极管会进入截止状态</p>
 <p>Uc &gt; Ub且Ue &gt; Ub</p>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240822135429144.png"></p>
 <p>​
 还是得看水龙头，这个基极不过是个开关，流通还得是集电极跟发射极，那么对于一般的三极管，都是集电极输出，意思就是你打开阀门~肯定是集电极那就开始放大了，然后留到发射极，而不是在发射极才放大输出</p>
-<h5 id="放大区">0.1.2.4.2. 放大区</h5>
+<h5 id="放大区">放大区</h5>
 <p>​ ”当三极管发射结正偏，<a target="_blank" rel="noopener" href="https://www.zhihu.com/search?q=集电结&amp;search_source=Entity&amp;hybrid_search_source=Entity&amp;hybrid_search_extra=%7B%22sourceType%22%3A%22answer%22%2C%22sourceId%22%3A3112575006%7D">集电结</a>反偏，三极管就会进入<strong>放大状态</strong>。”</p>
 <p>​ U<sub>E</sub>&gt;U<sub>B</sub>&gt;U<sub>C</sub>;</p>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240822140355730.png"></p>
 <p>在放大状态下，基极电流大一点儿~集电极的电流也会跟着变大</p>
-<h5 id="饱和区">0.1.2.4.3. 饱和区</h5>
+<h5 id="饱和区">饱和区</h5>
 <p>“当三极管发射结正偏，集电结正偏时，三极管工作在<strong>饱和状态</strong>。”</p>
 <p><img src="/2024/08/21/qi-jian-03-san-ji-guan/image-20240822140705435.png"></p>
 
@@ -655,13 +655,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/21/qi-jian-01-mos-guan/">
+                <a href="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="电子器件01-----MOS管">
+                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="三极管推挽电路">
                         
-                        <span class="card-title">电子器件01-----MOS管</span>
+                        <span class="card-title">三极管推挽电路</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -672,14 +672,14 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-21
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6/" class="post-category">
-                                    电子器件
+                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
+                                    基础电路
                                 </a>
                             
                             
@@ -689,8 +689,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MOS%E7%AE%A1/">
-                        <span class="chip bg-color">MOS管</span>
+                    <a href="/tags/%E6%8E%A8%E6%8C%BD/">
+                        <span class="chip bg-color">推挽</span>
+                    </a>
+                    
+                    <a href="/tags/%E4%B8%89%E6%9E%81%E7%AE%A1%E6%8E%A8%E6%8C%BD/">
+                        <span class="chip bg-color">三极管推挽</span>
                     </a>
                     
                 </div>
@@ -704,13 +708,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/21/qi-jian-04-tvs/">
+                <a href="/2024/08/21/qi-jian-01-mos-guan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="电子器件04-----TVS">
+                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="电子器件01-----MOS管">
                         
-                        <span class="card-title">电子器件04-----TVS</span>
+                        <span class="card-title">电子器件01-----MOS管</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -738,8 +742,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/TVS/">
-                        <span class="chip bg-color">TVS</span>
+                    <a href="/tags/MOS%E7%AE%A1/">
+                        <span class="chip bg-color">MOS管</span>
                     </a>
                     
                 </div>
@@ -888,7 +892,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

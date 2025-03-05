@@ -447,14 +447,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.1k
+                    1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    4 分
+                    3 分
                 </div>
                 
 
@@ -479,37 +479,37 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="电子器件01-----mos管">0.1. 电子器件01-----MOS管</h2>
-<h3 id="三个极的判定">0.1.1. 1. 三个极的判定</h3>
+                <h2 id="电子器件01-----mos管">电子器件01-----MOS管</h2>
+<h3 id="三个极的判定">1. 三个极的判定</h3>
 <p><img src="/2024/08/21/qi-jian-01-mos-guan/ae3be941d58a27bc1c7ae66900a319c1.png">
 G极(gate)—栅极，不用说比较好认
 S极(source)—源极，不论是P沟道还是N沟道，两根线相交的就是
 D极(drain)—漏极，不论是P沟道还是N沟道，是单独引线的那边</p>
-<h3 id="n沟道与p沟道判别">0.1.2. 2. N沟道与P沟道判别</h3>
+<h3 id="n沟道与p沟道判别">2. N沟道与P沟道判别</h3>
 <p><img src="/2024/08/21/qi-jian-01-mos-guan/64c2d9fd96130f91825e0e984d740bcc.png"><img src="/2024/08/21/qi-jian-01-mos-guan/9ef5be7a51aeceb28b8987a10ec993d0.png">
 箭头指向G极的是N沟道 箭头背向G极的是P沟道</p>
-<h3 id="寄生二极管方向判定">0.1.3. 3. 寄生二极管方向判定</h3>
+<h3 id="寄生二极管方向判定">3. 寄生二极管方向判定</h3>
 <p><img src="/2024/08/21/qi-jian-01-mos-guan/0d3f045ce50459361e98fbabf604795f.png" alt="这里写图片描述"><img src="/2024/08/21/qi-jian-01-mos-guan/c2f7e5496a9171ae53d25792558fec95.png" alt="这里写图片描述">
 不论N沟道还是P沟道MOS管，中间衬底箭头方向和寄生二极管的箭头方向总是一致的：
 <strong>要么都由S指向D，要么都有D指向S</strong></p>
-<h3 id="mos管的方向">0.1.4. MOS管的方向</h3>
+<h3 id="mos管的方向">MOS管的方向</h3>
 <ul>
 <li>nmos--从D到S，D接电源正极，S接电源负极</li>
 <li>Pmos--从S到D，S接电源正极，D接电源负极</li>
 </ul>
 <p>这个跟二极管对应着看就行，二极管导通要我MOS干嘛</p>
 <p>也不能这么说，SD是同一沟道的两端，跟PN结不一样，这玩意两个方向其实都能导通，只要满足导通条件，</p>
-<h3 id="mos管的导通">0.1.5. MOS管的导通</h3>
+<h3 id="mos管的导通">MOS管的导通</h3>
 <ul>
 <li>nmos---G为高电平，S为低电平（D--&gt;S)</li>
 <li>pmos---S极电压大于G极，则导通(S--&gt;D)</li>
 </ul>
-<h3 id="mos开关实现的功能">0.1.6. 4. MOS开关实现的功能</h3>
+<h3 id="mos开关实现的功能">4. MOS开关实现的功能</h3>
 <ul>
 <li>信号切换</li>
 <li>电压通断</li>
 </ul>
-<h3 id="mos管用作开关时在电路中的连接方法">0.1.7. 5.
+<h3 id="mos管用作开关时在电路中的连接方法">5.
 MOS管用作开关时在电路中的连接方法</h3>
 <p>关键点:</p>
 <ul>
@@ -522,7 +522,7 @@ MOS管用作开关时在电路中的连接方法</h3>
 <p><strong>反证法加强理解</strong> NMOS假如：S接输入，D接输出 <img src="/2024/08/21/qi-jian-01-mos-guan/a323f755db58f9f870272b32bb82e765.png" alt="这里写图片描述">
 由于寄生二极管直接导通，因此S极电压可以无条件到D极，MOS管就失去了开关的作用
 PMOS假如：D接输入，S接输出 <img src="/2024/08/21/qi-jian-01-mos-guan/9cbebe85df4c5c1413c116ce4efdbc03.png" alt="这里写图片描述"> 同样失去了开关的作用</p>
-<h3 id="mos管的开关条件">0.1.8. 6. MOS管的开关条件</h3>
+<h3 id="mos管的开关条件">6. MOS管的开关条件</h3>
 <p>N沟道—导通时 Ug&gt; Us,Ugs&gt; Ugs(th)时导通 P沟道—导通时 Ug&lt;
 Us,Ugs&lt; Ugs(th)时导通
 总之，导通条件：<strong>|Ugs|&gt;|Ugs(th)|</strong></p>
@@ -538,7 +538,7 @@ Us,Ugs&lt; Ugs(th)时导通
 <li><p><strong>高电平</strong>时断开。</p></li>
 </ul></li>
 </ul>
-<h3 id="相关概念">0.1.9. 7. 相关概念</h3>
+<h3 id="相关概念">7. 相关概念</h3>
 <p><strong>BJT</strong> Bipolar Junction Transistor
 双极性晶体管，BJT是电流控制器件； <strong>FET</strong> Field Effect
 Transistor 场效应晶体管，FET是电压控制器件.
@@ -546,20 +546,20 @@ Transistor 场效应晶体管，FET是电压控制器件.
 按沟道材料：结型和绝缘栅型各分N沟道和P沟道两种.
 按导电方式：耗尽型与增强型，结型场效应管均为耗尽型，绝缘栅型场效应管既有耗尽型的，也有增强型的。
 总的来说场效应晶体管可分为结场效应晶体管和MOS场效应晶体管，而MOS场效应晶体管又分为N沟耗尽型和增强型；P沟耗尽型和增强型四大类。</p>
-<h3 id="mos管重要参数">0.1.10. 8. MOS管重要参数</h3>
+<h3 id="mos管重要参数">8. MOS管重要参数</h3>
 <p>①封装 ②类型（NMOS、PMOS）
 ③耐压Vds（器件在断开状态下漏极和源极所能承受的最大的电压） ④饱和电流Id
 ⑤导通阻抗Rds ⑥栅极阈值电压Vgs(th)</p>
-<h3 id="从mos管实物识别管脚">0.1.11. 9. 从MOS管实物识别管脚</h3>
+<h3 id="从mos管实物识别管脚">9. 从MOS管实物识别管脚</h3>
 <p><img src="/2024/08/21/qi-jian-01-mos-guan/efa35a300065748d7fd26bf13d9bfd5a.png" alt="这里写图片描述"> 无论是NMOS还是PMOS
 按上图方向摆正，中间的一脚为D，左边为G，右边为S。
 或者这么记：单独的一脚为D，逆时针转DGS。
 这里顺便提一下三极管的管脚识别：同样按照上图方向摆正，中间一脚为C，左边为B，右边为E。</p>
 <p><strong>管脚编号</strong> <img src="/2024/08/21/qi-jian-01-mos-guan/2f582e677354f945e3ef8ef879f69e76.png" alt="这里写图片描述"> 从G脚开始，逆时针123
 三极管的管脚编号同样从B脚开始，逆时针123</p>
-<h3 id="用万用表辨别nnospmos">0.1.12. 10. 用万用表辨别NNOS、PMOS</h3>
+<h3 id="用万用表辨别nnospmos">10. 用万用表辨别NNOS、PMOS</h3>
 <p>借助寄生二极管来辨别。将万用表档位拨至二极管档，红表笔接S,黑表笔接D，有数值显示，反过来接无数值，说明是N沟道，若情况相反是P沟道。</p>
-<h3 id="画一个mos管">0.1.13. 11. 画一个MOS管</h3>
+<h3 id="画一个mos管">11. 画一个MOS管</h3>
 <figure>
 <img src="/2024/08/21/qi-jian-01-mos-guan/a7d7e822d114cfe84232d3df505bec93.png" alt="这里写图片描述">
 <figcaption aria-hidden="true">这里写图片描述</figcaption>
@@ -677,13 +677,13 @@ Transistor 场效应晶体管，FET是电压控制器件.
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/">
+                <a href="/2024/08/21/qi-jian-03-san-ji-guan/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="三极管推挽电路">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="电子器件03-----三极管">
                         
-                        <span class="card-title">三极管推挽电路</span>
+                        <span class="card-title">电子器件03-----三极管</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -694,14 +694,14 @@ Transistor 场效应晶体管，FET是电压控制器件.
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-21
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
-                                    基础电路
+                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6/" class="post-category">
+                                    电子器件
                                 </a>
                             
                             
@@ -711,12 +711,8 @@ Transistor 场效应晶体管，FET是电压控制器件.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%8E%A8%E6%8C%BD/">
-                        <span class="chip bg-color">推挽</span>
-                    </a>
-                    
-                    <a href="/tags/%E4%B8%89%E6%9E%81%E7%AE%A1%E6%8E%A8%E6%8C%BD/">
-                        <span class="chip bg-color">三极管推挽</span>
+                    <a href="/tags/MOSFET/">
+                        <span class="chip bg-color">MOSFET</span>
                     </a>
                     
                 </div>
@@ -730,13 +726,13 @@ Transistor 场效应晶体管，FET是电压控制器件.
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/08/21/qi-jian-03-san-ji-guan/">
+                <a href="/2024/08/21/qi-jian-04-tvs/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="电子器件03-----三极管">
+                        <img src="/medias/featureimages/7.jpg" class="responsive-img" alt="电子器件04-----TVS">
                         
-                        <span class="card-title">电子器件03-----三极管</span>
+                        <span class="card-title">电子器件04-----TVS</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -764,8 +760,8 @@ Transistor 场效应晶体管，FET是电压控制器件.
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/MOSFET/">
-                        <span class="chip bg-color">MOSFET</span>
+                    <a href="/tags/TVS/">
+                        <span class="chip bg-color">TVS</span>
                     </a>
                     
                 </div>
@@ -914,7 +910,7 @@ Transistor 场效应晶体管，FET是电压控制器件.
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

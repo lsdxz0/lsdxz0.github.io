@@ -459,12 +459,12 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 上拉电阻与下拉电阻
-0.1.1. 什么是上下拉电阻
+                                    上拉电阻与下拉电阻
+什么是上下拉电阻
 ​
 上拉下拉电阻统称为拉电阻，作用是将状态不确定的信号线通过一个电阻将其钳位至高电平（上拉）或低电平（下拉）
 啥是状态不确定的信号
-​ 在数字电路中，通常有三种状态：0
+​ 在数字电路中，通常有三种状态：0（低电平） 1（高电平）
                                 
                             </div>
                             <div class="publish-info">
@@ -525,13 +525,14 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 限幅电路
-0.1.1. 什么是限幅电路
+                                    限幅电路
+什么是限幅电路
 ​
 限幅，也就是把电压限制在某个范围，去除交流信号的一部分，但不会对波形的剩余部分造成影响
-0.1.2. 分类
+分类
 ​
-基于二极管的限幅电路主要分为两类，一是串联二极管限幅电路，二是
+基于二极管的限幅电路主要分为两类，一是串联二极管限幅电路，二是并联二极管限幅电路
+串联二极管限幅电
                                 
                             </div>
                             <div class="publish-info">
@@ -590,8 +591,8 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 延时模块
-0.1.1. delay
+                                    延时模块
+delay
 
                                 
                             </div>
@@ -653,15 +654,15 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 钳位电路
-0.1.1. 什么是钳位
+                                    钳位电路
+什么是钳位
 ​ 钳位就是把位置卡住，在电路里就是限制电压
 ​
 钳位二极管就是把输入电压变成峰值钳制在某一预定的电平上的输出电压，而不改变信号
-0.1.2. 二极管钳位电路工作原理
+二极管钳位电路工作原理
 
 
-图1：
+图1：二极管正向接法，管压降0.7V，因此电
                                 
                             </div>
                             <div class="publish-info">
@@ -720,13 +721,15 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 复位电路
-0.1.1. 为啥要复位
+                                    复位电路
+为啥要复位
 
 程序逻辑错误，复位可以把所有逻辑状态恢复到初始值
 电源接通到电源稳定期，是一个缓慢的爬坡过程，这时候单片机不能正常工作，需要复位电路延时到电压稳定后才正常执行程序
 
-0.1.2. 
+高低电平复位
+​
+单片机属于数字电
                                 
                             </div>
                             <div class="publish-info">
@@ -749,9 +752,9 @@
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/%E5%A4%8D%E4%BD%8D/"><span class="chip bg-color">复位</span></a>
-                            
                             <a href="/tags/stm32/"><span class="chip bg-color">stm32</span></a>
+                            
+                            <a href="/tags/%E5%A4%8D%E4%BD%8D/"><span class="chip bg-color">复位</span></a>
                             
                         </div>
                         
@@ -792,8 +795,8 @@
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 电子器件07-----电位器
-0.1.1. 符号
+                                    电子器件07-----电位器
+符号
 
 
 符号
@@ -807,12 +810,16 @@ PCB
 实物
 
 有三端，两个固定端，一个活动端子，
-0.1.2. 作用
+作用
 
 用作分压器
 用作变阻器
 
 把它接成两端器件
+
+用作电流控制器
+
+此时其中一
                                 
                             </div>
                             <div class="publish-info">
@@ -871,15 +878,15 @@ PCB
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 晶振电路
-0.1.1. 作用
+                                    晶振电路
+作用
 ​
 单片机的正常运行需要时钟信号，可以简单的理解为单片机收到一个脉冲，就执行一次或多次指令。晶振电路就是用来产生时钟信号的
 
 
 image-20240830133131255
 
-比如像
+比如像这样，在外部施加适当的电
                                 
                             </div>
                             <div class="publish-info">
@@ -902,9 +909,9 @@ image-20240830133131255
                         
                         <div class="card-action article-tags">
                             
-                            <a href="/tags/stm32/"><span class="chip bg-color">stm32</span></a>
-                            
                             <a href="/tags/%E6%99%B6%E6%8C%AF/"><span class="chip bg-color">晶振</span></a>
+                            
+                            <a href="/tags/stm32/"><span class="chip bg-color">stm32</span></a>
                             
                         </div>
                         
@@ -940,12 +947,13 @@ image-20240830133131255
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 防倒灌电路
+                                    防倒灌电路
 ​ 简单了解吧
-0.1.1. 为啥要用这玩意
+为啥要用这玩意
 
 ​
-这个东西，它支持PD供电，输入20V还支持DC24V充电，并且DC充电的时候USB也能插着用，并且的且，传输数据的USB接口跟PD供电接口是同一个，这不坏事
+这个东西，它支持PD供电，输入20V还支持DC24V充电，并且DC充电的时候USB也能插着用，并且的且，传输数据的USB接口跟PD供电接口是同一个，这不坏事出问题了，DC
+24V
                                 
                             </div>
                             <div class="publish-info">
@@ -1004,8 +1012,8 @@ image-20240830133131255
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 滤波电路
-0.1.1. 滤波原理
+                                    滤波电路
+滤波原理
 
 单向脉动性直流电压
 
@@ -1016,7 +1024,7 @@ image-20240830133131255
 单向脉动性电压的分解
 
 ​
-如
+如左图所示，电压的方向性都
                                 
                             </div>
                             <div class="publish-info">
@@ -1079,13 +1087,13 @@ image-20240830133131255
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 采样保持电路
-0.1.1. 简介
+                                    采样保持电路
+简介
 ​
 采样保持电路，有时表示为S/H电路或S&amp;H电路，通常与模数转换器一起使用来采样输入模拟信号并保持采样信号，因此得名为采样保持电路。
 ​ 典型的采样保持电路的简单框图
 
-​ 
+​ PWM控制mos，开关闭
                                 
                             </div>
                             <div class="publish-info">
@@ -1148,12 +1156,12 @@ image-20240830133131255
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 比较器
+                                    比较器
 ​ 首先要明确，比较器跟运放是两个不同的器件
 
 
 ​ 有专门的比较器，别用运放实现比较器，局限性较大
-0.1.1. 输出高低电平
+输出高低电平
 
 单电源供电
 
@@ -1163,7 +1171,7 @@ image-20240830133131255
 
 
 ​
-当你不需要输出负压，就
+当你不需要输出负压，就选择单电源供电，如果需要
                                 
                             </div>
                             <div class="publish-info">
@@ -1222,18 +1230,18 @@ image-20240830133131255
                         <div class="card-content article-content">
                             <div class="summary block-with-text">
                                 
-                                    0.1. 运算放大器
+                                    运算放大器
 
 
 运算放大器原理图
 
-0.1.0.0.1. 同相？反相？
+同相？反相？
 
-0.1.1. 了解“虚短” “虚断”
+了解“虚短” “虚断”
 
 理想运放的输入阻抗无穷大----------虚断
 
-因为无穷大，所以给输入端施加电压，还是没电
+因为无穷大，所以给输入端施加电压，还是没电流，跟断路了一样，但是他又没断，所以叫虚断，
                                 
                             </div>
                             <div class="publish-info">
@@ -1312,7 +1320,7 @@ image-20240830133131255
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             

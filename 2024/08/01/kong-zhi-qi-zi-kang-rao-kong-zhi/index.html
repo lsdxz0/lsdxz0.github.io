@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="自抗扰控制器, LSDXZ">
+    <meta name="keywords" content="【控制器】---自抗扰控制器, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>自抗扰控制器 | LSDXZ</title>
+    <title>【控制器】---自抗扰控制器 | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -292,12 +292,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/14.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">自抗扰控制器</h1>
+                    <h1 class="description center-align post-title">【控制器】---自抗扰控制器</h1>
                 </div>
             </div>
         </div>
@@ -454,7 +454,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    9 分
+                    8 分
                 </div>
                 
 
@@ -479,14 +479,14 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="自抗扰控制器">0.1. 自抗扰控制器</h2>
+                <h2 id="控制器---自抗扰控制器">【控制器】---自抗扰控制器</h2>
 <p>自抗扰控制器的设计分为三部分：</p>
 <ul>
 <li><strong>安排过渡过程：</strong>就是用跟踪微分器（TD）合理提取微分</li>
 <li><strong>估计状态和总扰动：</strong>用状态扩张观测器（ESO）估计状态和总扰动</li>
 <li><strong>计算控制量：</strong>不局限于比例、微分和积分的线性组合</li>
 </ul>
-<h4 id="原理">0.1.0.1. 原理</h4>
+<h4 id="原理">原理</h4>
 <figure>
 <img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801093421261.png" alt="ADRC总体控制框图">
 <figcaption aria-hidden="true">ADRC总体控制框图</figcaption>
@@ -516,7 +516,7 @@
 <p>​ 上下两图结合，我们就能明白 ADRC
 控制系统的<strong>工作流程</strong>，首先给定目标速度，由 TD
 得到实际模型跟踪的速度和加速度，扩张状态观测器根据电机的控制输入和实际输出得到观测的速度，加速度和扰动，与跟踪速度和加速度做差得到误差，由非线性状态误差反馈系统将误差进行非线性组合，减去扰动即为实际的控制输入。</p>
-<h4 id="跟踪微分器td">0.1.0.2. 跟踪微分器（TD）</h4>
+<h4 id="跟踪微分器td">跟踪微分器（TD）</h4>
 <p>​ 跟踪微分器-Tracking
 differentiator：分为线性和非线性两种，本质上是一种<strong>低通滤波器</strong>，作用是平滑指令以及减少闭环传递函数的超调（将闭环传递函数的峰值压低到0dB以下）。</p>
 <p><strong>目的：</strong>解决由不连续或带随机噪声的量测信号，合理提取连续信号（跟踪给定）及微分信号的问题</p>
@@ -543,7 +543,7 @@ differentiator：分为线性和非线性两种，本质上是一种<strong>低�
 <p>​ r：
 跟踪速度因子；它与跟踪速度正相关，但是过大会放大噪声，因此引入滤波因子h
 对噪声进行抑制，h越大滤波效果越强</p>
-<h4 id="扩张状态观测器eso">0.1.0.3. 扩张状态观测器（ESO)</h4>
+<h4 id="扩张状态观测器eso"><strong>扩张状态观测器（ESO)</strong></h4>
 <p><strong>状态观测器</strong></p>
 <p>​
 根据测量到的系统输入（控制量）和系统输出（部分状态变量或状态变量的函数）来确定系统所有内部状态信息的装置就是状态观测器</p>
@@ -581,7 +581,7 @@ ADRC是一种单输入单输出的控制，因此只能适用于<strong>非耦�
 <p>对于<strong>ESO的参数整定</strong>方法，有一些经验公式： <span class="math display">\[
 \beta_{01}=\frac1h,\beta_{02}=\frac1{3h^2},\beta_{03}=\frac2{8^2h^3},\beta_{04}=\frac5{13^3h^4},\cdots
 \]</span></p>
-<h4 id="非线性反馈控制器">0.1.0.4. 非线性反馈控制器</h4>
+<h4 id="非线性反馈控制器">非线性反馈控制器</h4>
 <p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801155609966.png"></p>
 所以这里其实是又回到PID控制了，只不过e<sub>1,2,3</sub>发生了变化，过渡过程产生的误差信号<span class="math inline">\(e_1=v_1-z_1\)</span>；误差微分信号：<span class="math inline">\(e_2=v_2-z_2\)</span>
 ，及根据误差信号生成的积分信号：$<em>0=<em>0^te_1()d<span class="math inline">\(；只不过这里结合的时候不是采用的线性组合，通常采用的非线性组合有如下两种形式：\)</span>$
@@ -603,8 +603,8 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
 最终跟踪微分器（TD），扩张状态观测器（ESO），非线性反馈控制器组成了ADRC算法：</p>
 <p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801161309839.png"></p>
 <p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801163452762.png"></p>
-<h4 id="adrc的一些问题与局限性">0.1.0.5. ADRC的一些问题与局限性</h4>
-<h5 id="td的局限性">0.1.0.5.1. TD的局限性</h5>
+<h4 id="adrc的一些问题与局限性">ADRC的一些问题与局限性</h4>
+<h5 id="td的局限性">TD的局限性</h5>
 <p><strong>线性TD</strong>的本质其实就是一个阻尼比为1的标准二阶系统，并且没有任何零点。对于一个标准的二阶系统，将其写成状态空间的形式，其中的两个状态就分别对应为滤波后的输入以及滤波后输入的微分</p>
 <p><strong>TD减小超调的原因</strong></p>
 <p>​ 闭环系统超调的本质原因，其实可以总结为以下两点：</p>
@@ -617,7 +617,7 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
 因为采用了二阶系统，并且没有零点，必然导致有较大的相位滞后，从而会降低响应速度。</p>
 <p><strong>TD的局限:2：作为滤波器（微分器）</strong></p>
 <p>​ TD作为滤波器的一大缺陷就是难以接受的相位滞后。</p>
-<h5 id="eso的局限">0.1.0.5.2. ESO的局限</h5>
+<h5 id="eso的局限">ESO的局限</h5>
 <p>​
 太多字了，不想看了https://zhuanlan.zhihu.com/p/156228260?utm_id=0</p>
 
@@ -737,9 +737,9 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/3.jpg" class="responsive-img" alt="自适应控制">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="【控制器】---自适应控制">
                         
-                        <span class="card-title">自适应控制</span>
+                        <span class="card-title">【控制器】---自适应控制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -786,9 +786,9 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/23.jpg" class="responsive-img" alt="滑模控制">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【控制器】---滑模控制">
                         
-                        <span class="card-title">滑模控制</span>
+                        <span class="card-title">【控制器】---滑模控制</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -973,7 +973,7 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">55.2k</span>&nbsp;字
+                class="white-color">53.5k</span>&nbsp;字
             
             
             
