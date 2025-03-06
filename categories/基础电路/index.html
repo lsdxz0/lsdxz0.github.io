@@ -33,21 +33,163 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 7.3.0"></head>
+<!-- hexo injector head_end end --><style type="text/css" lang="css">
+    #loading-container{
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100vw;
+        z-index: 9999;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background: #FFF;
+        text-align: center;
+        /* loader页面消失采用渐隐的方式*/
+        -webkit-transition: opacity 1s ease;
+        -moz-transition: opacity 1s ease;
+        -o-transition: opacity 1s ease;
+        transition: opacity 1s ease;
+    }
+    .loading-image{
+        width: 120px;
+        height: 50px;
+        transform: translate(-50%);
+    }
+
+    .loading-image div:nth-child(2) {
+        -webkit-animation: pacman-balls 1s linear 0s infinite;
+        animation: pacman-balls 1s linear 0s infinite
+    }
+
+    .loading-image div:nth-child(3) {
+        -webkit-animation: pacman-balls 1s linear .33s infinite;
+        animation: pacman-balls 1s linear .33s infinite
+    }
+
+    .loading-image div:nth-child(4) {
+        -webkit-animation: pacman-balls 1s linear .66s infinite;
+        animation: pacman-balls 1s linear .66s infinite
+    }
+
+    .loading-image div:nth-child(5) {
+        -webkit-animation: pacman-balls 1s linear .99s infinite;
+        animation: pacman-balls 1s linear .99s infinite
+    }
+
+   .loading-image div:first-of-type {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_up .5s 0s infinite;
+        animation: rotate_pacman_half_up .5s 0s infinite;
+    }
+    .loading-image div:nth-child(2) {
+        width: 0;
+        height: 0;
+        border: 25px solid #49b1f5;
+        border-right-color: transparent;
+        border-radius: 25px;
+        -webkit-animation: rotate_pacman_half_down .5s 0s infinite;
+        animation: rotate_pacman_half_down .5s 0s infinite;
+        margin-top: -50px;
+    }
+    @-webkit-keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @keyframes rotate_pacman_half_up {0% {transform: rotate(270deg)}50% {transform: rotate(1turn)}to {transform: rotate(270deg)}}
+
+    @-webkit-keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @keyframes rotate_pacman_half_down {0% {transform: rotate(90deg)}50% {transform: rotate(0deg)}to {transform: rotate(90deg)}}
+
+    @-webkit-keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+    @keyframes pacman-balls {75% {opacity: .7}to {transform: translate(-100px, -6.25px)}}
+
+
+    .loading-image div:nth-child(3),
+    .loading-image div:nth-child(4),
+    .loading-image div:nth-child(5),
+    .loading-image div:nth-child(6){
+        background-color: #49b1f5;
+        width: 15px;
+        height: 15px;
+        border-radius: 100%;
+        margin: 2px;
+        width: 10px;
+        height: 10px;
+        position: absolute;
+        transform: translateY(-6.25px);
+        top: 25px;
+        left: 100px;
+    }
+    .loading-text{
+        margin-bottom: 20vh;
+        text-align: center;
+        color: #2c3e50;
+        font-size: 2rem;
+        box-sizing: border-box;
+        padding: 0 10px;
+        text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    @media only screen and (max-width: 500px) {
+         .loading-text{
+            font-size: 1.5rem;
+         }
+    }
+    .fadeout {
+        opacity: 0;
+        filter: alpha(opacity=0);
+    }
+    /* logo出现动画 */
+    @-webkit-keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}100%{opacity:1;-webkit-transform:none;transform:none}}
+    @keyframes fadeInDown{0%{opacity:0;-webkit-transform:translate3d(0,-100%,0);}}
+ </style>
+ <script>
+(function () {
+    const loaded = function(){
+       setTimeout(function(){
+            const loader = document.getElementById("loading-container");
+            loader.className="fadeout" ;//使用渐隐的方法淡出loading page
+            // document.getElementById("body-wrap").style.display="flex";
+            setTimeout(function(){
+                loader.style.display="none";
+            },1000); 
+        },1000);//强制显示loading page 1s  
+    };
+    loaded();
+})()
+ </script><meta name="generator" content="Hexo 7.3.0"></head>
 
 
 
 
-<body>
+
+ <div id="loading-container">
+     <p class="loading-text">玩命加载中 . . . </p> 
+     <div class="loading-image">
+         <div></div>
+         <div></div>
+         <div></div>
+         <div></div> 
+         <div></div>
+     </div>
+ </div><body>
     <header class="navbar-fixed">
     <nav id="headNav" class="bg-color nav-transparent">
         <div id="navContainer" class="nav-wrapper container">
             <div class="brand-logo">
                 <a href="/" class="waves-effect waves-light">
-                    
-                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
-                    
-                    <span class="logo-span">LSDXZ</span>
+                    <div>
+                        
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                        
+                        <span class="logo-span">LSDXZ</span>
+                    </div>
                 </a>
             </div>
             
@@ -285,7 +427,6 @@
 </a>
         
     </nav>
-
 </header>
 
     <div class="bg-cover pd-header about-cover">
@@ -434,20 +575,29 @@
                 </a>
                 
                 
+                <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="小知识: 8">
+                    <span class="chip center-align waves-effect waves-light
+                             chip-default "
+                            style="background-color: #F8C471;">小知识
+                        <span class="tag-length">8</span>
+                    </span>
+                </a>
+                
+                
                 <a href="/categories/%E5%AE%9E%E4%B9%A0/" title="实习: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F8C471;">实习
+                            style="background-color: #F9E79F;">实习
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E5%B0%8F%E7%9F%A5%E8%AF%86/" title="小知识: 8">
+                <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" title="开源项目: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #F9E79F;">小知识
-                        <span class="tag-length">8</span>
+                            style="background-color: #A3E4D7;">开源项目
+                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -466,15 +616,6 @@
                              chip-default "
                             style="background-color: #F8C471;">控制器
                         <span class="tag-length">5</span>
-                    </span>
-                </a>
-                
-                
-                <a href="/categories/%E5%BC%80%E6%BA%90%E9%A1%B9%E7%9B%AE/" title="开源项目: 1">
-                    <span class="chip center-align waves-effect waves-light
-                             chip-default "
-                            style="background-color: #A3E4D7;">开源项目
-                        <span class="tag-length">1</span>
                     </span>
                 </a>
                 
@@ -506,19 +647,19 @@
                 </a>
                 
                 
-                <a href="/categories/%E8%B0%83%E5%88%B6/" title="调制: 1">
+                <a href="/categories/%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE/" title="通讯协议: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #85C1E9;">调制
+                            style="background-color: #D5F5E3;">通讯协议
                         <span class="tag-length">1</span>
                     </span>
                 </a>
                 
                 
-                <a href="/categories/%E9%80%9A%E8%AE%AF%E5%8D%8F%E8%AE%AE/" title="通讯协议: 1">
+                <a href="/categories/%E8%B0%83%E5%88%B6/" title="调制: 1">
                     <span class="chip center-align waves-effect waves-light
                              chip-default "
-                            style="background-color: #D5F5E3;">通讯协议
+                            style="background-color: #85C1E9;">调制
                         <span class="tag-length">1</span>
                     </span>
                 </a>
@@ -803,12 +944,12 @@ H
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/stm32/">
-                            <span class="chip bg-color">stm32</span>
-                        </a>
-                        
                         <a href="/tags/%E5%A4%8D%E4%BD%8D/">
                             <span class="chip bg-color">复位</span>
+                        </a>
+                        
+                        <a href="/tags/stm32/">
+                            <span class="chip bg-color">stm32</span>
                         </a>
                         
                     </div>
@@ -913,72 +1054,12 @@ image-20240830133131255
                     
                     <div class="card-action article-tags">
                         
-                        <a href="/tags/%E6%99%B6%E6%8C%AF/">
-                            <span class="chip bg-color">晶振</span>
-                        </a>
-                        
                         <a href="/tags/stm32/">
                             <span class="chip bg-color">stm32</span>
                         </a>
                         
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="采样保持电路">
-                            
-                            <span class="card-title">采样保持电路</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                采样保持电路
-简介
-​
-采样保持电路，有时表示为S/H电路或S&amp;H电路，通常与模数转换器一起使用来采样输入模拟信号并保持采样信号，因此得名为采样保持电路。
-​ 典型的采样保持电路的简单框图
-
-​ PWM控制mos，开关闭
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
-                                    基础电路
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E9%87%87%E6%A0%B7/">
-                            <span class="chip bg-color">采样</span>
-                        </a>
-                        
-                        <a href="/tags/ADC/">
-                            <span class="chip bg-color">ADC</span>
-                        </a>
-                        
-                        <a href="/tags/%E8%BF%90%E6%94%BE/">
-                            <span class="chip bg-color">运放</span>
+                        <a href="/tags/%E6%99%B6%E6%8C%AF/">
+                            <span class="chip bg-color">晶振</span>
                         </a>
                         
                     </div>
@@ -1054,6 +1135,66 @@ image-20240830133131255
             
             <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
                 <div class="card">
+                    <a href="/2024/08/29/ji-chu-dian-lu-cai-yang-bao-chi-dian-lu/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="采样保持电路">
+                            
+                            <span class="card-title">采样保持电路</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                采样保持电路
+简介
+​
+采样保持电路，有时表示为S/H电路或S&amp;H电路，通常与模数转换器一起使用来采样输入模拟信号并保持采样信号，因此得名为采样保持电路。
+​ 典型的采样保持电路的简单框图
+
+​ PWM控制mos，开关闭
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-29
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
+                                    基础电路
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E9%87%87%E6%A0%B7/">
+                            <span class="chip bg-color">采样</span>
+                        </a>
+                        
+                        <a href="/tags/ADC/">
+                            <span class="chip bg-color">ADC</span>
+                        </a>
+                        
+                        <a href="/tags/%E8%BF%90%E6%94%BE/">
+                            <span class="chip bg-color">运放</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
                     <a href="/2024/08/27/ji-chu-dian-lu-xi-shou-dian-lu/">
                         <div class="card-image tag-image">
                             
@@ -1101,64 +1242,6 @@ RCD的出现是为了解决原边MOS关闭时，漏感能量造成原边MOS应�
                         
                         <a href="/tags/%E5%B0%96%E5%B3%B0%E5%90%B8%E6%94%B6%E7%94%B5%E8%B7%AF/">
                             <span class="chip bg-color">尖峰吸收电路</span>
-                        </a>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-            
-            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
-                <div class="card">
-                    <a href="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/">
-                        <div class="card-image tag-image">
-                            
-                            
-                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="三极管推挽电路">
-                            
-                            <span class="card-title">三极管推挽电路</span>
-                        </div>
-                    </a>
-                    <div class="card-content article-content">
-                        <div class="summary block-with-text">
-                            
-                                三极管推挽电路
-三极管推挽电路
-​
-功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大
-​ 电流驱动能力不足，加一个推挽电路，用于驱动后续电路
-原理分析
-
-
-image-2024082210052
-                            
-                        </div>
-                        <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
-                            </span>
-                            <span class="publish-author">
-                                
-                                <i class="fas fa-bookmark fa-fw icon-category"></i>
-                                
-                                <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
-                                    基础电路
-                                </a>
-                                
-                                
-                            </span>
-                        </div>
-                    </div>
-
-                    
-                    <div class="card-action article-tags">
-                        
-                        <a href="/tags/%E6%8E%A8%E6%8C%BD/">
-                            <span class="chip bg-color">推挽</span>
-                        </a>
-                        
-                        <a href="/tags/%E4%B8%89%E6%9E%81%E7%AE%A1%E6%8E%A8%E6%8C%BD/">
-                            <span class="chip bg-color">三极管推挽</span>
                         </a>
                         
                     </div>
@@ -1219,6 +1302,64 @@ EMI的作用：（EMI是电磁干扰，EMC是电磁兼容）消灭EMI,
                         
                         <a href="/tags/%E6%BB%A4%E6%B3%A2/">
                             <span class="chip bg-color">滤波</span>
+                        </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+            
+            <div class="article tag-post col s12 m6 l4" data-aos="zoom-in">
+                <div class="card">
+                    <a href="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/">
+                        <div class="card-image tag-image">
+                            
+                            
+                            <img src="/medias/featureimages/8.jpg" class="responsive-img" alt="三极管推挽电路">
+                            
+                            <span class="card-title">三极管推挽电路</span>
+                        </div>
+                    </a>
+                    <div class="card-content article-content">
+                        <div class="summary block-with-text">
+                            
+                                三极管推挽电路
+三极管推挽电路
+​
+功率放大电路，虽然电压可能不会显著增大，但是其对电流的放大作用会使得总功率变大
+​ 电流驱动能力不足，加一个推挽电路，用于驱动后续电路
+原理分析
+
+
+image-2024082210052
+                            
+                        </div>
+                        <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
+                            </span>
+                            <span class="publish-author">
+                                
+                                <i class="fas fa-bookmark fa-fw icon-category"></i>
+                                
+                                <a href="/categories/%E5%9F%BA%E7%A1%80%E7%94%B5%E8%B7%AF/" class="post-category">
+                                    基础电路
+                                </a>
+                                
+                                
+                            </span>
+                        </div>
+                    </div>
+
+                    
+                    <div class="card-action article-tags">
+                        
+                        <a href="/tags/%E6%8E%A8%E6%8C%BD/">
+                            <span class="chip bg-color">推挽</span>
+                        </a>
+                        
+                        <a href="/tags/%E4%B8%89%E6%9E%81%E7%AE%A1%E6%8E%A8%E6%8C%BD/">
+                            <span class="chip bg-color">三极管推挽</span>
                         </a>
                         
                     </div>
