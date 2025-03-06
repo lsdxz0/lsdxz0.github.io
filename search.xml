@@ -4372,7 +4372,8 @@ x有偏差e和偏差变化率ec两个分量。偏差变化率可以反应受控�
 <li><strong>模糊推理：</strong>利用总结的语言规则（模糊控制表）进行模糊推理</li>
 <li><strong>解模糊：</strong>把推理结果从模糊量转化为可以用于实际控制的精确量</li>
 </ul>
-<h5 id="量化因子与比例因子">1.2.1 量化因子与比例因子</h5>
+<h3 id="拆分">2. 拆分</h3>
+<h4 id="量化因子与比例因子">2.1 量化因子与比例因子</h4>
 <p><img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/8d97ee3b2cca92558f0028408f3c4b70.png"></p>
 <p>​
 这里我们使用偏差e跟ec作为输入实现控制系统参数调整，所以需要对e和ec进行模糊化，首先</p>
@@ -4380,13 +4381,162 @@ x有偏差e和偏差变化率ec两个分量。偏差变化率可以反应受控�
 <li><p><strong>量化因子：</strong>理解为归一化，</p>
 <blockquote>
 <p>设计的模糊控制器输入限制在[-3,3],但是实际上的是【-300,300】，那么就需要<strong>实际输入/100作为标准输入</strong>，这里的<strong>1/100就是量化因子</strong></p>
-</blockquote></li>
+</blockquote>
+<p><span class="math display">\[
+K_e=\frac{n}{x_{max}-x_{min}}\quad(n=6\text{对应}[-3,3])
+\]</span></p>
+<p>​ 示例：温度控制误差范围±50℃ <span class="math display">\[
+K_e=6/(50-(-50))=0.06
+\]</span></p></li>
 <li><p><strong>比例因子：</strong>解归一化</p>
 <blockquote>
 <p>同样的，不能一直当小瘪三，如果我实际的输出是【-30,30】，那么这里就得再将<strong>标准输出×10作为实际输出</strong>，<strong>10就是比例因子</strong></p>
-</blockquote></li>
+</blockquote>
+<p>利用量化因子，我们就将输入量规划到论域范围了，然后呢~他还是精确量，然后需要进行模糊化</p></li>
 </ul>
-<h4 id="知识库">1.2.2 知识库</h4>
+<h4 id="模糊化">2.2 模糊化</h4>
+<p><strong>模糊化的实质是计算输入对各模糊子集的归属程度</strong></p>
+<p>​ 首先来理解一些这一步骤的意义</p>
+<ul>
+<li><strong>输入：</strong>精确量
+<ul>
+<li>比如说：当前温度28.6℃</li>
+</ul></li>
+<li><strong>输出：</strong>各模糊子集的隶属度值集合
+<ul>
+<li>“低温”子集隶属度：0.0</li>
+<li>“舒适”子集隶属度：0.3</li>
+<li>“高温”子集隶属度：0.7</li>
+</ul></li>
+<li><strong>物理意义：</strong>当前温度更接近“高温”范畴，但仍有部分属于舒适区</li>
+</ul>
+<p>​ 在来看一下一些概念</p>
+<ul>
+<li><strong>模糊子集：</strong>将连续量离散化为可理解的语义单元（如NB/NM/NS/ZO)
+<ul>
+<li><strong>意义：</strong>作为规则库中的条件判断单元</li>
+</ul></li>
+<li><strong>隶属度函数：</strong>描述元素对模糊集合归属程度的数学映射规则，是模糊集合的量化载体
+<ul>
+<li><strong>意义：</strong>将</li>
+</ul></li>
+<li><strong>隶属度：</strong>量化归属程度
+<ul>
+<li><strong>意义：</strong>决定各条模糊规则的贡献比例</li>
+</ul></li>
+</ul>
+<h5 id="模糊子集">2.2.1 模糊子集</h5>
+<p><strong>模糊集合的表示方法：</strong></p>
+<ul>
+<li><p><strong>当论域X为有限集</strong>，记<span class="math inline">\(x={x1,x2，....xn}\)</span>,此时有三种常见的表示形式</p>
+<ul>
+<li><p><strong>zadeh表示法</strong></p>
+<ul>
+<li><p><span class="math display">\[
+A=\sum_{i=1}^n\frac{\mu_A(i)}{x_i}=\frac{\mu_A(x_1)}{x_1}+\frac{\mu_A(x_2)}{x_2}+\cdots+\frac{\mu_A(x_n)}{x_n}
+\]</span></p>
+<ul>
+<li>注：∑跟+，
+不是求和的意思，只是<strong>概括集合诸元的记号</strong>；<span class="math inline">\(\frac{\mu_A(x_i)}{x_i}\)</span>不是分数，表示**点x<sub>i</sub>对模糊集A的隶属度是<span class="math inline">\(u_A(x_i)\)</span>.</li>
+</ul></li>
+</ul></li>
+<li><p><strong>序偶表示法</strong></p>
+<ul>
+<li><span class="math display">\[
+A=\{(x_1,\mu_A(x_1)),(x_2,\mu_A(x_2)),\cdots,(x_n,\mu_A(x_n))\}
+\]</span></li>
+</ul></li>
+<li><p><strong>向量表示法</strong></p>
+<ul>
+<li><span class="math display">\[
+A=(\mu_A(x_1),\mu_A(x_2),\cdots,\mu_A(x_n))
+\]</span></li>
+</ul></li>
+</ul></li>
+<li><p><strong>当论域为无限集时</strong>，X上的模糊集A可以写成</p>
+<ul>
+<li><p><span class="math display">\[
+A=\int_{x\in X}\frac{\mu_A(x)}{x}
+\]</span></p>
+<ul>
+<li>同样的，∫也不是积分的意思，里面那玩意也不是分数</li>
+</ul></li>
+</ul></li>
+</ul>
+<p><strong>模糊子集的划分</strong></p>
+<p>对于模糊输入变量e ，模糊子集通常可以划分为：</p>
+<p>e ={负大, 负小, 零, 正小, 正大}={NB, NS, ZO, PS, PB} e ={负大,
+<strong>负中</strong>, 负小, 零, 正小, 正中, 正大}={NB, NM, NS, ZO, PS,
+PM, PB} e ={负大, 负中, 负小, <strong>零负</strong>,
+<strong>零正</strong>, 正小, 正中, 正大}={NB, NM, NS, NZ, PZ, PS, PM,
+PB} （英文字头简记）</p>
+<h5 id="隶属度函数">2.2.2 隶属度函数</h5>
+<p><strong>6种典型的隶属度函数</strong></p>
+<ul>
+<li><p><strong>高斯型隶属函数</strong></p>
+<p>高斯型隶属度函数有两个参数 σ 和 c 确定 <span class="math display">\[
+f(x,\sigma,c)=e^{-\frac{(x-c)^2}{2\sigma^2}}
+\]</span> 其中参数σ通常为正，参数 c 用于确定曲线的中心，</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">gaussmf(x,[σ，c])</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306111219075.png" alt="高斯型">
+<figcaption aria-hidden="true">高斯型</figcaption>
+</figure></li>
+<li><p><strong>三角形隶属函数</strong></p>
+<ul>
+<li><p>三角形曲线的形状由三个参数a,b,c确定 <span class="math display">\[
+f\left(x,a,b,c\right)=\begin{cases}0&amp;\quad x\leq
+a\\\frac{x-a}{b-a}&amp;\quad a\leq x\leq b\\\frac{c-x}{c-b}&amp;\quad
+b\leq x\leq c\\0&amp;\quad x\geq c&amp;\end{cases}
+\]</span> 其中参数a,c确定三角形的“脚”, 而参数b确定三角形的“峰”</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">trimf(x,[a,b,c])</span><br></pre></td></tr></table></figure></li>
+</ul>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306111831636.png" alt="三角形隶属函数">
+<figcaption aria-hidden="true">三角形隶属函数</figcaption>
+</figure></li>
+<li><p><strong>梯形隶属函数</strong></p>
+<p>梯形曲线可由四个参数a,b,c,d确定 <span class="math display">\[
+f\left(x,a,b,c,d\right)=\begin{cases}0&amp;\quad x\leq
+a\\\frac{x-a}{b-a}&amp;\quad a\leq x\leq b\\1&amp;\quad b\leq x\leq
+c\\\frac{d-x}{d-c}&amp;\quad c\leq x\leq d\\0&amp;\quad x\geq
+d&amp;\end{cases}
+\]</span> 其中参数a,d确定梯形的脚，b和c确定梯形的肩膀</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">trapmf(x,[a,b,c,d])</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306112153196.png" alt="梯形">
+<figcaption aria-hidden="true">梯形</figcaption>
+</figure></li>
+<li><p><strong>S形隶属函数</strong></p>
+<p>S形函数由参数a和c决定 <span class="math display">\[
+f(x,a,c)=\frac{1}{1+e^{-a(x-c)}}
+\]</span>
+其中，参数a的正负符号决定了S形隶属函数的开口朝左还是右，用来表示“正大”或“负大”</p>
+<p>这里的这个公式其实是个特殊形式，非通的~问题不大，有兴趣再看</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">sigmf（x，[a,c]</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306131209210.png" alt="S形">
+<figcaption aria-hidden="true">S形</figcaption>
+</figure></li>
+<li><p><strong>Z形隶属函数</strong></p>
+<p>因形似Z而得名，参数a,b确定形状</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">zmf(x,[a,b])</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306131457396.png" alt="Z形函数">
+<figcaption aria-hidden="true">Z形函数</figcaption>
+</figure></li>
+<li><p>广义钟形隶属函数</p>
+<p>广义钟形隶属函数由是三个参数a,b,c确定 <span class="math display">\[
+f(x,a,b,c)=\frac{1}{1+\left|\frac{x-c}{a}\right|^{2b}}
+\]</span> 其中参数a,b通常为正，参数c 用于确定曲线的中心</p>
+<figure class="highlight matlab"><table><tr><td class="code"><pre><span class="line">gbellmf(x,[a,b,c])</span><br></pre></td></tr></table></figure>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306132407241.png" alt="广义钟形">
+<figcaption aria-hidden="true">广义钟形</figcaption>
+</figure></li>
+</ul>
+<h4 id="模糊推理">2.3 模糊推理</h4>
+<h5 id="知识库">2.3.1 知识库</h5>
 <p>​ 知识库是由数据库和规则库两部分构成</p>
 <ul>
 <li><strong>数据库：</strong>
@@ -4400,14 +4550,108 @@ x有偏差e和偏差变化率ec两个分量。偏差变化率可以反应受控�
 <li>通常由一系列的关系词连接而成，比如if-then，else，also，end，or</li>
 </ul></li>
 </ul>
-<p>没学完：</p>
-<p><a href="https://www.cnblogs.com/long5683/p/9963488.html">模糊控制——（1）基本原理
-- 一抹烟霞 - 博客园</a></p>
-<p>[PID控制器开发笔记之十二：模糊PID控制器的实现<a href="https://cloud.tencent.com/developer/article/2076397">通俗易懂]-腾讯云开发者社区-腾讯云</a></p>
-<p><a href="https://blog.csdn.net/pengrunxin/article/details/125080782">【模糊PI控制（从原理到simulink仿真到C代码实现）】-CSDN博客</a></p>
-<p><a href="https://blog.csdn.net/weixin_43321489/article/details/113819404">模糊PID（自适应模糊PID、fuzzy
-PID）的基本原理及应用举例 by 研三笔记-CSDN博客</a></p>
-<p>https://blog.csdn.net/weixin_43321489/article/details/113819404</p>
+<h5 id="模糊规则">2.3.2 模糊规则</h5>
+<p><strong>原理：</strong></p>
+<ul>
+<li><p>当 <strong>误差e很大</strong> 时：</p>
+<ul>
+<li><p>应<strong>增大Kp</strong>来快速减小误差。</p></li>
+<li><p>为避免积分饱和，应<strong>减小Ki</strong>。</p></li>
+</ul></li>
+<li><p>当 <strong>误差变化率ec很大</strong> 时：</p>
+<ul>
+<li>表示误差变化迅速，为避免过冲和积分饱和，应<strong>减小Ki</strong>。</li>
+<li>为快速响应误差变化，应适当<strong>增大Kp</strong>。</li>
+</ul></li>
+<li><p>当 <strong>误差e较小</strong> 时：</p>
+<ul>
+<li>Kp应减小或保持，以免系统产生振荡。</li>
+<li>Ki可以适当增加，以提高稳态精度。</li>
+</ul></li>
+<li><p>当 <strong>误差变化率ec较小时</strong>：</p>
+<ul>
+<li>说明误差趋于稳定，Kp减小或保持，Ki适当增加，提高精度。</li>
+</ul></li>
+</ul>
+<p>截取csdn上的两个规则表如下：</p>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306142616077.png" alt="Kp的模糊控制规则表">
+<figcaption aria-hidden="true">Kp的模糊控制规则表</figcaption>
+</figure>
+<blockquote>
+<p>增大kp能减少稳态误差，而且可以加快上升时间，峰值时间——动态性能。但是kp过大会产生较大的超调量。甚至导致系统不稳定——&gt;等幅振荡——&gt;发散振荡。</p>
+</blockquote>
+<figure>
+<img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306142651835.png" alt="Ki的模糊控制规则表">
+<figcaption aria-hidden="true">Ki的模糊控制规则表</figcaption>
+</figure>
+<blockquote>
+<p>积分调节规律主要用于消除静差，但是如果积分作用过大，引起积分饱和(一丢丢的误差会被放大），导致超调量增加，所以要选择好合适积分系数，得到合适的超调量和消除误差。
+当然积分系数不大，会产生误差。</p>
+</blockquote>
+<blockquote>
+<p>再补充一下这玩意应该长啥样，</p>
+<blockquote>
+<p>if E = NB or NM <strong>and</strong> EC = NB or NM then U = PB</p>
+<p><img src="/2025/03/05/kong-zhi-qi-mo-hu-pi/image-20250306144440256.png"></p>
+</blockquote>
+</blockquote>
+<h5 id="模糊推理-1">2.3.3 模糊推理</h5>
+<p><strong>实质：</strong>根据模糊规则表求取输出值U的隶属度。即根据模糊控制规则进行模糊推理，并决策出模糊输出量</p>
+<ol type="1">
+<li><p><strong>Mamdani推理</strong>（最常用）</p>
+<ol type="1">
+<li><p>计算每条规则前件的触发强度</p>
+<blockquote>
+<p>以规则为例：</p>
+<blockquote>
+<p>IF 温度 IS 高 AND 湿度 IS 中 THEN 风扇 IS 快</p>
+</blockquote>
+<p>设：</p>
+<ul>
+<li>温度为“高”的隶属度 = 0.7</li>
+<li>湿度 IS 中的隶属度 = 0.5</li>
+</ul>
+<p>则该规则的匹配度（或激发强度）为两者取最小值： $$</p>
+<p>$$</p>
+</blockquote></li>
+<li><p>根据触发强度对后件隶属函数进行裁剪（常用最小法或乘积法）</p>
+<blockquote>
+<p>使用前件匹配度对后件的模糊集合进行截取（取最小值）：</p>
+<ul>
+<li>假设规则1的后件：“风扇速度 IS 快”，最大隶属度为1</li>
+<li>应用匹配度后：风扇 IS 快 的最大隶属度被截取为 0.7</li>
+</ul>
+<p>重复此步骤对所有规则进行推理</p>
+</blockquote></li>
+<li><p>合成规则</p>
+<blockquote>
+<p>将各规则裁剪后的隶属函数取最大值叠加（即“取大”操作） <span class="math display">\[
+μ输出(x)=max⁡(μ规则1(x),μ规则2(x),… )\mu_{\text{输出}}(x) =
+\max(\mu_{\text{规则1}}(x), \mu_{\text{规则2}}(x),
+\dots)μ输出(x)=max(μ规则1(x),μ规则2(x),…)
+\]</span> 此时得到一个<strong>合成后的模糊输出集合</strong>。</p>
+<blockquote>
+<p>规则1输出“强”截断为0.3，规则2输出“中”截断为0.5，最终聚合输出为两个截断区域的叠加。</p>
+</blockquote>
+</blockquote></li>
+</ol></li>
+<li><p><strong>Sugeno 推理法</strong>（更常用于数据驱动模型）</p></li>
+</ol>
+<h4 id="解模糊">2.4 解模糊</h4>
+<p>​
+模糊推理的输出是一个模糊集合，但实际控制信号需要具体的数值，因此要进行<strong>解模糊</strong>。</p>
+<p>方法很多，简单列举俩，用到再学</p>
+<ol type="1">
+<li><p><strong>质心法</strong></p>
+<p>质心法通过计算模糊输出集合的质心来确定控制值。 <span class="math display">\[
+y_{defuzz}=\frac{\int_yy\cdot\mu_Y(y)dy}{\int_y\mu_Y(y)dy}
+\]</span> 这里，<span class="math display">\[y_{defuzz}\]</span>是最终的控制值，<span class="math display">\[\mu_{Y}(y)\]</span>是模糊输出集合的隶属度函数。</p></li>
+<li><p><strong>最大隶属度法</strong></p>
+<p>最大隶属度法选择模糊输出集合中隶属度最大的值作为最终的控制值： <span class="math display">\[
+y_{defuzz}=\arg\max_y\mu_Y(y)
+\]</span></p></li>
+</ol>
 ]]></content>
       <categories>
         <category>控制器</category>
