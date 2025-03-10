@@ -331,7 +331,8 @@ layer)”以解决功率二极管需求的矛盾。</p>
   <entry>
     <title>【simulink】PI控制器</title>
     <url>/2025/02/26/cllc-pi-kong-zhi-qi/</url>
-    <content><![CDATA[<figure>
+    <content><![CDATA[<h2 id="simulinkpi控制器">【simulink】PI控制器</h2>
+<figure>
 <img src="/2025/02/26/cllc-pi-kong-zhi-qi/image-20250226151246541.png" alt="PI控制器">
 <figcaption aria-hidden="true">PI控制器</figcaption>
 </figure>
@@ -6325,6 +6326,121 @@ CAN_High 和 CAN_Low
       </categories>
       <tags>
         <tag>调制</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【simulink】模糊PID控制器</title>
+    <url>/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/</url>
+    <content><![CDATA[<h2 id="simulink模糊pid控制器">【simulink】模糊PID控制器</h2>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310153911781.png" alt="模糊PI">
+<figcaption aria-hidden="true">模糊PI</figcaption>
+</figure>
+<h3 id="输入的e跟ec在哪">1. 输入的e跟ec在哪</h3>
+<p>​
+e其实很好理解，输入-输出就是我们的误差，也就是开头的sum，那么<strong>误差变化率ec</strong>呢</p>
+<h5 id="unit-delay单位延迟模块">Unit Delay（单位延迟模块）</h5>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310155506441.png" alt="p1">
+<figcaption aria-hidden="true">p1</figcaption>
+</figure>
+<p>​
+先来看这部分，输出跟输入做差，得到e，这里e分了四路，先看下面两路，一路直接进行sum准备运算，另外一路经过了UD模块，下面介绍一下这个模块</p>
+<p><strong>作用：</strong>将输入的误差信号<span class="math inline">\(e（t）\)</span><strong>延迟一个时间步长</strong>，输出前一刻的误差<span class="math inline">\(e（t-1）\)</span></p>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310155830884.png" alt="image-20250310155830884">
+<figcaption aria-hidden="true">image-20250310155830884</figcaption>
+</figure>
+<h5 id="sum求和模块此处做减法">sum（求和模块，此处做减法）</h5>
+<ul>
+<li><strong>输入：</strong> 当前误差<span class="math inline">\(e(t)\)</span>和延迟后的误差<span class="math inline">\(e(t-1)\)</span></li>
+<li><strong>输出：</strong><span class="math inline">\(e(t)-e(t-1)\)</span>，即误差的变化量△e</li>
+</ul>
+<h4 id="这一步是在干啥">这一步是在干啥</h4>
+<ul>
+<li><p><strong>计算误差变化率ec</strong>：</p>
+<p>通过<span class="math inline">\(e(t)−e(t−1)\)</span>，得到误差在单位时间内的变化量（离散系统的微分近似）。</p>
+<ul>
+<li><strong>物理意义</strong>：若 <em>ec</em>&gt;0，误差正在增大；若
+<em>ec</em>&lt;0，误差正在减小。</li>
+</ul></li>
+<li><p><strong>为微分控制（D项）提供输入</strong>： 该变化量 <em>ec</em>
+会乘以微分系数
+*K**d*，生成PID中的<strong>微分控制量</strong>，用于抑制系统震荡和超调。</p></li>
+</ul>
+<hr>
+<h3 id="准备输入到模糊控制器了">2. 准备输入到模糊控制器了</h3>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310160542508.png" alt="p2">
+<figcaption aria-hidden="true">p2</figcaption>
+</figure>
+<p>​ 前面我们得到了e跟ec了，然后进入Mux模块</p>
+<h5 id="mux模块多路复用器">Mux模块（多路复用器）</h5>
+<ul>
+<li><strong>输入：</strong> 指有两路独立的输入信号（e跟ec）</li>
+<li><strong>输出：</strong>Mux将两路信号<strong>合并为一个向量信号</strong>（如[e,ec])</li>
+<li><strong>物理表现：</strong>看似输出是“一路”，但实际上传输的是包含两个分量的数据</li>
+<li><strong>必要性：</strong>模糊控制器的规则库需要同时基于
+<code>e</code> 和 <code>ec</code>
+的状态（例如“误差大且快速增大”），必须将两者合并为统一输入。</li>
+</ul>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310160823477.png" alt="Mux参数">
+<figcaption aria-hidden="true">Mux参数</figcaption>
+</figure>
+<h5 id="gain增益模块">Gain（增益模块）</h5>
+<p>量化因子</p>
+<h3 id="模糊控制">3. 模糊控制</h3>
+<p>​ 后面学不急，先了解整体框架，直接看下一步的输出吧</p>
+<h3 id="模糊控制器的输出">4. 模糊控制器的输出</h3>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310162034233.png" alt="p4">
+<figcaption aria-hidden="true">p4</figcaption>
+</figure>
+<p>​ 看上去输出的是三维的[△Kp，△Ki， △Kd]</p>
+<h5 id="demux多路分解器">Demux（多路分解器）</h5>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310162126759.png" alt="demux">
+<figcaption aria-hidden="true">demux</figcaption>
+</figure>
+<p>​ 有归一化就得有解归一化，有mux就有demux</p>
+<ul>
+<li><strong>功能：</strong>将一个输入信号拆分为多个独立的输出信号
+<ul>
+<li><strong>输入：</strong>一个信号</li>
+<li><strong>输出：</strong>多路独立信号</li>
+</ul></li>
+</ul>
+<p>这后面的<code>gain</code>应该就是比例因子了，在经过<code>sum</code>，就完成了
+<span class="math display">\[
+Kp=Kp+△Kp
+\]</span></p>
+<h3 id="the-end">5.The End</h3>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310162712814.png" alt="最终输出">
+<figcaption aria-hidden="true">最终输出</figcaption>
+</figure>
+<p>​ 这里已经是看图说话了，首先还是认识模块</p>
+<h5 id="product乘法器">Product（乘法器）</h5>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310164620884.png" alt="乘法器参数">
+<figcaption aria-hidden="true">乘法器参数</figcaption>
+</figure>
+<h5 id="add加法器">Add（加法器）</h5>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310164658710.png" alt="加法器参数">
+<figcaption aria-hidden="true">加法器参数</figcaption>
+</figure>
+<p>所以这里的最终输出也就是pid控制器的那个公式： <span class="math display">\[
+u(t) = K_p \cdot e + K_s \cdot \int e \, dt + K_d \cdot \frac{de}{dt}
+\]</span></p>
+]]></content>
+      <categories>
+        <category>仿真</category>
+      </categories>
+      <tags>
+        <tag>simulink</tag>
+        <tag>模糊PI</tag>
       </tags>
   </entry>
 </search>
