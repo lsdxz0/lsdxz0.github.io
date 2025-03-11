@@ -1360,6 +1360,12 @@ DC/DC SiC MOSFET驱动选型及供电设计要点 (ti.com.cn)</a></p>
 <h4 id="tqfp-48封装绘制">9. TQFP-48封装绘制</h4>
 <h4 id="sot-223封装绘制">10. SOT-223封装绘制</h4>
 <h4 id="usb座子封装绘制">11.USB座子封装绘制</h4>
+<p><img src="/2025/02/24/eda-05.feng-zhuang-hui-zhi/image-20250310203826926.png"></p>
+<p><img src="/2025/02/24/eda-05.feng-zhuang-hui-zhi/image-20250310203859106.png"></p>
+<p>这玩意是焊盘·放置在多层</p>
+<p><img src="/2025/02/24/eda-05.feng-zhuang-hui-zhi/image-20250310204039899.png"></p>
+<p>这东西呢其实是过孔，因为这里我们是用来固定的，可以设置内外径一致，就成黑色的圆圈了</p>
+<p><img src="/2025/02/24/eda-05.feng-zhuang-hui-zhi/image-20250310204022633.png"></p>
 <h4 id="mhz晶振封装绘制">12. 8MHZ晶振封装绘制</h4>
 <h4 id="khz晶振封装绘制">13. 32.768KHZ晶振封装绘制</h4>
 ]]></content>
@@ -4952,20 +4958,6 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
       </tags>
   </entry>
   <entry>
-    <title>21年D题</title>
-    <url>/2024/09/19/shu-xue-jian-mo-21-nian-d-si-lu-kuang-jia/</url>
-    <content><![CDATA[<h2 id="年d题">21年D题</h2>
-<h3 id="数据预处理">数据预处理</h3>
-]]></content>
-      <categories>
-        <category>比赛</category>
-      </categories>
-      <tags>
-        <tag>数学建模</tag>
-        <tag>比赛</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【控制器】---自适应控制</title>
     <url>/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/</url>
     <content><![CDATA[<h2 id="控制器---自适应控制">【控制器】---自适应控制</h2>
@@ -6391,7 +6383,77 @@ e其实很好理解，输入-输出就是我们的误差，也就是开头的sum
 <h5 id="gain增益模块">Gain（增益模块）</h5>
 <p>量化因子</p>
 <h3 id="模糊控制">3. 模糊控制</h3>
-<p>​ 后面学不急，先了解整体框架，直接看下一步的输出吧</p>
+<p>​
+https://blog.csdn.net/orangekmj/article/details/123499412?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=%E6%A8%A1%E7%B3%8API%E4%BB%BF%E7%9C%9F&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<sub>all</sub>sobaiduweb~default-1-123499412.142</p>
+<h4 id="在matlab命令行中输入fuzzy">3.1 在matlab命令行中输入fuzzy</h4>
+<p>​ 就打开了下图这玩意</p>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311131219958.png" alt="模糊控制">
+<figcaption aria-hidden="true">模糊控制</figcaption>
+</figure>
+<h4 id="确定模糊控制工具箱的输入输出">3.2
+确定模糊控制工具箱的输入输出</h4>
+<ul>
+<li><strong>输入</strong>
+<ul>
+<li>e：实际值与给定值的误差</li>
+<li>ec：为e的导数</li>
+</ul></li>
+<li><strong>输出</strong>
+<ul>
+<li>△Kp</li>
+<li>△Ki</li>
+</ul></li>
+</ul>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311131532127.png"></p>
+<p>​ 点一下框选中，然后下侧name改名</p>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311131639063.png" alt="改名">
+<figcaption aria-hidden="true">改名</figcaption>
+</figure>
+<p>​ 最后长这样，<strong>就是明确了输入输出</strong></p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311131742593.png"></p>
+<h4 id="确定隶属度函数输入输出都要-目的为了模糊化和解模糊">3.3
+确定隶属度函数（输入输出都要） 目的：为了模糊化和解模糊</h4>
+<p>​ <strong>隶属度函数在哪写</strong>、</p>
+<p>​ 双击 输入/输出，就弹出来新的窗口</p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311132133472.png"></p>
+<p>​ <strong>一般是用中间三角形隶属函数，两边高斯型隶属函数</strong></p>
+<p>这四个圈起来的分别是：</p>
+<ol type="1">
+<li><p><strong>rang</strong></p>
+<p>设置输入、输出的边界，下面是个例子，定义输入输出的论域和隶属函数如下图：</p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311132401890.png"></p>
+<p>一共七个等级，论域是【-3,3】</p></li>
+<li><p><strong>Name</strong></p>
+<p>没看懂啥意义，但是是这么说的：</p>
+<p>这里我们要严格按照 matlab
+初始的时候给我们的顺序来从左到右定义我们的等级，这样子后面写模糊规则会方便很多。</p>
+<p>哦~大概就是按规定的等级，从左到右改名</p></li>
+<li><p><strong>type</strong></p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311132609405.png"></p>
+<p>图中圈起来的就是三角跟高斯</p></li>
+<li><p><strong>Params</strong></p>
+<p>三角函数这里的参数有仨数，分别代表了图中的仨实圈，，这里的参数是说的<strong>x轴</strong></p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311133450943.png"></p>
+<p>我们之前选了7个等级吧，那如何产生7个哩</p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311133721500.png"></p></li>
+</ol>
+<p>在这一节中，最终得到的隶属函数图如下</p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311135358146.png"></p>
+<h4 id="确定模糊规则">3.4 确定模糊规则</h4>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311141211931.png"></p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311141226012.png"></p>
+<p>这个表应该是写错了吧？，△ki的PM
+PB应该是PB，还有最后，PB+NS，kp没有ns直接就nm了，可以改成ns试试</p>
+<h4 id="在simulink中实现">3.5 在simulink中实现</h4>
+<p>​ 关掉保存，取好名字</p>
+<p>在simulink中，打开下图的模块</p>
+<p><img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311145604018.png"></p>
+<figure>
+<img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250311145740757.png" alt="改名">
+<figcaption aria-hidden="true">改名</figcaption>
+</figure>
 <h3 id="模糊控制器的输出">4. 模糊控制器的输出</h3>
 <figure>
 <img src="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/image-20250310162034233.png" alt="p4">
@@ -6441,6 +6503,56 @@ u(t) = K_p \cdot e + K_s \cdot \int e \, dt + K_d \cdot \frac{de}{dt}
       <tags>
         <tag>simulink</tag>
         <tag>模糊PI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>立创eda-06 原理图到PCB</title>
+    <url>/2025/03/10/eda-06.dao-pcb/</url>
+    <content><![CDATA[<h2 id="立创eda-06-原理图到pcb">立创eda-06 原理图到PCB</h2>
+<h4 id="从原理图到pcb">0. 从原理图到PCB</h4>
+<h5 id="如何正确使用嘉立创的库">如何正确使用嘉立创的库·</h5>
+<p>​ 首先去嘉立创商城，看看有没有·货</p>
+<figure>
+<img src="/2025/03/10/eda-06.dao-pcb/image-20250310213111533.png" alt="找到要用器件的编号">
+<figcaption aria-hidden="true">找到要用器件的编号</figcaption>
+</figure>
+<p>然后去eda下面</p>
+<figure>
+<img src="/2025/03/10/eda-06.dao-pcb/image-20250310213202541.png" alt="image-20250310213202541">
+<figcaption aria-hidden="true">image-20250310213202541</figcaption>
+</figure>
+<p>在这个位置搜</p>
+<h5 id="如何转到pcb">如何转到PCB</h5>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310213331909.png"></p>
+<h4 id="网络表概念解读">1. 网络表概念解读</h4>
+<p>​ 相同网络的焊盘是连到一起的</p>
+<h4 id="板框绘制">2. 板框绘制</h4>
+<p>​ 先框定范围，在原来焊盘的位置是板框</p>
+<figure>
+<img src="/2025/03/10/eda-06.dao-pcb/image-20250310213859578.png" alt="板框位置">
+<figcaption aria-hidden="true">板框位置</figcaption>
+</figure>
+<p><strong>单位切换</strong></p>
+<p>​ 点击画板，点击Q，单位就从mil转化为了mm</p>
+<p>选好尺寸后可以给一个圆角半径，</p>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310214128698.png"></p>
+<h4 id="模块化预布局">3. 模块化预布局</h4>
+<p>​
+首先，原理图是按模块来的，那PCB也应该模块化，首先在原理图中选中某一模块，比如mcu，。此时在pcb中，该模块的内容也被选中</p>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310214348891.png"></p>
+<p>然后就可以把这一部分单独拿出来了</p>
+<h5 id="关于位号">3.1 关于位号</h5>
+<p>​
+一般会习惯放中间（大错特错），首先点击一个位号，然后右键查找，查找全部，这样就全选了所有位号，不要放中间，不然虚焊后不好查错</p>
+<p>​ 然后发现上面这一步根本没有意义，直接布局开始</p>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310215020310.png"></p>
+<h4 id="模块化精细布局">4. 模块化精细布局</h4>
+]]></content>
+      <categories>
+        <category>软件</category>
+      </categories>
+      <tags>
+        <tag>eda</tag>
       </tags>
   </entry>
 </search>

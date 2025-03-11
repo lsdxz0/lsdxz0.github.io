@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="21年D题, LSDXZ">
+    <meta name="keywords" content="立创eda-06 原理图到PCB, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>21年D题 | LSDXZ</title>
+    <title>立创eda-06 原理图到PCB | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -433,12 +433,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/17.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">21年D题</h1>
+                    <h1 class="description center-align post-title">立创eda-06 原理图到PCB</h1>
                 </div>
             </div>
         </div>
@@ -554,12 +554,8 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
-                                <span class="chip bg-color">数学建模</span>
-                            </a>
-                        
-                            <a href="/tags/%E6%AF%94%E8%B5%9B/">
-                                <span class="chip bg-color">比赛</span>
+                            <a href="/tags/eda/">
+                                <span class="chip bg-color">eda</span>
                             </a>
                         
                     </div>
@@ -570,8 +566,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%AF%94%E8%B5%9B/" class="post-category">
-                                比赛
+                            <a href="/categories/%E8%BD%AF%E4%BB%B6/" class="post-category">
+                                软件
                             </a>
                         
                     </div>
@@ -583,7 +579,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2024-09-19
+                    2025-03-10
                 </div>
                 
 
@@ -592,7 +588,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    8
+                    311
                 </div>
                 
 
@@ -624,8 +620,45 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="年d题">21年D题</h2>
-<h3 id="数据预处理">数据预处理</h3>
+                <h2 id="立创eda-06-原理图到pcb">立创eda-06 原理图到PCB</h2>
+<h4 id="从原理图到pcb">0. 从原理图到PCB</h4>
+<h5 id="如何正确使用嘉立创的库">如何正确使用嘉立创的库·</h5>
+<p>​ 首先去嘉立创商城，看看有没有·货</p>
+<figure>
+<img src="/2025/03/10/eda-06.dao-pcb/image-20250310213111533.png" alt="找到要用器件的编号">
+<figcaption aria-hidden="true">找到要用器件的编号</figcaption>
+</figure>
+<p>然后去eda下面</p>
+<figure>
+<img src="/2025/03/10/eda-06.dao-pcb/image-20250310213202541.png" alt="image-20250310213202541">
+<figcaption aria-hidden="true">image-20250310213202541</figcaption>
+</figure>
+<p>在这个位置搜</p>
+<h5 id="如何转到pcb">如何转到PCB</h5>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310213331909.png"></p>
+<h4 id="网络表概念解读">1. 网络表概念解读</h4>
+<p>​ 相同网络的焊盘是连到一起的</p>
+<h4 id="板框绘制">2. 板框绘制</h4>
+<p>​ 先框定范围，在原来焊盘的位置是板框</p>
+<figure>
+<img src="/2025/03/10/eda-06.dao-pcb/image-20250310213859578.png" alt="板框位置">
+<figcaption aria-hidden="true">板框位置</figcaption>
+</figure>
+<p><strong>单位切换</strong></p>
+<p>​ 点击画板，点击Q，单位就从mil转化为了mm</p>
+<p>选好尺寸后可以给一个圆角半径，</p>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310214128698.png"></p>
+<h4 id="模块化预布局">3. 模块化预布局</h4>
+<p>​
+首先，原理图是按模块来的，那PCB也应该模块化，首先在原理图中选中某一模块，比如mcu，。此时在pcb中，该模块的内容也被选中</p>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310214348891.png"></p>
+<p>然后就可以把这一部分单独拿出来了</p>
+<h5 id="关于位号">3.1 关于位号</h5>
+<p>​
+一般会习惯放中间（大错特错），首先点击一个位号，然后右键查找，查找全部，这样就全选了所有位号，不要放中间，不然虚焊后不好查错</p>
+<p>​ 然后发现上面这一步根本没有意义，直接布局开始</p>
+<p><img src="/2025/03/10/eda-06.dao-pcb/image-20250310215020310.png"></p>
+<h4 id="模块化精细布局">4. 模块化精细布局</h4>
 
                 
             </div>
@@ -652,7 +685,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://lsdxz0.github.io/2024/09/19/shu-xue-jian-mo-21-nian-d-si-lu-kuang-jia/">https://lsdxz0.github.io/2024/09/19/shu-xue-jian-mo-21-nian-d-si-lu-kuang-jia/</a>
+                    <a href="https://lsdxz0.github.io/2025/03/10/eda-06.dao-pcb/">https://lsdxz0.github.io/2025/03/10/eda-06.dao-pcb/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -690,12 +723,8 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
-                                    <span class="chip bg-color">数学建模</span>
-                                </a>
-                            
-                                <a href="/tags/%E6%AF%94%E8%B5%9B/">
-                                    <span class="chip bg-color">比赛</span>
+                                <a href="/tags/eda/">
+                                    <span class="chip bg-color">eda</span>
                                 </a>
                             
                         </div>
@@ -743,13 +772,13 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/10/09/ji-yi-hui-fu-zhu/">
+                <a href="/2025/03/10/simulink-mo-hu-pid-kong-zhi-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/1.jpg" class="responsive-img" alt="大记忆恢复术">
+                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="【simulink】模糊PID控制器">
                         
-                        <span class="card-title">大记忆恢复术</span>
+                        <span class="card-title">【simulink】模糊PID控制器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -760,12 +789,16 @@
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-10-09
+                            <i class="far fa-clock fa-fw icon-date"></i>2025-03-10
                         </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            LS
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%BB%BF%E7%9C%9F/" class="post-category">
+                                    仿真
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -773,8 +806,12 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%AE%B0%E5%BF%86/">
-                        <span class="chip bg-color">记忆</span>
+                    <a href="/tags/simulink/">
+                        <span class="chip bg-color">simulink</span>
+                    </a>
+                    
+                    <a href="/tags/%E6%A8%A1%E7%B3%8API/">
+                        <span class="chip bg-color">模糊PI</span>
                     </a>
                     
                 </div>
@@ -788,13 +825,13 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/09/14/diao-zhi-pwm-yi-xiang/">
+                <a href="/2025/03/05/kong-zhi-qi-mo-hu-pi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="调制方式---PWM移相">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="【控制器】---模糊PI控制器">
                         
-                        <span class="card-title">调制方式---PWM移相</span>
+                        <span class="card-title">【控制器】---模糊PI控制器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -805,14 +842,14 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-09-14
+                                <i class="far fa-clock fa-fw icon-date"></i>2025-03-05
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E8%B0%83%E5%88%B6/" class="post-category">
-                                    调制
+                            <a href="/categories/%E6%8E%A7%E5%88%B6%E5%99%A8/" class="post-category">
+                                    控制器
                                 </a>
                             
                             
@@ -822,8 +859,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E7%A7%BB%E7%9B%B8/">
-                        <span class="chip bg-color">移相</span>
+                    <a href="/tags/%E6%A8%A1%E7%B3%8API/">
+                        <span class="chip bg-color">模糊PI</span>
                     </a>
                     
                 </div>
@@ -955,13 +992,6 @@
 </main>
 
 
-<script src="https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-    MathJax.Hub.Config({
-        tex2jax: {inlineMath: [['$', '$'], ['\(', '\)']]}
-    });
-</script>
-
 
 
     <footer class="page-footer bg-color">
@@ -979,7 +1009,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.1k</span>&nbsp;字
+                class="white-color">56.9k</span>&nbsp;字
             
             
             
