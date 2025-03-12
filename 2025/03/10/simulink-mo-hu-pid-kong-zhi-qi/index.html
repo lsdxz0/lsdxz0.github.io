@@ -643,13 +643,13 @@ e其实很好理解，输入-输出就是我们的误差，也就是开头的sum
 </figure>
 <h5 id="sum求和模块此处做减法">sum（求和模块，此处做减法）</h5>
 <ul>
-<li><strong>输入：</strong> 当前误差<span class="math inline">\(e(t)\)</span>和延迟后的误差<span class="math inline">\(e(t-1)\)</span></li>
-<li><strong>输出：</strong><span class="math inline">\(e(t)-e(t-1)\)</span>，即误差的变化量△e</li>
+<li><strong>输入：</strong> 当前误差<span class="math display">\[e(t)\]</span>和延迟后的误差<span class="math display">\[e(t-1)\]</span></li>
+<li><strong>输出：</strong><span class="math display">\[e(t)-e(t-1)\]</span>，即误差的变化量△e</li>
 </ul>
 <h4 id="这一步是在干啥">这一步是在干啥</h4>
 <ul>
 <li><p><strong>计算误差变化率ec</strong>：</p>
-<p>通过<span class="math inline">\(e(t)−e(t−1)\)</span>，得到误差在单位时间内的变化量（离散系统的微分近似）。</p>
+<p>通过<span class="math display">\[e(t)−e(t−1)\]</span>，得到误差在单位时间内的变化量（离散系统的微分近似）。</p>
 <ul>
 <li><strong>物理意义</strong>：若 <em>ec</em>&gt;0，误差正在增大；若
 <em>ec</em>&lt;0，误差正在减小。</li>
