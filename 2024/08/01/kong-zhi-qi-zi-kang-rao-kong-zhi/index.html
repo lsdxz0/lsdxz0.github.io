@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -545,7 +545,12 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        <style>
+    figure figcaption {
+        display: none !important;
+    }
+</style>
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -629,7 +634,7 @@
 </ul>
 <h4 id="原理">原理</h4>
 <figure>
-<img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801093421261.png" alt="ADRC总体控制框图">
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801093421261.png" alt="ADRC总体控制框图">
 <figcaption aria-hidden="true">ADRC总体控制框图</figcaption>
 </figure>
 <p><strong>工作过程：</strong>输入期待电压v，经过TD，对V进行平滑处理，V<sub>2</sub>是对V的求导，然后同时对给定信号与给定信号的微分做了一个误差，然后再送到nlsef里面，这玩意是非线性状态误差反馈，也就是常说的补偿器环节。下面这个是状态扩张观测器（ESO)，这玩意是核心环节，它的作用是可以估计出实际的控制对象和我们状态观测器内部标称控制对象的误差值，这个误差值叫做Z<sub>3</sub>这样的话就可以把这个部分给他化简成我们的控制标准型，这里选择的是积分器串联型。</p>
@@ -653,7 +658,7 @@
 <li>探讨“扰动估计”办法--“扩张状态观测器”（ESO）</li>
 </ul>
 <p>假定模型控制的是电机速度，则其具体含义如下图：</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801100009241.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801100009241.png"></p>
 <p>​ 上下两图结合，我们就能明白 ADRC
 控制系统的<strong>工作流程</strong>，首先给定目标速度，由 TD
 得到实际模型跟踪的速度和加速度，扩张状态观测器根据电机的控制输入和实际输出得到观测的速度，加速度和扰动，与跟踪速度和加速度做差得到误差，由非线性状态误差反馈系统将误差进行非线性组合，减去扰动即为实际的控制输入。</p>
@@ -661,7 +666,7 @@
 <p>​ 跟踪微分器-Tracking
 differentiator：分为线性和非线性两种，本质上是一种<strong>低通滤波器</strong>，作用是平滑指令以及减少闭环传递函数的超调（将闭环传递函数的峰值压低到0dB以下）。</p>
 <p><strong>目的：</strong>解决由不连续或带随机噪声的量测信号，合理提取连续信号（跟踪给定）及微分信号的问题</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801101735736.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801101735736.png"></p>
 <p><strong>输入</strong></p>
 <ul>
 <li><strong>期望信号（设定值）</strong>：比如我们的期望输出电压</li>
@@ -671,16 +676,16 @@ differentiator：分为线性和非线性两种，本质上是一种<strong>低�
 <li><strong>平滑的期望轨迹</strong>：TD生成的平滑轨迹，使得系统能够跟踪期望信号而不会出现突变</li>
 <li><strong>期望轨迹的导数：</strong>期望电压的变化率</li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801111245527.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801111245527.png"></p>
 <p>通过TD，依据微分输出与最速综合函数，可以来安排过渡过程</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801111538792.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801111538792.png"></p>
 <p><strong>特点：</strong></p>
 <ul>
 <li>使<strong>误差反馈增益和误差微分增益</strong>选取范围扩大</li>
 <li>使<strong>给定的反馈增益所适应的对象参数</strong>范围扩大</li>
 </ul>
 <p><strong>数学表达形式</strong></p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801145352420.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801145352420.png"></p>
 <p>​ r：
 跟踪速度因子；它与跟踪速度正相关，但是过大会放大噪声，因此引入滤波因子h
 对噪声进行抑制，h越大滤波效果越强</p>
@@ -693,11 +698,11 @@ ADRC是一种单输入单输出的控制，因此只能适用于<strong>非耦�
 <p>​
 如何理解ESO哩，对控制过程中真实存在的扰动进行补偿，达到抗干扰，鲁棒性好，对模型依赖性降低的效果，所谓扩张，则是将扰动项视为新的状态变量，所以是对状态向量的一种扩张</p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154106911.png" alt="二阶系统ESO结构图">
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154106911.png" alt="二阶系统ESO结构图">
 <figcaption aria-hidden="true">二阶系统ESO结构图</figcaption>
 </figure>
 <figure>
-<img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154140878.png" alt="n阶系统的ESO">
+<img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801154140878.png" alt="n阶系统的ESO">
 <figcaption aria-hidden="true">n阶系统的ESO</figcaption>
 </figure>
 <p>对于以下二阶系统： <span class="math display">\[
@@ -723,7 +728,7 @@ ADRC是一种单输入单输出的控制，因此只能适用于<strong>非耦�
 \beta_{01}=\frac1h,\beta_{02}=\frac1{3h^2},\beta_{03}=\frac2{8^2h^3},\beta_{04}=\frac5{13^3h^4},\cdots
 \]</span></p>
 <h4 id="非线性反馈控制器">非线性反馈控制器</h4>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801155609966.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801155609966.png"></p>
 所以这里其实是又回到PID控制了，只不过e<sub>1,2,3</sub>发生了变化，过渡过程产生的误差信号<span class="math inline">\(e_1=v_1-z_1\)</span>；误差微分信号：<span class="math inline">\(e_2=v_2-z_2\)</span>
 ，及根据误差信号生成的积分信号：$<em>0=<em>0^te_1()d<span class="math inline">\(；只不过这里结合的时候不是采用的线性组合，通常采用的非线性组合有如下两种形式：\)</span>$
 u</em>{0}=</em>{0}fal(e_{0},<em>{0},)+</em>{1}fal(e_{1},<em>{1},)+</em>{2}fal(e_{2},<em>{2},),</em>{0}&lt;0&lt;<em>{1}&lt;1&lt;</em>{2}\u_{0}=k_{0}e_{0}-fhan(e_{1},ce_{2},r,h)
@@ -742,8 +747,8 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
 将ESO估计的扰动$z_3$补偿到控制器的输出$u_0$上，b是控制器的增益，可得到以下两种形式：
 \]</span> u=u_0-b\u=b $$
 最终跟踪微分器（TD），扩张状态观测器（ESO），非线性反馈控制器组成了ADRC算法：</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801161309839.png"></p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801163452762.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801161309839.png"></p>
+<p><img src="/2024/08/01/kong-zhi-qi-zi-kang-rao-kong-zhi/image-20240801163452762.png"></p>
 <h4 id="adrc的一些问题与局限性">ADRC的一些问题与局限性</h4>
 <h5 id="td的局限性">TD的局限性</h5>
 <p><strong>线性TD</strong>的本质其实就是一个阻尼比为1的标准二阶系统，并且没有任何零点。对于一个标准的二阶系统，将其写成状态空间的形式，其中的两个状态就分别对应为滤波后的输入以及滤波后输入的微分</p>
@@ -878,7 +883,7 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/2.jpg" class="responsive-img" alt="【控制器】---自适应控制">
+                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="【控制器】---自适应控制">
                         
                         <span class="card-title">【控制器】---自适应控制</span>
                     </div>
@@ -927,7 +932,7 @@ u_0=_1fal(e_1,_1,)+_2fal(e_2,_2,),_0&lt;0&lt;_1&lt;1&lt;_2\u_0=-fhan(e_1,ce_2,r,
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="【控制器】---滑模控制">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="【控制器】---滑模控制">
                         
                         <span class="card-title">【控制器】---滑模控制</span>
                     </div>

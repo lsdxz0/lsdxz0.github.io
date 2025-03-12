@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -545,7 +545,12 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        <style>
+    figure figcaption {
+        display: none !important;
+    }
+</style>
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -626,7 +631,7 @@
 <p>​
 钳位二极管就是把输入电压变成峰值钳制在某一预定的电平上的输出电压，而不改变信号</p>
 <h3 id="二极管钳位电路工作原理">二极管钳位电路工作原理</h3>
-<p><img src="/medias/loading.gif" data-original="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240904163646439.png"></p>
+<p><img src="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240904163646439.png"></p>
 <ul>
 <li><p>图1：二极管正向接法，管压降0.7V，因此电阻上的电压为5.3V</p></li>
 <li><p>图二：问是输出6.7V还是2.7V</p>
@@ -637,13 +642,13 @@
 <h4 id="正钳位电路">正钳位电路</h4>
 <p>​ 由电容，负载，二极管组成</p>
 <h5 id="简单正钳位电路">简单正钳位电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909101158491.png"></p>
+<p><img src="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909101158491.png"></p>
 <ul>
 <li>输入电压在正半周期时，电流如蓝色箭头所示，二极管截止，输出电压等于电容电压加上正版周期电压，V<sub>out</sub>=2V<sub>in</sub></li>
 <li>输入电压在负半周期时，电流如红色箭头所示，二极管导通，电容充电至+V（注意这里电容方向定义为左负右正，所以输出电压为+V而不是-V），V<sub>out</sub>=0V</li>
 </ul>
 <h5 id="偏压型正钳位电路">偏压型正钳位电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909101640740.png"></p>
+<p><img src="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909101640740.png"></p>
 <p>​ 通过在电路中加入偏置电压来提高或降低钳位值</p>
 <ul>
 <li>Figure
@@ -653,13 +658,13 @@ b为反向偏压型，所加的偏压与二极管导通方向相反时，波形�
 </ul>
 <h4 id="负钳位电路">负钳位电路</h4>
 <h5 id="简单型负钳位电路">简单型负钳位电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909105453075.png"></p>
+<p><img src="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909105453075.png"></p>
 <ul>
 <li>输入Vin在正半周时（Vin上正下负），二极管导通，电流如红色箭头所示，电容两端压差充电至+V（左正右负），Vout=0V；</li>
 <li>输入Vin在负半周时（Vin上负下正），二极管截止，电流如蓝色箭头所示，Vout电压等于负的（电容电压+负半周电压），即Vout=-2V；</li>
 </ul>
 <h5 id="偏压型负钳位电路">偏压型负钳位电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909110229835.png"></p>
+<p><img src="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909110229835.png"></p>
 <p>​
 偏压型负钳位同偏压型正钳位类似，在电路中加入偏置电压来提高或者降低钳位值。</p>
 <ul>
@@ -669,7 +674,7 @@ C为反向偏压型，所加的偏压与二极管导通方向相反时，波形�
 D为正向偏压型，所加的偏压与二极管导通方向相同时，波形向下，即钳位值会降低V1。</li>
 </ul>
 <h5 id="双二极管钳位电路">双二极管钳位电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909111806043.png"></p>
+<p><img src="/2024/09/04/ji-chu-dian-lu-qian-wei-dian-lu/image-20240909111806043.png"></p>
 <ul>
 <li>A点电压大于VDD，上面的二极管导通，B点电压为Vdd+0.7V</li>
 <li>A点电压小于VDD，不满足导通条件，大于GND，下面的二极管导通，B点电压为-0.7V</li>
@@ -791,7 +796,7 @@ D为正向偏压型，所加的偏压与二极管导通方向相同时，波形�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="延时模块">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="延时模块">
                         
                         <span class="card-title">延时模块</span>
                     </div>
@@ -844,7 +849,7 @@ D为正向偏压型，所加的偏压与二极管导通方向相同时，波形�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/10.jpg" class="responsive-img" alt="复位电路">
+                        <img src="/medias/featureimages/10.jpg" class="responsive-img" alt="复位电路">
                         
                         <span class="card-title">复位电路</span>
                     </div>

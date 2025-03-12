@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -545,7 +545,12 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        <style>
+    figure figcaption {
+        display: none !important;
+    }
+</style>
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -622,11 +627,11 @@
             <div id="articleContent">
                 <h2 id="运算放大器">运算放大器</h2>
 <figure>
-<img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142143361.png" alt="运算放大器原理图">
+<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142143361.png" alt="运算放大器原理图">
 <figcaption aria-hidden="true">运算放大器原理图</figcaption>
 </figure>
 <h5 id="同相反相">同相？反相？</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829082119300.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829082119300.png"></p>
 <h3 id="了解虚短-虚断">了解“虚短” “虚断”</h3>
 <ul>
 <li>理想运放的输入阻抗无穷大----------虚断
@@ -636,7 +641,7 @@
 </ul></li>
 <li>当给运放引入负反馈时，U<sub>n</sub>=U<sub>p</sub>-------虚短
 <ul>
-<li><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142536084.png"></li>
+<li><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828142536084.png"></li>
 <li>随着反馈，U<sub>p</sub>-U<sub>N</sub>越来越小，最后基本没差，也就是在右侧的图上不断左移，U<sub>n</sub>跟U<sub>out</sub>都在不断修正，最终得到的结果就是U<sub>p</sub>=U<sub>n</sub>;</li>
 </ul></li>
 </ul>
@@ -647,7 +652,7 @@
 <li>如果同相输入(+)电压高于反相输入(-), 输出高电平</li>
 <li>如果同相输入(+)电压低于反相输入(-), 输出低电平</li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828143642353.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240828143642353.png"></p>
 <p>​ 反馈接负输入端(存疑，视频里没有反馈，搞不懂)</p>
 <p>运放在不断检测正负输入端的电压</p>
 <ul>
@@ -661,7 +666,7 @@
 <p>PS：运放处于非线性状态时：虚短不成立，虚断可以使用。</p>
 <h3 id="运算放大器的应用">运算放大器的应用</h3>
 <h5 id="同相放大电路">同相放大电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829084355954.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829084355954.png"></p>
 <p>​ 因为虚短-----&gt;V<sub>P</sub>=V-</p>
 <p>​ 因为虚断-----&gt;输入端没有电流，所以两个电阻串联</p>
 <p>​<br>
@@ -673,7 +678,7 @@ V_o=\frac{R_1+R_2}{R_2}V_p=1+\frac{R_1}{R_2}V_p
 \]</span></p>
 <p>​ 输出和输出信号是相位相同。放大倍数由Rg和Rf共同决定。</p>
 <h5 id="电压跟随器">电压跟随器</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829104518389.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829104518389.png"></p>
 <p>​
 输出电压通过反馈电阻（或直接）接到反相输入端，反相输入端不再接地，信号由正向输入端输入</p>
 <p>特点：<strong>高阻抗输入，大到兆欧级别，低阻抗输出，低到几欧姆</strong></p>
@@ -688,7 +693,7 @@ V_o=\frac{R_1+R_2}{R_2}V_p=1+\frac{R_1}{R_2}V_p
 <li>适合用于分压电路</li>
 </ul>
 <h5 id="反向放大电路">反向放大电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829085547572.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829085547572.png"></p>
 <p>​ 因为虚短-----&gt;V<sub>P</sub>=V-</p>
 <p>​ 因为虚断-----&gt;输入端没有电流，所以两个电阻串联</p>
 <p>​<br>
@@ -701,25 +706,25 @@ I_f=\frac{V_--V_o}{R_f}\leftarrow
 \]</span></p>
 <p>​ 输出和输出信号是相位相反。放大倍数由Rg和Rf共同决定。</p>
 <h5 id="加法电路">加法电路</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829090643662.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829090643662.png"></p>
 <p>假定四个电阻阻值相同，那么输出电压就等于三个电压之和了，相位相反</p>
 <p><strong>再假定有个R5，给电压限制，只有0跟1V，如图绿色部分，根据电压状态，可以得到下面的表格</strong></p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091047469.png" alt="image-20240829091047469">
+<img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091047469.png" alt="image-20240829091047469">
 <figcaption aria-hidden="true">image-20240829091047469</figcaption>
 </figure>
 <p>这个表格其实就是数模转换中的DAC</p>
 <p>每个信号的放大倍数由反馈电阻Rf与每个输入信号串联的电阻R共同决定。</p>
 <h5 id="减法器">减法器</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091838222.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829091838222.png"></p>
 <p>一般R<sub>1</sub>=R<sub>2</sub>=R<sub>A</sub>;
 R<sub>3</sub>=R<sub>4</sub>=R<sub>B</sub></p>
 <p>利用叠加定理，将其拆解为反向放大器和同相放大器，最后U<sub>O1</sub>+U<sub>02</sub>即可</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829092048410.png"> <span class="math display">\[
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829092048410.png"> <span class="math display">\[
 V_{out}=(V_B-V_A)*\frac{R_B}{R_A}
 \]</span></p>
 <h5 id="差分放大器">差分放大器</h5>
-<p><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829142127525.png"></p>
+<p><img src="/2024/08/29/mo-dian-yun-suan-fang-da-qi/image-20240829142127525.png"></p>
 <p>​ 它属于是反向比例放大的变种 <span class="math display">\[
 V_{out}=(\frac{R_1+R_2}{R_3+R_4})\times\frac{R_4}{R_1}\times
 V_2-\frac{R_2}{R_1}\times V_1
@@ -846,7 +851,7 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/9.jpg" class="responsive-img" alt="比较器">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="比较器">
                         
                         <span class="card-title">比较器</span>
                     </div>
@@ -895,7 +900,7 @@ V_{out}=\frac{R_{2}}{R_{1}}\times(V_{2}-V_{1})
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/16.jpg" class="responsive-img" alt="ADC采样">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="ADC采样">
                         
                         <span class="card-title">ADC采样</span>
                     </div>

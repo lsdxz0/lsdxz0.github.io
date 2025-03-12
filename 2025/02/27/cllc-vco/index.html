@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -545,7 +545,12 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        <style>
+    figure figcaption {
+        display: none !important;
+    }
+</style>
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -626,36 +631,36 @@
             <div id="articleContent">
                 <h2 id="simulinkvco">【simulink】VCO</h2>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227150215222.png" alt="VCO">
+<img src="/2025/02/27/cllc-vco/image-20250227150215222.png" alt="VCO">
 <figcaption aria-hidden="true">VCO</figcaption>
 </figure>
 <p>都tm长这样</p>
 <h4 id="积分模块-integrator">1.积分模块 Integrator</h4>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227153717442.png" alt="长这b样">
+<img src="/2025/02/27/cllc-vco/image-20250227153717442.png" alt="长这b样">
 <figcaption aria-hidden="true">长这b样</figcaption>
 </figure>
 <p>恒明显，长的不一样，可以开始改设置了（双击）</p>
 <h5 id="外部重置">外部重置</h5>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227153859360.png" alt="外部重置">
+<img src="/2025/02/27/cllc-vco/image-20250227153859360.png" alt="外部重置">
 <figcaption aria-hidden="true">外部重置</figcaption>
 </figure>
 <p><strong>作用：</strong>除无以外的外部条件后，积分器将增加<strong>第二个输入端口</strong></p>
 <p>这里用的是<strong>上升沿</strong>，这玩意的意思就是说，给我一个重置信号，然后这个信号<strong>从负值或0上升到正时</strong>重置状态</p>
 <p>比如我这里有个矩阵波，_|—|__|—| 就像这个，</p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227154430791.png" alt="看这个，上面是波，下面的输出">
+<img src="/2025/02/27/cllc-vco/image-20250227154430791.png" alt="看这个，上面是波，下面的输出">
 <figcaption aria-hidden="true">看这个，上面是波，下面的输出</figcaption>
 </figure>
 <p>然后他就变成了这样</p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227154530387.png" alt="一次进化">
+<img src="/2025/02/27/cllc-vco/image-20250227154530387.png" alt="一次进化">
 <figcaption aria-hidden="true">一次进化</figcaption>
 </figure>
 <h5 id="初始条件">初始条件</h5>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227154613908.png" alt="初始条件">
+<img src="/2025/02/27/cllc-vco/image-20250227154613908.png" alt="初始条件">
 <figcaption aria-hidden="true">初始条件</figcaption>
 </figure>
 <p>初始条件选外部，又多了个输入，x0</p>
@@ -664,12 +669,12 @@
 <li>选择外部则增加一个x_0输入端口用来指定积分初始值，同时初始条件对话框消失。</li>
 </ul>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227155031779.png" alt="二次进化!">
+<img src="/2025/02/27/cllc-vco/image-20250227155031779.png" alt="二次进化!">
 <figcaption aria-hidden="true">二次进化!</figcaption>
 </figure>
 <h5 id="限制输出">限制输出</h5>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250227155103097.png" alt="搞不懂">
+<img src="/2025/02/27/cllc-vco/image-20250227155103097.png" alt="搞不懂">
 <figcaption aria-hidden="true">搞不懂</figcaption>
 </figure>
 <p>inf~是无穷，看不懂，脱了裤子放屁？AI说是，看似无用，实则策略，</p>
@@ -715,9 +720,9 @@
 </tbody>
 </table>
 <p><strong>反馈是基于当前状态控制而非依赖未发生的未来值</strong></p>
-<p><img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。</p>
+<p><img src="/2025/02/27/cllc-vco/def10d8641f9ddce3c2f5363bdfe51ae.png">每次输出值到达2时下一采样时刻都会复位到0重新开始积分。并且随着仿真时间量的增大,积分值达到2所需要的时间越来越短。</p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304133829722.png" alt="究极进化">
+<img src="/2025/02/27/cllc-vco/image-20250304133829722.png" alt="究极进化">
 <figcaption aria-hidden="true">究极进化</figcaption>
 </figure>
 <h4 id="compare-to-constant1模块">2. Compare To Constant(&gt;1模块)</h4>
@@ -732,25 +737,25 @@
 <li><strong>用于触发积分器复位</strong></li>
 </ul>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304135354081.png" alt="速速重开">
+<img src="/2025/02/27/cllc-vco/image-20250304135354081.png" alt="速速重开">
 <figcaption aria-hidden="true">速速重开</figcaption>
 </figure>
 <h4 id="bias">3. bias</h4>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304135435571.png" alt="减去偏置">
+<img src="/2025/02/27/cllc-vco/image-20250304135435571.png" alt="减去偏置">
 <figcaption aria-hidden="true">减去偏置</figcaption>
 </figure>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304135455216.png" alt="参数">
+<img src="/2025/02/27/cllc-vco/image-20250304135455216.png" alt="参数">
 <figcaption aria-hidden="true">参数</figcaption>
 </figure>
 <h4 id="ic">4. IC</h4>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304140512662.png" alt="IC">
+<img src="/2025/02/27/cllc-vco/image-20250304140512662.png" alt="IC">
 <figcaption aria-hidden="true">IC</figcaption>
 </figure>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304140524557.png" alt="模块参数">
+<img src="/2025/02/27/cllc-vco/image-20250304140524557.png" alt="模块参数">
 <figcaption aria-hidden="true">模块参数</figcaption>
 </figure>
 <p>3跟4结合起来作为积分器的初始条件x（0）</p>
@@ -780,12 +785,12 @@
 </ul>
 <p>此时x0端口的输入为：</p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304141252928.png" alt="这俩模块的输出波">
+<img src="/2025/02/27/cllc-vco/image-20250304141252928.png" alt="这俩模块的输出波">
 <figcaption aria-hidden="true">这俩模块的输出波</figcaption>
 </figure>
 <h4 id="vco输出">5. VCO输出</h4>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/02/27/cllc-vco/image-20250304141541977.png" alt="输出这玩意">
+<img src="/2025/02/27/cllc-vco/image-20250304141541977.png" alt="输出这玩意">
 <figcaption aria-hidden="true">输出这玩意</figcaption>
 </figure>
 
@@ -909,7 +914,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.jpg" class="responsive-img" alt="【simulink】PWM">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【simulink】PWM">
                         
                         <span class="card-title">【simulink】PWM</span>
                     </div>
@@ -962,7 +967,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/14.jpg" class="responsive-img" alt="【CLLC】参数设计">
+                        <img src="/medias/featureimages/14.jpg" class="responsive-img" alt="【CLLC】参数设计">
                         
                         <span class="card-title">【CLLC】参数设计</span>
                     </div>

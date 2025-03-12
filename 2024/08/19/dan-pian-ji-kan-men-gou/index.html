@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -545,7 +545,12 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        <style>
+    figure figcaption {
+        display: none !important;
+    }
+</style>
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -624,18 +629,18 @@
 <p><strong>设计目的：</strong>防止死机，cpu死机后，触发看门狗，复位</p>
 <h4 id="什么是看门狗">什么是看门狗</h4>
 <p>看门狗----Watch Dog Timer 本质还是一个<strong>定时器</strong></p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819141651132.png"></p>
+<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819141651132.png"></p>
 <p>比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时255ms</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142021849.png"></p>
+<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142021849.png"></p>
 <p>看门狗到达时间后不是中断，而是<strong>重启</strong></p>
 <h4 id="怎么使用看门狗">怎么使用看门狗</h4>
-<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142124282.png"></p>
+<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142124282.png"></p>
 <p>这是一段流水灯的程序</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142239363.png"></p>
+<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142239363.png"></p>
 <p>然后加入看门狗，设置看门狗时间为50ms，当时间到达50ms，重启。所以在循环里面加入喂狗，每次进入玄幻看门狗清零，然后执行流水灯程序，用时40ms，该循环结束，重新进入循环，看门狗时间清零，如此往返，</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142621296.png"></p>
+<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142621296.png"></p>
 <p>​ 直到某次，死机了，</p>
-<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142741889.png"></p>
+<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142741889.png"></p>
 <p>程序就不会回到第一步去喂狗了，时间到达50ms，触发复位</p>
 
                 
@@ -754,7 +759,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="信号">
+                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="信号">
                         
                         <span class="card-title">信号</span>
                     </div>
@@ -803,7 +808,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="CAN总线">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CAN总线">
                         
                         <span class="card-title">CAN总线</span>
                     </div>

@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -545,7 +545,12 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <!-- 文章内容详情 -->
+        <style>
+    figure figcaption {
+        display: none !important;
+    }
+</style>
+<!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
         <div class="card-content article-info">
@@ -633,7 +638,7 @@
 <li><strong>趋近阶段：</strong>系统状态从任意初始状态趋近滑模面（从状态空间的任意位置有限时间到达滑模面s=0)</li>
 <li><strong>滑动阶段：</strong>一旦系统状态达到滑模面，它们将在滑模面上运动，对外部扰动和不确定性不敏感。(在滑模面上可以收敛到原点（平衡点)）</li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731151630068.png"></p>
+<p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731151630068.png"></p>
 <p>​
 系统状态在处于滑模面等于0（或附近）系统是稳定的，所以设计的目标就是如何使s趋近于0，从而系统稳定，比如令s的导数&lt;0.当s&gt;0时，s<sup>.</sup>&lt;0,反正s&lt;0,s<sup>.</sup>&gt;0，这样s最终趋近于0</p>
 <h4 id="优缺点">优缺点</h4>
@@ -662,7 +667,7 @@ S(x)=e(t)=x(t)-x_d(t)
 \]</span>
 其中g(x)是u前面的系数公式，大多情况下是常数表达式，也存在一些g(x)
 为x的函数的情况。下文中把f(x)和g(x)略写为f和g。</p>
-<p><img src="/medias/loading.gif" data-original="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731143721171.png"></p>
+<p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731143721171.png"></p>
 <p>立即设计<strong>滑模面</strong>，这玩意s也叫滑模切换函数 <span class="math display">\[
 \mathrm{s=c_1 e_1 + c_2 e_2 + e_3 = \sum_{i=1}^3 c_i e_i = 0}
 \]</span> 其中e<sub>3</sub>前系数为1.</p>
@@ -725,14 +730,14 @@ S(x)=e(t)=x(t)-x_d(t)
 <p>u=u<sub>eq</sub>+u<sub>sw</sub></p>
 <p>u<sub>eq</sub>是等效控制，能够实现系统状态的跟踪，即将系统的状态一直保持在滑模面上；</p>
 <p>u<sub>sw</sub>是切换控制，使系统状态趋近于滑模面，削弱系统的抖振，常用的趋近率有三种：（一般用第二种指数趋近律）</p>
-<p><img src="/medias/loading.gif" data-original="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731152801822.png"></p>
+<p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731152801822.png"></p>
 <p>​
 还记得前面提到的两个运动过程嘛。在第一段运动过程也就是趋近运动中，所谓驱动运动是指s趋向于0的过程，在这个过程中趋近律一般有如下几种设计</p>
 <p>本节将采用指数趋近律,</p>
 <p>等效控制部分，对s=c1<em>e1+c2</em>e2+e3求导得</p>
-<p><img src="/medias/loading.gif" data-original="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153256364.png"></p>
+<p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153256364.png"></p>
 <p>根据s'=0可得到等效控制：</p>
-<p><img src="/medias/loading.gif" data-original="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153308528.png"></p>
+<p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153308528.png"></p>
 <p>假如eta过小，那么趋近的速度很慢，调节的过程太慢；相反，若eta太大，那么系统到达切换面的时候，具有比较大的速度，引起较大的抖动。对于
 k，能够加快调节时间，能够快速到达滑模面的过程，还可以削弱抖振，改善系统的品质。本文中，指数趋近律的参数
 k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
@@ -742,7 +747,7 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
 \]</span></p>
 <h5 id="补充为什么控制率这么设计能保证s0">补充：为什么控制率这么设计能保证s=0</h5>
 <p>在控制原理中，用Lyapunov函数来判断系统的稳定性，对于系统状态方程s˙=cx<sub>2</sub>+u（目标已经变成s=0，因此现在写成s的状态方程），对于平衡点s，如果存在一个连续函数V满足</p>
-<p><img src="/medias/loading.gif" data-original="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153854650.png"></p>
+<p><img src="/2024/07/31/kong-zhi-qi-hua-mo-kong-zhi/image-20240731153854650.png"></p>
 <p>那么系统将在平衡点s=0处稳定，即<span class="math inline">\(\operatorname*{lim}_{t\to\infty}s=0\)</span>
 令<span class="math inline">\(V(s,t)=1/2s^{2}\)</span>)，很明显满足第一个条件，第二个条件<span class="math inline">\(\dot{V}=s\dot{s}=-s\varepsilon
 \mathrm{sgn}(s)=-\varepsilon\left|s\right|&lt;0\)</span>也满足。满足Lyapunov函数的条件，s最终会稳定滑模面，也就是s=0。</p>
@@ -864,7 +869,7 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/21.jpg" class="responsive-img" alt="【控制器】---自抗扰控制器">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="【控制器】---自抗扰控制器">
                         
                         <span class="card-title">【控制器】---自抗扰控制器</span>
                     </div>
@@ -913,7 +918,7 @@ k 为 20， eta为 5。所以切换控制为： <span class="math display">\[
                     <div class="card-image">
                         
                         
-                        <img src="/medias/loading.gif" data-original="/medias/featureimages/5.jpg" class="responsive-img" alt="【控制器】---PID控制器">
+                        <img src="/medias/featureimages/5.jpg" class="responsive-img" alt="【控制器】---PID控制器">
                         
                         <span class="card-title">【控制器】---PID控制器</span>
                     </div>
