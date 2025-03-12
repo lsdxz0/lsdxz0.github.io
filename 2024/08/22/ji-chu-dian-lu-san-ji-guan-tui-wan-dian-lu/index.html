@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -631,20 +631,20 @@
 <p>​ 电流驱动能力不足，加一个推挽电路，用于驱动后续电路</p>
 <h4 id="原理分析">原理分析</h4>
 <figure>
-<img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019">
+<img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019">
 <figcaption aria-hidden="true">image-20240822100523019</figcaption>
 </figure>
 <p>上面的三极管为npn三极管，下面的是pnp管，前面是限流电阻，两个三极管的中间位置是信号的输出</p>
 <p><strong>分析方波</strong></p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101025688.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101025688.png"></p>
 <p>​
 对于Q2，它的基极电压为5V，发射极电压4.3V，对于PNP来说，导通要求基极电压需要低于发射极0.7V，因此它反向偏置不导通，Q1为NPN型，基极电压大于0.7V，集电极-发射极电压为正，可以导通，经过管压降为4.3V（输出）</p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101820094.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101820094.png"></p>
 <p>​
 由此，实现了上方三极管导通的时候下方断，输出高电平，上方断的时候下方导通，输出为低电平。这里最后输出的是0.7V</p>
 <p><strong>分析实际方波，存在斜率</strong></p>
 <p><strong>分析上升过程</strong></p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p>
 <p>下降过程不再赘述，在实际中，也不会出现Q12同时导通的情况</p>
 <h5 id="输入输出">输入输出</h5>
 <ul>
@@ -661,7 +661,7 @@
 <p>​
 为啥会有这个问题，因为一般的三极管都是集电极输出，但是在这里，两个三极管都是发射极输出</p>
 <figure>
-<img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822104254575.png" alt="image-20240822104254575">
+<img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822104254575.png" alt="image-20240822104254575">
 <figcaption aria-hidden="true">image-20240822104254575</figcaption>
 </figure>
 <p>对于三极管，BE之间可以视为二极管，如果上面是PNP，下面是NPN，就会直接导通，容易烧坏三极管</p>
@@ -669,7 +669,7 @@
 <p>推挽放大器由<strong>2个晶体管</strong>组成，其中一个是<strong>NPN型</strong>，另外一个<strong>PNP型</strong>。<strong>一个晶体管在正半周期推动输出，另一个在负半周期拉动输出，因此被称为推挽放大器。</strong></p>
 <p>主要优点是当没有信号时，输出晶体管没有功耗。推挽放大电路有多种类型，但<strong>通常将B类放大器视为推挽放大器。</strong></p>
 <h4 id="a类放大器">A类放大器</h4>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png"></p>
 <p>​
 仅由一个设置为<strong>始终保持导通状态的开关晶体管</strong>组成，产生<strong>最小的失真</strong>和<strong>最大幅度的输出信号</strong>。</p>
 <p>​ A类放大器的效率很低，接近30%。即使没有连接输入信号，A
@@ -679,7 +679,7 @@
 类放大器的效率高于 A 类放大器，因为它由两个晶体管 NPN 和 PNP 组成。</p>
 <p>​ B
 类放大器电路<strong>每个晶体管将在输入波形的一个半周期内工作</strong>。因此，这类放大电路的导通角为180度。一个晶体管在正半周期推动输出，而另一个在负半周期拉动输出，这就是它被称为<strong>推挽放大器</strong>的原因。</p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png"></p>
 <h5 id="交叉失真">交叉失真</h5>
 <p>​ B 类通常会受到称为<strong>交叉失真</strong>的影响，其中信号在 0V
 时失真。我们知道，晶体管需要在其基极 - 发射极结处提供 0.7v
@@ -694,7 +694,7 @@ AB 类放大器。</p>
 <p>​ 从 0V 到
 0.7V，<strong>二极管偏置在导通状态，此时晶体管在基极没有信号。这解决了交叉失真问题。</strong></p>
 <figure>
-<img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822110004707.png" alt="image-20240822110004707">
+<img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822110004707.png" alt="image-20240822110004707">
 <figcaption aria-hidden="true">image-20240822110004707</figcaption>
 </figure>
 
@@ -814,60 +814,11 @@ AB 类放大器。</p>
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/26/tuo-bu-ban-qiao-bian-huan-qi/">
-                    <div class="card-image">
-                        
-                        
-                        <img src="/medias/featureimages/13.jpg" class="responsive-img" alt="半桥变换器">
-                        
-                        <span class="card-title">半桥变换器</span>
-                    </div>
-                </a>
-                <div class="card-content article-content">
-                    <div class="summary block-with-text">
-                        
-                            
-                        
-                    </div>
-                    <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-26
-                        </span>
-                        <span class="publish-author">
-                            
-                            <i class="fas fa-bookmark fa-fw icon-category"></i>
-                            
-                            <a href="/categories/%E6%8B%93%E6%89%91/" class="post-category">
-                                    拓扑
-                                </a>
-                            
-                            
-                        </span>
-                    </div>
-                </div>
-                
-                <div class="card-action article-tags">
-                    
-                    <a href="/tags/%E5%8D%8A%E6%A1%A5/">
-                        <span class="chip bg-color">半桥</span>
-                    </a>
-                    
-                </div>
-                
-            </div>
-        </div>
-        
-        
-        <div class="article col s12 m6" data-aos="fade-up">
-            <div class="article-badge right-badge text-color">
-                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
-            </div>
-            <div class="card">
                 <a href="/2024/08/22/ji-chu-dian-lu-emi-lu-bo-dian-lu/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="EMI滤波">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/15.jpg" class="responsive-img" alt="EMI滤波">
                         
                         <span class="card-title">EMI滤波</span>
                     </div>
@@ -879,9 +830,9 @@ AB 类放大器。</p>
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-08-22
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
@@ -907,6 +858,55 @@ AB 类放大器。</p>
                     
                     <a href="/tags/%E6%BB%A4%E6%B3%A2/">
                         <span class="chip bg-color">滤波</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2024/08/21/qi-jian-01mos-guan/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/3.jpg" class="responsive-img" alt="电子器件01-----MOS管">
+                        
+                        <span class="card-title">电子器件01-----MOS管</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2024-08-21
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E7%94%B5%E5%AD%90%E5%99%A8%E4%BB%B6/" class="post-category">
+                                    电子器件
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/MOS%E7%AE%A1/">
+                        <span class="chip bg-color">MOS管</span>
                     </a>
                     
                 </div>
@@ -1062,7 +1062,7 @@ AB 类放大器。</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.9k</span>&nbsp;字
+                class="white-color">58.8k</span>&nbsp;字
             
             
             
@@ -1281,6 +1281,19 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>

@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -624,18 +624,18 @@
 <p><strong>设计目的：</strong>防止死机，cpu死机后，触发看门狗，复位</p>
 <h4 id="什么是看门狗">什么是看门狗</h4>
 <p>看门狗----Watch Dog Timer 本质还是一个<strong>定时器</strong></p>
-<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819141651132.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819141651132.png"></p>
 <p>比如这样一个八位的定时器，他最多可定时255个脉冲，if一个脉冲时间为1ms，就可以定时255ms</p>
-<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142021849.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142021849.png"></p>
 <p>看门狗到达时间后不是中断，而是<strong>重启</strong></p>
 <h4 id="怎么使用看门狗">怎么使用看门狗</h4>
-<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142124282.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142124282.png"></p>
 <p>这是一段流水灯的程序</p>
-<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142239363.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142239363.png"></p>
 <p>然后加入看门狗，设置看门狗时间为50ms，当时间到达50ms，重启。所以在循环里面加入喂狗，每次进入玄幻看门狗清零，然后执行流水灯程序，用时40ms，该循环结束，重新进入循环，看门狗时间清零，如此往返，</p>
-<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142621296.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142621296.png"></p>
 <p>​ 直到某次，死机了，</p>
-<p><img src="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142741889.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/19/dan-pian-ji-kan-men-gou/image-20240819142741889.png"></p>
 <p>程序就不会回到第一步去喂狗了，时间到达50ms，触发复位</p>
 
                 
@@ -754,7 +754,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/22.jpg" class="responsive-img" alt="信号">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/22.jpg" class="responsive-img" alt="信号">
                         
                         <span class="card-title">信号</span>
                     </div>
@@ -803,7 +803,7 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="CAN总线">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/4.jpg" class="responsive-img" alt="CAN总线">
                         
                         <span class="card-title">CAN总线</span>
                     </div>
@@ -990,7 +990,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.9k</span>&nbsp;字
+                class="white-color">58.8k</span>&nbsp;字
             
             
             
@@ -1209,6 +1209,19 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>

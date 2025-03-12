@@ -186,7 +186,7 @@
                 <a href="/" class="waves-effect waves-light">
                     <div>
                         
-                            <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                            <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img" alt="LOGO">
                         
                         <span class="logo-span">LSDXZ</span>
                     </div>
@@ -275,7 +275,7 @@
 
     <div class="mobile-head bg-color">
         
-        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        <img src="/medias/loading.gif" data-original="/medias/logo.png" class="logo-img circle responsive-img">
         
         <div class="logo-name">LSDXZ</div>
         <div class="logo-desc">
@@ -636,7 +636,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
 <ul>
 <li>模拟信号转化成数字信号也需要时间，所以得保持</li>
 <li>可以通过并联电容实现</li>
-<li><img src="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829111018070.png"></li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829111018070.png"></li>
 </ul></li>
 <li>量化
 <ul>
@@ -644,7 +644,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
 <li>常用方法有两种，只舍不入；四舍五入</li>
 <li>量化过程会产生量化误差，它是一种无法消除的原理性误差，ADC的位数越高，离散电平之间的误差越小，量化误差也会越小</li>
 <li>如下图所示，第二个图为采样后的信号，第三个图为量化后，当设置较小的量化位数时，可以明显的看出量化后为阶梯型，但更低的量化位数代表更大的量化误差，更高的量化位数表示信号的数字表示更接近于原始模拟信号</li>
-<li><img src="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829133757370.png"></li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829133757370.png"></li>
 <li>量化位数指的是每个样本在数字表示时使用的比特数，决定可以用来表示信号的离散电平数量，<strong>8-bit</strong>
 量化：信号被分为 2<sup>8</sup>=256 个离散电平。</li>
 </ul></li>
@@ -662,19 +662,19 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
 <p>​
 给行驶的汽车拍照，采样率就是按快门的频率，按得越快，越能还原汽车行驶过程。那如果慢了，两张照片显示从A-D，但是中间是走的B还是走的C你就不知道了，在信号里就是出现了<strong>混叠</strong></p>
 <p>​ 混叠是指在信号的采样频率低于两倍Nyquist频率时，
-采样数据中出现虚假的低频成分现象。<img src="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829135342291.png"></p>
+采样数据中出现虚假的低频成分现象。<img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829135342291.png"></p>
 <p>​
 灰色波形表示实际测试高频信号，但由于采样率不够，会出现红色虚线所对应的波形，导致原波形频率降低，出现虚假的重建低频信号。</p>
 <ul>
 <li>假定采样率f<sub>s</sub>=f<sub>N</sub>
 <ul>
 <li>采样频率与信号频率相同，所以采样点总是出现在信号波形的同一个位置上，即在每个采样周期内，采集的点都是信号在相同位置的值，那么把这些采样点连接起来的话，就是一条直线了，而不是反映信号实际波动的波形</li>
-<li><img src="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829135850050.png"></li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829135850050.png"></li>
 </ul></li>
 <li>假设采样率fs= （4/3）*fN
 <ul>
 <li>在不同周期内ADC采集点数不一样，有时候采集2个点，有时候采集1个点，最后绘制图形严重失真，证明假设不成立。</li>
-<li><img src="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829140000267.png"></li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/29/mo-dian-cai-yang-ji-chu/image-20240829140000267.png"></li>
 </ul></li>
 <li>假设采样率fs=2fN
 <ul>
@@ -819,7 +819,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="运算放大器">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/0.jpg" class="responsive-img" alt="运算放大器">
                         
                         <span class="card-title">运算放大器</span>
                     </div>
@@ -868,7 +868,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/18.jpg" class="responsive-img" alt="电子器件02-----二极管">
+                        <img src="/medias/loading.gif" data-original="/medias/featureimages/18.jpg" class="responsive-img" alt="电子器件02-----二极管">
                         
                         <span class="card-title">电子器件02-----二极管</span>
                     </div>
@@ -1055,7 +1055,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">56.9k</span>&nbsp;字
+                class="white-color">58.8k</span>&nbsp;字
             
             
             
@@ -1274,6 +1274,19 @@ $(function () {
     <script src="/libs/instantpage/instantpage.js" type="module"></script>
     
 
-</body>
+
+        <style>
+            [bg-lazy] {
+                background-image: none !important;
+                background-color: #eee !important;
+            }
+        </style>
+        <script>
+            window.imageLazyLoadSetting = {
+                isSPA: false,
+                preloadRatio: 1,
+                processImages: null,
+            };
+        </script><script>window.addEventListener("load",function(){var t=/\.(gif|jpg|jpeg|tiff|png)$/i,r=/^data:image\/[a-z\d\-\.\+]+;base64,/;Array.prototype.slice.call(document.querySelectorAll("img[data-original]")).forEach(function(a){var e=a.parentNode;"A"===e.tagName&&(t.test(e.href)||r.test(e.href))&&(e.href=a.dataset.original)})});</script><script>(r=>{r.imageLazyLoadSetting.processImages=t;var a=r.imageLazyLoadSetting.isSPA,o=r.imageLazyLoadSetting.preloadRatio||1,d=i();function i(){var t=Array.prototype.slice.call(document.querySelectorAll("img[data-original]")),e=Array.prototype.slice.call(document.querySelectorAll("[bg-lazy]"));return t.concat(e)}function t(t){(a||t)&&(d=i());for(var e,n=0;n<d.length;n++)0<=(e=(e=d[n]).getBoundingClientRect()).bottom&&0<=e.left&&e.top<=(r.innerHeight*o||document.documentElement.clientHeight*o)&&(()=>{var t,e,a,o,i=d[n];e=function(){d=d.filter(function(t){return i!==t}),r.imageLazyLoadSetting.onImageLoaded&&r.imageLazyLoadSetting.onImageLoaded(i)},(t=i).dataset.loaded||(t.hasAttribute("bg-lazy")?(t.removeAttribute("bg-lazy"),e&&e()):(a=new Image,o=t.getAttribute("data-original"),a.onload=function(){t.src=o,t.removeAttribute("data-original"),t.setAttribute("data-loaded",!0),e&&e()},a.onerror=function(){t.removeAttribute("data-original"),t.setAttribute("data-loaded",!1),t.src=o},t.src!==o&&(a.src=o)))})()}function e(){clearTimeout(t.tId),t.tId=setTimeout(t,500)}t(),document.addEventListener("scroll",e),r.addEventListener("resize",e),r.addEventListener("orientationchange",e)})(this);</script></body>
 
 </html>
