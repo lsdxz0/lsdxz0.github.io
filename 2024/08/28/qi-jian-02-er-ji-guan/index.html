@@ -545,11 +545,24 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <style>
+        <!--  隐藏figcaption产生的标题 -->
+<style>
     figure figcaption {
         display: none !important;
     }
 </style>
+
+<!-- 超链接 -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let content = document.getElementById("articleContent");
+    if (content) {
+        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+    }
+});
+</script>
+
+
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -1006,7 +1019,7 @@ I<sub>R</sub>=V<sub>R</sub>/R<sub>L</sub>(R<sub>L</sub>是与二极管串联的�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.8k</span>&nbsp;字
+                class="white-color">58.9k</span>&nbsp;字
             
             
             

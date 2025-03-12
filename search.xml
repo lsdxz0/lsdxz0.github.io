@@ -58,18 +58,33 @@
       </tags>
   </entry>
   <entry>
-    <title></title>
+    <title>hexo</title>
     <url>/2025/03/12/hexo/</url>
-    <content><![CDATA[<h2 id="section">1.</h2>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>美化：<a href="https://pamarus.github.io/2020/06/11/hexo-bo-ke-da-jian-8-ti-huan-shi-yong-matery-zhu-ti-ji-xiang-xi-pei-zhi/#toc-heading-62">Hexo博客搭建（8）：替换使用matery主题及详细配置
-| Pamarus</a></p>
-<h3 id="记录出现的问题">记录出现的问题</h3>
+    <content><![CDATA[<h2 id="记录搭建博客出现的问题">记录搭建博客出现的问题</h2>
 <h4 id="部分文章的图片不显示">1. 部分文章的图片不显示</h4>
 <ul>
 <li>路径问题，存图片的文件夹不能有空格</li>
 </ul>
+<h4 id="图片名称重复显示">2. 图片名称重复显示</h4>
+<p><img src="/medias/loading.gif" data-original="/2025/03/12/hexo/image-20250312144548200.png"></p>
+<p>​ 大概就是这样，然后F12查看代码</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/12/hexo/image-20250312144637255.png"></p>
+<p>图片名显示两次（一次在 <code>alt</code>，一次在
+<code>figcaption</code>）。</p>
+<p>这里采用的方法是把在 <code>figcaption</code>的隐藏掉</p>
+<p><strong>步骤</strong></p>
+<ol type="1">
+<li><p>打开
+<code>themes/matery/layout/_partial/post-detail.ejs</code></p></li>
+<li><p>在</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">文章最开头直接复制</span><br></pre></td></tr></table></figure>
+<p>里面添加：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-tag">figure</span> <span class="selector-tag">figcaption</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
 ]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
   </entry>
   <entry>
     <title>【simulink】PI控制器</title>

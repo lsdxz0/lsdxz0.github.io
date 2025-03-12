@@ -4,7 +4,7 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="LSDXZ">
+    <meta name="keywords" content="hexo, LSDXZ">
     <meta name="description" content="">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
@@ -16,7 +16,7 @@
     <!-- Global site tag (gtag.js) - Google Analytics -->
 
 
-    <title>LSDXZ</title>
+    <title>hexo | LSDXZ</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
@@ -433,12 +433,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/0.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/4.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title"></h1>
+                    <h1 class="description center-align post-title">hexo</h1>
                 </div>
             </div>
         </div>
@@ -545,11 +545,24 @@
 </style>
 <div class="row">
     <div id="main-content" class="col s12 m12 l9">
-        <style>
+        <!--  隐藏figcaption产生的标题 -->
+<style>
     figure figcaption {
         display: none !important;
     }
 </style>
+
+<!-- 超链接 -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    let content = document.getElementById("articleContent");
+    if (content) {
+        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+    }
+});
+</script>
+
+
 <!-- 文章内容详情 -->
 <div id="artDetail">
     <div class="card">
@@ -563,6 +576,15 @@
                     
                 </div>
                 <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/hexo/" class="post-category">
+                                hexo
+                            </a>
+                        
+                    </div>
                     
                 </div>
             </div>
@@ -580,7 +602,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    59
+                    130
                 </div>
                 
 
@@ -612,15 +634,27 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="section">1.</h2>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>美化：<a target="_blank" rel="noopener" href="https://pamarus.github.io/2020/06/11/hexo-bo-ke-da-jian-8-ti-huan-shi-yong-matery-zhu-ti-ji-xiang-xi-pei-zhi/#toc-heading-62">Hexo博客搭建（8）：替换使用matery主题及详细配置
-| Pamarus</a></p>
-<h3 id="记录出现的问题">记录出现的问题</h3>
+                <h2 id="记录搭建博客出现的问题">记录搭建博客出现的问题</h2>
 <h4 id="部分文章的图片不显示">1. 部分文章的图片不显示</h4>
 <ul>
 <li>路径问题，存图片的文件夹不能有空格</li>
 </ul>
+<h4 id="图片名称重复显示">2. 图片名称重复显示</h4>
+<p><img src="/medias/loading.gif" data-original="/2025/03/12/hexo/image-20250312144548200.png"></p>
+<p>​ 大概就是这样，然后F12查看代码</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/12/hexo/image-20250312144637255.png"></p>
+<p>图片名显示两次（一次在 <code>alt</code>，一次在
+<code>figcaption</code>）。</p>
+<p>这里采用的方法是把在 <code>figcaption</code>的隐藏掉</p>
+<p><strong>步骤</strong></p>
+<ol type="1">
+<li><p>打开
+<code>themes/matery/layout/_partial/post-detail.ejs</code></p></li>
+<li><p>在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">文章最开头直接复制</span><br></pre></td></tr></table></figure>
+<p>里面添加：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-tag">figure</span> <span class="selector-tag">figcaption</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
 
                 
             </div>
@@ -735,9 +769,9 @@
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="">
+                        <img src="/medias/featureimages/4.jpg" class="responsive-img" alt="hexo">
                         
-                        <span class="card-title"></span>
+                        <span class="card-title">hexo</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -752,8 +786,12 @@
                             </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            LS
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
                             
                         </span>
                     </div>
@@ -957,7 +995,7 @@
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.8k</span>&nbsp;字
+                class="white-color">58.9k</span>&nbsp;字
             
             
             
