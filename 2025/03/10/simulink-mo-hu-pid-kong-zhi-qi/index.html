@@ -554,13 +554,29 @@
 
 <!-- 超链接 -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+async function fetchTitle(url) {
+    try {
+        let response = await fetch(url, { method: 'HEAD' });
+        let title = url.replace(/https?:\/\/|www\.|\/.*/g, ''); // 默认使用域名
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+    } catch (error) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async function() {
     let content = document.getElementById("articleContent");
     if (content) {
-        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+        let urls = content.innerHTML.match(/\b(https?:\/\/[^\s<]+)(?=\s|$)/g) || [];
+        for (let url of urls) {
+            let titleLink = await fetchTitle(url);
+            content.innerHTML = content.innerHTML.replace(url, titleLink);
+        }
     }
 });
 </script>
+
+
 
 
 <!-- 文章内容详情 -->
@@ -699,8 +715,7 @@ e其实很好理解，输入-输出就是我们的误差，也就是开头的sum
 <h5 id="gain增益模块">Gain（增益模块）</h5>
 <p>量化因子</p>
 <h3 id="模糊控制">3. 模糊控制</h3>
-<p>​
-https://blog.csdn.net/orangekmj/article/details/123499412?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=%E6%A8%A1%E7%B3%8API%E4%BB%BF%E7%9C%9F&amp;utm_medium=distribute.pc_search_result.none-task-blog-2<sub>all</sub>sobaiduweb~default-1-123499412.142</p>
+<p>​ <a target="_blank" rel="noopener" href="https://blog.csdn.net/orangekmj/article/details/123499412?ops_request_misc=&amp;request_id=&amp;biz_id=102&amp;utm_term=%E6%A8%A1%E7%B3%8API%E4%BB%BF%E7%9C%9F&amp;utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduweb~default-1-123499412.142">模糊PI控制的Simulink仿真（保姆级别）</a></p>
 <h4 id="在matlab命令行中输入fuzzy">3.1 在matlab命令行中输入fuzzy</h4>
 <p>​ 就打开了下图这玩意</p>
 <figure>
@@ -1173,7 +1188,7 @@ u(t) = K_p \cdot e + K_s \cdot \int e \, dt + K_d \cdot \frac{de}{dt}
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59k</span>&nbsp;字
+                class="white-color">59.1k</span>&nbsp;字
             
             
             

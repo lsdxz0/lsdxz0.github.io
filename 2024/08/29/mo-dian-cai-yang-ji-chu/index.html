@@ -554,13 +554,29 @@
 
 <!-- 超链接 -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+async function fetchTitle(url) {
+    try {
+        let response = await fetch(url, { method: 'HEAD' });
+        let title = url.replace(/https?:\/\/|www\.|\/.*/g, ''); // 默认使用域名
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+    } catch (error) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async function() {
     let content = document.getElementById("articleContent");
     if (content) {
-        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+        let urls = content.innerHTML.match(/\b(https?:\/\/[^\s<]+)(?=\s|$)/g) || [];
+        for (let url of urls) {
+            let titleLink = await fetchTitle(url);
+            content.innerHTML = content.innerHTML.replace(url, titleLink);
+        }
     }
 });
 </script>
+
+
 
 
 <!-- 文章内容详情 -->
@@ -833,13 +849,13 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/08/29/mo-dian-yun-suan-fang-da-qi/">
+                <a href="/2024/08/29/mo-dian-bi-jiao-qi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="运算放大器">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="比较器">
                         
-                        <span class="card-title">运算放大器</span>
+                        <span class="card-title">比较器</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -867,8 +883,8 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E8%BF%90%E6%94%BE/">
-                        <span class="chip bg-color">运放</span>
+                    <a href="/tags/%E6%AF%94%E8%BE%83%E5%99%A8/">
+                        <span class="chip bg-color">比较器</span>
                     </a>
                     
                 </div>
@@ -1073,7 +1089,7 @@ ADC是将模拟信号按照一定的采样频率进行离散化然后转换为�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59k</span>&nbsp;字
+                class="white-color">59.1k</span>&nbsp;字
             
             
             

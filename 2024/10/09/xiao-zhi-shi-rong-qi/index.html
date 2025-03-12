@@ -554,13 +554,29 @@
 
 <!-- 超链接 -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+async function fetchTitle(url) {
+    try {
+        let response = await fetch(url, { method: 'HEAD' });
+        let title = url.replace(/https?:\/\/|www\.|\/.*/g, ''); // 默认使用域名
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+    } catch (error) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async function() {
     let content = document.getElementById("articleContent");
     if (content) {
-        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+        let urls = content.innerHTML.match(/\b(https?:\/\/[^\s<]+)(?=\s|$)/g) || [];
+        for (let url of urls) {
+            let titleLink = await fetchTitle(url);
+            content.innerHTML = content.innerHTML.replace(url, titleLink);
+        }
     }
 });
 </script>
+
+
 
 
 <!-- 文章内容详情 -->
@@ -1015,7 +1031,7 @@ Docker利用‘’容器‘’技术，将应用程序及其所有依赖项打�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59k</span>&nbsp;字
+                class="white-color">59.1k</span>&nbsp;字
             
             
             

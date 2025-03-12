@@ -554,13 +554,29 @@
 
 <!-- 超链接 -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+async function fetchTitle(url) {
+    try {
+        let response = await fetch(url, { method: 'HEAD' });
+        let title = url.replace(/https?:\/\/|www\.|\/.*/g, ''); // 默认使用域名
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+    } catch (error) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async function() {
     let content = document.getElementById("articleContent");
     if (content) {
-        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+        let urls = content.innerHTML.match(/\b(https?:\/\/[^\s<]+)(?=\s|$)/g) || [];
+        for (let url of urls) {
+            let titleLink = await fetchTitle(url);
+            content.innerHTML = content.innerHTML.replace(url, titleLink);
+        }
     }
 });
 </script>
+
+
 
 
 <!-- 文章内容详情 -->
@@ -602,7 +618,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    232
+                    362
                 </div>
                 
 
@@ -667,6 +683,27 @@ https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML</p
 </ul></li>
 </ul>
 <p>​ 重新生成，正确显示</p>
+<h4 id="超链接不显示存疑">4. 超链接不显示(存疑)</h4>
+<p><strong>问题：</strong></p>
+<figure>
+<img src="/medias/loading.gif" data-original="/2025/03/12/hexo/image-20250312150829669.png" alt="超链接显示问题">
+<figcaption aria-hidden="true">超链接显示问题</figcaption>
+</figure>
+<p><strong>解决：</strong></p>
+<ol type="1">
+<li><p><strong>打开
+<code>themes/matery/layout/_partial/post-detail.ejs</code></strong></p></li>
+<li><p><strong>在 <code>&lt;/body&gt;</code> 之前，替换为以下 JavaScript
+代码</strong>：</p></li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="language-javascript"></span></span><br><span class="line"><span class="language-javascript"><span class="variable language_">document</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;DOMContentLoaded&quot;</span>, <span class="keyword">function</span>(<span class="params"></span>) &#123;</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">let</span> content = <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&quot;articleContent&quot;</span>);</span></span><br><span class="line"><span class="language-javascript">    <span class="keyword">if</span> (content) &#123;</span></span><br><span class="line"><span class="language-javascript">        content.<span class="property">innerHTML</span> = content.<span class="property">innerHTML</span>.<span class="title function_">replace</span>(</span></span><br><span class="line"><span class="language-javascript">            <span class="regexp">/\b(https?:\/\/[^\s&lt;]+)(?=\s|$)/g</span>, </span></span><br><span class="line"><span class="language-javascript">            <span class="string">&#x27;&lt;a href=&quot;$1&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;$1&lt;/a&gt;&#x27;</span></span></span><br><span class="line"><span class="language-javascript">        );</span></span><br><span class="line"><span class="language-javascript">    &#125;</span></span><br><span class="line"><span class="language-javascript">&#125;);</span></span><br><span class="line"><span class="language-javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="3" type="1">
+<li><strong>保存后，重新生成博客</strong></li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+<p><strong>解决：</strong></p>
+<p>​ 别直接cv链接，用</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[文章名](链接)</span><br></pre></td></tr></table></figure>
 
                 
             </div>
@@ -1007,7 +1044,7 @@ https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML</p
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59k</span>&nbsp;字
+                class="white-color">59.1k</span>&nbsp;字
             
             
             

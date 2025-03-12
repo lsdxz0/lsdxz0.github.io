@@ -554,13 +554,29 @@
 
 <!-- 超链接 -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+async function fetchTitle(url) {
+    try {
+        let response = await fetch(url, { method: 'HEAD' });
+        let title = url.replace(/https?:\/\/|www\.|\/.*/g, ''); // 默认使用域名
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>`;
+    } catch (error) {
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+    }
+}
+
+document.addEventListener("DOMContentLoaded", async function() {
     let content = document.getElementById("articleContent");
     if (content) {
-        content.innerHTML = content.innerHTML.replace(/(https?:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+        let urls = content.innerHTML.match(/\b(https?:\/\/[^\s<]+)(?=\s|$)/g) || [];
+        for (let url of urls) {
+            let titleLink = await fetchTitle(url);
+            content.innerHTML = content.innerHTML.replace(url, titleLink);
+        }
     }
 });
 </script>
+
+
 
 
 <!-- 文章内容详情 -->
@@ -795,13 +811,13 @@ document.addEventListener("DOMContentLoaded", function() {
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/">
+                <a href="/2024/09/14/diao-zhi-pwm-yi-xiang/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="数据分析--01. 描述性分析">
+                        <img src="/medias/featureimages/15.jpg" class="responsive-img" alt="调制方式---PWM移相">
                         
-                        <span class="card-title">数据分析--01. 描述性分析</span>
+                        <span class="card-title">调制方式---PWM移相</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -812,14 +828,14 @@ document.addEventListener("DOMContentLoaded", function() {
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-11
+                            <i class="far fa-clock fa-fw icon-date"></i>2024-09-14
                         </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E6%AF%94%E8%B5%9B/" class="post-category">
-                                    比赛
+                            <a href="/categories/%E8%B0%83%E5%88%B6/" class="post-category">
+                                    调制
                                 </a>
                             
                             
@@ -829,12 +845,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">
-                        <span class="chip bg-color">数学建模</span>
-                    </a>
-                    
-                    <a href="/tags/%E6%AF%94%E8%B5%9B/">
-                        <span class="chip bg-color">比赛</span>
+                    <a href="/tags/%E7%A7%BB%E7%9B%B8/">
+                        <span class="chip bg-color">移相</span>
                     </a>
                     
                 </div>
@@ -848,13 +860,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/2024/09/11/shu-xue-jian-mo-shu-ju-chu-li/">
+                <a href="/2024/09/11/shu-xue-jian-mo-shu-ju-fen-xi-01.miao-shu-xing-fen-xi/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="数据处理">
+                        <img src="/medias/featureimages/21.jpg" class="responsive-img" alt="数据分析--01. 描述性分析">
                         
-                        <span class="card-title">数据处理</span>
+                        <span class="card-title">数据分析--01. 描述性分析</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
@@ -1043,7 +1055,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59k</span>&nbsp;字
+                class="white-color">59.1k</span>&nbsp;字
             
             
             
