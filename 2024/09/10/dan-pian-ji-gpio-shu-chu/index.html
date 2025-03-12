@@ -644,25 +644,25 @@ document.addEventListener("DOMContentLoaded", function() {
             <div id="articleContent">
                 <h2 id="gpio输出">GPIO输出</h2>
 <h3 id="gpio内部示意图">GPIO内部示意图</h3>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083607163.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083607163.png"></p>
 <p>​ 所以GPIO配置为输出时，就会处于这三种状态</p>
 <h3 id="推挽输出">推挽输出</h3>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083742242.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083742242.png"></p>
 <p>把这俩拿出来做个组合</p>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083819842.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083819842.png"></p>
 <p>​ 输出高电平为推，把电流推出去</p>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083844787.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910083844787.png"></p>
 <p>​
 输出为低电平的时候，电流流入，给外面的MOS的栅极放电，给电流挽回来</p>
 <h3 id="开漏输出">开漏输出</h3>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153145304.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153145304.png"></p>
 <p>这个组合里，上面的MOS一直是关闭的，这时候下面MOS管的漏极就相当于啥也没接，就是<strong>开漏</strong></p>
 <figure>
-<img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153254163.png" alt="image-20240910153254163">
+<img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153254163.png" alt="image-20240910153254163">
 <figcaption aria-hidden="true">image-20240910153254163</figcaption>
 </figure>
 <p><strong>第一个作用</strong></p>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153441565.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153441565.png"></p>
 <ul>
 <li>Q2关闭，输出为高阻态，这时候给他一个上拉电阻，输出为3.3V的高电平</li>
 <li>Q2打开，电压全部落在上拉电阻上，该点处电压为低电平</li>
@@ -670,9 +670,9 @@ document.addEventListener("DOMContentLoaded", function() {
 <p><strong>第二个作用</strong></p>
 <p>​ 实现几个GPIO同时控制一个输入</p>
 <p><strong>如果用推挽的话</strong></p>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153734659.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153734659.png"></p>
 <p>所以需要把两个GPIO配置为开漏模式，然后再外接一个上拉电阻</p>
-<p><img src="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153821628.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/10/dan-pian-ji-gpio-shu-chu/image-20240910153821628.png"></p>
 <p>​ 只要有任意一个GPIO输出低电平，这边的enable就是低电平</p>
 <p>​ 如果都处于高阻态，就输出高电平</p>
 
@@ -1032,7 +1032,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

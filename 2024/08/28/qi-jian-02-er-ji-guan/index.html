@@ -642,32 +642,32 @@ document.addEventListener("DOMContentLoaded", function() {
 <h3 id="前言">前言</h3>
 <p>​ 二极管的本质是由P型半导体和N型半导体接触形成的PN结</p>
 <p>​ PN结除了构成单向到点的二极管外，还存在一个结电容</p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082007449.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082007449.png"></p>
 <p><strong>结电容会导致‘双向’导电</strong></p>
 <h3 id="反向恢复时间">反向恢复时间</h3>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082922646.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082922646.png"></p>
 <h5 id="对于二极管串联电阻的情况">对于二极管串联电阻的情况</h5>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082952128.png"></p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083004153.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828082952128.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083004153.png"></p>
 <p>在t<sub>1</sub>时刻，电压反向，但二极管的并<strong>不是立即截止</strong>，而是由正向的I<sub>F</sub>变成一个很大的反向电流
 I<sub>R</sub>=V<sub>R</sub>/R<sub>L</sub>(R<sub>L</sub>是与二极管串联的电阻)这个电流维持一段时间t<sub>S</sub>之后才逐渐下降，再经过t<sub>t</sub>后，下降到一个很小的值0.1R，这时二极管才进入反向截止状态。</p>
 <p><strong>把二极管从正向导通转为反向截止所经过的转化过程称为反向恢复过程</strong></p>
 <p>t<sub>S</sub>称为<strong>存储时间</strong>；t<sub>t</sub>称为<strong>过渡时间</strong>；t<sub>rr</sub>=t<sub>s</sub>+t<sub>t</sub>
 称为**反向恢复时间</p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083446010.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083446010.png"></p>
 <ul>
 <li>由于结电容的存在，电压不能突变，所以在电压突变之后，且由于之前存储的电荷，电荷没有放完，二极管两端的电压就不会变反向</li>
 <li>因为电源电压方向，所以电流也会立马反向，需要注意，这时电流的成因是少数载流子反向运动的结果，到了t<sub>s</sub>，少数载流子被消耗光了，二极管恢复反向阻断能力</li>
 </ul>
 <h5 id="对于二极管串联电感的情况">对于二极管串联电感的情况</h5>
 <p>电路不同，当没有电阻或者电阻很小的时候，反向电流会非常大，从正向变为反向需要时间，di/dt就非常大，就不能忽略电感了</p>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083913935.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083913935.png"></p>
 <ul>
 <li>t<sub>0</sub>时刻，电源突然反向，此时二极管内充满电荷，相当于导体，压降很小，反向电压全部落在电感上，电流以斜率为di/dt斜率下降</li>
 <li>t<sub>s</sub>二极管恢复阻断能力，此时电流达到最大，随后电流下降</li>
 <li>t&gt;t<sub>s</sub>后，二极管的电流为复合电流，随着载流子越来越少，电流也越来越小，此时电感会阻碍电流变小，因此会产生反向感应电压，这会导致在二极管两侧的反向电压比电源电压还大，也就是会出现<strong>反向电压尖峰V<sub>rm</sub></strong></li>
 </ul>
-<p><img src="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083933570.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/28/qi-jian-02-er-ji-guan/image-20240828083933570.png"></p>
 <h5 id="总结">总结</h5>
 <ul>
 <li><strong>总的来说，反向恢复时间就是存储的少数载流子耗尽所需要的时间</strong></li>
@@ -1019,7 +1019,7 @@ I<sub>R</sub>=V<sub>R</sub>/R<sub>L</sub>(R<sub>L</sub>是与二极管串联的�
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

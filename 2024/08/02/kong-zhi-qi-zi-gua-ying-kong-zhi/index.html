@@ -671,27 +671,27 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>​
 外环为一个控制器参数估计器，控制根据历史数据估计未知参数然后再设计控制器的为<strong>间接校正控制系统</strong>；直接根据历史数据估计控制器参数的为<strong>直接自校正控制系统</strong></p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802093750769.png" alt="自校正控制系统">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802093750769.png" alt="自校正控制系统">
 <figcaption aria-hidden="true">自校正控制系统</figcaption>
 </figure>
 <p>可调节器接收：测量输出、设定输入以及自适应机构提供的参数估计</p>
 <p>自适应机构（参数调节器）接收：测量输出、设定输入以及控制量进行参数估计</p>
 <p>可以将STC看做是参数估计器+控制器</p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094025045.png" alt="STC结构框图">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094025045.png" alt="STC结构框图">
 <figcaption aria-hidden="true">STC结构框图</figcaption>
 </figure>
 <p>常见的参数估计器可利用如下方法构成：递推最小二乘法（RLS）、快速仿射投影算法（FAP）、最小均方误差（MSE）、卡尔曼滤波（KF）、扩展卡尔曼滤波（EKF）。</p>
 <p>构成STC的常见控制器：比例积分微分控制器（PID）、滑模控制（SMC）、模糊控制、神经网络、遗传算法、预测控制（PC）、二次型最优控制（LQR）、时间延迟控制（TDC）、基于不确定扰动估计器（UDE）的控制器。</p>
 <p><strong>间接自校正控制</strong></p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094457175.png" alt="间接自校正控制">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094457175.png" alt="间接自校正控制">
 <figcaption aria-hidden="true">间接自校正控制</figcaption>
 </figure>
 <p>​ ”参数估计器“先辨识被控对象（过程）参数</p>
 <p><strong>直接自校正控制</strong></p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094601724.png" alt="直接自校正控制">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802094601724.png" alt="直接自校正控制">
 <figcaption aria-hidden="true">直接自校正控制</figcaption>
 </figure>
 <p>​ “控制器参数计算器”直接可以估计可调控制器参数</p>
@@ -702,13 +702,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>​
 在该控制框架中，可以人为构造一个所谓的“参考模型”，用以表征希望的闭环系统控制性能。而模型参考自适应控制则是希望求得一种动态调整的反馈控制律，使得系统的闭环控制性能与参考模型的性能可以保持一致。</p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802101807647.png" alt="模型参考自适应控制">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802101807647.png" alt="模型参考自适应控制">
 <figcaption aria-hidden="true">模型参考自适应控制</figcaption>
 </figure>
 <p><strong>自适应机构的作用</strong>：调节控制器的参数使误差e减小直至为零时停止调节</p>
 <p><strong>自适应机构设计方法：</strong>基于稳定性理论的方法和局部参数最优化方法</p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802102225930.png" alt="模型参考自适应控制">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802102225930.png" alt="模型参考自适应控制">
 <figcaption aria-hidden="true">模型参考自适应控制</figcaption>
 </figure>
 <p>系统由参考模型、可调系统、自适应机构三部分构成。</p>
@@ -738,12 +738,12 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <h5 id="直接mrac">直接MRAC</h5>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802105928352.png" alt="直接MRAC控制器结构">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802105928352.png" alt="直接MRAC控制器结构">
 <figcaption aria-hidden="true">直接MRAC控制器结构</figcaption>
 </figure>
 <p><strong>间接MRAC</strong></p>
 <figure>
-<img src="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802141301743.png" alt="间接MRAC">
+<img src="/medias/loading.gif" data-original="/2024/08/02/kong-zhi-qi-zi-gua-ying-kong-zhi/image-20240802141301743.png" alt="间接MRAC">
 <figcaption aria-hidden="true">间接MRAC</figcaption>
 </figure>
 <p><strong>参考模型的设计</strong></p>
@@ -1122,7 +1122,7 @@ rule</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

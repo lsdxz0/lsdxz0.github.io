@@ -647,45 +647,45 @@ document.addEventListener("DOMContentLoaded", function() {
 <h3 id="电感电容模式">1. 电感电容模式</h3>
 <p>​ 搞谐振电路的目的就是为了实现 ZVS ZCS</p>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204118539.png" alt="image-20240618204118539">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204118539.png" alt="image-20240618204118539">
 <figcaption aria-hidden="true">image-20240618204118539</figcaption>
 </figure>
 <p>​ 负载越重，gain越陡，越窄，Re越小，Q越大，越窄</p>
 <p>​
 找谐振峰值，小于谐振峰值的时候，电容占据主导地位，呈容性，当大于谐振峰值的时候，电感占据主导地位，呈感性。</p>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204414646.png" alt="image-20240618204414646">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204414646.png" alt="image-20240618204414646">
 <figcaption aria-hidden="true">image-20240618204414646</figcaption>
 </figure>
 <p><strong>谐振峰值</strong></p>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204642891.png" alt="image-20240618204642891">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204642891.png" alt="image-20240618204642891">
 <figcaption aria-hidden="true">image-20240618204642891</figcaption>
 </figure>
 <p>​ 所以在这个DCgain里面，fo左侧为电容模式，右侧为电感模式</p>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204520521.png" alt="image-20240618204520521">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618204520521.png" alt="image-20240618204520521">
 <figcaption aria-hidden="true">image-20240618204520521</figcaption>
 </figure>
 <p><strong>1. 容性</strong></p>
 <p>​
 此时，如果输入电压是个正弦的话，电流应该超前于电压，实现ZCS，这里纯容性的话，会超前90°，所以这里最大为90°</p>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205000111.png" alt="image-20240618205000111">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205000111.png" alt="image-20240618205000111">
 <figcaption aria-hidden="true">image-20240618205000111</figcaption>
 </figure>
 <p><strong>2. 感性</strong></p>
 <p>​ 电流滞后于电压，纯感性的话，电压比电流超前90°，</p>
-<p>​ <img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205113313.png" alt="image-20240618205113313"></p>
+<p>​ <img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240618205113313.png" alt="image-20240618205113313"></p>
 <h3 id="zvs原理这里默认占空比50只调频">2.ZVS原理（这里默认占空比50，只调频）</h3>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621211918013.png" alt="image-20240621211918013">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621211918013.png" alt="image-20240621211918013">
 <figcaption aria-hidden="true">image-20240621211918013</figcaption>
 </figure>
 <p>​ 电容隔离作用，设工作在感性状态下，绿色的iL，滞后于电压，</p>
 <p>​ 应该是先把Q2关断，再打开Q1，来控制死区</p>
 <figure>
-<img src="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621213135314.png" alt="image-20240621213135314">
+<img src="/medias/loading.gif" data-original="/2024/06/18/llc-bian-huan-qi-she-ji-ji-chu-di-er-jie-xie-zhen-bian-huan-qi-zvs-yuan-li/image-20240621213135314.png" alt="image-20240621213135314">
 <figcaption aria-hidden="true">image-20240621213135314</figcaption>
 </figure>
 <p>​
@@ -1078,7 +1078,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

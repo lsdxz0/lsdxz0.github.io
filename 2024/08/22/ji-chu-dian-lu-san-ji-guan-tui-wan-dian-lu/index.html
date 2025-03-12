@@ -649,20 +649,20 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>​ 电流驱动能力不足，加一个推挽电路，用于驱动后续电路</p>
 <h4 id="原理分析">原理分析</h4>
 <figure>
-<img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019">
+<img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822100523019.png" alt="image-20240822100523019">
 <figcaption aria-hidden="true">image-20240822100523019</figcaption>
 </figure>
 <p>上面的三极管为npn三极管，下面的是pnp管，前面是限流电阻，两个三极管的中间位置是信号的输出</p>
 <p><strong>分析方波</strong></p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101025688.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101025688.png"></p>
 <p>​
 对于Q2，它的基极电压为5V，发射极电压4.3V，对于PNP来说，导通要求基极电压需要低于发射极0.7V，因此它反向偏置不导通，Q1为NPN型，基极电压大于0.7V，集电极-发射极电压为正，可以导通，经过管压降为4.3V（输出）</p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101820094.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822101820094.png"></p>
 <p>​
 由此，实现了上方三极管导通的时候下方断，输出高电平，上方断的时候下方导通，输出为低电平。这里最后输出的是0.7V</p>
 <p><strong>分析实际方波，存在斜率</strong></p>
 <p><strong>分析上升过程</strong></p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822103441346.png"></p>
 <p>下降过程不再赘述，在实际中，也不会出现Q12同时导通的情况</p>
 <h5 id="输入输出">输入输出</h5>
 <ul>
@@ -679,7 +679,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>​
 为啥会有这个问题，因为一般的三极管都是集电极输出，但是在这里，两个三极管都是发射极输出</p>
 <figure>
-<img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822104254575.png" alt="image-20240822104254575">
+<img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822104254575.png" alt="image-20240822104254575">
 <figcaption aria-hidden="true">image-20240822104254575</figcaption>
 </figure>
 <p>对于三极管，BE之间可以视为二极管，如果上面是PNP，下面是NPN，就会直接导通，容易烧坏三极管</p>
@@ -687,7 +687,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>推挽放大器由<strong>2个晶体管</strong>组成，其中一个是<strong>NPN型</strong>，另外一个<strong>PNP型</strong>。<strong>一个晶体管在正半周期推动输出，另一个在负半周期拉动输出，因此被称为推挽放大器。</strong></p>
 <p>主要优点是当没有信号时，输出晶体管没有功耗。推挽放大电路有多种类型，但<strong>通常将B类放大器视为推挽放大器。</strong></p>
 <h4 id="a类放大器">A类放大器</h4>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105215121.png"></p>
 <p>​
 仅由一个设置为<strong>始终保持导通状态的开关晶体管</strong>组成，产生<strong>最小的失真</strong>和<strong>最大幅度的输出信号</strong>。</p>
 <p>​ A类放大器的效率很低，接近30%。即使没有连接输入信号，A
@@ -697,7 +697,7 @@ document.addEventListener("DOMContentLoaded", function() {
 类放大器的效率高于 A 类放大器，因为它由两个晶体管 NPN 和 PNP 组成。</p>
 <p>​ B
 类放大器电路<strong>每个晶体管将在输入波形的一个半周期内工作</strong>。因此，这类放大电路的导通角为180度。一个晶体管在正半周期推动输出，而另一个在负半周期拉动输出，这就是它被称为<strong>推挽放大器</strong>的原因。</p>
-<p><img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822105455075.png"></p>
 <h5 id="交叉失真">交叉失真</h5>
 <p>​ B 类通常会受到称为<strong>交叉失真</strong>的影响，其中信号在 0V
 时失真。我们知道，晶体管需要在其基极 - 发射极结处提供 0.7v
@@ -712,7 +712,7 @@ AB 类放大器。</p>
 <p>​ 从 0V 到
 0.7V，<strong>二极管偏置在导通状态，此时晶体管在基极没有信号。这解决了交叉失真问题。</strong></p>
 <figure>
-<img src="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822110004707.png" alt="image-20240822110004707">
+<img src="/medias/loading.gif" data-original="/2024/08/22/ji-chu-dian-lu-san-ji-guan-tui-wan-dian-lu/image-20240822110004707.png" alt="image-20240822110004707">
 <figcaption aria-hidden="true">image-20240822110004707</figcaption>
 </figure>
 
@@ -1080,7 +1080,7 @@ AB 类放大器。</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

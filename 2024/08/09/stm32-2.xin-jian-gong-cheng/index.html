@@ -658,7 +658,7 @@ document.addEventListener("DOMContentLoaded", function() {
 <li>在工程文件里，新建一个文件夹用于存放工程结构，然后再里面输入项目名称</li>
 <li>需要添加工程必备文件
 <ol type="1">
-<li><img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104201802483.png" alt="image-20241104201802483">这就是STM32的启动文件，程序的执行就是从启动文件开始的；然后就把这些玩意复制到所建的工程结构文件夹，可命名为一个start的子文件夹</li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104201802483.png" alt="image-20241104201802483">这就是STM32的启动文件，程序的执行就是从启动文件开始的；然后就把这些玩意复制到所建的工程结构文件夹，可命名为一个start的子文件夹</li>
 <li>stm32f10x.h
 <ol type="1">
 <li>这是外设寄存器描述文件，用于描述有哪些寄存器和它对应的地址的</li>
@@ -669,13 +669,13 @@ document.addEventListener("DOMContentLoaded", function() {
 </ol></li>
 <li>以上为外核寄存器的描述文件，除此之外还有内核寄存器的描述文件</li>
 <li><figure>
-<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202249657.png" alt="image-20241104202249657">
+<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202249657.png" alt="image-20241104202249657">
 <figcaption aria-hidden="true">image-20241104202249657</figcaption>
 </figure></li>
 <li>至此，必要文件复制完成，然后需要配置到工程上</li>
-<li><img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202453911.png" alt="image-20241104202453911">改名start，然后选择添加已有，启动文件只需要选择一个，教程需要的是后缀为md.s的启动文件，然后.C//.H都要添加<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202639692.png" alt="image-20241104202639692"></li>
-<li>然后需要添加头文件路径，不然软件找不到.h文件<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202835909.png" alt="image-20241104202835909"></li>
-<li>然后测试，在工程结构目录下新建一个文件夹User，然后再工程里新建个组，改为User，然后新建一个C文件<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104203107196.png" alt="image-20241104203107196"></li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202453911.png" alt="image-20241104202453911">改名start，然后选择添加已有，启动文件只需要选择一个，教程需要的是后缀为md.s的启动文件，然后.C//.H都要添加<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202639692.png" alt="image-20241104202639692"></li>
+<li>然后需要添加头文件路径，不然软件找不到.h文件<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104202835909.png" alt="image-20241104202835909"></li>
+<li>然后测试，在工程结构目录下新建一个文件夹User，然后再工程里新建个组，改为User，然后新建一个C文件<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104203107196.png" alt="image-20241104203107196"></li>
 </ol></li>
 </ol>
 <h3 id="通过配置寄存器点灯">2. 通过配置寄存器点灯</h3>
@@ -684,13 +684,13 @@ document.addEventListener("DOMContentLoaded", function() {
 <ul>
 <li><p>STM32最小系统板+STLink + 四根杜邦线</p></li>
 <li><figure>
-<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104203750299.png" alt="image-20241104203750299">
+<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104203750299.png" alt="image-20241104203750299">
 <figcaption aria-hidden="true">image-20241104203750299</figcaption>
 </figure></li>
 <li><p><strong>配置调试器</strong>魔术棒----debug--</p>
 <ul>
 <li><figure>
-<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204024023.png" alt="image-20241104204024023">
+<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204024023.png" alt="image-20241104204024023">
 <figcaption aria-hidden="true">image-20241104204024023</figcaption>
 </figure></li>
 </ul></li>
@@ -700,15 +700,15 @@ document.addEventListener("DOMContentLoaded", function() {
 <ul>
 <li>通过库函数点灯
 <ul>
-<li>新建library文件夹，下面的先是库函数的源文件，然后第二个是库函数的头文件<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204726496.png" alt="image-20241104204726496"><img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204847245.png" alt="image-20241104204847245"></li>
-<li><img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204953711.png" alt="image-20241104204953711">全选添加</li>
-<li>还有三个需要配置的：<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104205142584.png" alt="image-20241104205142584">
+<li>新建library文件夹，下面的先是库函数的源文件，然后第二个是库函数的头文件<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204726496.png" alt="image-20241104204726496"><img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204847245.png" alt="image-20241104204847245"></li>
+<li><img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104204953711.png" alt="image-20241104204953711">全选添加</li>
+<li>还有三个需要配置的：<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104205142584.png" alt="image-20241104205142584">
 <ul>
 <li>conf是用来配置库函数头文件的包含关系的</li>
 <li>两个it文件是用来存放中断函数的</li>
 <li>把这三个文件复制到User文件夹里，并在工程里添加（User就是我们用来执行程序的文件夹</li>
 </ul></li>
-<li>最后需要一个宏定义，在头文件右键，打开文件<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104205517226.png" alt="image-20241104205517226">
+<li>最后需要一个宏定义，在头文件右键，打开文件<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104205517226.png" alt="image-20241104205517226">
 <ul>
 <li>这样才能包含标准外设库，也就是库函数</li>
 </ul></li>
@@ -738,7 +738,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <h3 id="启动文件的选择">启动文件的选择</h3>
 <figure>
-<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104210621062-1730725582127-1.png" alt="image-20241104210621062">
+<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104210621062-1730725582127-1.png" alt="image-20241104210621062">
 <figcaption aria-hidden="true">image-20241104210621062</figcaption>
 </figure>
 <p>​
@@ -762,7 +762,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <h3 id="工程架构">工程架构</h3>
 <figure>
-<img src="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104211023323.png" alt="image-20241104211023323">
+<img src="/medias/loading.gif" data-original="/2024/08/09/stm32-2.xin-jian-gong-cheng/image-20241104211023323.png" alt="image-20241104211023323">
 <figcaption aria-hidden="true">image-20241104211023323</figcaption>
 </figure>
 <ul>
@@ -1118,7 +1118,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

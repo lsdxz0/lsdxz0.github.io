@@ -602,7 +602,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    130
+                    232
                 </div>
                 
 
@@ -655,6 +655,18 @@ document.addEventListener("DOMContentLoaded", function() {
 <p>里面添加：</p>
 <figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style&gt;</span><br><span class="line">    <span class="selector-tag">figure</span> <span class="selector-tag">figcaption</span> &#123;</span><br><span class="line">        <span class="attribute">display</span>: none <span class="meta">!important</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure></li>
 </ol>
+<h4 id="行外公式正确显示行内公式不行">3.
+行外公式正确显示，行内公式不行</h4>
+<ul>
+<li><p>打开 Matery 主题的 <code>_config.yml</code></p></li>
+<li><p>找到 <code>math</code> 相关配置</p>
+<ul>
+<li><p>```yaml mathjax: enable: true cdn:
+https://cdn.bootcss.com/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 把这部分修改为：</span><br><span class="line"></span><br><span class="line">  - ```yaml</span><br><span class="line">    mathjax:</span><br><span class="line">      enable: true</span><br><span class="line">      cdn: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js</span><br><span class="line">      options:</span><br><span class="line">        tex:</span><br><span class="line">          inlineMath: [[&quot;$&quot;, &quot;$&quot;], [&quot;\\(&quot;, &quot;\\)&quot;]]</span><br><span class="line">          displayMath: [[&quot;$$&quot;, &quot;$$&quot;], [&quot;\\[&quot;, &quot;\\]&quot;]]</span><br><span class="line">    </span><br></pre></td></tr></table></figure></li>
+</ul></li>
+</ul>
+<p>​ 重新生成，正确显示</p>
 
                 
             </div>
@@ -995,7 +1007,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             

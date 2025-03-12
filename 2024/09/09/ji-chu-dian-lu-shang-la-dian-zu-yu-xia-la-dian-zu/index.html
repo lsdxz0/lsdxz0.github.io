@@ -656,56 +656,56 @@ document.addEventListener("DOMContentLoaded", function() {
 </ul>
 <h3 id="拉电阻原理">拉电阻原理</h3>
 <p><strong>并联外接电阻，提高输出电平</strong>、</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164436977.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164436977.png"></p>
 <p>下拉电阻同理</p>
 <h3 id="上拉电阻">上拉电阻</h3>
 <p><strong>引出</strong></p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164602023.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164602023.png"></p>
 <p>单片机GPIO输出高电平，这时候给他个下拉电阻，发现电压变为了3.8V，</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164700284.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164700284.png"></p>
 <p>再给他加一个上拉电阻，发现该点电压变为了4.2V</p>
 <p>这里得看<strong>内部</strong></p>
 <figure>
-<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164805252.png" alt="单片机内部引脚电路">
+<img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164805252.png" alt="单片机内部引脚电路">
 <figcaption aria-hidden="true">单片机内部引脚电路</figcaption>
 </figure>
 <p>想让他输出高电平时，上面的MOS导通，下面的截止，该点电压为电源电压，</p>
 <p>加入100Ω的下拉电阻变为3.8V</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164932769.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909164932769.png"></p>
 <p>电源内部是有电阻的，上面的MOS管也是有内阻的，当下面MOS截止时，可以视为其阻抗无穷大，电路可以等效为</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165024399.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165024399.png"></p>
 <p>所以测量的电压为3.8V 串联分压了</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165118192.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165118192.png"></p>
 <p>加入上拉电阻，上面俩电阻并联，电阻值变小，下面的电阻会分到更多的电压，所以电压会回升为4.2V，<strong>提供更高的驱动能力</strong></p>
 <p><strong>上拉电阻最本质上就是让上拉电阻与单片机里面的内阻并联</strong></p>
 <p><strong>上拉电阻还可以将一个不确定的信号钳位在高电平</strong></p>
 <p>为啥会有不确定信号</p>
 <p>​
 比如当引脚处于开漏输出时，上面的MOS永远是断开的，相当于连着一个无穷大的电阻，如果想让他输出高电平，下面的MOS也得断开，就相当于两个无穷的电阻串联了，所以它的输出信号是不确定的</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165724175.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165724175.png"></p>
 <p>这时候给他加个上拉电阻</p>
 <figure>
-<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165823969.png" alt="image-20240909165823969">
+<img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240909165823969.png" alt="image-20240909165823969">
 <figcaption aria-hidden="true">image-20240909165823969</figcaption>
 </figure>
 <p>相比于无穷大的电阻，上面的电阻并联后电阻变低，相比于无穷大忽略，电压全部落在下面的电阻上，即可输出为高电平</p>
 <h3 id="下拉电阻">下拉电阻</h3>
 <p><strong>作用</strong> 将不确定信号转化为低电平信号</p>
 <p><strong>为啥信号是不确定的</strong></p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082405111.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082405111.png"></p>
 <p>​
 这是当单片机处于数字输入时，单片机的内部电路，是简化过的，本来三极管应该是触发器</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082453711.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082453711.png"></p>
 <p>​ 两块半导体的阻抗太大了，所以P点的电压是飘忽不定的</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082627428.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082627428.png"></p>
 <p>​
 三极管内阻非常大，这三电阻串联，根据串联分压，下拉电阻的电压就近乎为0，</p>
 <p>​ 如果直接接地，也可以实现低电平，但是没办法实现高电平</p>
 <p>​ 比如再直接加个5V的电平，但是输出还是低电平</p>
-<p><img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082829194.png"></p>
+<p><img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910082829194.png"></p>
 <p>直接加个5V，但是电源是有内阻的，电压全部落在内阻上，该点位电压仍为0V</p>
 <figure>
-<img src="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910083011198.png" alt="image-20240910083011198">
+<img src="/medias/loading.gif" data-original="/2024/09/09/ji-chu-dian-lu-shang-la-dian-zu-yu-xia-la-dian-zu/image-20240910083011198.png" alt="image-20240910083011198">
 <figcaption aria-hidden="true">image-20240910083011198</figcaption>
 </figure>
 <p>​ 实现高电平了</p>
@@ -1066,7 +1066,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">58.9k</span>&nbsp;字
+                class="white-color">59k</span>&nbsp;字
             
             
             
