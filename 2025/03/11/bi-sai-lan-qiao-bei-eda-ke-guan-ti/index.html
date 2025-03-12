@@ -626,14 +626,14 @@ document.addEventListener("DOMContentLoaded", async function() {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    1.7k
+                    3.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    6 分
+                    11 分
                 </div>
                 
 
@@ -663,8 +663,9 @@ document.addEventListener("DOMContentLoaded", async function() {
 <h2 id="pcb类知识点和题目分析">1. PCB类知识点和题目分析</h2>
 <h3 id="电阻">1.1 电阻</h3>
 <p>​ 电阻的基础知识：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_74712453/article/details/136460293?spm=1001.2014.3001.5501">一篇了解电阻的使用-CSDN博客</a></p>
-<h5 id="知识点">知识点</h5>
-<p><strong>电阻决定式</strong> <span class="math display">\[
+<h4 id="知识点">知识点</h4>
+<h5 id="电阻决定式"><strong>电阻决定式</strong></h5>
+<p><span class="math display">\[
 R = ρl / S
 \]</span></p>
 <ul>
@@ -674,19 +675,20 @@ R = ρl / S
 </ul>
 <p>​
 l，s影响电阻，然后还有材料，ls相同，不同材料的导体电阻不同；还有<strong>温度</strong>，一般情况下，对于大多数导体，温度越高电阻越大，如金属；对少数导体，温度越高，电阻越小，如碳。</p>
-<p><strong>电阻串并联</strong> <span class="math display">\[
+<h5 id="电阻串并联"><strong>电阻串并联</strong></h5>
+<p><span class="math display">\[
 \frac{1}{R_{\parallel}} = \frac{1}{R_1} + \frac{1}{R_2}
 \]</span></p>
 <p><span class="math display">\[
 R_{\parallel} = \frac{R_1 \times R_2}{R_1 + R_2}
 \]</span></p>
-<p><strong>温度对电阻的影响</strong></p>
+<h5 id="温度对电阻的影响"><strong>温度对电阻的影响</strong></h5>
 <p>温度系数TCR：电阻温度系数，表示电阻当温度改变1摄氏度时，电阻值的相对变化，单位为ppm/℃*百万分之几
 <span class="math display">\[
 \text{温度系数 } TCR = \frac{\frac{R - R_a}{R_a}}{(T - T_a)} \times
 1000000
 \]</span> ​ 上面这玩意就是阻值变化率</p>
-<p><strong>安装方式：</strong></p>
+<h5 id="安装方式"><strong>安装方式：</strong></h5>
 <ul>
 <li>贴片电阻
 <ul>
@@ -700,13 +702,13 @@ R_{\parallel} = \frac{R_1 \times R_2}{R_1 + R_2}
 </figure></li>
 </ul></li>
 </ul>
-<p><strong>电阻值</strong></p>
+<h5 id="电阻值"><strong>电阻值</strong></h5>
 <p>​ 电阻的标称阻值分为E6、E12、E24、E48、E96、E192
 六大系列，分别使用于允许偏差为±20、±10%、±5%、±2%、±1%、±0.5%的电阻器。其中以
 <strong>E24</strong> 和 <strong>E96</strong>
 两个系列为最常用。“E”表示“指数间距”（Exponential
 Spacing），它表明了电阻阻值是由公式计算出来的。</p>
-<p><strong>电阻值的标称</strong></p>
+<h5 id="电阻值的标称"><strong>电阻值的标称</strong></h5>
 <p>​ 这玩意是标准系列的固定值</p>
 <p>贴片电阻</p>
 <p>1）封装0603及以上的电阻在表面都印有丝印</p>
@@ -743,7 +745,7 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
 的 x 次方，需要查表。</li>
 </ul></li>
 </ul>
-<p><strong>电阻的封装+功率</strong></p>
+<h5 id="电阻的封装功率"><strong>电阻的封装+功率</strong></h5>
 <p>​
 电阻的封装指的是它的物理形态和尺寸，比如熟知的0805；这里面前两位表示电阻的长度，后两位表示电阻的宽度，其实是0.08英寸长，0.05英尺尺寸宽，只是常见的是mm单位</p>
 <table>
@@ -792,12 +794,12 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
 <li>存在误差，小点的±0.05，大点的能到±0.2</li>
 </ul>
 <p>功率跟封装决定，如表</p>
-<p><strong>电阻的额定电压</strong></p>
+<h5 id="电阻的额定电压"><strong>电阻的额定电压</strong></h5>
 <p>电阻是有额定耐压值的，不能超过额定耐压值使用。</p>
 <p>1、材质相同（厚膜）的额定电压，各品牌相差不大。</p>
 <p>2、材质不同，额定电压有差别，薄膜要比厚膜要低。</p>
 <p>3、封装越大，额定电压升高。</p>
-<p><strong>零欧姆电阻</strong></p>
+<h5 id="零欧姆电阻"><strong>零欧姆电阻</strong></h5>
 <p>​
 零欧姆电阻又称为跨接电阻，并非真正的阻值为0，实际是电阻值很小的电阻</p>
 <p>​ <strong>作用：</strong></p>
@@ -809,49 +811,39 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
 </ul>
 <p>​ <strong>零欧姆电阻阻值</strong></p>
 <p>​ 0Ω电阻实际最大阻值10mΩ，20mΩ，50mΩ可选，</p>
-<h5 id="题目">题目</h5>
+<h4 id="题目">题目</h4>
 <p><strong>1. 电子元器件的封装与功率有直接关系，一般 0805
 封装的电阻功率为（ ）</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox">(A) 1/16W<br>
-</label></li>
-<li><label><input type="checkbox" checked>(B)
-<code>1/8W</code><br>
-</label></li>
-<li><label><input type="checkbox">(C) 1/4W<br>
-</label></li>
-<li><label><input type="checkbox">(D) 1/2W</label></li>
-</ul>
+<ol type="A">
+<li><p>1/16W</p></li>
+<li><p><code>1/8W</code></p></li>
+<li><p>1/4W</p></li>
+<li><p>1/2W</p></li>
+</ol>
 <p><strong>2. 一个贴片电阻，标识为 1002，下列对该电阻描述正确的是（
 ）</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox">(A) 电阻值为 10K，精度为 10%<br>
-</label></li>
-<li><label><input type="checkbox">(B) 电阻值为 100K，精度为 1%<br>
-</label></li>
-<li><label><input type="checkbox" checked>(C)
-<code>电阻值为 10K，精度为 1%</code></label></li>
-<li><label><input type="checkbox">(D) 电阻值为 100K，精度为
-10%</label></li>
-</ul>
+<ol type="A">
+<li><p>电阻值为 10K，精度为 10%</p></li>
+<li><p>电阻值为 100K，精度为 1%</p></li>
+<li><p><code>电阻值为 10K，精度为 1%</code></p></li>
+<li><p>电阻值为 100K，精度为 10%</p></li>
+</ol>
 <p><strong>3. 下列封装的电阻中，物理尺寸最大的是（ ）</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox">(A) 0805<br>
-</label></li>
-<li><label><input type="checkbox">(B) 0603<br>
-</label></li>
-<li><label><input type="checkbox">(C) 0402<br>
-</label></li>
-<li><label><input type="checkbox" checked><code>(D) 1206</code></label></li>
-</ul>
+<ol type="A">
+<li><p>0805</p></li>
+<li><p>0603</p></li>
+<li><p>0402</p></li>
+</ol>
+<p><code>(D) 1206</code></p>
 <p><strong>4. 以下元器件中，属于无源器件的有（ ）</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox" checked><code>(A) 电阻</code><br>
-</label></li>
-<li><label><input type="checkbox" checked><code>(B) 电容</code></label></li>
-<li><label><input type="checkbox" checked><code>(C) 电感</code></label></li>
-<li><label><input type="checkbox">(D) LED</label></li>
-</ul>
+<ol type="A">
+<li><p>电阻</p></li>
+<li><p>电容</p></li>
+</ol>
+<p><code>(C) 电感</code></p>
+<ol start="4" type="A">
+<li>LED</li>
+</ol>
 <blockquote>
 <p><strong>无源三兄弟</strong>：电阻、电容、电感，不耗电、不放大；
 <strong>有源三巨头</strong>：晶体管、IC、运放，要供电、能增强！</p>
@@ -859,12 +851,12 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
 <p>常用的有源器件：IC、模块等都是有源器件。三极管、场效应晶体管、晶闸管、模拟集成电路、数字集成电路器件。</p>
 </blockquote>
 <p><strong>5. 下列关于“压敏电阻”的说法中，正确的是（ ）</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox" checked><code>(A) 常用于电源保护电路</code></label></li>
-<li><label><input type="checkbox" checked><code>(B) 用力按压压敏电阻，其阻值减小</code></label></li>
-<li><label><input type="checkbox" checked><code>(C) 是一种半导体器件</code></label></li>
-<li><label><input type="checkbox">(D) 响应速度快于 TVS 管</label></li>
-</ul>
+<p><code>(A) 常用于电源保护电路</code></p>
+<p><code>(B) 用力按压压敏电阻，其阻值减小</code></p>
+<p><code>(C) 是一种半导体器件</code></p>
+<ol start="4" type="A">
+<li>响应速度快于 TVS 管</li>
+</ol>
 <blockquote>
 <p>压敏电阻器主要用于限制有害的大气过电压和操作过电压，能有效地保护系统或设备：</p>
 <p>1)在电力工业中，常使用压敏材料制成避雷器阀片。用氧化锌压敏材料制成高压绝缘子，既有绝缘作用，又能实现瞬态过电压保护。</p>
@@ -872,21 +864,224 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
 <p>TVS是一种二极管形式的高效能保护器件。当TVS二极管的两极受到反向瞬态高能量冲击时，它能以10的负12次方秒量级的速度，将其两极间的高阻抗变为低阻抗，吸收高达数千瓦的浪涌功率，使两极间的电压箝位于一个预定值，有效地保护电子线路中的精密元器件，免受各种浪涌脉冲的损坏。</p>
 </blockquote>
 <p><strong>6. 电阻负载上获得最大功率的条件是（ ）</strong></p>
-<ul class="task-list">
-<li><label><input type="checkbox">(A) 电阻值远小于电源内阻<br>
-</label></li>
-<li><label><input type="checkbox" checked><code>(B) 电阻值等于电源内阻</code><br>
-</label></li>
-<li><label><input type="checkbox">(C) 电阻值远大于电源内阻<br>
-</label></li>
-<li><label><input type="checkbox">(D) 电阻值等于电源内阻的 0.707
-倍</label></li>
-</ul>
+<ol type="A">
+<li>电阻值远小于电源内阻</li>
+</ol>
+<p><code>(B) 电阻值等于电源内阻</code></p>
+<ol start="3" type="A">
+<li><p>电阻值远大于电源内阻</p></li>
+<li><p>电阻值等于电源内阻的 0.707 倍</p></li>
+</ol>
+<blockquote>
+<p><strong>最大功率传输定理：</strong></p>
+<p>当电源的内阻 <span class="math display">\[R_s\]</span>与负载电阻
+<span class="math display">\[R_L\]</span>
+相等时，负载获得的功率最大，即： <span class="math display">\[
+R_L=Rs
+\]</span></p>
+</blockquote>
 <p><strong>7. 一个 47KΩ ±1% 的贴片电阻数标值为
 <code>________</code>，该电阻封装为 0805，电阻实体尺寸为长
 <code>________</code> mm，宽为 1.2mm。</strong> （第一个空格处填写 10
 进制整数，第二空格填写保留小数点后 1 位的有效数字）</p>
 <p>​ <strong>答案：</strong> <code>4702</code>，<code>2.0</code></p>
+<h3 id="电容">1.2 电容</h3>
+<p>​ 关于电容基础知识可看：<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_74712453/article/details/136474769?spm=1001.2014.3001.5501">一篇了解电容的使用-CSDN博客</a></p>
+<h4 id="知识点-1">知识点</h4>
+<h5 id="电容本质">电容本质</h5>
+<p>​
+两个相互靠近的导体，中间夹一层不导电的绝缘介质，这就构成了<strong>电容</strong></p>
+<figure>
+<img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312160604732.png" alt="电容本质">
+<figcaption aria-hidden="true">电容本质</figcaption>
+</figure>
+<p>​ 如图所示，两端存在电势差时，介质阻碍移动，积累在金属板上存储电荷</p>
+<h5 id="电容量的大小">电容量的大小</h5>
+<p><span class="math display">\[
+C = Q / U
+\]</span></p>
+<ul>
+<li>Q：电容器上所带的电荷量，单位为库伦（q）</li>
+<li>U：电容器两端的电压差，单位为伏特（V）</li>
+<li>C：电容器存储电荷的能力，单位为法拉（F）</li>
+</ul>
+<p><span class="math display">\[
+1F=10^3\mathrm{m}F=10^6uF=10^{12}pF
+\]</span></p>
+<p><strong>电容的决定式</strong> <span class="math display">\[
+C = \frac{\varepsilon_r S}{4\pi k d}
+\]</span></p>
+<ul>
+<li><span class="math display">\[\varepsilon_r\]</span>
+：两极板间介质的介电常数，单位是法/米 (F/m)<br>
+</li>
+<li>S ：两极板间的正对面积，单位是平方米 (m²)<br>
+</li>
+<li>k ：静电常数，等于 ( k = 8.987551 ^9 ) N·m²/C²<br>
+</li>
+<li>d ：两极板间的距离，单位是米 (m)</li>
+</ul>
+<p>化简后 <span class="math display">\[
+C = 8.854 \times \frac{\varepsilon_r S}{d} \quad (F)
+\]</span> <strong>想使电容容量大，有三种方法</strong></p>
+<ul>
+<li>使用介电常数高的介质</li>
+<li>增大极板间面积</li>
+<li>减小极板间距离</li>
+</ul>
+<h5 id="电容的特点">电容的特点</h5>
+<p>​ 本质就是充放电，在电路中起到<strong>隔直流通交流</strong>的作用</p>
+<blockquote>
+<p>公式讲解之前有，这里就引一个物理模型的记忆</p>
+<p>电容的电流由<span class="math display">\[ I=C \frac{dV}{dt}
+\]</span>决定，当 V 不变时， <span class="math display">\[\frac{dV}{dt}
+= 0\]</span>，电流为0，隔直流了，同理，交流时，不为0，通交流了</p>
+</blockquote>
+<h5 id="电容的作用">电容的作用</h5>
+<ul>
+<li><p><strong>电荷存储：</strong></p></li>
+<li><p><strong>能量存储：</strong>电容器可以将电能以电场的形式存储在其电场中。</p></li>
+<li><p><strong>滤波：</strong>用于去除电源中的噪声、波动或干扰。通过将电容器连接到电源线路上的适当位置，它可以<strong>平滑电源电压并降低电源中的纹波</strong>。</p></li>
+<li><p><strong>耦合和解耦：</strong></p>
+<ul>
+<li><strong>耦合</strong>描述了信号在电路之间的传输和相互影响
+<ul>
+<li>串联在信号路径，传输交流，隔离直流</li>
+</ul></li>
+<li><strong>解耦</strong>则是为了降低这种影响，使电路更加独立和稳定
+<ul>
+<li>并联在电源和地，降低噪声，稳定电源</li>
+</ul></li>
+</ul></li>
+</ul>
+<h5 id="电容串并联">电容串并联</h5>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312161740029.png"></p>
+<ul>
+<li><strong>电容串联</strong> 个数越多，电容量越小，但耐压越大</li>
+<li><strong>电容并联</strong> 容量相加，耐压看最小的</li>
+</ul>
+<p>​
+所以，<strong>电容并联的主要作用是增加容量，串联的主要作用是减少容量，提高耐压值</strong></p>
+<h5 id="安装方式-1">安装方式</h5>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312161850030.png"></p>
+<h5 id="电容值">电容值</h5>
+<p>​
+在每芯片的供电电源上，我们通常会并联一个0.1uF的电容，几个芯片的供电电源上并联一个10uF的电容，</p>
+<p>​
+作用是保证芯片的可持续供电和滤掉高频杂波得到平滑的电源，当线路上的电源还没到达芯片时，可由旁路的0.1uf电容对芯片进行供电，保证芯片的工作。</p>
+<h5 id="等效串联电阻esr">等效串联电阻ESR</h5>
+<p>​ 不是理想的，那就有内阻了，</p>
+<p>对于不同电容的阻抗频率曲线</p>
+<ul>
+<li>容量大的 ESR 要小写，谐振频率低些，主要滤低频。</li>
+<li>容量小的ESR 要大些，谐振频率要高些，主要滤高频。</li>
+</ul>
+<h4 id="题目-1">题目</h4>
+<p><strong>1.
+在IC的电源引脚和地之间，通常需要放置一颗电容，这颗电容的主要作用是（
+）</strong></p>
+<ol type="A">
+<li><p>隔离直流信号</p></li>
+<li><p><code>旁路（去耦）</code></p></li>
+<li><p>耦合</p></li>
+<li><p>温度补偿</p></li>
+</ol>
+<blockquote>
+<p>电路的耗电有时候大，有时候小，当耗电突然增大的时候，如果没有电容，电源电压会被拉低，产生噪声，严重会影响CPU重启，小容量的无极电容可以把这种噪声旁路到地（小容量的电容通频带比大电容高得多）提高稳定性</p>
+</blockquote>
+<p><strong>2. 电容器在电路中的功能包括（ ）。</strong></p>
+<p><code>(A) 滤波</code></p>
+<p><code>(B) 耦合</code></p>
+<p><code>(C) 谐振</code></p>
+<p><code>(D) 旁路</code></p>
+<blockquote>
+<p>电容器的种类很多，不同种类的电容器起作用也不同。其在电路中的功能包括：滤波、混合、谐振、旁路等。谐振是跟电感组成谐振电路</p>
+</blockquote>
+<p><strong>3. 电容器上的数字标识为 475，容量是（ ）uF。</strong></p>
+<p><code>(A) 4.7</code></p>
+<ol start="2" type="A">
+<li><p>47</p></li>
+<li><p>470</p></li>
+<li><p>475</p></li>
+</ol>
+<blockquote>
+<p>电容器的容量一般用三位数字标识，前两位为数值，最后一位为零的个数，基本单位是
+pF。<br>
+因此 “475” 表示的容量为：47 00000 pF = 4.7 uF。</p>
+</blockquote>
+<p><strong>4. 将 3 个数字标识为 105
+的贴片电容并联到一起，其等效容量约为（ ）uF。</strong></p>
+<ol type="A">
+<li><p>1</p></li>
+<li><p>0.33</p></li>
+<li><p>3.3</p></li>
+</ol>
+<p><code>(D) 3</code></p>
+<blockquote>
+<p>数字标识为 <code>105</code> 的电容容量为 <code>1uF</code>，将三个 1uF
+的电容并联后，容量为 <code>3uF</code>，因此正确答案为 D。</p>
+</blockquote>
+<p><strong>5. 对下图给出的元器件描述正确的选项是（ ）。</strong></p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312165403122.png"></p>
+<ol type="A">
+<li><p>电解电容</p></li>
+<li><p>贴片电容</p></li>
+</ol>
+<p><code>(C) 容量 22uF</code></p>
+<ol start="4" type="A">
+<li>耐压值为 226V</li>
+</ol>
+<p><strong>6. 下列元器件中焊接时需要注意“极性”的是（ ）。</strong></p>
+<ol type="A">
+<li>贴片电容</li>
+</ol>
+<p><code>(B) 电解电容</code></p>
+<p><code>(C) 无源蜂鸣器</code></p>
+<p><code>(D) 有源蜂鸣器</code></p>
+<blockquote>
+<ul>
+<li>电解电容和有源蜂鸣器有正负极，在焊接时需要注意“极性”。<br>
+</li>
+<li>贴片电容和无源蜂鸣器通常没有极性要求。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>7. 下列材质的电容器中，通常无正、负极性的是（
+）。</strong></p>
+<ol type="A">
+<li>钽电容</li>
+</ol>
+<p><code>(B) X5R 电容</code></p>
+<p><code>(C) X7R 电容</code></p>
+<p><code>(D) 云母电容</code></p>
+<blockquote>
+<p>钽电容是钽电解电容，有正负极，而 X5R 电容、X7R
+电容和云母电容通常是无极性的。</p>
+</blockquote>
+<p><strong>8. 电路中常用的储能元件有哪几项（ ）。</strong></p>
+<ol type="A">
+<li>电阻</li>
+</ol>
+<p><code>(B) 电容</code></p>
+<p><code>(C) 电感</code></p>
+<ol start="4" type="A">
+<li>磁珠</li>
+</ol>
+<p><strong>9. 描述电容的技术指标有哪些（ ）。</strong></p>
+<p><code>(A) 容量</code></p>
+<p><code>(B) 耐压值</code></p>
+<p><code>(C) 耐温值</code></p>
+<p><code>(D) ESR</code></p>
+<blockquote>
+<p>电容的主要技术指标包括 <strong>容量、耐压值、耐温值</strong> 以及
+<strong>ESR（等效串联电阻）</strong>。</p>
+</blockquote>
+<p><strong>10. 将两个参数分别为 300uF/16V 和 100uF/25V
+的电容进行串联，其等效容量约为 <code>________</code>
+uF，可以安全工作的电压为 <code>________</code> V。</strong><br>
+（第一空填写 10 进制整数，第二空填写“大于”或“小于”后跟随 10
+进制整数）</p>
+<p><strong>答案：</strong> <code>75</code>，<code>大于 25</code></p>
 
                 
             </div>
@@ -1243,7 +1438,7 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">59.1k</span>&nbsp;字
+                class="white-color">60.6k</span>&nbsp;字
             
             
             
