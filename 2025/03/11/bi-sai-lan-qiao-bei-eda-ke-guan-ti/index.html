@@ -626,14 +626,14 @@ document.addEventListener("DOMContentLoaded", async function() {
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    3.2k
+                    4.2k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    11 分
+                    15 分
                 </div>
                 
 
@@ -1031,18 +1031,25 @@ pF。<br>
 <ol start="4" type="A">
 <li>耐压值为 226V</li>
 </ol>
+<blockquote>
+<p>这玩意是钽电容，它属于电解电容的一种，但通常“电解电容”特指铝电解电容，而钽电容有其独特分类。</p>
+</blockquote>
 <p><strong>6. 下列元器件中焊接时需要注意“极性”的是（ ）。</strong></p>
 <ol type="A">
 <li>贴片电容</li>
 </ol>
 <p><code>(B) 电解电容</code></p>
-<p><code>(C) 无源蜂鸣器</code></p>
+<ol start="3" type="A">
+<li>无源蜂鸣器</li>
+</ol>
 <p><code>(D) 有源蜂鸣器</code></p>
 <blockquote>
 <ul>
-<li>电解电容和有源蜂鸣器有正负极，在焊接时需要注意“极性”。<br>
+<li>贴片电容大部分无极性<br>
 </li>
-<li>贴片电容和无源蜂鸣器通常没有极性要求。</li>
+<li>电解电容和钽电容都有极性</li>
+<li>无源蜂鸣器相当于一个压电元件或电磁元件，无极性</li>
+<li>有源蜂鸣器内部包含驱动电路，通常有正负极之分</li>
 </ul>
 </blockquote>
 <hr>
@@ -1055,8 +1062,41 @@ pF。<br>
 <p><code>(C) X7R 电容</code></p>
 <p><code>(D) 云母电容</code></p>
 <blockquote>
-<p>钽电容是钽电解电容，有正负极，而 X5R 电容、X7R
-电容和云母电容通常是无极性的。</p>
+<p>电容器按是否具有极性可以分为两类</p>
+<ul>
+<li>无极性电容器
+<ul>
+<li>特点
+<ul>
+<li>不区分正负极</li>
+<li>适用于AC,DC电路</li>
+<li>用于高频滤波，信号耦合，旁路去耦，储能</li>
+</ul></li>
+<li>常见类型
+<ul>
+<li>陶瓷电容（MLCC)
+<ul>
+<li>包括X5R, X7R COG(NPO)</li>
+<li>云母电容</li>
+<li>聚酯(CBB)薄膜电容</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li>有极性电容器
+<ul>
+<li>特点
+<ul>
+<li>具有固定的正负极</li>
+<li>用于DC电源滤波，储能，稳压</li>
+</ul></li>
+<li>常见类型
+<ul>
+<li>铝电解电容</li>
+<li>钽电容</li>
+<li>超级电容</li>
+</ul></li>
+</ul></li>
+</ul>
 </blockquote>
 <p><strong>8. 电路中常用的储能元件有哪几项（ ）。</strong></p>
 <ol type="A">
@@ -1067,6 +1107,9 @@ pF。<br>
 <ol start="4" type="A">
 <li>磁珠</li>
 </ol>
+<blockquote>
+<p>磁珠，实际上是一种高频电感，主要作用是<strong>滤除电路中的高频噪声，抑制电磁干扰</strong>。但它不是电感，</p>
+</blockquote>
 <p><strong>9. 描述电容的技术指标有哪些（ ）。</strong></p>
 <p><code>(A) 容量</code></p>
 <p><code>(B) 耐压值</code></p>
@@ -1082,6 +1125,154 @@ uF，可以安全工作的电压为 <code>________</code> V。</strong><br>
 （第一空填写 10 进制整数，第二空填写“大于”或“小于”后跟随 10
 进制整数）</p>
 <p><strong>答案：</strong> <code>75</code>，<code>大于 25</code></p>
+<h3 id="封装类">1.3 封装类</h3>
+<h4 id="知识点-2">知识点</h4>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/ffdia/article/details/116222777">从七种封装类型，看芯片封装发展史_半导体塑封工艺to、sop、ssop、tssop、dip、sot、esot、sod、qfn、sma、-CSDN博客</a></p>
+<p><strong>封装的类型发展</strong></p>
+<p>​ 封装的发展：TO→DIP→SOP→QFP→PLCC→BGA →CSP。</p>
+<h5 id="分类">分类</h5>
+<ul>
+<li><strong>贴片封装</strong>
+<ul>
+<li>SOP</li>
+<li>QFP</li>
+<li>BGA</li>
+<li>CSP</li>
+</ul></li>
+<li><strong>非贴片封装</strong>
+<ul>
+<li>TO</li>
+<li>DIP</li>
+<li>PLCC</li>
+</ul></li>
+</ul>
+<h5 id="totransisitor-outline">TO<strong>（Transisitor
+Outline）</strong></h5>
+<p>TO代表的是晶体管外壳</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163142745.png"></p>
+<p>​
+不过晶体管也有贴片的形式，就是后面的SOT类型，其中SOT-23是常用的三极管封装形式</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163301679.png"></p>
+<hr>
+<h5 id="dipdouble-in-line-package">DIP<strong>（Double In-line
+Package）</strong></h5>
+<p>​ DIP即双直插式封装</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163403701.png"></p>
+<hr>
+<h5 id="sopsmall-outline-package">SOP<strong>（Small Outline
+Package）</strong></h5>
+<p>​
+如果说DIP是最常见的直插式封装，那么SOP就是<strong>贴片式</strong>最常见的封装。SOP即小外形封装，基本采用塑料封装。引脚从封装两侧引出呈现L字形。</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163553558.png"></p>
+<p>也有以下类型</p>
+<ul>
+<li><strong>SOJ</strong>：J型引脚小外形封装<br>
+</li>
+<li><strong>TSOP</strong>：薄小外形封装<br>
+</li>
+<li><strong>VSOP</strong>：甚小外形封装<br>
+</li>
+<li><strong>SSOP</strong>：缩小型SOP<br>
+</li>
+<li><strong>TSSOP</strong>：薄的缩小型SOP<br>
+</li>
+<li><strong>SOT</strong>：小外形晶体管<br>
+</li>
+<li><strong>SOIC</strong>：小外形集成电路</li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164121032.png"></p>
+<p>SOP封装的优点：<strong>在封装芯片的周围做出很多引脚，封装操作方便，可靠性比较高，是目前的主流</strong></p>
+<hr>
+<h5 id="qfpquad-flat-package">QFP<strong>（Quad Flat
+Package）</strong></h5>
+<p>QFP，即小型方块平面封装。<strong>QFP封装在颗粒四周都带有针脚</strong>，四侧引脚扁平封装。<strong>表面贴封装型封装之一</strong></p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164508393.png"></p>
+<hr>
+<h5 id="plccplastic-leaded-chip-carrier">PLCC<strong>（Plastic Leaded
+Chip Carrier）</strong></h5>
+<p>​
+PLCC，即塑封J引线芯片封装。PLCC封装方式，外形呈正方形，<strong>32脚封装，四周都有管脚，</strong>外形尺寸比DIP封装小得多。</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164739121.png"></p>
+<p>​
+适合用SMT表面安装技术在PCB上安装布线，具有外形尺寸小、可靠性高的优点。</p>
+<p>​ 跟前面的QFP相比，引脚是勾在里面的，不容易变形</p>
+<hr>
+<h5 id="bgaball-grid-array-package">BGA<strong>（Ball Grid Array
+Package）</strong></h5>
+<p>​ BGA，即球栅阵列封装，适应集成度的需求，</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164914363.png"></p>
+<hr>
+<h5 id="csp">CSP</h5>
+<p>​
+CSP是面积最小，厚度最小，因而是体积最小的封装。在相同尺寸的各类封装中，CSP的输入/输出端数可以做得更多。这个封装经常在内存芯片的封装中出现。</p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164947101.png"></p>
+<h4 id="题目-2">题目</h4>
+<p><strong>1.下列哪些封装属于贴片封装（ ）</strong></p>
+<p><code>(A) SOT-89</code></p>
+<ol start="2" type="A">
+<li>DIP-20</li>
+</ol>
+<p><code>(C) SOT-23</code></p>
+<p><code>(D) BGA</code></p>
+<blockquote>
+<p>贴片封装，是指可以直接焊接在电路板表面的封装方式，常见的贴片封装包括SOT和BGA封装</p>
+<p>DIP是直插式</p>
+</blockquote>
+<p><strong>2.DIODE 常用于哪种元器件的封装（ ）</strong></p>
+<p><code>(A) 二极管</code></p>
+<ol start="2" type="A">
+<li><p>电容</p></li>
+<li><p>电感</p></li>
+<li><p>三极管</p></li>
+</ol>
+<blockquote>
+<p><strong>Diode</strong>
+这个单词本身的意思就是<strong>二极管</strong></p>
+</blockquote>
+<p><strong>3. 以下封装中属于贴片封装的是（ ）</strong></p>
+<ol type="A">
+<li><p>SIP-8</p></li>
+<li><p>DIP-8</p></li>
+</ol>
+<p><code>(C) SOP-8</code></p>
+<ol start="4" type="A">
+<li>LQFP-44</li>
+</ol>
+<blockquote>
+<p>SIP 单列直插封装</p>
+<p>DIP 双列直插</p>
+<p>SOP</p>
+<p>LQFP 低轮廓四方变频封装，适用于表面贴装技术</p>
+</blockquote>
+<p><strong>4. 一般情况下，以下哪种封装可以设计的引脚数量最多（
+）</strong></p>
+<ol type="A">
+<li><p>SOT23</p></li>
+<li><p>SOP</p></li>
+<li><p>SOT89</p></li>
+<li><p>BGA</p></li>
+</ol>
+<blockquote>
+<ul>
+<li>SOT 3-6个引脚</li>
+<li>SOP 8-64个引脚</li>
+<li>BGA 500-2000+</li>
+<li>CPS比BGA更小，常用于较小芯片，几十个引脚差不多</li>
+</ul>
+</blockquote>
+<p><strong>5. 下图中给出的元器件，最符合那种封装类型（ ）</strong></p>
+<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313162517218.png"></p>
+<ol type="A">
+<li><p>SOIC</p></li>
+<li><p>QFN</p></li>
+<li><p>LQFP</p></li>
+<li><p>DIP</p></li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>：图示为 <strong>SOIC</strong>
+小外形集成电路封装，指外引线数不超过28条的小外形集成电路。<br>
+<strong>正确答案</strong>：A</p>
+</blockquote>
 
                 
             </div>
@@ -1438,7 +1629,7 @@ uF，可以安全工作的电压为 <code>________</code> V。</strong><br>
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">60.6k</span>&nbsp;字
+                class="white-color">61.6k</span>&nbsp;字
             
             
             
