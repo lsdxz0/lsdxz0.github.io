@@ -6271,12 +6271,12 @@ R_{\parallel} = \frac{R_1 \times R_2}{R_1 + R_2}
 <ul>
 <li>贴片电阻
 <ul>
-<li><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250311161521148.png"></li>
+<li><img src="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250311161521148.png"></li>
 </ul></li>
 <li>插件电阻
 <ul>
 <li><figure>
-<img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250311161716833.png" alt="image-20250311161716833">
+<img src="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250311161716833.png" alt="image-20250311161716833">
 <figcaption aria-hidden="true">image-20250311161716833</figcaption>
 </figure></li>
 </ul></li>
@@ -6293,7 +6293,7 @@ Spacing），它表明了电阻阻值是由公式计算出来的。</p>
 <p>1）封装0603及以上的电阻在表面都印有丝印</p>
 <p>2）丝印展示了两层意义：<strong>阻值大小和精度</strong></p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250311162456051.png" alt="分三类">
+<img src="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250311162456051.png" alt="分三类">
 <figcaption aria-hidden="true">分三类</figcaption>
 </figure>
 <ul>
@@ -6471,7 +6471,7 @@ R_L=Rs
 <p>​
 两个相互靠近的导体，中间夹一层不导电的绝缘介质，这就构成了<strong>电容</strong></p>
 <figure>
-<img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312160604732.png" alt="电容本质">
+<img src="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312160604732.png" alt="电容本质">
 <figcaption aria-hidden="true">电容本质</figcaption>
 </figure>
 <p>​ 如图所示，两端存在电势差时，介质阻碍移动，积累在金属板上存储电荷</p>
@@ -6534,7 +6534,7 @@ C = 8.854 \times \frac{\varepsilon_r S}{d} \quad (F)
 </ul></li>
 </ul>
 <h5 id="电容串并联">电容串并联</h5>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312161740029.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250312161740029.png"></p>
 <ul>
 <li><strong>电容串联</strong> 个数越多，电容量越小，但耐压越大</li>
 <li><strong>电容并联</strong> 容量相加，耐压看最小的</li>
@@ -6542,7 +6542,7 @@ C = 8.854 \times \frac{\varepsilon_r S}{d} \quad (F)
 <p>​
 所以，<strong>电容并联的主要作用是增加容量，串联的主要作用是减少容量，提高耐压值</strong></p>
 <h5 id="安装方式-1">安装方式</h5>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312161850030.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250312161850030.png"></p>
 <h5 id="电容值">电容值</h5>
 <p>​
 在每芯片的供电电源上，我们通常会并联一个0.1uF的电容，几个芯片的供电电源上并联一个10uF的电容，</p>
@@ -6601,7 +6601,7 @@ pF。<br>
 的电容并联后，容量为 <code>3uF</code>，因此正确答案为 D。</p>
 </blockquote>
 <p><strong>5. 对下图给出的元器件描述正确的选项是（ ）。</strong></p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250312165403122.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250312165403122.png"></p>
 <ol type="A">
 <li><p>电解电容</p></li>
 <li><p>贴片电容</p></li>
@@ -6728,21 +6728,21 @@ uF，可以安全工作的电压为 <code>________</code> V。</strong><br>
 <h5 id="totransisitor-outline">TO<strong>（Transisitor
 Outline）</strong></h5>
 <p>TO代表的是晶体管外壳</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163142745.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313163142745.png"></p>
 <p>​
 不过晶体管也有贴片的形式，就是后面的SOT类型，其中SOT-23是常用的三极管封装形式</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163301679.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313163301679.png"></p>
 <hr>
 <h5 id="dipdouble-in-line-package">DIP<strong>（Double In-line
 Package）</strong></h5>
 <p>​ DIP即双直插式封装</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163403701.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313163403701.png"></p>
 <hr>
 <h5 id="sopsmall-outline-package">SOP<strong>（Small Outline
 Package）</strong></h5>
 <p>​
 如果说DIP是最常见的直插式封装，那么SOP就是<strong>贴片式</strong>最常见的封装。SOP即小外形封装，基本采用塑料封装。引脚从封装两侧引出呈现L字形。</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313163553558.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313163553558.png"></p>
 <p>也有以下类型</p>
 <ul>
 <li><strong>SOJ</strong>：J型引脚小外形封装<br>
@@ -6759,19 +6759,19 @@ Package）</strong></h5>
 </li>
 <li><strong>SOIC</strong>：小外形集成电路</li>
 </ul>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164121032.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313164121032.png"></p>
 <p>SOP封装的优点：<strong>在封装芯片的周围做出很多引脚，封装操作方便，可靠性比较高，是目前的主流</strong></p>
 <hr>
 <h5 id="qfpquad-flat-package">QFP<strong>（Quad Flat
 Package）</strong></h5>
 <p>QFP，即小型方块平面封装。<strong>QFP封装在颗粒四周都带有针脚</strong>，四侧引脚扁平封装。<strong>表面贴封装型封装之一</strong></p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164508393.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313164508393.png"></p>
 <hr>
 <h5 id="plccplastic-leaded-chip-carrier">PLCC<strong>（Plastic Leaded
 Chip Carrier）</strong></h5>
 <p>​
 PLCC，即塑封J引线芯片封装。PLCC封装方式，外形呈正方形，<strong>32脚封装，四周都有管脚，</strong>外形尺寸比DIP封装小得多。</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164739121.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313164739121.png"></p>
 <p>​
 适合用SMT表面安装技术在PCB上安装布线，具有外形尺寸小、可靠性高的优点。</p>
 <p>​ 跟前面的QFP相比，引脚是勾在里面的，不容易变形</p>
@@ -6779,12 +6779,12 @@ PLCC，即塑封J引线芯片封装。PLCC封装方式，外形呈正方形，<s
 <h5 id="bgaball-grid-array-package">BGA<strong>（Ball Grid Array
 Package）</strong></h5>
 <p>​ BGA，即球栅阵列封装，适应集成度的需求，</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164914363.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313164914363.png"></p>
 <hr>
 <h5 id="csp">CSP</h5>
 <p>​
 CSP是面积最小，厚度最小，因而是体积最小的封装。在相同尺寸的各类封装中，CSP的输入/输出端数可以做得更多。这个封装经常在内存芯片的封装中出现。</p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313164947101.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313164947101.png"></p>
 <h4 id="题目-2">题目</h4>
 <p><strong>1.下列哪些封装属于贴片封装（ ）</strong></p>
 <p><code>(A) SOT-89</code></p>
@@ -6814,9 +6814,7 @@ CSP是面积最小，厚度最小，因而是体积最小的封装。在相同�
 <li><p>DIP-8</p></li>
 </ol>
 <p><code>(C) SOP-8</code></p>
-<ol start="4" type="A">
-<li>LQFP-44</li>
-</ol>
+<p><code>(D) LQFP-44</code></p>
 <blockquote>
 <p>SIP 单列直插封装</p>
 <p>DIP 双列直插</p>
@@ -6840,7 +6838,7 @@ CSP是面积最小，厚度最小，因而是体积最小的封装。在相同�
 </ul>
 </blockquote>
 <p><strong>5. 下图中给出的元器件，最符合那种封装类型（ ）</strong></p>
-<p><img src="/medias/loading.gif" data-original="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250313162517218.png"></p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250313162517218.png"></p>
 <ol type="A">
 <li><p>SOIC</p></li>
 <li><p>QFN</p></li>
@@ -6849,9 +6847,644 @@ CSP是面积最小，厚度最小，因而是体积最小的封装。在相同�
 </ol>
 <blockquote>
 <p><strong>解析</strong>：图示为 <strong>SOIC</strong>
-小外形集成电路封装，指外引线数不超过28条的小外形集成电路。<br>
+小外形集成电路封装，指外引线数不超过28条的小外形集成电路。
+排除法，Q是方形的意思，四面都有引脚则为q，DIP为直插
 <strong>正确答案</strong>：A</p>
 </blockquote>
+<hr>
+<h3 id="单位转换类">1.4 单位转换类</h3>
+<h4 id="知识点-3">知识点</h4>
+<pre><code>英寸：inch             毫英寸： mil</code></pre>
+<ul>
+<li>1 inch = 1000 mil</li>
+<li>100 mil = 2.54 mm</li>
+</ul>
+<h4 id="题目-3">题目</h4>
+<p><strong>1. 线路板设计中常用 mil 作为单位，它与 mm 的换算关系是（
+）</strong></p>
+<p><code>(A) 1mil = 0.0254mm</code></p>
+<ol start="2" type="A">
+<li><p>1mil = 0.02mm</p></li>
+<li><p>1mil = 0.254mm`</p></li>
+<li><p>1mil = 0.2mm</p></li>
+</ol>
+<p><strong>2. 10mil 换算为 mm 单位是（ ）</strong></p>
+<ol type="A">
+<li><p>0.0254mm</p></li>
+<li><p>0.02mm</p></li>
+</ol>
+<p><code>(C) 0.254mm</code></p>
+<ol start="4" type="A">
+<li>0.2mm</li>
+</ol>
+<blockquote>
+<p>1mil = 0.0254mm</p>
+<p>10mil = 0.254mm</p>
+<p>计算公式：10 × 0.0254 = 0.254mm</p>
+</blockquote>
+<hr>
+<h3 id="电路板结构类">1.5 电路板结构类</h3>
+<h4 id="知识点-4">知识点</h4>
+<figure>
+<img src="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250320141146392.png" alt="PCB电路板元素识别">
+<figcaption aria-hidden="true">PCB电路板元素识别</figcaption>
+</figure>
+<h4 id="题目-4">题目</h4>
+<p><strong>1. 一般情况下，与线路板的“层数” 相关的是（ ）</strong></p>
+<ol type="A">
+<li>丝印层</li>
+</ol>
+<p><code>(B) 信号层</code></p>
+<ol start="3" type="A">
+<li>机械层</li>
+</ol>
+<p><code>(D) 电源层</code></p>
+<blockquote>
+<p>信号层和电源层是线路板层数的关键组成部分。
+丝印层主要用于标记，机械层则用于边界定义。</p>
+</blockquote>
+<hr>
+<p><strong>2.
+习惯上根据板的层数多少来划分印制线路板，下列哪些不属于典型设计（
+）</strong></p>
+<ol type="A">
+<li><p>单面板</p></li>
+<li><p>二层板</p></li>
+</ol>
+<p><code>(C) 三层板</code></p>
+<ol start="4" type="A">
+<li>四层板</li>
+</ol>
+<blockquote>
+<p>印制板通常以偶数层设计，三层板并不常见。</p>
+</blockquote>
+<hr>
+<p><strong>3. 一块完整的印制线路板，主要包括（ ）</strong></p>
+<p><code>(A) 绝缘基板</code></p>
+<p><code>(B) 铜箔</code></p>
+<p><code>(C) 丝印</code></p>
+<p><code>(D) 阻焊层</code></p>
+<blockquote>
+<p>绝缘基板提供支撑，铜箔用于导电，丝印标注信息，阻焊层防止短路。</p>
+</blockquote>
+<p><strong>4. PCB 设计中通过（ ）实现走线层切换。</strong></p>
+<ol type="A">
+<li><p>丝印</p></li>
+<li><p>铜皮</p></li>
+<li><p>阻焊层</p></li>
+</ol>
+<p><code>(D) 过孔</code></p>
+<blockquote>
+<p>在 PCB
+设计过程中，常通过过孔连接不同层间的线路，实现信号走线层的切换。因此正确答案是
+D。</p>
+</blockquote>
+<hr>
+<h3 id="pcb绘制规则">1.6 PCB绘制规则</h3>
+<h4 id="知识点-5">知识点</h4>
+<h5 id="高速信号与敏感信号">高速信号与敏感信号</h5>
+<p><strong>1. 为啥看这俩玩意</strong></p>
+<p>​ 在PCB设计中，这俩玩意可能会受到信号完整性，串扰，EMI等问题的影响</p>
+<p><strong>2. 在PCB设计中常见的高速信号和敏感信号</strong></p>
+<ul>
+<li><strong>高速信号</strong>
+<ul>
+<li>高速差分信号：PCI Express，USB，HDMI</li>
+<li>高速时钟信号：处理器时钟、DDR存储器接口。</li>
+<li>高速数据总线：Ethernet、SATA、DisplayPort。</li>
+</ul></li>
+<li><strong>敏感信号</strong>
+<ul>
+<li>模拟信号： 传感器输出，音频信号等</li>
+<li>低电平信号： 传感器信号，电池电量检测等</li>
+<li>控制信号： 复位信号，电源管理信号等</li>
+</ul></li>
+</ul>
+<h5 id="降低串扰">降低串扰</h5>
+<p>​
+在高频板中，串扰是不可避免的。我们只能减少它，让串扰对PCB板的影响降到最低。</p>
+<p>以下是一些常见的降低串扰的方法:</p>
+<ul>
+<li>线间保持足够的安全距离，<strong>3W原则</strong>，走线间保持3倍线宽(W)的距离。3W原则可将串扰现象降低70%。对一些敏感信号间距可以拉大到10W。</li>
+<li>中间层设置完整的GND平面，GND能吸收一部分电场和磁场噪声，使这些噪声不能顺利扩散到敏感信号上。</li>
+<li>使用GND走线隔离，GND走线隔离，能有效减低容性耦合和感性耦合效应。</li>
+<li>减少高速信号的过孔，过孔会影响高速信号的阻抗，从而降低信号完整性，因此串扰会增加，对于高速信号要尽量减少过孔数。</li>
+<li>高速信号走线与敏感信号走线尽量避免平行走线。</li>
+</ul>
+<h5 id="w原则">3W原则</h5>
+<figure>
+<img src="/2025/03/11/bi-sai-lan-qiao-bei-eda-ke-guan-ti/image-20250320143028996.png" alt="3W">
+<figcaption aria-hidden="true">3W</figcaption>
+</figure>
+<p>​
+当线中心间距不少于3倍线宽时，则可保持大部分电场不互相干扰，这就是3W规则。</p>
+<p>​
+并不是板上所有的布线都要强制符合3W原则，一般像时钟线，差分线，视频、音频信号线，复位信号线及其他系统关键电路需要遵循3W原则。</p>
+<p>​
+对于满足3W原则的信号，信号间的串扰可以减少70%，而满足10W可以使信号间的串扰减少近98%。3W原则一般是在50欧姆特征阻抗传输线条件下成立。</p>
+<h5 id="地线回路规则">地线回路规则</h5>
+<ul>
+<li><strong>环路最小规则：</strong>即信号线与其回路构成的环面积要尽可能小，
+<ul>
+<li>环面积越小，对外辐射越小，接收外界的干扰也越小</li>
+</ul></li>
+<li>在<strong>地平面分割</strong>时，避免地平面开槽或分割不当导致信号回路受阻。
+<ul>
+<li>分割地平面时需结合重要信号（如高速信号）的走线布局；</li>
+<li>防止地平面不连续引发阻抗突变或电磁干扰。</li>
+</ul></li>
+<li><strong>双层板设计</strong>
+<ul>
+<li>电源与地的布局
+<ul>
+<li>优先为电源预留足够空间，剩余区域用<strong>参考地</strong>填充；</li>
+<li>通过<strong>过孔</strong>连接双面地平面，确保地网络的低阻抗连续性。</li>
+</ul></li>
+<li>关键信号
+<ul>
+<li>对一些关键信号尽量采用地线隔离</li>
+</ul></li>
+</ul></li>
+<li><strong>高频电路设计</strong>
+<ul>
+<li>高频信号易受地回路阻抗和分布参数影响，需严格控制地平面完整性。</li>
+<li>优先采用<strong>多层板</strong>，提供独立、连续的地平面层；</li>
+<li>避免高频信号因回路不完整引发噪声或信号失真。</li>
+</ul></li>
+</ul>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320144633177.png"></p>
+<h4 id="题目-5">题目</h4>
+<p><strong>1. 在立创EDA
+PCB设计环境下，布线设计中一般遵循的3W原则是指3倍（ ）。 </strong></p>
+<ol type="A">
+<li>相邻信号层间距 <code>(B) 线宽</code></li>
+<li>线间距</li>
+<li>元器件间距</li>
+</ol>
+<blockquote>
+<p>3W原则指的是信号线的间距应至少为3倍线宽，以减少串扰影响。</p>
+</blockquote>
+<hr>
+<p><strong>2. 减少线路板上串扰的方法包括（ ）。</strong></p>
+<p><code>(A) 3W原则</code> <code>(B) 相邻层走线正交</code> (C)
+去掉绿油，露出铜皮 (D) 增加PP厚度</p>
+<blockquote>
+<p>3W原则和相邻层走线正交是减少串扰的常见方法，</p>
+<p>去掉绿油--&gt;用于散热设计，</p>
+<p>增加PP厚度---&gt;PP层是绝缘层，增加厚度可以提升PCB的机械强度</p>
+</blockquote>
+<hr>
+<p><strong>3. 下列哪些原因可能会引起“地弹”增大（ ）。</strong></p>
+<p><code>(A) 地平面电感</code> <code>(B) 走线寄生参数</code>
+<code>(C) 过孔寄生参数</code> <code>(D) 元件引脚寄生参数</code></p>
+<blockquote>
+<p>地弹指的是在高速电路或大电流切换时，地电位发生波动，从而影响电路的正常运行。</p>
+<p>地弹主要由寄生电感、寄生电容等因素引起，这些因素会影响地电位的稳定性。</p>
+</blockquote>
+<hr>
+<p><strong>4. 差分信号线的布线原则是（ ）。</strong></p>
+<p><code>(A) 等距</code> <code>(B) 等长</code> (C) 垂直相交走线 (D)
+差分信号线间距尽量大</p>
+<blockquote>
+<p>差分信号要求两根线保持等长和等距，以确保信号完整性并减少噪声影响。</p>
+<p>C：差分对应平行走线，垂直相交会增大回路面积引入干扰</p>
+<p>D：过大会导致阻抗失配和抗噪能力下降，通常需要根据阻抗计算设计合理间距</p>
+</blockquote>
+<hr>
+<p><strong>5. 下列选项中，需要在PCB设计中进行等长、等间距布线的是（
+）。</strong></p>
+<p><code>(A) USB</code> (B) RS232 <code>(C) RS485</code> (D) 1-Wire</p>
+<blockquote>
+<ul>
+<li><strong>必选场景</strong>：所有<strong>差分信号对</strong>（如USB、RS485、CAN、LVDS等）及<strong>高速并行总线</strong>（如DDR内存）。</li>
+<li><strong>排除场景</strong>：单端信号（RS232、I²C、1-Wire）或低速协议（如UART
+≤1Mbps）</li>
+<li><strong>口诀</strong>：“差分高速必等长，单端低速可随意”。</li>
+<li><strong>快速识别</strong>：题目选项含“差分”“高速”关键词时，直接关联等长等距；若为单线或传统协议（如RS232），则排除。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>6. 关于高速电路的PCB布线，下列说法中正确的是（
+）。</strong></p>
+<p><code>(A) 相邻层走线尽量垂直</code>
+<code>(B) 信号线宽度不能突变</code> (C) 信号层不能覆铜
+<code>(D) 减少过孔的使用</code></p>
+<blockquote>
+<p>过孔会带来寄生电感和电容，影响信号完整性</p>
+<p>相邻层走线尽量垂直是高速电路PCB布线的设计的重要原则，不遵循会导致线间串扰</p>
+<p>信号层可以覆铜，合理覆铜有助于EMI控制</p>
+</blockquote>
+<hr>
+<p><strong>7. 影响PCB布线阻抗的因素有（ ）。</strong></p>
+<ol type="A">
+<li>线长 <code>(B) 线宽</code> <code>(C) 铜厚</code>
+<code>(D) 基材的介电常数</code></li>
+</ol>
+<blockquote>
+<p><span class="math display">\[
+Z_0 \approx \frac{87}{\sqrt{\varepsilon_r + 1.41}} \ln \left(
+\frac{5.98h}{0.8w + t} \right)
+\]</span></p>
+<ul>
+<li><span class="math inline">\(( Z_0 )\)</span>：特性阻抗（Ω）。</li>
+<li><span class="math inline">\(( w )\)</span>：线宽（mm）。</li>
+<li>( <span class="math inline">\(t\)</span> )：铜厚（mm）。</li>
+<li>( <span class="math inline">\(h\)</span>)：线到参考平面的距离（mm）。</li>
+<li>( <span class="math inline">\(\varepsilon_r\)</span>
+)：PCB基材的介电常数。</li>
+</ul>
+<p>阻抗是局部特征，与走线长度无关，但线长会影响信号完整性</p>
+</blockquote>
+<hr>
+<h3 id="立创软件">1.7 立创软件</h3>
+<h4 id="题目-6">题目</h4>
+<p><strong>1. 下列哪些情况可能导致从原理图向 PCB 同步时发生错误（
+）。</strong></p>
+<ol type="A">
+<li>原理图中存在两个位号相同的元件
+<code>(B) 没有指定封装名称或封装在库中不存在</code></li>
+<li>封装中存在两个焊盘编号重复</li>
+<li>原理图符号中存在两个名称一样的引脚</li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li>封装中允许存在编号重复的焊盘</li>
+<li>原理图符号中也允许出现相同名称的引脚</li>
+<li>但原理图中不能存在两个位号相同的原件（俩R1)</li>
+<li>且每个元件必须要有对应的封装</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>2. 在立创 EDA 原理图设计环境下，下列描述正确的选项是（
+）。</strong></p>
+<ol type="A">
+<li>可以通过快捷键L，绘制连接两个元器件的导线</li>
+<li>原理图中的每个元件的封装应该唯一，确定
+<code>(C) 原理图中各个元件的位号不可重复</code>
+<code>(D) 在同一张原理图中，不论是否用导线连接在一起，只要有相同的网络标签，电气上都是相通的</code></li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li>L是折线，</li>
+<li>多个电阻可以采用同一封装比如0805</li>
+<li>位号R1, C1必须唯一</li>
+<li>相同网络标签的节点电气相通，即使没有导线连接</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>3. 网表文件中描述了电路元器件的（ ）。</strong></p>
+<p><code>(A) 编号</code> <code>(B) 封装</code> (C) 功能
+<code>(D) 引脚连接关系</code></p>
+<blockquote>
+<p><strong>解析</strong>： - <strong>网表</strong>（Netlist）是 EDA
+设计中的关键文件，主要用于表示<strong>元件之间的电气连接关系</strong>。
+- <strong>包含：元件编号（R1,
+C1）、封装（0805）、引脚连接关系</strong>（R1-1
+连接到U1-3)，但不包含<strong>元件的功能信息</strong>。 -
+<strong>元件的功能通常由元件型号（Part
+Number）或电路设计文档来定义，而不是由网表直接描述</strong>。 -
+<strong>网表文件三要素</strong>：编号（唯一性）、封装（物理映射）、引脚连接（电气网络）。
+-
+<strong>高频考点</strong>：网表缺失封装或编号重复会导致PCB同步失败，引脚连接错误引发短路/断路。</p>
+</blockquote>
+<hr>
+<p><strong>4. 网表一般包含元器件的信息是（ ）。</strong></p>
+<p><code>(A) 封装</code><br>
+<code>(B) 属性</code><br>
+<code>(C) 编号</code><br>
+<code>(D) 管脚之间连接关系</code></p>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li>元件属性包括：
+<ul>
+<li><strong>电气参数</strong>（如电阻的阻值、电容的容量等）</li>
+<li><strong>器件型号</strong>（如 <code>LM358</code>
+运放、<code>ATmega328P</code> 微控制器）</li>
+<li><strong>供应商信息</strong>（如物料编号、生产商等）</li>
+</ul></li>
+</ul>
+</blockquote>
+<p><strong>5. 下列关于网表的说法，正确的是（ ）。</strong></p>
+<p><code>(A) 记录了原理图中所用的元件和网络信息</code>
+<code>(B) 网表文件可以使用文本编辑器打开和编辑</code> (C)
+从网表文件中可以查看器件的坐标信息
+<code>(D) 可以将 PCB 和原理图中获取的网表文件进行比较，核对差异</code></p>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li><strong>网表的核心内容</strong>：元件（位号、封装） +
+网络（引脚连接）。</li>
+<li><strong>网表的文本特性</strong>：可读可编辑，便于调试与验证。</li>
+<li>在EDA流程中，通常通过<strong>比较原理图网表与PCB导出的网表</strong>，验证两者一致性（如元件封装、网络连接是否匹配），避免设计错误（如漏连、错连）。</li>
+<li><strong>非网表内容</strong>：坐标、布局、走线等物理信息。</li>
+<li><strong>C 选项错误，网表不包含元件的物理坐标信息，坐标信息在 PCB
+布局文件中存储</strong>。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>6.
+在原理图设计过程中，通过哪些方式可以让两个元器件建立连接关系（
+）。</strong></p>
+<p><code>(A) 通过导线连接</code> <code>(B) 放置相同的网络标号</code> (C)
+放置文字加以说明 (D) 修改成相同的元件编号</p>
+<blockquote>
+<p><strong>解析</strong>： - <strong>A 和 B 是正确的</strong>： - 直接
+<strong>通过导线连接</strong> 可以建立连接关系。 -
+<strong>放置相同的网络标号</strong>（Net
+Label），可以让元件在逻辑上连通，即使它们不直接连接在一起。 - <strong>C
+和 D 是错误的</strong>： -
+<strong>文字说明不能形成电气连接</strong>，仅供参考。 -
+<strong>修改元件编号不会影响网络连接</strong>，位号是用于区分元件，而非连接信号。</p>
+</blockquote>
+<hr>
+<p><strong>7. PCB 设计过程中，想要在顶层某部分锁定，应在哪个层进行绘制（
+）。</strong></p>
+<ol type="A">
+<li>Top Layer（顶层）</li>
+<li>Top Overlay（顶层丝印层）
+<code>(C) Keepout Layer（禁布层）</code></li>
+<li>Top Solder（顶层阻焊层）</li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li><strong>锁定 PCB
+顶层某个部分（不允许布线或放置元件）</strong>，应该在 <strong>Keepout
+Layer</strong> 进行绘制。</li>
+<li><strong>顶层阻焊层（Solder Mask Layer）</strong>，主要用于定义
+<strong>焊盘或特定区域是否覆盖阻焊层</strong>，与锁定 PCB
+某部分无关。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>8. PCB 生产文件主要包括下列哪些文件（ ）。</strong></p>
+<p><code>(A) Board Information</code> <code>(B) NC Drill Files</code>
+<code>(C) Gerber Files</code> <code>(D) PDF</code></p>
+<blockquote>
+<p><strong>解析</strong>： - <strong>Gerber
+文件（C）是最重要的生产文件</strong>，用于描述 PCB
+的层信息、焊盘、布线等。 - <strong>NC Drill
+Files（B）用于钻孔</strong>，也是必需的生产文件。 - <strong>Board
+Information（A）包含板子尺寸、层数等信息</strong>。 - <strong>PDF
+可能包含设计图纸，但不是标准的生产文件</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>9. 线路板设计行业，常交付（ ）文件给 PCB 工厂，用于 PCB
+加工和制造。</strong></p>
+<ol type="A">
+<li>原理图</li>
+<li>PCB <code>(C) Gerber</code></li>
+<li>BOM</li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>： - <strong>Gerber 文件（C）是 PCB
+生产的标准文件</strong>，包含布线、焊盘、阻焊层等信息，所有 PCB
+厂商都需要。 - <strong>原理图（A）不会交给工厂</strong>，PCB
+厂商不需要它来生产。 -
+<strong>BOM（D）是物料清单，主要用于元器件采购，而不是 PCB
+生产</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>10. 立创 EDA PCB
+设计环境下，完成印制线路板设计后，进行规则检查的过程一般称之为（
+）。</strong></p>
+<p><code>(A) DRC</code> (B) PRC (C) RCK (D) PCB</p>
+<blockquote>
+<p><strong>解析</strong>： - <strong>DRC（A，Design Rule Check）是 PCB
+设计中用于检查布线、过孔、焊盘等规则是否符合设计标准的过程</strong>。 -
+<strong>PRC、RCK 不是常见的 PCB 设计术语</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>11. 在立创 EDA
+软件环境下设计原理图，放置多个元器件，不可重复的元器件属性是（
+）。</strong></p>
+<ol type="A">
+<li>名称 <code>(B) 位号（编号）</code></li>
+<li>封装</li>
+<li>制造商</li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>： -
+<strong>位号（B，编号）必须唯一</strong>，每个元件必须有一个独特的编号，如
+R1、C3 等。 - <strong>封装、名称、制造商可以相同</strong>，例如多个 10KΩ
+电阻可以有相同的封装和名称，但位号不同。</p>
+</blockquote>
+<hr>
+<p><strong>12. 立创 EDA 原理图设计环境下，设计管理器提供了（
+）。</strong></p>
+<p><code>(A) 元件封装</code> <code>(B) 元件数量</code>
+<code>(C) 网络数量</code> <code>(D) 网络名称</code></p>
+<blockquote>
+<p><strong>解析</strong>： -
+<strong>设计管理器可提供元件封装、元件数量、网络数量和名称（A、B、C、D
+全选）</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>13. 立创 EDA 原理图设计环境下，导出的原理图文件后缀名为（
+）。</strong></p>
+<ol type="A">
+<li>.sch</li>
+<li>.schdoc</li>
+<li>.net <code>(D) .json</code></li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li><strong>立创 EDA 原理图文件的后缀为
+<code>.json</code></strong>（D），与 Altium Designer 使用的
+<code>.sch</code> 和 <code>.schdoc</code> 文件格式不同。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>14. 下列由 Altium Designer
+导出的文件中，哪些可以反映元器件连接关系（ ）。</strong></p>
+<ol type="A">
+<li>user.rul<br>
+</li>
+<li>user.xls<br>
+</li>
+<li>user.dblink<br>
+<code>(D) user.net</code></li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>： -
+<strong>user.net（D）是网络列表文件（Netlist），记录了元器件的电气连接关系</strong>，用于
+PCB 设计和仿真。 -
+<strong>user.rul（A）通常用于规则定义，不包含电气连接信息</strong>。 -
+<strong>user.xls（B）通常是报告文件，不包含连接关系</strong>。 -
+<strong>user.dblink（C）用于数据库链接，与元器件参数管理相关，但不直接反映连接关系</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>16. DRC 检查可以检查出电气性能上可能存在的瑕疵（
+）。</strong></p>
+<ol type="A">
+<li>可以<br>
+<code>(B) 不能</code></li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>： - <strong>DRC（Design Rule
+Check，设计规则检查）主要用于检查 PCB
+设计是否符合预设的设计规则</strong>。 -
+<strong>它能检查布线宽度、间距、过孔尺寸等物理规则，但无法检测电气性能（如信号完整性、时序误差等）</strong>。
+- <strong>电气性能问题通常需要 SI（Signal Integrity）分析或 SPICE
+仿真来检查</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>17. PCB 设计完成后，通常需要输出的生产文件包括（
+）。</strong></p>
+<p><code>(A) 物料清单（BOM）</code><br>
+<code>(B) 坐标文件（Pick and Place）</code><br>
+<code>(C) Gerber 文件</code><br>
+(D) 封装库</p>
+<blockquote>
+<p><strong>解析</strong>： - <strong>Gerber 文件（C）是 PCB
+生产的标准文件</strong>，用于描述线路板的布线、焊盘、阻焊层等信息。 -
+<strong>BOM（A）是物料清单</strong>，列出了 PCB 组装所需的所有元器件。 -
+<strong>坐标文件（B）用于贴片机</strong>，提供了元器件的放置坐标信息。 -
+<strong>封装库（D）是 EDA 设计中的库文件，不属于 PCB
+生产文件</strong>，工厂不需要它来制造 PCB。</p>
+</blockquote>
+<hr>
+<h3 id="pcb硬件">1.8 PCB硬件</h3>
+<h4 id="知识点-6">知识点</h4>
+<h5 id="线性电源和开关电源">线性电源和开关电源</h5>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320161914203.png"></p>
+<p>见题</p>
+<h4 id="题目-7">题目</h4>
+<p><strong>1. 与线性稳压器相比，由 DCDC
+开关电源芯片作为电源转换方案一般具有哪些优势（ ）。</strong></p>
+<ol type="A">
+<li>综合成本更低<br>
+<code>(B) 转换效率更高</code><br>
+<code>(C) 输出能力更强</code><br>
+</li>
+<li>输出电压波纹更小</li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>： - <strong>DC-DC
+电源转换方案比线性稳压器（LDO）转换效率更高（B），输出能力更强（C）</strong>，适用于高效电源管理。
+- <strong>LDO
+的优点是低噪声、低纹波，但效率较低</strong>，通常适用于小功率应用。 -
+<strong>D 选项错误</strong>，因为 DC-DC
+开关电源通常有更大的输出纹波，相比之下 LDO 输出更平滑。</p>
+</blockquote>
+<hr>
+<p><strong>2. 下面不属于元件安装方式的是（）。</strong></p>
+<ol type="A">
+<li>插入式安装工艺<br>
+</li>
+<li>表面安装<br>
+<code>(C) 梁氏引线法</code></li>
+<li>芯片直接安装</li>
+</ol>
+<blockquote>
+<p><strong>解析</strong>：<br>
+-
+<strong>插入式安装（A）和表面安装（B）是常见的元件安装方式</strong>。<br>
+- <strong>梁氏引线法（C）一般用于连接，而非安装元件</strong>。<br>
+-
+<strong>芯片直接安装（D）在某些特定封装中可能存在，但通常不单独作为一种安装方式</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>3. 关于元器件的焊接要求，正确的是（）。</strong></p>
+<p><code>(A) 焊接表面应清洁，油脂、锈斑都会影响焊接效果。   (B) 合理的使用助焊剂，可以提高焊接质量。   (C) 焊接温度应适当，过高、过低都会导致焊接不良。   (D) 单个焊点的焊接时间不可过长，避免损伤线路板和器件</code>。</p>
+<blockquote>
+<p><strong>解析</strong>：<br>
+- <strong>焊接表面应清洁（A），以确保焊接质量</strong>。<br>
+- <strong>助焊剂的合理使用（B）可以改善焊接效果</strong>。<br>
+- <strong>焊接温度过高或过低（C）都会导致焊接缺陷</strong>。<br>
+- <strong>焊接时间过长（D）可能损坏电路板和元件</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>4. 下列哪些因素会影响 PCB 的加工生产成本（）。</strong></p>
+<p><code>(A) 表面处理方式   (B) 线宽   (C) 孔径大小及数量   (D) 板层数</code></p>
+<blockquote>
+<p><strong>解析</strong>：<br>
+- <strong>表面处理方式（A）（如镀金、沉锡等）会影响成本</strong>。<br>
+- <strong>线宽（B）决定了布线密度，对制造难度有影响</strong>。<br>
+- <strong>孔径大小及数量（C）影响钻孔工艺，进而影响成本</strong>。<br>
+- <strong>板层数（D）直接影响生产复杂度和成本</strong>。</p>
+</blockquote>
+<hr>
+<p><strong>5. SMT（Surface Mounting
+Technology）指的是（）。</strong></p>
+<p><code>(A) 表面贴装技术</code><br>
+(B) 全自动测试技术<br>
+(C) 全自动布线技术<br>
+(D) 光学检测结束</p>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li><strong>SMT 是表面贴装技术（A），用于在 PCB
+表面直接安装元件</strong>。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>6. 一般设计 PCB 电路板的基本流程如下：</strong></p>
+<p>原理图设计 → （<code>PCB 物理结构设计</code>） → PCB 布局 →
+（<code>PCB 布线</code>） → （<code>布线优化和丝印调整</code>） →
+（<code>设计规则检查与结构检查</code>） → PCB 制板。</p>
+<ol type="A">
+<li>PCB 布线<br>
+</li>
+<li>设计规则检查与结构检查<br>
+</li>
+<li>PCB 物理结构设计<br>
+</li>
+<li>布线优化和丝印调整</li>
+</ol>
+<hr>
+<p><strong>7. 一个完整的电子电路设计方案包括（）。</strong></p>
+<p><code>(A) 原理图与 PCB 设计   (B) PCB 制板   (C) 元器件焊接   (D) 电路模块、整机调试</code></p>
+<blockquote>
+<p><strong>解析</strong>：</p>
+<ul>
+<li><strong>完整的电子电路设计包括：原理图设计、PCB 设计、PCB
+制板、元器件焊接、调试等</strong>。</li>
+</ul>
+</blockquote>
+<hr>
+<p><strong>8. EDA（Electronic Design
+Automation）的中文含义是（<code>(A) 电子设计自动化</code>）。</strong></p>
+<p><code>(A) 电子设计自动化</code> (B) 计算机辅助计算<br>
+(C) 计算机辅助教学<br>
+(D) 计算机辅助制造</p>
+<blockquote>
+<p><strong>解析</strong>：<br>
+- <strong>EDA 主要指电子设计自动化（A）</strong>。</p>
+</blockquote>
+<h2 id="数电知识点和题目分析">2. 数电知识点和题目分析</h2>
+<h3 id="门电路">2.1 门电路</h3>
+<p>传送门：<a href="https://blog.csdn.net/m0_74712453/article/details/137235455?spm=1001.2014.3001.5501">门电路知识点总结-CSDN博客</a></p>
+<h4 id="知识点-7">知识点</h4>
+<p>​
+<strong>门电路：</strong>用以实现基本逻辑和复合逻辑运算的单元电路</p>
+<ul>
+<li>正逻辑：用高电平表示逻辑1，低电平表示逻辑0</li>
+<li>负逻辑：用低电平表示逻辑1，用高电平表示逻辑0</li>
+</ul>
+<h5 id="与电路">与电路</h5>
+<p>与（AND） 符号：“·” Y=A·B</p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320164517442.png"></p>
+<h5 id="或电路">或电路</h5>
+<p>或（OR） 符号：“+” Y=A+B</p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320164554915.png"></p>
+<h5 id="非电路">非电路</h5>
+<p>非（NOT）符号：“ ' 或 ￣ ” Y=A'</p>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320164643519.png"></p>
+<h5 id="与非门">与非门</h5>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320165045211.png"></p>
+<h5 id="或非门">或非门</h5>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320165114055.png"></p>
+<h5 id="与或非门">与或非门</h5>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320165227628.png"></p>
+<h5 id="异或门">异或门</h5>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320165300782.png"></p>
+<h5 id="同或门">同或门</h5>
+<p><img src="/medias/loading.gif" data-original="【比赛】蓝桥杯eda客观题/image-20250320165608741.png"></p>
 ]]></content>
       <categories>
         <category>EDA</category>

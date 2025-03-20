@@ -1,0 +1,4 @@
+@echo off
+del filelist.txt > nul 2>&1
+for %%f in (*.md) do echo %%f >> filelist.txt
+echo 文件名已保存到 filelist.txt
